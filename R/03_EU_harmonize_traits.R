@@ -1,0 +1,324 @@
+# ----------------------------------------------------
+#### Harmonize EU Traits ####
+
+# TODO: ph values from Trait_EU need to be incorporated & normalized 
+
+
+# read in RDS
+Trait_EU <- readRDS(file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
+
+
+#### Voltinism ####
+# volt_semi
+# volt_uni
+# volt_bi_multi
+Trait_EU[, volt_bi_multi := apply(.SD, 1, max),
+           .SDcols = c("volt_bi", "volt_tri", "volt_multi", "volt_flex")]
+Trait_EU[, c("volt_bi", "volt_tri", "volt_multi", "volt_flex") := NULL]
+
+
+#### aquatic stages ####
+# gives information about which stage lives in the aquatic phase 
+# stage_egg
+# stage_larva: larva and/or nymph
+# stage_pupa
+# stage_adult
+Trait_EU[, stage_larva := apply(.SD, 1, max),
+           .SDcols = c("stage_larva", "stage_nymph")]
+Trait_EU[, stage_nymph := NULL]
+
+#### ph ####
+# ph_acidic, ph_neutral
+# pH_ind (indifferent) is dismissed from database (128 entries with 1)
+setnames(Trait_EU, "ph_neutral_alk", "ph_neutral")
+Trait_EU[, ph_ind := NULL]
+
+#### Feed mode ####
+# feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
+# feed_gatherer: collector gatherer (gatherers, detritivores)
+# feed_filter: collector filterer (active filterers, passive filterers, absorbers)
+# feed_scraper: scraper (grazer)
+# feed_predator: predator
+# feed_parasite: parasite
+setnames(Trait_EU,
+         c("feed_gath", "feed_grazer"),
+         c("feed_gatherer", "feed_scraper"))
+Trait_EU[, feed_shredder := apply(.SD, 1, max),
+           .SDcols = c("feed_shred", "feed_miner", "feed_xylo")]
+Trait_EU[, feed_filter := apply(.SD, 1, max),
+           .SDcols = c("feed_active_filter", "feed_passive_filter")]
+Trait_EU[, c(
+  "feed_shred",
+  "feed_miner",
+  "feed_xylo",
+  "feed_active_filter",
+  "feed_passive_filter"
+) := NULL]
+
+# feed other deleted in the first instance
+Trait_EU[, feed_other := NULL]
+
+#### Locomotion ####
+# locm_swim:  swimmer, scater (active & passive)
+# locm_crawl: crawlers, walkers & sprawler
+# locm_burrow: burrower
+# locm_sessil: sessil (attached)
+Trait_EU[, locom_swim := apply(.SD, 1, max), 
+           .SDcols = c("locom_swim_skate", "locom_swim_dive")]
+setnames(Trait_EU,
+         old = c("locom_sprawl"),
+         new = c("locom_crawl"))
+# del
+Trait_EU[, c("locom_swim_skate", "locom_swim_dive", 
+               "locom_other") := NULL]
+
+# locom other -> critical taxa 
+# View(Trait_EU[locom_other > locom_burrow & locom_other > locom_crawl &
+#                   locom_other > locom_sessil & locom_other > locom_swim, 
+#                 .(species, genus, family, locom_other, 
+#                   locom_burrow, locom_crawl, 
+#                   locom_sessil, locom_swim)]
+# )
+
+#### Respiration ####
+# resp_teg: cutaneous/tegument
+# resp_gil: gills
+# resp_spi: spiracle
+# resp_pls: plastron
+# resp_atm: atmospheric breathers -> no values
+# respiration vesicle -> just 0
+# no values for resp_tap
+# table(Trait_EU$resp_ves)
+# table(Trait_EU$resp_tap)
+# table(Trait_EU$resp_sur)
+Trait_EU[, c("resp_tap", "resp_ves", "resp_sur") := NULL]
+
+# =================== This needs to be fixed ======================
+# Drift/dispersal
+# use disp low, medium, high for comparability 
+# del dispersal_unknown
+Trait_EU[, dispersal_unknown := NULL]
+# check for merge if information is reliable
+# two species will get changed their dispersal trait from low to medium
+# Sericostoma personatum & Silo pallipes
+# Trait_EU[(dispersal_high == 1| dispersal_low == 1) &
+#              species %in% disp_EU$Species, .(dispersal_high, dispersal_low, species)] 
+# disp_EU[grepl("Amphinemura|Hydropsyche|Leuctra|Nemurella|Sericostoma|Silo", Species)]
+# merge with disp_EU
+# Trait_EU[disp_EU,
+#            `:=`(dispersal_high = i.Strong,
+#                 dispersal_low = i.Weak,
+#                 dispersal_medium = i.Medium),
+#            on = c(species = "Species")]
+# # change NA's in dispersal medium to zeor
+# Trait_EU[is.na(dispersal_medium), dispersal_medium := 0]
+# =================================================================
+
+#### Oviposition ####
+# Modalities
+# ovip_aqu: Reproduction via aquatic eggs
+# ovip_ter: Reproduction via terrestric eggs
+# ovip_ovo: Reproduction via ovoviparity
+# rep_asexual
+Trait_EU[,  ovip_ter := apply(.SD, 1, max),
+           .SDcols = c("rep_clutch_veg", "rep_clutch_ter")]
+Trait_EU[, ovip_aqu := apply(.SD, 1, max),
+           .SDcols = c("rep_egg_cem_iso",
+                       "rep_egg_free_iso",
+                       "rep_clutch_free",
+                       "rep_clutch_fixed")]
+Trait_EU[, ovip_ovo := apply(.SD, 1, max),
+           .SDcols = c("rep_parasitic", "rep_ovovipar")]
+
+# del
+Trait_EU[, c(
+  "rep_egg_cem_iso",
+  "rep_egg_free_iso",
+  "rep_clutch_free",
+  "rep_clutch_fixed",
+  "rep_parasitic",
+  "rep_ovovipar",
+  "rep_clutch_veg",
+  "rep_clutch_ter",
+  "rep_asexual"
+) := NULL]
+
+#### Temperature ####
+# temp very cold (< 6 °C)
+# temp cold (< 10 °C)
+# temp moderate (< 18 °C)
+# temp warm (>= 18 °C)
+# temp eurytherm (no specific preference)
+Trait_EU[, temp_cold := apply(.SD, 1, max),
+           .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")]
+Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
+
+#### normalization Freshecol ####
+# TODO made a function out of this!
+# get trait names & create pattern for subset
+# leave out ph (needs to be harmonized when merged together with Freshwaterecol)
+trait_names_pattern <-
+  names(Trait_EU[, -c("species", 
+                        "genus",
+                        "family", 
+                        "order")]) %>%
+  sub("\\_.*|\\..*", "", .) %>%
+  unique() %>%
+  paste0("^", .)
+
+# loop for normalization (trait categories for each trait sum up to 1) 
+for(cols in trait_names_pattern) {
+  
+  # get row sum for a specific trait
+  Trait_EU[, rowSum := apply(.SD, 1, sum),
+             .SDcols = names(Trait_EU) %like% cols]
+  
+  # get column names for assignment
+  col_name <- names(Trait_EU)[names(Trait_EU) %like% cols]
+  
+  Trait_EU[, (col_name) := lapply(.SD, function(y) {
+    round(y / rowSum, digits = 2)
+  }),
+  .SDcols = names(Trait_EU) %like% cols]
+}
+Trait_EU[, rowSum := NULL]
+
+# excludelife stage for now -> can not be complemented by tachet and not needed for now
+Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"] 
+
+# ----------------------------------------------------------------------------------------
+#### Complement with tachet data  
+
+# Information from tachet is just considered for entries in freshecol with missing information
+# Information on the same trait was taken from Freshecol
+
+# Load tachet data
+tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
+
+# get names of trait columns
+name_vec <- grep("order|family|genus|species",
+                 names(Trait_EU),
+                 value = TRUE,
+                 invert = TRUE) %>%
+  sub("\\_.*", "", .) %>%
+  unique() %>%
+  paste0("^",.)
+
+final <- Trait_EU
+for(i in name_vec){
+  subset_vec <-
+    !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
+  
+  # subset to NA values -> complement these with Tachet traits
+  step <- coalesce_join(x = final[subset_vec, ],
+                        y = tachet[!is.na(species), .SD,
+                                   .SDcols = names(tachet) %like% paste0(i, "|", "species")],
+                        by = "species",
+                        join = dplyr::left_join)
+  setDT(step)
+  
+  # merge back to whole dataset
+  final <- coalesce_join(x = final,
+                         y = step[, .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
+                         by = "species",
+                         join = dplyr::left_join) 
+  setDT(final)
+}
+# check temp & ph 
+# apply(Trait_EU[, .SD, .SDcols = names(Trait_EU) %like% name_vec[5]], 
+#       2, 
+#       table)
+# apply(final[, .SD, .SDcols = names(Trait_EU) %like% name_vec[5]],
+#       2,
+#       table)
+# tachet[grepl("Acentria ephemerella", Species_merge), ]
+# Trait_EU[grepl("Acentria ephemerella", species), ]
+Trait_EU <- final
+
+# merge information from taxa on species level that are only in tachet
+Trait_EU <- rbind(Trait_EU, 
+                    tachet[!(species %in% Trait_EU$species) & !is.na(species), .SD , 
+                           .SDcols = !(names(tachet) %like% "^stage|^disp|size")], 
+                    use.names = TRUE,
+                    fill = TRUE)
+
+#### Add Size ####
+# size_small: size < 9 mm (EU: size < 10 mm)
+# size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
+# size_large: size > 16 mm (EU: size > 20 mm)
+Trait_EU[tachet, 
+           `:=`(size_large = i.size_large,
+                size_medium = i.size_medium,
+                size_small = i.size_small), 
+           on = "species"]
+
+
+# transform all NA values to 0 
+cols <- grep("order|family|genus|species", 
+             names(Trait_EU), 
+             value = TRUE, 
+             invert = TRUE)
+
+for (j in cols){
+  data.table::set(Trait_EU, which(is.na(Trait_EU[[j]])),j,0)
+}
+
+#### Correct information on order level ####
+
+# Heteroptera is a suborder in Hemiptera
+Trait_EU[grepl("Heteroptera", order), order := "Hemiptera"]
+
+# Crustaceans: 
+Trait_EU[grepl("Grapsidae", family), order := "Decapoda"]
+Trait_EU[grepl("Triopsidae", family), order := "Notostraca"]
+Trait_EU[grepl("Cambaridae", family), order := "Decapoda"]
+Trait_EU[grepl("Asellidae", family), order := "Isopoda"]
+Trait_EU[grepl("Astacidae", family), order := "Decapoda"]
+Trait_EU[grepl("Atyidae", family), order := "Decapoda"]
+
+# Oligochaeta is actually a subclass
+# Tubificidae outdated
+Trait_EU[grepl("Tubificidae", family), family := "Naididae"]
+Trait_EU[grepl("Lumbricidae|Propappidae|Tubificidae", family), 
+           order := "Haplotaxida"]
+
+# Hirudinea is actually a subclass
+Trait_EU[grepl("Glossiphoniidae", family), order := "Rhynchobdellida"]
+Trait_EU[grepl("Haemopidae", family), order := "Hirudiniformes"]
+
+# Gastropoda is actually a class
+Trait_EU[grepl("Lymnaeidae|Planorbidae|Acroloxidae", family), 
+           order := "Pulmonata"]
+Trait_EU[grepl("Physidae", family), order := "Basommatophora"]
+
+# Nermertia seems to be a spelling error -> should be Nemertea instead 
+# (which is Phylum)
+Trait_EU[grepl("Tetrastemmatidae", family), order := "Monostilifera"]
+
+# Coelenterata is a phylum actually
+Trait_EU[grepl("Clavidae", order), `:=`(family = "Hydractiniidae", 
+                                          order = "Anthoathecata")]
+
+# Turbellaria is actually a class
+Trait_EU[grepl("Turbellaria", order), order := "Tricladida"]
+
+# Bivalvia is actually a class
+Trait_EU[grepl("Margaritiferidae", family), order := "Unionida"]
+
+# Bryozoa is actually a phylum
+Trait_EU[grepl("Fredericellidae|Cristatellidae|Plumatellidae", family), 
+           order := "Plumatellida"]
+Trait_EU[grepl("Paludicellidae", family), order := "Ctenostomata"]
+# Lophopodidae currently unranked
+
+# order gentianales is actually a plant
+Trait_EU[grepl("Lepidostoma", genus), `:=`(family = "Lepidostomatidae", 
+                                             order = "Trichoptera")]
+Trait_EU[grepl("Normandia", genus), `:=`(family = "Elmidae", 
+                                           order = "Coleoptera")]
+Trait_EU[grepl("Stenostomum", genus), `:=`(family = "Stenostomidae", 
+                                             order = "Catenulida")]
+
+# save
+saveRDS(object = Trait_EU, 
+        file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
