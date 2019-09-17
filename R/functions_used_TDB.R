@@ -116,7 +116,6 @@ coalesce_join_with_zero <- function(x,
 # test
 # test <- data.table(x = c(0,0,1), y = c(1,1,2), join = c("A", "B", "C"))
 # test_2 <-  data.table(x = c(1,2,1), y = c(2,2,2), z = c(1,1,2), join = c("A", "B", "C"))
-
 # coalesce_join_with_zero(x = test, y = test_2, 
 #                         by = "join", 
 #                         join = dplyr::left_join)
@@ -136,29 +135,11 @@ fetch_dupl <- function(data, col) {
 }
 
 #### Aggregate duplicate taxa entries ####
-# x can look like trait_test[, c("Feed_mode_prim", "Feed_mode_sec", "Habit_prim")] 
-# index like taxa_test[, "Taxa"]
-# agg_dupl <- function(x, index) {
-#   # Conversion prohibitet by I()
-#   # -> otherwise char vec. would be represented as their factor levels
-#   aggregate(I(x),
-#             by = list(index),
-#             function(y) {
-#               y <- y[!is.na(y)]
-#               if (!length(y)) {
-#                 y <- NA
-#               }
-#               y <- y[!duplicated(y)]
-#               y <- sample(y, 1)
-#               return(y)
-#             }
-#   )
-# }
-
-# duplicate taxa with numeric values are condensed
+# Duplicate taxa with numeric values are condensed:
 # the Mode is taken when the same taxa occurs multiple times
-# if all values are unique, the median is taken. If the mode would be zero,
-# the median is taken as well
+# if all values are unique, the median is taken. 
+# If the mode would be zero, the median is taken as well
+# requires dataset to have trait columns + taxa columns (species, genus, family, order)
 condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
   # subset to duplicate taxa
   dupl_taxa <-
@@ -212,14 +193,16 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
 # Gives a list with as many datasets as traits are presented
 # Can be merged together using Reduce!
 # works atm without considering NAs 
-# -> check at a later stage
-# should add an option for choosing trait columns
-get_complete_trait_data <- function(trait_data) {
+# non trait column need to be manually defined by user
+get_complete_trait_data <- function(trait_data, non_trait_col) {
+
+  # pattern of non trait col names
+  non_trait_col_pat <- paste0("?(i)", paste0(non_trait_col, collapse = "|"))
 
   # create name vector
   name_vec <-
     grep(
-      "(?i)unique_id|species|genus|family|order.*",
+      non_trait_col_pat,
       names(trait_data),
       invert = TRUE,
       value = TRUE
@@ -241,11 +224,7 @@ get_complete_trait_data <- function(trait_data) {
                             .SDcols = names(trait_data) %like%
                               paste(c(
                                 name_vec[i],
-                                "unique_id",
-                                "species",
-                                "genus",
-                                "family",
-                                "order"
+                                non_trait_col
                               ),
                               collapse = "|")]
     names(data)[[i]] <- name_vec[[i]]
@@ -253,7 +232,32 @@ get_complete_trait_data <- function(trait_data) {
   return(data)
 }
 
+# Trait Aggregation -------------------------------------------------------
+# Mode
+# when there are no duplicate values, mode returns the first value!
+Mode <- function(x, na.rm = FALSE) {
+  if (na.rm)
+    x <- x[!is.na(x)]
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
 
+# Clustering --------------------------------------------------------------
+mycluster_hc <- function(x, k) {
+  list(cluster = cutree(hclust(as.dist(x),
+                        method = "ward.D2"),
+                        k = k))
+}
+
+# RF Analysis -------------------------------------------------------------
+# custom prediction function
+custom_pred <- function(object, newdata) {
+  pred <- predict(object, newdata)$predictions
+  avg <- purrr::map_df(as.data.frame(pred), mean)
+  return(avg)
+}
+
+# General data cleaning -------------------------------------------------------------
 
 #### Cleaning text (colnames) ####
 text_with_underscore <- function(text) {
@@ -274,31 +278,4 @@ query_google <- function(x) {
   lapply(x,
          function(y) { utils::browseURL(url = paste0("https://google.com/search?q=", y)) }) %>%
          invisible()
-}
-
-
-# Trait Aggregation -------------------------------------------------------
-# Mode
-# when there are no duplicate values, mode returns the first value!
-Mode <- function(x, na.rm = FALSE) {
-  if (na.rm)
-    x <- x[!is.na(x)]
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
-
-# Clustering --------------------------------------------------------------
-
-mycluster_hc <- function(x, k) {
-  list(cluster = cutree(hclust(as.dist(x),
-                        method = "ward.D2"),
-                        k = k))
-}
-
-# RF Analysis -------------------------------------------------------------
-# custom prediction function
-custom_pred <- function(object, newdata) {
-  pred <- predict(object, newdata)$predictions
-  avg <- purrr::map_df(as.data.frame(pred), mean)
-  return(avg)
 }
