@@ -8,15 +8,15 @@ Trait_EU <- readRDS(file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized
 # get trait columns
 trait_col <-
   grep(
-    "unique_id|species|genus|family|order",
+    "species|genus|family|order",
     names(Trait_EU),
     invert = TRUE,
     value = TRUE
   )
 
-# subset so that only traits with complete information are retained -> test how complete trait sets are
-name_vec <- sub("\\_.*", "", trait_col)
-name_vec <- unique(name_vec)
+# subset so that only traits with complete information are retained 
+# how complete are the trait sets?
+name_vec <- sub("\\_.*", "", trait_col) %>% unique()
 output <- matrix(ncol = 2, nrow = length(name_vec))
 
 # percentage of how many entries per trait lack information
@@ -32,7 +32,15 @@ output
 
 # just return rows where for each trait there is an observation 
 # use get_complete_trait_data function
-data <- get_complete_trait_data(trait_data = Trait_EU)
+data <-
+  get_complete_trait_data(
+    trait_data = Trait_EU,
+    non_trait_col = c("order",
+                      "family",
+                      "genus",
+                      "species")
+  )
+
 
 # lapply(data, nrow)
 Trait_EU <- Reduce(merge, data[c("locom",
@@ -40,7 +48,8 @@ Trait_EU <- Reduce(merge, data[c("locom",
                                  "resp",
                                  "volt",
                                  "ovip",
-                                 "size")])
+                                 "size",
+                                 "dev")])
 # possible traits: "locom", "feed", "resp", "ph", "temp", "volt", "ovip", "size","stage"
 
 #### Aggregate to genus level ####
@@ -53,7 +62,7 @@ Trait_EU_genus <- Trait_EU[, lapply(.SD, median),
                            .SDcols = names(Trait_EU) %like% pat_traitname, 
                            by = genus]
 
-# merge family information 
+# merge family & order information 
 Trait_EU_genus[Trait_EU, 
                `:=`(family = i.family,
                     order = i.order),
@@ -64,19 +73,19 @@ tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"
 
 # only take complete trait data (almost all from tachet)
 data_tachet <-
-  get_complete_trait_data(trait_data = tachet[!is.na(genus) &
-                                                is.na(species) &
-                                                !genus %in% Trait_EU_genus$genus,])
-
+  get_complete_trait_data(
+    trait_data = tachet[!is.na(genus) &
+                          is.na(species) &
+                          !genus %in% Trait_EU_genus$genus, ],
+    non_trait_col = c("species", "genus", "family", "order")
+  )
 tachet <- Reduce(merge, data_tachet[c("locom",
                                       "feed",
                                       "resp",
                                       "volt",
                                       "ovip",
-                                      "size")])
-# define col names
-cols <- names(Trait_EU_genus)[names(Trait_EU_genus) %like% pat_traitname]
-
+                                      "size",
+                                      "dev")])
 # bind trait data
 Trait_EU_genus <- 
   rbind(Trait_EU_genus, 
@@ -120,49 +129,6 @@ Trait_EU_agg <- Trait_fam[Trait_EU_genus,
                           on = "family"]
 # del not used columns
 Trait_EU_agg[, N := NULL]
-
-#### Add information on pattern of development ####
-# Holometabolous or hemimetabolous?
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-
-Trait_EU_agg[, pattern_of_development := ifelse(
-  order %in% hemimetabola,
-  "hemimetabolous",
-  ifelse(order %in% holometabola,
-         "holometabolous",
-         "no_insect")
-)] 
 
 # cache as RDS object
 saveRDS(object = Trait_EU_agg, file = file.path(data_out, "Trait_EU_agg.rds"))
