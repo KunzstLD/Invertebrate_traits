@@ -22,3 +22,6 @@ Output/
 # Scripts for preprocessing raw data 
 # (maybe part of a new repo, mostly in https://github.com/seb1458/TraitPatter)
 R/Preprocessing_raw
+
+# Scripts & Ideas for things not implemented yet (e.g. incorporating Dispersal)
+R/Not_implemented_yet/
