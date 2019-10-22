@@ -1,14 +1,16 @@
-# ------------------------------------------------------------------------- 
+# _________________________________________________________________________ 
 #### Harmonize NOA Traits ####
-# -------------------------------------------------------------------------
+# _________________________________________________________________________
 
 # read in
 Trait_Noa <- readRDS(file = file.path(data_cleaned, "North_America", "Traits_US_pp.rds"))
 
-# Voltinism ---------------------------------------------------------------
+# _________________________________________________________________________
+#### Voltinism ####
 # volt_semi
 # volt_uni
 # volt_bi_multi
+# _________________________________________________________________________
 setnames(
   Trait_Noa,
   old = c(
@@ -19,12 +21,14 @@ setnames(
   new = c("volt_uni", "volt_semi", "volt_bi_multi")
 )
 
-# aquatic stages
+# _________________________________________________________________________
+#### aquatic stages ####
 # gives information about which stage lives in the aquatic phase 
 # stage1: egg
 # stage2: larva and/or nymph
 # stage3: egg, larva, pupa
 # stage4: egg, larva, pupa, adult
+# _________________________________________________________________________
 setnames(
   Trait_Noa,
   old = c(
@@ -36,25 +40,25 @@ setnames(
   new = c("stage_1", "stage_2", "stage_3", "stage_4")
 )
 
-# ------------------------------------------------------------------------
-
-# ph ----------------------------------------------------------------------
+# _________________________________________________________________________
+# PH 
 # ph_acidic, ph_neutral
 # neutral and alcaline combined to neutral
+# _________________________________________________________________________
 setnames(Trait_Noa, "pH_acidic", "ph_acidic")
 Trait_Noa[, ph_neutral := apply(.SD, 1, max),
           .SDcols = c("pH_normal", "pH_alkaline")]
 Trait_Noa[, c("pH_alkaline", "pH_normal") := NULL]
 
-# ------------------------------------------------------------------------
-
-# Feed mode ---------------------------------------------------------------
+# _________________________________________________________________________
+#### Feed mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
 # feed_scraper: scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
+# _________________________________________________________________________
 setnames(
   Trait_Noa,
   old = c(
@@ -105,20 +109,25 @@ detrivores <-
                  grepl("detritivore.*|Detritivore", Feed_mode_comments) &
                  !is.na(Species) & !is.na(Genus),
                .(Species, Feed_mode_prim, Feed_mode_comments, unique_id)]
+
 Trait_Noa[detrivores,
           `:=`(feed_gatherer = 1),
           on = "unique_id"]
 # omnivorous to predators?
 # mouthparts of shredders often suited for scavenging
+
+# del feed mode others
 Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 
-# -------------------------------------------------------------------------
-
-# Locomotion --------------------------------------------------------------
+# _________________________________________________________________________
+#### Locomotion ####
 # locom_swim:  swimmer, scater (active & passive)
 # locom_crawl: crawlers, walkers & sprawler, climber
 # locom_burrow: burrower
 # locom_sessil: sessil (attached)
+# What to do with clingers?
+# According to LeRoy and Chuck they should be put to crawlers
+# _________________________________________________________________________
 setnames(Trait_Noa, 
          old = c("Habit_prim_Attached/fixed", "Habit_prim_Burrower"), 
          new = c("locom_sessil", "locom_burrow"))
@@ -127,7 +136,7 @@ Trait_Noa[, locom_swim := apply(.SD, 1, max),
                       "Habit_prim_Planktonic",
                       "Habit_prim_Skater")]
 Trait_Noa[, locom_crawl := apply(.SD, 1, max),
-          .SDcols = c("Habit_prim_Sprawler", "Habit_prim_Climber")]
+          .SDcols = c("Habit_prim_Sprawler", "Habit_prim_Climber", "Habit_prim_Clinger")]
 Trait_Noa[, c(
   "Habit_prim_Swimmer",
   "Habit_prim_Planktonic",
@@ -137,20 +146,13 @@ Trait_Noa[, c(
   "Habit_prim_Clinger"
 ) := NULL]
 
-# What to do with clingers?
-# Some clingers also burrowers & swimmer -> Scan comment section
-# Trait_Noa_raw[!is.na(Habit_comments) & 
-#                     Habit_prim %in% "Clinger" & 
-#                grepl("brrow|swim|crawl", Habit_comments), .(Habit_comments, Habit_prim)]
-
-# habit prim other?
+# What to do with habit prim other?
 locom_comment <- Trait_Noa[`Habit_prim_Other (specify in comments)` == 1 &
                              (locom_sessil == 0 & locom_burrow == 0 &
                                 locom_swim == 0 &
                                 locom_crawl == 0) & !is.na(Species)
                            & !is.na(Genus),
                            .(Species, Genus, unique_id)]
-
 # crawler
 crawler <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id & 
                           grepl("(?i)crawl", Habit_comments) & !grepl("(?i)burrow", Habit_comments)
@@ -159,7 +161,6 @@ crawler <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id &
 Trait_Noa[crawler,
           `:=`(locom_crawl = 1),
           on = "unique_id"]
-
 # crawler & burrower
 crawl_burrow <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id & 
                                grepl("(?i)crawl", Habit_comments) & grepl("(?i)burrow", Habit_comments)
@@ -178,17 +179,16 @@ Trait_Noa[crawl_swim,
           `:=`(locom_crawl = 1,
                locom_swim = 1),
           on = "unique_id"]
-
+# del Habit_prim_other & Habit_prim_Clinger
 Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
-# -------------------------------------------------------------------------
 
-# Respiration -------------------------------------------------------------
+# _________________________________________________________________________
+#### Respiration ####
 # late the right choice?
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
 # resp_spi: spiracle
 # resp_pls: plastron
-
 # Resp_late_Atmospheric breathers -> Spiracle
 # Resp_late_Hemoglobin  -> just 9 entries, can be ignored
 # Resp_late_Other (specify in comments) -> Most just describe the trait more precisely
@@ -197,6 +197,7 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 # Resp_late_Spiracular gills -> Plastron!
 # Resp_late_Temporary air store -> Gills
 # Resp_late_Tracheal gills -> Gills
+# _________________________________________________________________________
 setnames(Trait_Noa,
          old = c("Resp_late_Cutaneous"),
          new = c("resp_teg"))
@@ -229,12 +230,14 @@ resp_comments <-
 # Trait_Noa_raw[unique_id %in% resp_comments$unique_id, 
 #              .(Resp_comments)]
 
+# del Resp_later_Other
 Trait_Noa[, `Resp_late_Other (specify in comments)` := NULL]
-# -------------------------------------------------------------------------
 
-# Drift/dispersal ---------------------------------------------------------
+# _________________________________________________________________________
+#### Drift/dispersal ####
 # use disp low, medium, high for comparability 
 # del dispersal_unknown
+# _________________________________________________________________________
 setnames(
   Trait_Noa,
   old = c(
@@ -246,12 +249,13 @@ setnames(
           "disp_medium",
           "disp_high")
 )
-# -------------------------------------------------------------------------
 
-# Size --------------------------------------------------------------------
+# _________________________________________________________________________
+#### Size ####
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
+# _________________________________________________________________________
 setnames(
   Trait_Noa,
   old = c(
@@ -263,13 +267,14 @@ setnames(
           "size_small",
           "size_medium")
 )
-# -------------------------------------------------------------------------
 
-# Oviposition -------------------------------------------------------------
+# _________________________________________________________________________
+#### Oviposition ####
 # Modalities
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
+# _________________________________________________________________________
 Trait_Noa[, ovip_ter := apply(.SD, 1, max),
           .SDcols = c("Ovipos_behav_prim_Bank soil",
                       "Ovipos_behav_prim_Overhanging substrate (dry)")]
@@ -314,7 +319,6 @@ Trait_Noa[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
 # missing_ovip <-
 #   Trait_Noa[`Ovipos_behav_prim_Other (specify in comments)` == 1 &
 #               (ovip_ovo == 0 & ovip_ter == 0 & ovip_aqu == 0), ]
-
 # comments ovip ter
 # Ovip_ter_US <-
 #   Trait_Noa_raw[unique_id %in% missing_ovip &
@@ -334,14 +338,17 @@ Trait_Noa[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
 # Trait_Noa[Ovip_aq_US,
 #          `:=`(ovip_aqu = 1),
 #          on = "unique_id"]
-Trait_Noa[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
-# -------------------------------------------------------------------------
 
-# Temperature -------------------------------------------------------------
+# del Ovipos_other
+Trait_Noa[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
+
+# _________________________________________________________________________
+#### Temperature ####
 # temp very cold (EU < 6 °C, NoA < 5 °C)
 # temp cold (EU < 10 °C) + temp moderate (EU < 18 °C) (NoA 0-15)
 # temp warm (EU >= 18 °C, NoA >15)
 # temp eurytherm (no pref)
+# _________________________________________________________________________
 setnames(Trait_Noa, 
          old = c("Thermal_pref_Cold stenothermal (<5 C)", 
                  "Thermal_pref_Cold-cool eurythermal (0-15 C)", 
@@ -355,6 +362,51 @@ Trait_Noa[, temp_warm := apply(.SD, 1, max),
 Trait_Noa[, c("Thermal_pref_Warm eurythermal (15-30 C)",
               "Thermal_pref_Hot euthermal (>30 C)") := NULL]
 
+# _________________________________________________________________________
+#### Pattern fo development ####
+# Holometabolous 
+# Hemimetabolous
+# No insect
+# _________________________________________________________________________
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+Trait_Noa[, `:=`(
+  dev_hemimetabol = ifelse(Order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(Order %in% holometabola, 1, 0),
+  dev_no_insect = ifelse(!(
+    Order %in% hemimetabola |
+      Order %in% holometabola
+  ), 1, 0)
+)]
 
 # change some colnames 
 setnames(Trait_Noa, 
