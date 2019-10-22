@@ -197,7 +197,7 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
 get_complete_trait_data <- function(trait_data, non_trait_col) {
 
   # pattern of non trait col names
-  non_trait_col_pat <- paste0("?(i)", paste0(non_trait_col, collapse = "|"))
+  non_trait_col_pat <- paste0("(?i)", paste0(non_trait_col, collapse = "|"))
 
   # create name vector
   name_vec <-
@@ -240,21 +240,6 @@ Mode <- function(x, na.rm = FALSE) {
     x <- x[!is.na(x)]
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
-}
-
-# Clustering --------------------------------------------------------------
-mycluster_hc <- function(x, k) {
-  list(cluster = cutree(hclust(as.dist(x),
-                        method = "ward.D2"),
-                        k = k))
-}
-
-# RF Analysis -------------------------------------------------------------
-# custom prediction function
-custom_pred <- function(object, newdata) {
-  pred <- predict(object, newdata)$predictions
-  avg <- purrr::map_df(as.data.frame(pred), mean)
-  return(avg)
 }
 
 # General data cleaning -------------------------------------------------------------
