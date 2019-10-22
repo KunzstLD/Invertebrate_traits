@@ -1,5 +1,5 @@
 # ==============================================================================
-# Preprocess Tachet data
+#### Preprocess Tachet data ####
 # ==============================================================================
 tachet <-
   fread(file.path(data_in, "EU", "Tachet_mod_S.csv"))
@@ -32,6 +32,10 @@ tachet[!grepl("(?i)[a-z]{1,}[[:space:]][a-z]{1,}", species)
 
 # del "Species" column (capital S)
 tachet[, Species := NULL]
+
+# ---------------------------------------------------
+#### Change trait names ####
+# ---------------------------------------------------
 
 # voltinism
 # grep("volt", names(dat_EU), value = TRUE)
@@ -123,7 +127,7 @@ tachet <- tachet[, -c("Subfamily", "Taxa", "unknown_taxa"), with = TRUE]
 tachet <- tachet[!grepl("\\[", family), ]
 tachet[, family := simpleCap(family)]
 
-# add information on order
+# add information on order (use freshecol data from 01_EU_preprocessing_freshecol.R script)
 tachet[dat_EU[!duplicated(family), .(family, order)], 
        `:=`(order = i.order), 
        on = "family"]
@@ -154,8 +158,9 @@ tachet[grepl("Dolichopodidae", family), order := "Diptera"]
 # few family entries in genus col
 tachet[grepl(".*dae", genus), genus := NA]
 
-
-# Harmonize Tachet data ---------------------------------------------------
+# ---------------------------------------------------
+#### Harmonize Tachet data #### 
+# ---------------------------------------------------
 
 # Modify ph preference
 # rule for combining ph fuzzy codes:
@@ -248,9 +253,54 @@ tachet[, c("rep_egg_free_iso",
            "rep_clutch_veg", 
            "rep_asexual") := NULL]
 
-#### normalization Tachet ####
+#### Pattern of development ####
+# Holometabolous or hemimetabolous
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+
+tachet[, `:=`(
+  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
+  dev_no_insect = ifelse(!(
+    order %in% hemimetabola |
+      order %in% holometabola
+  ), 1, 0)
+)]
+
+# ---------------------------------------------------
+#### Normalization Tachet ####
+# ---------------------------------------------------
 # get trait names & create pattern for subset
-# leave out ph (needs to be harmonized when merged together with Freshwaterecol)
 trait_names_pattern <-
   names(tachet[, -c("group",
                     "family", 
@@ -280,8 +330,7 @@ for(cols in trait_names_pattern) {
 # del unnecessary columns
 tachet[, c("rowSum", "group") := NULL]
 
-
-#### duplicates in Tachet database ####
+#### Duplicate Genus entries in Tachet database ####
 # make a function out of this!
 # tachet duplicates
 dupl_taxa <- tachet[duplicated(genus) & is.na(species) & !is.na(genus),]$genus
@@ -301,6 +350,9 @@ tachet_dupl <- melt(
   )
 )
 
+# Allocate duplicates
+# if just unique values -> Median
+# if Mode is NOT zero, take Mode otherwise Median
 tachet_dupl[, `:=`(
   value = ifelse(
     length(value) != length(unique(value)),
@@ -314,6 +366,7 @@ tachet_dupl[, `:=`(
   by = variable]
 
 # convert back to long format
+# values for each trait category per genus are the same (hence mean(x) = x)
 tachet_dupl <- dcast(
   data = tachet_dupl,
   formula = species + genus + family + order ~
