@@ -2,7 +2,6 @@
 # Loads required packages for Trait data cleaning & Harmonization
 # Loads scripts with used functions
 # Loads paths with location for data 
-# TODO could set relativ paths to the wd for collabarative work
 
 # Data location
 data_in <- "./Data"
