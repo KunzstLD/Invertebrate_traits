@@ -5,16 +5,16 @@
 # TODO could set relativ paths to the wd for collabarative work
 
 # Data location
-data_in <- "~/Dokumente/Projects/Trait_DB/Invertebrate_traits/Data"
+data_in <- "./Data"
 
 # Path for intermediate output (e.g. cleaned data)
-data_cleaned <- "~/Dokumente/Projects/Trait_DB/Invertebrate_traits/Cleaned_data"
+data_cleaned <- "./Cleaned_data"
 
 # Path for output 
-data_out <- "~/Dokumente/Projects/Trait_DB/Invertebrate_traits/Output"
+data_out <- "./Output"
 
 # Location for R scripts
-data_scr <- "~/Dokumente/Projects/Trait_DB/Invertebrate_traits/R"
+data_scr <- "./R"
 
 # libraries
 library(dplyr)    # basic data transformation
