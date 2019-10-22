@@ -263,6 +263,51 @@ for (j in cols){
   data.table::set(Trait_EU, which(is.na(Trait_EU[[j]])),j,0)
 }
 
+#### Pattern fo development ####
+
+# Holometabolous or hemimetabolous?
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+
+Trait_EU[, `:=`(
+  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
+  dev_no_insect = ifelse(!(
+    order %in% hemimetabola |
+      order %in% holometabola
+  ), 1, 0)
+)]
+
 #### Correct information on order level ####
 
 # Heteroptera is a suborder in Hemiptera
