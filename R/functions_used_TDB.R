@@ -1,6 +1,6 @@
 # Functions used in Trait Analysis ----------------------------------------
 
-# Preprocessing  & data cleaning -----------------------------------------------------------
+# Preprocessing  & data cleaning ------------------------------------------
 
 #### coalesce implementation when x is zero ####
 coalesce_with_zero <- function(...) {
@@ -139,7 +139,7 @@ fetch_dupl <- function(data, col) {
 # the Mode is taken when the same taxa occurs multiple times
 # if all values are unique, the median is taken. 
 # If the mode would be zero, the median is taken as well
-# requires dataset to have trait columns + taxa columns (species, genus, family, order)
+# requires: dataset to have trait columns + taxa columns (species, genus, family, order)
 condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
   # subset to duplicate taxa
   dupl_taxa <-
