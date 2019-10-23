@@ -1,7 +1,7 @@
 
-# ------------------------------------------------------------------------- 
+# _________________________________________________________________________  
 #### Harmonize AUS Traits ####
-# -------------------------------------------------------------------------
+# _________________________________________________________________________ 
 # TODO add a more detailed description 
 
 # read in preprocessed trait data
@@ -13,11 +13,12 @@ Trait_AUS <- readRDS(
   )
 )
 
-
-# Voltinism ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Voltinism #### 
 # volt_semi
 # volt_uni
 # volt_bi_multi
+# _________________________________________________________________________ 
 Trait_AUS[, volt_semi := apply(.SD, 1, max),
           .SDcols = c("Voltinism_less_than_1_VicEPA",
                       "Volt1_botwe",
@@ -52,12 +53,13 @@ Trait_AUS[, c(
   "Voltinism_more_than_2_VicEPA"
 ) := NULL]
 
-# Aquatic stages ---------------------------------------------------------------
-# gives information about which stage lives in the aquatic phase 
+# _________________________________________________________________________ 
+#### Aquatic stages #### 
 # stage_egg
 # stage_larva: larva and/or nymph
 # stage_pupa
 # stage_adult
+# _________________________________________________________________________ 
 setnames(
   Trait_AUS,
   old = c(
@@ -72,11 +74,14 @@ setnames(
           "stage_adult")
 )
 
-# Ph ---------------------------------------------------------------------
+# _________________________________________________________________________ 
+#### PH ####
 # only one modality
 # Trait_AUS$ph_acidic
+# _________________________________________________________________________ 
 
-# Feed mode ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Feed mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
@@ -85,6 +90,7 @@ setnames(
 # feed_parasite: parasite
 # Feeding piercers have not been used -> ask Verena?
 # names(Trait_AUS[, .SD,.SDcols = names(Trait_AUS) %like% "(?i)Trop|feed"])
+# _________________________________________________________________________ 
 Trait_AUS[, feed_shredder := apply(.SD, 1, max), 
           .SDcols = c("feeding_shredder_Marchant", 
                       "Feeding_shredders_VicEPA", 
@@ -169,13 +175,14 @@ Trait_AUS[, c(
   "Filterer_proportion_of_feeding_fam_Chessman2017" 
 ) := NULL]
 
-# Locomotion  ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Locomotion ####  
 # locm_swim:  swimmer, scater (active & passive)
-# locm_crawl: crawlers, walkers & sprawler, climber
+# locm_crawl: crawlers, walkers & sprawler, climber, clinger (Habi4_botwe)
 # locm_burrow: burrower
 # locm_sessil: sessil (attached)
 # Attach_perm_VicEPA just contained zeros
-# Habi4_Clinger?
+# _________________________________________________________________________ 
 Trait_AUS[, locom_swim := apply(.SD, 1, max), 
           .SDcols = c("Habi5_botwe",
                       "Habi6_botwe",
@@ -183,6 +190,7 @@ Trait_AUS[, locom_swim := apply(.SD, 1, max),
 Trait_AUS[, locom_crawl := apply(.SD, 1, max), 
           .SDcols = c("Habi3_botwe",
                       "Habi2_botwe",
+                      "Habi4_botwe",
                       "Attach_crawl_VicEPA")]
 Trait_AUS[, locom_burrow := apply(.SD, 1, max), 
           .SDcols = c("Habi1_botwe", 
@@ -202,12 +210,15 @@ Trait_AUS[, c(
   "Attach_swim_VicEPA"
 ) := NULL]
 
-# Respiration  ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Respiration ####  
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
 # resp_spi: spiracle (atmospheric & plant breathers (Maxwell_1 & 2))
 # resp_pls: plastron
 # Maxwell trait on Plastron not used, since ambiguous (Plastron and gills)
+# _________________________________________________________________________ 
+
 Trait_AUS[, resp_teg := apply(.SD, 1, max), 
           .SDcols = c("Respiration_tegument_VicEPA", 
                       "Resp1_botwe",
@@ -262,11 +273,12 @@ Trait_AUS[, c("Respiration_tegument_VicEPA",
               "Gills_aquatic_stages_genus_Chessman2017",
               "Functional_spiracles_aquatic_stages_genus_Chessman2017",
               "Functional_spiracles_aquatic_stages_fam_Chessman2017") := NULL]
-
-# Size  ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Size #### 
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
+# _________________________________________________________________________ 
 Trait_AUS[, size_small := apply(.SD, 1, max), 
           .SDcols = c("Max_size_less_than_5_VicEPA", 
                       "Size1_botwe",
@@ -310,10 +322,12 @@ Trait_AUS[, c(
   "size_small_genus_Chessman"
 ) := NULL]
 
-# Oviposition  ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Oviposition ####  
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
+# _________________________________________________________________________ 
 Trait_AUS[,  ovip_ter := apply(.SD, 1, max),
           .SDcols = c("Rep2_botwe",
                       "repro2_Maxwell")]
@@ -340,20 +354,70 @@ Trait_AUS[, c(
   "ovip_ovo_Shafer"
 ) := NULL]
 
-# Temperature  ---------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Temperature ####  
 # temp very cold
 # temp cold + temp moderate
 # temp warm
 # temp eurytherm
-# Ther1_botwe not used (cool/warm eurythermal) -> ambiguous
+# Ther1_botwe not used (cool/warm eurythermal) -> ambiguou
+# _________________________________________________________________________ 
 Trait_AUS[, temp_eurytherm := apply(.SD, 1, max),
           .SDcols = c("Ther2_botwe", "Ther3_botwe")]
 Trait_AUS[, c("Ther1_botwe",
               "Ther2_botwe",
               "Ther3_botwe") := NULL]
 
-# ----------------------------------------------------------------
+# _________________________________________________________________________ 
+#### Pattern of development ####
+# hemimetabolous
+# holometabolous
+# no insect
+# _________________________________________________________________________ 
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+Trait_AUS[, `:=`(
+  dev_hemimetabol = ifelse(Order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(Order %in% holometabola, 1, 0),
+  dev_no_insect = ifelse(!(
+    Order %in% hemimetabola |
+      Order %in% holometabola
+  ), 1, 0)
+)]
+
+# _________________________________________________________________________ 
 #### Normalization ####
+# _________________________________________________________________________ 
+
 # get trait names & create pattern for subset
 trait_names_pattern <-
   names(Trait_AUS[, -c("unique_id",

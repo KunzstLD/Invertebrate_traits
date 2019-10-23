@@ -1,5 +1,6 @@
-# ----------------------------------------------------
+# _________________________________________________________________________ 
 #### Harmonize EU Traits ####
+# _________________________________________________________________________ 
 
 # TODO: ph values from Trait_EU need to be incorporated & normalized 
 
@@ -7,32 +8,37 @@
 # read in RDS
 Trait_EU <- readRDS(file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
 
-
+# _________________________________________________________________________ 
 #### Voltinism ####
 # volt_semi
 # volt_uni
 # volt_bi_multi
+# _________________________________________________________________________ 
 Trait_EU[, volt_bi_multi := apply(.SD, 1, max),
            .SDcols = c("volt_bi", "volt_tri", "volt_multi", "volt_flex")]
 Trait_EU[, c("volt_bi", "volt_tri", "volt_multi", "volt_flex") := NULL]
 
-
+# _________________________________________________________________________ 
 #### aquatic stages ####
 # gives information about which stage lives in the aquatic phase 
 # stage_egg
 # stage_larva: larva and/or nymph
 # stage_pupa
 # stage_adult
+# _________________________________________________________________________ 
 Trait_EU[, stage_larva := apply(.SD, 1, max),
            .SDcols = c("stage_larva", "stage_nymph")]
 Trait_EU[, stage_nymph := NULL]
 
+# _________________________________________________________________________ 
 #### ph ####
 # ph_acidic, ph_neutral
 # pH_ind (indifferent) is dismissed from database (128 entries with 1)
+# _________________________________________________________________________ 
 setnames(Trait_EU, "ph_neutral_alk", "ph_neutral")
 Trait_EU[, ph_ind := NULL]
 
+# _________________________________________________________________________ 
 #### Feed mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
@@ -40,6 +46,7 @@ Trait_EU[, ph_ind := NULL]
 # feed_scraper: scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
+# _________________________________________________________________________ 
 setnames(Trait_EU,
          c("feed_gath", "feed_grazer"),
          c("feed_gatherer", "feed_scraper"))
@@ -58,11 +65,13 @@ Trait_EU[, c(
 # feed other deleted in the first instance
 Trait_EU[, feed_other := NULL]
 
+# _________________________________________________________________________ 
 #### Locomotion ####
 # locm_swim:  swimmer, scater (active & passive)
 # locm_crawl: crawlers, walkers & sprawler
 # locm_burrow: burrower
 # locm_sessil: sessil (attached)
+# _________________________________________________________________________ 
 Trait_EU[, locom_swim := apply(.SD, 1, max), 
            .SDcols = c("locom_swim_skate", "locom_swim_dive")]
 setnames(Trait_EU,
@@ -80,6 +89,7 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
 #                   locom_sessil, locom_swim)]
 # )
 
+# _________________________________________________________________________ 
 #### Respiration ####
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
@@ -91,9 +101,10 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
 # table(Trait_EU$resp_ves)
 # table(Trait_EU$resp_tap)
 # table(Trait_EU$resp_sur)
+# _________________________________________________________________________ 
 Trait_EU[, c("resp_tap", "resp_ves", "resp_sur") := NULL]
 
-# =================== This needs to be fixed ======================
+# =================== Dispersal -> This needs to be fixed ======================
 # Drift/dispersal
 # use disp low, medium, high for comparability 
 # del dispersal_unknown
@@ -114,12 +125,14 @@ Trait_EU[, dispersal_unknown := NULL]
 # Trait_EU[is.na(dispersal_medium), dispersal_medium := 0]
 # =================================================================
 
+# _________________________________________________________________________ 
 #### Oviposition ####
 # Modalities
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
-# rep_asexual
+# rep_asexual is deleted
+# _________________________________________________________________________ 
 Trait_EU[,  ovip_ter := apply(.SD, 1, max),
            .SDcols = c("rep_clutch_veg", "rep_clutch_ter")]
 Trait_EU[, ovip_aqu := apply(.SD, 1, max),
@@ -143,20 +156,25 @@ Trait_EU[, c(
   "rep_asexual"
 ) := NULL]
 
+# _________________________________________________________________________ 
 #### Temperature ####
 # temp very cold (< 6 °C)
 # temp cold (< 10 °C)
 # temp moderate (< 18 °C)
 # temp warm (>= 18 °C)
 # temp eurytherm (no specific preference)
+# _________________________________________________________________________ 
 Trait_EU[, temp_cold := apply(.SD, 1, max),
            .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")]
 Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 
-#### normalization Freshecol ####
+# _________________________________________________________________________ 
+#### Normalization Freshecol ####
 # TODO made a function out of this!
 # get trait names & create pattern for subset
 # leave out ph (needs to be harmonized when merged together with Freshwaterecol)
+# _________________________________________________________________________ 
+
 trait_names_pattern <-
   names(Trait_EU[, -c("species", 
                         "genus",
@@ -186,11 +204,11 @@ Trait_EU[, rowSum := NULL]
 # excludelife stage for now -> can not be complemented by tachet and not needed for now
 Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"] 
 
-# ----------------------------------------------------------------------------------------
+# _________________________________________________________________________ 
 #### Complement with tachet data  
-
 # Information from tachet is just considered for entries in freshecol with missing information
 # Information on the same trait was taken from Freshecol
+# _________________________________________________________________________ 
 
 # Load tachet data
 tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
@@ -241,11 +259,12 @@ Trait_EU <- rbind(Trait_EU,
                            .SDcols = !(names(tachet) %like% "^stage|^disp|size")], 
                     use.names = TRUE,
                     fill = TRUE)
-
-#### Add Size ####
+# _________________________________________________________________________ 
+#### Size ####
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
+# _________________________________________________________________________ 
 Trait_EU[tachet, 
            `:=`(size_large = i.size_large,
                 size_medium = i.size_medium,
@@ -263,9 +282,12 @@ for (j in cols){
   data.table::set(Trait_EU, which(is.na(Trait_EU[[j]])),j,0)
 }
 
+# _________________________________________________________________________ 
 #### Pattern fo development ####
-
-# Holometabolous or hemimetabolous?
+# Holometabolous 
+# hemimetabolous?
+# no insect
+# _________________________________________________________________________ 
 hemimetabola <- c(
   "Ephemeroptera",
   "Odonata",
@@ -308,7 +330,9 @@ Trait_EU[, `:=`(
   ), 1, 0)
 )]
 
+# _________________________________________________________________________ 
 #### Correct information on order level ####
+# _________________________________________________________________________ 
 
 # Heteroptera is a suborder in Hemiptera
 Trait_EU[grepl("Heteroptera", order), order := "Hemiptera"]
@@ -363,7 +387,6 @@ Trait_EU[grepl("Normandia", genus), `:=`(family = "Elmidae",
                                            order = "Coleoptera")]
 Trait_EU[grepl("Stenostomum", genus), `:=`(family = "Stenostomidae", 
                                              order = "Catenulida")]
-
 # save
 saveRDS(object = Trait_EU, 
         file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))

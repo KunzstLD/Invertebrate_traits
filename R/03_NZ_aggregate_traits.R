@@ -1,7 +1,7 @@
 
-# -------------------------------------------------------------------------
+# _________________________________________________________________________
 ####  Aggregation of traits NZ ####
-# -------------------------------------------------------------------------
+# _________________________________________________________________________
 
 # read in Trait NZ
 Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
@@ -12,7 +12,7 @@ Trait_NZ[,unique_id := 1:nrow(Trait_NZ)]
 # subset so that only traits with complete information are retained
 trait_col <-
   grep(
-    "(?i)Species|Genus|Family|Order|unique_id",
+    "(?i)species|genus|family|order|unique_id",
     names(Trait_NZ),
     invert = TRUE,
     value = TRUE
@@ -32,22 +32,49 @@ for (i in seq_along(name_vec)) {
 output
 
 # just return rows where for each trait there is an observation 
-data <- get_complete_trait_data(trait_data = Trait_NZ)
-
+data <- get_complete_trait_data(
+  trait_data = Trait_NZ,
+  non_trait_col = c("species",
+                    "genus",
+                    "family",
+                    "order",
+                    "unique_id")
+)
 # lapply(data, nrow)
 Trait_NZ <- Reduce(merge, data[c("locom",
                                  "feed",
                                  "resp",
                                  "volt",
                                  "ovip",
-                                 "size")])
+                                 "size",
+                                 "dev")])
+
+# Subset to interesting orders:
+Trait_NZ <- Trait_NZ[order %in% c(
+  "Ephemeroptera",
+  "Hemiptera",
+  "Odonata",
+  "Trichoptera",
+  "Venerida",
+  "Coleoptera",
+  "Plecoptera",
+  "Diptera",
+  "Amphipoda"
+), ]
+
+# del unique_id
 Trait_NZ[, unique_id := NULL]
 
-# -------------------------------------------------------------
-#### Aggregation ####
-# -------------------------------------------------------------
+# _________________________________________________________________________
+#### Aggregate to genus level ####
 
-# 1) step -> use Median
+# Interesting? 
+  # Depending on aggregation method:
+  # How many species used for Aggregation
+  # from Species to Genus 
+  # from Genus to Family (already implemented)
+# _________________________________________________________________________
+
 # create name pattern to choose traits
 pat_traitname <- paste(trait_col, collapse = "|")
 
@@ -56,19 +83,17 @@ pat_traitname <- paste(trait_col, collapse = "|")
 Trait_NZ_genus <- Trait_NZ[!is.na(species), lapply(.SD, median), 
                            .SDcols = names(Trait_NZ) %like% pat_traitname, 
                            by = genus]
-
 # merge family information back
 Trait_NZ_genus[Trait_NZ[!is.na(species), ], 
                `:=`(family = i.family,
                     order = order),
                on = "genus"]
-
 # bind with data resolved on Genus level 
 Trait_NZ_genus <-
   rbind(Trait_NZ_genus, Trait_NZ[is.na(species) &
                                    !is.na(genus),], fill = TRUE)
-
-# 2 ) aggregate on family level
+# _________________________________________________________________________
+#### Aggregate on family level ####
 # take mode if duplicates, otherwise maximum
 # test <- Trait_NZ_genus[, lapply(.SD, Mode, na.rm = TRUE), 
 #                .SDcols = names(Trait_NZ_genus) %like% "^temp", 
@@ -82,6 +107,7 @@ Trait_NZ_genus <-
 # }), .N),
 # .SDcols = names(Trait_NZ_genus) %like% pat_traitname,
 # by = "Family"]
+# _________________________________________________________________________
 Trait_fam <- Trait_NZ_genus[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y)
@@ -105,73 +131,17 @@ Trait_fam[Trait_NZ_genus,
 Trait_fam[, N := NULL]
 
 # filter for taxa resolved on family level that are not present in aggregated dataset
-# will be added as well
+# Those will be added as well
 Trait_NZ_resol_fam <- Trait_NZ[is.na(species) &
                                  is.na(genus) &
                                  !(family %in% Trait_fam$family) &
                                  !is.na(family), ]
-
-# condense duplicates 
-Trait_NZ_resol_fam <-
-  condense_dupl_numeric(trait_data = Trait_NZ_resol_fam,
-                        col_with_dupl_entries = "family") 
+# Duplicates? -> No!
+# Trait_NZ_resol_fam$family %>% duplicated()
 
 # rbind with trait data resolved on family level
 Trait_NZ_agg <- rbind(Trait_NZ_resol_fam[, -c("species", "genus")], 
                       Trait_fam) 
 
-#### Preparation for analysis ####
-
-# feeding mode parasite -> 1 for Hirundinea
-Trait_NZ_agg[, feed_parasite := ifelse(grepl("Rhynchobdellida", order), 1, 0)]
-
-#### Add information on pattern of development ####
-# Holometabolous or hemimetabolous?
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-
-Trait_NZ_agg[, pattern_of_development := ifelse(
-  order %in% hemimetabola,
-  "hemimetabolous",
-  ifelse(order %in% holometabola,
-         "holometabolous",
-         "no_insect")
-)] 
-
 # save
 saveRDS(object = Trait_NZ_agg, file = file.path(data_out, "Trait_NZ_agg.rds"))
-
-# Depending on aggregation method:
-# How many species used for Aggregation
-# from Species to Genus 
-# from Genus to Family (already implemented)

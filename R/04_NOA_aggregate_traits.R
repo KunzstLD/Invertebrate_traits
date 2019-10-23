@@ -1,6 +1,7 @@
 
 # _________________________________________________________________________
 #### Aggregation of traits NOA #### 
+# TODO: Check and simplify Aggregation functions
 # _________________________________________________________________________
 
 # read in pp_harmonized
@@ -61,7 +62,6 @@ Trait_Noa <- Reduce(merge, data[c("locom",
 # "size", 
 # "stage"
 
-
 # Subset to interesting orders: Ephemeroptera, Hemiptera, Odonata, 
 # Trichoptera, Venerida, Coleoptera, Plecoptera, Diptera, Amphipoda
 Trait_Noa <- Trait_Noa[order %in% c(
@@ -78,7 +78,6 @@ Trait_Noa <- Trait_Noa[order %in% c(
 
 # _________________________________________________________________________
 #### First aggregation step ####
-# over Median
 # _________________________________________________________________________
 
 # create name pattern for relevant traits
@@ -101,7 +100,7 @@ Trait_Noa_genus <-
                                    -c("unique_id", "species")])
 
 # _________________________________________________________________________
-#### Aggregate on family level
+#### Aggregate to family level ####
 # take mode if duplicates, otherwise maximum
 # test <- Trait_Noa_genus[, lapply(.SD, Mode, na.rm = TRUE), 
 #                .SDcols = names(Trait_Noa_genus) %like% "^temp", 

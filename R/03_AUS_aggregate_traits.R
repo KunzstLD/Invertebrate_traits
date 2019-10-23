@@ -1,19 +1,7 @@
 
-# -------------------------------------------------------------------------
+# _________________________________________________________________________ 
 ####  Aggregation of traits AUS ####
-
-# - Aggregation: Median to Genus/ Mode for Family -> differing amount of 
-# values to calculate value for each modality
-# sum(table(Trait_AUS[grepl("Chirono.*", family)]$temp_eurytherm))
-
-# Poff et al. 2006: most common genus-level modality assigned (genus level
-# trait data with family-level monitoring data)
-# which(table(Trait_AUS$genus) == max(table(Trait_AUS$genus), na.rm = TRUE))
-
-# TODO add a more detailed description 
-# TODO Pattern of development in harmonized traits
-# -------------------------------------------------------------------------
-
+# _________________________________________________________________________ 
 
 # read in harmonized & preprocessed EU Trait DB
 Trait_AUS <- readRDS(
@@ -35,8 +23,7 @@ trait_col <-
 
 # subset so that only traits with complete information are retained
 # test how complete trait sets are
-name_vec <- sub("\\_.*", "", trait_col)
-name_vec <- unique(name_vec)
+name_vec <- sub("\\_.*", "", trait_col) %>% unique()
 output <- matrix(ncol = 2, nrow = length(name_vec))
 
 for (i in seq_along(name_vec)) {
@@ -51,15 +38,23 @@ for (i in seq_along(name_vec)) {
 # output
 
 # just return rows where for each trait there is an observation 
-data <- get_complete_trait_data(trait_data = Trait_AUS)
-
+data <- get_complete_trait_data(
+  trait_data = Trait_AUS,
+  non_trait_col = c("unique_id",
+                    "species",
+                    "genus",
+                    "family",
+                    "order")
+)
 # lapply(data, nrow)
+
 Trait_AUS <- Reduce(merge, data[c("locom",
                                   "feed",
                                   "resp",
                                   "volt",
                                   "ovip",
-                                  "size")])
+                                  "size",
+                                  "dev")])
 
 # How does this exactly work?
 # Reduce(function(x,y) merge(x = y, y = y, by = c("unique_id")), 
@@ -70,13 +65,36 @@ Trait_AUS <- Reduce(merge, data[c("locom",
 #             "volt",
 #             "size")])
 
+# Subset to interesting orders: Ephemeroptera, Hemiptera, Odonata, 
+# Trichoptera, Venerida, Coleoptera, Plecoptera, Diptera, Amphipoda
+Trait_AUS <- Trait_AUS[order %in% c(
+  "Ephemeroptera",
+  "Hemiptera",
+  "Odonata",
+  "Trichoptera",
+  "Venerida",
+  "Coleoptera",
+  "Plecoptera",
+  "Diptera",
+  "Amphipoda"
+), ]
+
 # rm unique id col
 Trait_AUS[, unique_id := NULL]
 
-# ------------------------------------------------------------------------------------------
+# _________________________________________________________________________
 #### Aggregation of traits ####
+# - Aggregation: 
+ # Median to Genus/ 
+ # Mode for Family 
+# -> differing amount of values to calculate value for each modality
+# sum(table(Trait_AUS[grepl("Chirono.*", family)]$temp_eurytherm))
 
-# First aggregation step -> use Median
+# Poff et al. 2006: most common genus-level modality assigned (genus level
+# trait data with family-level monitoring data)
+# which(table(Trait_AUS$genus) == max(table(Trait_AUS$genus), na.rm = TRUE))
+# _________________________________________________________________________
+
 # create name pattern to choose traits
 pat_traitname <- paste(trait_col, collapse = "|")
 
@@ -85,19 +103,17 @@ pat_traitname <- paste(trait_col, collapse = "|")
 Trait_AUS_genus <- Trait_AUS[!is.na(species), lapply(.SD, median), 
                              .SDcols = names(Trait_AUS) %like% pat_traitname, 
                              by = genus]
-
 # merge family information 
 Trait_AUS_genus[Trait_AUS[!is.na(species), ], 
                 `:=`(family = i.family,
                      order = i.order),
                 on = "genus"]
-
 # bind with data resolved on Genus level 
 Trait_AUS_genus <-
   rbind(Trait_AUS_genus, Trait_AUS[is.na(species) &
                                      !is.na(genus),], fill = TRUE)
-
-# aggregate on family level
+# _________________________________________________________________________
+#### Aggregate to family level ####
 # take mode if duplicates, otherwise maximum
 # test <- Trait_AUS_genus[, lapply(.SD, Mode, na.rm = TRUE), 
 #                .SDcols = names(Trait_AUS_genus) %like% "^temp", 
@@ -111,6 +127,8 @@ Trait_AUS_genus <-
 # }), .N),
 # .SDcols = names(Trait_AUS_genus) %like% pat_traitname,
 # by = family]
+# _________________________________________________________________________
+
 Trait_fam <- Trait_AUS_genus[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y)
@@ -148,49 +166,6 @@ Trait_AUS_resol_fam <-
 # rbind with trait data resolved on family level
 Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus")], 
                        Trait_fam)
-
-#### Add information on pattern of development ####
-# Holometabolous or hemimetabolous?
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-
-Trait_AUS_agg[, pattern_of_development := ifelse(
-  order %in% hemimetabola,
-  "hemimetabolous",
-  ifelse(order %in% holometabola,
-         "holometabolous",
-         "no_insect")
-)] 
 
 # save
 saveRDS(object = Trait_AUS_agg,
