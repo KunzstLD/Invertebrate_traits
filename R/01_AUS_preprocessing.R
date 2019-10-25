@@ -1,14 +1,15 @@
 
-# ------------------------------------------------------------------------- 
+# _________________________________________________________________________
 #### Preprocessing AUS Traits ####
-# -------------------------------------------------------------------------
 # TODO add a more detailed description 
+# _________________________________________________________________________
+
 
 # load raw Trait database
 Trait_AUS <-
   fread(file.path(data_in,
                   "Australia",
-                  "Australian macroinv trait database 17 05.csv"))
+                  "Australian macroinv trait database 24 10.csv"))
 
 # delete entries with "Adult"
 Trait_AUS <- Trait_AUS[!grepl("(?i)Adult", Species), ]
@@ -58,7 +59,6 @@ setnames(
     )
   )
 )
-
 
 # TODO incorporate Body form as trait!
 # grep("(?i)body|shape|form", names(Trait_AUS), value = TRUE)
@@ -162,16 +162,21 @@ setnames(
   skip_absent = TRUE
 )
 
-# Trait preprocessing categorical traits ---------------------------------
+# ________________________________________________________________________
+#### Trait preprocessing categorical traits #### 
+# ________________________________________________________________________
 
 # Trait_AUS[, lapply(.SD, max, na.rm =TRUE),
 #           .SDcols = -c("unique_id", "Species", "Genus", "Family", "Order")]
-# Respiration
+
+# ________________________________________________________________________
+##### Respiration ####
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
 # resp_spi: spiracle
 # resp_pls: plastron
 # resp_atm: atmospheric breathers 
+# ________________________________________________________________________
 
 # Respiration bugs gbr
 Trait_AUS[, `:=`(
@@ -182,19 +187,20 @@ Trait_AUS[, `:=`(
 )]
 Trait_AUS[, Respiration_bugs_gbr := NULL]
 
-# Respiration Shafer
-# unique(Trait_AUS$Respiration_Shafer)
+# Respiration Schaefer
+# unique(Trait_AUS$Respiration_Schaefer)
 Trait_AUS[, `:=`(
-  resp_teg_Shafer = ifelse(grepl("Cutaneous" ,Respiration_Shafer) , 1, 0),
-  resp_gil_Shafer = ifelse(grepl("Gills", Respiration_Shafer), 1, 0),
-  resp_pls_Shafer = ifelse(grepl("Plastron", Respiration_Shafer), 1, 0),
-  resp_atm_Shafer = ifelse(grepl("Air\\-breathing", Respiration_Shafer), 1, 0)
+  resp_teg_Schaefer = ifelse(grepl("Cutaneous" ,Respiration_Schaefer) , 1, 0),
+  resp_gil_Schaefer = ifelse(grepl("Gills", Respiration_Schaefer), 1, 0),
+  resp_pls_Schaefer = ifelse(grepl("Plastron", Respiration_Schaefer), 1, 0),
+  resp_atm_Schaefer = ifelse(grepl("Air\\-breathing", Respiration_Schaefer), 1, 0)
 )]
-Trait_AUS[, Respiration_Shafer := NULL]
+Trait_AUS[, Respiration_Schaefer := NULL]
 
-# Number_of_generations_per_year_bugs_gbr
+# ________________________________________________________________________
+#### Number_of_generations_per_year_bugs_gbr ####
 # only categories used that are useful & not ambiguous
-# volt_semi
+# ________________________________________________________________________
 Trait_AUS[, `:=`(
   volt_semi = ifelse(grepl("0\\.25|0\\.5$", Number_of_generations_per_year_bugs_gbr), 1, 0),
   volt_uni = ifelse(grepl("^1$|<\\=1|0.5\\-1", Number_of_generations_per_year_bugs_gbr), 1, 0),
@@ -202,19 +208,24 @@ Trait_AUS[, `:=`(
 )]
 Trait_AUS[, Number_of_generations_per_year_bugs_gbr := NULL]
 
-# Number_of_generations_per_year_Shafer
+# Number_of_generations_per_year_Schaefer
 Trait_AUS[, `:=`(
-  volt_uni_Shafer = ifelse(grepl("^1$|0.5\\-1", Number_of_generations_per_year_Shafer), 1, 0),
-  volt_bi_multi_Shafer = ifelse(grepl("2-3|^2|2-10", Number_of_generations_per_year_Shafer), 1, 0)
+  volt_uni_Schaefer = ifelse(grepl("^1$|0.5\\-1", Number_of_generations_per_year_Schaefer), 1, 0),
+  volt_bi_multi_Schaefer = ifelse(grepl("2-3|^2|2-10", Number_of_generations_per_year_Schaefer), 1, 0)
 )]
-Trait_AUS[, Number_of_generations_per_year_Shafer := NULL]
+Trait_AUS[, Number_of_generations_per_year_Schaefer := NULL]
+
+# ________________________________________________________________________
+#### Reproduction/Oviposition ####
+# ________________________________________________________________________
 
 # Reproduction_type_bugs_gbr
+# unique(Trait_AUS$Reproduction_type_bugs_gbr)
 Trait_AUS[, `:=`(
   ovip_aqu = ifelse(
     grepl(
       "(?i)aquatic eggs$|shallow|stones$|algae|adults|plants|substrate|free",
-      Reproduction_type_Shafer,
+      Reproduction_type_bugs_gbr,
       perl = TRUE
     ),
     1,
@@ -223,7 +234,7 @@ Trait_AUS[, `:=`(
   ovip_ter = ifelse(
     grepl(
       "(?i)(?=.*terrestrial)(?!.*some)(?!.*almost)",
-      Reproduction_type_Shafer,
+      Reproduction_type_bugs_gbr,
       perl = TRUE
     ),
     1,
@@ -231,29 +242,31 @@ Trait_AUS[, `:=`(
   ),
   ovip_ovo = ifelse(
     grepl("(?i)(?=.*ovo)(?!.*or)",
-          Reproduction_type_Shafer, perl = TRUE),
+          Reproduction_type_bugs_gbr, perl = TRUE),
     1,
     0
   )
 )]
 Trait_AUS[, Reproduction_type_bugs_gbr := NULL]
 
-# Reproduction_type_Shafer
+# Reproduction_type_Schaefer
 # no ovip_ter, since only description ambiguous (some taxa terrestrial eggs)
-# unique(Trait_AUS$Reproduction_type_Shafer)
+# unique(Trait_AUS$Reproduction_type_Schaefer)
 Trait_AUS[, `:=`(
-  ovip_aqu_Shafer = ifelse(grepl("(?i)aquatic|plants|substrate|fre", 
-                                 Reproduction_type_Shafer), 1, 0),
-  ovip_ovo_Shafer = ifelse(grepl("(?i)ovo", Reproduction_type_Shafer), 1, 0))]
-Trait_AUS[, Reproduction_type_Shafer := NULL]
+  ovip_aqu_Schaefer = ifelse(grepl("(?i)aquatic|plants|substrate|fre", 
+                                 Reproduction_type_Schaefer), 1, 0),
+  ovip_ovo_Schaefer = ifelse(grepl("(?i)ovo", Reproduction_type_Schaefer), 1, 0))]
+Trait_AUS[, Reproduction_type_Schaefer := NULL]
 
-# Feed mode bugs gbr
+# _________________________________________________________________________
+#### Feeding mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
 # feed_scraper: scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
+# _________________________________________________________________________
 Trait_AUS[, `:=`(
   feed_shredder = ifelse(grepl("(?i)herbivores|detritivores$", 
                                Feeding_group_bugs_gbr), 1, 0),
@@ -262,20 +275,26 @@ Trait_AUS[, `:=`(
 )]
 Trait_AUS[, Feeding_group_bugs_gbr := NULL]
 
-# feeding groups from Shafer
+# feeding groups from Schaefer
 Trait_AUS[, `:=`(
-  feed_shredder_Shafer = ifelse(grepl("(?i)herbivores|detritivores$|detritivores and herbivores", 
-                                      Feeding_group_Shafer), 1, 0),
-  feed_predator_Shafer = ifelse(grepl("Predator", Feeding_group_Shafer), 1, 0), 
-  feed_parasite_Shafer = ifelse(grepl("^Parasite$", Feeding_group_Shafer), 1, 0)
+  feed_shredder_Schaefer = ifelse(grepl("(?i)herbivores|detritivores$|detritivores and herbivores", 
+                                      Feeding_group_Schaefer), 1, 0),
+  feed_predator_Schaefer = ifelse(grepl("Predator", Feeding_group_Schaefer), 1, 0), 
+  feed_parasite_Schaefer = ifelse(grepl("^Parasite$", Feeding_group_Schaefer), 1, 0)
 )]
-Trait_AUS[, Feeding_group_Shafer := NULL]
+Trait_AUS[, Feeding_group_Schaefer := NULL]
 
-# Classify continuous traits 
+# _________________________________________________________________________
+#### Classify continuous traits ####
+# Max body size number & Max body text carry the same information 
+# _________________________________________________________________________
+
+# _________________________________________________________________________
+#### Size ####
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
-# Max body size number & Max body text carry the same information  
+# _________________________________________________________________________
 
 # Max_body_size_mm_gbr 
 Trait_AUS[, `:=`(
@@ -289,16 +308,16 @@ Trait_AUS[, `:=`(
   size_large = ifelse(Max_body_size_mm__number_bugs_gbr > 16, 1, 0)
 )]
 
-# Max body size Schäfer
+# Max body size Schaefer
 Trait_AUS[, `:=`(
-  size_small_Shafer = ifelse(Max_body_size_mm__number_Shafer < 9, 1, 0),
-  size_medium_Shafer = ifelse(
-    Max_body_size_mm__number_Shafer >= 9 &
-      Max_body_size_mm__number_Shafer <= 16,
+  size_small_Schaefer = ifelse(Max_body_size_mm__number_Schaefer < 9, 1, 0),
+  size_medium_Schaefer = ifelse(
+    Max_body_size_mm__number_Schaefer >= 9 &
+      Max_body_size_mm__number_Schaefer <= 16,
     1,
     0
   ),
-  size_large_Shafer = ifelse(Max_body_size_mm__number_Shafer > 16, 1, 0)
+  size_large_Schaefer = ifelse(Max_body_size_mm__number_Schaefer > 16, 1, 0)
 )]
 
 # Max length Chessman
@@ -329,7 +348,7 @@ Trait_AUS[, `:=`(
 
 # del
 Trait_AUS[, c(
-  "Max_body_size_mm__number_Shafer",
+  "Max_body_size_mm__number_Schaefer",
   "Max_body_size_mm__text_ref",
   "Max_body_size_mm__number_bugs_gbr",
   "Max_body_size_mm__text_bugs_gbr",
@@ -337,77 +356,53 @@ Trait_AUS[, c(
   "Maximum_length_mm_fam_Chessman2017"
 ) := NULL]
 
+# _________________________________________________________________________
 #### PH ####
 # just minimum ph -> highest value is 6.61
+# _________________________________________________________________________
 Trait_AUS[, pH_minimum_fam_Chessman2017 := as.numeric(pH_minimum_fam_Chessman2017)]
 Trait_AUS[, ph_acidic := ifelse(pH_minimum_fam_Chessman2017<7, 1, 0)]
 Trait_AUS[, pH_minimum_fam_Chessman2017 := NULL]
 
+# _________________________________________________________________________
 #### Temperature #### 
 # temp very cold (EU < 6 °C, NoA < 5 °C)
 # temp cold (EU < 10 °C) + temp moderate (EU < 18 °C) (NoA 0-15)
 # temp warm (EU >= 18 °C, NoA >15)
 # temp eurytherm (no pref)
+# _________________________________________________________________________
 Trait_AUS[, `:=`(temp_very_cold = ifelse(Thermophily_fam_Chessman2017 < 6, 1, 0), 
                  temp_cold_mod = ifelse(Thermophily_fam_Chessman2017 >= 6 & 
                                           Thermophily_fam_Chessman2017 < 18, 1, 0), 
                  temp_warm = ifelse(Thermophily_fam_Chessman2017 >= 18, 1, 0))]
 Trait_AUS[, Thermophily_fam_Chessman2017 := NULL]
 
-# TODO check warnings and improve code!
-# rm columns with maximum zero (a bit hacky atm)
-rm_col <- names(Trait_AUS[, lapply(.SD, function(y) {
-  y <- max(y, na.rm = TRUE)
-  y[y == 0]
-}),
-.SDcols = -c("unique_id", "Species", "Genus", "Family", "Order")])
+# rm columns with maximum value zero -> could be a helper function
+rm_col <- Trait_AUS[, lapply(.SD, max, na.rm = TRUE)] %>% 
+  lapply(., function(y) y[y == 0]) %>%
+  unlist() %>% 
+  names()
 Trait_AUS[, (rm_col) := NULL]
 
 # transform all integer col to numeric  
 col_names <- names(Trait_AUS[, unlist(lapply(Trait_AUS, is.integer)), with = FALSE])
 Trait_AUS[, (col_names) := lapply(.SD, as.numeric), .SDcols = col_names]
 
-# ------------------------------------------------------------------------
-#### Handle duplicates & data cleaning ####
+# _________________________________________________________________________
+#### Data Preparation & Taxonomical corrections ####
+# _________________________________________________________________________
 
 # rm entries with taxonomical resolution higher than Family
 Trait_AUS <- Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)), ]
 
-# handle duplicates
-Dupl_AST <- fetch_dupl(data = Trait_AUS, col = "Species")
-
-# data that does not contain duplicates
-Trait_AUS <- Trait_AUS[!unique_id %in% Dupl_AST$unique_id]
-
-# TODO check warning
-# condense rowwise information for duplicates 
-condense <-
-  Dupl_AST[, lapply(.SD, max, na.rm = TRUE), 
-           .SDcols = -c("unique_id", "Species", "Genus", "Family", "Order"),
-           by = Species]
-# Warning: infinte data entries created(from condense of c(NA,NA))
-for(j in names(condense)){
-  data.table::set(condense, which(is.infinite(condense[[j]])), j, 0)
-}
-
-# merge taxonomical information back
-condense[Dupl_AST,
-         `:=`(Genus = i.Genus,
-              Family = i.Family,
-              Order = i.Order,
-              unique_id = i.unique_id),
-         on = "Species"]
-
-# rbind to dataset without duplicates
-Trait_AUS <- rbind(Trait_AUS, condense)
+# luckily no duplicates
+# fetch_dupl(data = Trait_AUS, col = "Species")
 
 # set all NAs to zeros
 col_names <- names(Trait_AUS)[6:length(names(Trait_AUS))]
 for(j in col_names){
   data.table::set(Trait_AUS, which(is.na(Trait_AUS[[j]])), j, 0)
 }
-
-#### Taxonomical corrections ####
 
 # Polychaeta is actually a class
 Trait_AUS[grepl("Aeolosomatidae", Family), Order := "Aeolosomatida"]
@@ -441,7 +436,6 @@ Trait_AUS[Family %in% "Hydracarina", Order := "Trombidiformes"]
 Trait_AUS[grepl("Mesostigmata", Family), `:=`(Genus = NA, 
                                               Family = NA, 
                                               Order = "Mesostigmata")]
-
 # save
 saveRDS(
   object = Trait_AUS,
