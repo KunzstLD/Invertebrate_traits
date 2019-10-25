@@ -56,15 +56,6 @@ Trait_AUS <- Reduce(merge, data[c("locom",
                                   "size",
                                   "dev")])
 
-# How does this exactly work?
-# Reduce(function(x,y) merge(x = y, y = y, by = c("unique_id")), 
-#        data[c("locom",
-#             "feed",
-#             "resp",
-#             "temp",
-#             "volt",
-#             "size")])
-
 # Subset to interesting orders: Ephemeroptera, Hemiptera, Odonata, 
 # Trichoptera, Venerida, Coleoptera, Plecoptera, Diptera, Amphipoda
 Trait_AUS <- Trait_AUS[order %in% c(
@@ -128,7 +119,6 @@ Trait_AUS_genus <-
 # .SDcols = names(Trait_AUS_genus) %like% pat_traitname,
 # by = family]
 # _________________________________________________________________________
-
 Trait_fam <- Trait_AUS_genus[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y)
@@ -152,7 +142,7 @@ Trait_fam[Trait_AUS_genus,
 Trait_fam[, N := NULL]
 
 # filter for taxa resolved on family level that are not yet respresented in the 
-# aggregated dataset
+# aggregated dataset (Trait_fam)
 Trait_AUS_resol_fam <- Trait_AUS[is.na(species) & 
                                    is.na(genus) & 
                                    !(family %in% Trait_fam$family) &
@@ -164,9 +154,8 @@ Trait_AUS_resol_fam <-
                         col_with_dupl_entries = "family") 
 
 # rbind with trait data resolved on family level
-Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus")], 
+Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus", "unique_id")], 
                        Trait_fam)
-
 # save
 saveRDS(object = Trait_AUS_agg,
         file = file.path(data_out, "Trait_AUS_agg.rds"))
