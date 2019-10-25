@@ -1,8 +1,8 @@
 
 # _________________________________________________________________________  
 #### Harmonize AUS Traits ####
-# _________________________________________________________________________ 
 # TODO add a more detailed description 
+# _________________________________________________________________________ 
 
 # read in preprocessed trait data
 Trait_AUS <- readRDS(
@@ -29,14 +29,14 @@ Trait_AUS[, volt_uni := apply(.SD, 1, max),
                       "Volt2_botwe",
                       "volt2_Maxwell",
                       "volt_uni", 
-                      "volt_uni_Shafer")]
+                      "volt_uni_Schaefer")]
 Trait_AUS[, volt_bi_multi := apply(.SD, 1, max),
           .SDcols = c("Voltinism_2_VicEPA",
                       "Volt3_botwe",
                       "volt3_Maxwell",
                       "volt4_Maxwell",
                       "volt_bi_multi", 
-                      "volt_bi_multi_Shafer")]
+                      "volt_bi_multi_Schaefer")]
 Trait_AUS[, c(
   "Voltinism_less_than_1_VicEPA",
   "Volt1_botwe",
@@ -44,12 +44,12 @@ Trait_AUS[, c(
   "Voltinism_1_VicEPA",
   "Volt2_botwe",
   "volt2_Maxwell",
-  "volt_uni_Shafer",
+  "volt_uni_Schaefer",
   "Voltinism_2_VicEPA",
   "Volt3_botwe",
   "volt3_Maxwell",
   "volt4_Maxwell",
-  "volt_bi_multi_Shafer",
+  "volt_bi_multi_Schaefer",
   "Voltinism_more_than_2_VicEPA"
 ) := NULL]
 
@@ -96,7 +96,7 @@ Trait_AUS[, feed_shredder := apply(.SD, 1, max),
                       "Feeding_shredders_VicEPA", 
                       "feeding_shredder_maxwell",
                       "feed_shredder",
-                      "feed_shredder_Shafer",
+                      "feed_shredder_Schaefer",
                       "Trop_shredder_detritivore_botwe",
                       "Shredder_proportion_of_feeding_fam_Chessman2017",
                       "Shredder_proportion_of_feeding_genus_Chessman2017"
@@ -126,20 +126,20 @@ Trait_AUS[, feed_predator := apply(.SD, 1, max),
           .SDcols = c("feeding_predator_Marchant",
                       "Feeding_predators_VicEPA",
                       "feeding_predator_maxwell", 
-                      "feed_predator_Shafer", 
+                      "feed_predator_Schaefer", 
                       "feed_predator", 
                       "Trop_predator_botwe", 
                       "Predator_proportion_of_feeding_fam_Chessman2017",
                       "Predator_proportion_of_feeding_genus_Chessman2017")]
 Trait_AUS[, feed_parasite := apply(.SD, 1, max),
           .SDcols = c("feed_parasite", 
-                      "feed_parasite_Shafer", 
+                      "feed_parasite_Schaefer", 
                       "feeding_parasite_maxwell")]
 Trait_AUS[, c(
   "feeding_shredder_Marchant", 
   "Feeding_shredders_VicEPA", 
   "feeding_shredder_maxwell",
-  "feed_shredder_Shafer",
+  "feed_shredder_Schaefer",
   "feeding_detritivore_Marchant",
   "feeding_collector_maxwell",
   "feeding_filterer_Marchant",
@@ -152,8 +152,8 @@ Trait_AUS[, c(
   "feeding_predator_Marchant",
   "Feeding_predators_VicEPA",
   "feeding_predator_maxwell", 
-  "feed_predator_Shafer",
-  "feed_parasite_Shafer", 
+  "feed_predator_Schaefer",
+  "feed_parasite_Schaefer", 
   "Trop_collector_gatherer_botwe",
   "Trop_collector_filterer_botwe",
   "Trop_scraper_botwe",
@@ -224,13 +224,13 @@ Trait_AUS[, resp_teg := apply(.SD, 1, max),
                       "Resp1_botwe",
                       "resp3_Maxwell",
                       "resp_teg", 
-                      "resp_teg_Shafer")]
+                      "resp_teg_Schaefer")]
 Trait_AUS[, resp_gil := apply(.SD, 1, max), 
           .SDcols = c("Respiration_gills_VicEPA", 
                       "Resp2_botwe",
                       "resp4_Maxwell",
                       "resp_gil", 
-                      "resp_gil_Shafer",
+                      "resp_gil_Schaefer",
                       "Gills_aquatic_stages_fam_Chessman2017",
                       "Gills_aquatic_stages_genus_Chessman2017")]
 Trait_AUS[, resp_spi := apply(.SD, 1, max), 
@@ -239,7 +239,7 @@ Trait_AUS[, resp_spi := apply(.SD, 1, max),
                       "resp1_Maxwell", 
                       "resp2_Maxwell",
                       "resp_atm", 
-                      "resp_atm_Shafer",
+                      "resp_atm_Schaefer",
                       "Air_respiration_aquatic_stages_fam_Chessman2017",
                       "Air_respiration_aquatic_stages_genus_Chessman2017",
                       "Functional_spiracles_aquatic_stages_genus_Chessman2017",
@@ -248,23 +248,23 @@ Trait_AUS[, resp_spi := apply(.SD, 1, max),
 Trait_AUS[, resp_pls := apply(.SD, 1, max), 
           .SDcols = c("Resp3_botwe",
                       "resp_pls", 
-                      "resp_pls_Shafer")]
+                      "resp_pls_Schaefer")]
 Trait_AUS[, c("Respiration_tegument_VicEPA", 
               "Resp1_botwe",
               "resp3_Maxwell",
-              "resp_teg_Shafer", 
+              "resp_teg_Schaefer", 
               "Respiration_gills_VicEPA", 
               "Resp2_botwe",
               "resp4_Maxwell",
-              "resp_gil_Shafer",
+              "resp_gil_Schaefer",
               "Respiration_spiracle_VicEPA",
               "resp1_Maxwell", 
               "resp2_Maxwell",
               "resp_atm",
-              "resp_atm_Shafer",
+              "resp_atm_Schaefer",
               "Resp3_botwe", 
               "resp7_Maxwell",
-              "resp_pls_Shafer", 
+              "resp_pls_Schaefer", 
               "resp5_Maxwell", 
               "resp6_Maxwell",
               "Air_respiration_aquatic_stages_fam_Chessman2017",
@@ -283,7 +283,7 @@ Trait_AUS[, size_small := apply(.SD, 1, max),
           .SDcols = c("Max_size_less_than_5_VicEPA", 
                       "Size1_botwe",
                       "size_small", 
-                      "size_small_Shafer",
+                      "size_small_Schaefer",
                       "size_small_fam_Chessman",
                       "size_small_genus_Chessman")]
 Trait_AUS[, size_medium := apply(.SD, 1, max), 
@@ -291,7 +291,7 @@ Trait_AUS[, size_medium := apply(.SD, 1, max),
                       "Max_size_10_to_20_VicEPA",
                       "Size2_botwe",
                       "size_medium", 
-                      "size_medium_Shafer",
+                      "size_medium_Schaefer",
                       "size_medium_fam_Chessman",
                       "size_medium_genus_Chessman")]
 Trait_AUS[, size_large := apply(.SD, 1, max), 
@@ -299,20 +299,20 @@ Trait_AUS[, size_large := apply(.SD, 1, max),
                       "Max_size_more_than_40_VicEPA",
                       "Size3_botwe",
                       "size_large", 
-                      "size_large_Shafer",
+                      "size_large_Schaefer",
                       "size_large_genus_Chessman",
                       "size_large_fam_Chessman")]
 Trait_AUS[, c(
   "Max_size_less_than_5_VicEPA",
   "Size1_botwe",
-  "size_small_Shafer",
+  "size_small_Schaefer",
   "Max_size_5_to_10_VicEPA",
   "Max_size_10_to_20_VicEPA",
   "Size2_botwe",
-  "size_medium_Shafer",
+  "size_medium_Schaefer",
   "Max_size_20_to_40_VicEPA",
   "Size3_botwe",
-  "size_large_Shafer",
+  "size_large_Schaefer",
   "Max_size_more_than_40_VicEPA",
   "size_large_genus_Chessman",
   "size_large_fam_Chessman",
@@ -335,12 +335,12 @@ Trait_AUS[, ovip_aqu := apply(.SD, 1, max),
           .SDcols = c("Rep1_botwe",
                       "repro1_Maxwell", 
                       "ovip_aqu", 
-                      "ovip_aqu_Shafer")]
+                      "ovip_aqu_Schaefer")]
 Trait_AUS[, ovip_ovo := apply(.SD, 1, max),
           .SDcols = c("Rep3_botwe",
                       "repro3_Maxwell",
                       "ovip_ovo", 
-                      "ovip_ovo_Shafer")]
+                      "ovip_ovo_Schaefer")]
 Trait_AUS[, c(
   "Reproduction_single_ind_VicEPA",
   "Reproduction_m_and_f_VicEPA",
@@ -350,8 +350,8 @@ Trait_AUS[, c(
   "repro1_Maxwell",
   "repro2_Maxwell",
   "repro3_Maxwell",
-  "ovip_aqu_Shafer",
-  "ovip_ovo_Shafer"
+  "ovip_aqu_Schaefer",
+  "ovip_ovo_Schaefer"
 ) := NULL]
 
 # _________________________________________________________________________ 
