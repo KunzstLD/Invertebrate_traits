@@ -36,8 +36,13 @@ Trait_Noa_new[, Accepted_Name := NULL]
 # Change column names
 setnames(
   Trait_Noa_new,
-  old = c("Max_body_size_abbrev", "Resp_abbrev", "Voltinism_abbrev"),
-  new = c("Max_body_size", "Resp", "Volt")
+  old = c(
+    "Max_body_size_abbrev",
+    "Resp_abbrev",
+    "Voltinism_abbrev",
+    "Feed_prim_abbrev"
+  ),
+  new = c("Max_body_size", "Resp", "Volt", "Feed_prim")
 )
 
 # set "Other" as category to NA
@@ -122,6 +127,11 @@ trait_col <- names(Trait_Noa_new)[!names(Trait_Noa_new) %in% c("unique_id", "Spe
 for(j in trait_col){
   data.table::set(Trait_Noa_new, which(is.na(Trait_Noa_new[[j]])),j, 0)
 }
+
+# make some colnames lower case
+setnames(Trait_Noa_new, 
+         old = c("Species", "Genus", "Family", "Order"), 
+         new = c("species", "genus", "family", "order"))
 
 # save
 saveRDS(object = Trait_Noa_new, 
