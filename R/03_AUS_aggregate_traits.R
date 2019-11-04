@@ -47,7 +47,6 @@ data <- get_complete_trait_data(
                     "order")
 )
 # lapply(data, nrow)
-
 Trait_AUS <- Reduce(merge, data[c("locom",
                                   "feed",
                                   "resp",
@@ -147,11 +146,13 @@ Trait_AUS_resol_fam <- Trait_AUS[is.na(species) &
                                    is.na(genus) & 
                                    !(family %in% Trait_fam$family) &
                                    !is.na(family), ]
-
 # condense duplicates in Trait_AUS_resol_fam
 Trait_AUS_resol_fam <-
-  condense_dupl_numeric(trait_data = Trait_AUS_resol_fam,
-                        col_with_dupl_entries = "family") 
+  condense_dupl_numeric(
+    trait_data = Trait_AUS_resol_fam,
+    col_with_dupl_entries = "family",
+    non_trait_cols = c("species", "genus", "family", "order")
+  )
 
 # rbind with trait data resolved on family level
 Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus", "unique_id")], 
