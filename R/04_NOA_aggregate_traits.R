@@ -134,16 +134,13 @@ Trait_Noa_agg[Trait_Noa,
               `:=`(order = i.order),
               on = "family"]
 
+# Taxa resolved on family level already present in aggregated dataset
+Trait_Noa[is.na(species) & is.na(genus),] %>% 
+  .[!family %in% Trait_Noa_agg$family, ]
+
 # del unnecessary information 
 Trait_Noa_agg[, N := NULL]
 
-# Taxa resolved on family level already present in aggregated dataset
-# Trait_Noa_agg[family %in% Trait_Noa[is.na(species) & is.na(genus),]$family, ]
-
-# merge back information on order
-Trait_Noa_agg[Trait_Noa,
-              `:=`(order = i.order),
-              on = "family"]
 # save
 saveRDS(object = Trait_Noa_agg, 
         file = file.path(data_out, "Trait_Noa_agg.rds"))
