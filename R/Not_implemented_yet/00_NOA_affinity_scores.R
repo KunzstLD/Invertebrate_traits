@@ -46,8 +46,8 @@ gathercol <- c(
 )
 
 # long format
-traits_long<- Subset_Noa_new  %>% 
-  filter(!is.na(Genus)) %>% 
+traits_long <- Subset_Noa_new  %>%
+  filter(!is.na(Genus)) %>%
   gather_(keycol, valuecol, gathercol) #create a column "trait" that holds all trait assignments
 
 # calculate frequency of trait state occurrence per genus and trait
@@ -59,8 +59,3 @@ traits_long %>%
   mutate(Percent = n / sum(n)) %>% 
   dcast(., Genus ~ Trait+ Trait_group)# %>% 
 #  filter(grepl("Acentrella", Genus))
-
-
-
-
-
