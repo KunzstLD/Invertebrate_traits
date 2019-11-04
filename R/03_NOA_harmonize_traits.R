@@ -125,8 +125,7 @@ Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 # locom_crawl: crawlers, walkers & sprawler, climber
 # locom_burrow: burrower
 # locom_sessil: sessil (attached)
-# What to do with clingers?
-# According to LeRoy and Chuck they should be put to crawlers
+# What to do with clingers? -> According to LeRoy and Chuck they should be put to crawlers
 # _________________________________________________________________________
 setnames(Trait_Noa, 
          old = c("Habit_prim_Attached/fixed", "Habit_prim_Burrower"), 
