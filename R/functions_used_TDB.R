@@ -139,26 +139,26 @@ fetch_dupl <- function(data, col) {
 # the Mode is taken when the same taxa occurs multiple times
 # if all values are unique, the median is taken. 
 # If the mode would be zero, the median is taken as well
-# requires: dataset to have trait columns + taxa columns (species, genus, family, order)
-condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
+# requires: 
+ # dataset  
+ # column with duplicates 
+ # all non trait columns
+condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
   # subset to duplicate taxa
   dupl_taxa <-
     trait_data[duplicated(get(col_with_dupl_entries)),
                unique(get(col_with_dupl_entries))]
-
+  
   # create data.tables with and without duplicates
   dupl <- trait_data[get(col_with_dupl_entries) %in% dupl_taxa,]
   without_dupl <-
     trait_data[!(get(col_with_dupl_entries) %in% dupl_taxa),]
-
+  
   # transform duplicates into long format
   # function should have the possibility to choose id.vars (non trait columns)
   dupl_lf <- melt(data = dupl,
-                  id.vars = c("species",
-                              "genus",
-                              "family",
-                              "order"))
-
+                  id.vars = non_trait_cols)
+  
   # Actual condensation of trait values
   # rather take Mode but throw out zero? instead of median in second ifelse() statement
   dupl_lf[, `:=`(value = ifelse(
@@ -171,66 +171,90 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries) {
     median(value, na.rm = TRUE)
   )),
   by = variable]
-
+  
+  # create formula for dcast
+  formula <-
+    paste0(paste0(non_trait_cols, collapse = "+"), "~", "variable") %>%
+    as.formula()
+  
   # convert back to long format
   dupl <- dcast(
     data = dupl_lf,
-    formula = species + genus + family + order ~
-      variable,
+    formula = formula,
     fun.aggregate = mean
   )
-
+  
   # bind duplicates and non duplicates back
   data <- rbind(dupl, without_dupl)
   return(data)
 }
 
-
 #### Get only complete trait data ####
-# from a dataset with traits and taxa information
-# get those traits that are complete (meaning at least one value different 
-# from zero)
+# NOTICE: This function can be used when certain trait states of a given trait
+# have only zeros (!) as entries. Is not needed anymore since now subsetting
+# is done with NA
+
+# INFO: Get complete trait data from a dataset with traits and taxa information
+# (meaning at least one value different from zero)
 # Gives a list with as many datasets as traits are presented
 # Can be merged together using Reduce!
 # works atm without considering NAs 
 # non trait column need to be manually defined by user
-get_complete_trait_data <- function(trait_data, non_trait_col) {
+# get_complete_trait_data <- function(trait_data, non_trait_col) {
+# 
+#   # pattern of non trait col names
+#   non_trait_col_pat <- paste0("(?i)", paste0(non_trait_col, collapse = "|"))
+# 
+#   # create name vector
+#   name_vec <-
+#     grep(
+#       non_trait_col_pat,
+#       names(trait_data),
+#       invert = TRUE,
+#       value = TRUE
+#     ) %>%
+#     sub("\\_.*", "", .) %>%
+#     unique()
+# 
+#   # create output matrix
+#   output <- matrix(ncol = 2, nrow = length(name_vec))
+# 
+#   data <- list()
+#   for (i in seq_along(name_vec)) {
+#     row <- trait_data[, base::sum(.SD) > 0,
+#                       .SDcols = names(trait_data) %like% name_vec[i],
+#                       by = 1:nrow(trait_data)]$V1
+# 
+#     #
+#     data[[i]] <- trait_data[row, .SD,
+#                             .SDcols = names(trait_data) %like%
+#                               paste(c(
+#                                 name_vec[i],
+#                                 non_trait_col
+#                               ),
+#                               collapse = "|")]
+#     names(data)[[i]] <- name_vec[[i]]
+#   }
+#   return(data)
+# }
+## Data were processed and merged together with Reduce
+# data <- get_complete_trait_data(
+#   trait_data = Trait_Noa_new,
+#   non_trait_col = c("unique_id",
+#                     "species",
+#                     "genus",
+#                     "family",
+#                     "order")
+# )
+# # lapply(data, nrow)
+# Trait_Noa_new <- Reduce(merge, data[c("locom",
+#                                       "feed",
+#                                       "resp",
+#                                       "volt",
+#                                       "size",
+#                                       "dev")])
 
-  # pattern of non trait col names
-  non_trait_col_pat <- paste0("(?i)", paste0(non_trait_col, collapse = "|"))
 
-  # create name vector
-  name_vec <-
-    grep(
-      non_trait_col_pat,
-      names(trait_data),
-      invert = TRUE,
-      value = TRUE
-    ) %>%
-    sub("\\_.*", "", .) %>%
-    unique()
-
-  # create output matrix
-  output <- matrix(ncol = 2, nrow = length(name_vec))
-
-  data <- list()
-  for (i in seq_along(name_vec)) {
-    row <- trait_data[, base::sum(.SD) > 0,
-                      .SDcols = names(trait_data) %like% name_vec[i],
-                      by = 1:nrow(trait_data)]$V1
-
-    #
-    data[[i]] <- trait_data[row, .SD,
-                            .SDcols = names(trait_data) %like%
-                              paste(c(
-                                name_vec[i],
-                                non_trait_col
-                              ),
-                              collapse = "|")]
-    names(data)[[i]] <- name_vec[[i]]
-  }
-  return(data)
-}
 
 # Trait Aggregation -------------------------------------------------------
 # Mode
