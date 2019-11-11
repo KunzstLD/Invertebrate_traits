@@ -134,31 +134,31 @@ setnames(
     "Trop2_botwe",
     "Trop3_botwe",
     "Trop4_botwe",
-    "Trop5_botwe", 
-    "feeding_C_Maxwell",                                
-    "feeding_P_Maxwell",                                
-    "feeding_SH_Maxwell",                               
-    "feeding_C_SH_Maxwell",                             
-    "feeding_SC_Maxwell",                               
-    "feeding_PA_Maxwell",                              
-    "feeding_C_SC_Maxwell",                             
-    "feeding_F_Maxwell" 
+    "Trop5_botwe",
+    "feeding_C_Maxwell",
+    "feeding_P_Maxwell",
+    "feeding_SH_Maxwell",
+    "feeding_C_SH_Maxwell",
+    "feeding_SC_Maxwell",
+    "feeding_PA_Maxwell",
+    "feeding_C_SC_Maxwell",
+    "feeding_F_Maxwell"
   ),
   new = c(
     "Trop_collector_gatherer_botwe",
     "Trop_collector_filterer_botwe",
     "Trop_scraper_botwe",
     "Trop_predator_botwe",
-    "Trop_shredder_detritivore_botwe", 
-    "feeding_collector_maxwell", 
+    "Trop_shredder_detritivore_botwe",
+    "feeding_collector_maxwell",
     "feeding_predator_maxwell",
-    "feeding_shredder_maxwell", 
-    "feeding_collec_shredder_maxwell", 
-    "feeding_scraper_maxwell", 
+    "feeding_shredder_maxwell",
+    "feeding_collec_shredder_maxwell",
+    "feeding_scraper_maxwell",
     "feeding_parasite_maxwell",
     "feeding_collector_scraper_maxwell",
     "feeding_filterer_maxwell"
-  ), 
+  ),
   skip_absent = TRUE
 )
 
@@ -180,7 +180,7 @@ setnames(
 
 # Respiration bugs gbr
 Trait_AUS[, `:=`(
-  resp_teg = ifelse(grepl("Cutaneous" ,Respiration_bugs_gbr) , 1, 0),
+  resp_teg = ifelse(grepl("Cutaneous", Respiration_bugs_gbr), 1, 0),
   resp_gil = ifelse(grepl("Gills", Respiration_bugs_gbr), 1, 0),
   resp_pls = ifelse(grepl("Plastron", Respiration_bugs_gbr), 1, 0),
   resp_atm = ifelse(grepl("Air\\-breathing", Respiration_bugs_gbr), 1, 0)
