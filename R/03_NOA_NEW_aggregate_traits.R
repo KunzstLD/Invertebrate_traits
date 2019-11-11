@@ -10,11 +10,12 @@ Trait_Noa_new <- readRDS(file = file.path(data_cleaned,
                                       "North_America", 
                                       "Traits_US_LauraT_pp_harmonized.rds"))
 
-
 # _________________________________________________________________________
 #### Normalization ####
-# First step is normalizing of the trait values
-# Then trait data are only subsetted to taxa that have complete 
+# First step is normalizing of the trait values to a range of [0 - 1] by
+# dividing for a given trait each value for a trait state by the sum of all 
+# trait states
+# Then trait data are subsetted to taxa that have complete 
 # information on all traits
 # _________________________________________________________________________
 
@@ -69,7 +70,6 @@ output
 # just return rows where for each trait there is an observation 
 Trait_Noa_new <- na.omit(Trait_Noa_new,
                          cols = names(Trait_Noa_new[, -c("unique_id", "species", "genus", "family", "order")]))
-
 # TODO: Subset to certain orders?
 # -> Amphipoda & Venerida not present
 
@@ -85,24 +85,24 @@ trait_col <- names(Trait_Noa_new[, -c("unique_id",
                                       "order")])
 
 # aggregate species data to genus level via median
-Trait_Noa_genus <-
+Trait_Noa_new_genus <-
   Trait_Noa_new[!is.na(species), lapply(.SD, median),
                 .SDcols = trait_col, by = "genus"]
 
 # merge family information back 
-Trait_Noa_genus[Trait_Noa_new[!is.na(species),],
+Trait_Noa_new_genus[Trait_Noa_new[!is.na(species),],
                 `:=`(family = i.family,
                      order = i.order),
                 on = "genus"]
 
 # rbind with Trait data resolved on genus level
-Trait_Noa_genus <-
-  rbind(Trait_Noa_genus, Trait_Noa_new[is.na(species) & !is.na(genus),
+Trait_Noa_new_genus <-
+  rbind(Trait_Noa_new_genus, Trait_Noa_new[is.na(species) & !is.na(genus),
                                    -c("unique_id", "species")])
 
 # Check duplicates & condense
-Trait_Noa_genus <- condense_dupl_numeric_2(
-  trait_data = Trait_Noa_genus,
+Trait_Noa_new_genus <- condense_dupl_numeric(
+  trait_data = Trait_Noa_new_genus,
   col_with_dupl_entries = "genus",
   non_trait_col = c("genus",
                     "family",
@@ -125,7 +125,7 @@ Trait_Noa_genus <- condense_dupl_numeric_2(
 # .SDcols = names(Trait_Noa_genus) %like% pat_traitname,
 # by = "family"]
 # _________________________________________________________________________
-Trait_Noa_agg <- Trait_Noa_genus[, c(lapply(.SD, function(y) {
+Trait_Noa_new_agg <- Trait_Noa_new_genus[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y)
     # e.g. in case (0,0,3)
@@ -140,23 +140,23 @@ Trait_Noa_agg <- Trait_Noa_genus[, c(lapply(.SD, function(y) {
 by = "family"] 
 
 # merge information on order back
-Trait_Noa_agg[Trait_Noa_new,
+Trait_Noa_new_agg[Trait_Noa_new,
               `:=`(order = i.order),
               on = "family"]
 
 # Few taxa resolved on family level not present in aggregated dataset 
 Taxa_famlvl <-
   Trait_Noa_new[is.na(species) & is.na(genus),] %>%
-  .[!family %in% Trait_Noa_agg$family, -c("unique_id", "species", "genus")] %>%
-  condense_dupl_numeric_2(
+  .[!family %in% Trait_Noa_new_agg$family, -c("unique_id", "species", "genus")] %>%
+  condense_dupl_numeric(
     trait_data = .,
     col_with_dupl_entries = "family",
     non_trait_col = c("family",
                       "order")
   )
-# put aggregated data and Taxa resol. on family level together 
-Trait_Noa_agg <- rbind(Trait_Noa_agg, Taxa_famlvl)
+# bind aggregated data and Taxa resol. on family level together 
+Trait_Noa_new_agg <- rbind(Trait_Noa_new_agg, Taxa_famlvl)
 
 # save
-saveRDS(object = Trait_Noa_agg, 
+saveRDS(object = Trait_Noa_new_agg, 
         file = file.path(data_out, "Trait_Noa_New_agg.rds"))
