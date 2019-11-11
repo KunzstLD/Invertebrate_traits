@@ -94,6 +94,7 @@ trait_col <- names(Dupl_Noa)[!names(Dupl_Noa) %in% c("unique_id", "Species", "Ge
                                                     "Order")]
 Dupl_Noa[, (trait_col) := lapply(.SD, max), .SDcols = trait_col,
           by = Species]
+Dupl_Noa <- Dupl_Noa[!duplicated(Species), ] 
 
 # Non duplicated data: categories turn to colnames 
 Trait_Noa_no_dupl <- melt(
@@ -106,7 +107,6 @@ Trait_Noa_no_dupl <- melt(
     "Order"
   )
 )
-
 # combine trait name & category name
 Trait_Noa_no_dupl[!is.na(value), value := paste0(variable, "_", value)]
 
@@ -132,7 +132,6 @@ for(j in trait_col){
 setnames(Trait_Noa_new, 
          old = c("Species", "Genus", "Family", "Order"), 
          new = c("species", "genus", "family", "order"))
-
 # save
 saveRDS(object = Trait_Noa_new, 
         file = file.path(data_cleaned, 
