@@ -1,5 +1,6 @@
 # _________________________________________________________________________ 
 #### Harmonize NOA Traits ####
+# Includes also normalization
 # _________________________________________________________________________
 
 # read in
@@ -58,6 +59,13 @@ Trait_Noa[, c("pH_alkaline", "pH_normal") := NULL]
 # feed_scraper: scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
+
+# feed_shredder: shredder (chewers, miners, xylophagus)
+# feed_gatherer: collector gatherer (gatherers, detritivores)
+# feed_filter: collector filterer (active filterers, passive filterers, absorbers)
+# feed_herbivore: herbivore piercers & scraper (grazer)
+# feed_predator: predator
+# feed_parasite: parasite
 # _________________________________________________________________________
 setnames(
   Trait_Noa,
@@ -66,20 +74,20 @@ setnames(
     "Feed_mode_prim_Collector-gatherer",
     "Feed_mode_prim_Parasite",
     "Feed_mode_prim_Predator",
-    "Feed_mode_prim_Scraper/grazer"
-  ),
+    "Feed_mode_prim_Shredder"
+    ),
   new = c(
     "feed_filter",
     "feed_gatherer",
     "feed_parasite",
     "feed_predator",
-    "feed_scraper"
+    "feed_shredder"
   )
 )
-Trait_Noa[, feed_shredder := apply(.SD, 1. , max),
-          .SDcols = c("Feed_mode_prim_Shredder",
+Trait_Noa[, feed_herbivore := apply(.SD, 1. , max),
+          .SDcols = c("Feed_mode_prim_Scraper/grazer",
                       "Feed_mode_prim_Piercer herbivore")]
-Trait_Noa[, c("Feed_mode_prim_Shredder",
+Trait_Noa[, c("Feed_mode_prim_Scraper/grazer",
               "Feed_mode_prim_Piercer herbivore") := NULL]
 
 # incorporating information from comments 
@@ -90,7 +98,7 @@ Trait_Noa_raw[, unique_id := 1:nrow(Trait_Noa_raw)]
 # taxa with feeding mode "other"
 Taxa_feed_other <-
   Trait_Noa[`Feed_mode_prim_Other (specify in comments)` == 1 &
-              feed_scraper == 0 & feed_filter == 0 &
+              feed_herbivore == 0 & feed_filter == 0 &
               feed_gatherer == 0 & feed_parasite == 0 &
               feed_predator == 0 &
               feed_shredder == 0, .(`Feed_mode_prim_Other (specify in comments)`, 
@@ -109,7 +117,6 @@ detrivores <-
                  grepl("detritivore.*|Detritivore", Feed_mode_comments) &
                  !is.na(Species) & !is.na(Genus),
                .(Species, Feed_mode_prim, Feed_mode_comments, unique_id)]
-
 Trait_Noa[detrivores,
           `:=`(feed_gatherer = 1),
           on = "unique_id"]
@@ -186,8 +193,8 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 # late the right choice?
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
-# resp_spi: spiracle
-# resp_pls: plastron
+# resp_pls_spi: plastron & spiracle
+
 # Resp_late_Atmospheric breathers -> Spiracle
 # Resp_late_Hemoglobin  -> just 9 entries, can be ignored
 # Resp_late_Other (specify in comments) -> Most just describe the trait more precisely
@@ -200,12 +207,11 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 setnames(Trait_Noa,
          old = c("Resp_late_Cutaneous"),
          new = c("resp_teg"))
-Trait_Noa[, resp_spi := apply(.SD, 1, max),
-          .SDcols = c("Resp_late_Atmospheric breathers",
-                      "Resp_late_Plant breathers")]
-Trait_Noa[, resp_pls := apply(.SD, 1, max),
+Trait_Noa[, resp_pls_spi := apply(.SD, 1, max),
           .SDcols = c("Resp_late_Spiracular gills",
-                      "Resp_late_Plastron (permanent air store)")]
+                      "Resp_late_Plastron (permanent air store)",
+                      "Resp_late_Atmospheric breathers",
+                      "Resp_late_Plant breathers")]
 Trait_Noa[, resp_gil := apply(.SD, 1, max),
           .SDcols = c("Resp_late_Temporary air store",
                       "Resp_late_Tracheal gills")]
@@ -220,12 +226,11 @@ Trait_Noa[, c(
 ) := NULL]
 
 # respiration comments
-resp_comments <-
-  Trait_Noa[(resp_teg == 0 & resp_spi == 0 & resp_pls == 0 &
-               resp_gil == 0) &
-              `Resp_late_Other (specify in comments)` == 1,
-            .(unique_id)]
-
+# resp_comments <-
+#   Trait_Noa[(resp_teg == 0 & resp_pls_spi == 0 &
+#                resp_gil == 0) &
+#               `Resp_late_Other (specify in comments)` == 1,
+#             .(unique_id)]
 # Trait_Noa_raw[unique_id %in% resp_comments$unique_id, 
 #              .(Resp_comments)]
 
@@ -361,56 +366,75 @@ Trait_Noa[, temp_warm := apply(.SD, 1, max),
 Trait_Noa[, c("Thermal_pref_Warm eurythermal (15-30 C)",
               "Thermal_pref_Hot euthermal (>30 C)") := NULL]
 
-# _________________________________________________________________________
-#### Pattern fo development ####
-# Holometabolous 
-# Hemimetabolous
-# No insect
-# _________________________________________________________________________
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-Trait_Noa[, `:=`(
-  dev_hemimetabol = ifelse(Order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(Order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    Order %in% hemimetabola |
-      Order %in% holometabola
-  ), 1, 0)
-)]
-
 # change some colnames 
 setnames(Trait_Noa, 
          old = c("Species", "Genus", "Family", "Order"), 
          new = c("species", "genus", "family", "order"))
+
+# _________________________________________________________________________
+#### Aggregation of traits NOA #### 
+# TODO: Check and simplify Aggregation functions
+# _________________________________________________________________________
+
+# read in pp_harmonized
+Trait_Noa <- readRDS(file = file.path(data_cleaned,
+                                      "North_America", 
+                                      "Traits_US_pp_harmonized.rds"))
+# _________________________________________________________________________
+#### Normalization ####
+# First step is normalizing of the trait values to a range of [0 - 1] by
+# dividing for a given trait each value for a trait state by the sum of all 
+# trait states
+# _________________________________________________________________________
+
+# get trait names & create pattern for subset
+trait_names_pattern <-
+  names(Trait_Noa[, -c("unique_id",
+                       "family",
+                       "genus",
+                       "species",
+                       "order")]) %>%
+  sub("\\_.*|\\..*", "", .) %>%
+  unique() %>%
+  paste0("^", .)
+
+# loop for normalization (trait categories for each trait sum up to 1) 
+for(cols in trait_names_pattern) {
+  
+  # get row sum for a specific trait
+  Trait_Noa[, rowSum := apply(.SD, 1, sum),
+            .SDcols = names(Trait_Noa) %like% cols]
+  
+  # get column names for assignment
+  col_name <- names(Trait_Noa)[names(Trait_Noa) %like% cols]
+  
+  Trait_Noa[, (col_name) := lapply(.SD, function(y) {
+    round(y / rowSum, digits = 2)
+  }),
+  .SDcols = names(Trait_Noa) %like% cols]
+}
+
+# del unnecessary columns
+Trait_Noa[, c("rowSum") := NULL]
+
+# test how complete trait sets are 
+output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+
+for (i in seq_along(trait_names_pattern)) {
+  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+  # entries for this trait contained NA
+  vec <-
+    Trait_Noa[, apply(.SD, 1, function(y)
+      base::sum(is.na(y))),
+      .SDcols = names(Trait_Noa) %like% trait_names_pattern[[i]]]
+  
+  # How complete is the dataset for each individual trait?
+  output[i, ] <-
+    c((length(vec[vec == 0]) / nrow(Trait_Noa))  %>% `*` (100) %>% round(),
+      trait_names_pattern[[i]])
+}
+# Gives % coverage for each trait
+# output
 
 # save
 saveRDS(object = Trait_Noa, 

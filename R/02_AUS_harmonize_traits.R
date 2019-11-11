@@ -82,18 +82,22 @@ setnames(
 
 # _________________________________________________________________________ 
 #### Feed mode ####
-# feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
+# feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
-# feed_scraper: scraper (grazer)
+# feed_herbivore: herbivore piercers & scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
-# Feeding piercers have not been used -> ask Verena?
+# TODO: Feeding piercers have not been used -> ask Verena?
 # names(Trait_AUS[, .SD,.SDcols = names(Trait_AUS) %like% "(?i)Trop|feed"])
+
+# Predators are defined as: Engulfers (ingest pref whole or in parts) or
+  # as Piercers (piere prey tissues and suck fluids) 
+# Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
 # _________________________________________________________________________ 
-Trait_AUS[, feed_shredder := apply(.SD, 1, max), 
-          .SDcols = c("feeding_shredder_Marchant", 
-                      "Feeding_shredders_VicEPA", 
+Trait_AUS[, feed_shredder := apply(.SD, 1, max),
+          .SDcols = c("feeding_shredder_Marchant",
+                      "Feeding_shredders_VicEPA",
                       "feeding_shredder_maxwell",
                       "feed_shredder",
                       "feed_shredder_Schaefer",
@@ -110,34 +114,34 @@ Trait_AUS[, feed_gatherer := apply(.SD, 1, max),
 Trait_AUS[, feed_filter := apply(.SD, 1, max),
           .SDcols = c("feeding_filterer_Marchant",
                       "Feeding_filterers_VicEPA",
-                      "feeding_filterer_maxwell", 
-                      "Trop_collector_filterer_botwe", 
+                      "feeding_filterer_maxwell",
+                      "Trop_collector_filterer_botwe",
                       "Filterer_proportion_of_feeding_fam_Chessman2017",
                       "Filterer_proportion_of_feeding_genus_Chessman2017")]
-Trait_AUS[, feed_scraper := apply(.SD, 1, max),
+Trait_AUS[, feed_herbivore := apply(.SD, 1, max),
           .SDcols = c("feeding_grazer_Marchant",
                       "Feeding_scrapers_VicEPA",
-                      "Feeding_deposit_grazer_VicEPA", 
-                      "feeding_scraper_maxwell", 
-                      "Trop_scraper_botwe", 
-                      "Scraper_proportion_of_feeding_fam_Chessman2017", 
+                      "Feeding_deposit_grazer_VicEPA",
+                      "feeding_scraper_maxwell",
+                      "Trop_scraper_botwe",
+                      "Scraper_proportion_of_feeding_fam_Chessman2017",
                       "Scraper_proportion_of_feeding_genus_Chessman2017")]
 Trait_AUS[, feed_predator := apply(.SD, 1, max),
           .SDcols = c("feeding_predator_Marchant",
                       "Feeding_predators_VicEPA",
-                      "feeding_predator_maxwell", 
-                      "feed_predator_Schaefer", 
-                      "feed_predator", 
-                      "Trop_predator_botwe", 
+                      "feeding_predator_maxwell",
+                      "feed_predator_Schaefer",
+                      "feed_predator",
+                      "Trop_predator_botwe",
                       "Predator_proportion_of_feeding_fam_Chessman2017",
                       "Predator_proportion_of_feeding_genus_Chessman2017")]
 Trait_AUS[, feed_parasite := apply(.SD, 1, max),
-          .SDcols = c("feed_parasite", 
-                      "feed_parasite_Schaefer", 
+          .SDcols = c("feed_parasite",
+                      "feed_parasite_Schaefer",
                       "feeding_parasite_maxwell")]
 Trait_AUS[, c(
-  "feeding_shredder_Marchant", 
-  "Feeding_shredders_VicEPA", 
+  "feeding_shredder_Marchant",
+  "Feeding_shredders_VicEPA",
   "feeding_shredder_maxwell",
   "feed_shredder_Schaefer",
   "feeding_detritivore_Marchant",
@@ -147,32 +151,32 @@ Trait_AUS[, c(
   "feeding_filterer_maxwell",
   "feeding_grazer_Marchant",
   "Feeding_scrapers_VicEPA",
-  "Feeding_deposit_grazer_VicEPA", 
+  "Feeding_deposit_grazer_VicEPA",
   "feeding_scraper_maxwell",
   "feeding_predator_Marchant",
   "Feeding_predators_VicEPA",
-  "feeding_predator_maxwell", 
+  "feeding_predator_maxwell",
   "feed_predator_Schaefer",
-  "feed_parasite_Schaefer", 
+  "feed_parasite_Schaefer",
   "Trop_collector_gatherer_botwe",
   "Trop_collector_filterer_botwe",
   "Trop_scraper_botwe",
-  "Trop_predator_botwe", 
-  "Trop_shredder_detritivore_botwe", 
+  "Trop_predator_botwe",
+  "Trop_shredder_detritivore_botwe",
   "feeding_collector_scraper_maxwell",
   "feeding_collec_shredder_maxwell",
   "feeding_parasite_maxwell",
   "Feeding_piercers_VicEPA",
   "Shredder_proportion_of_feeding_genus_Chessman2017",
-  "Scraper_proportion_of_feeding_genus_Chessman2017", 
+  "Scraper_proportion_of_feeding_genus_Chessman2017",
   "Predator_proportion_of_feeding_genus_Chessman2017",
   "Gatherer_proportion_of_feeding_genus_Chessman2017",
   "Filterer_proportion_of_feeding_genus_Chessman2017",
   "Shredder_proportion_of_feeding_fam_Chessman2017",
-  "Scraper_proportion_of_feeding_fam_Chessman2017",   
-  "Predator_proportion_of_feeding_fam_Chessman2017",  
-  "Gatherer_proportion_of_feeding_fam_Chessman2017",  
-  "Filterer_proportion_of_feeding_fam_Chessman2017" 
+  "Scraper_proportion_of_feeding_fam_Chessman2017",
+  "Predator_proportion_of_feeding_fam_Chessman2017",
+  "Gatherer_proportion_of_feeding_fam_Chessman2017",
+  "Filterer_proportion_of_feeding_fam_Chessman2017"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -214,58 +218,60 @@ Trait_AUS[, c(
 #### Respiration ####  
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
-# resp_spi: spiracle (atmospheric & plant breathers (Maxwell_1 & 2))
-# resp_pls: plastron
+# resp_pls_spi: spiracle & plastron
+  #  spiracle (atmospheric & plant breathers (Maxwell_1 & 2))
+  # plastron & spiracle often work together in respiratory systems of aq. insects
+  # Present in insects with open tracheal systems -> breathe oxygen from the air
+  # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # Maxwell trait on Plastron not used, since ambiguous (Plastron and gills)
 # _________________________________________________________________________ 
 
-Trait_AUS[, resp_teg := apply(.SD, 1, max), 
-          .SDcols = c("Respiration_tegument_VicEPA", 
+Trait_AUS[, resp_teg := apply(.SD, 1, max),
+          .SDcols = c("Respiration_tegument_VicEPA",
                       "Resp1_botwe",
                       "resp3_Maxwell",
-                      "resp_teg", 
+                      "resp_teg",
                       "resp_teg_Schaefer")]
-Trait_AUS[, resp_gil := apply(.SD, 1, max), 
-          .SDcols = c("Respiration_gills_VicEPA", 
+Trait_AUS[, resp_gil := apply(.SD, 1, max),
+          .SDcols = c("Respiration_gills_VicEPA",
                       "Resp2_botwe",
                       "resp4_Maxwell",
-                      "resp_gil", 
+                      "resp_gil",
                       "resp_gil_Schaefer",
                       "Gills_aquatic_stages_fam_Chessman2017",
                       "Gills_aquatic_stages_genus_Chessman2017")]
-Trait_AUS[, resp_spi := apply(.SD, 1, max), 
-          .SDcols = c("Respiration_spiracle_VicEPA", 
+Trait_AUS[, resp_pls_spi := apply(.SD, 1, max),
+          .SDcols = c("Respiration_spiracle_VicEPA",
                       "resp7_Maxwell",
-                      "resp1_Maxwell", 
+                      "resp1_Maxwell",
                       "resp2_Maxwell",
-                      "resp_atm", 
+                      "resp_atm",
                       "resp_atm_Schaefer",
                       "Air_respiration_aquatic_stages_fam_Chessman2017",
                       "Air_respiration_aquatic_stages_genus_Chessman2017",
                       "Functional_spiracles_aquatic_stages_genus_Chessman2017",
-                      "Functional_spiracles_aquatic_stages_fam_Chessman2017" 
+                      "Functional_spiracles_aquatic_stages_fam_Chessman2017",
+                      "Resp3_botwe",
+                      "resp_pls",
+                      "resp_pls_Schaefer"
           )]
-Trait_AUS[, resp_pls := apply(.SD, 1, max), 
-          .SDcols = c("Resp3_botwe",
-                      "resp_pls", 
-                      "resp_pls_Schaefer")]
-Trait_AUS[, c("Respiration_tegument_VicEPA", 
+Trait_AUS[, c("Respiration_tegument_VicEPA",
               "Resp1_botwe",
               "resp3_Maxwell",
-              "resp_teg_Schaefer", 
-              "Respiration_gills_VicEPA", 
+              "resp_teg_Schaefer",
+              "Respiration_gills_VicEPA",
               "Resp2_botwe",
               "resp4_Maxwell",
               "resp_gil_Schaefer",
               "Respiration_spiracle_VicEPA",
-              "resp1_Maxwell", 
+              "resp1_Maxwell",
               "resp2_Maxwell",
               "resp_atm",
               "resp_atm_Schaefer",
-              "Resp3_botwe", 
+              "Resp3_botwe",
               "resp7_Maxwell",
-              "resp_pls_Schaefer", 
-              "resp5_Maxwell", 
+              "resp_pls_Schaefer",
+              "resp5_Maxwell",
               "resp6_Maxwell",
               "Air_respiration_aquatic_stages_fam_Chessman2017",
               "Air_respiration_aquatic_stages_genus_Chessman2017",

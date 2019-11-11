@@ -41,25 +41,30 @@ setnames(Trait_NZ,
 # _________________________________________________________________________
 
 # _________________________________________________________________________
-#### Feed mode ####
-# feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
+#### Feeding mode ####
+# feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
 # feed_gatherer: collector gatherer (gatherers, detritivores, deposit feeders)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
-# feed_scraper: scraper (grazer)
+# feed_herbivore: herbivore piercers (living aquatic plants) & scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
 # deposit feeders into collector gatherer (according to Resh)
+# parasite category does not exist in Trait NZ
+
+# Predators are defined as: Engulfers (ingest pref whole or in parts) or
+  # as Piercers (piere prey tissues and suck fluids) 
+# Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
 # _________________________________________________________________________
-setnames(Trait_NZ, 
-         old = c("SCRAPER_scrapers","FILTERFEED_filter-feeders",
-                 "PREDATOR_predator", "DEPOSIT_deposit-feeders"), 
-         new = c("feed_scraper", "feed_filter", "feed_predator", 
-                 "feed_gatherer"))
-# Algal piercers and Shredders together
-Trait_NZ[, feed_shredder := apply(.SD, 1, max),
-         .SDcols = c("SHREDDER_shredders", "ALGALP_algal piercer")]
+setnames(Trait_NZ,
+         old = c("FILTERFEED_filter-feeders", "PREDATOR_predator",
+                 "DEPOSIT_deposit-feeders", "SHREDDER_shredders"),
+         new = c("feed_filter", "feed_predator",
+                 "feed_gatherer", "feed_shredder"))
+# Algal piercers and scrapers together
+Trait_NZ[, feed_herbivore := apply(.SD, 1, max),
+        .SDcols = c("SCRAPER_scrapers", "ALGALP_algal piercer")]
 # del 
-Trait_NZ[, c("SHREDDER_shredders", "ALGALP_algal piercer") := NULL]
+Trait_NZ[, c("SCRAPER_scrapers", "ALGALP_algal piercer") := NULL]
 
 # _________________________________________________________________________
 #### Locomotion ####
@@ -83,15 +88,21 @@ setnames(
 #### Respiration ####
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
-# resp_spi: spiracle
+# resp_pls_spi: spiracle& plastron 
 # resp_pls: plastron
 # NZ: tegument, gills, plastron, aerial
 # aerial is spriacle
+# resp_pls_spi: spiracle & plastron
+  # plastron & spiracle often work together in respiratory systems of aq. insects
+  # Present in insects with open tracheal systems -> breathe oxygen from the air
+  # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # _________________________________________________________________________
-setnames(Trait_NZ, 
-         old = c("TEGUMENT_tegument", "GILL_gills", 
-                 "PLASTRON_plastron", "AERIAL_aerial"),
-         new = c("resp_teg", "resp_gil", "resp_pls", "resp_spi"))
+setnames(Trait_NZ,
+         old = c("TEGUMENT_tegument", "GILL_gills"),
+         new = c("resp_teg", "resp_gil"))
+Trait_NZ[, resp_pls_spi := apply(.SD, 1, max),
+        .SDcols = c("PLASTRON_plastron", "AERIAL_aerial")]
+
 # _________________________________________________________________________
 #### Drift/dispersal ####
 # dissem_air_active

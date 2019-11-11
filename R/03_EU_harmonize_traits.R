@@ -2,9 +2,6 @@
 #### Harmonize EU Traits ####
 # _________________________________________________________________________ 
 
-# TODO: ph values from Trait_EU need to be incorporated & normalized 
-
-
 # read in RDS
 Trait_EU <- readRDS(file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
 
@@ -40,16 +37,20 @@ Trait_EU[, ph_ind := NULL]
 
 # _________________________________________________________________________ 
 #### Feed mode ####
-# feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
+# feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
-# feed_scraper: scraper (grazer)
+# feed_herbivroe: scraper (grazer) & herbivore piercer
 # feed_predator: predator
 # feed_parasite: parasite
+
+# Predators are defined as: Engulfers (ingest pref whole or in parts) or
+  # as Piercers (piere prey tissues and suck fluids) 
+# Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
 # _________________________________________________________________________ 
 setnames(Trait_EU,
          c("feed_gath", "feed_grazer"),
-         c("feed_gatherer", "feed_scraper"))
+         c("feed_gatherer", "feed_herbivore"))
 Trait_EU[, feed_shredder := apply(.SD, 1, max),
            .SDcols = c("feed_shred", "feed_miner", "feed_xylo")]
 Trait_EU[, feed_filter := apply(.SD, 1, max),
@@ -78,7 +79,7 @@ setnames(Trait_EU,
          old = c("locom_sprawl"),
          new = c("locom_crawl"))
 # del
-Trait_EU[, c("locom_swim_skate", "locom_swim_dive", 
+Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
                "locom_other") := NULL]
 
 # locom other -> critical taxa 
@@ -93,8 +94,11 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
 #### Respiration ####
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
-# resp_spi: spiracle
-# resp_pls: plastron
+# resp_pls_spi: plastron & spiracle
+  # plastron & spiracle often work together in respiratory systems of aq. insects
+  # Present in insects with open tracheal systems -> breathe oxygen from the air
+  # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
+
 # resp_atm: atmospheric breathers -> no values
 # respiration vesicle -> just 0
 # no values for resp_tap
@@ -102,6 +106,8 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
 # table(Trait_EU$resp_tap)
 # table(Trait_EU$resp_sur)
 # _________________________________________________________________________ 
+Trait_EU[, resp_pls_spi := apply(.SD, 1, max), 
+          .SDcols = c("resp_spi", "resp_pls")]
 Trait_EU[, c("resp_tap", "resp_ves", "resp_sur") := NULL]
 
 # =================== Dispersal -> This needs to be fixed ======================
@@ -170,7 +176,7 @@ Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 
 # _________________________________________________________________________ 
 #### Normalization Freshecol ####
-# TODO made a function out of this!
+# TODO make a function out of this!
 # get trait names & create pattern for subset
 # leave out ph (needs to be harmonized when merged together with Freshwaterecol)
 # _________________________________________________________________________ 
@@ -201,16 +207,16 @@ for(cols in trait_names_pattern) {
 }
 Trait_EU[, rowSum := NULL]
 
-# excludelife stage for now -> can not be complemented by tachet and not needed for now
+# exclude life stage for now -> can not be complemented by tachet and not needed for now
 Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"] 
 
 # _________________________________________________________________________ 
-#### Complement with tachet data  
+#### Complement with tachet data ####
 # Information from tachet is just considered for entries in freshecol with missing information
 # Information on the same trait was taken from Freshecol
 # _________________________________________________________________________ 
 
-# Load tachet data
+# Load normalized & harmonized tachet data
 tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
 
 # get names of trait columns
@@ -255,81 +261,23 @@ Trait_EU <- final
 
 # merge information from taxa on species level that are only in tachet
 Trait_EU <- rbind(Trait_EU, 
-                    tachet[!(species %in% Trait_EU$species) & !is.na(species), .SD , 
+                  tachet[!(species %in% Trait_EU$species) & !is.na(species), .SD , 
                            .SDcols = !(names(tachet) %like% "^stage|^disp|size")], 
-                    use.names = TRUE,
-                    fill = TRUE)
+                  use.names = TRUE,
+                  fill = TRUE)
 # _________________________________________________________________________ 
 #### Size ####
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________ 
+
+# merge size information from tachet
 Trait_EU[tachet, 
            `:=`(size_large = i.size_large,
                 size_medium = i.size_medium,
                 size_small = i.size_small), 
            on = "species"]
-
-
-# transform all NA values to 0 
-cols <- grep("order|family|genus|species", 
-             names(Trait_EU), 
-             value = TRUE, 
-             invert = TRUE)
-
-for (j in cols){
-  data.table::set(Trait_EU, which(is.na(Trait_EU[[j]])),j,0)
-}
-
-# _________________________________________________________________________ 
-#### Pattern fo development ####
-# Holometabolous 
-# hemimetabolous?
-# no insect
-# _________________________________________________________________________ 
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-
-Trait_EU[, `:=`(
-  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    order %in% hemimetabola |
-      order %in% holometabola
-  ), 1, 0)
-)]
-
 # _________________________________________________________________________ 
 #### Correct information on order level ####
 # _________________________________________________________________________ 
@@ -387,6 +335,51 @@ Trait_EU[grepl("Normandia", genus), `:=`(family = "Elmidae",
                                            order = "Coleoptera")]
 Trait_EU[grepl("Stenostomum", genus), `:=`(family = "Stenostomidae", 
                                              order = "Catenulida")]
+# _________________________________________________________________________ 
+#### Pattern fo development ####
+# Holometabolous 
+# hemimetabolous?
+# no insect
+# _________________________________________________________________________ 
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+Trait_EU[, `:=`(
+  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
+  dev_no_insect = ifelse(!(
+    order %in% hemimetabola | order %in% holometabola
+  ), 1, 0)
+)]
+
 # save
 saveRDS(object = Trait_EU, 
         file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
