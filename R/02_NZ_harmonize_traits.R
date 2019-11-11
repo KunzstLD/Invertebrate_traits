@@ -199,50 +199,6 @@ Trait_NZ[, `:=`(
   ), 1, 0)
 )]
 
-# _________________________________________________________________________
-#### Normalization #### 
-# _________________________________________________________________________
-trait_names_pattern <-
-  names(Trait_NZ[, -c("Family",
-                      "Genus",
-                      "Species",
-                      "Order"
-  )]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_NZ[, rowSum := apply(.SD, 1, sum),
-           .SDcols = names(Trait_NZ) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_NZ)[names(Trait_NZ) %like% cols]
-  
-  Trait_NZ[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_NZ) %like% cols]
-}
-Trait_NZ[, rowSum := NULL]
-
-# get trait columns
-trait_col <-
-  grep(
-    "Species|Genus|Family|Order|unique_id",
-    names(Trait_NZ),
-    invert = TRUE,
-    value = TRUE
-  )
-
-# transform NA values to zero
-for (j in trait_col){
-  data.table::set(Trait_NZ, which(is.na(Trait_NZ[[j]])),j,0)
-}
-
 # lower colnames
 setnames(Trait_NZ, 
          old = names(Trait_NZ), 

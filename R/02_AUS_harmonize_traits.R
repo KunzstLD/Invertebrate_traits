@@ -414,53 +414,6 @@ Trait_AUS[, `:=`(
   ), 1, 0)
 )]
 
-# _________________________________________________________________________ 
-#### Normalization ####
-# _________________________________________________________________________ 
-
-# get trait names & create pattern for subset
-trait_names_pattern <-
-  names(Trait_AUS[, -c("unique_id",
-                       "Family",
-                       "Genus",
-                       "Species",
-                       "Order"
-  )]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_AUS[, rowSum := apply(.SD, 1, sum),
-            .SDcols = names(Trait_AUS) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_AUS)[names(Trait_AUS) %like% cols]
-  
-  Trait_AUS[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_AUS) %like% cols]
-}
-Trait_AUS[, rowSum := NULL]
-
-# get trait columns
-trait_col <-
-  grep(
-    "(?i)unique_id|species|genus|family|order",
-    names(Trait_AUS),
-    invert = TRUE,
-    value = TRUE
-  )
-
-# transform NA values to zero
-for (j in trait_col){
-  data.table::set(Trait_AUS, which(is.na(Trait_AUS[[j]])),j,0)
-}
-
 # Change column order
 setcolorder(x = Trait_AUS,
             neworder = names(Trait_AUS)[-c(1:5)][order(names(Trait_AUS)[-c(1:5)])])
