@@ -8,84 +8,102 @@
 Trait_Noa <- readRDS(file = file.path(data_cleaned,
                                       "North_America", 
                                       "Traits_US_pp_harmonized.rds"))
-# select trait col
-trait_col <-
-  grep(
-    "unique_id|species|genus|family|order",
-    names(Trait_Noa),
-    invert = TRUE,
-    value = TRUE
-  )
+# _________________________________________________________________________
+#### Normalization ####
+# First step is normalizing of the trait values to a range of [0 - 1] by
+# dividing for a given trait each value for a trait state by the sum of all 
+# trait states
+# Then trait data are subsetted to taxa that have complete 
+# information on all traits
+# _________________________________________________________________________
 
-# test how complete trait sets are
-name_vec <- sub("\\_.*", "", trait_col) %>% unique()
-output <- matrix(ncol = 2, nrow = length(name_vec))
+# get trait names & create pattern for subset
+trait_names_pattern <-
+  names(Trait_Noa[, -c("unique_id",
+                       "family",
+                       "genus",
+                       "species",
+                       "order")]) %>%
+  sub("\\_.*|\\..*", "", .) %>%
+  unique() %>%
+  paste0("^", .)
 
-for (i in seq_along(name_vec)) {
-  vec <- Trait_Noa[, base::sum(.SD) == 0,
-                   .SDcols = names(Trait_Noa) %like% name_vec[i],
-                   by = 1:nrow(Trait_Noa)]$V1
+# loop for normalization (trait categories for each trait sum up to 1) 
+for(cols in trait_names_pattern) {
   
-  # percentage of how many entries per trait lack information
-  output[i, ] <-
-    c(round((sum(vec) / nrow(Trait_Noa)) * 100), name_vec[i])
+  # get row sum for a specific trait
+  Trait_Noa[, rowSum := apply(.SD, 1, sum),
+                .SDcols = names(Trait_Noa) %like% cols]
+  
+  # get column names for assignment
+  col_name <- names(Trait_Noa)[names(Trait_Noa) %like% cols]
+  
+  Trait_Noa[, (col_name) := lapply(.SD, function(y) {
+    round(y / rowSum, digits = 2)
+  }),
+  .SDcols = names(Trait_Noa) %like% cols]
 }
+
+# del unnecessary columns
+Trait_Noa[, c("rowSum") := NULL]
+
+# test how complete trait sets are 
+output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+
+for (i in seq_along(trait_names_pattern)) {
+  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+  # entries for this trait contained NA
+  vec <-
+    Trait_Noa[, apply(.SD, 1, function(y)
+      base::sum(is.na(y))),
+      .SDcols = names(Trait_Noa) %like% trait_names_pattern[[i]]]
+  
+  # How complete is the dataset for each individual trait?
+  output[i, ] <-
+    c((length(vec[vec == 0]) / nrow(Trait_Noa))  %>% `*` (100) %>% round(),
+      trait_names_pattern[[i]])
+}
+# Gives % coverage for each trait
 output
 
+# Subset to relevant traits 
+Trait_Noa <- Trait_Noa[, .SD,
+                       .SDcols = names(Trait_Noa) %like% "locom|feed|resp|volt|ovip|size|dev|unique_id|species|genus|family|order"]
+
 # just return rows where for each trait there is an observation 
-data <- get_complete_trait_data(
-  trait_data = Trait_Noa,
-  non_trait_col = c("unique_id",
-                    "species",
-                    "genus",
-                    "family",
-                    "order")
-)
-# lapply(data, nrow)
+Trait_Noa <- na.omit(Trait_Noa,
+                     cols = names(Trait_Noa[, -c("unique_id", 
+                                                 "species", 
+                                                 "genus", 
+                                                 "family", 
+                                                 "order")]))
 
-# merge datasats together
-Trait_Noa <- Reduce(merge, data[c("locom",
-                                  "feed",
-                                  "resp",
-                                  "volt",
-                                  "ovip",
-                                  "size",
-                                  "dev")])
-# Availabile traits:
-# "locom",
-# "feed",
-# "resp",
-# "ph",
-# "temp",
-# "volt",
-# "ovip",
-# "size", 
-# "stage"
-
-# Subset to interesting orders: Ephemeroptera, Hemiptera, Odonata, 
+# Subset to interesting orders: Venerida & Amphipoda?
 # Trichoptera, Venerida, Coleoptera, Plecoptera, Diptera, Amphipoda
 Trait_Noa <- Trait_Noa[order %in% c(
   "Ephemeroptera",
   "Hemiptera",
   "Odonata",
   "Trichoptera",
-  "Venerida",
   "Coleoptera",
   "Plecoptera",
-  "Diptera",
-  "Amphipoda"
+  "Diptera"
 ), ]
 
 # _________________________________________________________________________
 #### First aggregation step ####
 # _________________________________________________________________________
 
-# create name pattern for relevant traits
-pat_traitname <- paste(trait_col, collapse = "|")
+# create vector with trait names
+trait_col <- names(Trait_Noa[, -c("unique_id",
+                                  "family",
+                                  "genus",
+                                  "species",
+                                  "order")])
 
 # aggregate species data to genus level via median
 Trait_Noa_genus <- Trait_Noa[!is.na(species), lapply(.SD, median), 
-                             .SDcols = names(Trait_Noa) %like% pat_traitname, 
+                             .SDcols = trait_col, 
                              by = "genus"]
 
 # merge family information back 
@@ -126,7 +144,7 @@ Trait_Noa_agg <- Trait_Noa_genus[, c(lapply(.SD, function(y) {
     Mode(y)
   }
 }), .N),
-.SDcols = names(Trait_Noa_genus) %like% pat_traitname,
+.SDcols = trait_col,
 by = "family"] 
 
 # merge information on order back

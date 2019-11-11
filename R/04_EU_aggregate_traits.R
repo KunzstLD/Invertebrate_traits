@@ -2,66 +2,68 @@
 #### Aggregation of traits EU ####
 # =========================================================================
 
-# read in harmonized & preprocessed EU Trait DB
+# read in harmonized, preprocessed & already normalized EU Trait DB
 Trait_EU <- readRDS(file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
 
-# get trait columns
-trait_col <-
-  grep(
-    "species|genus|family|order",
-    names(Trait_EU),
-    invert = TRUE,
-    value = TRUE
-  )
+# get trait names & create pattern for subset
+trait_names_pattern <-
+  names(Trait_EU[, -c("family",
+                      "genus",
+                      "species",
+                      "order")]) %>%
+  sub("\\_.*|\\..*", "", .) %>%
+  unique() %>%
+  paste0("^", .)
 
-# subset so that only traits with complete information are retained 
-# how complete are the trait sets?
-name_vec <- sub("\\_.*", "", trait_col) %>% unique()
-output <- matrix(ncol = 2, nrow = length(name_vec))
-
-# percentage of how many entries per trait lack information
-for (i in seq_along(name_vec)) {
-  vec <- Trait_EU[, base::sum(.SD) == 0,
-                    .SDcols = names(Trait_EU) %like% name_vec[i],
-                    by = 1:nrow(Trait_EU)]$V1
+# test how complete trait sets are 
+output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+for (i in seq_along(trait_names_pattern)) {
+  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+  # entries for this trait contained NA
+  vec <-
+    Trait_EU[, apply(.SD, 1, function(y)
+      base::sum(is.na(y))),
+      .SDcols = names(Trait_EU) %like% trait_names_pattern[[i]]]
   
-  output[i,] <-
-    c(round((sum(vec) / nrow(Trait_EU)) * 100), name_vec[i])
+  # How complete is the dataset for each individual trait?
+  output[i, ] <-
+    c((length(vec[vec == 0]) / nrow(Trait_EU))  %>% `*` (100) %>% round(),
+      trait_names_pattern[[i]])
 }
-output
+# output
+
+# Choose traits
+Trait_EU <- Trait_EU[, .SD,
+                     .SDcols = names(Trait_EU) %like% "locom|feed|resp|volt|ovip|size|dev|species|genus|family|order"]
 
 # just return rows where for each trait there is an observation 
-# use get_complete_trait_data function
-data <-
-  get_complete_trait_data(
-    trait_data = Trait_EU,
-    non_trait_col = c("order",
-                      "family",
-                      "genus",
-                      "species")
-  )
+Trait_EU <- na.omit(Trait_EU,
+                    cols = names(Trait_EU[, -c("species", "genus", "family", "order")]))
 
+# restrict to certain orders
+Trait_EU <- Trait_EU[order %in% c(
+  "Ephemeroptera",
+  "Hemiptera",
+  "Odonata",
+  "Trichoptera",
+  "Coleoptera",
+  "Plecoptera",
+  "Diptera"
+), ]
 
-# lapply(data, nrow)
-Trait_EU <- Reduce(merge, data[c("locom",
-                                 "feed",
-                                 "resp",
-                                 "volt",
-                                 "ovip",
-                                 "size",
-                                 "dev")])
-# possible traits: "locom", "feed", "resp", "ph", "temp", "volt", "ovip", "size","stage"
-
+# _______________________________________________________________________
 #### Aggregate to genus level ####
+# _______________________________________________________________________
 
 # create name pattern to choose traits
-pat_traitname <- paste(trait_col, collapse = "|")
-
-# First aggregation step -> Median
+trait_col <- names(Trait_EU[, -c("family",
+                                  "genus",
+                                  "species",
+                                  "order")])
+# First aggregation step 
 Trait_EU_genus <- Trait_EU[, lapply(.SD, median), 
-                           .SDcols = names(Trait_EU) %like% pat_traitname, 
+                           .SDcols = trait_col, 
                            by = genus]
-
 # merge family & order information 
 Trait_EU_genus[Trait_EU, 
                `:=`(family = i.family,
@@ -71,27 +73,32 @@ Trait_EU_genus[Trait_EU,
 # load & complement with Tachet data on genus level
 tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
 
-# only take complete trait data (almost all from tachet)
-data_tachet <-
-  get_complete_trait_data(
-    trait_data = tachet[!is.na(genus) &
-                          is.na(species) &
-                          !genus %in% Trait_EU_genus$genus, ],
-    non_trait_col = c("species", "genus", "family", "order")
-  )
-tachet <- Reduce(merge, data_tachet[c("locom",
-                                      "feed",
-                                      "resp",
-                                      "volt",
-                                      "ovip",
-                                      "size",
-                                      "dev")])
-# bind trait data
-Trait_EU_genus <- 
-  rbind(Trait_EU_genus, 
-        tachet[, -"species"]
-  ) 
+# subset to relevant traits
+tachet <- tachet[, .SD, 
+                 .SDcols = names(tachet) %like% "locom|feed|resp|volt|ovip|size|dev|species|genus|family|order"]
 
+# restrict to certain orders
+tachet <- tachet[order %in% c(
+  "Ephemeroptera",
+  "Hemiptera",
+  "Odonata",
+  "Trichoptera",
+  "Coleoptera",
+  "Plecoptera",
+  "Diptera"
+), ]
+
+# only take complete trait data on genus level not already present in Trait_EU (almost all from tachet)
+tachet <- tachet[!is.na(genus) &
+                  is.na(species) &
+                 !genus %in% Trait_EU_genus$genus, ] %>%
+  .[, -c("species")] %>%
+  na.omit(.)
+
+# bind trait data
+Trait_EU_genus <-  rbind(Trait_EU_genus, tachet) 
+
+# _______________________________________________________________________
 #### Aggregate on family level ####
 # take mode if duplicates, otherwise maximum
 # test <- Trait_EU_genus[, lapply(.SD, Mode, na.rm = TRUE), 
@@ -106,6 +113,7 @@ Trait_EU_genus <-
 # }), .N),
 # .SDcols = names(Trait_EU_genus) %like% pat_traitname,
 # by = family]
+# _______________________________________________________________________
 Trait_fam <- Trait_EU_genus[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y)
@@ -116,19 +124,25 @@ Trait_fam <- Trait_EU_genus[, c(lapply(.SD, function(y) {
   else{
     Mode(y)
   }
-}), .N),
-.SDcols = names(Trait_EU_genus) %like% pat_traitname,
+})),
+.SDcols = trait_col,
 by = family]
 
 # family information in tachet is already covered in agg. freshwaterecol
 # except for Sparganophilidae, whose information is - however - not complete
+# tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
+# tachet[grepl("Sparganophilidae", family), ] %>% 
+#   .[, .SD, .SDcols = names(tachet) %like% "locom|feed|resp|volt|ovip|size|dev"]
 
 # merge back information on order 
 Trait_EU_agg <- Trait_fam[Trait_EU_genus,
                           `:=`(order = i.order),
                           on = "family"]
-# del not used columns
-Trait_EU_agg[, N := NULL]
+# think about feed_parasite?
+Trait_EU_agg[feed_parasite != 0,]
+
+# del dev_no_insect
+Trait_EU_agg[, dev_no_insect := NULL]
 
 # cache as RDS object
 saveRDS(object = Trait_EU_agg, file = file.path(data_out, "Trait_EU_agg.rds"))
