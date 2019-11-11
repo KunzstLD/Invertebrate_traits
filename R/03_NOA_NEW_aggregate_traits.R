@@ -1,53 +1,22 @@
 # _________________________________________________________________________
 #### Aggregation of traits NOA data from Laura T #### 
 # TODO: Check and simplify Aggregation functions
-# Get information on oviposition from other DB
-# Check overlap to older Version?
 # _________________________________________________________________________
 
 # read in pp_harmonized
 Trait_Noa_new <- readRDS(file = file.path(data_cleaned,
                                       "North_America", 
                                       "Traits_US_LauraT_pp_harmonized.rds"))
-
-# _________________________________________________________________________
-#### Normalization ####
-# First step is normalizing of the trait values to a range of [0 - 1] by
-# dividing for a given trait each value for a trait state by the sum of all 
-# trait states
-# Then trait data are subsetted to taxa that have complete 
-# information on all traits
-# _________________________________________________________________________
-
 # get trait names & create pattern for subset
 trait_names_pattern <-
   names(Trait_Noa_new[, -c("unique_id",
-                           "family",
-                           "genus",
-                           "species",
-                           "order")]) %>%
+                       "family",
+                       "genus",
+                       "species",
+                       "order")]) %>%
   sub("\\_.*|\\..*", "", .) %>%
   unique() %>%
   paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_Noa_new[, rowSum := apply(.SD, 1, sum),
-                .SDcols = names(Trait_Noa_new) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_Noa_new)[names(Trait_Noa_new) %like% cols]
-  
-  Trait_Noa_new[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_Noa_new) %like% cols]
-}
-
-# del unnecessary columns
-Trait_Noa_new[, c("rowSum") := NULL]
 
 # test how complete trait sets are 
 output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
@@ -67,11 +36,14 @@ for (i in seq_along(trait_names_pattern)) {
 }
 output
 
+# oviposition is clearly the bottleneck!
+
 # just return rows where for each trait there is an observation 
 Trait_Noa_new <- na.omit(Trait_Noa_new,
                          cols = names(Trait_Noa_new[, -c("unique_id", "species", "genus", "family", "order")]))
+
 # TODO: Subset to certain orders?
-# -> Amphipoda & Venerida not present
+# Amphipoda & Venerida not present
 
 # _________________________________________________________________________
 #### First aggregation step ####
@@ -99,6 +71,7 @@ Trait_Noa_new_genus[Trait_Noa_new[!is.na(species),],
 Trait_Noa_new_genus <-
   rbind(Trait_Noa_new_genus, Trait_Noa_new[is.na(species) & !is.na(genus),
                                    -c("unique_id", "species")])
+
 
 # Check duplicates & condense
 Trait_Noa_new_genus <- condense_dupl_numeric(
