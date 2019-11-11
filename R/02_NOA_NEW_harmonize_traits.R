@@ -7,17 +7,16 @@ Trait_Noa_new <- readRDS(file = file.path(data_cleaned, "North_America", "Traits
 
 # _________________________________________________________________________
 #### Feed mode ####
-# feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
+# feed_shredder: shredder (chewers, miners, xylophagus)
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
-# feed_scraper: scraper (grazer)
+# feed_herbivore: herbivore piercers & scraper (grazer)
 # feed_predator: predator
 # feed_parasite: parasite
 
 # Predators are defined as: Engulfers (ingest pref whole or in parts) or
   # as Piercers (piere prey tissues and suck fluids) 
 # Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
-# TODO: Ask Laura if it's possible to split Herbivore column in scapers and shredders?
 # _________________________________________________________________________
 setnames(
   Trait_Noa_new,
@@ -25,24 +24,19 @@ setnames(
     "Feed_prim_CF",
     "Feed_prim_CG",
     "Feed_prim_PA",
-    "Feed_prim_PR"
+    "Feed_prim_PR",
+    "Feed_prim_SH",
+    "Feed_prim_HB"
   ),
   new = c(
     "feed_filter",
     "feed_gatherer",
     "feed_parasite",
-    "feed_predator"
+    "feed_predator",
+    "feed_shredder",
+    "feed_herbivore"
   )
 )
-# Sheredder
-Trait_Noa_new[, feed_shredder := apply(.SD, 1, max) ,
-              .SDcols = c("Feed_prim_SH",
-                          "Feed_prim_HB")]
-# Scraper?
-
-# Del not used columns
-Trait_Noa_new[, c("Feed_prim_SH",
-                  "Feed_prim_HB") := NULL]
 
 # _________________________________________________________________________
 #### Locomotion ####
@@ -56,7 +50,7 @@ setnames(Trait_Noa_new,
          old = c("Habit_prim_Attached/fixed", 
                  "Habit_prim_Burrower"),
          new = c("locom_sessil",
-                 "locom_burrower"))
+                 "locom_burrow"))
 # Swimmer
 Trait_Noa_new[, locom_swim := apply(.SD, 1, max),
           .SDcols = c("Habit_prim_Swimmer",
@@ -91,16 +85,16 @@ setnames(
 #### Respiration ####
 # resp_teg: tegument
 # resp_gil: gills
-# resp_spi: spiracle
-# resp_pls: plastron
-# TODO: In Laura T DB: Resp Plastron spiracle is together -> Ask her if it can
-# be split?
+# resp_pls_spi: spiracle & plastron
+  # plastron & spiracle often work together in respiratory systems of aq. insects
+  # Present in insects with open tracheal systems -> breathe oxygen from the air
+  # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # _________________________________________________________________________
 setnames(Trait_Noa_new, 
          old = c("Resp_Gills", 
                  "Resp_Plastron_spiracle",
                  "Resp_Tegument"),
-         new = c("resp_gills", 
+         new = c("resp_gil", 
                  "resp_pls_spi",
                  "resp_teg"))
 
@@ -177,7 +171,7 @@ setcolorder(
     "family",
     "order",
     "locom_sessil",
-    "locom_burrower",
+    "locom_burrow",
     "locom_swim",
     "locom_crawl",
     "feed_filter",
