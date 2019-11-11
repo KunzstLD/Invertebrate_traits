@@ -144,6 +144,12 @@ fetch_dupl <- function(data, col) {
  # column with duplicates 
  # all non trait columns
 condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
+  
+  #
+  if(nrow(trait_data[duplicated(get(col_with_dupl_entries)),]) == 0){
+    stop("Input data has no duplicates. Check for duplicates first before applying this function.")
+  }
+  
   # subset to duplicate taxa
   dupl_taxa <-
     trait_data[duplicated(get(col_with_dupl_entries)),
