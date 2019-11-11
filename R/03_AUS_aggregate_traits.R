@@ -12,61 +12,79 @@ Trait_AUS <- readRDS(
   )
 )
 
-# get trait columns
-trait_col <-
-  grep(
-    "unique_id|species|genus|family|order",
-    names(Trait_AUS),
-    invert = TRUE,
-    value = TRUE
-  )
+# _________________________________________________________________________ 
+#### Normalization ####
+# _________________________________________________________________________ 
 
-# subset so that only traits with complete information are retained
-# test how complete trait sets are
-name_vec <- sub("\\_.*", "", trait_col) %>% unique()
-output <- matrix(ncol = 2, nrow = length(name_vec))
+# get trait names & create pattern for subset
+trait_names_pattern <-
+  names(Trait_AUS[, -c("unique_id",
+                       "family",
+                       "genus",
+                       "species",
+                       "order")]) %>%
+  sub("\\_.*|\\..*", "", .) %>%
+  unique() %>%
+  paste0("^", .)
 
-for (i in seq_along(name_vec)) {
-  vec <- Trait_AUS[, base::sum(.SD) == 0,
-                   .SDcols = names(Trait_AUS) %like% name_vec[i],
-                   by = 1:nrow(Trait_AUS)]$V1
+# loop for normalization (trait categories for each trait sum up to 1) 
+for(cols in trait_names_pattern) {
   
-  # percentage of how many entries per trait lack information
-  output[i, ] <-
-    c(round((sum(vec) / nrow(Trait_AUS)) * 100), name_vec[i])
+  # get row sum for a specific trait
+  Trait_AUS[, rowSum := apply(.SD, 1, sum),
+            .SDcols = names(Trait_AUS) %like% cols]
+  
+  # get column names for assignment
+  col_name <- names(Trait_AUS)[names(Trait_AUS) %like% cols]
+  
+  Trait_AUS[, (col_name) := lapply(.SD, function(y) {
+    round(y / rowSum, digits = 2)
+  }),
+  .SDcols = names(Trait_AUS) %like% cols]
 }
+Trait_AUS[, rowSum := NULL]
+
+# test how complete trait sets are 
+output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+
+for (i in seq_along(trait_names_pattern)) {
+  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+  # entries for this trait contained NA
+  vec <-
+    Trait_AUS[, apply(.SD, 1, function(y)
+      base::sum(is.na(y))),
+      .SDcols = names(Trait_AUS) %like% trait_names_pattern[[i]]]
+  
+  # How complete is the dataset for each individual trait?
+  output[i, ] <-
+    c((length(vec[vec == 0]) / nrow(Trait_AUS))  %>% `*` (100) %>% round(),
+      trait_names_pattern[[i]])
+}
+# Gives % coverage for each trait
 # output
 
-# just return rows where for each trait there is an observation 
-data <- get_complete_trait_data(
-  trait_data = Trait_AUS,
-  non_trait_col = c("unique_id",
-                    "species",
-                    "genus",
-                    "family",
-                    "order")
-)
-# lapply(data, nrow)
-Trait_AUS <- Reduce(merge, data[c("locom",
-                                  "feed",
-                                  "resp",
-                                  "volt",
-                                  "ovip",
-                                  "size",
-                                  "dev")])
+# Subset to relevant traits 
+Trait_AUS <- Trait_AUS[, .SD,
+                       .SDcols = names(Trait_AUS) %like% "locom|feed|resp|volt|ovip|size|dev|unique_id|species|genus|family|order"]
 
-# Subset to interesting orders: Ephemeroptera, Hemiptera, Odonata, 
-# Trichoptera, Venerida, Coleoptera, Plecoptera, Diptera, Amphipoda
+# just return rows where for each trait there is an observation 
+Trait_AUS <- na.omit(Trait_AUS,
+                     cols = names(Trait_AUS[, -c("unique_id", 
+                                                 "species", 
+                                                 "genus", 
+                                                 "family", 
+                                                 "order")]))
+
+# Subset to interesting orders, maybe include Amphipoda & Venerida
+# at a later stage
 Trait_AUS <- Trait_AUS[order %in% c(
   "Ephemeroptera",
   "Hemiptera",
   "Odonata",
   "Trichoptera",
-  "Venerida",
   "Coleoptera",
   "Plecoptera",
-  "Diptera",
-  "Amphipoda"
+  "Diptera"
 ), ]
 
 # rm unique id col
@@ -86,12 +104,15 @@ Trait_AUS[, unique_id := NULL]
 # _________________________________________________________________________
 
 # create name pattern to choose traits
-pat_traitname <- paste(trait_col, collapse = "|")
+trait_col <- names(Trait_AUS[, -c("family",
+                                  "genus",
+                                  "species",
+                                  "order")])
 
 # subset so that no NA values occur in Species data (otherwise all NA entries are viewed as a group &
 # aggregated as well)
 Trait_AUS_genus <- Trait_AUS[!is.na(species), lapply(.SD, median), 
-                             .SDcols = names(Trait_AUS) %like% pat_traitname, 
+                             .SDcols = trait_col, 
                              by = genus]
 # merge family information 
 Trait_AUS_genus[Trait_AUS[!is.na(species), ], 
@@ -129,7 +150,7 @@ Trait_fam <- Trait_AUS_genus[, c(lapply(.SD, function(y) {
     Mode(y)
   }
 }), .N),
-.SDcols = names(Trait_AUS_genus) %like% pat_traitname,
+.SDcols = trait_col,
 by = "family"]
 
 # merge back information on order 
@@ -155,8 +176,12 @@ Trait_AUS_resol_fam <-
   )
 
 # rbind with trait data resolved on family level
-Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus", "unique_id")], 
+Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus")], 
                        Trait_fam)
+
+# del dev_no_insect to be consistent with NZ DB
+Trait_AUS_agg[, dev_no_insect := NULL]
+
 # save
 saveRDS(object = Trait_AUS_agg,
         file = file.path(data_out, "Trait_AUS_agg.rds"))
