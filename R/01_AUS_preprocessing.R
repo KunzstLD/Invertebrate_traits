@@ -1,9 +1,7 @@
-
 # _________________________________________________________________________
 #### Preprocessing AUS Traits ####
 # TODO add a more detailed description 
 # _________________________________________________________________________
-
 
 # load raw Trait database
 Trait_AUS <-
@@ -24,14 +22,13 @@ Trait_AUS[, grep("(?i)ref.+", names(Trait_AUS), value = TRUE) := NULL]
 Comments_AUS <- Trait_AUS[, .SD, .SDcols = names(Trait_AUS) %like% "Comment|unique_id"]
 Trait_AUS[, grep("(?i)comment.+", names(Trait_AUS), value = TRUE) := NULL]
 
-# subset to relevant traits
-# ph pref
-# feeding mode - adjust col names Marchant
+# feeding mode: adjust col names Marchant
 setnames(
   Trait_AUS,
   old = grep("Marchant", names(Trait_AUS), value = TRUE),
   new = paste0("feeding_", grep("Marchant", names(Trait_AUS), value = TRUE))
 )
+
 # adjust col names Maxwell
 setnames(
   Trait_AUS,
@@ -61,9 +58,11 @@ setnames(
 )
 
 # TODO incorporate Body form as trait!
-# grep("(?i)body|shape|form", names(Trait_AUS), value = TRUE)
+# Body shape from Botwe not useful (streamlined or not)
+grep("(?i)body.*form", names(Trait_AUS), value = TRUE)
 
-# subset to relevant traits
+# subset to relevant traits:
+# body form
 # ph
 # feeding mode
 # locomotion
@@ -80,6 +79,7 @@ Trait_AUS <- Trait_AUS[, c(
   "Genus",
   "Family",
   "Order",
+  grep("(?i)body.*form", names(Trait_AUS), value = TRUE),
   grep("^pH_minimum", names(Trait_AUS), value = TRUE),
   grep(
     "(?i)(?=.*feed)(?!.*assessment)(?!.*changes)|trop",
@@ -94,12 +94,13 @@ Trait_AUS <- Trait_AUS[, c(
     perl = TRUE,
     value = TRUE
   ),
-  grep(
-    "(?i)(?=.*disp)(?!.*assessment)(?!.*changes)",
-    names(Trait_AUS),
-    value = TRUE,
-    perl = TRUE
-  ),
+  # maybe use dispersal at some later stage
+  # grep(
+  #   "(?i)(?=.*disp)(?!.*assessment)(?!.*changes)",
+  #   names(Trait_AUS),
+  #   value = TRUE,
+  #   perl = TRUE
+  # ),
   grep("(?i)^aquatic", names(Trait_AUS), value = TRUE),
   grep("(?i)volt|generation", names(Trait_AUS), value = TRUE),
   grep(
@@ -122,9 +123,6 @@ Trait_AUS <- Trait_AUS[, c(
   )
 )
 , with = FALSE]
-
-# Dispersal columns disregarded for now
-Trait_AUS <- Trait_AUS[, .SD, .SDcols = !names(Trait_AUS) %like% "(?i)disp"]
 
 # change names for Maxwell & Botwe for feeding mode
 setnames(
@@ -164,10 +162,11 @@ setnames(
 
 # ________________________________________________________________________
 #### Trait preprocessing categorical traits #### 
-# ________________________________________________________________________
-
 # Trait_AUS[, lapply(.SD, max, na.rm =TRUE),
 #           .SDcols = -c("unique_id", "Species", "Genus", "Family", "Order")]
+# Each trait category is transformed into a column with an indication 
+# of present or not present (one or zero/ 100 % or 0 %)
+# ________________________________________________________________________
 
 # ________________________________________________________________________
 ##### Respiration ####
@@ -377,7 +376,12 @@ Trait_AUS[, `:=`(temp_very_cold = ifelse(Thermophily_fam_Chessman2017 < 6, 1, 0)
                  temp_warm = ifelse(Thermophily_fam_Chessman2017 >= 18, 1, 0))]
 Trait_AUS[, Thermophily_fam_Chessman2017 := NULL]
 
-# rm columns with maximum value zero -> could be a helper function
+# _________________________________________________________________________
+#### Data Preparation & Taxonomical corrections ####
+# _________________________________________________________________________
+
+# rm columns with maximum value zero 
+# TODO: put as helper function
 rm_col <- Trait_AUS[, lapply(.SD, max, na.rm = TRUE)] %>% 
   lapply(., function(y) y[y == 0]) %>%
   unlist() %>% 
@@ -388,14 +392,10 @@ Trait_AUS[, (rm_col) := NULL]
 col_names <- names(Trait_AUS[, unlist(lapply(Trait_AUS, is.integer)), with = FALSE])
 Trait_AUS[, (col_names) := lapply(.SD, as.numeric), .SDcols = col_names]
 
-# _________________________________________________________________________
-#### Data Preparation & Taxonomical corrections ####
-# _________________________________________________________________________
-
 # rm entries with taxonomical resolution higher than Family
 Trait_AUS <- Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)), ]
 
-# luckily no duplicates
+# no duplicates
 # fetch_dupl(data = Trait_AUS, col = "Species")
 
 # set all NAs to zeros
@@ -436,6 +436,64 @@ Trait_AUS[Family %in% "Hydracarina", Order := "Trombidiformes"]
 Trait_AUS[grepl("Mesostigmata", Family), `:=`(Genus = NA, 
                                               Family = NA, 
                                               Order = "Mesostigmata")]
+
+# ____________________________________________________________________
+#### Range normalization ####
+# In order to harmonize the trait states from various
+# authors (e.g VicEPA, Schaefer, Botwe,...) they must have the same 
+# range 
+# Hence, values are divided by the maxium score of their trait to
+# obtain a range of [0 - 1]
+# ____________________________________________________________________
+trait_author_pattern <- c(
+  "feeding.*Marchant",
+  "Feeding.*VicEPA",
+  "feeding.*fam.*Chessman2017",
+  "Trop.*botwe",
+  "feeding.*maxwell",
+  "feeding.*genus.*Chessman2017",
+  "Attach.*VicEPA",
+  "Habi.*botwe",
+  "Respiration.*VicEPA",
+  "aquatic.*stages.*fam.*Chessman2017",
+  "Resp.*botwe",
+  "resp.*Maxwell",
+  "aquatic.*stages.*genus.*Chessman2017",
+  "Aquatic.*VicEPA",
+  "Voltinism.*VicEPA",
+  "Volt.*botwe",
+  "volt.*Maxwell",
+  "Reproduction.*VicEPA",
+  "Rep.*botwe",
+  "repro.*Maxwell",
+  "Ther.*botwe",
+  "Max.*size.*VicEPA",
+  "Size\\_botwe",
+  "^resp\\_",
+  "resp\\_Schaefer",
+  "^volt\\_",
+  "^ovip\\_",
+  "^feed\\_",
+  "feed.*Schaefer",
+  "^size\\_",
+  "size.*Schaefer",
+  "size.*genus.*Chessman",
+  "size.*fam.*Chessman",
+  "^ph\\_",
+  "^temp\\_"
+)
+
+# long format
+Trait_AUS <- data.table::melt(Trait_AUS, id.vars = c("unique_id", "Species", "Genus", "Family", "Order")) 
+
+# range normalization
+for(i in trait_author_pattern) {
+    Trait_AUS[grepl(i, variable), value := (value / max(value))]
+}
+
+# wide format
+Trait_AUS <- data.table::dcast(Trait_AUS, unique_id+Species+Genus+Family+Order ~ variable)
+
 # save
 saveRDS(
   object = Trait_AUS,
