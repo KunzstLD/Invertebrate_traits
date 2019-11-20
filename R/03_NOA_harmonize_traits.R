@@ -372,14 +372,139 @@ setnames(Trait_Noa,
          new = c("species", "genus", "family", "order"))
 
 # _________________________________________________________________________
-#### Aggregation of traits NOA #### 
-# TODO: Check and simplify Aggregation functions
+#### Body form ####
+# bf_streamlined: streamlined/fusiform
+# bf_flattened: flattened (dorso-ventrally)
+# bf_cylindrical: cylindrical/tubular 
+# bf_spherical: spherical
 # _________________________________________________________________________
+# transform all integers to numeric to avoid losses of data when doing merging operations
+cols_integer <- Filter(is.integer, Trait_Noa) %>% names()
+Trait_Noa[, (cols_integer) := lapply(.SD, as.double), .SDcols = cols_integer]
 
-# read in pp_harmonized
-Trait_Noa <- readRDS(file = file.path(data_cleaned,
-                                      "North_America", 
-                                      "Traits_US_pp_harmonized.rds"))
+# rm body_shape_case columns
+cols <- grep("case", names(Trait_Noa), value = TRUE)
+Trait_Noa[, (cols) := NULL]
+
+# Using Philippe Polateras classification
+body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
+
+# change "," to "." and convert bf columns to numeric
+cols <- c("streamlined", "flattened", "cylindrical", "spherical")
+body_form_pup[, (cols) := lapply(.SD, function(y) {
+  sub("\\,", ".", y) %>% 
+    as.numeric(.)
+}),
+.SDcols = cols]
+
+# Add body form traits from PUP (have priority)
+# TODO: Improve merges, coalesce other bf values
+blocky_pup <- body_form_pup[array %in% "NOA_trait_project_taxa_blocky" | 
+                              array %in% "NOA_trait_project_taxa_n_agg", ]
+
+# remove duplicated taxa
+blocky_pup <- blocky_pup[!(!is.na(species) & duplicated(species)), ]
+# 15 entries have no information on body form
+# na.omit(blocky_pup, cols = names(blocky_pup[, -c("species")]))
+# blocky_pup[is.na(bf_streamlined),]
+
+# merge bf information on species level
+Trait_Noa[blocky_pup[!is.na(species), .(species,
+                                        streamlined,
+                                        flattened,
+                                        cylindrical,
+                                        spherical)],
+          `:=`(
+            streamlined = i.streamlined,
+            flattened = i.flattened,
+            cylindrical = i.cylindrical,
+            spherical = i.spherical
+          ),
+          on = "species"]
+
+# merge bf information on genus level 
+# needs intermediate step
+Trait_Noa_bf_genus <- coalesce_join(
+  x = Trait_Noa[is.na(species),],
+  y = blocky_pup[is.na(species) &
+                   !is.na(genus) & !duplicated(genus), .(genus,
+                                                         streamlined,
+                                                         flattened,
+                                                         cylindrical,
+                                                         spherical)],
+  by = "genus",
+  join = dplyr::left_join
+) %>%
+  as.data.table(.)
+
+# merge back to whole dataset
+Trait_Noa[Trait_Noa_bf_genus,
+          `:=`(
+            flattened = i.flattened,
+            spherical = i.spherical,
+            streamlined = i.streamlined,
+            cylindrical = i.cylindrical
+          ),
+          on = "unique_id"]
+
+# merge bf information on family level (one entry)
+Trait_Noa_bf_family <- coalesce_join(
+  x = Trait_Noa[is.na(species) & is.na(genus),],
+  y = blocky_pup[is.na(genus), .(family,
+                                 streamlined,
+                                 flattened,
+                                 cylindrical,
+                                 spherical)],
+  by = "family",
+  join = dplyr::left_join
+) %>% 
+  as.data.table(.)
+
+# merge back to whole dataset
+Trait_Noa[Trait_Noa_bf_family,
+          `:=`(
+            flattened = i.flattened,
+            spherical = i.spherical,
+            streamlined = i.streamlined,
+            cylindrical = i.cylindrical
+          ),
+          on = "unique_id"]
+
+# interesting taxa where trait assignments deviate for body size:
+# Trait_Noa[`Body_shape_Dorsoventrally flattened` == 1 & 
+#             cylindrical == 1, .(flattened , `Body_shape_Dorsoventrally flattened`,
+#                             cylindrical, Body_shape_Tubular, 
+#                             species, genus, family, order)]
+
+# find conflict data -> use PUP assignments in these cases 
+Trait_Noa[!is.na(flattened) & `Body_shape_Dorsoventrally flattened` > 0, 
+          `Body_shape_Dorsoventrally flattened` := 0] 
+Trait_Noa[!is.na(spherical) & `Body_shape_Round (humped)` > 0, 
+          `Body_shape_Round (humped)` := 0]
+Trait_Noa[!is.na(streamlined) & `Body_shape_Streamlined / fusiform` > 0, 
+           `Body_shape_Streamlined / fusiform` := 0] 
+Trait_Noa[!is.na(cylindrical) & Body_shape_Tubular > 0, 
+           Body_shape_Tubular := 0] 
+
+# put bf data NOA with PUP assignments together
+Trait_Noa[, `:=`(
+  bf_flattened = coalesce(flattened , `Body_shape_Dorsoventrally flattened`),
+  bf_spherical = coalesce(spherical , `Body_shape_Round (humped)`),
+  bf_streamlined = coalesce(streamlined, `Body_shape_Streamlined / fusiform`),
+  bf_cylindrical = coalesce(cylindrical, Body_shape_Tubular)
+)] 
+
+# del other bf columns
+Trait_Noa[, c("Body_shape_Bluff (blocky)",
+              "Body_shape_Dorsoventrally flattened",
+              "Body_shape_Round (humped)",
+              "Body_shape_Streamlined / fusiform",
+              "Body_shape_Tubular",
+              "streamlined",
+              "flattened",
+              "cylindrical",
+              "spherical") := NULL]
+
 # _________________________________________________________________________
 #### Normalization ####
 # First step is normalizing of the trait values to a range of [0 - 1] by
