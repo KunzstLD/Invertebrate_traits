@@ -158,11 +158,22 @@ Trait_NZ[, c(
   "EGGCEMENT_cemented"
 ) := NULL]
 
-# subset to relevant traits
-# missing currently: aquatic stages, dispersal/dissemination, T, pH
-Trait_NZ <-
-  Trait_NZ[, .SD, 
-           .SDcols = names(Trait_NZ) %like% c("size|ovip|resp|feed|locom|volt|Species|Genus|Family|Order|unique_id")]
+# _________________________________________________________________________ 
+#### Body form ####
+# streamlined
+# cylindrical
+# spherical
+# flattened
+# _________________________________________________________________________ 
+setnames(x = Trait_NZ,
+         old = c("STREAMLINED_streamlined",
+                 "SPHERICAL_spherical",
+                 "CYLINDRICAL_cylindrical",
+                 "FLATTENED_flattened (dorso-ventral or lateral)"),
+         new = c("bf_streamlined",
+                 "bf_spherical",
+                 "bf_cylindrical", 
+                 "bf_flattened"))
 
 # _________________________________________________________________________
 #### Pattern of development ####
@@ -210,10 +221,17 @@ Trait_NZ[, `:=`(
   ), 1, 0)
 )]
 
-# lower colnames
+# subset to relevant traits
+# missing currently: aquatic stages, dispersal/dissemination, T, pH
+Trait_NZ <-
+  Trait_NZ[, .SD,
+           .SDcols = names(Trait_NZ) %like% c("size|ovip|resp|feed|locom|volt|dev|bf|Species|Genus|Family|Order|unique_id")]
+
+# colnames lowercase
 setnames(Trait_NZ, 
          old = names(Trait_NZ), 
          new = tolower(names(Trait_NZ)))
+
 # save
 saveRDS(object = Trait_NZ,
         file = file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
