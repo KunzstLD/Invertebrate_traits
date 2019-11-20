@@ -14,6 +14,7 @@ Trait_AUS <- readRDS(
 
 # _________________________________________________________________________ 
 #### Normalization ####
+# All trait states within one trait are divided by their row sum
 # _________________________________________________________________________ 
 
 # get trait names & create pattern for subset
@@ -65,7 +66,7 @@ for (i in seq_along(trait_names_pattern)) {
 
 # Subset to relevant traits 
 Trait_AUS <- Trait_AUS[, .SD,
-                       .SDcols = names(Trait_AUS) %like% "locom|feed|resp|volt|ovip|size|dev|unique_id|species|genus|family|order"]
+                       .SDcols = names(Trait_AUS) %like% "locom|feed|resp|volt|bf|size|dev|unique_id|species|genus|family|order"]
 
 # just return rows where for each trait there is an observation 
 Trait_AUS <- na.omit(Trait_AUS,
@@ -119,6 +120,7 @@ Trait_AUS_genus[Trait_AUS[!is.na(species), ],
                 `:=`(family = i.family,
                      order = i.order),
                 on = "genus"]
+
 # bind with data resolved on Genus level 
 Trait_AUS_genus <-
   rbind(Trait_AUS_genus, Trait_AUS[is.na(species) &
@@ -167,6 +169,7 @@ Trait_AUS_resol_fam <- Trait_AUS[is.na(species) &
                                    is.na(genus) & 
                                    !(family %in% Trait_fam$family) &
                                    !is.na(family), ]
+
 # condense duplicates in Trait_AUS_resol_fam
 Trait_AUS_resol_fam <-
   condense_dupl_numeric(
