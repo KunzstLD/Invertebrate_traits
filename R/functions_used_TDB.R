@@ -1,6 +1,31 @@
-# Functions used in Trait Analysis ----------------------------------------
+# _________________________________________________________________________
+# Collection of functions used in Trait Analysis 
+# _________________________________________________________________________
 
-# Preprocessing  & data cleaning ------------------------------------------
+# _________________________________________________________________________
+# Preprocessing  & data cleaning 
+# _________________________________________________________________________
+
+#### Cleaning text (colnames) ####
+text_with_underscore <- function(text) {
+  ind <- grep("[[:space:]]|\\,|\\;|\\.|\\(|\\)|\\-", text)
+  text[ind] <- gsub("\\,|\\;|\\.|\\(|\\)|\\-", "", text[ind])
+  text[ind] <- gsub("[[:space:]]", "_", text[ind])
+  return(text)
+}
+
+#### Capitalize the first letter #### 
+simpleCap <- function(x) {
+  s <- tolower(x)
+  paste0(toupper(substring(s, 1, 1)), substring(s, 2))
+}
+
+#### Google search ####
+query_google <- function(x) {
+  lapply(x,
+         function(y) { utils::browseURL(url = paste0("https://google.com/search?q=", y)) }) %>%
+    invisible()
+}
 
 #### coalesce implementation when x is zero ####
 coalesce_with_zero <- function(...) {
@@ -12,7 +37,7 @@ coalesce_with_zero <- function(...) {
     list(...))
 }
 
-#### function coalescing join ####
+#### coalescing join ####
 coalesce_join <- function(x,
                           y,
                           by = NULL,
@@ -26,30 +51,30 @@ coalesce_join <- function(x,
   if (any(class(y) %in% "data.table")) {
     y <- as_tibble(y)
   }
-
+  
   joined <- join(x, y, by = by, suffix = suffix, ...)
   # names of desired output/ # colnames that both sets share
   cols <- union(names(x), names(y))
-
+  
   # fetch those col that contain .x or .y (those won't be in the original sets, are
   # created by the join)
   to_coalesce <- names(joined)[!names(joined) %in% cols]
-
+  
   # extract suffix -> just the number of their characters will be important
   suffix_used <- suffix[ifelse(endsWith(to_coalesce, suffix[1]), 1, 2)]
-
+  
   # remove suffixes and deduplicate
   to_coalesce <- unique(substr(to_coalesce,
                                1,
                                nchar(to_coalesce) - nchar(suffix_used)))
-
+  
   coalesced <- purrr::map_dfc(to_coalesce, ~ dplyr::coalesce(joined[[paste0(.x, suffix[1])]],
                                                              joined[[paste0(.x, suffix[2])]]))
   names(coalesced) <- to_coalesce
-
+  
   # get col from joined & coalesced, but only those in x (relevant col from y are in coalesced)
   dplyr::bind_cols(joined, coalesced)[names(x)]
-
+  
   # In original version -> modify by when different keys have been used
   # dplyr::bind_cols(joined, coalesced)[cols]
 }
@@ -69,13 +94,13 @@ coalesce_join <- function(x,
 #                       join = dplyr::left_join)
 # nrow(test)
 
-#### coalesce with zero ####
+#### coalescing join using colesce_with_zero ####
 coalesce_join_with_zero <- function(x,
-                          y,
-                          by = NULL,
-                          suffix = c(".x", ".y"),
-                          join = NULL,
-                          ...) {
+                                    y,
+                                    by = NULL,
+                                    suffix = c(".x", ".y"),
+                                    join = NULL,
+                                    ...) {
   # transform to tible -> join needs tibble
   if (any(class(x) %in% "data.table")) {
     x <- as_tibble(x)
@@ -83,36 +108,35 @@ coalesce_join_with_zero <- function(x,
   if (any(class(y) %in% "data.table")) {
     y <- as_tibble(y)
   }
-
+  
   joined <- join(x, y, by = by, suffix = suffix, ...)
   # names of desired output/ # colnames that both sets share
   cols <- union(names(x), names(y))
-
+  
   # fetch those col that contain .x or .y (those won't be in the original sets, are
   # created by the join)
   to_coalesce <- names(joined)[!names(joined) %in% cols]
-
+  
   # extract suffix -> just the number of their characters will be important
   suffix_used <-
     suffix[ifelse(endsWith(to_coalesce, suffix[1]), 1, 2)]
-
+  
   # remove suffixes and deduplicate
   to_coalesce <- unique(substr(to_coalesce,
                                1,
                                nchar(to_coalesce) - nchar(suffix_used)))
-
+  
   coalesced <-
     purrr::map_dfc(to_coalesce, ~ coalesce_with_zero(joined[[paste0(.x, suffix[1])]],
                                                      joined[[paste0(.x, suffix[2])]]))
   names(coalesced) <- to_coalesce
-
+  
   # get col from joined & coalesced, but only those in x (relevant col from y are in coalesced)
   dplyr::bind_cols(joined, coalesced)[names(x)]
-
+  
   # In original version -> modify by when different keys have been used
   # dplyr::bind_cols(joined, coalesced)[cols]
 }
-
 # test
 # test <- data.table(x = c(0,0,1), y = c(1,1,2), join = c("A", "B", "C"))
 # test_2 <-  data.table(x = c(1,2,1), y = c(2,2,2), z = c(1,1,2), join = c("A", "B", "C"))
@@ -123,8 +147,9 @@ coalesce_join_with_zero <- function(x,
 
 #### Fetch duplicate taxa ####
 # Returns dataset (ordered) only with the duplicated entries
-# x is col in quotes
-# dat is data.frame/data.table
+# requires: 
+  # x is col in quotes
+  # dat is data.frame/data.table
 fetch_dupl <- function(data, col) {
   # fetch rows with duplicates
   n_occur <- data.frame(table(data[[col]]))
@@ -135,14 +160,15 @@ fetch_dupl <- function(data, col) {
 }
 
 #### Aggregate duplicate taxa entries ####
+
 # Duplicate taxa with numeric values are condensed:
-# the Mode is taken when the same taxa occurs multiple times
-# if all values are unique, the median is taken. 
-# If the mode would be zero, the median is taken as well
+# The Mode is taken when the same taxa occurs multiple times
+  # If all values are distinct, the median is taken. 
+  # See also the documentation of "condense_dupl_numeric_agg"
 # requires: 
- # dataset  
- # column with duplicates 
- # all non trait columns
+  # dataset  
+  # column with duplicates 
+  # all non trait columns
 condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
   
   #
@@ -168,13 +194,18 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
   # Actual condensation of trait values
   # rather take Mode but throw out zero? instead of median in second ifelse() statement
   dupl_lf[, `:=`(value = ifelse(
-    length(value) != length(unique(value)),
+    
+    # is TRUE when NOT all values are distinct
+    length(y) != length(unique(y)),
+    #  is TRUE when not just zeros are present
     ifelse(
-      Mode(value, na.rm = TRUE) != 0,
-      Mode(value, na.rm = TRUE),
-      median(value, na.rm = TRUE)
+      !identical(y[y != 0], numeric(0)),
+      Mode(y[y != 0], na.rm = TRUE),
+      Mode(y, na.rm = TRUE)
     ),
-    median(value, na.rm = TRUE)
+    # just distinct values 
+    # zeros are dropped -> are actually not observed values
+    median(y[y != 0], na.rm = TRUE)
   )),
   by = variable]
   
@@ -195,12 +226,42 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
   return(data)
 }
 
+# Core aggregation function from the function "condese_dupl_numeric"
+# Aggregates duplicates so that the most common value is taken
+# In case just distinct values are present the median is taken
+# Zeros are filtered out if values different from zero exist
+# Problematic for cases like:
+# Mode(c(1, 1, 2, 2, 3)) compared to Mode(c(2, 2, 1, 1, 3))
+# Can be used within data.table
+condense_dupl_numeric_agg <- function(y) {
+  ifelse(
+    
+    # is TRUE when NOT all values are distinct
+    length(y) != length(unique(y)),
+    #  is TRUE when not just zeros are present
+    ifelse(
+      !identical(y[y != 0], numeric(0)),
+      Mode(y[y != 0], na.rm = TRUE),
+      Mode(y, na.rm = TRUE)
+    ),
+    # just distinct values 
+    # zeros are dropped -> are actually not observed values
+    median(y[y != 0], na.rm = TRUE)
+  )
+}
+# Testing:
+# test <- data.table(x = c("A", "A", "B", "D", "D", "D"),
+#                    y = c(1, 0, 5, 0.5, 0.5, NA))
+# test[, lapply(.SD, condense_dupl_numeric_agg), .SDcols = "y",
+#      by = .(x)]
+
+
 #### Get only complete trait data ####
 # NOTICE: This function can be used when certain trait states of a given trait
 # have only zeros (!) as entries. Is not needed anymore since now subsetting
 # is done with NA
 
-# INFO: Get complete trait data from a dataset with traits and taxa information
+# Get complete trait data from a dataset with traits and taxa information
 # (meaning at least one value different from zero)
 # Gives a list with as many datasets as traits are presented
 # Can be merged together using Reduce!
@@ -261,36 +322,14 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
 #                                       "dev")])
 
 
-
-# Trait Aggregation -------------------------------------------------------
+# _________________________________________________________________________
+# Trait Aggregation 
 # Mode
 # when there are no duplicate values, mode returns the first value!
+# ________________________________________________________________________
 Mode <- function(x, na.rm = FALSE) {
   if (na.rm)
     x <- x[!is.na(x)]
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
-}
-
-# General data cleaning -------------------------------------------------------------
-
-#### Cleaning text (colnames) ####
-text_with_underscore <- function(text) {
-  ind <- grep("[[:space:]]|\\,|\\;|\\.|\\(|\\)|\\-", text)
-  text[ind] <- gsub("\\,|\\;|\\.|\\(|\\)|\\-", "", text[ind])
-  text[ind] <- gsub("[[:space:]]", "_", text[ind])
-  return(text)
-}
-
-#### Capitalize the first letter #### 
-simpleCap <- function(x) {
-  s <- tolower(x)
-  paste0(toupper(substring(s, 1, 1)), substring(s, 2))
-}
-
-#### Google search ####
-query_google <- function(x) {
-  lapply(x,
-         function(y) { utils::browseURL(url = paste0("https://google.com/search?q=", y)) }) %>%
-         invisible()
 }
