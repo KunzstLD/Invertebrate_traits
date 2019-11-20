@@ -375,6 +375,38 @@ Trait_AUS[, c("Ther1_botwe",
               "Ther3_botwe") := NULL]
 
 # _________________________________________________________________________ 
+#### Body form ####
+# streamlined
+# cylindrical
+# spherical
+# flattened
+# _________________________________________________________________________ 
+setnames(x = Trait_AUS, 
+         old = c("Body_form_clindrical_VicEPA",
+                 "Body_form_flattended_VicEPA",
+                 "Body_form_spherical_VicEPA",
+                 "Body_form_streamlined_VicEPA"),
+         new = c("bf_cylindrical",
+                 "bf_flattened",
+                 "bf_spherical",
+                 "bf_streamlined"))
+
+# TODO: Also for Family entries 
+# Does this actually lead to any improvement?
+# When there are values assigned for body form on genus & family level
+# assign those to all the taxa (i.e. condense duplicates on genus & family level)
+# cols <- grep("unique_id|Species|Genus|Family|Order",
+#              names(Trait_AUS),
+#              value = TRUE,
+#              invert = TRUE)
+# Trait_AUS[is.na(Species) & !is.na(Genus),
+#           (cols) := lapply(.SD, condense_dupl_numeric_agg),
+#           .SDcols = cols,
+#           by = .(Genus)]
+# Conoesucus -> 3
+# Cheumatopsyche -> 2
+
+# _________________________________________________________________________ 
 #### Pattern of development ####
 # hemimetabolous
 # holometabolous
