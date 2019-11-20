@@ -3,7 +3,7 @@
 # Includes also merge with old NOA trait DB (based on Vieira et al. 2006)
 # _________________________________________________________________________
 
-# read in
+# read in 
 Trait_Noa_new <- readRDS(file = file.path(data_cleaned, "North_America", "Traits_US_pp_LauraT.rds"))
 
 # _________________________________________________________________________
@@ -175,29 +175,149 @@ Trait_Noa <- Trait_Noa[order %in% c(
   "Trichoptera"
 )]
 
+# Overlap old and new trait database
+# Trait_Noa[!is.na(species) & !species %in% Trait_Noa_new$species, ] %>% 
+#   .[, .SD, .SDcols = names(Trait_Noa) %like% "species|^size|^resp|^feed|^locom|^volt"] %>% 
+#   na.omit(.)
+
 # _________________________________________________________________________
-#### Oviposition ####
+#### Oviposition & body form ####
+# merged from old NOA trait dataset
 # ovip_aqu
 # ovip_ter
 # ovip_ovo
+
+# bf_streamlined: streamlined/fusiform
+# bf_flattened: flattened (dorso-ventrally)
+# bf_cylindrical: cylindrical/tubular 
+# bf_spherical: spherical
 # _________________________________________________________________________
 
-# Merge oviposition data (only present in old NOA trait DB) on species level 
+#### Merge oviposition data and body form data on species level #### 
+# -> only present in old NOA trait DB
+
+# merge on species level
+# only species are merged that exist in Trait_Noa_new
 Trait_Noa_new[Trait_Noa[!is.na(species),],
               `:=`(ovip_ter = i.ovip_ter,
                    ovip_aqu = i.ovip_aqu,
-                   ovip_ovo = i.ovip_ovo),
-              on = "species"] 
+                   ovip_ovo = i.ovip_ovo,
+                   bf_streamlined = i.bf_streamlined,
+                   bf_flattened = i.bf_flattened,
+                   bf_cylindrical = i.bf_cylindrical,
+                   bf_spherical = i.bf_spherical),
+              on = "species"]
+
+# merge on genus level
+# create dataset from old NOA trait data that can be merged 
+# (i.e. no duplicates in genus - hence, values for the same genera are condensed)
+Trait_Noa_genus_merge <- condense_dupl_numeric(
+  Trait_Noa[is.na(species) &
+              !is.na(genus), ],
+  col_with_dupl_entries = "genus",
+  non_trait_cols = c("unique_id", "species", "genus", "family", "order")
+) %>%
+  .[!duplicated(genus), ]
+
+# intermediate dataset
+stepGenus_Trait_Noa_new <-
+  merge(x = Trait_Noa_new[is.na(species) & !is.na(genus), ],
+        y = Trait_Noa_genus_merge[, .(
+          genus,
+          ovip_aqu,
+          ovip_ter,
+          ovip_ovo,
+          bf_flattened,
+          bf_streamlined,
+          bf_spherical,
+          bf_cylindrical
+        )],
+        by = "genus",
+        all.x = TRUE)
+
+# coalesce trait states
+stepGenus_Trait_Noa_new[, `:=`(
+  ovip_ter = coalesce(ovip_ter.x, ovip_ter.y),
+  ovip_aqu = coalesce(ovip_aqu.x, ovip_aqu.y),
+  ovip_ovo = coalesce(ovip_ovo.x, ovip_ovo.y),
+  bf_flattened = coalesce(bf_flattened.x, bf_flattened.y),
+  bf_streamlined = coalesce(bf_streamlined.x, bf_streamlined.y),
+  bf_cylindrical = coalesce(bf_cylindrical.x, bf_cylindrical.y),
+  bf_spherical = coalesce(bf_spherical.x, bf_spherical.y)
+)]
+
+# merge subset back
+Trait_Noa_new[stepGenus_Trait_Noa_new, 
+              `:=`(bf_flattened = i.bf_flattened,
+                   bf_streamlined = i.bf_streamlined,
+                   bf_cylindrical = i.bf_cylindrical,
+                   bf_spherical = i.bf_spherical,
+                   ovip_ter = i.ovip_ter,
+                   ovip_aqu = i.ovip_aqu, 
+                   ovpi_ovo = i.ovip_ovo),
+              on = "unique_id"]
+
+# merge on family level
+Trait_Noa_family_merge <- condense_dupl_numeric(
+  Trait_Noa[is.na(species) &
+              is.na(genus) & 
+              !is.na(family), ],
+  col_with_dupl_entries = "family",
+  non_trait_cols = c("unique_id", "species", "genus", "family", "order")
+) %>%
+  .[!duplicated(family), ]
+
+# intermediate dataset
+stepFamily_Trait_Noa_new <-
+  merge(x = Trait_Noa_new[is.na(species) & is.na(genus) & !is.na(family), ],
+        y = Trait_Noa_family_merge[, .(
+          family,
+          ovip_aqu,
+          ovip_ter,
+          ovip_ovo,
+          bf_flattened,
+          bf_streamlined,
+          bf_spherical,
+          bf_cylindrical
+        )],
+        by = "family",
+        all.x = TRUE)
+
+# coalesce
+stepFamily_Trait_Noa_new[, `:=`(
+  ovip_ter = coalesce(ovip_ter.x, ovip_ter.y),
+  ovip_aqu = coalesce(ovip_aqu.x, ovip_aqu.y),
+  ovip_ovo = coalesce(ovip_ovo.x, ovip_ovo.y),
+  bf_flattened = coalesce(bf_flattened.x, bf_flattened.y),
+  bf_streamlined = coalesce(bf_streamlined.x, bf_streamlined.y),
+  bf_cylindrical = coalesce(bf_cylindrical.x, bf_cylindrical.y),
+  bf_spherical = coalesce(bf_spherical.x, bf_spherical.y)
+)]
+
+# merge subset back
+Trait_Noa_new[stepFamily_Trait_Noa_new, 
+              `:=`(bf_flattened = i.bf_flattened,
+                   bf_streamlined = i.bf_streamlined,
+                   bf_cylindrical = i.bf_cylindrical,
+                   bf_spherical = i.bf_spherical,
+                   ovip_ter = i.ovip_ter,
+                   ovip_aqu = i.ovip_aqu, 
+                   ovpi_ovo = i.ovip_ovo),
+              on = "unique_id"]
+
+##### coalesce merge on species level #####
+# This is done to complement missing information with the old NOA trait DB
+# for the traits feeding mode, locomotion, size, respiration, voltinism
 
 # Select relevant columns
 Trait_Noa_new <- Trait_Noa_new[, .SD,
-                               .SDcols = names(Trait_Noa_new) %like% "feed|locom|size|resp|volt|ovip|unique_id|species|genus|family|order"]
+                               .SDcols = names(Trait_Noa_new) %like% "feed|locom|size|resp|volt|ovip|^bf|unique_id|species|genus|family|order"]
 
 # select columns from old Noa Trait DB that are also in Trait_Noa_New
 cols <- names(Trait_Noa)[names(Trait_Noa) %in% names(Trait_Noa_new)]
 Trait_Noa <- Trait_Noa[, .SD, .SDcols = cols]
 
-# get trait columns
+# create pattern from trait columns
 name_vec <- grep("unique_id|order|family|genus|species",
                  names(Trait_Noa),
                  value = TRUE,
@@ -206,15 +326,18 @@ name_vec <- grep("unique_id|order|family|genus|species",
   unique() %>%
   paste0("^",.)
 
-# coalesce merge on species level to complement missing information with the old trait DB
-# (likely that there isn't much that can be complemented by the old NOA trait DB)
+# likely that there isn't much that can be complemented by the old NOA trait DB
 # % NA val before 
 # na_before <- sum(is.na(Trait_Noa_new))/(sum(is.na(Trait_Noa_new))+ sum(!is.na(Trait_Noa_new)))
 final <- Trait_Noa_new
 for(i in name_vec){
+  
+  # check if for a certain trait all the trait states contain NA values
   subset_vec <- !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
   
-  # subset to NA values -> complement these with information from NOA old (if possible)
+  # subset to NA values
+  # complemented with information from NOA old (if possible)
+  # data need(!) to be normalized for this operation
   step <- coalesce_join(x = final[subset_vec, ],
                         y = Trait_Noa[!is.na(species), .SD,
                                    .SDcols = names(Trait_Noa) %like% paste0(i, "|", "species")],
@@ -230,11 +353,11 @@ for(i in name_vec){
                          join = dplyr::left_join) 
   setDT(final)
 }
-# % of na_values after merge -> slight improve
+# % of na_values after merge -> 0.3 % less NA's 
 # na_after <- sum(is.na(final))/(sum(is.na(final))+ sum(!is.na(final)))
 Trait_Noa_new <- final
 
-# merge information from taxa level that are only in old Noa DB
+#### merge information from taxa that are only in old Noa DB ####
 # species level
 Trait_Noa_new <-
   rbind(Trait_Noa_new, Trait_Noa[!is.na(species),] %>%
@@ -253,6 +376,7 @@ Trait_Noa_new  <-
   rbind(Trait_Noa_new,
         Trait_Noa[is.na(species) & !is.na(genus),] %>%
           .[!genus %in% Trait_Noa_new[is.na(species) & !is.na(genus),]$genus, ])
+
 # family level
 Trait_Noa_new <- rbind(Trait_Noa_new,
                        Trait_Noa[is.na(species) & is.na(genus) & !is.na(family), ] %>%
