@@ -38,6 +38,12 @@ Trait_EU[, ph_ind := NULL]
 # _________________________________________________________________________ 
 #### Feed mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
+ # xylophagus can fit to the category of shredders, but see Lancaster:
+ # "The mouthparts of facultative species tend to fit the generic model for most shredders. 
+ # Obligate xylophages, however, often have further adaptations for mining wood, and virtually all
+ # have strong, heavily sclerotized mandibles. Larvae of the caddisfly Lype phaeope 
+ # (Psychomyiidae) scrape off layers of wood with their mandibles, 
+ # and collect the fragments on the forelegs ( Spänhoff et al.2003 )."
 # feed_gatherer: collector gatherer (gatherers, detritivores)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
 # feed_herbivroe: scraper (grazer) & herbivore piercer
