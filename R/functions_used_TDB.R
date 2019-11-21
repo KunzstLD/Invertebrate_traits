@@ -321,6 +321,39 @@ condense_dupl_numeric_agg <- function(y) {
 #                                       "size",
 #                                       "dev")])
 
+#### Normalization of trait scores ####
+# All trait states of one trait are divided by their row sum
+# Hence, trait affinities are represented as "%" or ratios 
+normalize_by_rowSum <- function(x, non_trait_cols) {
+  
+  # get trait names & create pattern for subset
+  pat <- paste0(non_trait_cols, collapse = "|")
+  trait_names_pattern <-
+    grep(pat, names(x), value = TRUE, invert = TRUE) %>%
+    sub("\\_.*|\\..*", "", .) %>%
+    unique() %>%
+    paste0("^", .)
+  
+  # loop for normalization (trait categories for each trait sum up to 1)
+  for (cols in trait_names_pattern) {
+    # get row sum for a specific trait
+    x[, rowSum := apply(.SD, 1, sum), .SDcols = names(x) %like% cols]
+    
+    # get column names for assignment
+    col_name <- names(x)[names(x) %like% cols]
+    
+    # divide values for each trait state by 
+    # the sum of trait state values 
+    x[, (col_name) := lapply(.SD, function(y) {
+      round(y / rowSum, digits = 2)
+    }),
+    .SDcols = names(x) %like% cols]
+  }
+  
+  # del rowSum column
+  x[, rowSum := NULL]
+  return(x)
+}
 
 # _________________________________________________________________________
 # Trait Aggregation 
