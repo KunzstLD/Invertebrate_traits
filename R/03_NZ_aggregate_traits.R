@@ -139,6 +139,7 @@ Trait_fam[Trait_NZ_genus,
 # Those will be added as well
 Trait_NZ_resol_fam <- Trait_NZ[is.na(species) & is.na(genus),] %>%
                       .[!family %in% Trait_fam$family, -c("species", "genus")]
+
 # Duplicates? -> No!
 # Trait_NZ_resol_fam$family %>% duplicated()
 
