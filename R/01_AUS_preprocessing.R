@@ -440,8 +440,7 @@ Trait_AUS[grepl("Mesostigmata", Family), `:=`(Genus = NA,
 # ____________________________________________________________________
 #### Range normalization ####
 # In order to harmonize the trait states from various
-# authors (e.g VicEPA, Schaefer, Botwe,...) they must have the same 
-# range 
+# authors (e.g VicEPA, Schaefer, Botwe,...) they must have the same range 
 # Hence, values are divided by the maxium score of their trait to
 # obtain a range of [0 - 1]
 # ____________________________________________________________________
@@ -491,7 +490,7 @@ for(i in trait_author_pattern) {
     Trait_AUS[grepl(i, variable), value := (value / max(value))]
 }
 
-# wide format
+# back to wide format
 Trait_AUS <- data.table::dcast(Trait_AUS, unique_id+Species+Genus+Family+Order ~ variable)
 
 # save
