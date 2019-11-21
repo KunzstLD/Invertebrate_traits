@@ -23,7 +23,8 @@ library(dplyr)    # basic data transformation
 library(data.table) # data transformation
 library(readxl) # read in xlsx /xls files
 library(taxize) # retrieve taxonomical information
-library(Hmisc)
+library(Hmisc) # quick overview over data
+library(testthat) # unit testing
 
 # source script with used functions
 source(file = file.path(data_scr, "functions_used_TDB.R"))
