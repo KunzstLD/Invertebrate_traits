@@ -14,36 +14,17 @@ Trait_AUS <- readRDS(
 
 # _________________________________________________________________________ 
 #### Normalization ####
-# All trait states within one trait are divided by their row sum
+# All trait states of one trait are divided by the row sum
+# Hence, trait affinities are represented as "%" or ratios 
 # _________________________________________________________________________ 
-
-# get trait names & create pattern for subset
-trait_names_pattern <-
-  names(Trait_AUS[, -c("unique_id",
-                       "family",
-                       "genus",
-                       "species",
-                       "order")]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_AUS[, rowSum := apply(.SD, 1, sum),
-            .SDcols = names(Trait_AUS) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_AUS)[names(Trait_AUS) %like% cols]
-  
-  Trait_AUS[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_AUS) %like% cols]
-}
-Trait_AUS[, rowSum := NULL]
+Trait_AUS <- normalize_by_rowSum(
+  x = Trait_AUS,
+  non_trait_cols = c("unique_id",
+                     "species",
+                     "genus",
+                     "family",
+                     "order")
+)
 
 # test how complete trait sets are 
 output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
