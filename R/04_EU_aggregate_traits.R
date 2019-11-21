@@ -138,6 +138,7 @@ by = family]
 Trait_EU_agg <- Trait_fam[Trait_EU_genus,
                           `:=`(order = i.order),
                           on = "family"]
+
 # think about feed_parasite?
 Trait_EU_agg[feed_parasite != 0,]
 
