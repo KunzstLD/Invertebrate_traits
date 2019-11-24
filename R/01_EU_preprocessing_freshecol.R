@@ -64,5 +64,5 @@ for (j in cols){
 dat_EU <- dat_EU[!duplicated(species), ]
 
 # save as RDS
-# saveRDS(object = dat_EU,
-#         file = file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
+saveRDS(object = dat_EU,
+        file = file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
