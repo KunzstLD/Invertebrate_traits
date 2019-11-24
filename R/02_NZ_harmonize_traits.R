@@ -4,8 +4,6 @@
 # Remarks:
 # Ecological traits not present in NZ DB
 # aquatic stages? -> Leave also out?
-
-# TODO: Create function for Normalization
 # _________________________________________________________________________
 
 # read in
