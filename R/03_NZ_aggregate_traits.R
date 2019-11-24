@@ -9,6 +9,15 @@ Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
 # _________________________________________________________________________
 #### Normalization #### 
 # _________________________________________________________________________
+Trait_NZ <- normalize_by_rowSum(
+  x = Trait_NZ,
+  non_trait_cols = c("order",
+                     "family",
+                     "genus",
+                     "species")
+)
+
+# test how complete trait sets are 
 trait_names_pattern <-
   names(Trait_NZ[, -c("family",
                       "genus",
@@ -19,24 +28,6 @@ trait_names_pattern <-
   unique() %>%
   paste0("^", .)
 
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_NZ[, rowSum := apply(.SD, 1, sum),
-           .SDcols = names(Trait_NZ) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_NZ)[names(Trait_NZ) %like% cols]
-  
-  Trait_NZ[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_NZ) %like% cols]
-}
-Trait_NZ[, rowSum := NULL]
-
-# test how complete trait sets are 
 output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
 
 for (i in seq_along(trait_names_pattern)) {
@@ -99,7 +90,8 @@ Trait_NZ_genus[Trait_NZ[!is.na(species), ],
 # bind with data resolved on Genus level 
 Trait_NZ_genus <-
   rbind(Trait_NZ_genus, Trait_NZ[is.na(species) &
-                                   !is.na(genus),], fill = TRUE)
+                                   !is.na(genus), -c("species")])
+
 # _________________________________________________________________________
 #### Aggregate on family level ####
 # take mode if duplicates, otherwise maximum
@@ -137,10 +129,11 @@ Trait_fam[Trait_NZ_genus,
 
 # filter for taxa resolved on family level that are not present in aggregated dataset
 # Those will be added as well
-Trait_NZ_resol_fam <- Trait_NZ[is.na(species) & is.na(genus),] %>%
-                      .[!family %in% Trait_fam$family, -c("species", "genus")]
+Trait_NZ_resol_fam <-
+  Trait_NZ[is.na(species) & is.na(genus) & !is.na(family), ] %>%
+  .[!family %in% Trait_fam$family, -c("species", "genus")]
 
-# Duplicates? -> No!
+# no duplicates
 # Trait_NZ_resol_fam$family %>% duplicated()
 
 # rbind with trait data resolved on family level
