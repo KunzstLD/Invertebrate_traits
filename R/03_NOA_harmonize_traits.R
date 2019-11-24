@@ -512,35 +512,14 @@ Trait_Noa[, c("Body_shape_Bluff (blocky)",
 # trait states
 # _________________________________________________________________________
 
-# get trait names & create pattern for subset
-trait_names_pattern <-
-  names(Trait_Noa[, -c("unique_id",
-                       "family",
-                       "genus",
-                       "species",
-                       "order")]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_Noa[, rowSum := apply(.SD, 1, sum),
-            .SDcols = names(Trait_Noa) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_Noa)[names(Trait_Noa) %like% cols]
-  
-  Trait_Noa[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_Noa) %like% cols]
-}
-
-# del unnecessary columns
-Trait_Noa[, c("rowSum") := NULL]
+Trait_Noa <- normalize_by_rowSum(
+  x = Trait_Noa,
+  non_trait_cols = c("unique_id",
+                     "order",
+                     "family",
+                     "genus",
+                     "species")
+)
 
 # test how complete trait sets are 
 output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
