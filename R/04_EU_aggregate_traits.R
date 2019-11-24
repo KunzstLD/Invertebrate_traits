@@ -64,6 +64,7 @@ trait_col <- names(Trait_EU[, -c("family",
 Trait_EU_genus <- Trait_EU[, lapply(.SD, median), 
                            .SDcols = trait_col, 
                            by = genus]
+
 # merge family & order information 
 Trait_EU_genus[Trait_EU, 
                `:=`(family = i.family,
@@ -88,11 +89,13 @@ tachet <- tachet[order %in% c(
   "Diptera"
 ), ]
 
-# only take complete trait data on genus level not already present in Trait_EU (almost all from tachet)
+# only take complete trait data on genus level 
+# that are not present in Trait_EU (almost all from tachet)
 tachet <- tachet[!is.na(genus) &
                   is.na(species) &
                  !genus %in% Trait_EU_genus$genus, ] %>%
   .[, -c("species")] %>%
+  .[!duplicated(genus),] %>% 
   na.omit(.)
 
 # bind trait data
@@ -132,7 +135,7 @@ by = family]
 # except for Sparganophilidae, whose information is - however - not complete
 # tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
 # tachet[grepl("Sparganophilidae", family), ] %>% 
-#   .[, .SD, .SDcols = names(tachet) %like% "locom|feed|resp|volt|ovip|size|dev"]
+#    .[, .SD, .SDcols = names(tachet) %like% "locom|feed|resp|volt|ovip|size|dev"]
 
 # merge back information on order 
 Trait_EU_agg <- Trait_fam[Trait_EU_genus,
