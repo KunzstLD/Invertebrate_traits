@@ -187,31 +187,13 @@ Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 # leave out ph (needs to be harmonized when merged together with Freshwaterecol)
 # _________________________________________________________________________ 
 
-trait_names_pattern <-
-  names(Trait_EU[, -c("species", 
-                        "genus",
-                        "family", 
-                        "order")]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  Trait_EU[, rowSum := apply(.SD, 1, sum),
-             .SDcols = names(Trait_EU) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(Trait_EU)[names(Trait_EU) %like% cols]
-  
-  Trait_EU[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(Trait_EU) %like% cols]
-}
-Trait_EU[, rowSum := NULL]
+Trait_EU <- normalize_by_rowSum(
+  x = Trait_EU,
+  non_trait_cols = c("order",
+                     "family",
+                     "genus",
+                     "species")
+)
 
 # exclude life stage for now -> can not be complemented by tachet and not needed for now
 Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"] 
