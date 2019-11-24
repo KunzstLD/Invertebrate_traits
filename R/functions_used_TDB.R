@@ -196,16 +196,18 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
   dupl_lf[, `:=`(value = ifelse(
     
     # is TRUE when NOT all values are distinct
-    length(y) != length(unique(y)),
+    length(value) != length(unique(value)),
     #  is TRUE when not just zeros are present
     ifelse(
-      !identical(y[y != 0], numeric(0)),
-      Mode(y[y != 0], na.rm = TRUE),
-      Mode(y, na.rm = TRUE)
+      !identical(value[value != 0], numeric(0)),
+      Mode(value[value != 0], na.rm = TRUE),
+      Mode(value, na.rm = TRUE)
     ),
     # just distinct values 
     # zeros are dropped -> are actually not observed values
-    median(y[y != 0], na.rm = TRUE)
+    ifelse(y == 0, 
+           y, 
+           median(y[y != 0], na.rm = TRUE))
   )),
   by = variable]
   
@@ -246,7 +248,9 @@ condense_dupl_numeric_agg <- function(y) {
     ),
     # just distinct values 
     # zeros are dropped -> are actually not observed values
-    median(y[y != 0], na.rm = TRUE)
+    ifelse(y == 0, 
+           y, 
+           median(y[y != 0], na.rm = TRUE))
   )
 }
 # Testing:
