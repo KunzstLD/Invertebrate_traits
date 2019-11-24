@@ -128,6 +128,7 @@ tachet <- tachet[!grepl("\\[", family), ]
 tachet[, family := simpleCap(family)]
 
 # add information on order (use freshecol data from 01_EU_preprocessing_freshecol.R script)
+dat_EU <- readRDS(file = file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
 tachet[dat_EU[!duplicated(family), .(family, order)], 
        `:=`(order = i.order), 
        on = "family"]
@@ -313,85 +314,36 @@ tachet[, `:=`(
   ), 1, 0)
 )]
 
+
 # ---------------------------------------------------
 #### Normalization Tachet ####
 # ---------------------------------------------------
-# get trait names & create pattern for subset
-trait_names_pattern <-
-  names(tachet[, -c("group",
-                    "family", 
-                    "genus", 
-                    "species", 
-                    "order")]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# loop for normalization (trait categories for each trait sum up to 1) 
-for(cols in trait_names_pattern) {
-  
-  # get row sum for a specific trait
-  tachet[, rowSum := apply(.SD, 1, sum),
-         .SDcols = names(tachet) %like% cols]
-  
-  # get column names for assignment
-  col_name <- names(tachet)[names(tachet) %like% cols]
-  
-  tachet[, (col_name) := lapply(.SD, function(y) {
-    round(y / rowSum, digits = 2)
-  }),
-  .SDcols = names(tachet) %like% cols]
-}
-
-# del unnecessary columns
-tachet[, c("rowSum", "group") := NULL]
-
-#### Duplicate Genus entries in Tachet database ####
-# make a function out of this!
-# tachet duplicates
-dupl_taxa <- tachet[duplicated(genus) & is.na(species) & !is.na(genus),]$genus
-
-# subset tachet with and without duplicates
-tachet_dupl <- tachet[genus %in% dupl_taxa & is.na(species),]
-tachet_without_dupl <- tachet[!(genus %in% dupl_taxa & is.na(species)),]
-
-#
-tachet_dupl <- melt(
-  data = tachet_dupl,
-  id.vars = c(
-    "species",
-    "genus",
-    "family",
-    "order"
-  )
+tachet <- normalize_by_rowSum(
+  x = tachet,
+  non_trait_cols = c("group",
+                     "family",
+                     "genus",
+                     "species",
+                     "order")
 )
 
-# Allocate duplicates
-# if just unique values -> Median
-# if Mode is NOT zero, take Mode otherwise Median
-tachet_dupl[, `:=`(
-  value = ifelse(
-    length(value) != length(unique(value)),
-    ifelse(
-      Mode(value, na.rm = TRUE) != 0,
-      Mode(value, na.rm = TRUE),
-      median(value, na.rm = TRUE)
-    ),
-    median(value, na.rm = TRUE)
-  )),
-  by = variable]
+# del group column
+tachet[, "group" := NULL]
 
-# convert back to long format
-# values for each trait category per genus are the same (hence mean(x) = x)
-tachet_dupl <- dcast(
-  data = tachet_dupl,
-  formula = species + genus + family + order ~
-    variable,
-  fun.aggregate = mean
-)
+# ---------------------------------------------------
+#### Handle duplicate Genus entries in Tachet database ####
+# duplicate genus entries are condensed
+# ---------------------------------------------------
+cols <- grep("unique_id|species|genus|family|order",
+                          names(tachet),
+                          value = TRUE,
+                          invert = TRUE)
 
-# bind back to tacht data without dupl
-tachet <- rbind(tachet_dupl, tachet_without_dupl)
+tachet[is.na(species) & !is.na(genus),
+       (cols) := lapply(.SD, function(y)
+         as.numeric(condense_dupl_numeric_agg(y))),
+       .SDcols = cols,
+       by = .(genus)]
 
 # save
 saveRDS(
