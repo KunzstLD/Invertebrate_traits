@@ -325,18 +325,29 @@ condense_dupl_numeric_agg <- function(y) {
 #                                       "size",
 #                                       "dev")])
 
+#### create individual pattern of trait name (not category!) ####
+# i.e. feed_herbivore, feed_shredder -> feed
+# TODO: Add unit test
+# TODO: incorporate into Normalization of trait scores 
+create_pattern_ind <- function(x, non_trait_cols) {
+  pat <- paste0(non_trait_cols, collapse = "|")
+  # get trait names & create pattern for subset
+  trait_names_pattern <-
+    grep(pat, names(x), value = TRUE, invert = TRUE) %>%
+    sub("\\_.*|\\..*", "", .) %>%
+    unique() %>%
+    paste0("^", .)
+  return(trait_names_pattern)
+}
+
 #### Normalization of trait scores ####
 # All trait states of one trait are divided by their row sum
 # Hence, trait affinities are represented as "%" or ratios 
 normalize_by_rowSum <- function(x, non_trait_cols) {
   
   # get trait names & create pattern for subset
-  pat <- paste0(non_trait_cols, collapse = "|")
-  trait_names_pattern <-
-    grep(pat, names(x), value = TRUE, invert = TRUE) %>%
-    sub("\\_.*|\\..*", "", .) %>%
-    unique() %>%
-    paste0("^", .)
+  trait_names_pattern <- create_pattern_ind(x = x,
+                                            non_trait_cols = non_trait_cols)
   
   # loop for normalization (trait categories for each trait sum up to 1)
   for (cols in trait_names_pattern) {
@@ -346,8 +357,8 @@ normalize_by_rowSum <- function(x, non_trait_cols) {
     # get column names for assignment
     col_name <- names(x)[names(x) %like% cols]
     
-    # divide values for each trait state by 
-    # the sum of trait state values 
+    # divide values for each trait state by
+    # the sum of trait state values
     x[, (col_name) := lapply(.SD, function(y) {
       round(y / rowSum, digits = 2)
     }),
@@ -358,6 +369,31 @@ normalize_by_rowSum <- function(x, non_trait_cols) {
   x[, rowSum := NULL]
   return(x)
 }
+
+#### check for completeness of trait dataset ####
+completeness_trait_data <- function(x, non_trait_cols) {
+  
+  trait_names_pattern <- create_pattern_ind(x = x, 
+                                           non_trait_cols = non_trait_cols)
+  
+  # test how complete trait sets are
+  output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+  for (i in seq_along(trait_names_pattern)) {
+    # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+    # entries for this trait contained NA
+    vec <-
+      x[, apply(.SD, 1, function(y)
+        base::sum(is.na(y))),
+        .SDcols = names(x) %like% trait_names_pattern[[i]]]
+    
+    # How complete is the dataset for each individual trait?
+    output[i,] <-
+      c((length(vec[vec == 0]) / nrow(x))  %>% `*` (100) %>% round(),
+        trait_names_pattern[[i]])
+  }
+  return(output)
+}
+
 
 # _________________________________________________________________________
 # Trait Aggregation 
