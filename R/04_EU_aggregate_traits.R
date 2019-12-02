@@ -5,36 +5,17 @@
 # read in harmonized, preprocessed & already normalized EU Trait DB
 Trait_EU <- readRDS(file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
 
-# get trait names & create pattern for subset
-trait_names_pattern <-
-  names(Trait_EU[, -c("family",
-                      "genus",
-                      "species",
-                      "order")]) %>%
-  sub("\\_.*|\\..*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# test how complete trait sets are 
-output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
-for (i in seq_along(trait_names_pattern)) {
-  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
-  # entries for this trait contained NA
-  vec <-
-    Trait_EU[, apply(.SD, 1, function(y)
-      base::sum(is.na(y))),
-      .SDcols = names(Trait_EU) %like% trait_names_pattern[[i]]]
-  
-  # How complete is the dataset for each individual trait?
-  output[i, ] <-
-    c((length(vec[vec == 0]) / nrow(Trait_EU))  %>% `*` (100) %>% round(),
-      trait_names_pattern[[i]])
-}
-# output
+# check completeness of trait data
+completeness_trait_data(x = Trait_EU, 
+                        non_trait_cols =
+                        c("order",
+                        "family",
+                        "genus",
+                        "species"))
 
 # Choose traits
 Trait_EU <- Trait_EU[, .SD,
-                     .SDcols = names(Trait_EU) %like% "locom|feed|resp|volt|ovip|size|dev|species|genus|family|order"]
+                     .SDcols = names(Trait_EU) %like% "locom|feed|resp|volt|size|ovip|dev|species|genus|family|order"]
 
 # just return rows where for each trait there is an observation 
 Trait_EU <- na.omit(Trait_EU,
@@ -55,13 +36,42 @@ Trait_EU <- Trait_EU[order %in% c(
 #### Aggregate to genus level ####
 # _______________________________________________________________________
 
+# Add BF data from PUP on species level
+# Using Philippe Polateras classification
+body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
+
+# change "," to "." and convert bf columns to numeric
+cols <- c("streamlined", "flattened", "cylindrical", "spherical")
+body_form_pup[, (cols) := lapply(.SD, function(y) {
+  sub("\\,", ".", y) %>%
+    as.numeric(.)
+}),
+.SDcols = cols]
+
+# subset to EU data
+bf_EU <- body_form_pup[grepl("EU.*", array),]
+
+# merge on species level
+Trait_EU[bf_EU[!is.na(species), .(flattened,
+                                  spherical,
+                                  cylindrical,
+                                  streamlined,
+                                  species)],
+         `:=`(
+           bf_flattened = i.flattened,
+           bf_spherical = i.spherical,
+           bf_cylindrical = i.cylindrical,
+           bf_streamlined = i.streamlined
+         ),
+         on = "species"]
+
 # create name pattern to choose traits
 trait_col <- names(Trait_EU[, -c("family",
                                   "genus",
                                   "species",
                                   "order")])
 # First aggregation step 
-Trait_EU_genus <- Trait_EU[, lapply(.SD, median), 
+Trait_EU_genus <- Trait_EU[, lapply(.SD, median, na.rm = TRUE), 
                            .SDcols = trait_col, 
                            by = genus]
 
@@ -98,8 +108,25 @@ tachet <- tachet[!is.na(genus) &
   .[!duplicated(genus),] %>% 
   na.omit(.)
 
+# merge PUP BF traits to tachet
+tachet[bf_EU[is.na(species) & !is.na(genus), .(flattened,
+                                               spherical,
+                                               cylindrical,
+                                               streamlined,
+                                               genus)],
+       `:=`(
+         bf_flattened = i.flattened,
+         bf_spherical = i.spherical,
+         bf_cylindrical = i.cylindrical,
+         bf_streamlined = i.streamlined
+       ),
+       on = "genus"]
+
 # bind trait data
 Trait_EU_genus <-  rbind(Trait_EU_genus, tachet) 
+
+# TODO: fix this once BF data are complete
+Trait_EU_genus <- Trait_EU_genus[!is.na(bf_spherical), ]
 
 # _______________________________________________________________________
 #### Aggregate on family level ####
@@ -143,10 +170,7 @@ Trait_EU_agg <- Trait_fam[Trait_EU_genus,
                           on = "family"]
 
 # think about feed_parasite?
-Trait_EU_agg[feed_parasite != 0,]
-
-# del dev_no_insect
-Trait_EU_agg[, dev_no_insect := NULL]
+# Trait_EU_agg[feed_parasite != 0,]
 
 # cache as RDS object
 saveRDS(object = Trait_EU_agg, file = file.path(data_out, "Trait_EU_agg.rds"))
