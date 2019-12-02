@@ -63,6 +63,12 @@ for (j in cols){
 # YES! -> few entries have been copied and can therefore be removed
 dat_EU <- dat_EU[!duplicated(species), ]
 
+# taxonomical corrections
+# Microhydra sowerbyi is actually a freshwater jellyfish
+# family: Olindiidae, order: Hydrozoa
+dat_EU[grepl("Microhydra sowerbyi", species), `:=`(family = "Olindiidae",
+                                                   order = "Hydrozoa")]
+
 # save as RDS
 saveRDS(object = dat_EU,
         file = file.path(data_cleaned, "EU", "Trait_Freshecol_pp.rds"))
