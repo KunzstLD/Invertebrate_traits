@@ -212,11 +212,7 @@ holometabola <- c(
 )
 Trait_NZ[, `:=`(
   dev_hemimetabol = ifelse(Order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(Order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    Order %in% hemimetabola |
-      Order %in% holometabola
-  ), 1, 0)
+  dev_holometabol = ifelse(Order %in% holometabola, 1, 0)
 )]
 
 # subset to relevant traits
