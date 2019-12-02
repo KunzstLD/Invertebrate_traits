@@ -181,6 +181,58 @@ Trait_EU[, temp_cold := apply(.SD, 1, max),
 Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 
 # _________________________________________________________________________ 
+#### Pattern fo development ####
+# Holometabolous 
+# hemimetabolous?
+# no insect
+# _________________________________________________________________________ 
+hemimetabola <- c(
+  "Ephemeroptera",
+  "Odonata",
+  "Plecoptera",
+  "Grylloblattodea",
+  "Orthoptera",
+  "Phasmatodea",
+  "Zoraptera",
+  "Embioptera",
+  "Dermaptera",
+  "Mantodea",
+  "Blattodea",
+  "Isoptera",
+  "Thyssanoptera",
+  "Hemiptera",
+  "Phthriptera",
+  "Psocoptera"
+)
+holometabola <- c(
+  "Coleoptera",
+  "Streptsiptera",
+  "Raphidioptera",
+  "Megaloptera",
+  "Neuroptera",
+  "Diptera",
+  "Mecoptera",
+  "Siphonoptera",
+  "Lepidoptera",
+  "Trichoptera",
+  "Hymenoptera"
+)
+Trait_EU[, `:=`(
+  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
+  dev_holometabol = ifelse(order %in% holometabola, 1, 0)
+)]
+
+# _________________________________________________________________________
+#### Body form ####
+# bf_streamlined: streamlined/fusiform
+# bf_flattened: flattened (dorso-ventrally)
+# bf_cylindrical: cylindrical/tubular 
+# bf_spherical: spherical
+
+# Will be added in 04_EU_aggregate_traits.R!
+# _________________________________________________________________________
+
+# _________________________________________________________________________ 
 #### Normalization Freshecol ####
 # TODO make a function out of this!
 # get trait names & create pattern for subset
@@ -253,6 +305,7 @@ Trait_EU <- rbind(Trait_EU,
                            .SDcols = !(names(tachet) %like% "^stage|^disp|size")], 
                   use.names = TRUE,
                   fill = TRUE)
+
 # _________________________________________________________________________ 
 #### Size ####
 # size_small: size < 9 mm (EU: size < 10 mm)
@@ -323,51 +376,6 @@ Trait_EU[grepl("Normandia", genus), `:=`(family = "Elmidae",
                                            order = "Coleoptera")]
 Trait_EU[grepl("Stenostomum", genus), `:=`(family = "Stenostomidae", 
                                              order = "Catenulida")]
-# _________________________________________________________________________ 
-#### Pattern fo development ####
-# Holometabolous 
-# hemimetabolous?
-# no insect
-# _________________________________________________________________________ 
-hemimetabola <- c(
-  "Ephemeroptera",
-  "Odonata",
-  "Plecoptera",
-  "Grylloblattodea",
-  "Orthoptera",
-  "Phasmatodea",
-  "Zoraptera",
-  "Embioptera",
-  "Dermaptera",
-  "Mantodea",
-  "Blattodea",
-  "Isoptera",
-  "Thyssanoptera",
-  "Hemiptera",
-  "Phthriptera",
-  "Psocoptera"
-)
-holometabola <- c(
-  "Coleoptera",
-  "Streptsiptera",
-  "Raphidioptera",
-  "Megaloptera",
-  "Neuroptera",
-  "Diptera",
-  "Mecoptera",
-  "Siphonoptera",
-  "Lepidoptera",
-  "Trichoptera",
-  "Hymenoptera"
-)
-Trait_EU[, `:=`(
-  dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    order %in% hemimetabola | order %in% holometabola
-  ), 1, 0)
-)]
-
 # save
 saveRDS(object = Trait_EU, 
         file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
