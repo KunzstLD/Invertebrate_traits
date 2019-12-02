@@ -48,7 +48,7 @@ gathercol <- c(
 # long format
 traits_long <- Subset_Noa_new  %>%
   filter(!is.na(Genus)) %>%
-  gather_(keycol, valuecol, gathercol) #create a column "trait" that holds all trait assignments
+  tidyr::gather_(keycol, valuecol, gathercol) #create a column "trait" that holds all trait assignments
 
 # calculate frequency of trait state occurrence per genus and trait
 # convert data back to wide format
