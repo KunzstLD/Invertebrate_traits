@@ -391,21 +391,6 @@ setnames(x = Trait_AUS,
                  "bf_spherical",
                  "bf_streamlined"))
 
-# TODO: Also for Family entries 
-# Does this actually lead to any improvement?
-# When there are values assigned for body form on genus & family level
-# assign those to all the taxa (i.e. condense duplicates on genus & family level)
-# cols <- grep("unique_id|Species|Genus|Family|Order",
-#              names(Trait_AUS),
-#              value = TRUE,
-#              invert = TRUE)
-# Trait_AUS[is.na(Species) & !is.na(Genus),
-#           (cols) := lapply(.SD, condense_dupl_numeric_agg),
-#           .SDcols = cols,
-#           by = .(Genus)]
-# Conoesucus -> 3
-# Cheumatopsyche -> 2
-
 # _________________________________________________________________________ 
 #### Pattern of development ####
 # hemimetabolous
@@ -445,11 +430,7 @@ holometabola <- c(
 )
 Trait_AUS[, `:=`(
   dev_hemimetabol = ifelse(Order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(Order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    Order %in% hemimetabola |
-      Order %in% holometabola
-  ), 1, 0)
+  dev_holometabol = ifelse(Order %in% holometabola, 1, 0)
 )]
 
 # Change column order
