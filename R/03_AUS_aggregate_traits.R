@@ -27,23 +27,14 @@ Trait_AUS <- normalize_by_rowSum(
 )
 
 # test how complete trait sets are 
-output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
-
-for (i in seq_along(trait_names_pattern)) {
-  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
-  # entries for this trait contained NA
-  vec <-
-    Trait_AUS[, apply(.SD, 1, function(y)
-      base::sum(is.na(y))),
-      .SDcols = names(Trait_AUS) %like% trait_names_pattern[[i]]]
-  
-  # How complete is the dataset for each individual trait?
-  output[i, ] <-
-    c((length(vec[vec == 0]) / nrow(Trait_AUS))  %>% `*` (100) %>% round(),
-      trait_names_pattern[[i]])
-}
-# Gives % coverage for each trait
-# output
+completeness_trait_data(
+  x = Trait_AUS,
+  non_trait_cols = c("unique_id",
+                     "species",
+                     "genus",
+                     "family",
+                     "order")
+)
 
 # Subset to relevant traits 
 Trait_AUS <- Trait_AUS[, .SD,
@@ -146,26 +137,15 @@ Trait_fam[, N := NULL]
 
 # filter for taxa resolved on family level that are not yet respresented in the 
 # aggregated dataset (Trait_fam)
-Trait_AUS_resol_fam <- Trait_AUS[is.na(species) & 
-                                   is.na(genus) & 
-                                   !(family %in% Trait_fam$family) &
-                                   !is.na(family), ]
-
-# condense duplicates in Trait_AUS_resol_fam
-Trait_AUS_resol_fam <-
-  condense_dupl_numeric(
-    trait_data = Trait_AUS_resol_fam,
-    col_with_dupl_entries = "family",
-    non_trait_cols = c("species", "genus", "family", "order")
-  )
+taxa_famlvl <- Trait_AUS[is.na(species) &
+                           is.na(genus) &
+                           !(family %in% Trait_fam$family) &
+                           !is.na(family), ] %>%
+  .[!duplicated(family), ]
 
 # rbind with trait data resolved on family level
-Trait_AUS_agg <- rbind(Trait_AUS_resol_fam[, -c("species", "genus")], 
+Trait_AUS_agg <- rbind(taxa_famlvl[, -c("species", "genus")], 
                        Trait_fam)
-
-# del dev_no_insect to be consistent with NZ DB
-Trait_AUS_agg[, dev_no_insect := NULL]
-
 # save
 saveRDS(object = Trait_AUS_agg,
         file = file.path(data_out, "Trait_AUS_agg.rds"))
