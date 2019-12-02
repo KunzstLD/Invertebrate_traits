@@ -493,6 +493,32 @@ for(i in trait_author_pattern) {
 # back to wide format
 Trait_AUS <- data.table::dcast(Trait_AUS, unique_id+Species+Genus+Family+Order ~ variable)
 
+#________________________________________________________________________
+#### Handle duplicates ####
+#________________________________________________________________________
+
+# no duplicate entries in Species column
+Trait_AUS[!is.na(Species) & duplicated(Species), ]
+
+# genus column
+cols <- grep("(?i)unique_id|species|genus|family|order",
+             names(Trait_AUS),
+             value = TRUE,
+             invert = TRUE)
+
+Trait_AUS[is.na(Species) & !is.na(Genus),
+       (cols) := lapply(.SD, function(y)
+         as.numeric(condense_dupl_numeric_agg(y))),
+       .SDcols = cols,
+       by = .(Genus)]
+
+# family column
+Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
+          (cols) := lapply(.SD, function(y)
+            as.numeric(condense_dupl_numeric_agg(y))),
+          .SDcols = cols,
+          by = .(Family)]
+
 # save
 saveRDS(
   object = Trait_AUS,
