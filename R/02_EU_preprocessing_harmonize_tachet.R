@@ -243,7 +243,8 @@ tachet[, feed_herbivore := apply(.SD, 1, max),
 # del columns
 tachet[, c("feed_active_filter",
            "feed_active_filter_abs",
-           "feed_piercer_t") := NULL]
+           "feed_piercer_t",
+           "feed_scraper") := NULL]
 # _________________________________________________________________________
 # Oviposition
 # ovip_aqu: Reproduction via aquatic eggs
@@ -307,11 +308,7 @@ holometabola <- c(
 
 tachet[, `:=`(
   dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
-  dev_holometabol = ifelse(order %in% holometabola, 1, 0),
-  dev_no_insect = ifelse(!(
-    order %in% hemimetabola |
-      order %in% holometabola
-  ), 1, 0)
+  dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
 
 
