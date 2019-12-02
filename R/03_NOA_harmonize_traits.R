@@ -46,10 +46,10 @@ setnames(
 # ph_acidic, ph_neutral
 # neutral and alcaline combined to neutral
 # _________________________________________________________________________
-setnames(Trait_Noa, "pH_acidic", "ph_acidic")
-Trait_Noa[, ph_neutral := apply(.SD, 1, max),
-          .SDcols = c("pH_normal", "pH_alkaline")]
-Trait_Noa[, c("pH_alkaline", "pH_normal") := NULL]
+# setnames(Trait_Noa, "pH_acidic", "ph_acidic")
+# Trait_Noa[, ph_neutral := apply(.SD, 1, max),
+#           .SDcols = c("pH_normal", "pH_alkaline")]
+# Trait_Noa[, c("pH_alkaline", "pH_normal") := NULL]
 
 # _________________________________________________________________________
 #### Feed mode ####
@@ -382,31 +382,29 @@ setnames(Trait_Noa,
 cols_integer <- Filter(is.integer, Trait_Noa) %>% names()
 Trait_Noa[, (cols_integer) := lapply(.SD, as.double), .SDcols = cols_integer]
 
-# rm body_shape_case columns
+## rm body_shape_case columns
 cols <- grep("case", names(Trait_Noa), value = TRUE)
 Trait_Noa[, (cols) := NULL]
-
-# Using Philippe Polateras classification
+ 
+## Using Philippe Polateras classification
 body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
 
 # change "," to "." and convert bf columns to numeric
 cols <- c("streamlined", "flattened", "cylindrical", "spherical")
 body_form_pup[, (cols) := lapply(.SD, function(y) {
-  sub("\\,", ".", y) %>% 
+  sub("\\,", ".", y) %>%
     as.numeric(.)
 }),
 .SDcols = cols]
 
 # Add body form traits from PUP (have priority)
-# TODO: Improve merges, coalesce other bf values
-blocky_pup <- body_form_pup[array %in% "NOA_trait_project_taxa_blocky" | 
+blocky_pup <- body_form_pup[array %in% "NOA_trait_project_taxa_blocky" |
                               array %in% "NOA_trait_project_taxa_n_agg", ]
 
 # remove duplicated taxa
 blocky_pup <- blocky_pup[!(!is.na(species) & duplicated(species)), ]
 # 15 entries have no information on body form
-# na.omit(blocky_pup, cols = names(blocky_pup[, -c("species")]))
-# blocky_pup[is.na(bf_streamlined),]
+blocky_pup <- blocky_pup[!(is.na(streamlined) | is.na(cylindrical) | is.na(spherical) | is.na(flattened)),]
 
 # merge bf information on species level
 Trait_Noa[blocky_pup[!is.na(species), .(species,
@@ -421,8 +419,8 @@ Trait_Noa[blocky_pup[!is.na(species), .(species,
             spherical = i.spherical
           ),
           on = "species"]
-
-# merge bf information on genus level 
+ 
+# merge bf information on genus level
 # needs intermediate step
 Trait_Noa_bf_genus <- coalesce_join(
   x = Trait_Noa[is.na(species),],
@@ -457,7 +455,7 @@ Trait_Noa_bf_family <- coalesce_join(
                                  spherical)],
   by = "family",
   join = dplyr::left_join
-) %>% 
+) %>%
   as.data.table(.)
 
 # merge back to whole dataset
@@ -469,30 +467,30 @@ Trait_Noa[Trait_Noa_bf_family,
             cylindrical = i.cylindrical
           ),
           on = "unique_id"]
-
-# interesting taxa where trait assignments deviate for body size:
-# Trait_Noa[`Body_shape_Dorsoventrally flattened` == 1 & 
-#             cylindrical == 1, .(flattened , `Body_shape_Dorsoventrally flattened`,
-#                             cylindrical, Body_shape_Tubular, 
-#                             species, genus, family, order)]
-
-# find conflict data -> use PUP assignments in these cases 
-Trait_Noa[!is.na(flattened) & `Body_shape_Dorsoventrally flattened` > 0, 
-          `Body_shape_Dorsoventrally flattened` := 0] 
-Trait_Noa[!is.na(spherical) & `Body_shape_Round (humped)` > 0, 
-          `Body_shape_Round (humped)` := 0]
-Trait_Noa[!is.na(streamlined) & `Body_shape_Streamlined / fusiform` > 0, 
-           `Body_shape_Streamlined / fusiform` := 0] 
-Trait_Noa[!is.na(cylindrical) & Body_shape_Tubular > 0, 
-           Body_shape_Tubular := 0] 
-
+ 
+# # interesting taxa where trait assignments deviate for body size:
+# # Trait_Noa[`Body_shape_Dorsoventrally flattened` == 1 & 
+# #             cylindrical == 1, .(flattened , `Body_shape_Dorsoventrally flattened`,
+# #                             cylindrical, Body_shape_Tubular, 
+# #                             species, genus, family, order)]
+# 
+# # find conflict data -> use PUP assignments in these cases 
+# Trait_Noa[!is.na(flattened) & `Body_shape_Dorsoventrally flattened` > 0, 
+#           `Body_shape_Dorsoventrally flattened` := 0] 
+# Trait_Noa[!is.na(spherical) & `Body_shape_Round (humped)` > 0, 
+#           `Body_shape_Round (humped)` := 0]
+# Trait_Noa[!is.na(streamlined) & `Body_shape_Streamlined / fusiform` > 0, 
+#            `Body_shape_Streamlined / fusiform` := 0] 
+# Trait_Noa[!is.na(cylindrical) & Body_shape_Tubular > 0, 
+#            Body_shape_Tubular := 0] 
+# 
 # put bf data NOA with PUP assignments together
 Trait_Noa[, `:=`(
   bf_flattened = coalesce(flattened , `Body_shape_Dorsoventrally flattened`),
   bf_spherical = coalesce(spherical , `Body_shape_Round (humped)`),
   bf_streamlined = coalesce(streamlined, `Body_shape_Streamlined / fusiform`),
   bf_cylindrical = coalesce(cylindrical, Body_shape_Tubular)
-)] 
+)]
 
 # del other bf columns
 Trait_Noa[, c("Body_shape_Bluff (blocky)",
@@ -511,7 +509,6 @@ Trait_Noa[, c("Body_shape_Bluff (blocky)",
 # dividing for a given trait each value for a trait state by the sum of all 
 # trait states
 # _________________________________________________________________________
-
 Trait_Noa <- normalize_by_rowSum(
   x = Trait_Noa,
   non_trait_cols = c("unique_id",
@@ -521,25 +518,13 @@ Trait_Noa <- normalize_by_rowSum(
                      "species")
 )
 
-# test how complete trait sets are 
-output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
-
-for (i in seq_along(trait_names_pattern)) {
-  # vector containing either 0 (no NAs) or a number (> 0) meaning that all
-  # entries for this trait contained NA
-  vec <-
-    Trait_Noa[, apply(.SD, 1, function(y)
-      base::sum(is.na(y))),
-      .SDcols = names(Trait_Noa) %like% trait_names_pattern[[i]]]
-  
-  # How complete is the dataset for each individual trait?
-  output[i, ] <-
-    c((length(vec[vec == 0]) / nrow(Trait_Noa))  %>% `*` (100) %>% round(),
-      trait_names_pattern[[i]])
-}
-# Gives % coverage for each trait
-# output
-
+# check completenes of the trait data
+completeness_trait_data(x = Trait_Noa,
+                        non_trait_cols = c("unique_id",
+                                           "order",
+                                           "family",
+                                           "genus",
+                                           "species"))
 # save
 saveRDS(object = Trait_Noa, 
         file = file.path(data_cleaned, 
