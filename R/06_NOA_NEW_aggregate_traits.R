@@ -18,10 +18,12 @@ completeness_trait_data(x = Trait_Noa_new,
                                            "family",
                                            "order"))
 
-# possible subset (remove certain columns?) 
-Trait_Noa_new <- Trait_Noa_new[, -c("ovip_ovo",
-                                    "ovip_ter",
-                                    "ovip_aqu")]
+# subset of traits (remove certain columns?) 
+# currently, oviposition not used
+Trait_Noa_new <- Trait_Noa_new[,.SD,
+                                .SDcols = names(Trait_Noa_new) %like%
+                                "locom|feed|resp|volt|bf|size|dev|unique_id|species|genus|family|order"]
+
 Trait_Noa_new <- na.omit(Trait_Noa_new,
                          cols = names(Trait_Noa_new[, - c("unique_id", 
                                                           "species", 
@@ -58,6 +60,7 @@ Trait_Noa_new_genus <-
                         !is.na(genus),
                       -c("unique_id", "species")] %>%
           .[!duplicated(genus), ])
+
 # _________________________________________________________________________
 #### Aggregate to family level ####
 # take mode if duplicates, otherwise maximum
@@ -103,4 +106,4 @@ Trait_Noa_new_agg <- rbind(Trait_Noa_new_agg, Taxa_famlvl)
 
 # save
 saveRDS(object = Trait_Noa_new_agg,
-        file = file.path(data_out, "Trait_Noa_New_agg.rds"))
+        file = file.path(data_out, "Trait_Noa_agg.rds"))
