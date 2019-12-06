@@ -66,11 +66,9 @@ Trait_EU[, c(
   "feed_miner",
   "feed_xylo",
   "feed_active_filter",
-  "feed_passive_filter"
+  "feed_passive_filter",
+  "feed_other"
 ) := NULL]
-
-# feed other deleted in the first instance
-Trait_EU[, feed_other := NULL]
 
 # _________________________________________________________________________ 
 #### Locomotion ####
@@ -114,7 +112,11 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
 # _________________________________________________________________________ 
 Trait_EU[, resp_pls_spi := apply(.SD, 1, max), 
           .SDcols = c("resp_spi", "resp_pls")]
-Trait_EU[, c("resp_tap", "resp_ves", "resp_sur") := NULL]
+Trait_EU[, c("resp_tap", 
+             "resp_ves", 
+             "resp_sur",
+             "resp_spi",
+             "resp_pls") := NULL]
 
 # =================== Dispersal -> This needs to be fixed ======================
 # Drift/dispersal
@@ -264,28 +266,28 @@ name_vec <- grep("order|family|genus|species",
                  names(Trait_EU),
                  value = TRUE,
                  invert = TRUE) %>%
-  sub("\\_.*", "", .) %>%
-  unique() %>%
-  paste0("^",.)
+                 sub("\\_.*", "", .) %>%
+                 unique() %>%
+                 paste0("^", .)
 
 final <- Trait_EU
-for(i in name_vec){
+for (i in name_vec) {
   subset_vec <-
     !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
-  
+
   # subset to NA values -> complement these with Tachet traits
-  step <- coalesce_join(x = final[subset_vec, ],
+  step <- coalesce_join(x = final[subset_vec,],
                         y = tachet[!is.na(species), .SD,
                                    .SDcols = names(tachet) %like% paste0(i, "|", "species")],
                         by = "species",
                         join = dplyr::left_join)
   setDT(step)
-  
+
   # merge back to whole dataset
   final <- coalesce_join(x = final,
                          y = step[, .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
                          by = "species",
-                         join = dplyr::left_join) 
+                         join = dplyr::left_join)
   setDT(final)
 }
 # check temp & ph 
@@ -320,8 +322,12 @@ Trait_EU[tachet,
                 size_small = i.size_small), 
            on = "species"]
 # _________________________________________________________________________ 
-#### Correct information on order level ####
+#### Taxonomical corrections ####
 # _________________________________________________________________________ 
+
+# Macromia instead of MaRcromia! 
+Trait_EU[grepl("Marcromia", genus), `:=`(genus = "Macromia",
+                                         species = sub("Marcromia", "Macromia", species))]
 
 # Heteroptera is a suborder in Hemiptera
 Trait_EU[grepl("Heteroptera", order), order := "Hemiptera"]
