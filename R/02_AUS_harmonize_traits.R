@@ -278,7 +278,8 @@ Trait_AUS[, c("Respiration_tegument_VicEPA",
               "Gills_aquatic_stages_fam_Chessman2017",
               "Gills_aquatic_stages_genus_Chessman2017",
               "Functional_spiracles_aquatic_stages_genus_Chessman2017",
-              "Functional_spiracles_aquatic_stages_fam_Chessman2017") := NULL]
+              "Functional_spiracles_aquatic_stages_fam_Chessman2017",
+              "resp_pls") := NULL]
 # _________________________________________________________________________ 
 #### Size #### 
 # size_small: size < 9 mm (EU: size < 10 mm)
