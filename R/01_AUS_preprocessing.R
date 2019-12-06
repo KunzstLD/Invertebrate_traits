@@ -57,10 +57,6 @@ setnames(
   )
 )
 
-# TODO incorporate Body form as trait!
-# Body shape from Botwe not useful (streamlined or not)
-grep("(?i)body.*form", names(Trait_AUS), value = TRUE)
-
 # subset to relevant traits:
 # body form
 # ph
