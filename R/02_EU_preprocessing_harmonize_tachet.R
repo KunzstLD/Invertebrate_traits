@@ -225,7 +225,9 @@ tachet[, c("locom_swim_full", "locom_swim_dive",
 # _________________________________________________________________________
 tachet[, resp_pls_spi := apply(.SD, 1, max),
         .SDcols = c("resp_pls", "resp_spi")]
-tachet[, resp_ves := NULL]
+tachet[, c("resp_ves",
+           "resp_pls",
+           "resp_spi") := NULL]
 
 # _________________________________________________________________________
 # Feeding mode
