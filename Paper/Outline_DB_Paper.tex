@@ -1,0 +1,121 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+%\usepackage[sort&compress,square,comma,authoryear]{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\graphicspath{ {"/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures"} }
+\usepackage{longtable}
+
+
+\usepackage[
+backend=biber,
+style=authoryear,
+sorting=nyt % sort by name year title
+]{biblatex}
+\addbibresource{Ref_invertebrate_DB.bib}
+
+\title{ OUTLINE: Harmonized macroinvertebrate trait database, Aggregation of traits, Trait definitions, Sources }
+\author{}%Stefan Kunz 
+\date{}%June 2019
+
+
+\begin{document}
+%TODO: Use citep & citet instead of cite
+\maketitle
+
+\section{Introduction}
+
+Intro: For what are traits used?
+\\
+\\
+\\
+Knowledge on macroinvertebrate traits $\rightarrow$ trait databases
+\\
+\\
+\\
+Goal: 
+We harmonized information from different trait databases of four regions in the world,
+namely: Australia, Europe, North America, and New Zealand. \\
+\\
+Studies that use information on aquatic invertebrate traits from different regions and/or aggregate trait information 
+are increasing %! Change wording & State examples: Brown Paper
+\\
+\\
+In this paper we examine difficulties that ecologists face when using different macroinvertebrate trait databases together. 
+We explore the effect of different decisions researches have to make when working with trait data from several regions/sources, 
+involving harmonization, handling different codings, normalization, and aggregation of traits. 
+Therefore, we harmonized six traits from four trait databases and aggregated the trait information to family level. % ?Name Traits
+Our paper also compares the references for the used trait information that were specified in the used trait databases. 
+Finally, we present an overview of differences in trait definitions among databases. 
+
+That means: 
+\begin{itemize}
+    \item How to harmonize different trait databases when the task involves using 
+    traits from different regions (e.g. for comparing trait profiles across regions) $\rightarrow$ Harmonization
+    \item Thereby, we will examine differences in trait definitions
+    \item Look on the sources of various trait databases 
+    \item Furthermore, show effect of different ways of aggregating traits (inter alia Problem of different
+     coding styles (fuzzy vs binary))
+\end{itemize}
+
+\section{Description of harmonized trait database} %TODO: Change heading to more expressive
+
+% Mention restriction to certain orders
+The harmonized database consists of the available information on aquatic invertebrate traits for the regions 
+Europe, North America, Australia, and New Zealand and comprises the traits locomotion, feeding mode, respiration, voltinism, 
+size, and body form. The pattern of development (holometabolous or hemimetabolous) was added as an additional trait 
+based on the orders of the taxa included in each database. 
+Traits for Europe were retrieved from the freshwaterecology trait database (\url{https://www.freshwaterecology.info/}) 
+and complemented by information from Tachet (\cite{usseglio-polatera_biomonitoring_2000}). 
+North American macroinvertebrate traits were taken from Laura Twardochleb and complemented by trait information from Viera (\cite{vieira_database_nodate}). 
+% TODO: Insert citation
+An overview of the used databases can be found in table \ref{tab:trait_databases}. \\ 
+In the following paragraphs, we describe the data processing steps required to establish a harmonized 
+macroinvertebrate trait database. 
+
+\begin{table}[H]
+    \centering
+    \caption{Overview of trait databases.}
+    \label{tab:trait_databases}
+    \begin{tabular}{lll}
+    \toprule
+   Region & Coding of trait states & Reference \\ 
+    \hline
+   Europe & Largely fuzzy & \cite{schmidt-kloiber_www.freshwaterecology.info_2015}\\ 
+   Central Europe & Fuzzy coded & \cite{usseglio-polatera_biomonitoring_2000} \\ 
+   North America & Largely binary & \cite{vieira_database_nodate}\\
+   North America & Largely binary & cite Laura Twardochleb \\
+   Australia & Binary \& fuzzy coding  & \cite{kefford_ben_AST_DB_2019}\\ 
+   New Zealand & Fuzzy coded & \\ %TODO: Create entry for more recent NZ reference
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+\section{Harmonization of traits}
+
+\begin{itemize}
+    \item Harmonization process: See also Schmera 2015 et al 
+    \item Differences in trait definitions
+    \item Sources of traits
+\end{itemize}
+
+\section{Aggregation of traits}
+
+\begin{itemize}
+    \item Describing \& testing different approaches
+    \item Problem of coding of traits
+\end{itemize}
+
+\section*{Additional ideas}
+
+Section Description of databases:
+\begin{itemize}
+    \item Describe different databases briefly?
+    \item State goal of analysis $\rightarrow$ reference to second paper?
+\end{itemize}
+
+\end{document}
