@@ -134,7 +134,8 @@ Trait_AUS[, feed_predator := apply(.SD, 1, max),
                       "feed_predator",
                       "Trop_predator_botwe",
                       "Predator_proportion_of_feeding_fam_Chessman2017",
-                      "Predator_proportion_of_feeding_genus_Chessman2017")]
+                      "Predator_proportion_of_feeding_genus_Chessman2017",
+                      "Feeding_piercers_VicEPA")]
 Trait_AUS[, feed_parasite := apply(.SD, 1, max),
           .SDcols = c("feed_parasite",
                       "feed_parasite_Schaefer",
@@ -287,15 +288,15 @@ Trait_AUS[, c("Respiration_tegument_VicEPA",
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________ 
 Trait_AUS[, size_small := apply(.SD, 1, max), 
-          .SDcols = c("Max_size_less_than_5_VicEPA", 
+          .SDcols = c("Max_size_less_than_5_VicEPA",
+                      "Max_size_5_to_10_VicEPA",
                       "Size1_botwe",
                       "size_small", 
                       "size_small_Schaefer",
                       "size_small_fam_Chessman",
                       "size_small_genus_Chessman")]
 Trait_AUS[, size_medium := apply(.SD, 1, max), 
-          .SDcols = c("Max_size_5_to_10_VicEPA", 
-                      "Max_size_10_to_20_VicEPA",
+          .SDcols = c("Max_size_10_to_20_VicEPA",
                       "Size2_botwe",
                       "size_medium", 
                       "size_medium_Schaefer",
