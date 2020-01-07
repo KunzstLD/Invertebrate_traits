@@ -59,10 +59,10 @@ Trait_Noa_new[, locom_swim := apply(.SD, 1, max),
                       "Habit_prim_Skater")]
 # Crawler 
 Trait_Noa_new[, locom_crawl := apply(.SD, 1, max),
-          .SDcols = c("Habit_prim_Sprawler",
+          .SDcols = c("Habit_prim_Crawler",
+                      "Habit_prim_Sprawler",
                       "Habit_prim_Climber",
                       "Habit_prim_Clinger")]
-
 # _________________________________________________________________________
 #### Size ####
 # specifically: Maximum body size
