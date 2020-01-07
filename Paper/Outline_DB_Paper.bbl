@@ -19,6 +19,78 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{haybach_use_2004}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=60124b197e04e77a235384d8efa871ce}{%
+           family={Haybach},
+           familyi={H\bibinitperiod},
+           given={Arne},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2f29c24b3169644be9dda9fec9945d7d}{%
+           family={Schöll},
+           familyi={S\bibinitperiod},
+           given={Franz},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=acff7d8156c31fe43c2586e5825600e0}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8bf391059d1d26e9a27831588d84ab55}{%
+           family={Kohmann},
+           familyi={K\bibinitperiod},
+           given={Fritz},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{fullhash}{dab7c149523cff90fb77ca28ba7f2b37}
+      \strng{bibnamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authorbibnamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authornamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authorfullhash}{dab7c149523cff90fb77ca28ba7f2b37}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Altogether 64 predominantly biological traits were coded for more than 600 macroinvertebrate species from European rivers. The main question was: Are biological traits able to reflect “biological functionality” in large rivers and if so, is it possible to deduce an assessment system based on functionality? Analysis of the raw trait structure of all species indicates that these traits are not completely independent from their higher systematic units. To avoid mis-interpretations when judging from mixtures of habitats (β-biocoenosis) we used for our investigations only sample series from α-biocoenosis, pre-tested by a mathematical criterion of homogeneity. Within α-biocoenosis, traits are shown to be able to compensate for drastic changes with respect to species number and species composition along a river continuum, demonstrating their functional quality. Long-term changes in the trait and species structures of German waterways were studied using multivariate methods, based on an analysis of 142 sampling series. A shift from traits typical for K-strategists to traits typical for r-strategists was detected to be the main background variable. The {rK}-strategy is regarded as a true functional character of species. We calculated the relative positions of all trait-coded species on this {rK}-scale, and plotted the functional diversity of our samples against the structural diversity of the species from several river systems. Rivers extremely dominated by r-strategists show a deficit in functional diversity. Rivers dominated by K-strategists also show deficits, possibly in concordance with modern ecological theories such as the intermediate disturbance theory. The quantitative proportions of extreme r- to K-Strategists in α-biocoenosis can be used as a general disturbance measure.}
+      \field{day}{1}
+      \field{issn}{0075-9511}
+      \field{journaltitle}{Limnologica}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{4}
+      \field{series}{New methods for assessing freshwaters in Germany}
+      \field{shortjournal}{Limnologica}
+      \field{title}{Use of biological traits for interpreting functional relationships in large rivers}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2020}
+      \field{volume}{34}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{451\bibrangedash 459}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/S0075-9511(04)80012-4
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Snapshot:/home/kunz/Zotero/storage/ZJZ6ZTEM/S0075951104800124.html:text/html;Volltext:/home/kunz/Zotero/storage/6PRZYUUU/Haybach et al. - 2004 - Use of biological traits for interpreting function.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951104800124
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951104800124
+      \endverb
+      \keyw{Biological traits,measure of disturbance,river functions,{rK}-continuum}
+    \endentry
     \entry{kefford_ben_AST_DB_2019}{article}{}
       \name{author}{9}{}{%
         {{uniquename=0,uniquepart=base,hash=cde6c674cfad9b23f78e92f1e24962b8}{%
@@ -94,6 +166,81 @@
       \field{year}{2019}
       \field{dateera}{ce}
     \endentry
+    \entry{schmera_proposed_2015}{article}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,uniquepart=base,hash=e9f36c123ab5a9f39846e61cd80434f2}{%
+           family={Schmera},
+           familyi={S\bibinitperiod},
+           given={Dénes},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a9f7e273ab53ee3f5a1eac97c989e4b1}{%
+           family={Podani},
+           familyi={P\bibinitperiod},
+           given={János},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2eb202c3308430fccb414265a1f89a93}{%
+           family={Heino},
+           familyi={H\bibinitperiod},
+           given={Jani},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f748f46526682b0f683e016b579a57c7}{%
+           family={Erős},
+           familyi={E\bibinitperiod},
+           given={Tibor},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bd876228ec5e2f584fb1ba36557a7113}{%
+           family={Poff},
+           familyi={P\bibinitperiod},
+           given={N.\bibnamedelimi {LeRoy}},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{fullhash}{d9d70ca705aa92a486b42fd41eab8713}
+      \strng{bibnamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authorbibnamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authornamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authorfullhash}{d9d70ca705aa92a486b42fd41eab8713}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Traits-based community analyses are receiving increasing attention. However, consistent interpretation of empirical results and ecological understanding in stream ecology are limited by ambiguous terminology. Furthermore, the measurement scales used to analyze trait data, especially ordinal-scale data, are often inappropriately applied. We identify and discuss these shortcomings and oﬀer a solution for an operative and algebraically correct treatment of traits and a uniﬁed nomenclature that facilitates direct comparison among traits-based studies. A uniﬁed terminology allows for logical translation among existing, alternative trait nomenclatures and should facilitate communication of research ﬁndings among stream ecologists and more directly connect stream traits-based research with general ecology.}
+      \field{issn}{2161-9549, 2161-9565}
+      \field{journaltitle}{Freshwater Science}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{Freshwater Science}
+      \field{title}{A proposed unified terminology of species traits in stream ecology}
+      \field{urlday}{6}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{34}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{823\bibrangedash 830}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1086/681623
+      \endverb
+      \verb{file}
+      \verb Schmera et al. - 2015 - A proposed unified terminology of species traits i.pdf:/home/kunz/Zotero/storage/75WCILXP/Schmera et al. - 2015 - A proposed unified terminology of species traits i.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.journals.uchicago.edu/doi/10.1086/681623
+      \endverb
+      \verb{url}
+      \verb https://www.journals.uchicago.edu/doi/10.1086/681623
+      \endverb
+    \endentry
     \entry{schmidt-kloiber_www.freshwaterecology.info_2015}{article}{}
       \name{author}{2}{}{%
         {{uniquename=0,uniquepart=base,hash=caf06f47a4eb1fcb2a6fbbf9e0e65864}{%
@@ -150,6 +297,74 @@
       \verb http://www.sciencedirect.com/science/article/pii/S1470160X15000758
       \endverb
       \keyw{Diatoms,Fish,Indicator traits,Macro-invertebrates,Macrophytes,Phytoplankton}
+    \endentry
+    \entry{statzner_reproductive_1997}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=da0982854f0b0621d9058fdb131ab83c}{%
+           family={Hoppenhaus},
+           familyi={H\bibinitperiod},
+           given={Kerstin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=dd95e1b85dd506dac134d6533d339efd}{%
+           family={Arens},
+           familyi={A\bibinitperiod},
+           given={Marie-Francoise},
+           giveni={M\bibinithyphendelim F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7473fc380f7c3062530e5e8ea0fdd4fc}{%
+           family={Richoux},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{fullhash}{f7c9217b7cd38d26adafcde0f0ec7bcf}
+      \strng{bibnamehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{authorbibnamehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{authornamehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{authorfullhash}{f7c9217b7cd38d26adafcde0f0ec7bcf}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. Using world-wide data on the reproductive biology of 131 species (in eight orders) of aquatic insects, we used multivariate analyses to examine: (i) relationships among reproductive traits determining life cycle, fecundity, morphology, behaviour and physiology; (ii) relationships among traits determining spatial and temporal habitat characteristics at different scales; and (iii) the relationship between reproductive and habitat-use traits. This provided a test of predictions of the habitat templet concept on trends of species traits along gradients of habitat heterogeneity. 2. The major trends observed in the relationships among reproductive traits were that larger females had larger eggs, which were more vulnerable to perturbations such as droughts and often laid in cocoons. In addition, they laid the eggs in larger numbers of smaller clutches than smaller females. Other traits (e.g. egg number or incubation time) did not show clear trends. 3. Females that deposited eggs at sites of low local temporal heterogeneity (within plants) used, at the same time, gross habitats of high temporal heterogeneity (temporary waters). In contrast, traits in habitat use hardly differed on well-known gradients of temporal heterogeneity along running waters (from source to estuary). The number of habitat units used by ovipositing females generally increased with the spatial scale considered, most species oviposited in a single small habitat unit but in several gross habitats. 4. A significant (P {<} 0.01) relationship between traits in reproduction and habitat use demonstrated that habitat acted as a templet for reproductive strategies. This relationship was dominated by larger females having larger, unattached eggs which were more vulnerable to droughts and were oviposited in temporally more stable small-scale habitats (within wood or macrophytes, or within cocoons spun by the female) but more unstable large-scale habitats (primarily temporary waters). Thus, only on the small habitat scale did some of our observations correspond to the predictions of the habitat templet concept (e.g. larger size or higher vulnerability in more stable habitats). However, many species had traits in reproduction that did not show trends as predicted by the concept. 5. This and other recent studies of the relationships between traits of freshwater organisms and the heterogeneity of their habitats have shown that habitat acts as a templet for species life history traits. However, many of the details observed in these studies did not correspond to predictions of the templet concept because of trade-offs among the traits and scale problems in the description of habitat heterogeneity. Therefore, future studies should focus on groups of organisms which are as similar as possible in the trade-offs among their species traits and on the potential relationships of habitat heterogeneity across multiple scales.}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shorttitle}{Reproductive traits, habitat use and templet theory}
+      \field{title}{Reproductive traits, habitat use and templet theory: a synthesis of world-wide data on aquatic insects}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2020}
+      \field{volume}{38}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{109\bibrangedash 135}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1046/j.1365-2427.1997.00195.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/U999SA8Z/Statzner et al. - 1997 - Reproductive traits, habitat use and templet theor.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/WR6HMHRC/j.1365-2427.1997.00195.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.1997.00195.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.1997.00195.x
+      \endverb
     \endentry
     \entry{usseglio-polatera_biomonitoring_2000}{article}{}
       \name{author}{4}{}{%
@@ -222,6 +437,75 @@
       \verb https://doi.org/10.1023/A:1017042921298
       \endverb
       \keyw{bioassessment,community structure,indicators,macroinvertebrates,species traits}
+    \endentry
+    \entry{ussegliopolatera_biological_2000}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=5f86f414cb47ecaf5e8a12857955d550}{%
+           family={Bournaud},
+           familyi={B\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7473fc380f7c3062530e5e8ea0fdd4fc}{%
+           family={Richoux},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7023f1d250b3ad243bbb48f754fcb656}{%
+           family={Tachet},
+           familyi={T\bibinitperiod},
+           given={Henri},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{fullhash}{16d42bbc3e22effacd6e262fc03baa38}
+      \strng{bibnamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authorbibnamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authornamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authorfullhash}{16d42bbc3e22effacd6e262fc03baa38}
+      \field{sortinit}{U}
+      \field{sortinithash}{36a2444f5238e0dcf4bb59704df6624d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1 Relating species traits to habitat characteristics can provide important insights into the structure and functioning of stream communities. However, trade-offs among species traits make it difficult to predict accurately the functional diversity of freshwater communities. Many authors have pointed to the value of working with groups of organisms as similar as possible in terms of relationships among traits and have called for definition of groups of organisms with similar suites of attributes. 2 We used multivariate analyses to examine separately the relationships among 11 biological traits and among 11 ecological traits of 472 benthic macroinvertebrate taxa (mainly genera). The main objective was to demonstrate (1) potential trade-offs among traits; (2) the importance of the different traits to separate systematic units or functional groupings; and (3) uniform functional groups of taxa that should allow a more effective use of macroinvertebrate biological and ecological traits. 3 We defined eight groups and 15 subgroups according to a biological trait ordination which highlighted size (large to small), reproductive traits (K to r strategists), food (animal to plant material) and feeding habits (predator to scraper and/or deposit feeder) as ‘significant’ factors determining the ordination of taxa. This ordination partly preserved phylogenetic relationships among groups. 4 Seven ecological groups and 13 ecological subgroups included organisms with combinations of traits which should be successively more adequate in habitats from the main channel to temporary waters, and from the crenon to the potamic sections of rivers, and to systems situated outside the river floodplain. These gradients corresponded to a gradual shift from (1) rheophilic organisms that lived in the main channel of cold oligotrophic mountain streams to (2) animals that preferred eutrophic habitats of still or temporary waters in lowlands. The groups with similar ecological traits had a more diverse systematic structure than those with similar biological traits. 5 Monitoring and assessment tools for the management of water resources are generally more effective if they are based on a clear understanding of the mechanisms that lead to the presence or absence of species groups in the environment. We believe that groups with similar relationships among their species traits may be useful in developing tools that measure the functional diversity of communities.}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{2}
+      \field{shorttitle}{Biological and ecological traits of benthic freshwater macroinvertebrates}
+      \field{title}{Biological and ecological traits of benthic freshwater macroinvertebrates: relationships and definition of groups with similar traits}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{volume}{43}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{175\bibrangedash 205}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/I4EVIAEY/Usseglio‐Polatera et al. - 2000 - Biological and ecological traits of benthic freshw.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/EKVR5FPN/j.1365-2427.2000.00535.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \keyw{biomonitoring,biological traits,benthic macroinvertebrates,ecological traits,functional diversity}
     \endentry
     \entry{vieira_database_nodate}{article}{}
       \name{author}{6}{}{%

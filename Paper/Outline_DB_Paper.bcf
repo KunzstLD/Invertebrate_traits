@@ -1924,12 +1924,17 @@
     <bcf:datasource type="file" datatype="bibtex">Ref_invertebrate_DB.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="2">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="3">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
-    <bcf:citekey order="4">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="1">schmera_proposed_2015</bcf:citekey>
+    <bcf:citekey order="2">statzner_reproductive_1997</bcf:citekey>
+    <bcf:citekey order="3">ussegliopolatera_biological_2000</bcf:citekey>
+    <bcf:citekey order="4">haybach_use_2004</bcf:citekey>
     <bcf:citekey order="5">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="6">kefford_ben_AST_DB_2019</bcf:citekey>
+    <bcf:citekey order="6">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="7">vieira_database_nodate</bcf:citekey>
+    <bcf:citekey order="8">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
+    <bcf:citekey order="9">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="10">vieira_database_nodate</bcf:citekey>
+    <bcf:citekey order="11">kefford_ben_AST_DB_2019</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
