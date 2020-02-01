@@ -67,8 +67,8 @@ Trait_AUS[, unique_id := NULL]
 # _________________________________________________________________________
 #### Aggregation of traits ####
 # - Aggregation: 
- # Median to Genus/ 
- # Mode for Family 
+# Median to Genus/ 
+# Mode for Family 
 # -> differing amount of values to calculate value for each modality
 # sum(table(Trait_AUS[grepl("Chirono.*", family)]$temp_eurytherm))
 
@@ -90,28 +90,31 @@ Trait_AUS_genus <- Trait_AUS[!is.na(species), lapply(.SD, median, na.rm = TRUE),
                              by = genus]
 
 # merge family information 
-Trait_AUS_genus[Trait_AUS[!is.na(species), ], 
+Trait_AUS_genus[Trait_AUS[!is.na(species),],
                 `:=`(family = i.family,
                      order = i.order),
                 on = "genus"]
 
-# bind with data resolved on Genus level 
+# bind with data resolved on Genus level
 Trait_AUS_genus <-
   rbind(Trait_AUS_genus, Trait_AUS[is.na(species) &
-                                     !is.na(genus),], fill = TRUE)
+                                     !is.na(genus),
+                                   -c("species")] %>%
+          .[!genus %in% Trait_AUS_genus$genus, ] %>%
+          .[duplicated(genus),])
 
 # split Body form data
+# & aggregate BF information on family level 
 Trait_AUS_genus_bf <- Trait_AUS_genus[!is.na(bf_flattened),]
 Trait_AUS_genus  <- Trait_AUS_genus[is.na(bf_flattened), -c("bf_cylindrical",
                                                             "bf_flattened",
                                                             "bf_spherical",
                                                             "bf_streamlined")]
-
-# aggregate BF information on family level
 bf_col <- c("bf_flattened",
             "bf_cylindrical",
             "bf_spherical",
             "bf_streamlined")
+
 Trait_AUS_genus_bf <- Trait_AUS_genus_bf[, c(lapply(.SD, function(y) {
   if (length(unique(y)) == length(y) & length(y) > 1) {
     max(y, na.rm = TRUE)
@@ -132,10 +135,13 @@ Trait_AUS_genus_bf[Trait_AUS,
 
 # bring together with dataset compiled with BF traits from mdfrc, Leon Metzeling, Ben Kefford
 # & Verena Schreiner
-BF_AUS <- fread(file.path(data_missing,
-                "Missing_traits_AUS",
-                "BF",
-                "AUS_BF_missing_final.csv"))
+BF_AUS <- fread(file.path(
+  data_missing,
+  "Missing_traits_AUS",
+  "BF",
+  "AUS_BF_missing_final.csv"
+)) %>%
+  na.omit(.)
 BF_AUS <- rbind(BF_AUS, Trait_AUS_genus_bf)
 
 # _________________________________________________________________________
@@ -156,7 +162,6 @@ BF_AUS <- rbind(BF_AUS, Trait_AUS_genus_bf)
 # _________________________________________________________________________
 trait_col <- names(Trait_AUS_genus[, -c("family",
                                         "genus",
-                                        "species",
                                         "order")])
 
 Trait_fam <- Trait_AUS_genus[, c(lapply(.SD, function(y) {
@@ -178,9 +183,6 @@ Trait_fam[Trait_AUS_genus,
           `:=`(order = i.order), 
           on = "family"]
 
-# del unnecessary information 
-Trait_fam[, N := NULL]
-
 # filter for taxa resolved on family level that are not yet respresented in the 
 # aggregated dataset (Trait_fam)
 taxa_famlvl <- Trait_AUS[is.na(species) &
@@ -196,9 +198,9 @@ Trait_AUS_agg <- rbind(taxa_famlvl[, -c("species", "genus")],
 # merge BF information back
 Trait_AUS_agg[BF_AUS, 
               `:=`(bf_flattened = i.bf_flattened,
-                bf_spherical = i.bf_spherical,
-                bf_cylindrical = i.bf_cylindrical,
-                bf_streamlined = i.bf_streamlined),
+                   bf_spherical = i.bf_spherical,
+                   bf_cylindrical = i.bf_cylindrical,
+                   bf_streamlined = i.bf_streamlined),
               on = "family"]
 
 # filter taxa out where BF information was not availabile 
@@ -208,10 +210,8 @@ Trait_AUS_agg <-
       is.na(bf_spherical) & is.na(bf_streamlined)
   ),]
 
-# NA to Zero
-for(j in bf_col){
-  data.table::set(Trait_AUS_agg, which(is.na(Trait_AUS_agg[[j]])),j, 0)
-}
+# rm N column
+Trait_AUS_agg[, N := NULL]
 
 # save
 saveRDS(object = Trait_AUS_agg,
