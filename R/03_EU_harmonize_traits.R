@@ -182,6 +182,42 @@ Trait_EU[, temp_cold := apply(.SD, 1, max),
            .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")]
 Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 
+
+# _________________________________________________________________________
+#### Body form ####
+# bf_streamlined: streamlined/fusiform
+# bf_flattened: flattened (dorso-ventrally)
+# bf_cylindrical: cylindrical/tubular 
+# bf_spherical: spherical
+# Add BF data from PUP
+# _________________________________________________________________________
+
+# Philippe Polateras classification
+body_form_pup <- fread(file.path(data_missing, 
+                                 "Body_form_EU_NOA", 
+                                 "body_form_polatera_EU_NOA.csv"))
+
+# change "," to "." and convert bf columns to numeric
+cols <- c("streamlined", "flattened", "cylindrical", "spherical")
+body_form_pup[, (cols) := lapply(.SD, function(y) {
+  sub("\\,", ".", y) %>%
+    as.numeric(.)
+}),
+.SDcols = cols]
+
+# subset to EU data
+bf_EU <- body_form_pup[grepl("EU.*", array),]
+
+# merge on species level
+Trait_EU[bf_EU[!is.na(species), ],
+         `:=`(
+           bf_flattened = i.flattened,
+           bf_spherical = i.spherical,
+           bf_cylindrical = i.cylindrical,
+           bf_streamlined = i.streamlined
+         ),
+         on = "species"]
+
 # _________________________________________________________________________ 
 #### Pattern fo development ####
 # Holometabolous 
@@ -224,23 +260,9 @@ Trait_EU[, `:=`(
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
 
-# _________________________________________________________________________
-#### Body form ####
-# bf_streamlined: streamlined/fusiform
-# bf_flattened: flattened (dorso-ventrally)
-# bf_cylindrical: cylindrical/tubular 
-# bf_spherical: spherical
-
-# Will be added in 04_EU_aggregate_traits.R!
-# _________________________________________________________________________
-
 # _________________________________________________________________________ 
 #### Normalization Freshecol ####
-# TODO make a function out of this!
-# get trait names & create pattern for subset
-# leave out ph (needs to be harmonized when merged together with Freshwaterecol)
 # _________________________________________________________________________ 
-
 Trait_EU <- normalize_by_rowSum(
   x = Trait_EU,
   non_trait_cols = c("order",
@@ -249,20 +271,43 @@ Trait_EU <- normalize_by_rowSum(
                      "species")
 )
 
-# exclude life stage for now -> can not be complemented by tachet and not needed for now
+# exclude life stage for now 
+# -> can not be complemented by tachet and not needed for now
 Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"] 
 
 # _________________________________________________________________________ 
-#### Complement with tachet data ####
-# Information from tachet is just considered for entries in freshecol with missing information
-# Information on the same trait was taken from Freshecol
+#### Adding Tachet data ####
+# grouping feature size is added from tachet
+# not present in freshwaterecology DB
+
+#### Size ####
+# size_small: size < 9 mm (EU: size < 10 mm)
+# size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
+# size_large: size > 16 mm (EU: size > 20 mm)
+# Data on body size originate from tachet
 # _________________________________________________________________________ 
 
 # Load normalized & harmonized tachet data
 tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
 
+# merge size information from tachet:
+# species-level
+Trait_EU[tachet[!is.na(species), ], 
+         `:=`(size_large = i.size_large,
+              size_medium = i.size_medium,
+              size_small = i.size_small), 
+         on = "species"]
+
+# _________________________________________________________________________ 
+#### Complement with tachet data ####
+# Reamining Information from tachet is just considered for entries in 
+# freshecol with missing information
+# If freshecol & tachet had trait information for a taxon 
+# on the same trait values from freshecol were taken
+# _________________________________________________________________________ 
+
 # get names of trait columns
-name_vec <- grep("order|family|genus|species",
+name_vec <- grep("order|family|genus|species|size",
                  names(Trait_EU),
                  value = TRUE,
                  invert = TRUE) %>%
@@ -270,6 +315,7 @@ name_vec <- grep("order|family|genus|species",
                  unique() %>%
                  paste0("^", .)
 
+# na_before <- sum(is.na(Trait_EU))/(dim(Trait_EU)[1]*dim(Trait_EU)[2])
 final <- Trait_EU
 for (i in name_vec) {
   subset_vec <-
@@ -299,28 +345,44 @@ for (i in name_vec) {
 #       table)
 # tachet[grepl("Acentria ephemerella", Species_merge), ]
 # Trait_EU[grepl("Acentria ephemerella", species), ]
+# na_after <- sum(is.na(final))/(dim(final)[1]*dim(final)[2])
 Trait_EU <- final
 
-# merge information from taxa on species level that are only in tachet
+# _________________________________________________________________________ 
+#### Add information from taxa that are only in tachet ####
+# _________________________________________________________________________ 
+
+# species-level:
 Trait_EU <- rbind(Trait_EU, 
                   tachet[!(species %in% Trait_EU$species) & !is.na(species), .SD , 
-                           .SDcols = !(names(tachet) %like% "^stage|^disp|size")], 
+                           .SDcols = !(names(tachet) %like% "^stage|^disp")], 
+                  use.names = TRUE,
+                  fill = TRUE)
+# _________________________________________________________________________ 
+#### Add information from Tachet on lower tax. resolution ####
+# freshwaterecolgy DB only contains data on species level!
+# _________________________________________________________________________ 
+
+# genus-level:
+tachet_genus <- tachet[is.na(species) & !is.na(genus),] %>% 
+  .[!duplicated(genus),]
+
+Trait_EU <- rbind(Trait_EU,
+                  tachet_genus[.SD,
+                               .SDcols = !(names(tachet) %like% "^stage|^disp")],
                   use.names = TRUE,
                   fill = TRUE)
 
-# _________________________________________________________________________ 
-#### Size ####
-# size_small: size < 9 mm (EU: size < 10 mm)
-# size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
-# size_large: size > 16 mm (EU: size > 20 mm)
-# _________________________________________________________________________ 
+# family level
+tachet_family <- tachet[is.na(species) & is.na(genus) & !is.na(family), ] %>% 
+  .[!duplicated(family), ]
 
-# merge size information from tachet
-Trait_EU[tachet, 
-           `:=`(size_large = i.size_large,
-                size_medium = i.size_medium,
-                size_small = i.size_small), 
-           on = "species"]
+Trait_EU <- rbind(Trait_EU,
+                  tachet_family[,.SD,
+                                 .SDcols = !(names(tachet) %like% "^stage|^disp")],
+                  use.names = TRUE,
+                  fill = TRUE)
+
 # _________________________________________________________________________ 
 #### Taxonomical corrections ####
 # _________________________________________________________________________ 
