@@ -479,7 +479,13 @@ trait_author_pattern <- c(
 )
 
 # long format
-Trait_AUS <- data.table::melt(Trait_AUS, id.vars = c("unique_id", "Species", "Genus", "Family", "Order")) 
+Trait_AUS <-
+  data.table::melt(Trait_AUS,
+                   id.vars = c("unique_id",
+                               "Species",
+                               "Genus",
+                               "Family",
+                               "Order"))
 
 # range normalization
 for(i in trait_author_pattern) {
@@ -493,8 +499,17 @@ Trait_AUS <- data.table::dcast(Trait_AUS, unique_id+Species+Genus+Family+Order ~
 #### Handle duplicates ####
 #________________________________________________________________________
 
+# change column names from Chessman that contain word "genus"
+setnames(
+  Trait_AUS,
+  old = grep("genus.*Chessman", names(Trait_AUS), value = TRUE),
+  new = grep("genus.*Chessman", names(Trait_AUS), value = TRUE) %>%
+    sub("genus", "gen", .)
+)
+
 # no duplicate entries in Species column
-Trait_AUS[!is.na(Species) & duplicated(Species), ]
+Trait_AUS[!is.na(Species), ] %>% 
+  .[duplicated(Species),]
 
 # genus column
 cols <- grep("(?i)unique_id|species|genus|family|order",
@@ -506,14 +521,14 @@ Trait_AUS[is.na(Species) & !is.na(Genus),
        (cols) := lapply(.SD, function(y)
          as.numeric(condense_dupl_numeric_agg(y))),
        .SDcols = cols,
-       by = .(Genus)]
+       by = "Genus"]
 
 # family column
 Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
           (cols) := lapply(.SD, function(y)
             as.numeric(condense_dupl_numeric_agg(y))),
           .SDcols = cols,
-          by = .(Family)]
+          by = "Family"]
 
 # save
 saveRDS(
