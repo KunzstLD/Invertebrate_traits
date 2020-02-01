@@ -172,10 +172,10 @@ Trait_Noa <- Trait_Noa[order %in% c(
 # TODO: Can merges be improved? Quite complicated
 # _________________________________________________________________________
 
-#### Merge oviposition data and body form data on species level #### 
+#### Merge oviposition data and body form data #### 
 # -> Oviposition & BF data only present in old NOA trait DB
 
-# merge on species level
+# merge on species level:
 # only species are merged that exist in Trait_Noa_new
 Trait_Noa_new[Trait_Noa,
               `:=`(ovip_ter = i.ovip_ter,
@@ -187,7 +187,7 @@ Trait_Noa_new[Trait_Noa,
                    bf_spherical = i.bf_spherical),
               on = "species"]
 
-# merge on genus level
+# merge on genus level:
 # rm duplicates in genus column (values are the same, see preprocessing scripts)
 Trait_Noa_genus_merge <- 
   Trait_Noa[is.na(species) &
@@ -232,7 +232,7 @@ Trait_Noa_new[stepGenus_Trait_Noa_new,
                    ovpi_ovo = i.ovip_ovo),
               on = "unique_id"]
 
-# merge on family level
+# merge on family level:
 # rm duplicates
 Trait_Noa_family_merge <-  Trait_Noa[is.na(species) &
                                        is.na(genus) &
@@ -304,7 +304,7 @@ name_vec <- grep("unique_id|order|family|genus|species",
 final <- Trait_Noa_new
 for(i in name_vec){
   
-  # check if for a certain trait all the trait states contain NA values
+  # check if for a certain grouping feature all the traits contain NA values
   subset_vec <- !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
   
   # subset to NA values
@@ -351,8 +351,16 @@ Trait_Noa_new  <-
 
 # family level
 Trait_Noa_new <- rbind(Trait_Noa_new,
-                       Trait_Noa[is.na(species) & is.na(genus) & !is.na(family), ] %>%
-                         .[!family %in% Trait_Noa_new[is.na(species) & is.na(genus) & !is.na(family), ]$family,])
+                       Trait_Noa[is.na(species) &
+                                   is.na(genus) & !is.na(family),] %>%
+                         .[!family %in% Trait_Noa_new[is.na(species) &
+                                                        is.na(genus) & !is.na(family),]$family, ])
+
+# check duplicates genus-level:
+id_genus_dupl <- Trait_Noa_new[(is.na(species) & !is.na(genus)), ] %>% 
+  .[duplicated(genus), unique_id]
+
+Trait_Noa_new <- Trait_Noa_new[!unique_id %in% id_genus_dupl, ] 
 
 # _________________________________________________________________________
 #### Pattern fo development ####
