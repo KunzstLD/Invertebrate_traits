@@ -17,7 +17,7 @@ completeness_trait_data(x = Trait_EU,
 # Choose traits &
 # restrict to certain orders
 Trait_EU <- Trait_EU[, .SD,
-                     .SDcols = names(Trait_EU) %like% "locom|feed|resp|volt|size|dev|species|genus|family|order"] %>%
+                     .SDcols = names(Trait_EU) %like% "locom|feed|resp|volt|size|bf|dev|species|genus|family|order"] %>%
   .[order %in% c(
     "Ephemeroptera",
     "Hemiptera",
@@ -36,47 +36,13 @@ Trait_EU <- na.omit(Trait_EU,
 #### Aggregate to genus level ####
 # _______________________________________________________________________
 
-# Add BF data from PUP on species level
-# Using Philippe Polateras classification
-body_form_pup <- fread(file.path(data_missing, 
-                                "Body_form_EU_NOA", 
-                                "body_form_polatera_EU_NOA.csv"))
-
-# change "," to "." and convert bf columns to numeric
-cols <- c("streamlined", "flattened", "cylindrical", "spherical")
-body_form_pup[, (cols) := lapply(.SD, function(y) {
-  sub("\\,", ".", y) %>%
-    as.numeric(.)
-}),
-.SDcols = cols]
-
-# subset to EU data
-bf_EU <- body_form_pup[grepl("EU.*", array),]
-
-# merge on species level
-Trait_EU[bf_EU[!is.na(species), .(flattened,
-                                  spherical,
-                                  cylindrical,
-                                  streamlined,
-                                  species)],
-         `:=`(
-           bf_flattened = i.flattened,
-           bf_spherical = i.spherical,
-           bf_cylindrical = i.cylindrical,
-           bf_streamlined = i.streamlined
-         ),
-         on = "species"]
-
-# Rm two taxa with no BF information 
-Trait_EU <- Trait_EU[!is.na(bf_flattened), ]
-
 # create name pattern to choose traits
 trait_col <- names(Trait_EU[, -c("family",
-                                  "genus",
-                                  "species",
-                                  "order")])
+                                 "genus",
+                                 "species",
+                                 "order")])
 # First aggregation step 
-Trait_EU_genus <- Trait_EU[, lapply(.SD, median, na.rm = TRUE),
+Trait_EU_genus <- Trait_EU[!is.na(species), lapply(.SD, median, na.rm = TRUE),
                            .SDcols = trait_col,
                            by = genus]
 
@@ -86,49 +52,15 @@ Trait_EU_genus[Trait_EU,
                     order = i.order),
                on = "genus"]
 
-# load & complement with Tachet data on genus level
-# subset to relevant traits &
-# restrict to relevant orders
-tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
-tachet <- tachet[, .SD,
-    .SDcols = names(tachet) %like% "locom|feed|resp|volt|size|dev|species|genus|family|order"] %>%
-  .[order %in% c(
-    "Ephemeroptera",
-    "Hemiptera",
-    "Odonata",
-    "Trichoptera",
-    "Coleoptera",
-    "Plecoptera",
-    "Diptera"
-  ), ]
+# bind date on genus & family level back
 
-# merge PUP BF traits to tachet on genus & family level
-# only take complete trait data on genus level 
-# that are not present in Trait_EU (almost all from tachet)
-tachet_genus <- tachet[!is.na(genus) & is.na(species),] %>%
-  .[!genus %in% Trait_EU_genus$genus, ] %>%
-  .[!duplicated(genus), -c("species")] %>%
-  na.omit(.)
+Trait_EU_genus <-
+  rbind(Trait_EU_genus,
+        Trait_EU[is.na(species) &
+                   !is.na(genus),
+                 -c("species")] %>%
+          .[!genus %in% Trait_EU_genus$genus, ])
 
-# merge on genus level
-tachet_genus[bf_EU[is.na(species) & !is.na(genus), .(flattened,
-                                               spherical,
-                                               cylindrical,
-                                               streamlined,
-                                               genus)],
-       `:=`(
-         bf_flattened = i.flattened,
-         bf_spherical = i.spherical,
-         bf_cylindrical = i.cylindrical,
-         bf_streamlined = i.streamlined
-       ),
-       on = "genus"]
-
-# bind trait data
-Trait_EU_genus <-  rbind(Trait_EU_genus, tachet_genus)
-
-# BF information for Molanna missing
-Trait_EU_genus <- Trait_EU_genus[!is.na(bf_spherical), ]
 
 # _______________________________________________________________________
 #### Aggregate on family level ####
@@ -165,26 +97,22 @@ Trait_EU_agg <- Trait_fam[Trait_EU_genus,
                           `:=`(order = i.order),
                           on = "family"]
 
-# family information in freshwaterecol already covered
-# Trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
-#   .[!family %in% Trait_fam$family, -c("species", "genus")]
-
 # TODO: family information in tachet not completely covered in agg. freshwaterecol
-# tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
+# BF information missing for few families
+# 6 of thoses 11 taxa are covered in NOA DB
 # Taxa_famlvl <-
-#   tachet[is.na(species) & is.na(genus) & !is.na(family),] %>%
-#   .[!family %in% Trait_fam$family,] %>%
-#   .[, .SD, .SDcols = names(tachet) %like% "locom|feed|resp|volt|size|dev|species|genus|family|order"] %>% 
-#   .[order %in% c(
-#     "Ephemeroptera",
-#     "Hemiptera",
-#     "Odonata",
-#     "Trichoptera",
-#     "Coleoptera",
-#     "Plecoptera",
-#     "Diptera"
-#   ), ]
-# Trait_EU_agg <- rbind(Taxa_famlvl, Trait_fam) 
+# tachet[is.na(species) & is.na(genus) & !is.na(family),] %>%
+  # .[!family %in% Trait_fam$family,] %>%
+# .[, .SD, .SDcols = names(tachet) %like% "locom|feed|resp|volt|size|dev|bf|species|genus|family|order"] %>%
+# .[order %in% c(
+#   "Ephemeroptera",
+#   "Hemiptera",
+#   "Odonata",
+#   "Trichoptera",
+#   "Coleoptera",
+#   "Plecoptera",
+#   "Diptera"
+# ), ]
 
 # feed_parasite:
 # Trait_EU_agg[feed_parasite != 0,]
