@@ -52,14 +52,14 @@ Trait_Noa_new_genus[Trait_Noa_new[!is.na(species),],
                      order = i.order),
                      on = "genus"]
 
-# rbind with Trait data resolved on genus level
-# rm duplicates in genus column
+# rbind with Trait data resolved on genus level 
+# (only for genera not present in Trait_Noa_new_genus)
 Trait_Noa_new_genus <-
   rbind(Trait_Noa_new_genus,
         Trait_Noa_new[is.na(species) &
                         !is.na(genus),
-                      -c("unique_id", "species")] %>%
-          .[!duplicated(genus), ])
+                      -c("unique_id", "species")] %>% 
+          .[!genus %in% Trait_Noa_new_genus$genus, ])
 
 # _________________________________________________________________________
 #### Aggregate to family level ####
