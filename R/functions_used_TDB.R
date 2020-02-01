@@ -248,7 +248,7 @@ condense_dupl_numeric_agg <- function(y) {
     ),
     # just distinct values 
     # zeros are dropped -> are actually not observed values
-    ifelse(y == 0, 
+    ifelse(sum(y) == 0, 
            y, 
            median(y[y != 0], na.rm = TRUE))
   )
@@ -394,7 +394,7 @@ completeness_trait_data <- function(x, non_trait_cols) {
 
 
 # _________________________________________________________________________
-# Trait Aggregation 
+# Trait Aggregation
 # Mode
 # when there are no duplicate values, mode returns the first value!
 # ________________________________________________________________________
