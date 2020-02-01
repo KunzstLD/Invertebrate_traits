@@ -11,7 +11,7 @@ tachet[!grepl("^sp\\.$|^Gen\\.$|\\/", Species), species := paste(Genus, Species)
 
 # genus column (used for merge later)
 setnames(tachet,
-         old = c("Genus", "Family", "Group"), 
+         old = c("Genus", "Family", "Group"),
          new = c("genus", "family", "group"),
          skip_absent = TRUE
 )
@@ -24,7 +24,7 @@ tachet[grepl("other", species), `:=`(unknown_taxa = species,
 
 # everything with () in Species_merge deleted
 tachet[grepl("\\(.*\\)|\\[", species), species := NA]
-tachet[grepl("\\]", species), `:=`(species = NA, genus = NA)] 
+tachet[grepl("\\]", species), `:=`(species = NA, genus = NA)]
 
 # one word in Species_merge column
 tachet[!grepl("(?i)[a-z]{1,}[[:space:]][a-z]{1,}", species)
@@ -160,7 +160,7 @@ tachet[grepl("Dolichopodidae", family), order := "Diptera"]
 tachet[grepl(".*dae", genus), genus := NA]
 
 # ---------------------------------------------------
-#### Harmonize Tachet data #### 
+#### Harmonize Tachet data ####
 # ---------------------------------------------------
 
 # Modify ph preference
@@ -205,13 +205,17 @@ tachet[, c(
 # locm_burrow: burrower
 # locm_sessil: sessil (attached)
 # _________________________________________________________________________
-tachet[, locom_swim := apply(.SD, 1, max), 
-       .SDcols = c("locom_swim_full", "locom_swim_dive")]
-tachet[, locom_sessil := apply(.SD, 1, max), 
-       .SDcols = c("locom_sessil", "locom_sessil_temp")]
-tachet[, c("locom_swim_full", "locom_swim_dive",
-           "locom_sessil_temp", 
-           "loc_flier_t", "loc_interstitial_t") := NULL]
+tachet[, locom_swim := apply(.SD, 1, max),
+  .SDcols = c("locom_swim_full", "locom_swim_dive")
+]
+tachet[, locom_sessil := apply(.SD, 1, max),
+  .SDcols = c("locom_sessil", "locom_sessil_temp")
+]
+tachet[, c(
+  "locom_swim_full", "locom_swim_dive",
+  "locom_sessil_temp",
+  "loc_flier_t", "loc_interstitial_t"
+) := NULL]
 
 # _________________________________________________________________________
 # Respiration
@@ -241,7 +245,7 @@ tachet[, c("resp_ves",
 tachet[, feed_filter := apply(.SD, 1, max),
        .SDcols = c("feed_active_filter", "feed_active_filter_abs")]
 tachet[, feed_herbivore := apply(.SD, 1, max),
-       .SDcols = c("feed_scraper", "feed_piercer_t")]
+       .SDcols = c("feed_scraper")] # , "feed_piercer_t"
 # del columns
 tachet[, c("feed_active_filter",
            "feed_active_filter_abs",
@@ -271,6 +275,54 @@ tachet[, c("rep_egg_free_iso",
            "rep_clutch_free",
            "rep_clutch_veg", 
            "rep_asexual") := NULL]
+
+# _________________________________________________________________________
+#### Body form ####
+# bf_streamlined: streamlined/fusiform
+# bf_flattened: flattened (dorso-ventrally)
+# bf_cylindrical: cylindrical/tubular 
+# bf_spherical: spherical
+# Add BF data from PUP
+# _________________________________________________________________________
+
+# Philippe Polateras classification
+body_form_pup <- fread(file.path(data_missing, 
+                                 "Body_form_EU_NOA", 
+                                 "body_form_polatera_EU_NOA.csv"))
+
+# change "," to "." and convert bf columns to numeric
+cols <- c("streamlined", "flattened", "cylindrical", "spherical")
+body_form_pup[, (cols) := lapply(.SD, function(y) {
+  sub("\\,", ".", y) %>%
+    as.numeric(.)
+}),
+.SDcols = cols]
+
+# subset to EU data
+bf_EU <- body_form_pup[grepl("EU.*", array),]
+
+# merge to tachet data
+# species-level:
+tachet[bf_EU[!is.na(species),],
+       `:=`(
+         bf_flattened = i.flattened,
+         bf_spherical = i.spherical,
+         bf_cylindrical = i.cylindrical,
+         bf_streamlined = i.streamlined
+       ),
+       on = "species"]
+
+# genus-level:
+bf_EU_genus <- bf_EU[is.na(species) ,]
+tachet[bf_EU_genus,
+         `:=`(
+           bf_flattened = i.flattened,
+           bf_spherical = i.spherical,
+           bf_cylindrical = i.cylindrical,
+           bf_streamlined = i.streamlined
+         ),
+         on = "genus"]
+
 # _________________________________________________________________________
 #### Pattern of development ####
 # Holometabolous or hemimetabolous
@@ -313,7 +365,6 @@ tachet[, `:=`(
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
 
-
 # ---------------------------------------------------
 #### Normalization Tachet ####
 # ---------------------------------------------------
@@ -330,19 +381,28 @@ tachet <- normalize_by_rowSum(
 tachet[, "group" := NULL]
 
 # ---------------------------------------------------
-#### Handle duplicate Genus entries in Tachet database ####
-# duplicate genus entries are condensed
+#### Handle duplicate entries in Tachet database ####
+# duplicate genus & family entries are condensed
 # ---------------------------------------------------
 cols <- grep("unique_id|species|genus|family|order",
                           names(tachet),
                           value = TRUE,
                           invert = TRUE)
 
+# genus-level
 tachet[is.na(species) & !is.na(genus),
        (cols) := lapply(.SD, function(y)
          as.numeric(condense_dupl_numeric_agg(y))),
        .SDcols = cols,
        by = .(genus)]
+
+# family-level
+tachet[is.na(species) &
+         is.na(genus) & !is.na(family), 
+       (cols) := lapply(.SD, function(y)
+           as.numeric(condense_dupl_numeric_agg(y))),
+       .SDcols = cols,
+       by = .(family)]
 
 # save
 saveRDS(
