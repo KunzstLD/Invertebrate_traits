@@ -25,14 +25,12 @@ completeness_trait_data(x = Trait_NZ,
                                            "genus",
                                            "species"))
 
-# subset to relevant traits
-Trait_NZ <- Trait_NZ[, .SD,
-                     .SDcols = names(Trait_NZ) %like%
-                       "locom|feed|resp|volt|bf|size|dev|unique_id|species|genus|family|order"]
-
 # just return rows where for each trait there is an observation 
 Trait_NZ <- na.omit(Trait_NZ,
-                    cols = names(Trait_NZ[, -c("species", "genus", "family", "order")]))
+                    cols = names(Trait_NZ[, -c("species", 
+                                               "genus", 
+                                               "family",
+                                               "order")]))
 
 # Subset to interesting orders:
 #   "Amphipoda" & "Venerida" missing
