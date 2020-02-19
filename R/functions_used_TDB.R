@@ -1,9 +1,9 @@
 # _________________________________________________________________________
-# Collection of functions used in Trait Analysis 
+# Collection of functions used in Trait Analysis
 # _________________________________________________________________________
 
 # _________________________________________________________________________
-# Preprocessing  & data cleaning 
+# Preprocessing  & data cleaning
 # _________________________________________________________________________
 
 #### Cleaning text (colnames) ####
@@ -14,7 +14,7 @@ text_with_underscore <- function(text) {
   return(text)
 }
 
-#### Capitalize the first letter #### 
+#### Capitalize the first letter ####
 simpleCap <- function(x) {
   s <- tolower(x)
   paste0(toupper(substring(s, 1, 1)), substring(s, 2))
@@ -22,19 +22,25 @@ simpleCap <- function(x) {
 
 #### Google search ####
 query_google <- function(x) {
-  lapply(x,
-         function(y) { utils::browseURL(url = paste0("https://google.com/search?q=", y)) }) %>%
+  lapply(
+    x,
+    function(y) {
+      utils::browseURL(url = paste0("https://google.com/search?q=", y))
+    }
+  ) %>%
     invisible()
 }
 
 #### coalesce implementation when x is zero ####
 coalesce_with_zero <- function(...) {
-  Reduce(function(x, y) {
-    i <- which(x == 0)
-    x[i] <- y[i]
-    x
-  },
-    list(...))
+  Reduce(
+    function(x, y) {
+      i <- which(x == 0)
+      x[i] <- y[i]
+      x
+    },
+    list(...)
+  )
 }
 
 #### coalescing join ####
@@ -51,36 +57,40 @@ coalesce_join <- function(x,
   if (any(class(y) %in% "data.table")) {
     y <- as_tibble(y)
   }
-  
+
   joined <- join(x, y, by = by, suffix = suffix, ...)
   # names of desired output/ # colnames that both sets share
   cols <- union(names(x), names(y))
-  
+
   # fetch those col that contain .x or .y (those won't be in the original sets, are
   # created by the join)
   to_coalesce <- names(joined)[!names(joined) %in% cols]
-  
+
   # extract suffix -> just the number of their characters will be important
   suffix_used <- suffix[ifelse(endsWith(to_coalesce, suffix[1]), 1, 2)]
-  
+
   # remove suffixes and deduplicate
-  to_coalesce <- unique(substr(to_coalesce,
-                               1,
-                               nchar(to_coalesce) - nchar(suffix_used)))
-  
-  coalesced <- purrr::map_dfc(to_coalesce, ~ dplyr::coalesce(joined[[paste0(.x, suffix[1])]],
-                                                             joined[[paste0(.x, suffix[2])]]))
+  to_coalesce <- unique(substr(
+    to_coalesce,
+    1,
+    nchar(to_coalesce) - nchar(suffix_used)
+  ))
+
+  coalesced <- purrr::map_dfc(to_coalesce, ~ dplyr::coalesce(
+    joined[[paste0(.x, suffix[1])]],
+    joined[[paste0(.x, suffix[2])]]
+  ))
   names(coalesced) <- to_coalesce
-  
+
   # get col from joined & coalesced, but only those in x (relevant col from y are in coalesced)
   dplyr::bind_cols(joined, coalesced)[names(x)]
-  
+
   # In original version -> modify by when different keys have been used
   # dplyr::bind_cols(joined, coalesced)[cols]
 }
 
 # Testing coalesce join
-# zeros from Tachet DB get transformed to NAs -> should be no problem 
+# zeros from Tachet DB get transformed to NAs -> should be no problem
 # Tachet DB: missing information for taxon & variable -> just 0
 # When information for a particular trait is availabile, NA values in this trait are assumend to be 0
 # test:
@@ -90,7 +100,7 @@ coalesce_join <- function(x,
 #                                                               species)]
 # str(tachet_test)
 # str(dat_EU_test)
-# test <- coalesce_join(x = dat_EU_test, y = tachet_test, by = c("species" = "Species_merge"), 
+# test <- coalesce_join(x = dat_EU_test, y = tachet_test, by = c("species" = "Species_merge"),
 #                       join = dplyr::left_join)
 # nrow(test)
 
@@ -108,93 +118,101 @@ coalesce_join_with_zero <- function(x,
   if (any(class(y) %in% "data.table")) {
     y <- as_tibble(y)
   }
-  
+
   joined <- join(x, y, by = by, suffix = suffix, ...)
   # names of desired output/ # colnames that both sets share
   cols <- union(names(x), names(y))
-  
+
   # fetch those col that contain .x or .y (those won't be in the original sets, are
   # created by the join)
   to_coalesce <- names(joined)[!names(joined) %in% cols]
-  
+
   # extract suffix -> just the number of their characters will be important
   suffix_used <-
     suffix[ifelse(endsWith(to_coalesce, suffix[1]), 1, 2)]
-  
+
   # remove suffixes and deduplicate
-  to_coalesce <- unique(substr(to_coalesce,
-                               1,
-                               nchar(to_coalesce) - nchar(suffix_used)))
-  
+  to_coalesce <- unique(substr(
+    to_coalesce,
+    1,
+    nchar(to_coalesce) - nchar(suffix_used)
+  ))
+
   coalesced <-
-    purrr::map_dfc(to_coalesce, ~ coalesce_with_zero(joined[[paste0(.x, suffix[1])]],
-                                                     joined[[paste0(.x, suffix[2])]]))
+    purrr::map_dfc(to_coalesce, ~ coalesce_with_zero(
+      joined[[paste0(.x, suffix[1])]],
+      joined[[paste0(.x, suffix[2])]]
+    ))
   names(coalesced) <- to_coalesce
-  
+
   # get col from joined & coalesced, but only those in x (relevant col from y are in coalesced)
   dplyr::bind_cols(joined, coalesced)[names(x)]
-  
+
   # In original version -> modify by when different keys have been used
   # dplyr::bind_cols(joined, coalesced)[cols]
 }
 # test
 # test <- data.table(x = c(0,0,1), y = c(1,1,2), join = c("A", "B", "C"))
 # test_2 <-  data.table(x = c(1,2,1), y = c(2,2,2), z = c(1,1,2), join = c("A", "B", "C"))
-# coalesce_join_with_zero(x = test, y = test_2, 
-#                         by = "join", 
+# coalesce_join_with_zero(x = test, y = test_2,
+#                         by = "join",
 #                         join = dplyr::left_join)
 
 
 #### Fetch duplicate taxa ####
 # Returns dataset (ordered) only with the duplicated entries
-# requires: 
-  # x is col in quotes
-  # dat is data.frame/data.table
+# requires:
+# x is col in quotes
+# dat is data.frame/data.table
 fetch_dupl <- function(data, col) {
   # fetch rows with duplicates
   n_occur <- data.frame(table(data[[col]]))
   dupl <- n_occur[n_occur$Freq > 1, "Var1"]
-  output <- data[data[[col]] %in% dupl,]
+  output <- data[data[[col]] %in% dupl, ]
   # order and return output
-  output[order(output[[col]]),]
+  output[order(output[[col]]), ]
 }
 
 #### Aggregate duplicate taxa entries ####
 
 # Duplicate taxa with numeric values are condensed:
 # The Mode is taken when the same taxa occurs multiple times
-  # If all values are distinct, the median is taken. 
-  # See also the documentation of "condense_dupl_numeric_agg"
-# requires: 
-  # dataset  
-  # column with duplicates 
-  # all non trait columns
+# If all values are distinct, the median is taken.
+# See also the documentation of "condense_dupl_numeric_agg"
+# requires:
+# dataset
+# column with duplicates
+# all non trait columns
 condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
-  
+
   #
-  if(nrow(trait_data[duplicated(get(col_with_dupl_entries)),]) == 0){
+  if (nrow(trait_data[duplicated(get(col_with_dupl_entries)), ]) == 0) {
     stop("Input data has no duplicates. Check for duplicates first before applying this function.")
   }
-  
+
   # subset to duplicate taxa
   dupl_taxa <-
-    trait_data[duplicated(get(col_with_dupl_entries)),
-               unique(get(col_with_dupl_entries))]
-  
+    trait_data[
+      duplicated(get(col_with_dupl_entries)),
+      unique(get(col_with_dupl_entries))
+    ]
+
   # create data.tables with and without duplicates
-  dupl <- trait_data[get(col_with_dupl_entries) %in% dupl_taxa,]
+  dupl <- trait_data[get(col_with_dupl_entries) %in% dupl_taxa, ]
   without_dupl <-
-    trait_data[!(get(col_with_dupl_entries) %in% dupl_taxa),]
-  
+    trait_data[!(get(col_with_dupl_entries) %in% dupl_taxa), ]
+
   # transform duplicates into long format
   # function should have the possibility to choose id.vars (non trait columns)
-  dupl_lf <- melt(data = dupl,
-                  id.vars = non_trait_cols)
-  
+  dupl_lf <- melt(
+    data = dupl,
+    id.vars = non_trait_cols
+  )
+
   # Actual condensation of trait values
   # rather take Mode but throw out zero? instead of median in second ifelse() statement
   dupl_lf[, `:=`(value = ifelse(
-    
+
     # is TRUE when NOT all values are distinct
     length(value) != length(unique(value)),
     #  is TRUE when not just zeros are present
@@ -203,26 +221,28 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
       Mode(value[value != 0], na.rm = TRUE),
       Mode(value, na.rm = TRUE)
     ),
-    # just distinct values 
+    # just distinct values
     # zeros are dropped -> are actually not observed values
-    ifelse(y == 0, 
-           y, 
-           median(y[y != 0], na.rm = TRUE))
+    ifelse(y == 0,
+      y,
+      median(y[y != 0], na.rm = TRUE)
+    )
   )),
-  by = variable]
-  
+  by = variable
+  ]
+
   # create formula for dcast
   formula <-
     paste0(paste0(non_trait_cols, collapse = "+"), "~", "variable") %>%
     as.formula()
-  
+
   # convert back to long format
   dupl <- dcast(
     data = dupl_lf,
     formula = formula,
     fun.aggregate = mean
   )
-  
+
   # bind duplicates and non duplicates back
   data <- rbind(dupl, without_dupl)
   return(data)
@@ -237,7 +257,7 @@ condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_c
 # Can be used within data.table
 condense_dupl_numeric_agg <- function(y) {
   ifelse(
-    
+
     # is TRUE when NOT all values are distinct
     length(y) != length(unique(y)),
     #  is TRUE when not just zeros are present
@@ -246,11 +266,12 @@ condense_dupl_numeric_agg <- function(y) {
       Mode(y[y != 0], na.rm = TRUE),
       Mode(y, na.rm = TRUE)
     ),
-    # just distinct values 
+    # just distinct values
     # zeros are dropped -> are actually not observed values
-    ifelse(sum(y) == 0, 
-           y, 
-           median(y[y != 0], na.rm = TRUE))
+    ifelse(sum(y) == 0,
+      y,
+      median(y[y != 0], na.rm = TRUE)
+    )
   )
 }
 # Testing:
@@ -269,13 +290,13 @@ condense_dupl_numeric_agg <- function(y) {
 # (meaning at least one value different from zero)
 # Gives a list with as many datasets as traits are presented
 # Can be merged together using Reduce!
-# works atm without considering NAs 
+# works atm without considering NAs
 # non trait column need to be manually defined by user
 # get_complete_trait_data <- function(trait_data, non_trait_col) {
-# 
+#
 #   # pattern of non trait col names
 #   non_trait_col_pat <- paste0("(?i)", paste0(non_trait_col, collapse = "|"))
-# 
+#
 #   # create name vector
 #   name_vec <-
 #     grep(
@@ -286,16 +307,16 @@ condense_dupl_numeric_agg <- function(y) {
 #     ) %>%
 #     sub("\\_.*", "", .) %>%
 #     unique()
-# 
+#
 #   # create output matrix
 #   output <- matrix(ncol = 2, nrow = length(name_vec))
-# 
+#
 #   data <- list()
 #   for (i in seq_along(name_vec)) {
 #     row <- trait_data[, base::sum(.SD) > 0,
 #                       .SDcols = names(trait_data) %like% name_vec[i],
 #                       by = 1:nrow(trait_data)]$V1
-# 
+#
 #     #
 #     data[[i]] <- trait_data[row, .SD,
 #                             .SDcols = names(trait_data) %like%
@@ -341,12 +362,14 @@ create_pattern_ind <- function(x, non_trait_cols) {
 
 #### Normalization of trait scores ####
 # All trait states of one trait are divided by their row sum
-# Hence, trait affinities are represented as "%" or ratios 
+# Hence, trait affinities are represented as "%" or ratios
 normalize_by_rowSum <- function(x, non_trait_cols) {
 
   # get trait names & create pattern for subset
-  trait_names_pattern <- create_pattern_ind(x = x,
-                                            non_trait_cols = non_trait_cols)
+  trait_names_pattern <- create_pattern_ind(
+    x = x,
+    non_trait_cols = non_trait_cols
+  )
 
   # loop for normalization (trait categories for each trait sum up to 1)
   for (cols in trait_names_pattern) {
@@ -361,7 +384,8 @@ normalize_by_rowSum <- function(x, non_trait_cols) {
     x[, (col_name) := lapply(.SD, function(y) {
       round(y / rowSum, digits = 2)
     }),
-    .SDcols = names(x) %like% cols]
+    .SDcols = names(x) %like% cols
+    ]
   }
   # del rowSum column
   x[, rowSum := NULL]
@@ -370,9 +394,10 @@ normalize_by_rowSum <- function(x, non_trait_cols) {
 
 #### check for completeness of trait dataset ####
 completeness_trait_data <- function(x, non_trait_cols) {
-
-  trait_names_pattern <- create_pattern_ind(x = x,
-                                           non_trait_cols = non_trait_cols)
+  trait_names_pattern <- create_pattern_ind(
+    x = x,
+    non_trait_cols = non_trait_cols
+  )
 
   # test how complete trait sets are
   output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
@@ -380,14 +405,18 @@ completeness_trait_data <- function(x, non_trait_cols) {
     # vector containing either 0 (no NAs) or a number (> 0) meaning that all
     # entries for this trait contained NA
     vec <-
-      x[, apply(.SD, 1, function(y)
-        base::sum(is.na(y))),
-        .SDcols = names(x) %like% trait_names_pattern[[i]]]
+      x[, apply(.SD, 1, function(y) {
+        base::sum(is.na(y))
+      }),
+      .SDcols = names(x) %like% trait_names_pattern[[i]]
+      ]
 
     # How complete is the dataset for each individual trait?
-    output[i,] <-
-      c((length(vec[vec == 0]) / nrow(x)) %>% `*`(100) %>% round(),
-        trait_names_pattern[[i]])
+    output[i, ] <-
+      c(
+        (length(vec[vec == 0]) / nrow(x)) %>% `*`(100) %>% round(),
+        trait_names_pattern[[i]]
+      )
   }
   return(output)
 }
@@ -399,8 +428,9 @@ completeness_trait_data <- function(x, non_trait_cols) {
 # when there are no duplicate values, mode returns the first value!
 # ________________________________________________________________________
 Mode <- function(x, na.rm = FALSE) {
-  if (na.rm)
+  if (na.rm) {
     x <- x[!is.na(x)]
+  }
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
 }

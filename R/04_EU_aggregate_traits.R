@@ -26,11 +26,12 @@ Trait_EU <- Trait_EU[, .SD,
     "Coleoptera",
     "Plecoptera",
     "Diptera"
-  ),]
+  ), ]
 
 # just return rows where for each trait there is an observation
 Trait_EU <- na.omit(Trait_EU,
-                    cols = names(Trait_EU[, -c("species", "genus", "family", "order")]))
+  cols = names(Trait_EU[, -c("species", "genus", "family", "order")])
+)
 
 # _______________________________________________________________________
 #### Aggregate to genus level ####
@@ -46,14 +47,13 @@ Trait_EU_genus <- Trait_EU[!is.na(species), lapply(.SD, median, na.rm = TRUE),
                            .SDcols = trait_col,
                            by = genus]
 
-# merge family & order information 
+# merge family & order information
 Trait_EU_genus[Trait_EU,
                `:=`(family = i.family,
                     order = i.order),
                on = "genus"]
 
 # bind date on genus & family level back
-
 Trait_EU_genus <-
   rbind(Trait_EU_genus,
         Trait_EU[is.na(species) &
