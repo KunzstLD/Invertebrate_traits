@@ -429,9 +429,14 @@ Trait_AUS[Family %in% "Enchytraeidae", Order := "Haplotaxida"]
 Trait_AUS[Family %in% "Hydracarina", Order := "Trombidiformes"]
 
 # Mesostigmata is actually an order
-Trait_AUS[grepl("Mesostigmata", Family), `:=`(Genus = NA, 
-                                              Family = NA, 
-                                              Order = "Mesostigmata")]
+Trait_AUS[grepl("Mesostigmata", Family), `:=`(
+  Genus = NA,
+  Family = NA,
+  Order = "Mesostigmata"
+)]
+
+# Family NULL?
+Trait_AUS[grepl("NULL", Family), Family := NA]
 
 # ____________________________________________________________________
 #### Range normalization ####
