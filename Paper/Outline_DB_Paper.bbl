@@ -19,6 +19,67 @@
 
 \refsection{0}
   \datalist[entry]{nyt/global//global/global}
+    \entry{chevenet_francois_fuzzy_1994}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=81142c6fdbf1b2bc834da08a18af1ac7}{%
+           family={Chevenet},
+           familyi={C\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=dcfab8c3553be709ce4e4745b4692da1}{%
+           family={Chessel},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{fullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{bibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authorbibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authornamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authorfullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{SUMMARY} 1 We present an unconventional procedure (fuzzy coding) to structure biological and environmental information, which uses positive scores to describe the affinity of a species for different modalities (i.e. categories) of a given variable. Fuzzy coding is essential for the synthesis of long?term ecological data because it enables analysis of diverse kinds of biological information derived from a variety of sources (e.g. samples, literature). 2 A fuzzy coded table can be processed by correspondence analysis. An example using aquatic beetles illustrates the properties of such a fuzzy correspondence analysis. Fuzzy coded tables were used in all articles of this issue to examine relationships between spatial?temporal habitat variability and species traits, which were obtained from a long?term study of the Upper Rhône River, France. 3 Fuzzy correspondence analysis can be programmed with the equations given in this paper or can be performed using {ADE} (Environmental Data Analysis) software that has been adapted to analyse such long?term ecological data. On Macintosh {AppleTM} computers, {ADE} performs simple linear ordination, more recently developed methods (e.g. principal component analysis with respect to instrumental variables, canonical correspondence analysis, co?inertia analysis, local and spatial analyses), and provides a graphical display of results of these and other types of analysis (e.g. biplot, mapping, modelling curves). 4 {ADE} consists of a program library that exploits the potential of the {HyperCardTM} interface. {ADE} in an open system, which offers the user a variety of facilities to create a specific sequence of programs. The mathematical background of {ADE} is supported by the algebraic model known as ?duality diagram?.}
+      \field{issn}{0046-5070}
+      \field{journaltitle}{Freshwater Biology}
+      \field{number}{3}
+      \field{shortjournal}{Freshwater Biology}
+      \field{title}{A fuzzy coding approach for the analysis of long‐term ecological data}
+      \field{urlday}{18}
+      \field{urlmonth}{4}
+      \field{urlyear}{2018}
+      \field{volume}{31}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{295\bibrangedash 309}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/D35DSWPL/CHEVENE FRANçOIS et al. - 2006 - A fuzzy coding approach for the analysis of long‐t.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+    \endentry
     \entry{haybach_use_2004}{article}{}
       \name{author}{4}{}{%
         {{uniquename=0,uniquepart=base,hash=60124b197e04e77a235384d8efa871ce}{%

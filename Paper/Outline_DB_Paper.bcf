@@ -1935,6 +1935,7 @@
     <bcf:citekey order="9">usseglio-polatera_biomonitoring_2000</bcf:citekey>
     <bcf:citekey order="10">vieira_database_nodate</bcf:citekey>
     <bcf:citekey order="11">kefford_ben_AST_DB_2019</bcf:citekey>
+    <bcf:citekey order="12">chevenet_francois_fuzzy_1994</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">
