@@ -39,8 +39,10 @@ Trait_EU[, ph_ind := NULL]
 #### Feed mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
  # xylophagus can fit to the category of shredders, but see Lancaster:
- # "The mouthparts of facultative species tend to fit the generic model for most shredders. 
- # Obligate xylophages, however, often have further adaptations for mining wood, and virtually all
+ # "The mouthparts of facultative species tend to fit the generic model for 
+ # most shredders. 
+ # Obligate xylophages, however, often have further adaptations for mining wood,
+ # and virtually all
  # have strong, heavily sclerotized mandibles. Larvae of the caddisfly Lype phaeope 
  # (Psychomyiidae) scrape off layers of wood with their mandibles, 
  # and collect the fragments on the forelegs ( Spänhoff et al.2003 )."
@@ -104,8 +106,7 @@ Trait_EU[, c("locom_swim_skate", "locom_swim_dive",
   # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 
 # resp_atm: atmospheric breathers -> no values
-# respiration vesicle -> just 0
-# no values for resp_tap
+# no values for resp_tap, sur and ves
 # table(Trait_EU$resp_ves)
 # table(Trait_EU$resp_tap)
 # table(Trait_EU$resp_sur)
@@ -145,15 +146,18 @@ Trait_EU[, dispersal_unknown := NULL]
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
+# rep_parasitic no entries
 # rep_asexual is deleted
 # _________________________________________________________________________ 
-Trait_EU[,  ovip_ter := apply(.SD, 1, max),
-           .SDcols = c("rep_clutch_veg", "rep_clutch_ter")]
+setnames(Trait_EU, 
+         old = "rep_clutch_ter",
+         new = "ovip_ter")
 Trait_EU[, ovip_aqu := apply(.SD, 1, max),
            .SDcols = c("rep_egg_cem_iso",
                        "rep_egg_free_iso",
                        "rep_clutch_free",
-                       "rep_clutch_fixed")]
+                       "rep_clutch_fixed",
+                       "rep_clutch_veg")]
 Trait_EU[, ovip_ovo := apply(.SD, 1, max),
            .SDcols = c("rep_parasitic", "rep_ovovipar")]
 
@@ -166,7 +170,6 @@ Trait_EU[, c(
   "rep_parasitic",
   "rep_ovovipar",
   "rep_clutch_veg",
-  "rep_clutch_ter",
   "rep_asexual"
 ) := NULL]
 
@@ -300,10 +303,10 @@ Trait_EU[tachet[!is.na(species), ],
 
 # _________________________________________________________________________ 
 #### Complement with tachet data ####
-# Reamining Information from tachet is just considered for entries in 
+# Remaining Information from tachet is just considered for entries in 
 # freshecol with missing information
-# If freshecol & tachet had trait information for a taxon 
-# on the same trait values from freshecol were taken
+# If freshecol & tachet had trait information for a the same taxon 
+# on the same trait, values from freshecol were taken
 # _________________________________________________________________________ 
 
 # get names of trait columns
@@ -368,7 +371,7 @@ tachet_genus <- tachet[is.na(species) & !is.na(genus),] %>%
   .[!duplicated(genus),]
 
 Trait_EU <- rbind(Trait_EU,
-                  tachet_genus[.SD,
+                  tachet_genus[, .SD,
                                .SDcols = !(names(tachet) %like% "^stage|^disp")],
                   use.names = TRUE,
                   fill = TRUE)
@@ -405,7 +408,7 @@ Trait_EU[grepl("Atyidae", family), order := "Decapoda"]
 # Oligochaeta is actually a subclass
 # Tubificidae outdated
 Trait_EU[grepl("Tubificidae", family), family := "Naididae"]
-Trait_EU[grepl("Lumbricidae|Propappidae|Tubificidae", family), 
+Trait_EU[grepl("Lumbricidae|Propappidae|Naididae", family), 
            order := "Haplotaxida"]
 
 # Hirudinea is actually a subclass
@@ -444,6 +447,11 @@ Trait_EU[grepl("Normandia", genus), `:=`(family = "Elmidae",
                                            order = "Coleoptera")]
 Trait_EU[grepl("Stenostomum", genus), `:=`(family = "Stenostomidae", 
                                              order = "Catenulida")]
+
+# finally rm entries with taxonomical resolution higher than Family
+# no taxa on higher level than family
+# Trait_EU[!(is.na(species) & is.na(genus) & is.na(family)), ]
+
 # save
 saveRDS(object = Trait_EU, 
         file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))

@@ -1,12 +1,13 @@
 # _________________________________________________________________________ 
 #### Harmonize NOA Traits from Laura T ####
+# With fuzzy coded traits 
 # Includes also merge with old NOA trait DB (based on Vieira et al. 2006)
 # _________________________________________________________________________
 
-# read in 
-Trait_Noa_new <- readRDS(file = file.path(data_cleaned,
-                                          "North_America",
-                                          "Traits_US_pp_LauraT.rds"))
+# read in
+Trait_Noa_new_fc <- readRDS(file.path(data_cleaned,
+                                      "North_America",
+                                      "Traits_US_pp_LauraT_fc.rds"))
 
 # _________________________________________________________________________
 #### Feeding mode ####
@@ -18,11 +19,11 @@ Trait_Noa_new <- readRDS(file = file.path(data_cleaned,
 # feed_parasite: parasite
 
 # Predators are defined as: Engulfers (ingest prey whole or in parts) or
-  # as Piercers (piere prey tissues and suck fluids) 
+# as Piercers (piere prey tissues and suck fluids) 
 # Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
 # _________________________________________________________________________
 setnames(
-  Trait_Noa_new,
+  Trait_Noa_new_fc,
   old = c(
     "Feed_prim_CF",
     "Feed_prim_CG",
@@ -49,22 +50,22 @@ setnames(
 # locom_sessil: sessil (attached)
 # What to do with clingers? -> According to LeRoy and Chuck they should be put to crawlers
 # _________________________________________________________________________
-setnames(Trait_Noa_new, 
+setnames(Trait_Noa_new_fc, 
          old = c("Habit_prim_Attached/fixed", 
                  "Habit_prim_Burrower"),
          new = c("locom_sessil",
                  "locom_burrow"))
 # Swimmer
-Trait_Noa_new[, locom_swim := apply(.SD, 1, max),
-          .SDcols = c("Habit_prim_Swimmer",
-                      "Habit_prim_Planktonic",
-                      "Habit_prim_Skater")]
+Trait_Noa_new_fc[, locom_swim := apply(.SD, 1, max),
+              .SDcols = c("Habit_prim_Swimmer",
+                          "Habit_prim_Planktonic",
+                          "Habit_prim_Skater")]
 # Crawler 
-Trait_Noa_new[, locom_crawl := apply(.SD, 1, max),
-          .SDcols = c("Habit_prim_Crawler",
-                      "Habit_prim_Sprawler",
-                      "Habit_prim_Climber",
-                      "Habit_prim_Clinger")]
+Trait_Noa_new_fc[, locom_crawl := apply(.SD, 1, max),
+              .SDcols = c("Habit_prim_Crawler",
+                          "Habit_prim_Sprawler",
+                          "Habit_prim_Climber",
+                          "Habit_prim_Clinger")]
 # _________________________________________________________________________
 #### Size ####
 # specifically: Maximum body size
@@ -73,7 +74,7 @@ Trait_Noa_new[, locom_crawl := apply(.SD, 1, max),
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________
 setnames(
-  Trait_Noa_new,
+  Trait_Noa_new_fc,
   old = c(
     "Max_body_size_Large",
     "Max_body_size_Small",
@@ -89,11 +90,11 @@ setnames(
 # resp_teg: tegument
 # resp_gil: gills
 # resp_pls_spi: spiracle & plastron
-  # plastron & spiracle often work together in respiratory systems of aq. insects
-  # Present in insects with open tracheal systems -> breathe oxygen from the air
-  # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
+# plastron & spiracle often work together in respiratory systems of aq. insects
+# Present in insects with open tracheal systems -> breathe oxygen from the air
+# -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # _________________________________________________________________________
-setnames(Trait_Noa_new, 
+setnames(Trait_Noa_new_fc, 
          old = c("Resp_Gills", 
                  "Resp_Plastron_spiracle",
                  "Resp_Tegument"),
@@ -108,7 +109,7 @@ setnames(Trait_Noa_new,
 # volt_bi_multi
 # _________________________________________________________________________
 setnames(
-  Trait_Noa_new,
+  Trait_Noa_new_fc,
   old = c(
     "Volt_Univoltine",
     "Volt_Semivoltine",
@@ -125,8 +126,8 @@ setnames(
 # dividing for a given trait each value for each trait state by the sum of all 
 # trait states 
 # _________________________________________________________________________
-Trait_Noa_new <- normalize_by_rowSum(
-  x = Trait_Noa_new,
+Trait_Noa_new_fc <- normalize_by_rowSum(
+  x = Trait_Noa_new_fc,
   non_trait_cols = c("unique_id",
                      "species",
                      "genus",
@@ -139,27 +140,11 @@ Trait_Noa_new <- normalize_by_rowSum(
 # _________________________________________________________________________
 
 # Load harmoized & normalized Trait NOA
-Trait_Noa <- readRDS(file.path(data_cleaned, "North_America", "Traits_US_pp_harmonized.rds"))
-# Trait_Noa$order %>% table()
-
-# Subset to relevant orders
-# Trait_Noa <- Trait_Noa[order %in% c(
-#   "Coleoptera",
-#   "Diptera",
-#   "Ephemeroptera",
-#   "Hemiptera",
-#   "Lepidoptera",
-#   "Megaloptera",
-#   "Neuroptera",
-#   "Odonata",
-#   "Plecoptera",
-#   "Trichoptera"
-# )]
-
-# Overlap old and new trait database
-# Trait_Noa[!is.na(species) & !species %in% Trait_Noa_new$species, ] %>% 
-#   .[, .SD, .SDcols = names(Trait_Noa) %like% "species|^size|^resp|^feed|^locom|^volt"] %>% 
-#   na.omit(.)
+Trait_Noa_old_fc <- readRDS(file.path(
+  data_cleaned,
+  "North_America",
+  "Traits_US_pp_harmonized_fc.rds"
+))
 
 # _________________________________________________________________________
 #### Oviposition & body form ####
@@ -180,7 +165,7 @@ Trait_Noa <- readRDS(file.path(data_cleaned, "North_America", "Traits_US_pp_harm
 
 # merge on species level:
 # only species are merged that exist in Trait_Noa_new
-Trait_Noa_new[Trait_Noa,
+Trait_Noa_new_fc[Trait_Noa_old_fc,
               `:=`(ovip_ter = i.ovip_ter,
                    ovip_aqu = i.ovip_aqu,
                    ovip_ovo = i.ovip_ovo,
@@ -188,120 +173,33 @@ Trait_Noa_new[Trait_Noa,
                    bf_flattened = i.bf_flattened,
                    bf_cylindrical = i.bf_cylindrical,
                    bf_spherical = i.bf_spherical),
-              on = "species"]
+              on = "genus"]
 
-# merge on genus level:
-Trait_Noa_genus_merge <- Trait_Noa[is.na(species) & !is.na(genus), ]
-
-# intermediate dataset
-stepGenus_Trait_Noa_new <-
-  merge(x = Trait_Noa_new[is.na(species) & !is.na(genus), ],
-        y = Trait_Noa_genus_merge[, .(
-          genus,
-          ovip_aqu,
-          ovip_ter,
-          ovip_ovo,
-          bf_flattened,
-          bf_streamlined,
-          bf_spherical,
-          bf_cylindrical
-        )],
-        by = "genus",
-        all.x = TRUE)
-
-# coalesce trait states genus level
-stepGenus_Trait_Noa_new[, `:=`(
-  ovip_ter = coalesce(ovip_ter.x, ovip_ter.y),
-  ovip_aqu = coalesce(ovip_aqu.x, ovip_aqu.y),
-  ovip_ovo = coalesce(ovip_ovo.x, ovip_ovo.y),
-  bf_flattened = coalesce(bf_flattened.x, bf_flattened.y),
-  bf_streamlined = coalesce(bf_streamlined.x, bf_streamlined.y),
-  bf_cylindrical = coalesce(bf_cylindrical.x, bf_cylindrical.y),
-  bf_spherical = coalesce(bf_spherical.x, bf_spherical.y)
-)]
-
-# merge subset back
-Trait_Noa_new[stepGenus_Trait_Noa_new, 
-              `:=`(bf_flattened = i.bf_flattened,
-                   bf_streamlined = i.bf_streamlined,
-                   bf_cylindrical = i.bf_cylindrical,
-                   bf_spherical = i.bf_spherical,
-                   ovip_ter = i.ovip_ter,
-                   ovip_aqu = i.ovip_aqu, 
-                   ovpi_ovo = i.ovip_ovo),
-              on = "unique_id"]
-
-# merge on family level:
-Trait_Noa_family_merge <-  Trait_Noa[is.na(species) &
-                                       is.na(genus) &
-                                       !is.na(family),]
-
-# intermediate dataset
-stepFamily_Trait_Noa_new <-
-  merge(x = Trait_Noa_new[is.na(species) & is.na(genus) & !is.na(family), ],
-        y = Trait_Noa_family_merge[, .(
-          family,
-          ovip_aqu,
-          ovip_ter,
-          ovip_ovo,
-          bf_flattened,
-          bf_streamlined,
-          bf_spherical,
-          bf_cylindrical
-        )],
-        by = "family",
-        all.x = TRUE)
-
-# coalesce
-stepFamily_Trait_Noa_new[, `:=`(
-  ovip_ter = coalesce(ovip_ter.x, ovip_ter.y),
-  ovip_aqu = coalesce(ovip_aqu.x, ovip_aqu.y),
-  ovip_ovo = coalesce(ovip_ovo.x, ovip_ovo.y),
-  bf_flattened = coalesce(bf_flattened.x, bf_flattened.y),
-  bf_streamlined = coalesce(bf_streamlined.x, bf_streamlined.y),
-  bf_cylindrical = coalesce(bf_cylindrical.x, bf_cylindrical.y),
-  bf_spherical = coalesce(bf_spherical.x, bf_spherical.y)
-)]
-
-# merge subset back
-Trait_Noa_new[stepFamily_Trait_Noa_new, 
-              `:=`(bf_flattened = i.bf_flattened,
-                   bf_streamlined = i.bf_streamlined,
-                   bf_cylindrical = i.bf_cylindrical,
-                   bf_spherical = i.bf_spherical,
-                   ovip_ter = i.ovip_ter,
-                   ovip_aqu = i.ovip_aqu, 
-                   ovpi_ovo = i.ovip_ovo),
-              on = "unique_id"]
-
-##### coalesce merge on species level #####
+##### coalesce merge on genus-level #####
 # Complement missing information with the old NOA trait DB
 # for the traits feeding mode, locomotion, size, respiration, voltinism
 
 # Select relevant columns
-Trait_Noa_new <- Trait_Noa_new[, .SD,
-                               .SDcols = names(Trait_Noa_new) %like% "feed|locom|size|resp|volt|ovip|^bf|unique_id|species|genus|family|order"]
+Trait_Noa_new_fc <- Trait_Noa_new_fc[, .SD,
+                                     .SDcols = names(Trait_Noa_new_fc) %like% "feed|locom|size|resp|volt|ovip|^bf|unique_id|species|genus|family|order"]
 
 # select columns from old Noa Trait DB that are also in Trait_Noa_New
-cols <- names(Trait_Noa)[names(Trait_Noa) %in% names(Trait_Noa_new)]
-Trait_Noa <- Trait_Noa[, .SD, .SDcols = cols]
+cols <- names(Trait_Noa_old_fc)[names(Trait_Noa_old_fc) %in% names(Trait_Noa_new_fc)]
+Trait_Noa_old_fc <- Trait_Noa_old_fc[, .SD, .SDcols = cols]
 
 # create pattern for trait columns
 name_vec <- grep("unique_id|order|family|genus|species",
-                 names(Trait_Noa),
+                 names(Trait_Noa_new_fc),
                  value = TRUE,
                  invert = TRUE) %>%
   sub("\\_.*", "", .) %>%
   unique() %>%
   paste0("^",.)
 
-# TODO: Needs fix -> subset_vec is logical vector which can lead to 
-# an empty dataset "final"
-
 # likely that there isn't much that can be complemented by the old NOA trait DB
 # % NA val before 
 # na_before <- sum(is.na(Trait_Noa_new))/(sum(is.na(Trait_Noa_new))+ sum(!is.na(Trait_Noa_new)))
-final <- Trait_Noa_new
+final <- Trait_Noa_new_fc
 for(i in name_vec){
   
   # check if for a certain grouping feature all the traits contain NA values
@@ -311,53 +209,29 @@ for(i in name_vec){
   # complemented with information from NOA old (if possible)
   # data need(!) to be normalized for this operation
   step <- coalesce_join(x = final[subset_vec, ],
-                        y = Trait_Noa[!is.na(species), .SD,
-                                   .SDcols = names(Trait_Noa) %like% paste0(i, "|", "species")],
-                        by = "species",
+                        y = Trait_Noa_old_fc[, .SD,
+                                      .SDcols = names(Trait_Noa_old_fc) %like% paste0(i, "|", "genus")],
+                        by = "genus",
                         join = dplyr::left_join)
   setDT(step)
+  
   # merge back to whole dataset
   final <- coalesce_join(x = final,
-                         y = step[!is.na(species), 
-                                  .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
-                         by = "species",
+                         y = step[, 
+                                  .SD, .SDcols = names(step) %like% paste0(i, "|", "genus")],
+                         by = "genus",
                          join = dplyr::left_join) 
   setDT(final)
 }
-
 # % of na_values after merge -> 0.3 % less NA's 
 # na_after <- sum(is.na(final))/(sum(is.na(final))+ sum(!is.na(final)))
 Trait_Noa_new <- final
 
 #### merge information from taxa that are only in old Noa DB ####
-# species level
-Trait_Noa_new <-
-  rbind(Trait_Noa_new, Trait_Noa[!is.na(species),] %>%
-          .[!(species %in% Trait_Noa_new[!is.na(species),]$species)])
-  
-# NOTE: no taxa has complete trait information (see uncommented code)
-# Trait_Noa[is.na(species) & !is.na(genus),] %>%
-#   .[!genus %in% Trait_Noa_new[is.na(species) & !is.na(genus),]$genus, ] %>% 
-#   na.omit(., cols = names(.[, -c("species")]))
-# Trait_Noa[is.na(species) & is.na(genus) & !is.na(family), ] %>%
-#   .[!family %in% Trait_Noa_new[is.na(species) & is.na(genus) & !is.na(family), ]$family,] %>% 
-#   na.omit(., cols = names(.[, -c("species", "genus")]))
-
-# genus level
-Trait_Noa_new  <-
-  rbind(Trait_Noa_new,
-        Trait_Noa[is.na(species) & !is.na(genus),] %>%
-          .[!genus %in% Trait_Noa_new[is.na(species) & !is.na(genus),]$genus, ])
-
-# family level
-Trait_Noa_new <- rbind(Trait_Noa_new,
-                       Trait_Noa[is.na(species) &
-                                   is.na(genus) & !is.na(family),] %>%
-                         .[!family %in% Trait_Noa_new[is.na(species) &
-                                                        is.na(genus) & !is.na(family),]$family, ])
-
-# taxonomical changes
-# Corbiculidae - Venerida
+# genus-level
+Trait_Noa_new_fc <-
+  rbind(Trait_Noa_new_fc, 
+        Trait_Noa_old_fc[!genus %in% Trait_Noa_new_fc$genus,])
 
 # _________________________________________________________________________
 #### Pattern of development ####
@@ -396,17 +270,14 @@ holometabola <- c(
   "Trichoptera",
   "Hymenoptera"
 )
-Trait_Noa_new[, `:=`(
+Trait_Noa_new_fc[, `:=`(
   dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
 
-# rm entries with taxonomical resolution higher than Family
-# Trait_Noa_new[!(is.na(species) & is.na(genus) & is.na(family)), ]
-
 # save
-saveRDS(object = Trait_Noa_new,
+saveRDS(object = Trait_Noa_new_fc,
         file = file.path(data_cleaned,
                          "North_America",
-                         "Traits_US_LauraT_pp_harmonized.rds")
+                         "Traits_US_LauraT_pp_harmonized_fc.rds")
 )

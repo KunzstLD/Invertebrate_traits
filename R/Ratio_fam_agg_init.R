@@ -1,8 +1,9 @@
 # How many families end up in the final
-# aggregated trait datasets compared to the initial
-# (not aggregated) trait datasets?
+# preprocessed trait datasets compared to the initial
+# trait datasets?
 # This gives us insight how much and how consistent
 # information is covered in these trait databases
+# Notice: trait information gets not lost during aggregation
 # TODO: Identify missing families
 
 # _______________________________________________
@@ -20,27 +21,33 @@ files_init <- dir(data_cleaned,
 datasets_init <- lapply(files_init, readRDS)
 
 # get file names
-file_names <- sub("(\\/.*)(\\/.*)(\\/)(.*)(\\.rds)", "\\4", files_init)
+file_names <- sub("(\\.\\/.*)(\\/.*)(\\/)(.*)(\\.rds)", "\\4", files_init)
 
 # assign names to list
 for (i in seq_along(file_names)) {
   names(datasets_init)[[i]] <- file_names[[i]]
 }
 
-EU_init <- datasets_init[c(".Trait_EU_pp_harmonized", ".Trait_Tachet_pp_harmonized")]
-NOA_init <- datasets_init[c(".Traits_US_LauraT_pp_harmonized", ".Traits_US_pp_harmonized")]
+# create individual datasets from list
+EU_init <- datasets_init[c("Trait_EU_pp_harmonized", "Trait_Tachet_pp_harmonized")]
+NOA_init <- datasets_init[c("Traits_US_LauraT_pp_harmonized", "Traits_US_pp_harmonized")]
 c(AUS_init, NZ_init) %<-% list(datasets_init$.Trait_AUS_harmonized,
                             datasets_init$.Trait_NZ_pp_harmonized)
 
-# aggregated datasets
-files_agg <- list.files(path = file.path(data_out), pattern = ".*\\.rds")
-datasets_agg <-
-  lapply(seq_along(files_agg), function(i)
-    readRDS(file.path(data_out, files_agg[[i]])))
+# load aggregated datasets
+files_agg <- dir(path = data_out,
+                 recursive = TRUE, 
+                 full.names = TRUE, 
+                 pattern = ".*\\.rds")
+
+datasets_agg <- lapply(files_agg, readRDS)
+
+# get file names
+file_names_agg <- sub("(\\.\\/.*)(\\/)(.*)(\\.rds)", "\\3", files_agg)
 
 # assign names for each list element
-for (i in seq_along(files_agg)) {
-  names(datasets_agg)[[i]] <- files_agg[[i]]
+for (i in seq_along(file_names_agg)) {
+  names(datasets_agg)[[i]] <- file_names_agg[[i]]
 }
 
 # _______________________________________________
@@ -48,16 +55,10 @@ for (i in seq_along(files_agg)) {
 # _______________________________________________
 
 # aggregated datasets
+# count families per order
+# Restricted to orders from Trait profiles project 
 cov_agg <- rbindlist(lapply(datasets_agg, function(y) {
-  y[order %in% c(
-    "Ephemeroptera",
-    "Hemiptera",
-    "Odonata",
-    "Trichoptera",
-    "Coleoptera",
-    "Plecoptera",
-    "Diptera"
-  ), .(family, order)]
+  y[, .(family, order)]
 }),
 idcol = "file"
 ) %>%

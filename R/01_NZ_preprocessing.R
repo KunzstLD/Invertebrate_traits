@@ -24,6 +24,8 @@ setnames(Trait_NZ, names(Trait_NZ)[5:63],
          paste0(names(header), "_", names(Trait_NZ)[5:63]))
 setnames(Trait_NZ, "Taxon/trait modality", "Taxon")
 
+# create unique_id for possible duplicates
+Trait_NZ[, unique_id := 1:nrow(Trait_NZ)]
 
 # create species column: grep only entries with two words or more
 Trait_NZ[grepl("[A-z]\\s.+", Taxon), `:=`(Species = Taxon, Taxon = NA)]
@@ -101,6 +103,22 @@ Trait_NZ[Family %in% c("Orthocladiinae",
                        "Tanypodinae"), Family := "Chironomidae"]
 # Hydridellinae is a subfamily -> seems to be unranked on family level
 # left like this in DB
+
+# few taxa with "Oligochaeta" as family assigned
+# Lumbriculus variegatus
+# Stylodrilus heringianus
+Trait_NZ[Species %in% c("Lumbriculus variegatus", 
+                        "Stylodrilus heringianus"), 
+         `:=`(Family = "Lumbriculidae", 
+              Class = "Clitellata",
+              Phylum = "Annelida")]
+# Eiseniella
+Trait_NZ[`Genus or Higher` %in% "Eiseniella" , 
+         `:=`(
+           Family = "Lumbricidae", 
+           Class = "Clitellata",
+           Phylum = "Annelida"
+         )]
 
 # Genus and higher col: 
 # rm taxa that are already in family or order column
@@ -207,11 +225,12 @@ Trait_NZ[, (cols) := lapply(.SD, function(y)
   gsub("\\sbuds|\\ssexual|\\svivip", "", y)),
   .SDcols = cols]
 
-# ambiguous entries, hence delete through conversion:
+# ambiguous entries:
 # ?
 # 2?
 # 3?
 # 3 polyps ?
+# deleted through conversion to numeric
 cols <- names(Filter(is.character , Trait_NZ[, -c("Phylum", "Class", "Order", "Family",
                                           "Genus", "Species")]))
 Trait_NZ[, (cols) := lapply(.SD, as.numeric), .SDcols = cols]
@@ -220,10 +239,8 @@ Trait_NZ[, (cols) := lapply(.SD, as.numeric), .SDcols = cols]
 #### Handle duplicates ####
 # ------------------------------------------------------------------------- 
 
-#  -> find easy rules based on diff in duplicates
-
 # no duplicates on species level:
-Trait_NZ[!is.na(Species) & duplicated(Species), ]
+# Trait_NZ[!is.na(Species) & duplicated(Species), ]
 
 # no duplicates on genus-level:
 Trait_NZ[is.na(Species) & !is.na(Genus), ] %>% 
@@ -231,21 +248,24 @@ Trait_NZ[is.na(Species) & !is.na(Genus), ] %>%
 
 # few duplicated entries on family level (used to be different subfamilies of
 # Chironomidae)
-# Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
-#   .[duplicated(Family), ]
-
 # Often values are the same across a trait
 # range  [0-3]
 # if not the same mean is taken
 # Trait_NZ[grepl("Chironomidae", Family) & is.na(Genus) & is.na(Species), ]
+
+# trait cols
 cols <- grep("(?i)unique_id|species|genus|family|order|class|phylum",
              names(Trait_NZ),
              value = TRUE,
              invert = TRUE)
 
-Trait_NZ[grepl("Chironomidae", Family) &
-           is.na(Genus) & is.na(Species),
+Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family),
          (cols) := lapply(.SD, mean), .SDcols = cols]
+
+# rm duplicated families
+ids <- Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
+  .[duplicated(Family), unique_id]
+Trait_NZ <- Trait_NZ[!unique_id %in% ids, ]
 
 # save
 saveRDS(Trait_NZ, 

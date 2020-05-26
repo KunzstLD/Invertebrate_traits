@@ -52,15 +52,18 @@ Trait_AUS <- Trait_AUS[, .SD,
 
 # just return rows where for each trait there is an observation 
 Trait_AUS <- na.omit(Trait_AUS,
-                     cols = names(Trait_AUS[, -c("unique_id", 
-                                                 "species", 
-                                                 "genus", 
-                                                 "family", 
-                                                 "order",
-                                                 "bf_cylindrical",
-                                                 "bf_flattened",
-                                                 "bf_spherical",
-                                                 "bf_streamlined")]))
+  cols = names(Trait_AUS[, -c(
+    "unique_id",
+    "species",
+    "genus",
+    "family",
+    "order"#,
+    # "bf_cylindrical",
+    # "bf_flattened",
+    # "bf_spherical",
+    # "bf_streamlined"
+  )])
+)
 # rm unique id col
 Trait_AUS[, unique_id := NULL]
 

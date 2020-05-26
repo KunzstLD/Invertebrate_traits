@@ -226,6 +226,9 @@ setnames(Trait_NZ,
          old = names(Trait_NZ), 
          new = tolower(names(Trait_NZ)))
 
+# rm entries with taxonomical resolution higher than Family
+Trait_NZ <- Trait_NZ[!(is.na(species) & is.na(genus) & is.na(family)), ]
+
 # save
 saveRDS(object = Trait_NZ,
         file = file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))

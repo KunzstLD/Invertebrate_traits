@@ -28,6 +28,7 @@ dat_EU[, (cols) := lapply(.SD, as.numeric),
        .SDcols = !names(dat_EU) %like% "order|family|genus|species|unique_id"]
 
 # transform all NA values to 0 
+# needed for harmonization later
 for (j in cols){
   data.table::set(dat_EU, which(is.na(dat_EU[[j]])),j,0)
 }

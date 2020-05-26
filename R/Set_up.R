@@ -1,7 +1,24 @@
 # Set up script:
 # Loads required packages for Trait data cleaning & Harmonization
-# Loads scripts with used functions
 # Loads paths with location for data
+# Loads scripts with used functions
+
+# libraries
+# data transformation and data handling
+library(dplyr)     
+library(data.table) 
+library(tidyr)  
+library(readxl) 
+library(zeallot) 
+
+# taxonomical information 
+library(taxize) 
+
+# data overview
+library(Hmisc) 
+
+# unit testing
+library(testthat) 
 
 # Data location
 data_in <- "./Data"
@@ -17,15 +34,6 @@ data_out <- "./Output"
 
 # Location for R scripts
 data_scr <- "./R"
-
-# libraries
-library(dplyr)    # basic data transformation
-library(data.table) # data transformation
-library(readxl) # read in xlsx /xls files
-library(taxize) # retrieve taxonomical information
-library(Hmisc) # quick overview over data
-library(testthat) # unit testing
-library(zeallot) # %<-% assignment
 
 # source script with used functions
 source(file = file.path(data_scr, "functions_used_TDB.R"))

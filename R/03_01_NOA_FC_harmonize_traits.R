@@ -4,9 +4,9 @@
 # _________________________________________________________________________
 
 # read in
-Trait_Noa <- readRDS(file = file.path(data_cleaned, 
-                                      "North_America",
-                                      "Traits_US_pp.rds"))
+Trait_Noa_fc <- readRDS(file = file.path(data_cleaned, 
+                                         "North_America", 
+                                         "Traits_US_pp_fc.rds"))
 
 # _________________________________________________________________________
 #### Voltinism ####
@@ -15,7 +15,7 @@ Trait_Noa <- readRDS(file = file.path(data_cleaned,
 # volt_bi_multi
 # _________________________________________________________________________
 setnames(
-  Trait_Noa,
+  Trait_Noa_fc,
   old = c(
     "Voltinism_1 Generation per year",
     "Voltinism_< 1 Generation per year",
@@ -33,7 +33,7 @@ setnames(
 # stage4: egg, larva, pupa, adult
 # _________________________________________________________________________
 setnames(
-  Trait_Noa,
+  Trait_Noa_fc,
   old = c(
     "No.Aquatic_stages_1 (larvae/nymph only)" ,
     "No.Aquatic_stages_2 (egg, larvae/nymph)",
@@ -70,7 +70,7 @@ setnames(
 # feed_parasite: parasite
 # _________________________________________________________________________
 setnames(
-  Trait_Noa,
+  Trait_Noa_fc,
   old = c(
     "Feed_mode_prim_Collector-filterer",
     "Feed_mode_prim_Collector-gatherer",
@@ -86,10 +86,10 @@ setnames(
     "feed_shredder"
   )
 )
-Trait_Noa[, feed_herbivore := apply(.SD, 1. , max),
+Trait_Noa_fc[, feed_herbivore := apply(.SD, 1. , max),
           .SDcols = c("Feed_mode_prim_Scraper/grazer",
                       "Feed_mode_prim_Piercer herbivore")]
-Trait_Noa[, c("Feed_mode_prim_Scraper/grazer",
+Trait_Noa_fc[, c("Feed_mode_prim_Scraper/grazer",
               "Feed_mode_prim_Piercer herbivore") := NULL]
 
 # incorporating information from comments 
@@ -99,34 +99,32 @@ Trait_Noa_raw[, unique_id := 1:nrow(Trait_Noa_raw)]
 
 # taxa with feeding mode "other"
 Taxa_feed_other <-
-  Trait_Noa[`Feed_mode_prim_Other (specify in comments)` == 1 &
+  Trait_Noa_fc[`Feed_mode_prim_Other (specify in comments)` > 0 &
               feed_herbivore == 0 & feed_filter == 0 &
               feed_gatherer == 0 & feed_parasite == 0 &
               feed_predator == 0 &
               feed_shredder == 0, .(`Feed_mode_prim_Other (specify in comments)`, 
-                                    unique_id, Species)]
-
-# View(Trait_Noa_raw[Feed_mode_prim %in% "Other (specify in comments)" &
-#                     unique_id %in% Taxa_feed_other$unique_id &
-#                     !is.na(Species) & !is.na(Genus), 
-#                   .(Species, Genus,
-#                       Feed_mode_comments)])
+                                    Genus)]
 
 # detritivores -> collector gatherer
-detrivores <-
-  Trait_Noa_raw[Feed_mode_prim %in% "Other (specify in comments)" &
-                  unique_id %in% Taxa_feed_other$unique_id &
-                  grepl("detritivore.*|Detritivore", Feed_mode_comments) &
-                  !is.na(Species) & !is.na(Genus),
-                .(Species, Feed_mode_prim, Feed_mode_comments, unique_id)]
-Trait_Noa[detrivores,
-          `:=`(feed_gatherer = 1),
-          on = "unique_id"]
+# no values on Genus-level (data is on species-level).
+# Hence, no assignment
+# detrivores <-
+#   Trait_Noa_raw[Feed_mode_prim %in% "Other (specify in comments)" &
+#                   Genus %in% Taxa_feed_other$Genus &
+#                   grepl("detritivore.*|Detritivore", Feed_mode_comments) &
+#                   is.na(Species) &
+#                   !is.na(Genus),
+#                 .(Species, Genus, Feed_mode_prim, Feed_mode_comments, unique_id)]
+# Trait_Noa_fc[detrivores,
+#           `:=`(feed_gatherer = 1),
+#           on = "Genus"]
+
 # omnivorous to predators?
 # mouthparts of shredders often suited for scavenging
 
 # del feed mode others
-Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
+Trait_Noa_fc[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 
 # _________________________________________________________________________
 #### Locomotion ####
@@ -136,16 +134,16 @@ Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 # locom_sessil: sessil (attached)
 # What to do with clingers? -> According to LeRoy and Chuck they should be put to crawlers
 # _________________________________________________________________________
-setnames(Trait_Noa, 
+setnames(Trait_Noa_fc, 
          old = c("Habit_prim_Attached/fixed", "Habit_prim_Burrower"), 
          new = c("locom_sessil", "locom_burrow"))
-Trait_Noa[, locom_swim := apply(.SD, 1, max),
+Trait_Noa_fc[, locom_swim := apply(.SD, 1, max),
           .SDcols = c("Habit_prim_Swimmer",
                       "Habit_prim_Planktonic",
                       "Habit_prim_Skater")]
-Trait_Noa[, locom_crawl := apply(.SD, 1, max),
+Trait_Noa_fc[, locom_crawl := apply(.SD, 1, max),
           .SDcols = c("Habit_prim_Sprawler", "Habit_prim_Climber", "Habit_prim_Clinger")]
-Trait_Noa[, c(
+Trait_Noa_fc[, c(
   "Habit_prim_Swimmer",
   "Habit_prim_Planktonic",
   "Habit_prim_Skater",
@@ -155,40 +153,50 @@ Trait_Noa[, c(
 ) := NULL]
 
 # What to do with habit prim other?
-locom_comment <- Trait_Noa[`Habit_prim_Other (specify in comments)` == 1 &
+locom_comment <- Trait_Noa_fc[`Habit_prim_Other (specify in comments)` == 1 &
                              (locom_sessil == 0 & locom_burrow == 0 &
                                 locom_swim == 0 &
-                                locom_crawl == 0) & !is.na(Species)
-                           & !is.na(Genus),
-                           .(Species, Genus, unique_id)]
+                                locom_crawl == 0) & 
+                               !is.na(Genus),]
 # crawler
-crawler <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id & 
-                           grepl("(?i)crawl", Habit_comments) & !grepl("(?i)burrow", Habit_comments)
+crawler <- Trait_Noa_raw[Genus %in% locom_comment$Genus & 
+                           is.na(Species) &
+                           grepl("(?i)crawl", Habit_comments) &
+                           !grepl("(?i)burrow", Habit_comments)
                          & !grepl("(?i)excellent swimmer.*", Habit_comments), 
-                         .(Habit_prim, Habit_comments, unique_id)]
-Trait_Noa[crawler,
+                         .(Habit_prim, Habit_comments, Genus)]
+Trait_Noa_fc[crawler,
           `:=`(locom_crawl = 1),
-          on = "unique_id"]
+          on = "Genus"]
+
 # crawler & burrower
-crawl_burrow <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id & 
-                                grepl("(?i)crawl", Habit_comments) & grepl("(?i)burrow", Habit_comments)
-                              & !grepl("(?i)excellent swimmer.*", Habit_comments), 
-                              .(Habit_prim, Habit_comments, unique_id)]
-Trait_Noa[crawl_burrow,
+crawl_burrow <- Trait_Noa_raw[Genus %in% locom_comment$Genus & 
+                                is.na(Species) &
+                                grepl("(?i)crawl", Habit_comments) &
+                                grepl("(?i)burrow", Habit_comments) &
+                               !grepl("(?i)excellent swimmer.*", Habit_comments), 
+                              .(Habit_prim, Habit_comments, Genus)]
+
+Trait_Noa_fc[crawl_burrow,
           `:=`(locom_crawl = 1,
                locom_burrow = 1),
-          on = "unique_id"]
+          on = "Genus"]
+
 # crawler & swimmer
-crawl_swim <- Trait_Noa_raw[unique_id %in% locom_comment$unique_id & 
-                              grepl("(?i)crawl", Habit_comments) & !grepl("(?i)burrow", Habit_comments)
-                            & grepl("(?i)excellent swimmer.*", Habit_comments), 
-                            .(Habit_prim, Habit_comments, unique_id)]
-Trait_Noa[crawl_swim,
-          `:=`(locom_crawl = 1,
-               locom_swim = 1),
-          on = "unique_id"]
+# all data on species-level -> not used
+# crawl_swim <- Trait_Noa_raw[Genus %in% locom_comment$Genus & 
+#                               is.na(Species) &
+#                               grepl("(?i)crawl", Habit_comments) &
+#                               !grepl("(?i)burrow", Habit_comments) &
+#                               grepl("(?i)excellent swimmer.*", Habit_comments), 
+#                             .(Habit_prim, Habit_comments, Genus, Species)]
+# Trait_Noa_fc[crawl_swim,
+#           `:=`(locom_crawl = 1,
+#                locom_swim = 1),
+#           on = "Genus"]
+
 # del Habit_prim_other & Habit_prim_Clinger
-Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
+Trait_Noa_fc[, `Habit_prim_Other (specify in comments)` := NULL]
 
 # _________________________________________________________________________
 #### Respiration ####
@@ -206,18 +214,18 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 # Resp_late_Temporary air store -> Gills
 # Resp_late_Tracheal gills -> Gills
 # _________________________________________________________________________
-setnames(Trait_Noa,
+setnames(Trait_Noa_fc,
          old = c("Resp_late_Cutaneous"),
          new = c("resp_teg"))
-Trait_Noa[, resp_pls_spi := apply(.SD, 1, max),
+Trait_Noa_fc[, resp_pls_spi := apply(.SD, 1, max),
           .SDcols = c("Resp_late_Spiracular gills",
                       "Resp_late_Plastron (permanent air store)",
                       "Resp_late_Atmospheric breathers",
                       "Resp_late_Plant breathers")]
-Trait_Noa[, resp_gil := apply(.SD, 1, max),
+Trait_Noa_fc[, resp_gil := apply(.SD, 1, max),
           .SDcols = c("Resp_late_Temporary air store",
                       "Resp_late_Tracheal gills")]
-Trait_Noa[, c(
+Trait_Noa_fc[, c(
   "Resp_late_Atmospheric breathers",
   "Resp_late_Plant breathers",
   "Resp_late_Spiracular gills",
@@ -227,17 +235,17 @@ Trait_Noa[, c(
   "Resp_late_Hemoglobin"
 ) := NULL]
 
-# respiration comments
+# respiration comments -> not enough information
 # resp_comments <-
-#   Trait_Noa[(resp_teg == 0 & resp_pls_spi == 0 &
+#   Trait_Noa_fc[(resp_teg == 0 & resp_pls_spi == 0 &
 #                resp_gil == 0) &
 #               `Resp_late_Other (specify in comments)` == 1,
-#             .(unique_id)]
-# Trait_Noa_raw[unique_id %in% resp_comments$unique_id, 
+#             .(Genus)]
+# Trait_Noa_raw[Genus %in% resp_comments$Genus,
 #              .(Resp_comments)]
 
 # del Resp_later_Other
-Trait_Noa[, `Resp_late_Other (specify in comments)` := NULL]
+Trait_Noa_fc[, `Resp_late_Other (specify in comments)` := NULL]
 
 # _________________________________________________________________________
 #### Drift/dispersal ####
@@ -245,7 +253,7 @@ Trait_Noa[, `Resp_late_Other (specify in comments)` := NULL]
 # del dispersal_unknown
 # _________________________________________________________________________
 setnames(
-  Trait_Noa,
+  Trait_Noa_fc,
   old = c(
     "Larval_disp_< 1 m",
     "Larval_disp_1-10 m",
@@ -263,7 +271,7 @@ setnames(
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________
 setnames(
-  Trait_Noa,
+  Trait_Noa_fc,
   old = c(
     "Max_body_size_Large (length > 16 mm)",
     "Max_body_size_Small (length < 9 mm)",
@@ -281,10 +289,10 @@ setnames(
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
 # _________________________________________________________________________
-Trait_Noa[, ovip_ter := apply(.SD, 1, max),
+Trait_Noa_fc[, ovip_ter := apply(.SD, 1, max),
           .SDcols = c("Ovipos_behav_prim_Bank soil",
                       "Ovipos_behav_prim_Overhanging substrate (dry)")]
-Trait_Noa[, ovip_aqu := apply(.SD, 1., max) ,
+Trait_Noa_fc[, ovip_aqu := apply(.SD, 1., max) ,
           .SDcols = c(
             "Ovipos_behav_prim_Algal mats",
             "Ovipos_behav_prim_Bottom sediments",
@@ -296,7 +304,7 @@ Trait_Noa[, ovip_aqu := apply(.SD, 1., max) ,
           )]
 
 # del original categories
-Trait_Noa[, c("Ovipos_behav_prim_Algal mats",
+Trait_Noa_fc[, c("Ovipos_behav_prim_Algal mats",
               "Ovipos_behav_prim_Bottom sediments",
               "Ovipos_behav_prim_Floating debris",
               "Ovipos_behav_prim_In moss/macrophytes (submerged)",
@@ -312,14 +320,17 @@ Ovovi_US <-
   Trait_Noa_raw[grepl(
     "Ovovivi.*|ovoviv.*|Female hold eggs|marsupium|Eggs carried by female",
     Ovipos_behav_comments
-  ), .(Ovipos_behav_comments, unique_id)]
+  ) &
+    is.na(Species) &
+    !is.na(Genus), .(Ovipos_behav_comments, Genus)]
 
 # merge back to Trait_Noa 
-Trait_Noa[Ovovi_US,
+Trait_Noa_fc[Ovovi_US,
           `:=`(ovip_ovo = 1),
-          on = "unique_id"]
+          on = "Genus"]
+
 # turn NAs into zero
-Trait_Noa[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
+Trait_Noa_fc[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
 
 # complete with further information from comment section -> no need
 # missing_ovip <-
@@ -346,7 +357,7 @@ Trait_Noa[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
 #          on = "unique_id"]
 
 # del Ovipos_other
-Trait_Noa[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
+Trait_Noa_fc[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
 
 # _________________________________________________________________________
 #### Temperature ####
@@ -355,23 +366,23 @@ Trait_Noa[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
 # temp warm (EU >= 18 °C, NoA >15)
 # temp eurytherm (no pref)
 # _________________________________________________________________________
-setnames(Trait_Noa, 
+setnames(Trait_Noa_fc, 
          old = c("Thermal_pref_Cold stenothermal (<5 C)", 
                  "Thermal_pref_Cold-cool eurythermal (0-15 C)", 
                  "Thermal_pref_No strong preference"),
          new = c("temp_very_cold", 
                  "temp_cold_mod", 
                  "temp_eurytherm"))
-Trait_Noa[, temp_warm := apply(.SD, 1, max),
+Trait_Noa_fc[, temp_warm := apply(.SD, 1, max),
           .SDcols = c("Thermal_pref_Warm eurythermal (15-30 C)",
                       "Thermal_pref_Hot euthermal (>30 C)")]
-Trait_Noa[, c("Thermal_pref_Warm eurythermal (15-30 C)",
+Trait_Noa_fc[, c("Thermal_pref_Warm eurythermal (15-30 C)",
               "Thermal_pref_Hot euthermal (>30 C)") := NULL]
 
 # change some colnames 
-setnames(Trait_Noa, 
-         old = c("Species", "Genus", "Family", "Order"), 
-         new = c("species", "genus", "family", "order"))
+setnames(Trait_Noa_fc, 
+         old = c("Genus", "Family", "Order"), 
+         new = c("genus", "family", "order"))
 
 # _________________________________________________________________________
 #### Body form ####
@@ -381,14 +392,10 @@ setnames(Trait_Noa,
 # bf_spherical: spherical
 # _________________________________________________________________________
 
-# transform all integers to numeric to avoid losses of data during merging 
-cols_integer <- Filter(is.integer, Trait_Noa) %>% names()
-Trait_Noa[, (cols_integer) := lapply(.SD, as.double), .SDcols = cols_integer]
-
 ## rm body_shape_case columns
-cols <- grep("case", names(Trait_Noa), value = TRUE)
-Trait_Noa[, (cols) := NULL]
- 
+cols <- grep("case", names(Trait_Noa_fc), value = TRUE)
+Trait_Noa_fc[, (cols) := NULL]
+
 ## Using Philippe Polateras classification
 body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
 
@@ -406,89 +413,32 @@ blocky_pup <- body_form_pup[array %in% "NOA_trait_project_taxa_blocky" |
 
 # remove duplicated taxa
 blocky_pup <- blocky_pup[!(!is.na(species) & duplicated(species)), ]
+
 # 15 entries have no information on body form
 blocky_pup <- blocky_pup[!(is.na(streamlined) | is.na(cylindrical) | is.na(spherical) | is.na(flattened)),]
 
-# merge bf information on species level
-Trait_Noa[blocky_pup[!is.na(species), .(species,
-                                        streamlined,
-                                        flattened,
-                                        cylindrical,
-                                        spherical)],
+# since we can only merge on genus level, we allocate 
+# entries on species-level in the PUP dataset to genus-level
+cols <- c("streamlined",
+          "flattened",
+          "cylindrical",
+          "spherical")
+blocky_pup[, (cols) := lapply(.SD, median), .SDcols = cols,
+           by = "genus"]
+blocky_pup <- blocky_pup[!duplicated(genus), ]
+
+# merge bf information on genus level
+Trait_Noa_fc[blocky_pup[!is.na(genus), ],
           `:=`(
             streamlined = i.streamlined,
             flattened = i.flattened,
             cylindrical = i.cylindrical,
             spherical = i.spherical
           ),
-          on = "species"]
- 
-# merge bf information on genus level
-# needs intermediate step
-Trait_Noa_bf_genus <- coalesce_join(
-  x = Trait_Noa[is.na(species),],
-  y = blocky_pup[is.na(species) &
-                   !is.na(genus) & !duplicated(genus), .(genus,
-                                                         streamlined,
-                                                         flattened,
-                                                         cylindrical,
-                                                         spherical)],
-  by = "genus",
-  join = dplyr::left_join
-) %>%
-  as.data.table(.)
+          on = "genus"]
 
-# merge back to whole dataset
-Trait_Noa[Trait_Noa_bf_genus,
-          `:=`(
-            flattened = i.flattened,
-            spherical = i.spherical,
-            streamlined = i.streamlined,
-            cylindrical = i.cylindrical
-          ),
-          on = "unique_id"]
-
-# merge bf information on family level (one entry)
-Trait_Noa_bf_family <- coalesce_join(
-  x = Trait_Noa[is.na(species) & is.na(genus),],
-  y = blocky_pup[is.na(genus), .(family,
-                                 streamlined,
-                                 flattened,
-                                 cylindrical,
-                                 spherical)],
-  by = "family",
-  join = dplyr::left_join
-) %>%
-  as.data.table(.)
-
-# merge back to whole dataset
-Trait_Noa[Trait_Noa_bf_family,
-          `:=`(
-            flattened = i.flattened,
-            spherical = i.spherical,
-            streamlined = i.streamlined,
-            cylindrical = i.cylindrical
-          ),
-          on = "unique_id"]
- 
-# # interesting taxa where trait assignments deviate for body size:
-# # Trait_Noa[`Body_shape_Dorsoventrally flattened` == 1 & 
-# #             cylindrical == 1, .(flattened , `Body_shape_Dorsoventrally flattened`,
-# #                             cylindrical, Body_shape_Tubular, 
-# #                             species, genus, family, order)]
-# 
-# # find conflict data -> use PUP assignments in these cases 
-# Trait_Noa[!is.na(flattened) & `Body_shape_Dorsoventrally flattened` > 0, 
-#           `Body_shape_Dorsoventrally flattened` := 0] 
-# Trait_Noa[!is.na(spherical) & `Body_shape_Round (humped)` > 0, 
-#           `Body_shape_Round (humped)` := 0]
-# Trait_Noa[!is.na(streamlined) & `Body_shape_Streamlined / fusiform` > 0, 
-#            `Body_shape_Streamlined / fusiform` := 0] 
-# Trait_Noa[!is.na(cylindrical) & Body_shape_Tubular > 0, 
-#            Body_shape_Tubular := 0] 
-# 
 # put bf data NOA with PUP assignments together
-Trait_Noa[, `:=`(
+Trait_Noa_fc[, `:=`(
   bf_flattened = coalesce(flattened , `Body_shape_Dorsoventrally flattened`),
   bf_spherical = coalesce(spherical , `Body_shape_Round (humped)`),
   bf_streamlined = coalesce(streamlined, `Body_shape_Streamlined / fusiform`),
@@ -496,7 +446,7 @@ Trait_Noa[, `:=`(
 )]
 
 # del other bf columns
-Trait_Noa[, c("Body_shape_Bluff (blocky)",
+Trait_Noa_fc[, c("Body_shape_Bluff (blocky)",
               "Body_shape_Dorsoventrally flattened",
               "Body_shape_Round (humped)",
               "Body_shape_Streamlined / fusiform",
@@ -512,8 +462,8 @@ Trait_Noa[, c("Body_shape_Bluff (blocky)",
 # dividing for a given trait each value for a trait state by the sum of all 
 # trait states
 # _________________________________________________________________________
-Trait_Noa <- normalize_by_rowSum(
-  x = Trait_Noa,
+Trait_Noa_fc <- normalize_by_rowSum(
+  x = Trait_Noa_fc,
   non_trait_cols = c("unique_id",
                      "order",
                      "family",
@@ -522,15 +472,15 @@ Trait_Noa <- normalize_by_rowSum(
 )
 
 # check completenes of the trait data
-completeness_trait_data(x = Trait_Noa,
+completeness_trait_data(x = Trait_Noa_fc,
                         non_trait_cols = c("unique_id",
                                            "order",
                                            "family",
                                            "genus",
                                            "species"))
 # save
-saveRDS(object = Trait_Noa, 
+saveRDS(object = Trait_Noa_fc, 
         file = file.path(data_cleaned, 
                          "North_America", 
-                         "Traits_US_pp_harmonized.rds")
+                         "Traits_US_pp_harmonized_fc.rds")
 )

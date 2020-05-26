@@ -23,34 +23,39 @@ Trait_AUS[, volt_semi := apply(.SD, 1, max),
           .SDcols = c("Voltinism_less_than_1_VicEPA",
                       "Volt1_botwe",
                       "volt1_Maxwell",
-                      "volt_semi")]
+                      "Less_than_one_generation_per_year_Schaefer",
+                      "Less_than_one_generation_per_year_bugs_gbr")]
 Trait_AUS[, volt_uni := apply(.SD, 1, max),
           .SDcols = c("Voltinism_1_VicEPA",
                       "Volt2_botwe",
-                      "volt2_Maxwell",
-                      "volt_uni", 
-                      "volt_uni_Schaefer")]
+                      "One_generation_per_year_bugs_gbr", 
+                      "One_generation_per_year_Schaefer")]
 Trait_AUS[, volt_bi_multi := apply(.SD, 1, max),
           .SDcols = c("Voltinism_2_VicEPA",
                       "Volt3_botwe",
+                      "volt2_Maxwell",
                       "volt3_Maxwell",
                       "volt4_Maxwell",
-                      "volt_bi_multi", 
-                      "volt_bi_multi_Schaefer")]
+                      "More_than_two_generations_per_year_bugs_gbr", 
+                      "More_than_two_generations_per_year_Schaefer")]
 Trait_AUS[, c(
   "Voltinism_less_than_1_VicEPA",
   "Volt1_botwe",
   "volt1_Maxwell",
   "Voltinism_1_VicEPA",
+  "Less_than_one_generation_per_year_Schaefer",
+  "Less_than_one_generation_per_year_bugs_gbr",
   "Volt2_botwe",
   "volt2_Maxwell",
-  "volt_uni_Schaefer",
+  "One_generation_per_year_bugs_gbr", 
+  "One_generation_per_year_Schaefer",
   "Voltinism_2_VicEPA",
   "Volt3_botwe",
   "volt3_Maxwell",
   "volt4_Maxwell",
-  "volt_bi_multi_Schaefer",
-  "Voltinism_more_than_2_VicEPA"
+  "Voltinism_more_than_2_VicEPA",
+  "More_than_two_generations_per_year_bugs_gbr", 
+  "More_than_two_generations_per_year_Schaefer"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -226,7 +231,6 @@ Trait_AUS[, c(
 # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # Maxwell trait on Plastron not used, since ambiguous (Plastron and gills)
 # _________________________________________________________________________ 
-
 Trait_AUS[, resp_teg := apply(.SD, 1, max),
           .SDcols = c("Respiration_tegument_VicEPA",
                       "Resp1_botwe",
@@ -291,6 +295,10 @@ Trait_AUS[, size_small := apply(.SD, 1, max),
           .SDcols = c("Max_size_less_than_5_VicEPA",
                       "Max_size_5_to_10_VicEPA",
                       "Size1_botwe",
+                      "Max_size_less_than_5__text_ref",
+                      "Max_size_5_to_10__text_ref",
+                      "Max_size_less_than_5__text_bugs_gbr",    
+                      "Max_size_5_to_10__text_bugs_gbr",
                       "size_small", 
                       "size_small_Schaefer",
                       "size_small_fam_Chessman",
@@ -298,6 +306,8 @@ Trait_AUS[, size_small := apply(.SD, 1, max),
 Trait_AUS[, size_medium := apply(.SD, 1, max), 
           .SDcols = c("Max_size_10_to_20_VicEPA",
                       "Size2_botwe",
+                      "Max_size_10_to_20__text_ref",
+                      "Max_size_10_to_20__text_bugs_gbr",
                       "size_medium", 
                       "size_medium_Schaefer",
                       "size_medium_fam_Chessman",
@@ -306,6 +316,10 @@ Trait_AUS[, size_large := apply(.SD, 1, max),
           .SDcols = c("Max_size_20_to_40_VicEPA", 
                       "Max_size_more_than_40_VicEPA",
                       "Size3_botwe",
+                      "Max_size_20_to_40__text_ref", 
+                      "Max_size_greater_than_40__text_ref",
+                      "Max_size_20_to_40__text_bugs_gbr",       
+                      "Max_size_greater_than_40__text_bugs_gbr",
                       "size_large", 
                       "size_large_Schaefer",
                       "size_large_gen_Chessman",
@@ -327,7 +341,17 @@ Trait_AUS[, c(
   "size_medium_fam_Chessman",
   "size_medium_gen_Chessman",
   "size_small_fam_Chessman",
-  "size_small_gen_Chessman"
+  "size_small_gen_Chessman", 
+  "Max_size_less_than_5__text_ref",
+  "Max_size_5_to_10__text_ref",
+  "Max_size_less_than_5__text_bugs_gbr",    
+  "Max_size_5_to_10__text_bugs_gbr",
+  "Max_size_10_to_20__text_ref",
+  "Max_size_10_to_20__text_bugs_gbr",
+  "Max_size_20_to_40__text_ref", 
+  "Max_size_greater_than_40__text_ref",
+  "Max_size_20_to_40__text_bugs_gbr",       
+  "Max_size_greater_than_40__text_bugs_gbr"
 ) := NULL]
 
 # _________________________________________________________________________ 

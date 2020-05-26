@@ -6,6 +6,14 @@
 # Preprocessing  & data cleaning
 # _________________________________________________________________________
 
+#### Load multiple rds files in a list ####
+load_data <- function(path, pattern) {
+  files <- list.files(path = path, pattern = pattern)
+  data <- lapply(files, function(y) readRDS(file = file.path(path, y)))
+  data <- setNames(data, files)
+  data
+}
+
 #### Cleaning text (colnames) ####
 text_with_underscore <- function(text) {
   ind <- grep("[[:space:]]|\\,|\\;|\\.|\\(|\\)|\\-", text)
@@ -22,13 +30,10 @@ simpleCap <- function(x) {
 
 #### Google search ####
 query_google <- function(x) {
-  lapply(
-    x,
-    function(y) {
-      utils::browseURL(url = paste0("https://google.com/search?q=", y))
-    }
-  ) %>%
-    invisible()
+  invisible(lapply(x,
+                   function(y) {
+                     utils::browseURL(url = paste0("https://google.com/search?q=", y))
+                   }))
 }
 
 #### coalesce implementation when x is zero ####
@@ -175,6 +180,20 @@ fetch_dupl <- function(data, col) {
 
 #### Aggregate duplicate taxa entries ####
 
+
+# Simple aggregation function for DB that in itself consist of
+# multiple DBs (e.g. Australian trait DB)
+# There, duplicates originate from the different original databases
+# and often produce entries like (1, 0) where 
+aggr_dupl_multDB <- function(y) {
+  if(sum(y) == 0)
+    0
+  else
+    mean(y[y != 0])
+}
+
+# NOTICE: Not used anymore, far to complex for what they were 
+# actually for
 # Duplicate taxa with numeric values are condensed:
 # The Mode is taken when the same taxa occurs multiple times
 # If all values are distinct, the median is taken.
@@ -183,97 +202,97 @@ fetch_dupl <- function(data, col) {
 # dataset
 # column with duplicates
 # all non trait columns
-condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
-
-  #
-  if (nrow(trait_data[duplicated(get(col_with_dupl_entries)), ]) == 0) {
-    stop("Input data has no duplicates. Check for duplicates first before applying this function.")
-  }
-
-  # subset to duplicate taxa
-  dupl_taxa <-
-    trait_data[
-      duplicated(get(col_with_dupl_entries)),
-      unique(get(col_with_dupl_entries))
-    ]
-
-  # create data.tables with and without duplicates
-  dupl <- trait_data[get(col_with_dupl_entries) %in% dupl_taxa, ]
-  without_dupl <-
-    trait_data[!(get(col_with_dupl_entries) %in% dupl_taxa), ]
-
-  # transform duplicates into long format
-  # function should have the possibility to choose id.vars (non trait columns)
-  dupl_lf <- melt(
-    data = dupl,
-    id.vars = non_trait_cols
-  )
-
-  # Actual condensation of trait values
-  # rather take Mode but throw out zero? instead of median in second ifelse() statement
-  dupl_lf[, `:=`(value = ifelse(
-
-    # is TRUE when NOT all values are distinct
-    length(value) != length(unique(value)),
-    #  is TRUE when not just zeros are present
-    ifelse(
-      !identical(value[value != 0], numeric(0)),
-      Mode(value[value != 0], na.rm = TRUE),
-      Mode(value, na.rm = TRUE)
-    ),
-    # just distinct values
-    # zeros are dropped -> are actually not observed values
-    ifelse(y == 0,
-      y,
-      median(y[y != 0], na.rm = TRUE)
-    )
-  )),
-  by = variable
-  ]
-
-  # create formula for dcast
-  formula <-
-    paste0(paste0(non_trait_cols, collapse = "+"), "~", "variable") %>%
-    as.formula()
-
-  # convert back to long format
-  dupl <- dcast(
-    data = dupl_lf,
-    formula = formula,
-    fun.aggregate = mean
-  )
-
-  # bind duplicates and non duplicates back
-  data <- rbind(dupl, without_dupl)
-  return(data)
-}
-
-# Core aggregation function from the function "condese_dupl_numeric"
-# Aggregates duplicates so that the most common value is taken
-# In case just distinct values are present the median is taken
-# Zeros are filtered out if values different from zero exist
-# Problematic for cases like:
-# Mode(c(1, 1, 2, 2, 3)) compared to Mode(c(2, 2, 1, 1, 3))
-# Can be used within data.table
-condense_dupl_numeric_agg <- function(y) {
-  ifelse(
-
-    # is TRUE when NOT all values are distinct
-    length(y) != length(unique(y)),
-    #  is TRUE when not just zeros are present
-    ifelse(
-      !identical(y[y != 0], numeric(0)),
-      Mode(y[y != 0], na.rm = TRUE),
-      Mode(y, na.rm = TRUE)
-    ),
-    # just distinct values
-    # zeros are dropped -> are actually not observed values
-    ifelse(sum(y) == 0,
-      y,
-      median(y[y != 0], na.rm = TRUE)
-    )
-  )
-}
+# condense_dupl_numeric <- function(trait_data, col_with_dupl_entries, non_trait_cols) {
+# 
+#   #
+#   if (nrow(trait_data[duplicated(get(col_with_dupl_entries)), ]) == 0) {
+#     stop("Input data has no duplicates. Check for duplicates first before applying this function.")
+#   }
+# 
+#   # subset to duplicate taxa
+#   dupl_taxa <-
+#     trait_data[
+#       duplicated(get(col_with_dupl_entries)),
+#       unique(get(col_with_dupl_entries))
+#     ]
+# 
+#   # create data.tables with and without duplicates
+#   dupl <- trait_data[get(col_with_dupl_entries) %in% dupl_taxa, ]
+#   without_dupl <-
+#     trait_data[!(get(col_with_dupl_entries) %in% dupl_taxa), ]
+# 
+#   # transform duplicates into long format
+#   # function should have the possibility to choose id.vars (non trait columns)
+#   dupl_lf <- melt(
+#     data = dupl,
+#     id.vars = non_trait_cols
+#   )
+# 
+#   # Actual condensation of trait values
+#   # rather take Mode but throw out zero? instead of median in second ifelse() statement
+#   dupl_lf[, `:=`(value = ifelse(
+# 
+#     # is TRUE when NOT all values are distinct
+#     length(value) != length(unique(value)),
+#     #  is TRUE when not just zeros are present
+#     ifelse(
+#       !identical(value[value != 0], numeric(0)),
+#       Mode(value[value != 0], na.rm = TRUE),
+#       Mode(value, na.rm = TRUE)
+#     ),
+#     # just distinct values
+#     # zeros are dropped -> are actually not observed values
+#     ifelse(y == 0,
+#       y,
+#       median(y[y != 0], na.rm = TRUE)
+#     )
+#   )),
+#   by = variable
+#   ]
+# 
+#   # create formula for dcast
+#   formula <-
+#     paste0(paste0(non_trait_cols, collapse = "+"), "~", "variable") %>%
+#     as.formula()
+# 
+#   # convert back to long format
+#   dupl <- dcast(
+#     data = dupl_lf,
+#     formula = formula,
+#     fun.aggregate = mean
+#   )
+# 
+#   # bind duplicates and non duplicates back
+#   data <- rbind(dupl, without_dupl)
+#   return(data)
+# }
+# 
+# # Core aggregation function from the function "condese_dupl_numeric"
+# # Aggregates duplicates so that the most common value is taken
+# # In case just distinct values are present the median is taken
+# # Zeros are filtered out if values different from zero exist
+# # Problematic for cases like:
+# # Mode(c(1, 1, 2, 2, 3)) compared to Mode(c(2, 2, 1, 1, 3))
+# # Can be used within data.table
+# condense_dupl_numeric_agg <- function(y) {
+#   ifelse(
+# 
+#     # is TRUE when NOT all values are distinct
+#     length(y) != length(unique(y)),
+#     #  is TRUE when not just zeros are present
+#     ifelse(
+#       !identical(y[y != 0], numeric(0)),
+#       Mode(y[y != 0], na.rm = TRUE),
+#       Mode(y, na.rm = TRUE)
+#     ),
+#     # just distinct values
+#     # zeros are dropped -> are actually not observed values
+#     ifelse(sum(y) == 0,
+#       y,
+#       median(y[y != 0], na.rm = TRUE)
+#     )
+#   )
+# }
 # Testing:
 # test <- data.table(x = c("A", "A", "B", "D", "D", "D"),
 #                    y = c(1, 0, 5, 0.5, 0.5, NA))
@@ -363,29 +382,26 @@ create_pattern_ind <- function(x, non_trait_cols) {
 #### Normalization of trait scores ####
 # All trait states of one trait are divided by their row sum
 # Hence, trait affinities are represented as "%" or ratios
-normalize_by_rowSum <- function(x, non_trait_cols) {
-
+normalize_by_rowSum <- function(x, non_trait_cols, na.rm) {
   # get trait names & create pattern for subset
-  trait_names_pattern <- create_pattern_ind(
-    x = x,
-    non_trait_cols = non_trait_cols
-  )
-
+  trait_names_pattern <- create_pattern_ind(x = x,
+                                            non_trait_cols = non_trait_cols)
+  
   # loop for normalization (trait categories for each trait sum up to 1)
   for (cols in trait_names_pattern) {
     # get row sum for a specific trait
-    x[, rowSum := apply(.SD, 1, sum), .SDcols = names(x) %like% cols]
-
+    x[, rowSum := apply(.SD, 1, sum, na.rm = na.rm),
+      .SDcols = names(x) %like% cols]
+    
     # get column names for assignment
     col_name <- names(x)[names(x) %like% cols]
-
+    
     # divide values for each trait state by
     # the sum of trait state values
     x[, (col_name) := lapply(.SD, function(y) {
       round(y / rowSum, digits = 2)
     }),
-    .SDcols = names(x) %like% cols
-    ]
+    .SDcols = names(x) %like% cols]
   }
   # del rowSum column
   x[, rowSum := NULL]

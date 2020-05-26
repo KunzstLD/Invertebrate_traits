@@ -7,19 +7,16 @@
 Trait_AUS <-
   fread(file.path(data_in,
                   "Australia",
-                  "Australian macroinv trait database 24 10.csv"))
+                  "Australian_macroinv_trait_database_final.csv"))
 
 # delete entries with "Adult"
 Trait_AUS <- Trait_AUS[!grepl("(?i)Adult", Species), ]
-
-# Add ID col as unique identifier
-Trait_AUS[, unique_id := 1:nrow(Trait_AUS)]
 
 # remove reference columns
 Trait_AUS[, grep("(?i)ref.+", names(Trait_AUS), value = TRUE) := NULL]
 
 # subset with comments
-Comments_AUS <- Trait_AUS[, .SD, .SDcols = names(Trait_AUS) %like% "Comment|unique_id"]
+Comments_AUS <- Trait_AUS[, .SD, .SDcols = names(Trait_AUS) %like% "Comment|unique_ID"]
 Trait_AUS[, grep("(?i)comment.+", names(Trait_AUS), value = TRUE) := NULL]
 
 # feeding mode: adjust col names Marchant
@@ -29,10 +26,16 @@ setnames(
   new = paste0("feeding_", grep("Marchant", names(Trait_AUS), value = TRUE))
 )
 
-# adjust col names Maxwell
+# Change names for Maxwell 
+# Botwe for feeding mode
 setnames(
   Trait_AUS,
   old = c(
+    "Trop1_botwe",
+    "Trop2_botwe",
+    "Trop3_botwe",
+    "Trop4_botwe",
+    "Trop5_botwe",
     "C_Maxwell",
     "P_Maxwell",
     "SH_Maxwell",
@@ -42,19 +45,22 @@ setnames(
     "C_SC_Maxwell",
     "F_Maxwell"
   ),
-  new = paste0(
-    "feeding_",
-    c(
-      "C_Maxwell",
-      "P_Maxwell",
-      "SH_Maxwell",
-      "C_SH_Maxwell",
-      "SC_Maxwell",
-      "PA_Maxwell",
-      "C_SC_Maxwell",
-      "F_Maxwell"
-    )
-  )
+  new = c(
+    "Trop_collector_gatherer_botwe",
+    "Trop_collector_filterer_botwe",
+    "Trop_scraper_botwe",
+    "Trop_predator_botwe",
+    "Trop_shredder_detritivore_botwe",
+    "feeding_collector_maxwell",
+    "feeding_predator_maxwell",
+    "feeding_shredder_maxwell",
+    "feeding_collec_shredder_maxwell",
+    "feeding_scraper_maxwell",
+    "feeding_parasite_maxwell",
+    "feeding_collector_scraper_maxwell",
+    "feeding_filterer_maxwell"
+  ),
+  skip_absent = TRUE
 )
 
 # subset to relevant traits:
@@ -70,7 +76,7 @@ setnames(
 # temp
 # size
 Trait_AUS <- Trait_AUS[, c(
-  "unique_id",
+  "unique_ID",
   "Species",
   "Genus",
   "Family",
@@ -120,42 +126,6 @@ Trait_AUS <- Trait_AUS[, c(
 )
 , with = FALSE]
 
-# change names for Maxwell & Botwe for feeding mode
-setnames(
-  Trait_AUS,
-  old = c(
-    "Trop1_botwe",
-    "Trop2_botwe",
-    "Trop3_botwe",
-    "Trop4_botwe",
-    "Trop5_botwe",
-    "feeding_C_Maxwell",
-    "feeding_P_Maxwell",
-    "feeding_SH_Maxwell",
-    "feeding_C_SH_Maxwell",
-    "feeding_SC_Maxwell",
-    "feeding_PA_Maxwell",
-    "feeding_C_SC_Maxwell",
-    "feeding_F_Maxwell"
-  ),
-  new = c(
-    "Trop_collector_gatherer_botwe",
-    "Trop_collector_filterer_botwe",
-    "Trop_scraper_botwe",
-    "Trop_predator_botwe",
-    "Trop_shredder_detritivore_botwe",
-    "feeding_collector_maxwell",
-    "feeding_predator_maxwell",
-    "feeding_shredder_maxwell",
-    "feeding_collec_shredder_maxwell",
-    "feeding_scraper_maxwell",
-    "feeding_parasite_maxwell",
-    "feeding_collector_scraper_maxwell",
-    "feeding_filterer_maxwell"
-  ),
-  skip_absent = TRUE
-)
-
 # ________________________________________________________________________
 #### Trait preprocessing categorical traits #### 
 # Trait_AUS[, lapply(.SD, max, na.rm =TRUE),
@@ -191,24 +161,6 @@ Trait_AUS[, `:=`(
   resp_atm_Schaefer = ifelse(grepl("Air\\-breathing", Respiration_Schaefer), 1, 0)
 )]
 Trait_AUS[, Respiration_Schaefer := NULL]
-
-# ________________________________________________________________________
-#### Number_of_generations_per_year_bugs_gbr ####
-# only categories used that are useful & not ambiguous
-# ________________________________________________________________________
-Trait_AUS[, `:=`(
-  volt_semi = ifelse(grepl("0\\.25|0\\.5$", Number_of_generations_per_year_bugs_gbr), 1, 0),
-  volt_uni = ifelse(grepl("^1$|<\\=1|0.5\\-1", Number_of_generations_per_year_bugs_gbr), 1, 0),
-  volt_bi_multi = ifelse(grepl("2-3|^2|>2|>1$|^3|2-10", Number_of_generations_per_year_bugs_gbr), 1, 0)
-)]
-Trait_AUS[, Number_of_generations_per_year_bugs_gbr := NULL]
-
-# Number_of_generations_per_year_Schaefer
-Trait_AUS[, `:=`(
-  volt_uni_Schaefer = ifelse(grepl("^1$|0.5\\-1", Number_of_generations_per_year_Schaefer), 1, 0),
-  volt_bi_multi_Schaefer = ifelse(grepl("2-3|^2|2-10", Number_of_generations_per_year_Schaefer), 1, 0)
-)]
-Trait_AUS[, Number_of_generations_per_year_Schaefer := NULL]
 
 # ________________________________________________________________________
 #### Reproduction/Oviposition ####
@@ -263,18 +215,32 @@ Trait_AUS[, Reproduction_type_Schaefer := NULL]
 # feed_parasite: parasite
 # _________________________________________________________________________
 Trait_AUS[, `:=`(
-  feed_shredder = ifelse(grepl("(?i)herbivores|detritivores$", 
-                               Feeding_group_bugs_gbr), 1, 0),
-  feed_predator = ifelse(grepl("Predator|larvea predators", Feeding_group_bugs_gbr), 1, 0), 
+  feed_shredder = ifelse(
+    grepl("(?i)herbivores|detritivores$",
+          Feeding_group_bugs_gbr),
+    1,
+    0
+  ),
+  feed_predator = ifelse(
+    grepl("Predator|larvea predators", Feeding_group_bugs_gbr),
+    1,
+    0
+  ),
   feed_parasite = ifelse(grepl("^Parasite$", Feeding_group_bugs_gbr), 1, 0)
 )]
 Trait_AUS[, Feeding_group_bugs_gbr := NULL]
 
 # feeding groups from Schaefer
 Trait_AUS[, `:=`(
-  feed_shredder_Schaefer = ifelse(grepl("(?i)herbivores|detritivores$|detritivores and herbivores", 
-                                      Feeding_group_Schaefer), 1, 0),
-  feed_predator_Schaefer = ifelse(grepl("Predator", Feeding_group_Schaefer), 1, 0), 
+  feed_shredder_Schaefer = ifelse(
+    grepl(
+      "(?i)herbivores|detritivores$|detritivores and herbivores",
+      Feeding_group_Schaefer
+    ),
+    1,
+    0
+  ),
+  feed_predator_Schaefer = ifelse(grepl("Predator", Feeding_group_Schaefer), 1, 0),
   feed_parasite_Schaefer = ifelse(grepl("^Parasite$", Feeding_group_Schaefer), 1, 0)
 )]
 Trait_AUS[, Feeding_group_Schaefer := NULL]
@@ -344,9 +310,7 @@ Trait_AUS[, `:=`(
 # del
 Trait_AUS[, c(
   "Max_body_size_mm__number_Schaefer",
-  "Max_body_size_mm__text_ref",
   "Max_body_size_mm__number_bugs_gbr",
-  "Max_body_size_mm__text_bugs_gbr",
   "Maximum_length_mm_genus_Chessman2017",
   "Maximum_length_mm_fam_Chessman2017"
 ) := NULL]
@@ -366,10 +330,16 @@ Trait_AUS[, pH_minimum_fam_Chessman2017 := NULL]
 # temp warm (EU >= 18 °C, NoA >15)
 # temp eurytherm (no pref)
 # _________________________________________________________________________
-Trait_AUS[, `:=`(temp_very_cold = ifelse(Thermophily_fam_Chessman2017 < 6, 1, 0), 
-                 temp_cold_mod = ifelse(Thermophily_fam_Chessman2017 >= 6 & 
-                                          Thermophily_fam_Chessman2017 < 18, 1, 0), 
-                 temp_warm = ifelse(Thermophily_fam_Chessman2017 >= 18, 1, 0))]
+Trait_AUS[, `:=`(
+  temp_very_cold = ifelse(Thermophily_fam_Chessman2017 < 6, 1, 0),
+  temp_cold_mod = ifelse(
+    Thermophily_fam_Chessman2017 >= 6 &
+      Thermophily_fam_Chessman2017 < 18,
+    1,
+    0
+  ),
+  temp_warm = ifelse(Thermophily_fam_Chessman2017 >= 18, 1, 0)
+)]
 Trait_AUS[, Thermophily_fam_Chessman2017 := NULL]
 
 # _________________________________________________________________________
@@ -377,7 +347,6 @@ Trait_AUS[, Thermophily_fam_Chessman2017 := NULL]
 # _________________________________________________________________________
 
 # rm columns with maximum value zero 
-# TODO: put as helper function
 rm_col <- Trait_AUS[, lapply(.SD, max, na.rm = TRUE)] %>% 
   lapply(., function(y) y[y == 0]) %>%
   unlist() %>% 
@@ -387,9 +356,6 @@ Trait_AUS[, (rm_col) := NULL]
 # transform all integer col to numeric  
 col_names <- names(Trait_AUS[, unlist(lapply(Trait_AUS, is.integer)), with = FALSE])
 Trait_AUS[, (col_names) := lapply(.SD, as.numeric), .SDcols = col_names]
-
-# rm entries with taxonomical resolution higher than Family
-Trait_AUS <- Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)), ]
 
 # no duplicates
 # fetch_dupl(data = Trait_AUS, col = "Species")
@@ -438,6 +404,15 @@ Trait_AUS[grepl("Mesostigmata", Family), `:=`(
 # Family NULL?
 Trait_AUS[grepl("NULL", Family), Family := NA]
 
+# one entry without genus and family information
+Trait_AUS[Species == "Cheumatopsyche deani", 
+          `:=`(Genus = "Cheumatopsyche",
+            Family = "Hydropsychidae",
+            Order = "Trichoptera")]
+
+# rm entries with taxonomical resolution higher than Family
+Trait_AUS <- Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)), ]
+
 # ____________________________________________________________________
 #### Range normalization ####
 # In order to harmonize the trait states from various
@@ -468,6 +443,7 @@ trait_author_pattern <- c(
   "repro.*Maxwell",
   "Ther.*botwe",
   "Max.*size.*VicEPA",
+  "Max.*size.*text",
   "Size\\_botwe",
   "^resp\\_",
   "resp\\_Schaefer",
@@ -480,13 +456,14 @@ trait_author_pattern <- c(
   "size.*genus.*Chessman",
   "size.*fam.*Chessman",
   "^ph\\_",
-  "^temp\\_"
+  "^temp\\_",
+  "Body.*form.*VicEPA"
 )
 
 # long format
 Trait_AUS <-
   data.table::melt(Trait_AUS,
-                   id.vars = c("unique_id",
+                   id.vars = c("unique_ID",
                                "Species",
                                "Genus",
                                "Family",
@@ -498,11 +475,8 @@ for(i in trait_author_pattern) {
 }
 
 # back to wide format
-Trait_AUS <- data.table::dcast(Trait_AUS, unique_id+Species+Genus+Family+Order ~ variable)
-
-#________________________________________________________________________
-#### Handle duplicates ####
-#________________________________________________________________________
+Trait_AUS <- data.table::dcast(Trait_AUS, 
+                               unique_ID+Species+Genus+Family+Order ~ variable)
 
 # change column names from Chessman that contain word "genus"
 setnames(
@@ -512,28 +486,57 @@ setnames(
     sub("genus", "gen", .)
 )
 
-# no duplicate entries in Species column
-Trait_AUS[!is.na(Species), ] %>% 
-  .[duplicated(Species),]
+#________________________________________________________________________
+#### Handle duplicates ####
+#________________________________________________________________________
 
-# genus column
+# trait cols
 cols <- grep("(?i)unique_id|species|genus|family|order",
              names(Trait_AUS),
              value = TRUE,
              invert = TRUE)
 
-Trait_AUS[is.na(Species) & !is.na(Genus),
-       (cols) := lapply(.SD, function(y)
-         as.numeric(condense_dupl_numeric_agg(y))),
-       .SDcols = cols,
-       by = "Genus"]
+# no duplicate entries in Species column
+# Trait_AUS[!is.na(Species), ] %>% 
+#   .[duplicated(Species),]
 
-# family column
+# genus column:
+# inspecting duplicates on genus col: 
+# Trait_AUS[is.na(Species) & !is.na(Genus), ] %>% 
+#   .[duplicated(Genus), ]
+# Trait_AUS[is.na(Species) & !is.na(Genus), ] %>%
+#    .[Genus %in% "Mirawara", ] %>%
+# #   .[duplicated(Genus) | duplicated(Genus, fromLast = TRUE), ] %>%
+#   melt(., id.vars = c("unique_id", "Species", "Genus", "Family", "Order")) %>%
+#    .[, .(diff(value)), by = c("Genus", "variable")] %>%
+#    .[V1 != 0, ]
+
+# For cases where duplicate taxa entries differ for a trait by
+# 0 and 1 (or 0 and any other number) the maximum value is taken
+# since data originate from seven different databases (i.e. data 
+# complement each other).
+# This procedure is different compared to the amalgamation of duplicates
+# in other DB's, e.g. the NZ DB.
+Trait_AUS[is.na(Species) & !is.na(Genus), 
+          (cols) := lapply(.SD, aggr_dupl_multDB), 
+          .SDcols = cols,
+          by = "Genus"]
+
+# rm duplicate genus entries
+ids <- Trait_AUS[is.na(Species) & !is.na(Genus), ] %>% 
+  .[duplicated(Genus), unique_ID]
+Trait_AUS <- Trait_AUS[!unique_ID %in% ids, ]
+
+# family column:
 Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
-          (cols) := lapply(.SD, function(y)
-            as.numeric(condense_dupl_numeric_agg(y))),
+          (cols) := lapply(.SD, aggr_dupl_multDB),
           .SDcols = cols,
           by = "Family"]
+
+# rm duplicate family entries
+ids <- Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
+  .[duplicated(Family), unique_ID]
+Trait_AUS <- Trait_AUS[!unique_ID %in% ids, ]
 
 # save
 saveRDS(
