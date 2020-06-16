@@ -42,6 +42,12 @@ tachet[!grepl("(?i)[a-z]{1,}[[:space:]][a-z]{1,}", species)
 # family col to lower case
 tachet[, family := simpleCap(family)]
 
+# Agriotypus -> Ichneumonidae
+tachet[genus == "Agriotypus", family := "Ichneumonidae"]
+
+# Bythinella -> Amnicolidae
+tachet[genus == "Bynthinella", family := "Amnicolidae"]
+
 # ---------------------------------------------------
 #### Change trait names ####
 # ---------------------------------------------------
@@ -228,3 +234,9 @@ tachet[is.na(species) &
        (trait_cols) := lapply(.SD, mean),
        .SDcols = trait_cols,
        by = "family"]
+
+# output as .rds
+saveRDS(
+  object = tachet,
+  file = file.path(data_cleaned, "EU", "Trait_Tachet_pp.rds")
+)
