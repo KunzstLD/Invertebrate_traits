@@ -2,13 +2,18 @@
 #### Harmonize Tachet data ####
 # ____________________________________________________________________________
 
+# read in
+tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp.rds"))
+
+# create taxa column (for merges)
+tachet[, taxa := coalesce(species, genus, family, order)]
+
 # ____________________________________________________________________________
 # pH 
 # Modify ph preference
 # rule for combining ph fuzzy codes:
 # rounded rowMean
 # ____________________________________________________________________________
-
 tachet[, `:=`(ph_acidic = apply(.SD, 1, max)),
        .SDcols = c("Ph_4_t", "Ph_445_t", "Ph_455_t", "Ph_555_t", "Ph_556_t", "Ph_6_t")
        ] %>% 
@@ -47,17 +52,26 @@ tachet[, c(
 # locm_crawl: crawlers, walkers & sprawler
 # locm_burrow: burrower
 # locm_sessil: sessil (attached)
+
+# locom_flier: ignored, only relevant for adult individuals
 # _________________________________________________________________________
 tachet[, locom_swim := apply(.SD, 1, max),
   .SDcols = c("locom_swim_full", "locom_swim_dive")
 ]
+
 tachet[, locom_sessil := apply(.SD, 1, max),
   .SDcols = c("locom_sessil", "locom_sessil_temp")
 ]
+
+tachet[, locom_burrow := apply(.SD, 1, max),
+       .SDcols = c("locom_burrow", "loc_interstitial_t")]
+
 tachet[, c(
-  "locom_swim_full", "locom_swim_dive",
+  "locom_swim_full", 
+  "locom_swim_dive",
   "locom_sessil_temp",
-  "loc_flier_t", "loc_interstitial_t"
+  "loc_interstitial_t",
+  "loc_flier_t"
 ) := NULL]
 
 # _________________________________________________________________________
@@ -75,7 +89,6 @@ tachet[, resp_pls_spi := apply(.SD, 1, max),
 tachet[, c("resp_ves",
            "resp_pls",
            "resp_spi") := NULL]
-
 # _________________________________________________________________________
 # Feeding mode
 # feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
@@ -85,15 +98,91 @@ tachet[, c("resp_ves",
 # feed_predator: predator
 # feed_parasite: parasite
 # _________________________________________________________________________
+
+# feed_piercer_t -> cannot ne harmonized easily
+# feeding strictly coding based on strategies(taking into account the morphology
+# of mouth parts etc.) 
+# 25 taxa will anyways not end up in the final DBs
+# tachet_piercer_taxa <- tachet[feed_piercer_t > 0, coalesce(species, genus, family, order)]
+# tachet[feed_piercer_t > 0,] %>%
+#   .[!species %in% Trait_EU[species %in% tachet_piercer_taxa, species],
+#     .(
+#       species,
+#       genus,
+#       family,
+#       order,
+#       feed_active_filter_abs,
+#       feed_active_filter,
+#       feed_gatherer,
+#       feed_shredder,
+#       feed_scraper,
+#       feed_predator,
+#       feed_parasite,
+#       feed_piercer_t
+#     )] %>%
+#   .[order(-feed_piercer_t),] %>%
+#   write.csv(.,
+#             file = file.path(data_out, "taxa_feed_piercer_t.csv"),
+#             row.names = FALSE)
+
+# coding from PUP for piercer_t
+piercer_pup <- fread(file.path(data_in, "EU", "taxa_feed_piercer_PUP.csv"))
+piercer_pup[, taxa := coalesce(genus, family, order)]
+
+# merge comments from PUP back
+tachet[piercer_pup,
+       `:=`(
+         feed_active_filter_abs = i.feed_active_filter_abs,
+         feed_active_filter = i.feed_active_filter,
+         feed_gatherer = i.feed_gatherer,
+         feed_shredder = i.feed_shredder,
+         feed_scraper = i.feed_scraper,
+         feed_predator = i.feed_predator,
+         feed_parasite = i.feed_parasite,
+         feed_piercer_t = i.feed_piercer_t,
+         piercer_comment = `i.comment (only for the trait category \"\"piercer\"\")`
+       ),
+       on = "taxa"]
+
+# filterer
 tachet[, feed_filter := apply(.SD, 1, max),
        .SDcols = c("feed_active_filter", "feed_active_filter_abs")]
-tachet[, feed_herbivore := apply(.SD, 1, max),
-       .SDcols = c("feed_scraper")] # , "feed_piercer_t"
+
+# herbivores
+setnames(tachet,
+         "feed_scraper",
+         "feed_herbivore")
+
+# assign affinities from feed_pericer_t to either predator, parsite or herbivore
+tachet$piercer_comment %>% unique
+tachet[grep("predator\\/parasite", piercer_comment),  `:=`(feed_predator = feed_piercer_t,
+                                                           feed_piercer_t = 0)]
+tachet[grep("(?=.*predator)(?!.*parasite)(?!.*microphyte)",
+            piercer_comment,
+            perl = TRUE), `:=`(feed_predator = feed_piercer_t,
+                               feed_piercer_t = 0)] 
+
+tachet[grep("^microinvertebrate piercer$", piercer_comment), `:=`(feed_predator = feed_piercer_t,
+                                                                  feed_piercer_t = 0)]
+
+tachet[grep("parasite", piercer_comment), `:=`(feed_parasite = feed_piercer_t,
+                                               feed_piercer_t = 0)]
+
+tachet[grep("microphyte.*predators.*", piercer_comment), `:=`(feed_predator = feed_piercer_t,
+                                                              feed_piercer_t = 0)]
+
+tachet[grep("(?=.*macrophyte|microphyte)(?!.*predators)",
+            piercer_comment,
+            perl = TRUE),
+       `:=`(feed_herbivore = feed_piercer_t,
+            feed_piercer_t = 0)]
+
 # del columns
 tachet[, c("feed_active_filter",
            "feed_active_filter_abs",
            "feed_piercer_t",
-           "feed_scraper") := NULL]
+           "piercer_comment") := NULL]
+
 # _________________________________________________________________________
 # Oviposition
 # ovip_aqu: Reproduction via aquatic eggs
@@ -213,16 +302,20 @@ tachet[, `:=`(
 # ---------------------------------------------------
 tachet <- normalize_by_rowSum(
   x = tachet,
-  non_trait_cols = c("group",
-                     "family",
-                     "genus",
-                     "species",
-                     "order")
+  non_trait_cols = c(
+    "group",
+    "family",
+    "genus",
+    "species",
+    "order",
+    "taxa"
+  )
 )
 
 # del group column
 tachet[, "group" := NULL]
 
+# 
 saveRDS(
   object = tachet,
   file = file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds")
