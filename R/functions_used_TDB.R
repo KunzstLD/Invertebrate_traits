@@ -178,8 +178,130 @@ fetch_dupl <- function(data, col) {
   output[order(output[[col]]), ]
 }
 
-#### Aggregate duplicate taxa entries ####
+#### create individual pattern of trait name (not category!) ####
+# i.e. feed_herbivore, feed_shredder -> feed
+# TODO: Add unit test
+create_pattern_ind <- function(x, non_trait_cols) {
+  if (missing(non_trait_cols)) {
+    trait_names_pattern <- sub("\\_.*|\\..*", "", names(x)) %>%
+      unique() %>%
+      paste0("^", .)
+  } else{
+    pat <- paste0(non_trait_cols, collapse = "|")
+    # get trait names & create pattern for subset
+    trait_names_pattern <-
+      grep(pat, names(x), value = TRUE, invert = TRUE) %>%
+      sub("\\_.*|\\..*", "", .) %>%
+      unique() %>%
+      paste0("^", .)
+  }
+  trait_names_pattern
+}
 
+#### Normalization of trait scores ####
+# All trait states of one trait are divided by their row sum
+# Hence, trait affinities are represented as "%" or ratios
+normalize_by_rowSum <- function(x, 
+                                non_trait_cols, 
+                                na.rm = TRUE) {
+  # get trait names & create pattern for subset
+  trait_names_pattern <- create_pattern_ind(x = x,
+                                            non_trait_cols = non_trait_cols)
+  
+  # loop for normalization (trait categories for each trait sum up to 1)
+  for (cols in trait_names_pattern) {
+    # get row sum for a specific trait
+    x[, rowSum := apply(.SD, 1, sum, na.rm = na.rm),
+      .SDcols = names(x) %like% cols]
+    
+    # get column names for assignment
+    col_name <- names(x)[names(x) %like% cols]
+    
+    # divide values for each trait state by
+    # the sum of trait state values
+    x[, (col_name) := lapply(.SD, function(y) {
+      round(y / rowSum, digits = 2)
+    }),
+    .SDcols = names(x) %like% cols]
+  }
+  # del rowSum column
+  x[, rowSum := NULL]
+  return(x)
+}
+
+#### check for completeness of trait dataset ####
+completeness_trait_data <- function(x, non_trait_cols) {
+  trait_names_pattern <- create_pattern_ind(
+    x = x,
+    non_trait_cols = non_trait_cols
+  )
+
+  # test how complete trait sets are
+  output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
+  for (i in seq_along(trait_names_pattern)) {
+    # vector containing either 0 (no NAs) or a number (> 0) meaning that all
+    # entries for this trait contained NA
+    vec <-
+      x[, apply(.SD, 1, function(y) {
+        base::sum(is.na(y))
+      }),
+      .SDcols = names(x) %like% trait_names_pattern[[i]]
+      ]
+
+    # How complete is the dataset for each individual trait?
+    output[i, ] <-
+      c(
+        (length(vec[vec == 0]) / nrow(x)) %>% `*`(100) %>% round(),
+        trait_names_pattern[[i]]
+      )
+  }
+  return(output)
+}
+
+
+# _________________________________________________________________________
+#### Trait Aggregation ####
+# Mode
+# when there are no duplicate values, mode returns the first value!
+# ________________________________________________________________________
+Mode <- function(x, na.rm = FALSE) {
+  if (na.rm) {
+    x <- x[!is.na(x)]
+  }
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+# direct aggregation to family level
+direct_agg <- function(trait_data,
+                       non_trait_cols, 
+                       method,
+                       na.rm = TRUE) {
+  # get names of trait columns
+  pat <- paste0(non_trait_cols, collapse = "|")
+  trait_col <- grep(pat, names(trait_data), value = TRUE, invert = TRUE)
+  
+  # aggregate to family-level
+  # subset so that no NA values occur in data
+  # (otherwise all NA entries are viewed as a group &
+  # aggregated as well)
+  agg_data <- trait_data[!is.na(family),
+                         lapply(.SD, method, na.rm = na.rm),
+                         .SDcols = trait_col,
+                         by = "family"
+                         ]
+  
+  # merge information on order back
+  agg_data[trait_data,
+           `:=`(order = i.order),
+           on = "family"
+           ]
+  agg_data
+}
+
+# _________________________________________________________________________
+#### Aggregate duplicate taxa entries ####
+# _________________________________________________________________________
 
 # Simple aggregation function for DB that in itself consist of
 # multiple DBs (e.g. Australian trait DB)
@@ -364,89 +486,3 @@ aggr_dupl_multDB <- function(y) {
 #                                       "volt",
 #                                       "size",
 #                                       "dev")])
-
-#### create individual pattern of trait name (not category!) ####
-# i.e. feed_herbivore, feed_shredder -> feed
-# TODO: Add unit test
-create_pattern_ind <- function(x, non_trait_cols) {
-  pat <- paste0(non_trait_cols, collapse = "|")
-  # get trait names & create pattern for subset
-  trait_names_pattern <-
-    grep(pat, names(x), value = TRUE, invert = TRUE) %>%
-    sub("\\_.*|\\..*", "", .) %>%
-    unique() %>%
-    paste0("^", .)
-  return(trait_names_pattern)
-}
-
-#### Normalization of trait scores ####
-# All trait states of one trait are divided by their row sum
-# Hence, trait affinities are represented as "%" or ratios
-normalize_by_rowSum <- function(x, non_trait_cols, na.rm) {
-  # get trait names & create pattern for subset
-  trait_names_pattern <- create_pattern_ind(x = x,
-                                            non_trait_cols = non_trait_cols)
-  
-  # loop for normalization (trait categories for each trait sum up to 1)
-  for (cols in trait_names_pattern) {
-    # get row sum for a specific trait
-    x[, rowSum := apply(.SD, 1, sum, na.rm = na.rm),
-      .SDcols = names(x) %like% cols]
-    
-    # get column names for assignment
-    col_name <- names(x)[names(x) %like% cols]
-    
-    # divide values for each trait state by
-    # the sum of trait state values
-    x[, (col_name) := lapply(.SD, function(y) {
-      round(y / rowSum, digits = 2)
-    }),
-    .SDcols = names(x) %like% cols]
-  }
-  # del rowSum column
-  x[, rowSum := NULL]
-  return(x)
-}
-
-#### check for completeness of trait dataset ####
-completeness_trait_data <- function(x, non_trait_cols) {
-  trait_names_pattern <- create_pattern_ind(
-    x = x,
-    non_trait_cols = non_trait_cols
-  )
-
-  # test how complete trait sets are
-  output <- matrix(ncol = 2, nrow = length(trait_names_pattern))
-  for (i in seq_along(trait_names_pattern)) {
-    # vector containing either 0 (no NAs) or a number (> 0) meaning that all
-    # entries for this trait contained NA
-    vec <-
-      x[, apply(.SD, 1, function(y) {
-        base::sum(is.na(y))
-      }),
-      .SDcols = names(x) %like% trait_names_pattern[[i]]
-      ]
-
-    # How complete is the dataset for each individual trait?
-    output[i, ] <-
-      c(
-        (length(vec[vec == 0]) / nrow(x)) %>% `*`(100) %>% round(),
-        trait_names_pattern[[i]]
-      )
-  }
-  return(output)
-}
-
-
-# _________________________________________________________________________
-# Trait Aggregation
-# Mode
-# when there are no duplicate values, mode returns the first value!
-# ________________________________________________________________________
-Mode <- function(x, na.rm = FALSE) {
-  if (na.rm) {
-    x <- x[!is.na(x)]
-  }
-  ux <- unique(x)
-  ux[which.max(tabulate(match(x, ux)))]
-}
