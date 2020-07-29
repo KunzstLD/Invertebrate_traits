@@ -1,0 +1,124 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{kefford_integrated_2020}{article}{}
+      \name{author}{9}{}{%
+        {{uniquename=0,uniquepart=base,hash=cde6c674cfad9b23f78e92f1e24962b8}{%
+           family={Kefford},
+           familyi={K\bibinitperiod},
+           given={Ben\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f76c8544a3a3ed75b5e47600bfb1667d}{%
+           family={Botwe},
+           familyi={B\bibinitperiod},
+           given={Paul\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c2125f52593a99eee0a2b27a1f69ffa9}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d7e93d3763cb3b6b9a91d08936408f22}{%
+           family={Kunz},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bd7f96eb1742d33365f0791595b67a05}{%
+           family={Marchant},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ddcf30d8646934028e9e2f5352b1e05b}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Sally},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8e158753aac3d7a372b0bd7c9c24a289}{%
+           family={Metzeling},
+           familyi={M\bibinitperiod},
+           given={Leon},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3f209b50103e96ba9109945ad46237ee}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Ralf\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0210c75d62fbd758a92e6ea3096a3bdf}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Ross\bibnamedelima M.},
+           giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{02439551dab32292fe77119845749d9e}
+      \strng{fullhash}{d8855cc9139f6d7f4fb053826bd5c66a}
+      \strng{bibnamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authorbibnamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authornamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authorfullhash}{d8855cc9139f6d7f4fb053826bd5c66a}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Traits provide key ecological information that can be applied to understanding the mechanisms which drive community assembly and persistence. In recent years, trait information has provided important insights into the responses of communities to stressors including pollutants and climatic extremes. Outside of Europe and North America, the use of stream macroinvertebrate traits has generally been hindered by the lack of a national database assigning traits to taxa. Here, we present an integrated database for Australian stream macroinvertebrates, which for the ﬁrst time brings together data from multiple jurisdictions to facilitate the use of traits in both theoretical and applied studies. We describe the database and discuss its applications as well as challenges and limitations of this and other trait databases. The Australian trait database provides new opportunities for research and application in freshwater management.}
+      \field{issn}{1470160X}
+      \field{journaltitle}{Ecological Indicators}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shortjournal}{Ecological Indicators}
+      \field{shorttitle}{An integrated database of stream macroinvertebrate traits for Australia}
+      \field{title}{An integrated database of stream macroinvertebrate traits for Australia: concept and application}
+      \field{urlday}{5}
+      \field{urlmonth}{5}
+      \field{urlyear}{2020}
+      \field{volume}{114}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{106280}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.ecolind.2020.106280
+      \endverb
+      \verb{file}
+      \verb Kefford et al. - 2020 - An integrated database of stream macroinvertebrate.pdf:/home/kunz/Zotero/storage/PCMTEKSW/Kefford et al. - 2020 - An integrated database of stream macroinvertebrate.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1470160X2030217X
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S1470160X2030217X
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

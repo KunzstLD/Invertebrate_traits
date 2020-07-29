@@ -1,0 +1,20 @@
+Aggrgeationsmethoden:
+-> VGL. Family -traits am intuitivsten 
+-> VGL. Case study
+
+-> USE THE FULL DATA!
+
+Welche Methode produziert geringste Abweichungen?
+
+-> VGL. unter den Aggrgeationsmethoden eher in die SI: 
+    -> nur kurzes Statement über VGL mean,median,mode etc. etc.
+
+Trait Definitionen siehe Ralf's Mail:
+-> Eine ins Paper (Traits, Datenbank, Coding, Nr. of Traits)
+-> Definitionen differences in SI: Definitionsterm Zeile, Datenbank Spalte
+
+- Traits die verschwinden bei Harmonisierung: Tabelle welche Arten und neu zuweisen?
+
+- Nur absolute Werte berichten (Mean und SD)
+
+- Difference anstatt Deviance

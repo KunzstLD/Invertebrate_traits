@@ -1,0 +1,157 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{longtable}
+%\usepackage[sort&compress,square,comma,authoryear]{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+% \graphicspath{{/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/}}
+\graphicspath{{Figures/}}
+\usepackage{rotating}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{hhline}
+\usepackage[
+backend=biber,
+style=authoryear,
+sorting=nyt % sort by name year title
+]{biblatex}
+\addbibresource{Ref_invertebrate_DB.bib}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+% functions and definitions
+\definecolor{Gray}{gray}{0.9}
+
+% horizontal space between two columns
+\setlength{\tabcolsep}{2mm}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\renewcommand*{\thefootnote}{\alph{footnote}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{ OVERVIEW RESULTS: Harmonized invertebrate grouping feature databases}
+\author{}%Stefan Kunz 
+\date{}
+
+\begin{document}
+\maketitle
+
+%\section{Introduction}
+
+%! Understanding distribution of organisms and predicting the response to natural and anthropogenic stressors
+
+%! Classification of species into groups with similar traits → expected consistent reaction to environmental gradients.
+
+%! Definition how the term “trait” is used in this study
+
+%! Trait-based approaches also used to understand community assembly, as a tool for biomonitoring, and to study effects of stressors to freshwater communities
+
+%! As a result, comprehensive (but distinct) invertebrate trait databases have been compiled in the last decades for different regions
+
+%! Trait-based approaches well suited for studies across regions
+
+%! Large-scale studies require harmonized invertebrate trait databases (e.g. Brown et al. 2018)
+
+%! -> How should such databases look like?:
+%  Harmonized traits
+%  Consistent scale of the used traits (e.g. fuzzy coding, binary coding, …)
+%  (Consistent taxonomical resolution → depends on the study)
+%  (Similar taxonomical coverage for the investigated traits across the used databases → depends on the study) 
+
+% !Goal:
+%  Present a harmonized invertebrate trait database (for the regions Europe, North America, New Zealand & Australia)
+%  How exactly are traits defined in each database? → We present an overview of definition discrepancies
+%  How does the usage of harmonized trait data yields to different results in trait analysis compare to non harmonized trait data?  Re-analyzing the effect of anthropogenic salinization on biological traits in the River Werra (Germany, Szöcs et al. 2014)
+%  Testing different ways of aggregating trait data → aggregation of traits often required (e.g. different taxonomical resolution between trait and abundance data)
+
+%\section{Methods}
+% !Present single invertebrate trait databases:
+%  Which taxonomical groups are covered
+%  Which traits are covered?
+%  Traits from the following grouping features have been selected: 
+%  - Voltinism, Reproduction, Body Form, Respiration, Size, Locomotion, Feeding Mode
+% Why have these traits been selected?: 
+%  Represent certain parts of the organisms biology:
+%  - Life-History, Morphology, Ecology
+%  No ecological traits: 
+%  - not reported in New Zealand trait database
+%  - (often correlated with environmental variables)
+%  - (Relatively good taxonomical overlap for these traits between the used databases)
+% Compare original databases in a table for better overview
+
+%! Data processing:
+%  Nominal and continuous traits converted to binary traits 
+%  Normalize fuzzy codes to range [0 – 1]
+%  Transform trait values in percentages
+%  Selecting only taxa with complete trait profiles for the investigated traits
+% Show data processing using a figure
+
+%! Describe harmonization of traits:
+%  Which similar traits were harmonized and how? Describe in figure
+%  Problem of different definitions for the same traits between the used databases
+
+%! Describe trait aggregation:
+% Aggregation to family-level: 
+%  Stepwise aggregation (Median to genus-level, Mode to family-level. If the mode does not exist the median is taken.)
+%  Direct aggregation to family-level
+%  Weighted aggregation: We calculated weights as the ratio of the number of taxa on species or genera-level per family of the taxa with complete trait profiles to taxa on species or genus-level per family initially present in the databases. Taxa on species and genus-level were aggregated by multiplying their trait values with the obtained weights. Then the weighted trait values were summed up per family for each trait.
+% Present aggregation in a figure
+
+%! Describe data analysis of harmonized traits:
+%   We want replicate the trait analysis in an example study using our harmonized traits. Therefore, we use the study from Szöcs et al. 2014 on the effect of anthropogenic salinization on biological traits. For this small scale study we re-analyze the change in trait composition along the conductivity gradient using the traits we could harmonize. 
+%  Using the same data analysis approach as Szöcs et al. 2014 our goal is to investigate if downstream and upstream sites in the study will still be characterized by the same traits.
+%  Where trait information needs to be aggregated we will compare the different aggregation approaches with regard to how characterization of upstream and downstream sites will change.
+
+%\section{Results \& Discussion}
+
+\section*{Results harmonized grouping feature databases}
+
+We used information on invertebrate traits for the regions Europe, North America, Australia, and New Zealand to establish harmonized grouping feature databases. Trait information for Europe was obtained by the Freshwaterecology database (\cite{schmidt-kloiber_www.freshwaterecology.info_2015}) and complemented by Tachet (\cite{usseglio-polatera_biomonitoring_2000}) when information was missing (e.g. for the grouping feature size). Trait information for North America was obtained from Laura Twardochleb and complemented by Vieira et al. 2006 (\cite{vieira_database_nodate}). Philippe Usseglio-Polatera provided information on body form for European and North American taxa. 
+For Australia and New Zealand we used trait databases from Kefford et al. (\cite{kefford_integrated_2020}) and Philips and Smith respectively (\cite{Philips_and_Smith_NZ_DB_2018}).
+
+We selected seven grouping features that we harmonized into 26 traits. The grouping features were chosen based on the availability of trait information across databases and so that they describe different parts of the biology of an organism: life history (Voltinism), morphology (Respiration, Body form, Size), ecology (Locomotion, Feeding mode) and reproduction (Oviposition).
+We used fuzzy coded traits for establishing our harmonized databases unless data quality prohibited and then we used binary traits, i.e categorical and continuous traits were converted into binary traits. Data processing prior harmonization also involved amalgamation of duplicate taxa on species, genus or family-level and conversion of trait affinities to percentages per trait. We omitted taxa with a lower taxonomic resolution than family-level. The following results relate to the harmonized grouping feature databases. 
+
+%! Completeness of trait information and taxonomical coverage
+\subfile{Results/Taxonomic_cov_and_info_compl}
+
+\newpage 
+%! Comparison of trait aggregation methods
+\subfile{Results/Results_trait_agg}
+
+%! Presenting results of trait analysis using harmonized traits:
+%  Did using harmonized traits yield different results regarding trait composition of down and upstream sites in Szöcs et al. 2014?
+%  Had various trait aggregation methods an impact?
+\newpage 
+
+\subfile{Results/Results_trait_harmonization}
+
+\newpage 
+
+%! Discrepancies in trait definitions
+% ?(Discuss history of trait values)
+\subfile{Trait_def_table/Trait_definitions_table}
+
+% Bibliography
+\printbibliography
+\newpage
+
+%! SI
+\subfile{Results/SI}
+
+% Trait definitions 
+\subfile{Trait_def_table/SI_trait_def_table2.tex}
+
+\end{document}

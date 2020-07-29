@@ -1,0 +1,85 @@
+% \documentclass{article}
+\documentclass[../Draft_harmonization_paper.tex]{subfiles}
+
+% \usepackage[utf8]{inputenc}
+% \usepackage{hyperref}
+% \usepackage{float}
+% \usepackage[table,xcdraw]{xcolor}
+% \usepackage{color, colortbl}
+% \usepackage{longtable}
+% %\usepackage[sort&compress,square,comma,authoryear]{natbib}
+% \usepackage{booktabs}
+% \usepackage{graphicx}
+% \graphicspath{{/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/}}
+% \usepackage{longtable}
+% \usepackage{rotating}
+% \usepackage{geometry}
+% \usepackage{array}
+
+% \definecolor{Gray}{gray}{0.9}
+
+% \newcommand{\specialcell}[2][c]{%
+%   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\begin{document}
+
+\section{Taxonomic coverage of the trait databases}
+
+Regarding the taxonomical coverage, the New Zealand database has, as expected, the smallest taxon pool (Table \ref{tab:tax_coverage}). By contrast, the largest taxon pool is spanned by the European trait database with 4225 taxa followed by the North American trait database that contained trait information on 3542 taxa. The Australian database contains 1404 taxa. The European, New Zealand, and North American databases have most taxa on the highest taxonomical resolution while the Australian database has a similar number of taxa on species and genus-level.
+
+% \begin{table}[ht]
+%   \centering
+%   \caption{Number of taxa per harmonized database and per taxonomic level. Numbers in parenthesis show relative frequencies in percentage.}
+%   \label{tab:tax_coverage}
+%   \begin{tabular}{lccccc}
+%     \hline
+%   Database & Nr. of taxa & Species & Genus & Family & Aquatic insects \\ 
+%   \hline
+%   EU & 4225 & 3951 (93.51) & 257 (6.08) & 17 (0.4) & 3654 (86.49) \\ 
+%   NOA & 3542 & 2418 (68.27) & 1074 (30.32) & 50 (1.41) & 3144 (88.76) \\ 
+%   AUS & 1402 & 564 (40.23) & 578 (41.23) & 260 (18.54) & 1015 (72.4) \\ 
+%   NZ & 478 & 404 (84.52) & 47 (9.83) & 27 (5.65) & 443 (92.68) \\ 
+%   \hline
+%   \end{tabular}
+%   \end{table}
+
+\begin{table}[ht]
+    \centering
+    \caption{Number of taxa per harmonized database and per taxonomic level. Numbers in parenthesis show relative frequencies in percentage.}
+    \label{tab:tax_coverage}
+    \begin{tabular}{lccccc}
+    \hline
+    Database & Nr. of taxa & Species & Genus & Family & Nr. aquatic taxa \\ 
+    \hline
+    Europe & 4110 & 3848 (93.63) & 237 (5.77) & 25 (0.61) & 3579 (87.08) \\ 
+      North America & 3753 & 2414 (64.32) & 1163 (30.99) & 176 (4.69) & 3305 (88.06) \\ 
+      Australia & 1402 & 564 (40.23) & 578 (41.23) & 260 (18.54) & 1016 (72.47) \\ 
+      New Zealand & 478 & 404 (84.52) & 47 (9.83) & 27 (5.65) & 443 (92.68) \\ 
+    \hline
+    \end{tabular}
+\end{table}
+
+
+\newpage
+
+\section{Completeness of trait information}
+
+The amount of entries with available information for the individual grouping features varied strongly for the European, North American and Australian databases (Table \ref{tab:trait_coverage}). By contrast, the New Zealand database contained complete trait information for most of the investigated grouping features (between 94 \% and 100 \%).
+
+\begin{table}[ht]
+    \centering
+    \caption{Displayed is the percentage of entries that have information for the individual grouping features per database.} 
+    \label{tab:trait_coverage}
+    \begin{tabular}{llllllll}
+    \hline
+    Database & Body form & Oviposition & Voltinism & Locomotion & Size & Respiration & Feeding mode \\ 
+    \hline
+    EU & 7 & 16 & 24 & 33 & 11 & 56 & 65 \\ 
+    NOA & 26 & 12 & 47 & 51 & 75 & 44 & 61 \\ 
+    AUS & 5 & 48 & 51 & 42 & 78 & 70 & 99 \\ 
+    NZ & 100 & 94 & 100 & 99 & 100 & 100 & 99 \\ 
+    \hline
+    \end{tabular}
+    \end{table}
+
+\end{document}

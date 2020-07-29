@@ -1,0 +1,1442 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.9 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{bhowmik_large_2015}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=3e0194a3654a8a9c392f6f91e20be84c}{%
+           family={Bhowmik},
+           familyi={B\bibinitperiod},
+           given={Avit\bibnamedelima Kumar},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3f209b50103e96ba9109945ad46237ee}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Ralf\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c9e63c67eda599471fade9deaf643b1e}
+      \strng{fullhash}{c9e63c67eda599471fade9deaf643b1e}
+      \strng{bibnamehash}{c9e63c67eda599471fade9deaf643b1e}
+      \strng{authorbibnamehash}{c9e63c67eda599471fade9deaf643b1e}
+      \strng{authornamehash}{c9e63c67eda599471fade9deaf643b1e}
+      \strng{authorfullhash}{c9e63c67eda599471fade9deaf643b1e}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Climate is the predominant environmental driver of freshwater assemblage pattern on large spatial scales, and traits of freshwater organisms have shown considerable potential to identify impacts of climate change. Although several studies suggest traits that may indicate vulnerability to climate change, the empirical relationship between freshwater assemblage trait composition and climate has been rarely examined on large scales. We compared the responses of the assumed climate-associated traits from six grouping features to 35 bioclimatic indices ({~}18 km resolution) for five insect orders (Diptera, Ephemeroptera, Odonata, Plecoptera and Trichoptera), evaluated their potential for changing distribution pattern under future climate change and identified the most influential bioclimatic indices. The data comprised 782 species and 395 genera sampled in 4,752 stream sites during 2006 and 2007 in Germany ({~}357,000 km² spatial extent). We quantified the variability and spatial autocorrelation in the traits and orders that are associated with the combined and individual bioclimatic indices. Traits of temperature preference grouping feature that are the products of several other underlying climate-associated traits, and the insect order Ephemeroptera exhibited the strongest response to the bioclimatic indices as well as the highest potential for changing distribution pattern. Regarding individual traits, insects in general and ephemeropterans preferring very cold temperature showed the highest response, and the insects preferring cold and trichopterans preferring moderate temperature showed the highest potential for changing distribution. We showed that the seasonal radiation and moisture are the most influential bioclimatic aspects, and thus changes in these aspects may affect the most responsive traits and orders and drive a change in their spatial distribution pattern. Our findings support the development of trait-based metrics to predict and detect climate-related changes of freshwater assemblages.}
+      \field{day}{16}
+      \field{issn}{1932-6203}
+      \field{journaltitle}{{PLoS} {ONE}}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shortjournal}{{PLoS} One}
+      \field{title}{Large Scale Relationship between Aquatic Insect Traits and Climate}
+      \field{urlday}{21}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{volume}{10}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.1371/journal.pone.0130025
+      \endverb
+      \verb{file}
+      \verb PubMed Central Full Text PDF:/home/kunz/Zotero/storage/GRY3ZGDX/Bhowmik und Schäfer - 2015 - Large Scale Relationship between Aquatic Insect Tr.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469582/
+      \endverb
+      \verb{url}
+      \verb https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4469582/
+      \endverb
+    \endentry
+    \entry{bonada_taxonomic_2007}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=b92bc04ad8d7f244780772e7eee9e915}{%
+           family={Bonada},
+           familyi={B\bibinitperiod},
+           given={{NúRia}},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=815900280b3b679444054b25b58c8281}{%
+           family={{DoléDec}},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{eabc6aa53689e440458cce3fa3031dd5}
+      \strng{fullhash}{eabc6aa53689e440458cce3fa3031dd5}
+      \strng{bibnamehash}{eabc6aa53689e440458cce3fa3031dd5}
+      \strng{authorbibnamehash}{eabc6aa53689e440458cce3fa3031dd5}
+      \strng{authornamehash}{eabc6aa53689e440458cce3fa3031dd5}
+      \strng{authorfullhash}{eabc6aa53689e440458cce3fa3031dd5}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Streams in mediterranean regions have highly seasonal discharge patterns, with predictable torrential ﬂoods and severe droughts. In contrast, discharge is less variable in temperate regions and intermittent ﬂow conditions are uncommon. Hydroclimatic models predict that climate change would increase frequency and severity of ﬂoods and droughts across Europe, thus increasing the proportion of streams with mediterranean characteristics in actually temperate areas. Correspondingly, understanding actual ecological differences between mediterranean and temperate streams may help to anticipate large-scale ecological impacts of climate change. Given that large-scale factors determine local community composition, we hypothesized that climatic differences between mediterranean and temperate regions should affect the taxonomic and biological trait composition in streams. We assembled the abundance of stream macroinvertebrate genera of 265 sites each from the Mediterranean Basin and from temperate Europe and linked these abundances to published information on 61 categories of 11 biological traits reﬂecting the potential of resilience from and resistance to disturbances. Although regional taxonomic richness was higher in the mediterranean than in the temperate region, local taxonomic richness and diversity did not signiﬁcantly differ between regions. Local trait richness and diversity were signiﬁcantly higher in the mediterranean region. Both local taxonomic and traitcommunity composition differed between regions, but the former varied much more than the latter, highlighting that climate change could produce large changes in the taxonomic but rather weak changes in the trait composition. The mediterranean region was characterized by macroinvertebrates with higher dispersion and colonization capabilities, suggesting that species loss in the temperate region, by extinction or northward emigration of taxa, would be compensated for by immigration of southern mediterranean taxa. Thus, climate change would likely have stronger implications for the local conservation of taxa than for the trait composition of stream macroinvertebrate communities.}
+      \field{issn}{1354-1013, 1365-2486}
+      \field{journaltitle}{Global Change Biology}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{number}{8}
+      \field{shorttitle}{Taxonomic and biological trait differences of stream macroinvertebrate communities between mediterranean and temperate regions}
+      \field{title}{Taxonomic and biological trait differences of stream macroinvertebrate communities between mediterranean and temperate regions: implications for future climatic scenarios}
+      \field{urlday}{25}
+      \field{urlmonth}{6}
+      \field{urlyear}{2018}
+      \field{volume}{13}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1658\bibrangedash 1671}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1111/j.1365-2486.2007.01375.x
+      \endverb
+      \verb{file}
+      \verb Bonada et al. - 2007 - Taxonomic and biological trait differences of stre.pdf:/home/kunz/Zotero/storage/R73CRMIT/Bonada et al. - 2007 - Taxonomic and biological trait differences of stre.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1111/j.1365-2486.2007.01375.x
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1111/j.1365-2486.2007.01375.x
+      \endverb
+    \endentry
+    \entry{brown_functional_2018}{article}{}
+      \name{author}{19}{}{%
+        {{uniquename=0,uniquepart=base,hash=08af533199e76af5c808556b8049642c}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Lee\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=69cd2e863542d12196e5c3151cfda39e}{%
+           family={Khamis},
+           familyi={K\bibinitperiod},
+           given={Kieran},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a39871d944b0e0f6d307d376051a0ea2}{%
+           family={Wilkes},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=71e9b615b346a16079829b61136ad7e5}{%
+           family={Blaen},
+           familyi={B\bibinitperiod},
+           given={Phillip},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=979e6418fa3db0364a45cb45f2fcede6}{%
+           family={Brittain},
+           familyi={B\bibinitperiod},
+           given={John\bibnamedelima E.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4e6c2f00285bfb7fc0595e92f0566fd4}{%
+           family={Carrivick},
+           familyi={C\bibinitperiod},
+           given={Jonathan\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=921b31969f6516d2e74c8fb30a217eba}{%
+           family={Fell},
+           familyi={F\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ec13e6e5f2107477f0cfe3d9827bc554}{%
+           family={Friberg},
+           familyi={F\bibinitperiod},
+           given={Nikolai},
+           giveni={N\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3d5a3b888dd7d28c3d062304e8c75d08}{%
+           family={Füreder},
+           familyi={F\bibinitperiod},
+           given={Leopold},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=40f32c1bff81eb3c76de52228c251150}{%
+           family={Gislason},
+           familyi={G\bibinitperiod},
+           given={Gisli\bibnamedelima M.},
+           giveni={G\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d8bccaedb887cb65fa7e244ca24e18f0}{%
+           family={Hainie},
+           familyi={H\bibinitperiod},
+           given={Sarah},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=cacd6e822818e243ca671810ad472044}{%
+           family={Hannah},
+           familyi={H\bibinitperiod},
+           given={David\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=928f0b8d5ca9161c426fa89ce5fb5ff7}{%
+           family={James},
+           familyi={J\bibinitperiod},
+           given={William\bibnamedelimb H.\bibnamedelimi M.},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d285d26c00acba4f968da85f96bf949c}{%
+           family={Lencioni},
+           familyi={L\bibinitperiod},
+           given={Valeria},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=50e4a674f08bf3b0963e58b679770077}{%
+           family={Olafsson},
+           familyi={O\bibinitperiod},
+           given={Jon\bibnamedelima S.},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a76b924ae01434b427286b01b0d99e82}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={Christopher\bibnamedelima T.},
+           giveni={C\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=417e86845b61f9f487f0d92dcb68024f}{%
+           family={Saltveit},
+           familyi={S\bibinitperiod},
+           given={Svein\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=59c03ac702009f11e96fbb9ee2e9ccbd}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Craig},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=21766dcf8bfd74f832c51ab1f7e5e7c6}{%
+           family={Milner},
+           familyi={M\bibinitperiod},
+           given={Alexander\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cc0aa50c58a0f421292d3a8e2a078691}
+      \strng{fullhash}{d8e3656706e01e1be955b275a720731c}
+      \strng{bibnamehash}{cc0aa50c58a0f421292d3a8e2a078691}
+      \strng{authorbibnamehash}{cc0aa50c58a0f421292d3a8e2a078691}
+      \strng{authornamehash}{cc0aa50c58a0f421292d3a8e2a078691}
+      \strng{authorfullhash}{d8e3656706e01e1be955b275a720731c}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2397-334X}
+      \field{journaltitle}{Nature Ecology \& Evolution}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{Functional diversity and community assembly of river invertebrates show globally consistent responses to decreasing glacier cover}
+      \field{urlday}{4}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{volume}{2}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{325\bibrangedash 333}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1038/s41559-017-0426-x
+      \endverb
+      \verb{file}
+      \verb Brown et al. - 2018 - Functional diversity and community assembly of riv.pdf:/home/kunz/Zotero/storage/HHQWD9Q5/Brown et al. - 2018 - Functional diversity and community assembly of riv.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nature.com/articles/s41559-017-0426-x
+      \endverb
+      \verb{url}
+      \verb http://www.nature.com/articles/s41559-017-0426-x
+      \endverb
+    \endentry
+    \entry{chevenet_francois_fuzzy_1994}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=81142c6fdbf1b2bc834da08a18af1ac7}{%
+           family={Chevenet},
+           familyi={C\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=dcfab8c3553be709ce4e4745b4692da1}{%
+           family={Chessel},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{fullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{bibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authorbibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authornamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authorfullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{SUMMARY} 1 We present an unconventional procedure (fuzzy coding) to structure biological and environmental information, which uses positive scores to describe the affinity of a species for different modalities (i.e. categories) of a given variable. Fuzzy coding is essential for the synthesis of long?term ecological data because it enables analysis of diverse kinds of biological information derived from a variety of sources (e.g. samples, literature). 2 A fuzzy coded table can be processed by correspondence analysis. An example using aquatic beetles illustrates the properties of such a fuzzy correspondence analysis. Fuzzy coded tables were used in all articles of this issue to examine relationships between spatial?temporal habitat variability and species traits, which were obtained from a long?term study of the Upper Rhône River, France. 3 Fuzzy correspondence analysis can be programmed with the equations given in this paper or can be performed using {ADE} (Environmental Data Analysis) software that has been adapted to analyse such long?term ecological data. On Macintosh {AppleTM} computers, {ADE} performs simple linear ordination, more recently developed methods (e.g. principal component analysis with respect to instrumental variables, canonical correspondence analysis, co?inertia analysis, local and spatial analyses), and provides a graphical display of results of these and other types of analysis (e.g. biplot, mapping, modelling curves). 4 {ADE} consists of a program library that exploits the potential of the {HyperCardTM} interface. {ADE} in an open system, which offers the user a variety of facilities to create a specific sequence of programs. The mathematical background of {ADE} is supported by the algebraic model known as ?duality diagram?.}
+      \field{issn}{0046-5070}
+      \field{journaltitle}{Freshwater Biology}
+      \field{number}{3}
+      \field{shortjournal}{Freshwater Biology}
+      \field{title}{A fuzzy coding approach for the analysis of long‐term ecological data}
+      \field{urlday}{18}
+      \field{urlmonth}{4}
+      \field{urlyear}{2018}
+      \field{volume}{31}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{295\bibrangedash 309}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/D35DSWPL/CHEVENE FRANçOIS et al. - 2006 - A fuzzy coding approach for the analysis of long‐t.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+    \endentry
+    \entry{cummins_trophic_1973}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=a340df9ce3bfd9863d4f0d081c8d9e75}{%
+           family={Cummins},
+           familyi={C\bibinitperiod},
+           given={Kenneth\bibnamedelima W.},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \strng{fullhash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \strng{bibnamehash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \strng{authorbibnamehash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \strng{authornamehash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \strng{authorfullhash}{a340df9ce3bfd9863d4f0d081c8d9e75}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0066-4170, 1545-4487}
+      \field{journaltitle}{Annual Review of Entomology}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{Annu. Rev. Entomol.}
+      \field{title}{Trophic Relations of Aquatic Insects}
+      \field{urlday}{16}
+      \field{urlmonth}{3}
+      \field{urlyear}{2020}
+      \field{volume}{18}
+      \field{year}{1973}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{183\bibrangedash 206}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1146/annurev.en.18.010173.001151
+      \endverb
+      \verb{file}
+      \verb Cummins - 1973 - Trophic Relations of Aquatic Insects.pdf:/home/kunz/Zotero/storage/NBYNDITJ/Cummins - 1973 - Trophic Relations of Aquatic Insects.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.annualreviews.org/doi/10.1146/annurev.en.18.010173.001151
+      \endverb
+      \verb{url}
+      \verb http://www.annualreviews.org/doi/10.1146/annurev.en.18.010173.001151
+      \endverb
+    \endentry
+    \entry{cummins_feeding_1979}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=a340df9ce3bfd9863d4f0d081c8d9e75}{%
+           family={Cummins},
+           familyi={C\bibinitperiod},
+           given={Kenneth\bibnamedelima W.},
+           giveni={K\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=357a141cd1c853178f4fc0b146477ca4}{%
+           family={Klug},
+           familyi={K\bibinitperiod},
+           given={Michael\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \strng{fullhash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \strng{bibnamehash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \strng{authorbibnamehash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \strng{authornamehash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \strng{authorfullhash}{c45aea1576d409cbe68378e3bdd0a42d}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annual Review of Ecology and Systematics}
+      \field{note}{\_eprint: https://doi.org/10.1146/annurev.es.10.110179.001051}
+      \field{number}{1}
+      \field{title}{Feeding Ecology of Stream Invertebrates}
+      \field{urlday}{18}
+      \field{urlmonth}{3}
+      \field{urlyear}{2020}
+      \field{volume}{10}
+      \field{year}{1979}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{147\bibrangedash 172}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1146/annurev.es.10.110179.001051
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/34XH7H3H/Cummins und Klug - 1979 - Feeding Ecology of Stream Invertebrates.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1146/annurev.es.10.110179.001051
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1146/annurev.es.10.110179.001051
+      \endverb
+    \endentry
+    \entry{haybach_use_2004}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=60124b197e04e77a235384d8efa871ce}{%
+           family={Haybach},
+           familyi={H\bibinitperiod},
+           given={Arne},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2f29c24b3169644be9dda9fec9945d7d}{%
+           family={Schöll},
+           familyi={S\bibinitperiod},
+           given={Franz},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=acff7d8156c31fe43c2586e5825600e0}{%
+           family={König},
+           familyi={K\bibinitperiod},
+           given={Bernd},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8bf391059d1d26e9a27831588d84ab55}{%
+           family={Kohmann},
+           familyi={K\bibinitperiod},
+           given={Fritz},
+           giveni={F\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{fullhash}{dab7c149523cff90fb77ca28ba7f2b37}
+      \strng{bibnamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authorbibnamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authornamehash}{88d106070f4dd1389270ebf0f9cd4a39}
+      \strng{authorfullhash}{dab7c149523cff90fb77ca28ba7f2b37}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Altogether 64 predominantly biological traits were coded for more than 600 macroinvertebrate species from European rivers. The main question was: Are biological traits able to reflect “biological functionality” in large rivers and if so, is it possible to deduce an assessment system based on functionality? Analysis of the raw trait structure of all species indicates that these traits are not completely independent from their higher systematic units. To avoid mis-interpretations when judging from mixtures of habitats (β-biocoenosis) we used for our investigations only sample series from α-biocoenosis, pre-tested by a mathematical criterion of homogeneity. Within α-biocoenosis, traits are shown to be able to compensate for drastic changes with respect to species number and species composition along a river continuum, demonstrating their functional quality. Long-term changes in the trait and species structures of German waterways were studied using multivariate methods, based on an analysis of 142 sampling series. A shift from traits typical for K-strategists to traits typical for r-strategists was detected to be the main background variable. The {rK}-strategy is regarded as a true functional character of species. We calculated the relative positions of all trait-coded species on this {rK}-scale, and plotted the functional diversity of our samples against the structural diversity of the species from several river systems. Rivers extremely dominated by r-strategists show a deficit in functional diversity. Rivers dominated by K-strategists also show deficits, possibly in concordance with modern ecological theories such as the intermediate disturbance theory. The quantitative proportions of extreme r- to K-Strategists in α-biocoenosis can be used as a general disturbance measure.}
+      \field{day}{1}
+      \field{issn}{0075-9511}
+      \field{journaltitle}{Limnologica}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{4}
+      \field{series}{New methods for assessing freshwaters in Germany}
+      \field{shortjournal}{Limnologica}
+      \field{title}{Use of biological traits for interpreting functional relationships in large rivers}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2020}
+      \field{volume}{34}
+      \field{year}{2004}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{451\bibrangedash 459}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/S0075-9511(04)80012-4
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Snapshot:/home/kunz/Zotero/storage/ZJZ6ZTEM/S0075951104800124.html:text/html;Volltext:/home/kunz/Zotero/storage/6PRZYUUU/Haybach et al. - 2004 - Use of biological traits for interpreting function.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951104800124
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951104800124
+      \endverb
+      \keyw{Biological traits,measure of disturbance,river functions,{rK}-continuum}
+    \endentry
+    \entry{kefford_ben_AST_DB_2019}{article}{}
+      \name{author}{9}{}{%
+        {{uniquename=0,uniquepart=base,hash=cde6c674cfad9b23f78e92f1e24962b8}{%
+           family={Kefford},
+           familyi={K\bibinitperiod},
+           given={Ben\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f76c8544a3a3ed75b5e47600bfb1667d}{%
+           family={Botwe},
+           familyi={B\bibinitperiod},
+           given={Paul\bibnamedelima K.},
+           giveni={P\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c2125f52593a99eee0a2b27a1f69ffa9}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Andrew\bibnamedelima J.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d7e93d3763cb3b6b9a91d08936408f22}{%
+           family={Kunz},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bd7f96eb1742d33365f0791595b67a05}{%
+           family={Marchant},
+           familyi={M\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=ddcf30d8646934028e9e2f5352b1e05b}{%
+           family={Maxwell},
+           familyi={M\bibinitperiod},
+           given={Sally},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8e158753aac3d7a372b0bd7c9c24a289}{%
+           family={Metzeling},
+           familyi={M\bibinitperiod},
+           given={Leon},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3f209b50103e96ba9109945ad46237ee}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Ralf\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9332baa505519a002f948a6ceca42f6e}{%
+           family={Thompson},
+           familyi={T\bibinitperiod},
+           given={Ross.M},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{02439551dab32292fe77119845749d9e}
+      \strng{fullhash}{81693a1e8e11410907c9dd68f996e87d}
+      \strng{bibnamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authorbibnamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authornamehash}{02439551dab32292fe77119845749d9e}
+      \strng{authorfullhash}{81693a1e8e11410907c9dd68f996e87d}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ecological Indicators, Manuscript submitted}
+      \field{shortjournal}{Ecological Indicators, Manuscript submitted}
+      \field{title}{An integrated database of stream macroinvertebrate traits for Australia: Concept and application}
+      \field{year}{2019}
+      \field{dateera}{ce}
+    \endentry
+    \entry{menezes_beyond_2010}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=0,uniquepart=base,hash=17d3051f9ff9bdf95fa555a2f3d4c4ac}{%
+           family={Menezes},
+           familyi={M\bibinitperiod},
+           given={Salomé},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=77946b263906db86f4a6f433688b0a04}{%
+           family={Baird},
+           familyi={B\bibinitperiod},
+           given={Donald\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=4756e71a6e627cb2d6a4cbd7998f8600}{%
+           family={Soares},
+           familyi={S\bibinitperiod},
+           given={Amadeu\bibnamedelimb M.\bibnamedelimi V.\bibnamedelimi M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim V\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba89af55b9f0ea36276a058c5a793c19}
+      \strng{fullhash}{ba89af55b9f0ea36276a058c5a793c19}
+      \strng{bibnamehash}{ba89af55b9f0ea36276a058c5a793c19}
+      \strng{authorbibnamehash}{ba89af55b9f0ea36276a058c5a793c19}
+      \strng{authornamehash}{ba89af55b9f0ea36276a058c5a793c19}
+      \strng{authorfullhash}{ba89af55b9f0ea36276a058c5a793c19}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. Species traits have been frequently used in ecological studies in an attempt to develop a general ecological framework linking biological communities to habitat pressures. The trait approach offers a mechanistic alternative to traditional taxonomy-based descriptors. This review focuses on research employing traits as biomonitoring tools for freshwater ecosystems, although the lessons learned have wider application in the assessment of other ecosystem types. 2. We review the support from ecological theory to employ species traits for biomonitoring purposes (e.g. the habitat templet concept, landscape filtering hypothesis), and the subsequent studies that test the hypotheses arising from these theories, and apply this knowledge under real freshwater biomonitoring scenarios. We also include studies that deal with more specific issues such as trait trade-offs and trait syndromes. 3. We highlight the functional trait approach as one of the most promising tools emerging for biomonitoring freshwater ecosystems. Several technical issues are addressed and solutions are proposed. We discuss the need for: a broader unified trait biomonitoring tool; a more accurate understanding of the natural variation of community patterns of trait expression; approaches to diminish the effects of trait trade-offs and trait syndromes; additional life history and ecological requirement studies; and the detection of specific impacts under multiple stressor scenarios. 4. Synthesis and applications. This review provides biologists with the conceptual underpinning for the use of species traits as community descriptors and for freshwater biomonitoring and management. We expect that the functional trait approach will ultimately improve communication to managers and legislators of the importance of protecting freshwater ecosystem functions.}
+      \field{issn}{1365-2664}
+      \field{journaltitle}{Journal of Applied Ecology}
+      \field{langid}{english}
+      \field{number}{4}
+      \field{shorttitle}{Beyond taxonomy}
+      \field{title}{Beyond taxonomy: a review of macroinvertebrate trait-based community descriptors as tools for freshwater biomonitoring}
+      \field{urlday}{28}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{47}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{711\bibrangedash 719}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1111/j.1365-2664.2010.01819.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/5SA8QNWL/Menezes et al. - 2010 - Beyond taxonomy a review of macroinvertebrate tra.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/JJ2IP49R/j.1365-2664.2010.01819.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2664.2010.01819.x
+      \endverb
+      \verb{url}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2664.2010.01819.x
+      \endverb
+      \keyw{biomonitoring tools,freshwater ecosystems,habitat templet concept,human impacts,macroinvertebrate communities,reference condition,species traits}
+    \endentry
+    \entry{moog_comprehensive_nodate}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=a2676c8f949ee21d835f2af68b9b4868}{%
+           family={Moog},
+           familyi={M\bibinitperiod},
+           given={Otto},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e067639bc31b6f68c72da87ba3a122ca}{%
+           family={Hartmann},
+           familyi={H\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{67e5d10cad95d34f655f67a46aa51660}
+      \strng{fullhash}{67e5d10cad95d34f655f67a46aa51660}
+      \strng{bibnamehash}{67e5d10cad95d34f655f67a46aa51660}
+      \strng{authorbibnamehash}{67e5d10cad95d34f655f67a46aa51660}
+      \strng{authornamehash}{67e5d10cad95d34f655f67a46aa51660}
+      \strng{authorfullhash}{67e5d10cad95d34f655f67a46aa51660}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{A Comprehensive Species Inventory of Austrian Aquatic Organisms with Ecological Notes}
+      \field{year}{1995}
+      \field{dateera}{ce}
+      \field{pages}{86}
+      \range{pages}{1}
+      \verb{file}
+      \verb Moog und Hartmann - A Comprehensive Species Inventory of Austrian Aqua.pdf:/home/kunz/Zotero/storage/UNQNXB89/Moog und Hartmann - A Comprehensive Species Inventory of Austrian Aqua.pdf:application/pdf
+      \endverb
+    \endentry
+    \entry{penone_imputation_2014}{article}{}
+      \name{author}{9}{}{%
+        {{uniquename=0,uniquepart=base,hash=3fafd228195f9fdbbfca11ab11350616}{%
+           family={Penone},
+           familyi={P\bibinitperiod},
+           given={Caterina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=5a20d12a71524be6c512777258b8cbea}{%
+           family={Davidson},
+           familyi={D\bibinitperiod},
+           given={Ana\bibnamedelima D.},
+           giveni={A\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2bb30d6e0e2728edf1ce9fbd4096080b}{%
+           family={Shoemaker},
+           familyi={S\bibinitperiod},
+           given={Kevin\bibnamedelima T.},
+           giveni={K\bibinitperiod\bibinitdelim T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9e936073099f2ddfd95ffc63388a5598}{%
+           family={Di\bibnamedelima Marco},
+           familyi={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           given={Moreno},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=8088322317318bf51bdaddf40607e985}{%
+           family={Rondinini},
+           familyi={R\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7a484f39b4f9e116deed42875260ef31}{%
+           family={Brooks},
+           familyi={B\bibinitperiod},
+           given={Thomas\bibnamedelima M.},
+           giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=735a5439595a362021ae5029984bcd55}{%
+           family={Young},
+           familyi={Y\bibinitperiod},
+           given={Bruce\bibnamedelima E.},
+           giveni={B\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7c74f61820ff0efc02eb68a6291695bd}{%
+           family={Graham},
+           familyi={G\bibinitperiod},
+           given={Catherine\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=caee904a3d6544aabdc45b4a4eb2cdc6}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Gabriel\bibnamedelima C.},
+           giveni={G\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=247de062554f2f4ee9832da40f7027b9}{%
+           family={Freckleton},
+           familyi={F\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b696a6965d6c0016f4958c0b765a563b}
+      \strng{fullhash}{63800faf90efc796fcd20181a8d7cffe}
+      \strng{bibnamehash}{b696a6965d6c0016f4958c0b765a563b}
+      \strng{authorbibnamehash}{b696a6965d6c0016f4958c0b765a563b}
+      \strng{authornamehash}{b696a6965d6c0016f4958c0b765a563b}
+      \strng{authorfullhash}{63800faf90efc796fcd20181a8d7cffe}
+      \strng{editorbibnamehash}{247de062554f2f4ee9832da40f7027b9}
+      \strng{editornamehash}{247de062554f2f4ee9832da40f7027b9}
+      \strng{editorfullhash}{247de062554f2f4ee9832da40f7027b9}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. Despite eﬀorts in data collection, missing values are commonplace in life-history trait databases. Because these values typically are not missing randomly, the common practice of removing missing data not only reduces sample size, but also introduces bias that can lead to incorrect conclusions. Imputing missing values is a potential solution to this problem. Here, we evaluate the performance of four approaches for estimating missing values in trait databases (K-nearest neighbour ({kNN}), multivariate imputation by chained equations (mice), {missForest} and Phylopars), and test whether imputed datasets retain underlying allometric relationships among traits.}
+      \field{issn}{2041210X}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shorttitle}{Imputation of missing data in life-history trait datasets}
+      \field{title}{Imputation of missing data in life-history trait datasets: which approach performs the best?}
+      \field{urlday}{11}
+      \field{urlmonth}{5}
+      \field{urlyear}{2018}
+      \field{volume}{5}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{961\bibrangedash 970}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1111/2041-210X.12232
+      \endverb
+      \verb{file}
+      \verb Penone et al. - 2014 - Imputation of missing data in life-history trait d.pdf:/home/kunz/Zotero/storage/8RLQQ69N/Penone et al. - 2014 - Imputation of missing data in life-history trait d.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://doi.wiley.com/10.1111/2041-210X.12232
+      \endverb
+      \verb{url}
+      \verb http://doi.wiley.com/10.1111/2041-210X.12232
+      \endverb
+    \endentry
+    \entry{schmera_proposed_2015}{article}{}
+      \name{author}{5}{}{%
+        {{uniquename=0,uniquepart=base,hash=e9f36c123ab5a9f39846e61cd80434f2}{%
+           family={Schmera},
+           familyi={S\bibinitperiod},
+           given={Dénes},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=a9f7e273ab53ee3f5a1eac97c989e4b1}{%
+           family={Podani},
+           familyi={P\bibinitperiod},
+           given={János},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=2eb202c3308430fccb414265a1f89a93}{%
+           family={Heino},
+           familyi={H\bibinitperiod},
+           given={Jani},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=f748f46526682b0f683e016b579a57c7}{%
+           family={Erős},
+           familyi={E\bibinitperiod},
+           given={Tibor},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=bd876228ec5e2f584fb1ba36557a7113}{%
+           family={Poff},
+           familyi={P\bibinitperiod},
+           given={N.\bibnamedelimi {LeRoy}},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{fullhash}{d9d70ca705aa92a486b42fd41eab8713}
+      \strng{bibnamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authorbibnamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authornamehash}{6a2b33801eb8e32624affe7a426efa5b}
+      \strng{authorfullhash}{d9d70ca705aa92a486b42fd41eab8713}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Traits-based community analyses are receiving increasing attention. However, consistent interpretation of empirical results and ecological understanding in stream ecology are limited by ambiguous terminology. Furthermore, the measurement scales used to analyze trait data, especially ordinal-scale data, are often inappropriately applied. We identify and discuss these shortcomings and oﬀer a solution for an operative and algebraically correct treatment of traits and a uniﬁed nomenclature that facilitates direct comparison among traits-based studies. A uniﬁed terminology allows for logical translation among existing, alternative trait nomenclatures and should facilitate communication of research ﬁndings among stream ecologists and more directly connect stream traits-based research with general ecology.}
+      \field{issn}{2161-9549, 2161-9565}
+      \field{journaltitle}{Freshwater Science}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{3}
+      \field{shortjournal}{Freshwater Science}
+      \field{title}{A proposed unified terminology of species traits in stream ecology}
+      \field{urlday}{6}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{34}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{823\bibrangedash 830}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1086/681623
+      \endverb
+      \verb{file}
+      \verb Schmera et al. - 2015 - A proposed unified terminology of species traits i.pdf:/home/kunz/Zotero/storage/75WCILXP/Schmera et al. - 2015 - A proposed unified terminology of species traits i.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.journals.uchicago.edu/doi/10.1086/681623
+      \endverb
+      \verb{url}
+      \verb https://www.journals.uchicago.edu/doi/10.1086/681623
+      \endverb
+    \endentry
+    \entry{schmidt-kloiber_www.freshwaterecology.info_2015}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=caf06f47a4eb1fcb2a6fbbf9e0e65864}{%
+           family={Schmidt-Kloiber},
+           familyi={S\bibinithyphendelim K\bibinitperiod},
+           given={Astrid},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=006b484f6021362b7346692d563e40c5}{%
+           family={Hering},
+           familyi={H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cd6fb57a2afd27f747676931aba92794}
+      \strng{fullhash}{cd6fb57a2afd27f747676931aba92794}
+      \strng{bibnamehash}{cd6fb57a2afd27f747676931aba92794}
+      \strng{authorbibnamehash}{cd6fb57a2afd27f747676931aba92794}
+      \strng{authornamehash}{cd6fb57a2afd27f747676931aba92794}
+      \strng{authorfullhash}{cd6fb57a2afd27f747676931aba92794}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Species’ ecological preferences are progressively important for understanding distribution patterns, for conserving biodiversity or for assessing and evaluating the status of freshwater ecosystems. Comprehensive databases compiling species traits are already established in the terrestrial realm, but widely missing in freshwater science. We established a database for European taxa of five aquatic organism groups by compiling information on taxonomy, ecology and distribution based on extensive literature surveys, which were performed by experts for the targeted organism groups. The database includes fishes (654 taxa/21 ecological preferences), macro-invertebrates (8586/40), macrophytes (1083/5), diatoms (8868/36) and phytoplankton (1976/4). It is available online with various options and tools for finding information and has currently over 800 users. The reviewed literature as well as examples given in this paper, highlight the importance of the general availability of knowledge on ecological preferences for various aspects in ecological assessment. Freshwaterecology.info is considered a service for basic research, applied scientists, water managers or other stakeholders. It serves as base for bioassessment and monitoring.}
+      \field{day}{1}
+      \field{issn}{1470-160X}
+      \field{journaltitle}{Ecological Indicators}
+      \field{month}{6}
+      \field{shortjournal}{Ecological Indicators}
+      \field{title}{www.freshwaterecology.info – An online tool that unifies, standardises and codifies more than 20,000 European freshwater organisms and their ecological preferences}
+      \field{urlday}{21}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{volume}{53}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{271\bibrangedash 282}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ecolind.2015.02.007
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Snapshot:/home/kunz/Zotero/storage/NAMLQU2Q/S1470160X15000758.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S1470160X15000758
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S1470160X15000758
+      \endverb
+      \keyw{Diatoms,Fish,Indicator traits,Macro-invertebrates,Macrophytes,Phytoplankton}
+    \endentry
+    \entry{schneider_towards_2019}{article}{}
+      \name{author}{11}{}{%
+        {{uniquename=0,uniquepart=base,hash=1bfad5b2e32d7f820fa78ed3acc3a224}{%
+           family={Schneider},
+           familyi={S\bibinitperiod},
+           given={Florian\bibnamedelima D.},
+           giveni={F\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=d8ae2af0f2f9655ab8829b2c57b8dc28}{%
+           family={Fichtmueller},
+           familyi={F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=41c645f8047943a60d8115bc26f163e5}{%
+           family={Gossner},
+           familyi={G\bibinitperiod},
+           given={Martin\bibnamedelima M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=0d4d904474f7754107728a46a5d150e4}{%
+           family={Güntsch},
+           familyi={G\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=b102771b46183e8190c959e52e33d9a0}{%
+           family={Jochum},
+           familyi={J\bibinitperiod},
+           given={Malte},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=9a5901a3eff730599dcba3c4d599ca1d}{%
+           family={König‐Ries},
+           familyi={K\bibinitperiod},
+           given={Birgitta},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e4c5f313dbe09a22e0d621bc8a9b4774}{%
+           family={Le\bibnamedelima Provost},
+           familyi={L\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Gaëtane},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=185676a385f367e1be0ad349c6cc74bb}{%
+           family={Manning},
+           familyi={M\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e24087104431caf64135c268f7871a59}{%
+           family={Ostrowski},
+           familyi={O\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=3fafd228195f9fdbbfca11ab11350616}{%
+           family={Penone},
+           familyi={P\bibinitperiod},
+           given={Caterina},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=10551d89395f0f4467127b7ee62fe9c5}{%
+           family={Simons},
+           familyi={S\bibinitperiod},
+           given={Nadja\bibnamedelima K.},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=3a03aab835e6b681a3b7dc32dc35af90}{%
+           family={Orme},
+           familyi={O\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{98ebf2baa56f44dfd5cc53096a7c2c7f}
+      \strng{fullhash}{bd575b9e1ea520875d5a05da1f509ea2}
+      \strng{bibnamehash}{98ebf2baa56f44dfd5cc53096a7c2c7f}
+      \strng{authorbibnamehash}{98ebf2baa56f44dfd5cc53096a7c2c7f}
+      \strng{authornamehash}{98ebf2baa56f44dfd5cc53096a7c2c7f}
+      \strng{authorfullhash}{bd575b9e1ea520875d5a05da1f509ea2}
+      \strng{editorbibnamehash}{3a03aab835e6b681a3b7dc32dc35af90}
+      \strng{editornamehash}{3a03aab835e6b681a3b7dc32dc35af90}
+      \strng{editorfullhash}{3a03aab835e6b681a3b7dc32dc35af90}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{16}
+      \field{issn}{2041-210X, 2041-210X}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{shortjournal}{Methods Ecol Evol}
+      \field{title}{Towards an ecological trait‐data standard}
+      \field{urlday}{10}
+      \field{urlmonth}{10}
+      \field{urlyear}{2019}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2041\bibrangedash 210X.13288}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/2041-210X.13288
+      \endverb
+      \verb{file}
+      \verb Schneider et al. - 2019 - Towards an ecological trait‐data standard.pdf:/home/kunz/Zotero/storage/Z8QPMGKB/Schneider et al. - 2019 - Towards an ecological trait‐data standard.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13288
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13288
+      \endverb
+    \endentry
+    \entry{southwood_habitat_1977}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=6e405e0a88ac44762600f129e4d24df2}{%
+           family={Southwood},
+           familyi={S\bibinitperiod},
+           given={T.\bibnamedelimi R.\bibnamedelimi E.},
+           giveni={T\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim E\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6e405e0a88ac44762600f129e4d24df2}
+      \strng{fullhash}{6e405e0a88ac44762600f129e4d24df2}
+      \strng{bibnamehash}{6e405e0a88ac44762600f129e4d24df2}
+      \strng{authorbibnamehash}{6e405e0a88ac44762600f129e4d24df2}
+      \strng{authornamehash}{6e405e0a88ac44762600f129e4d24df2}
+      \strng{authorfullhash}{6e405e0a88ac44762600f129e4d24df2}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0021-8790}
+      \field{journaltitle}{Journal of Animal Ecology}
+      \field{number}{2}
+      \field{title}{Habitat, the Templet for Ecological Strategies?}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{volume}{46}
+      \field{year}{1977}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{337\bibrangedash 365}
+      \range{pages}{29}
+      \verb{doi}
+      \verb 10.2307/3817
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstor.org/stable/3817
+      \endverb
+      \verb{url}
+      \verb https://www.jstor.org/stable/3817
+      \endverb
+    \endentry
+    \entry{statzner_can_2010}{article}{}
+      \name{author}{2}{}{%
+        {{uniquename=0,uniquepart=base,hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=569de2854cfb5c141c9369d818f81032}{%
+           family={Bêche},
+           familyi={B\bibinitperiod},
+           given={Leah\bibnamedelima A.},
+           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \strng{fullhash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \strng{bibnamehash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \strng{authorbibnamehash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \strng{authornamehash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \strng{authorfullhash}{ba1f09ce7af9126515fdd8b5e56d92cc}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{1. Accurately assessing the effects of multiple human-caused stressors on freshwater (and other) ecosystems is an essential step in the development of efficient decision support tools for environmental managers. Our objective is to review potentials and limitations of the use of biological traits as indicators ({BTIs}) of multiple stressor effects on running water (i.e. lotic) ecosystems. 2. Pioneers in ecology provided mechanistic explanations for responses of alternative biological traits to a given stressor and for the action of habitat harshness as a trait filter. These ideas were subsequently integrated in theoretical ecological constructs (e.g. Habitat Templet Concept) that form the basis of the {BTI} approach. 3. To resolve the effects of multiple stressors on running waters requires multiple traits of a biologically diverse group of organisms such as lotic invertebrates. To meet this goal, however, recently created databases on the biological traits of lotic invertebrates must be expanded and unified. 4. Addressing the technical implementation of the {BTI} approach, we illustrate that anticipated problems with phylogenetic trait syndromes are seemingly less serious in reality and that presence–absence data of genera and few sample replicates are sufficient for accurate trait descriptions of invertebrate communities. 5. Current trends in politics demand that biomonitoring tools be effective at large scales, i.e. large-scale trait patterns of natural communities (i.e. at reference conditions) should be relatively stable. The trait composition of natural invertebrate communities is relatively stable at the scale of Europe and North America because trait filters of natural lotic habitats act similarly across large biogeographical units. 6. The mechanistic actions of stressors on the biological traits of invertebrates should facilitate a priori predictions, but the complexity of potential trait responses makes such predictions sometimes difficult. 7. To illustrate potentials and limitations of {BTIs} to identify a given stressor acting exclusively (or primarily), we examine the (i) use of functional feeding groups to indicate the action of various stressors and (ii) trait responses to an indirectly acting stressor (discharge variation) and to a more directly acting stressor (near-bottom flow). If the excessive use of specific traits for the indication of too many different stressors is avoided and a given stressor acts directly on traits as a priori predicted, reliable interpretations of trait responses can be achieved. 8. To illustrate how {BTIs} can identify individual stressors acting in combination, we examine three cases of multiple stressors: (i) heavy metal pollution in combination with cargo-ship traffic; (ii) eutrophication and fine sediment deposits associated with land use; and (iii) various stressors associated with climate change in combination with salinity. If the number of the assessed traits is sufficiently great and the action of each individual among the multiple stressors is not too weak, multiple traits can potentially resolve the effects of multiple stressors. 9. Thematic implications: if the expansion and unification of existing trait databases can be achieved, the rapidly growing knowledge about biological trait responses of lotic invertebrates to individual and multiple stressors should enable the identification of management priorities focused on: (i) individually acting stressors (manage stressor A at site X prior to stressor B at site Y); (ii) multiple stressors acting in different combinations at different sites (manage stressors A \& B at site X prior to stressors C \& D at site Y); and (iii) individual stressors acting in combination (manage stressor A prior to stressor B at site X). Thus, the {BTI} approach has the potential to inaugurate a new era in the biomonitoring of lotic (and other) ecosystems.}
+      \field{issn}{1365-2427}
+      \field{issue}{s1}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{title}{Can biological invertebrate traits resolve effects of multiple stressors on running water ecosystems?}
+      \field{urlday}{28}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{55}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{80\bibrangedash 119}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1111/j.1365-2427.2009.02369.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/KK62DWRM/Statzner und Bêche - 2010 - Can biological invertebrate traits resolve effects.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/YCMUDHTL/j.1365-2427.2009.02369.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.2009.02369.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.2009.02369.x
+      \endverb
+      \keyw{benthos,large-scale biomonitoring,reference conditions,river management}
+    \endentry
+    \entry{statzner_reproductive_1997}{article}{}
+      \name{author}{4}{uniquelist=2}{%
+        {{uniquename=0,uniquepart=base,hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=da0982854f0b0621d9058fdb131ab83c}{%
+           family={Hoppenhaus},
+           familyi={H\bibinitperiod},
+           given={Kerstin},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=dd95e1b85dd506dac134d6533d339efd}{%
+           family={Arens},
+           familyi={A\bibinitperiod},
+           given={Marie-Francoise},
+           giveni={M\bibinithyphendelim F\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7473fc380f7c3062530e5e8ea0fdd4fc}{%
+           family={Richoux},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{770c8c8ecc6e4f7db6e9836c4cb52783}
+      \strng{fullhash}{f7c9217b7cd38d26adafcde0f0ec7bcf}
+      \strng{bibnamehash}{770c8c8ecc6e4f7db6e9836c4cb52783}
+      \strng{authorbibnamehash}{770c8c8ecc6e4f7db6e9836c4cb52783}
+      \strng{authornamehash}{770c8c8ecc6e4f7db6e9836c4cb52783}
+      \strng{authorfullhash}{f7c9217b7cd38d26adafcde0f0ec7bcf}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. Using world-wide data on the reproductive biology of 131 species (in eight orders) of aquatic insects, we used multivariate analyses to examine: (i) relationships among reproductive traits determining life cycle, fecundity, morphology, behaviour and physiology; (ii) relationships among traits determining spatial and temporal habitat characteristics at different scales; and (iii) the relationship between reproductive and habitat-use traits. This provided a test of predictions of the habitat templet concept on trends of species traits along gradients of habitat heterogeneity. 2. The major trends observed in the relationships among reproductive traits were that larger females had larger eggs, which were more vulnerable to perturbations such as droughts and often laid in cocoons. In addition, they laid the eggs in larger numbers of smaller clutches than smaller females. Other traits (e.g. egg number or incubation time) did not show clear trends. 3. Females that deposited eggs at sites of low local temporal heterogeneity (within plants) used, at the same time, gross habitats of high temporal heterogeneity (temporary waters). In contrast, traits in habitat use hardly differed on well-known gradients of temporal heterogeneity along running waters (from source to estuary). The number of habitat units used by ovipositing females generally increased with the spatial scale considered, most species oviposited in a single small habitat unit but in several gross habitats. 4. A significant (P {<} 0.01) relationship between traits in reproduction and habitat use demonstrated that habitat acted as a templet for reproductive strategies. This relationship was dominated by larger females having larger, unattached eggs which were more vulnerable to droughts and were oviposited in temporally more stable small-scale habitats (within wood or macrophytes, or within cocoons spun by the female) but more unstable large-scale habitats (primarily temporary waters). Thus, only on the small habitat scale did some of our observations correspond to the predictions of the habitat templet concept (e.g. larger size or higher vulnerability in more stable habitats). However, many species had traits in reproduction that did not show trends as predicted by the concept. 5. This and other recent studies of the relationships between traits of freshwater organisms and the heterogeneity of their habitats have shown that habitat acts as a templet for species life history traits. However, many of the details observed in these studies did not correspond to predictions of the templet concept because of trade-offs among the traits and scale problems in the description of habitat heterogeneity. Therefore, future studies should focus on groups of organisms which are as similar as possible in the trade-offs among their species traits and on the potential relationships of habitat heterogeneity across multiple scales.}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shorttitle}{Reproductive traits, habitat use and templet theory}
+      \field{title}{Reproductive traits, habitat use and templet theory: a synthesis of world-wide data on aquatic insects}
+      \field{urlday}{7}
+      \field{urlmonth}{1}
+      \field{urlyear}{2020}
+      \field{volume}{38}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{109\bibrangedash 135}
+      \range{pages}{27}
+      \verb{doi}
+      \verb 10.1046/j.1365-2427.1997.00195.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/U999SA8Z/Statzner et al. - 1997 - Reproductive traits, habitat use and templet theor.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/WR6HMHRC/j.1365-2427.1997.00195.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.1997.00195.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.1997.00195.x
+      \endverb
+    \endentry
+    \entry{usseglio-polatera_biomonitoring_2000}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=9161674522b89b60aaab1ef1a3c85632}{%
+           family={Usseglio-Polatera},
+           familyi={U\bibinithyphendelim P\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=5f86f414cb47ecaf5e8a12857955d550}{%
+           family={Bournaud},
+           familyi={B\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7473fc380f7c3062530e5e8ea0fdd4fc}{%
+           family={Richoux},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7023f1d250b3ad243bbb48f754fcb656}{%
+           family={Tachet},
+           familyi={T\bibinitperiod},
+           given={Henri},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{3c4ce3e2a6d711a40b9236a61c0e3f16}
+      \strng{fullhash}{d00a30cd6b36fe79bc76fa7535a3fccd}
+      \strng{bibnamehash}{3c4ce3e2a6d711a40b9236a61c0e3f16}
+      \strng{authorbibnamehash}{3c4ce3e2a6d711a40b9236a61c0e3f16}
+      \strng{authornamehash}{3c4ce3e2a6d711a40b9236a61c0e3f16}
+      \strng{authorfullhash}{d00a30cd6b36fe79bc76fa7535a3fccd}
+      \field{sortinit}{U}
+      \field{sortinithash}{36a2444f5238e0dcf4bb59704df6624d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The aim of this paper was to investigate the potential use of biological and ecological traits of macroinvertebrates as indicator systems of quality conditions in freshwater ecosystems. To provide a framework for the trait analysis, a data base was developed; it stored biological information about 472 benthic macroinvertebrate taxa. Twenty-two variables describing biological and ecological traits were resolved into a number of simple attributes. A fuzzy coding procedure was used to describe the link between taxa and variables. Three strategies, using simple descriptive statistics or multivariate ordination techniques, were examined in their abilities to demonstrate some of the characteristics of the environment and to bring out clear information on the rate of changes in habitats. We used the Loire River, France, as a specific example. Like faunal analyses, trait analyses showed that a major change occurred in the community in the upper reaches of the river, but transition zones that were not detected with faunal data alone, were discriminated. They corresponded to differences in combinations of biological and ecological traits of communities and were linked to tributary influences (e.g. the Allier–Loire confluence) or anthropogenic disturbances: dams (Grangent, Villerest) or urban zones (Le Puy, Tours). We concluded that the species trait approach had the potential to evaluate the actual state of ecosystems, to discriminate among different types of human impact, and to develop monitoring tools considering the functional diversity of communities.}
+      \field{day}{1}
+      \field{issn}{1573-5117}
+      \field{journaltitle}{Hydrobiologia}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{0}
+      \field{shortjournal}{Hydrobiologia}
+      \field{shorttitle}{Biomonitoring through biological traits of benthic macroinvertebrates}
+      \field{title}{Biomonitoring through biological traits of benthic macroinvertebrates: how to use species trait databases?}
+      \field{urlday}{21}
+      \field{urlmonth}{6}
+      \field{urlyear}{2019}
+      \field{volume}{422}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{153\bibrangedash 162}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1023/A:1017042921298
+      \endverb
+      \verb{file}
+      \verb Springer Full Text PDF:/home/kunz/Zotero/storage/EP9FT9SS/Usseglio-Polatera et al. - 2000 - Biomonitoring through biological traits of benthic.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1023/A:1017042921298
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1023/A:1017042921298
+      \endverb
+      \keyw{bioassessment,community structure,indicators,macroinvertebrates,species traits}
+    \endentry
+    \entry{ussegliopolatera_biological_2000}{article}{}
+      \name{author}{4}{}{%
+        {{uniquename=0,uniquepart=base,hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=5f86f414cb47ecaf5e8a12857955d550}{%
+           family={Bournaud},
+           familyi={B\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7473fc380f7c3062530e5e8ea0fdd4fc}{%
+           family={Richoux},
+           familyi={R\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=7023f1d250b3ad243bbb48f754fcb656}{%
+           family={Tachet},
+           familyi={T\bibinitperiod},
+           given={Henri},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{fullhash}{16d42bbc3e22effacd6e262fc03baa38}
+      \strng{bibnamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authorbibnamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authornamehash}{9de110f6c9be4202d3abf5ec2d798c91}
+      \strng{authorfullhash}{16d42bbc3e22effacd6e262fc03baa38}
+      \field{sortinit}{U}
+      \field{sortinithash}{36a2444f5238e0dcf4bb59704df6624d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1 Relating species traits to habitat characteristics can provide important insights into the structure and functioning of stream communities. However, trade-offs among species traits make it difficult to predict accurately the functional diversity of freshwater communities. Many authors have pointed to the value of working with groups of organisms as similar as possible in terms of relationships among traits and have called for definition of groups of organisms with similar suites of attributes. 2 We used multivariate analyses to examine separately the relationships among 11 biological traits and among 11 ecological traits of 472 benthic macroinvertebrate taxa (mainly genera). The main objective was to demonstrate (1) potential trade-offs among traits; (2) the importance of the different traits to separate systematic units or functional groupings; and (3) uniform functional groups of taxa that should allow a more effective use of macroinvertebrate biological and ecological traits. 3 We defined eight groups and 15 subgroups according to a biological trait ordination which highlighted size (large to small), reproductive traits (K to r strategists), food (animal to plant material) and feeding habits (predator to scraper and/or deposit feeder) as ‘significant’ factors determining the ordination of taxa. This ordination partly preserved phylogenetic relationships among groups. 4 Seven ecological groups and 13 ecological subgroups included organisms with combinations of traits which should be successively more adequate in habitats from the main channel to temporary waters, and from the crenon to the potamic sections of rivers, and to systems situated outside the river floodplain. These gradients corresponded to a gradual shift from (1) rheophilic organisms that lived in the main channel of cold oligotrophic mountain streams to (2) animals that preferred eutrophic habitats of still or temporary waters in lowlands. The groups with similar ecological traits had a more diverse systematic structure than those with similar biological traits. 5 Monitoring and assessment tools for the management of water resources are generally more effective if they are based on a clear understanding of the mechanisms that lead to the presence or absence of species groups in the environment. We believe that groups with similar relationships among their species traits may be useful in developing tools that measure the functional diversity of communities.}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{2}
+      \field{shorttitle}{Biological and ecological traits of benthic freshwater macroinvertebrates}
+      \field{title}{Biological and ecological traits of benthic freshwater macroinvertebrates: relationships and definition of groups with similar traits}
+      \field{urlday}{27}
+      \field{urlmonth}{2}
+      \field{urlyear}{2019}
+      \field{volume}{43}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{175\bibrangedash 205}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/I4EVIAEY/Usseglio‐Polatera et al. - 2000 - Biological and ecological traits of benthic freshw.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/EKVR5FPN/j.1365-2427.2000.00535.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2000.00535.x
+      \endverb
+      \keyw{biomonitoring,biological traits,benthic macroinvertebrates,ecological traits,functional diversity}
+    \endentry
+    \entry{vieira_database_nodate}{article}{}
+      \name{author}{6}{}{%
+        {{uniquename=0,uniquepart=base,hash=c2ee3a8d6cc2ab12f6365c487f84fbd9}{%
+           family={Vieira},
+           familyi={V\bibinitperiod},
+           given={Nicole\bibnamedelimb K\bibnamedelima M},
+           giveni={N\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=eb653af6120747b2342ce1b2db8e9eb2}{%
+           family={Poff},
+           familyi={P\bibinitperiod},
+           given={N\bibnamedelima {LeRoy}},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=578bca8e3eee037f0a046abfa1ff4412}{%
+           family={Carlisle},
+           familyi={C\bibinitperiod},
+           given={Daren\bibnamedelima M},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=907edc18fc35f6f47ffbcd49bc11f862}{%
+           family={{II}},
+           familyi={I\bibinitperiod},
+           given={Stephen\bibnamedelimb R\bibnamedelima Moulton},
+           giveni={S\bibinitperiod\bibinitdelim R\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c3f6e35d4df3d4f58afe53268c078ac1}{%
+           family={Koski},
+           familyi={K\bibinitperiod},
+           given={Marci\bibnamedelima L},
+           giveni={M\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=e7ba2759b3147394fbcdc1f29d17f140}{%
+           family={Kondratieff},
+           familyi={K\bibinitperiod},
+           given={Boris\bibnamedelima C},
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{e28baa8def31f6c33bb271b22683ef8f}
+      \strng{fullhash}{1a5ade7aca9df0f9f8ff54cbf6fd1337}
+      \strng{bibnamehash}{e28baa8def31f6c33bb271b22683ef8f}
+      \strng{authorbibnamehash}{e28baa8def31f6c33bb271b22683ef8f}
+      \strng{authornamehash}{e28baa8def31f6c33bb271b22683ef8f}
+      \strng{authorfullhash}{1a5ade7aca9df0f9f8ff54cbf6fd1337}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The assessment and study of stream communities may be enhanced if functional characteristics such as life-history, habitat preference, and reproductive strategy were more widely available for specific taxa. Species traits can be used to develop these functional indicators because many traits directly link functional roles of organisms with controlling environmental factors (for example, flow, substratum, temperature). In addition, some functional traits may not be constrained by taxonomy and are thus applicable at multiple spatial scales. Unfortunately, a comprehensive summary of traits for North American invertebrate taxa does not exist. Consequently, the U.S. Geological Survey’s National Water-Quality Assessment Program in cooperation with Colorado State University compiled a database of traits for North American invertebrates. A total of 14,127 records for over 2,200 species, 1,165 genera, and 249 families have been entered into the database from 967 publications, texts and reports. Quality-assurance procedures indicated error rates of less than 3 percent in the data entry process. Species trait information was most complete for insect taxa. Traits describing resource acquisition and habitat preferences were most frequently reported, whereas those describing physiological tolerances and reproductive biology were the least frequently reported in the literature. The database is not exhaustive of the literature for North American invertebrates and is biased towards aquatic insects, but it represents a first attempt to compile traits in a web-accessible database. This report describes the database and discusses important decisions necessary for identifying ecologically relevant, environmentally sensitive, non-redundant, and statistically tractable traits for use in bioassessment programs.}
+      \field{langid}{english}
+      \field{title}{A Database of Lotic Invertebrate Traits for North America}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \field{pages}{19}
+      \range{pages}{1}
+      \verb{file}
+      \verb Vieira et al. - A Database of Lotic Invertebrate Traits for North .pdf:/home/kunz/Zotero/storage/CDMQKC8L/Vieira et al. - A Database of Lotic Invertebrate Traits for North .pdf:application/pdf
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

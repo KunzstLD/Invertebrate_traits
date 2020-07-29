@@ -1,0 +1,185 @@
+\documentclass[../Draft_harmonization_paper.tex]{subfiles}
+% \documentclass{article}
+% \usepackage{rotating} 
+% \usepackage{geometry}
+% \usepackage{array}
+% \usepackage{lscape}
+% \usepackage{longtable}
+% \usepackage{hhline}
+
+\begin{document}
+
+% ! Things to notice
+% * Feeding Mode:
+% ** Often described what is consumed, different assessments (e.g. for % predator) 
+% ** Seldom reference to the mouthparts (Tachet)
+% Shredder definitions actually not that different
+% The Australian trait database was created out of seven sub-databases. Hence some grouping features occurred multiple times with different traits.
+
+% TODO: Mention that NOA Vieira, AUS & NZ mostly don't give precise trait definitions
+% TODO: - trait does not exist in database, mention that AUS, NZ and NOA (Vieira) do not provide detailed definitions.
+% TODO: Voltinism freshwaterecology -> life cycles connected with thermal conditions -> taxa classified for different floristic regions
+% TODO Use abbreviation for no precise definition given
+% TODO Reproduction traits not mentioned since only the differentiation differed between databases, Similarly for Body Form
+% TODO Start with mentioning that two core differences can exist: 1) definitions can be different semantically; 2) traits can be combined or more differentiated 
+\section{Discrepancies of invertebrate trait definitions}
+
+Definitions of grouping features and traits varied in their level of detail. The Tachet, Freshwaterecology, and North American (Twardochleb) trait databases provided more detailed descriptions of their trait information compared to the North American (Vieira) and New Zealand databases. An exception is the Australian trait database which is a collection of seven trait datasets (\cite{kefford_integrated_2020}). Thus, grouping features occur multiple times with varying differentiation into traits. Depending on the dataset trait information is described with more or less detail. %? use term membership state (Schmera)
+
+The definition of grouping features varied across databases mainly with regard to their differentiation into traits but also in their scope. We provide a summary of discrepancies in trait definitions in the appendix (Table S\ref{tab:trait_definitions}). Both, differences in differentiation and scope can lead to discrepancies in trait definitions. For example, for the grouping feature feeding mode discrepancies arise because traits are assigned in different ways. Tachet defines predators as carvers, engulfers and swallowers. By contrast, in the North American (Twardochleb) database predators are defined as engulfers and carnivorous piercers. In turn, in the Tachet database, piercers are defined as a separate trait encompassing herbivorous and carnivorous piercers. Furthermore, the scope in the Freshwaterecology database for feeding mode is primarily on the food source of a species (except for filterers), while the other databases focus on the strategies of food acquisition. Therefore, the Freshwaterecology database defines e.g. predator as "eating from prey", while the other databases use the mouthpart morphology in their definition. The Tachet database captures the food source in an additional grouping feature. Varying levels of differentiation are also present in all other investigated grouping features between the trait databases (see for details \ref{tab:trait_databases_coding_differentiation} and S\ref{tab:trait_definitions}). Locomotion definitions differ also in scope between databases. Freshwaterecology and New Zealand databases describe locomotion as the way of movement of an organism, Tachet as substrate relation, the North American (Vieira) as how organisms deal with flow, Australia as attachment, and the North American (Twardochleb) database includes among the way of movement also the location of movement. Similarly, regarding reproduction trait databases differ in their scope. Reproduction is captured in one grouping feature and defined as location of oviposit clutches and mode of reproduction in the Freshwaterecology and Tachet databases. North America (Vieira) provides information on the oviposition location but not on reproductive behavior. The Australian database report traits for reproductive behavior but also on oviposition site. The New Zealand database distinguishes three grouping features related to reproduction: reproductive technique, oviposition site (e.g. water surface, terrestrial), and egg/egg mass (e.g. free, cemented).
+
+All databases report the coding of their traits (e.g. binary, fuzzy, continuous). The freshwaterecology and Australian use different codings throughout their databases. Tachet and the New Zealand database use exclusively fuzzy coding. Both North American trait databases contain categorical grouping features which can be converted into traits using a binary coding (Table \ref{tab:trait_databases_coding_differentiation}). Binary coding represents a simple approach in which a taxon either expresses a trait or not. Fuzzy coding characterizes the affinity of an organism to exert a certain trait. It is used to account for plasticity in traits, e.g. taking into account that traits can change over the development time of an organism and is usually converted into proportional values. Continuous coding is used for traits like body size.
+
+% * Feeding mode:
+% \begin{itemize}
+%     \item freshwaterecology: describes primarily the food sources of a species, (e.g. algal tissues, CPOM, fallen leaves), except for filterers. Source: \cite{moog_comprehensive_nodate}
+%     \item tachet: describes strategy/strategies adopted by the taxa for acquiring food, (e.g. taking into account mouthpart morphology). The food preference/food source has been described separately as a trait in Tachet et al. Source: \cite{usseglio-polatera_biomonitoring_2000}
+%     \item North America (Twardochleb): Differentiates according to mode of food acquisition and food source, Source: \cite{cummins_trophic_1973}
+%     \item North America (Vieira): Method of food collection based on mouthparts(termed feeding guild based)
+%     \item Australia: Description of food source (e.g. Schäfer) also based on food acquisition (mouthpart morphology)
+%     \item New Zealand: Description based on food description 
+% \end{itemize}
+
+% * Voltinism: 
+% Not many differences
+% \begin{itemize}
+%     \item Freshwaterecology: taxa classified on floristic regions (e.g arctic, boreal). Six traits to describe voltinism. Distinguish Bivoltine, trivoltine and multivoltine in contrast to all other databases
+%     \item ?Reproductive cycle vs. generations per year 
+%     \item 
+% \end{itemize}
+
+% * Locomotion:
+% differentiation varies between databases 
+% \begin{itemize}
+%     \item freshwaterecology: Way of movement of an organism
+%     \item tachet: locomotion and substrate relation
+%     \item North America (Twardochleb): Termed habit; way of movement and where (crawler -> floating leaves, fine sediments); Source: % Cummins & Merrit 2008
+%     \item North America (Vieira): Habit -> how to deal with flow
+%     \item Australia: Attachment
+%     \item New Zealand: Way of movement of organism within its habitat. Trait termed attachment to substrate 
+% \end{itemize}
+
+% None of the seven grouping features compared here has the same differentiation of traits across all databases (Table \ref{tab:trait_databases})
+% Table with diff trait states and coding
+\begin{landscape}
+    \begin{longtable}{|m{2.5cm}|m{1.8cm}|m{2.3cm}|m{1.8cm}|m{3cm}|m{2cm}|m{2cm}|m{1.8cm}|}
+    \caption{Number of traits per grouping feature and type of coding of the traits for the respective grouping feature per database.}
+    \endfirsthead
+    \hline
+    \label{tab:trait_databases_coding_differentiation}
+    Database & Feeding Mode & Voltinism & Locomotion & Respiration & Reproduction & Size & Body Form \\ 
+    \hline
+    \hline
+    \multirow{2}{*}[-5mm]{ \specialcell{Freshwater- \\ ecology}} & 
+    10 & 
+    6 &
+    6 & 
+    7 & 
+    9 & 
+    - & 
+    - 
+    \\
+    \cline{2-8} & 
+    \specialcell{10 point \\ assignment \\ system} &
+    \specialcell{single category \\ assignment \\ system} &
+    \specialcell{10 point \\ assignment \\ system} &
+    \multicolumn{2}{c |}{\specialcell{presence/absence assignment \\ system}} &
+    - & 
+    - \\
+    \hline
+    \hline
+    \multirow{2}{*}{Tachet} & 
+    7 & 
+    3 &
+    8 & 
+    5 & 
+    8 & 
+    7 & 
+    - 
+    \\
+    \cline{2-8} &
+    \multicolumn{2}{c |}{fuzzy $[0-3]$} &
+    fuzzy $[0-5]$ & 
+    \multicolumn{3}{c |}{fuzzy $[0-3]$} & 
+    -
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{\specialcell{North America \\ (Twardochleb)}} & 
+    6 & 
+    3 &
+    10 & 
+    3 & 
+    10 & 
+    3 & 
+    - 
+    \\
+    \cline{2-8} &
+    \multicolumn{6}{c |}{binary} &
+    -
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{\specialcell{North America \\ (Vieira)}} & 
+    8 & 
+    3 &
+    9 & 
+    8 & 
+    10 & 
+    3 & 
+    5 
+    \\
+    \cline{2-8} &
+    \multicolumn{7}{c |}{binary}
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}[-4mm]{Australia} & 
+    16 \textsuperscript{\textit{a}} & 
+    7 &
+    9 & 
+    10 &
+    13 \textsuperscript{\textit{b}} & 
+    9 & 
+    4
+    \\
+    \cline{2-8} & 
+    \multicolumn{2}{c |}{\specialcell{binary; proportional $[0 - 1]$; \\ fuzzy $[0 - 3]$}} & 
+    binary; fuzzy $[0 - 3]$ & 
+    \specialcell{binary; proportional \\ scale $[0 - 1]$; \\ fuzzy $[0 - 3]$} & 
+    categorical & 
+    \specialcell{binary; \\ numeric; \\ fuzzy $[0 - 3]$} & 
+    fuzzy codes $[0-3]$
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{New Zealand} & 
+    6 & 
+    3 & 
+    4 & 
+    4 & 
+    4 & 
+    5 & 
+    4
+    \\
+    \cline{2-8} & 
+    \multicolumn{7}{c |}{fuzzy $[0-3]$}
+    \\
+    \hline
+    \end{longtable}
+    \begin{minipage}{\linewidth}\small
+        \textit{a} Some of the traits were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
+        \newline
+        \textit{b} Many traits were rather comments than traits in the original database and were not considered.
+    \end{minipage}
+\end{landscape}
+
+% ! Things to notice
+% * Feeding Mode:
+% ** Often described what is consumed, different assessments (e.g. for % predator) 
+% ** Seldom reference to the mouthparts (Tachet)
+% Shredder definitions actually not that different
+
+% The Australian trait database was created out of seven sub-databases. Hence some grouping features occurred multiple times with different traits.
+
+\end{document}

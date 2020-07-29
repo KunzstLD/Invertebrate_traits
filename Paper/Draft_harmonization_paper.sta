@@ -1,0 +1,5 @@
+\standalonepreambles
+\subpreamble{Results/Taxonomic_cov_and_info_compl.tex}
+\usepackage [subpreambles=true]{standalone}\usepackage {import}\usepackage [utf8]{inputenc}\usepackage {hyperref}\usepackage {float}\usepackage [table,xcdraw]{xcolor}\usepackage {color, colortbl}\usepackage {longtable}\usepackage {booktabs}\usepackage {graphicx}\graphicspath {{/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/}}\usepackage {longtable}\usepackage {rotating}\usepackage {geometry}\usepackage {array}\definecolor {Gray}{gray}{0.9}\newcommand {\specialcell }[2][c]{\begin {tabular}[#1]{@{}c@{}}#2\end {tabular}}
+\endsubpreamble
+\endstandalonepreambles
