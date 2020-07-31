@@ -9,7 +9,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=16.5cm, height=10cm]{Comparison_trait_agg_methods.png}
-    \caption{Shown are mean absolute differences with standard deviations per regions. Compared aggregation methods are displayed on the y axis. N indicates the number of cases where differences occurred.}
+    \caption{Means of absolute differences in trait affinities with standard deviations per region for all grouping features. Compared aggregation methods are displayed on the y-axis. N indicates the number of cases where differences occurred.}
 \end{figure}
 
 % \subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
@@ -115,10 +115,10 @@
 \label{sec:SI_harmonization_EU}
 
 % \cellcolor{blue!25}
-\begin{longtable}{llll}
+\begin{longtable}{lll|l}
 %\begin{table}[ht]
 %    \centering
-    \caption{Representation of traits per grouping feature for the used trait databases. The color coding indicates traits that have been harmonized. Cyan colored traits have not been used because they either represented ambiguous traits or traits that were not compatible with the traits of the other databases. Harmonization was done by assigning the maximum affinity of the allocated traits for the respective taxa to the harmonized trait.}
+    \caption{Representation of traits per grouping feature and their harmonization for the European trait databases. The color coding indicates traits that have been harmonized. Cyan colored traits have not been used because they either represented ambiguous traits or traits that were not compatible with the traits of the other databases. Harmonization was done by assigning the maximum affinity of the allocated traits for the respective taxa to the harmonized trait.}
     \endfirsthead
     \endhead
     %\begin{tabular}{llll}
@@ -141,18 +141,18 @@
     \cellcolor{blue!50}Feeding Mode & \cellcolor{blue!50}Active filterer & Scraper & Predator \\ 
     \cellcolor{blue!50}Feeding Mode & \cellcolor{blue!50}Passive filterer & Predator & Parasite \\ 
     Feeding Mode & Grazer & Parasite &  \\ 
-    Feeding Mode & Predator & \color{cyan}Piercer (plants or animals) &  \\ 
+    Feeding Mode & Predator & \textit{Piercer (plants or animals)} \textsuperscript{\textit{a}} &  \\ 
     Feeding Mode & Parasite &  &  \\ 
     \color{cyan}Feeding Mode & \color{cyan}Other &  &  \\ 
     \hline
-    \rowcolor{green!25}
+    \rowcolor{green!15}
     Locomotion & Swimming/scating & Surface swimmer & Swimmer \\ 
-    \cellcolor{green!25}Locomotion & \cellcolor{green!25}Swimming/diving & \cellcolor{green!25}Full water swimmer & Burrower \\ 
-    Locomotion & Burrowing/boring & Burrower & Crawler \\ 
-    Locomotion & Sprawling/walking & Crawler & \cellcolor{green!50}Sessil \\ 
-    \cellcolor{green!50}Locomotion & \cellcolor{green!50}(semi) sessil & \cellcolor{green!50}Temporarily attachted &  \\ 
-    \color{cyan}Locomotion & \color{cyan}Other & \cellcolor{green!50}Permanently attached &  \\ 
-    \color{cyan}Locomotion &  & \color{cyan}Interstitial &  \\ 
+    \cellcolor{green!15}Locomotion & \cellcolor{green!15}Swimming/diving & \cellcolor{green!15}Full water swimmer & \cellcolor{green!50}Burrower \\ 
+    \cellcolor{green!50}Locomotion & \cellcolor{green!50}Burrowing/boring & \cellcolor{green!50}Burrower & Crawler \\
+    Locomotion &  & \cellcolor{green!50}Interstitial & \cellcolor{green!95}Sessil \\
+    Locomotion & Sprawling/walking & Crawler &  \\ 
+    \cellcolor{green!95}Locomotion & \cellcolor{green!95}(semi) sessil & \cellcolor{green!95}Temporarily attachted &  \\ 
+    \color{cyan}Locomotion & \color{cyan}Other & \cellcolor{green!95}Permanently attached &  \\ 
     \color{cyan}Locomotion &  & \color{cyan}Flier &  \\
     \hline
     Respiration & Tegument & Tegument & Tegument \\ 
@@ -186,6 +186,9 @@
     %\end{tabular}
 %\end{table}
 \end{longtable}
+\begin{minipage}{\linewidth}\small
+    \textit{a} Taxa exhibiting this trait have been assigned to predators or herbivores based on a classification by Philippe Usseglio-Polatera.
+\end{minipage}
 
 %%%%%%%%%%%%%%%%%%%% OLD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \subsection*{Deviance in trait affinities between \textit{stepwise\_agg} and \textit{direct\_agg (median)}}

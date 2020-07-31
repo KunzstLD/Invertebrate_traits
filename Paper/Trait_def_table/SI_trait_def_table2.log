@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  29 JUL 2020 13:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  30 JUL 2020 16:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1555,13 +1555,13 @@ Package logreq Info: Writing requests to 'SI_trait_def_table2.run.xml'.
 Here is how much of TeX's memory you used:
  13079 strings out of 492982
  213886 string characters out of 6134896
- 711799 words of memory out of 5000000
+ 711877 words of memory out of 5000000
  16504 multiletter control sequences out of 15000+600000
  6503 words of font info for 23 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  50i,20n,37p,873b,740s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-Output written on Trait_def_table/SI_trait_def_table2.pdf (4 pages, 104215 bytes).
+Output written on Trait_def_table/SI_trait_def_table2.pdf (4 pages, 104604 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream

@@ -86,8 +86,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/hhline.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/tools/hhline.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-INPUT /usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty

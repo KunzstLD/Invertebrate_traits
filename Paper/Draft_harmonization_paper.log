@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  29 JUL 2020 13:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  31 JUL 2020 12:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -882,13 +882,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 50.
  (/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 34.
+(Font)              <7> on input line 50.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 34.
+(Font)              <5> on input line 50.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (20.07262pt too wide) in paragraph at lines 56--66
+Overfull \hbox (20.07262pt too wide) in paragraph at lines 73--83
  [][] 
  []
 
@@ -945,18 +945,18 @@ l.86
 l.137 \newpage
                </home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>] (/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex
 
-Package hyperref Warning: Suppressing empty link on input line 33.
+Package hyperref Warning: Suppressing empty link on input line 32.
 
 
-Package hyperref Warning: Suppressing empty link on input line 33.
+Package hyperref Warning: Suppressing empty link on input line 32.
 
 <Figures/Species_scores_rda.png, id=85, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 41.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 40.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 41--42
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 40--41
  [][] 
  []
 
@@ -1154,17 +1154,17 @@ l.111
                                                   \fi \fi 
 l.112 \newpage
                </home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_proportion_Szoecs_2014.png (PNG copy)>]
-Overfull \hbox (69.00658pt too wide) in alignment at lines 118--122
+Overfull \hbox (79.13873pt too wide) in alignment at lines 118--122
  [] [] [] [] 
  []
 
 
-Overfull \hbox (69.00658pt too wide) in alignment at lines 122--123
+Overfull \hbox (79.13873pt too wide) in alignment at lines 122--123
  [] [] [] [] 
  []
 
 
-Overfull \hbox (69.00658pt too wide) in alignment at lines 123--152
+Overfull \hbox (79.13873pt too wide) in alignment at lines 123--152
  [] [] [] [] 
  []
 
@@ -1173,12 +1173,12 @@ Underfull \vbox (badness 10000) detected at line 152
  []
 
 
-Overfull \hbox (69.00658pt too wide) in alignment at lines 152--176
+Overfull \hbox (79.13873pt too wide) in alignment at lines 152--176
  [] [] [] [] 
  []
 
 
-Overfull \hbox (69.00658pt too wide) in alignment at lines 176--188
+Overfull \hbox (79.13873pt too wide) in alignment at lines 176--188
  [] [] [] [] 
  []
 
@@ -1855,15 +1855,15 @@ Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 157.
  ) 
 Here is how much of TeX's memory you used:
- 13495 strings out of 492982
- 224157 string characters out of 6134896
- 716627 words of memory out of 5000000
- 16824 multiletter control sequences out of 15000+600000
+ 13496 strings out of 492982
+ 224172 string characters out of 6134896
+ 716739 words of memory out of 5000000
+ 16825 multiletter control sequences out of 15000+600000
  10316 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,20n,50p,2683b,1233s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,20n,50p,2691b,1233s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (25 pages, 2051318 bytes).
+Output written on /home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (25 pages, 2087613 bytes).
 PDF statistics:
  292 PDF objects out of 1000 (max. 8388607)
  233 compressed objects within 3 object streams

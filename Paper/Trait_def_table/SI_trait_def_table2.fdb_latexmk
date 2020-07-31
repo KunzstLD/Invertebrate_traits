@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Trait_def_table/SI_trait_def_table2"] 1596012733 "Trait_def_table/SI_trait_def_table2.bcf" "Trait_def_table/SI_trait_def_table2.bbl" "Trait_def_table/SI_trait_def_table2" 1596021532
-  "Trait_def_table/SI_trait_def_table2.bcf" 1596021532 88014 2200415495eda8bb72096824a5074ab8 ""
+["biber Trait_def_table/SI_trait_def_table2"] 1596012733 "Trait_def_table/SI_trait_def_table2.bcf" "Trait_def_table/SI_trait_def_table2.bbl" "Trait_def_table/SI_trait_def_table2" 1596192721
+  "Trait_def_table/SI_trait_def_table2.bcf" 1596121134 88014 2200415495eda8bb72096824a5074ab8 ""
   (generated)
   "Trait_def_table/SI_trait_def_table2.blg"
   "Trait_def_table/SI_trait_def_table2.bbl"
-["pdflatex"] 1596021531 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" "Trait_def_table/SI_trait_def_table2.pdf" "SI_trait_def_table2" 1596021532
+["pdflatex"] 1596121133 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" "Trait_def_table/SI_trait_def_table2.pdf" "SI_trait_def_table2" 1596192721
   "/etc/texmf/web2c/texmf.cnf" 1544004452 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" 1596021530 25788 3e4af9e3b7a2d7dce46310ffddd41f4b ""
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" 1596192720 25866 9dce0db875f017ebbbcc37bb42a85a4f ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1480098701 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1480098701 1524 d89e2d087a9828407a196f428428ef4a ""
@@ -91,16 +91,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1544004459 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1544004481 4131366 4653ad3021cea65bda482bdd29f7dc1c ""
-  "Trait_def_table/../Draft_harmonization_paper.tex" 1596014591 8348 c908d30313ab4429f95b964fe1400af4 ""
-  "Trait_def_table/SI_trait_def_table2.aux" 1596021532 2542 f596ea19069421bb0e6e48af4bb9fdf0 ""
+  "Trait_def_table/../Draft_harmonization_paper.tex" 1596120854 8348 9bc2b5a76932ca81221359f2abd539d5 ""
+  "Trait_def_table/SI_trait_def_table2.aux" 1596121134 2698 f6744da9cc9140bd0b88be2ec18962eb ""
   "Trait_def_table/SI_trait_def_table2.bbl" 1596012734 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Trait_def_table/SI_trait_def_table2"
-  "Trait_def_table/SI_trait_def_table2.out" 1596021532 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Trait_def_table/SI_trait_def_table2.run.xml" 1596021532 2425 7ef3bb35b208611adee2c4e4108da18b ""
-  "Trait_def_table/SI_trait_def_table2.tex" 1596021530 25788 3e4af9e3b7a2d7dce46310ffddd41f4b ""
+  "Trait_def_table/SI_trait_def_table2.out" 1596121134 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Trait_def_table/SI_trait_def_table2.run.xml" 1596121134 2425 7ef3bb35b208611adee2c4e4108da18b ""
+  "Trait_def_table/SI_trait_def_table2.tex" 1596192720 25866 9dce0db875f017ebbbcc37bb42a85a4f ""
   (generated)
   "Trait_def_table/SI_trait_def_table2.pdf"
-  "Trait_def_table/SI_trait_def_table2.log"
-  "Trait_def_table/SI_trait_def_table2.bcf"
-  "Trait_def_table/SI_trait_def_table2.aux"
-  "Trait_def_table/SI_trait_def_table2.run.xml"
   "Trait_def_table/SI_trait_def_table2.out"
+  "Trait_def_table/SI_trait_def_table2.bcf"
+  "Trait_def_table/SI_trait_def_table2.run.xml"
+  "Trait_def_table/SI_trait_def_table2.log"
+  "Trait_def_table/SI_trait_def_table2.aux"

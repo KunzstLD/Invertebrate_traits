@@ -199,6 +199,7 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{journaltitle}{NIWA}
       \field{title}{New Zealand Freshwater Macroinvertebrate Trait Database}
       \field{year}{2018}
     \endentry

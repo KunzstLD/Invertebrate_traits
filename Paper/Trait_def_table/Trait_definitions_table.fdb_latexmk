@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber Trait_def_table/Trait_definitions_table"] 1596022565 "Trait_def_table/Trait_definitions_table.bcf" "Trait_def_table/Trait_definitions_table.bbl" "Trait_def_table/Trait_definitions_table" 1596022568
-  "Ref_invertebrate_DB.bib" 1595857875 48697 51a02ea183b8f1530e9ebdd58163ac1a ""
-  "Trait_def_table/Trait_definitions_table.bcf" 1596022568 88079 99a321d71687676c643700c14ee9e33c ""
+["biber Trait_def_table/Trait_definitions_table"] 1596192170 "Trait_def_table/Trait_definitions_table.bcf" "Trait_def_table/Trait_definitions_table.bbl" "Trait_def_table/Trait_definitions_table" 1596192727
+  "Ref_invertebrate_DB.bib" 1596120507 48721 8b1462a53caabf990ad29056b9b3252e ""
+  "Trait_def_table/Trait_definitions_table.bcf" 1596192397 88079 99a321d71687676c643700c14ee9e33c ""
   (generated)
-  "Trait_def_table/Trait_definitions_table.blg"
   "Trait_def_table/Trait_definitions_table.bbl"
-["pdflatex"] 1596022567 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex" "Trait_def_table/Trait_definitions_table.pdf" "Trait_definitions_table" 1596022568
+  "Trait_def_table/Trait_definitions_table.blg"
+["pdflatex"] 1596192397 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex" "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.pdf" "Trait_definitions_table" 1596192727
   "/etc/texmf/web2c/texmf.cnf" 1544004452 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex" 1596022563 10455 1250b8ac623c39066de38a27697e4783 ""
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex" 1596192726 10491 d749c641ec94a3e7f9f9f933b0f1d6f0 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1480098701 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -86,16 +86,18 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1544004459 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1544004481 4131366 4653ad3021cea65bda482bdd29f7dc1c ""
-  "Trait_def_table/../Draft_harmonization_paper.tex" 1596014591 8348 c908d30313ab4429f95b964fe1400af4 ""
-  "Trait_def_table/Trait_definitions_table.aux" 1596022568 1971 8ccdc7fcd9334758bc6b7fc6c72e35db ""
-  "Trait_def_table/Trait_definitions_table.bbl" 1596022566 5733 9e8531ab4cfd2565e4581a97f6f07033 "biber Trait_def_table/Trait_definitions_table"
-  "Trait_def_table/Trait_definitions_table.out" 1596022568 82 ce59eeb6ce261e6237a84e8f1e453e48 ""
-  "Trait_def_table/Trait_definitions_table.run.xml" 1596022568 2453 47cc4b88fdfc2bda5f6069d22453d53e ""
-  "Trait_def_table/Trait_definitions_table.tex" 1596022563 10455 1250b8ac623c39066de38a27697e4783 ""
+  "Trait_def_table/../Draft_harmonization_paper.tex" 1596120854 8348 9bc2b5a76932ca81221359f2abd539d5 ""
+  "Trait_def_table/Trait_definitions_table.aux" 1596192397 1971 8ccdc7fcd9334758bc6b7fc6c72e35db ""
+  "Trait_def_table/Trait_definitions_table.bbl" 1596192171 5733 9e8531ab4cfd2565e4581a97f6f07033 "biber Trait_def_table/Trait_definitions_table"
+  "Trait_def_table/Trait_definitions_table.out" 1596192397 82 ce59eeb6ce261e6237a84e8f1e453e48 ""
+  "Trait_def_table/Trait_definitions_table.run.xml" 1596192397 2453 47cc4b88fdfc2bda5f6069d22453d53e ""
+  "Trait_def_table/Trait_definitions_table.tex" 1596192396 10491 d749c641ec94a3e7f9f9f933b0f1d6f0 ""
   (generated)
-  "Trait_def_table/Trait_definitions_table.pdf"
-  "Trait_def_table/Trait_definitions_table.aux"
-  "Trait_def_table/Trait_definitions_table.log"
-  "Trait_def_table/Trait_definitions_table.run.xml"
   "Trait_def_table/Trait_definitions_table.bcf"
+  "Trait_def_table/Trait_definitions_table.log"
+  "Trait_def_table/Trait_definitions_table.aux"
+  "Trait_def_table/Trait_definitions_table.run.xml"
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.log"
   "Trait_def_table/Trait_definitions_table.out"
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.pdf"
+  "Trait_def_table/Trait_definitions_table.pdf"

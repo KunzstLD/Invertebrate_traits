@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  29 JUL 2020 10:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  31 JUL 2020 12:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,9 +573,6 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/hhline.sty
 Package: hhline 2014/10/28 v2.03 Table rule package (DPC)
-) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
-Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box33
 ) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
  (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -796,7 +793,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-\AtBeginShipoutBox=\box34
+\AtBeginShipoutBox=\box33
 Package hyperref Info: Link coloring OFF on input line 23.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -816,7 +813,7 @@ LaTeX Info: Redefining \nameref on input line 23.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count304
 \scratchdimen=\dimen134
-\scratchbox=\box35
+\scratchbox=\box34
 \nofMPsegments=\count305
 \nofMParguments=\count306
 \everyMPshowfont=\toks26
@@ -942,17 +939,17 @@ Package logreq Info: Writing requests to 'Results_trait_agg.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13334 strings out of 492982
- 218881 string characters out of 6134896
- 673553 words of memory out of 5000000
- 16755 multiletter control sequences out of 15000+600000
+ 13278 strings out of 492982
+ 217997 string characters out of 6134896
+ 672439 words of memory out of 5000000
+ 16703 multiletter control sequences out of 15000+600000
  4591 words of font info for 17 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,18n,42p,1631b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,18n,42p,1633b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.0@chessman_dissolved-oxygen_2018} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Results/Results_trait_agg.pdf (4 pages, 1220411 bytes).
+Output written on Results/Results_trait_agg.pdf (4 pages, 1254280 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream

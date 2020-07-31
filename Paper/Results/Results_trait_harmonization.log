@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  29 JUL 2020 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  31 JUL 2020 12:42
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -933,15 +933,15 @@ Package logreq Info: Writing requests to 'Results_trait_harmonization.run.xml'.
 Here is how much of TeX's memory you used:
  13259 strings out of 492982
  217670 string characters out of 6134896
- 661492 words of memory out of 5000000
+ 662535 words of memory out of 5000000
  16689 multiletter control sequences out of 15000+600000
  4899 words of font info for 18 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 50i,6n,49p,1560b,1086s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 50i,6n,49p,1550b,1086s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.0@szocs_effects_2014} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Results/Results_trait_harmonization.pdf (2 pages, 116177 bytes).
+Output written on Results/Results_trait_harmonization.pdf (2 pages, 116660 bytes).
 PDF statistics:
  50 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
