@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Trait_def_table/Trait_definitions_table.blg'
-[41] biber:313> INFO - === Fr Jul 31, 2020, 12:42:51
-[70] Biber.pm:371> INFO - Reading 'Trait_def_table/Trait_definitions_table.bcf'
-[136] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
-[158] Biber.pm:3981> INFO - Processing section 0
-[169] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[175] bibtex.pm:1468> INFO - LaTeX decoding ...
-[247] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[279] Biber.pm:3809> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[279] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[285] bbl.pm:617> INFO - Writing 'Trait_def_table/Trait_definitions_table.bbl' with encoding 'UTF-8'
-[289] bbl.pm:720> INFO - Output to Trait_def_table/Trait_definitions_table.bbl
+[38] biber:313> INFO - === Mo Aug 31, 2020, 17:51:42
+[67] Biber.pm:371> INFO - Reading 'Trait_def_table/Trait_definitions_table.bcf'
+[131] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[141] Biber.pm:3981> INFO - Processing section 0
+[154] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[163] bibtex.pm:1468> INFO - LaTeX decoding ...
+[242] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[281] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[281] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[281] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[281] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[286] bbl.pm:617> INFO - Writing 'Trait_def_table/Trait_definitions_table.bbl' with encoding 'UTF-8'
+[287] bbl.pm:720> INFO - Output to Trait_def_table/Trait_definitions_table.bbl

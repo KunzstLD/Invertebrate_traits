@@ -18,33 +18,29 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
+  \datalist[entry]{none/global//global/global}
     \entry{szocs_effects_2014}{article}{}
       \name{author}{4}{}{%
-        {{uniquename=0,uniquepart=base,hash=b7238c71da2e2bcf0f4e948f83d5ce79}{%
+        {{hash=b7238c71da2e2bcf0f4e948f83d5ce79}{%
            family={Szöcs},
            familyi={S\bibinitperiod},
            given={Eduard},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=7b5847ad997ce968fca016ac1b33a5a8}{%
+           giveni={E\bibinitperiod}}}%
+        {{hash=7b5847ad997ce968fca016ac1b33a5a8}{%
            family={Coring},
            familyi={C\bibinitperiod},
            given={Eckhard},
-           giveni={E\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=808d2b50c374b56d81772c7661059808}{%
+           giveni={E\bibinitperiod}}}%
+        {{hash=808d2b50c374b56d81772c7661059808}{%
            family={Bäthe},
            familyi={B\bibinitperiod},
            given={Jürgen},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=3f209b50103e96ba9109945ad46237ee}{%
+           giveni={J\bibinitperiod}}}%
+        {{hash=3f209b50103e96ba9109945ad46237ee}{%
            family={Schäfer},
            familyi={S\bibinitperiod},
            given={Ralf\bibnamedelima B.},
-           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod},
-           givenun=0}}%
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
       \strng{namehash}{ab7672b65ede47bbccf412b8f5645d0b}
       \strng{fullhash}{a134c20051c63698eb6848beb3d3eda6}
@@ -52,10 +48,8 @@
       \strng{authorbibnamehash}{ab7672b65ede47bbccf412b8f5645d0b}
       \strng{authornamehash}{ab7672b65ede47bbccf412b8f5645d0b}
       \strng{authorfullhash}{a134c20051c63698eb6848beb3d3eda6}
-      \field{sortinit}{S}
-      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Salinization of rivers resulting from industrial discharge or road-deicing can adversely affect macroinvertebrates. Trait-based approaches are a promising tool in ecological monitoring and may perform better than taxonomybased approaches. However only little is known how and which biological traits are affected by salinization. We investigated the effects of anthropogenic salinization on macroinvertebrate communities and biological traits in the Werra River, Germany and compared the taxonomic and trait response.}

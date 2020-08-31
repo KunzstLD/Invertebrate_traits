@@ -1,11 +1,7 @@
 \documentclass[../Draft_harmonization_paper.tex]{subfiles}
-% \documentclass{article}
-% \usepackage{rotating} 
-% \usepackage{geometry}
-% \usepackage{array}
-% \usepackage{lscape}
-% \usepackage{longtable}
-% \usepackage{hhline}
+
+
+
 \begin{document}
 
 \begin{landscape}
@@ -13,11 +9,10 @@
         \caption{Comparison of trait definitions between invertebrate trait databases. Only traits that are differently described across databases are listed. The definition is quoted if it enables differences to be identified, otherwise the differences are described. The hyphen indicates a missing trait. Reproduction was captured in multiple grouping features per database. Hence, differences for reproduction have been described in the paper. Body form traits are not different between databases, except that the North America (Vieira) database contains the trait Bluff (blocky) which does not appear in the other databases.}
         \label{tab:trait_definitions}
         \endfirsthead
-        \hline
+        \\
         Trait & Freshwaterecology & Tachet & \specialcell{North America \\ (Twardochleb)} & 
         North America (Vieira) & Australia & New Zealand \\
-        \hline
-        \hline
+        \toprule[.1em]
         Feeding shredder & 
         "Feed from fallen leaves, plant tissues, CPOM" & 
         "Eat coarse detritus, plants or \textit{animal material}" & 
@@ -32,7 +27,7 @@
         \end{itemize} & 
         Shredders
         \\ 
-        \hline
+        \midrule
         Feeding predator & 
         "Eating from prey" & 
         \begin{itemize}
@@ -45,7 +40,7 @@
         Piercer \& engulfer &
         Predator
         \\ 
-        \hline
+        \midrule
         Feeding filter-feeder & 
         Distinguishes between active and passive &
         No distinction between active and passive &
@@ -54,8 +49,7 @@
         No distinction between active and passive &
         No distinction between active and passive
         \\
-        \hline
-        \hline
+        \toprule[.1em]
         Semivoltine & 
         "One generation in two years" & 
         "Life cycle lasts \textit{at least} two years" & 
@@ -64,7 +58,7 @@
         "$< 1$ generation per year" & 
         "$< 1$ reproductive cycle per year"
         \\
-        \hline
+        \midrule
         Multivoltine & 
         "More than \textit{three} generations per year" \textsuperscript{\textit{b}}& 
         "Able to complete \textit{at least} two successive generations per year" &
@@ -79,8 +73,7 @@
         & 
         "$> 1$ reproductive cycles per year"
         \\
-        \hline
-        \hline
+        \toprule[.1em]
         Locomotion swimming & 
         \begin{itemize}
             \item Passive movement like floating or drifting (trait swimming/scating)
@@ -95,6 +88,7 @@
         Distinguishes swimmer and skater & 
         Swimmers (water column)
         \\
+        \midrule
         Locomotion burrowing & 
         "Burrowing in \textit{soft} substrates or boring in \textit{hard} substrates" & 
         \begin{itemize}
@@ -106,7 +100,7 @@
         "Moving deep into the substrate and thus avoiding flow" &
         Burrowers (infauna)
         \\
-        \hline
+        \midrule
         Locomotion sprawling \& walking & 
         "Sprawling or walking actively with legs, pseudopods or on a mucus" &
         - & 
@@ -114,7 +108,7 @@
         Sprawler &
         - & 
         - \\
-        \hline
+        \midrule
         Locomotion crawling & 
         - &
         "Crawling over the bottom substrate" & 
@@ -123,7 +117,7 @@
         Database contains traits crawler, 
         sprawler, climber and clinger. &
         Crawlers (epibenthic) \\
-        \hline
+        \midrule
         Locomotion sessil & 
         Does not distinguish temporarily and permanently attached & 
         Distinguishes temporarily and permanently attached & 
@@ -131,8 +125,7 @@
         Does not distinguish temporarily and permanently attached & 
         Distinguishes temporarily and permanently attached & 
         Does not distinguish temporarily and permanently attached \\
-        \hline
-        \hline
+        \toprule[.1em]
         Respiration plastron \& spiracle & 
         Plastron and spiracle (aerial) are two separate traits & 
         Definition includes respiration using air stores of aquatic plants & 
@@ -140,8 +133,7 @@
         Distinguishes spiracular gills, plastron, atmospheric breathers and plant breathers &
         Plastron and spiracle (termed aerial) occur as separate and combined traits. Contains also traits: air (plants), atmospheric, and functional spiracles &
         Distinguishes plastron and spiracle (termed aerial) \\
-        \hline
-        \hline
+        \toprule[.1em]
         Body size small & 
         - &
         \multirow{3}{*}{\specialcell{Multiple size \\ classifications \textsuperscript{\textit{d}}}} & 
@@ -168,7 +160,7 @@
         $>$ 16 mm &
         $>$ 16 mm &
         \\
-        \hline
+        \bottomrule
     \end{longtable}
     \begin{minipage}{\linewidth}\small
         \textit{a} Traits from Botwe et al.

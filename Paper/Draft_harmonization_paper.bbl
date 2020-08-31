@@ -482,6 +482,84 @@
       \verb http://doi.wiley.com/10.1111/j.1365-2486.2007.01375.x
       \endverb
     \endentry
+    \entry{baird_toward_2011}{article}{}
+      \name{author}{7}{}{%
+        {{hash=77946b263906db86f4a6f433688b0a04}{%
+           family={Baird},
+           familyi={B\bibinitperiod},
+           given={Donald\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=c6f93b77febbb3dfb81c56a373145bdf}{%
+           family={Baker},
+           familyi={B\bibinitperiod},
+           given={Christopher\bibnamedelimb J.\bibnamedelimi O.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=59eb2ec992a267a1cc4614b8341a060e}{%
+           family={Brua},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=7d059788f3b31fab238501ab0c8a6fa2}{%
+           family={Hajibabaei},
+           familyi={H\bibinitperiod},
+           given={Mehrdad},
+           giveni={M\bibinitperiod}}}%
+        {{hash=2cf25fe5e4cb5464f859ff8d13c68b40}{%
+           family={{McNicol}},
+           familyi={M\bibinitperiod},
+           given={Kearon},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3e125b8bf8b5d9ed9678d59ea99e8f25}{%
+           family={Pascoe},
+           familyi={P\bibinitperiod},
+           given={Timothy\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=2ed67504c17fd3ae19b2bb2ea4fde426}{%
+           family={Zwart},
+           familyi={Z\bibinitperiod},
+           given={Dick\bibnamedelima de},
+           giveni={D\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+      }
+      \strng{namehash}{26b2d6185e9b3dc24d25b1321c965b8b}
+      \strng{fullhash}{424ab9eacea94c25eb4a8d5b78bd6b25}
+      \strng{bibnamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
+      \strng{authorbibnamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
+      \strng{authornamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
+      \strng{authorfullhash}{424ab9eacea94c25eb4a8d5b78bd6b25}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The trait approach has already indicated significant potential as a tool in understanding natural variation among species in sensitivity to contaminants in the process of ecological risk assessment. However, to realize its full potential, a defined nomenclature for traits is urgently required, and significant effort is required to populate databases of species–trait relationships. Recently, there have been significant advances in the area of information management and discovery in the area of the semantic web. Combined with continuing progress in biological trait knowledge, these suggest that the time is right for a reevaluation of how trait information from divergent research traditions is collated and made available for end users in the field of environmental management. Although there has already been a great deal of work on traits, the information is scattered throughout databases, literature, and undiscovered sources. Further progress will require better leverage of this existing data and research to fill in the gaps. We review and discuss a number of technical and social challenges to bringing together existing information and moving toward a new, collaborative approach. Finally, we outline a path toward enhanced knowledge discovery within the traits domain space, showing that, by linking knowledge management infrastructure, semantic metadata (trait ontologies), and Web 2.0 and 3.0 technologies, we can begin to construct a dedicated platform for {TERA} science. Integr Environ Assess Manag 2011;7:209–215. © 2010 {SETAC}}
+      \field{issn}{1551-3793}
+      \field{journaltitle}{Integrated Environmental Assessment and Management}
+      \field{langid}{english}
+      \field{note}{\_eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.129}
+      \field{number}{2}
+      \field{title}{Toward a knowledge infrastructure for traits-based ecological risk assessment}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2020}
+      \field{volume}{7}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{209\bibrangedash 215}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1002/ieam.129
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/P3XD96V2/Baird et al. - 2011 - Toward a knowledge infrastructure for traits-based.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/CNDLWTPB/ieam.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://setac.onlinelibrary.wiley.com/doi/abs/10.1002/ieam.129
+      \endverb
+      \verb{url}
+      \verb https://setac.onlinelibrary.wiley.com/doi/abs/10.1002/ieam.129
+      \endverb
+      \keyw{Ecological risk assesssment,Knowledge infrastructure,Traits}
+    \endentry
     \entry{usseglio-polatera_biomonitoring_2000}{article}{}
       \name{author}{4}{}{%
         {{hash=9161674522b89b60aaab1ef1a3c85632}{%
@@ -1377,84 +1455,6 @@
       \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13288
       \endverb
     \endentry
-    \entry{baird_toward_2011}{article}{}
-      \name{author}{7}{}{%
-        {{hash=77946b263906db86f4a6f433688b0a04}{%
-           family={Baird},
-           familyi={B\bibinitperiod},
-           given={Donald\bibnamedelima J.},
-           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=c6f93b77febbb3dfb81c56a373145bdf}{%
-           family={Baker},
-           familyi={B\bibinitperiod},
-           given={Christopher\bibnamedelimb J.\bibnamedelimi O.},
-           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
-        {{hash=59eb2ec992a267a1cc4614b8341a060e}{%
-           family={Brua},
-           familyi={B\bibinitperiod},
-           given={Robert\bibnamedelima B.},
-           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
-        {{hash=7d059788f3b31fab238501ab0c8a6fa2}{%
-           family={Hajibabaei},
-           familyi={H\bibinitperiod},
-           given={Mehrdad},
-           giveni={M\bibinitperiod}}}%
-        {{hash=2cf25fe5e4cb5464f859ff8d13c68b40}{%
-           family={{McNicol}},
-           familyi={M\bibinitperiod},
-           given={Kearon},
-           giveni={K\bibinitperiod}}}%
-        {{hash=3e125b8bf8b5d9ed9678d59ea99e8f25}{%
-           family={Pascoe},
-           familyi={P\bibinitperiod},
-           given={Timothy\bibnamedelima J.},
-           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=2ed67504c17fd3ae19b2bb2ea4fde426}{%
-           family={Zwart},
-           familyi={Z\bibinitperiod},
-           given={Dick\bibnamedelima de},
-           giveni={D\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
-      }
-      \strng{namehash}{26b2d6185e9b3dc24d25b1321c965b8b}
-      \strng{fullhash}{424ab9eacea94c25eb4a8d5b78bd6b25}
-      \strng{bibnamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
-      \strng{authorbibnamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
-      \strng{authornamehash}{26b2d6185e9b3dc24d25b1321c965b8b}
-      \strng{authorfullhash}{424ab9eacea94c25eb4a8d5b78bd6b25}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The trait approach has already indicated significant potential as a tool in understanding natural variation among species in sensitivity to contaminants in the process of ecological risk assessment. However, to realize its full potential, a defined nomenclature for traits is urgently required, and significant effort is required to populate databases of species–trait relationships. Recently, there have been significant advances in the area of information management and discovery in the area of the semantic web. Combined with continuing progress in biological trait knowledge, these suggest that the time is right for a reevaluation of how trait information from divergent research traditions is collated and made available for end users in the field of environmental management. Although there has already been a great deal of work on traits, the information is scattered throughout databases, literature, and undiscovered sources. Further progress will require better leverage of this existing data and research to fill in the gaps. We review and discuss a number of technical and social challenges to bringing together existing information and moving toward a new, collaborative approach. Finally, we outline a path toward enhanced knowledge discovery within the traits domain space, showing that, by linking knowledge management infrastructure, semantic metadata (trait ontologies), and Web 2.0 and 3.0 technologies, we can begin to construct a dedicated platform for {TERA} science. Integr Environ Assess Manag 2011;7:209–215. © 2010 {SETAC}}
-      \field{issn}{1551-3793}
-      \field{journaltitle}{Integrated Environmental Assessment and Management}
-      \field{langid}{english}
-      \field{note}{\_eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.129}
-      \field{number}{2}
-      \field{title}{Toward a knowledge infrastructure for traits-based ecological risk assessment}
-      \field{urlday}{11}
-      \field{urlmonth}{8}
-      \field{urlyear}{2020}
-      \field{volume}{7}
-      \field{year}{2011}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{209\bibrangedash 215}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1002/ieam.129
-      \endverb
-      \verb{file}
-      \verb Full Text PDF:/home/kunz/Zotero/storage/P3XD96V2/Baird et al. - 2011 - Toward a knowledge infrastructure for traits-based.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/CNDLWTPB/ieam.html:text/html
-      \endverb
-      \verb{urlraw}
-      \verb https://setac.onlinelibrary.wiley.com/doi/abs/10.1002/ieam.129
-      \endverb
-      \verb{url}
-      \verb https://setac.onlinelibrary.wiley.com/doi/abs/10.1002/ieam.129
-      \endverb
-      \keyw{Ecological risk assesssment,Knowledge infrastructure,Traits}
-    \endentry
     \entry{culp_incorporating_2011}{article}{}
       \name{author}{8}{}{%
         {{hash=365b3bb8b6133f87b30f1faf36588d52}{%
@@ -1538,6 +1538,57 @@
       \endverb
       \keyw{Bioassessment,Biomonitoring,Causal diagnosis,Prediction,Traits}
     \endentry
+    \entry{vos_taxonomic_2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6ba54d612e089ec979967be0e519d384}{%
+           family={Voß},
+           familyi={V\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=6e43e903b9ca28adb6031c0673103b9e}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={R.B.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{ff7ea5f9621849f0bc0489f87b482495}
+      \strng{fullhash}{ff7ea5f9621849f0bc0489f87b482495}
+      \strng{bibnamehash}{ff7ea5f9621849f0bc0489f87b482495}
+      \strng{authorbibnamehash}{ff7ea5f9621849f0bc0489f87b482495}
+      \strng{authornamehash}{ff7ea5f9621849f0bc0489f87b482495}
+      \strng{authorfullhash}{ff7ea5f9621849f0bc0489f87b482495}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Anthropogenic stress has been identiﬁed as main driver of freshwater biodiversity loss. Adverse eﬀects on the biodiversity of freshwater organisms, such as macroinvertebrates, may propagate to associated ecosystem functions, such as organic matter breakdown ({OMB}). In this context, the functional diversity ({FD}) of communities has been suggested to be a more suitable predictor of changes in ecosystem functions than taxonomic diversity ({TD}). We investigated the response of {TD} and {FD} of invertebrate communities to an environmental stress gradient and the relation of both metrics to the rate of organic matter breakdown. For this, we sampled macroinvertebrates and determined {OMB} using leaf bags along an environmental stress gradient (i.e. changes in physicochemical and hydromorphological conditions) in 29 low-order streams. Taxonomic richness decreased with increasing environmental stress (r = −0.55) but was not related to {OMB}. Conversely, the Simpson diversity of communities was not associated with the gradient but correlated moderately (r = 0.41) with {OMB}. Of three functional diversity indices (functional richness, evenness and divergence), only functional richness correlated moderately with the stress gradient (r = −0.41) and any of the indices correlated with {OMB}. Nevertheless, functional metrics such as speciﬁc trait modalities and the total abundance of the dominant shredders correlated higher (r = 0.46 and 0.48) with {OMB} than the {TD} indices. Given a relatively small species pool in our study and methodical constraints such as the limited resolution of autecological information, the {FD} might perform better in other contexts and if focusing on response and eﬀect traits for the stressor and ecosystem function under scrutiny, respectively.}
+      \field{issn}{1470160X}
+      \field{journaltitle}{Ecological Indicators}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{title}{Taxonomic and functional diversity of stream invertebrates along an environmental stress gradient}
+      \field{urlday}{13}
+      \field{urlmonth}{4}
+      \field{urlyear}{2018}
+      \field{volume}{81}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{235\bibrangedash 242}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/j.ecolind.2017.05.072
+      \endverb
+      \verb{file}
+      \verb Voß und Schäfer - 2017 - Taxonomic and functional diversity of stream inver.pdf:/home/kunz/Zotero/storage/HL2JP6IT/Voß und Schäfer - 2017 - Taxonomic and functional diversity of stream inver.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://linkinghub.elsevier.com/retrieve/pii/S1470160X17303412
+      \endverb
+      \verb{url}
+      \verb http://linkinghub.elsevier.com/retrieve/pii/S1470160X17303412
+      \endverb
+    \endentry
     \entry{piliere_a._f._h._importance_2016}{article}{}
       \name{author}{9}{}{%
         {{hash=0858cca0e7bec05e8fc1f5cd188a1d67}{%
@@ -1609,6 +1660,204 @@
       \endverb
       \keyw{macroinvertebrates,functional group,functional traits,streams,taxonomy}
     \endentry
+    \entry{aspin_extreme_2019}{article}{}
+      \name{author}{8}{}{%
+        {{hash=03832caf450312dd3444db20df21e816}{%
+           family={Aspin},
+           familyi={A\bibinitperiod},
+           given={Thomas\bibnamedelimb W.\bibnamedelimi H.},
+           giveni={T\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=69cd2e863542d12196e5c3151cfda39e}{%
+           family={Khamis},
+           familyi={K\bibinitperiod},
+           given={Kieran},
+           giveni={K\bibinitperiod}}}%
+        {{hash=aa925d47ff8236cf2a090e2838449980}{%
+           family={Matthews},
+           familyi={M\bibinitperiod},
+           given={Thomas\bibnamedelima J.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=21766dcf8bfd74f832c51ab1f7e5e7c6}{%
+           family={Milner},
+           familyi={M\bibinitperiod},
+           given={Alexander\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=06c945ffb3404d1e0760fad45f8addad}{%
+           family={O’Callaghan},
+           familyi={O\bibinitperiod},
+           given={Matthew\bibnamedelima J.},
+           giveni={M\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=cdc16872c46e3e014cea4caf70bad9ff}{%
+           family={Trimmer},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=b06b7f209abdfdb38ea86e3dca769af7}{%
+           family={Woodward},
+           familyi={W\bibinitperiod},
+           given={Guy},
+           giveni={G\bibinitperiod}}}%
+        {{hash=f75dc6d19d504c3127ef637735bc9c92}{%
+           family={Ledger},
+           familyi={L\bibinitperiod},
+           given={Mark\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{52242f3d343df9fa0df8d2088bfa26d4}
+      \strng{fullhash}{e5deb39ec4ff6c43e5e306fb4ada9aaf}
+      \strng{bibnamehash}{52242f3d343df9fa0df8d2088bfa26d4}
+      \strng{authorbibnamehash}{52242f3d343df9fa0df8d2088bfa26d4}
+      \strng{authornamehash}{52242f3d343df9fa0df8d2088bfa26d4}
+      \strng{authorfullhash}{e5deb39ec4ff6c43e5e306fb4ada9aaf}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Functional traits are increasingly being used to predict extinction risks and range shifts under long-term climate change scenarios, but have rarely been used to study vulnerability to extreme climatic events, such as supraseasonal droughts. In streams, drought intensification can cross thresholds of habitat loss, where marginal changes in environmental conditions trigger disproportionate biotic responses. However, these thresholds have been studied only from a structural perspective, and the existence of functional nonlinearity remains unknown. We explored trends in invertebrate community functional traits along a gradient of drought intensity, simulated over 18 months, using mesocosms analogous to lowland headwater streams. We modelled the responses of 16 traits based on a priori predictions of trait filtering by drought, and also examined the responses of trait profile groups ({TPGs}) identified via hierarchical cluster analysis. As responses to drought intensification were both linear and nonlinear, generalized additive models ({GAMs}) were chosen to model response curves, with the slopes of fitted splines used to detect functional thresholds during drought. Drought triggered significant responses in 12 (75\%) of the a priori-selected traits. Behavioural traits describing movement (dispersal, locomotion) and diet were sensitive to moderate-intensity drought, as channels fragmented into isolated pools. By comparison, morphological and physiological traits showed little response until surface water was lost, at which point we observed sudden shifts in body size, respiration mode and thermal tolerance. Responses varied widely among {TPGs}, ranging from population collapses of non-aerial dispersers as channels fragmented to irruptions of small, eurythermic dietary generalists upon extreme dewatering. Our study demonstrates for the first time that relatively small changes in drought intensity can trigger disproportionately large functional shifts in stream communities, suggesting that traits-based approaches could be particularly useful for diagnosing catastrophic ecological responses to global change.}
+      \field{issn}{1365-2486}
+      \field{journaltitle}{Global Change Biology}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Extreme drought pushes stream invertebrate communities over functional thresholds}
+      \field{urlday}{31}
+      \field{urlmonth}{1}
+      \field{urlyear}{2019}
+      \field{volume}{25}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{230\bibrangedash 244}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1111/gcb.14495
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/YBCDLDSU/Aspin et al. - 2019 - Extreme drought pushes stream invertebrate communi.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/S73FBFNK/gcb.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.14495
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.14495
+      \endverb
+      \keyw{macroinvertebrates,functional traits,climate change,disturbance gradient,drought,ecological threshold,stream drying}
+    \endentry
+    \entry{magliozzi_functional_2019}{article}{}
+      \name{author}{4}{}{%
+        {{hash=6b917d2089bd43bd28ced75a60a3f87a}{%
+           family={Magliozzi},
+           familyi={M\bibinitperiod},
+           given={Chiara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=95901dc985919aa1c2aaa316945767e7}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Albin},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8511c38f2f50a20f20d37ee7f5943309}{%
+           family={Grabowski},
+           familyi={G\bibinitperiod},
+           given={Robert\bibnamedelima C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=dbe7ef8a25974d90277b97db31020023}{%
+           family={Alahuhta},
+           familyi={A\bibinitperiod},
+           given={Janne},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f2e74f012a4a2033173a2738876dd727}
+      \strng{fullhash}{af0476f71658bb9c0b96c055bf6a9c4d}
+      \strng{bibnamehash}{f2e74f012a4a2033173a2738876dd727}
+      \strng{authorbibnamehash}{f2e74f012a4a2033173a2738876dd727}
+      \strng{authornamehash}{f2e74f012a4a2033173a2738876dd727}
+      \strng{authorfullhash}{af0476f71658bb9c0b96c055bf6a9c4d}
+      \strng{editorbibnamehash}{dbe7ef8a25974d90277b97db31020023}
+      \strng{editornamehash}{dbe7ef8a25974d90277b97db31020023}
+      \strng{editorfullhash}{dbe7ef8a25974d90277b97db31020023}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0269-8463, 1365-2435}
+      \field{journaltitle}{Functional Ecology}
+      \field{langid}{english}
+      \field{month}{9}
+      \field{number}{9}
+      \field{shortjournal}{Funct Ecol}
+      \field{title}{Functional traits of hyporheic and benthic invertebrates reveal importance of wood‐driven geomorphological processes in rivers}
+      \field{urlday}{14}
+      \field{urlmonth}{11}
+      \field{urlyear}{2019}
+      \field{volume}{33}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1758\bibrangedash 1770}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/1365-2435.13381
+      \endverb
+      \verb{file}
+      \verb Magliozzi et al. - 2019 - Functional traits of hyporheic and benthic inverte.pdf:/home/kunz/Zotero/storage/2KBJZIS8/Magliozzi et al. - 2019 - Functional traits of hyporheic and benthic inverte.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1365-2435.13381
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/1365-2435.13381
+      \endverb
+    \endentry
+    \entry{polatera_personal_information_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{fullhash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{bibnamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authorbibnamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authornamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authorfullhash}{aed38a260fe5c724956e80260a838ddf}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Personal information}
+      \field{title}{Personal information on body form traits.}
+      \field{year}{2020}
+    \endentry
+    \entry{polatera_personal_information_piercer_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{fullhash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{bibnamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authorbibnamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authornamehash}{aed38a260fe5c724956e80260a838ddf}
+      \strng{authorfullhash}{aed38a260fe5c724956e80260a838ddf}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Personal information}
+      \field{title}{Classification of piercers as herbivores or predators.}
+      \field{year}{2020}
+    \endentry
     \entry{chessman_dissolved-oxygen_2018}{article}{}
       \name{author}{1}{}{%
         {{hash=487467256a1e5d81f86f3efd29ea28d3}{%
@@ -1659,6 +1908,28 @@
       \verb https://doi.org/10.1007/s10750-017-3455-1
       \endverb
       \keyw{Climate,Diet,Respiration,Rheophily,River,Thermal,Trait}
+    \endentry
+    \entry{twardochleb_personal_information_mpyne_2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=77c1c8d42ee53f26e7b5d387755cb228}{%
+           family={Twardochleb},
+           familyi={T\bibinitperiod},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \strng{fullhash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \strng{bibnamehash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \strng{authorbibnamehash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \strng{authornamehash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \strng{authorfullhash}{77c1c8d42ee53f26e7b5d387755cb228}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Personal information}
+      \field{title}{At family-level assigned traits originate from Pyne, Matt.}
+      \field{year}{2020}
     \endentry
   \enddatalist
 \endrefsection

@@ -1,0 +1,9 @@
+[1] Config.pm:302> INFO - This is Biber 2.9
+[1] Config.pm:305> INFO - Logfile is 'Results/SI.blg'
+[47] biber:313> INFO - === Mo Aug 31, 2020, 17:43:21
+[92] Biber.pm:371> INFO - Reading 'Results/SI.bcf'
+[226] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[243] Utils.pm:169> WARN - The file 'Results/SI.bcf' does not contain any citations!
+[264] bbl.pm:617> INFO - Writing 'Results/SI.bbl' with encoding 'UTF-8'
+[265] bbl.pm:720> INFO - Output to Results/SI.bbl
+[265] Biber.pm:110> INFO - WARNINGS: 1

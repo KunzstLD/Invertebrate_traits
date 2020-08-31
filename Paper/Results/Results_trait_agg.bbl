@@ -18,15 +18,14 @@
 
 
 \refsection{0}
-  \datalist[entry]{nyt/global//global/global}
+  \datalist[entry]{none/global//global/global}
     \entry{chessman_dissolved-oxygen_2018}{article}{}
       \name{author}{1}{}{%
-        {{uniquename=0,uniquepart=base,hash=487467256a1e5d81f86f3efd29ea28d3}{%
+        {{hash=487467256a1e5d81f86f3efd29ea28d3}{%
            family={Chessman},
            familyi={C\bibinitperiod},
            given={B.\bibnamedelimi C.},
-           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod},
-           givenun=0}}%
+           giveni={B\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
       }
       \strng{namehash}{487467256a1e5d81f86f3efd29ea28d3}
       \strng{fullhash}{487467256a1e5d81f86f3efd29ea28d3}
@@ -34,10 +33,8 @@
       \strng{authorbibnamehash}{487467256a1e5d81f86f3efd29ea28d3}
       \strng{authornamehash}{487467256a1e5d81f86f3efd29ea28d3}
       \strng{authorfullhash}{487467256a1e5d81f86f3efd29ea28d3}
-      \field{sortinit}{C}
-      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Preferences of stream invertebrate families in south-eastern Australia for dissolved oxygen (‘hydroaerophily’), current velocity (rheophily) and temperature (‘thermophily’) were estimated from occurrences in an extensive multi-year dataset covering New South Wales and the Australian Capital Territory, and tested with another dataset covering the entire Murray–Darling Basin ({MDB}). As hypothesised, all three traits were strongly associated with long-term climate (annual precipitation and average temperature), whereas taxonomic richness had only weak associations with these climatic variables. Moreover, average hydroaerophily and rheophily of families in samples from the {MDB} decreased between 2004 and 2010 during the intense ‘Millennium Drought’, while average thermophily rose. These changes were reversed during 2010–2012 after the drought broke. Hydroaerophily, rheophily and thermophily were correlated with one another and with respiration mode, suggesting a trait syndrome related to adaptation to rhithron versus potamon and lentic environments. Hydroaerophily, rheophily and thermophily have the capacity to identify species that are vulnerable to future climatic warming and drying. These traits are also correlated with diet, indicating potential consequences for ecosystem processes of climate-related shifts in the composition of stream invertebrate assemblages.}

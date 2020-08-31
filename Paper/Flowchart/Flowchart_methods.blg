@@ -1,0 +1,9 @@
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'Flowchart/Flowchart_methods.blg'
+[27] biber:313> INFO - === Fr Aug 28, 2020, 14:54:00
+[53] Biber.pm:371> INFO - Reading 'Flowchart/Flowchart_methods.bcf'
+[117] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[125] Utils.pm:169> WARN - The file 'Flowchart/Flowchart_methods.bcf' does not contain any citations!
+[135] bbl.pm:617> INFO - Writing 'Flowchart/Flowchart_methods.bbl' with encoding 'UTF-8'
+[136] bbl.pm:720> INFO - Output to Flowchart/Flowchart_methods.bbl
+[136] Biber.pm:110> INFO - WARNINGS: 1

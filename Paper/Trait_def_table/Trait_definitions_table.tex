@@ -1,11 +1,6 @@
 \documentclass[../Draft_harmonization_paper.tex]{subfiles}
-% \documentclass{article}
-% \usepackage{rotating} 
-% \usepackage{geometry}
-% \usepackage{array}
-% \usepackage{lscape}
-% \usepackage{longtable}
-% \usepackage{hhline}
+
+
 
 \begin{document}
 
@@ -22,7 +17,7 @@
 % TODO Use abbreviation for no precise definition given
 % TODO Reproduction traits not mentioned since only the differentiation differed between databases, Similarly for Body Form
 % TODO Start with mentioning that two core differences can exist: 1) definitions can be different semantically; 2) traits can be combined or more differentiated 
-\section{Discrepancies of invertebrate trait definitions}
+\subsection*{Discrepancies of invertebrate trait definitions}
 
 Definitions of grouping features and traits varied in their level of detail. The Tachet, Freshwaterecology, and North American (Twardochleb) trait databases provided more detailed descriptions of their trait information compared to the North American (Vieira) and New Zealand databases. An exception is the Australian trait database which is a collection of seven trait datasets (\cite{kefford_integrated_2020}). Thus, grouping features occur multiple times with varying differentiation into traits. Depending on the dataset trait information is described with more or less detail. %? use term membership state (Schmera)
 
@@ -62,14 +57,13 @@ Various codings of traits are used throughout the databases (e.g. binary, fuzzy,
 % None of the seven grouping features compared here has the same differentiation of traits across all databases (Table \ref{tab:trait_databases})
 % Table with diff trait states and coding
 \begin{landscape}
-    \begin{longtable}{|m{2.5cm}|m{1.8cm}|m{2.3cm}|m{1.8cm}|m{3cm}|m{2cm}|m{2cm}|m{1.8cm}|}
+    \begin{longtable}{m{2.5cm}|m{1.8cm}|m{2.3cm}|m{1.8cm}|m{3cm}|m{2cm}|m{2cm}|m{1.8cm}}
     \caption{Number of traits per grouping feature and type of coding of the traits for the respective grouping feature per database.}
     \endfirsthead
-    \hline
+    \\
     \label{tab:trait_databases_coding_differentiation}
     Database & Feeding Mode & Voltinism & Locomotion & Respiration & Reproduction & Size & Body Form \\ 
-    \hline
-    \hline
+    \toprule[.1em]
     \multirow{2}{*}[-5mm]{ \specialcell{Freshwater- \\ ecology}} & 
     10 & 
     6 &
@@ -130,7 +124,7 @@ Various codings of traits are used throughout the databases (e.g. binary, fuzzy,
     5 
     \\
     \cline{2-8} &
-    \multicolumn{7}{c |}{binary}
+    \multicolumn{7}{c }{binary}
     \\
     \hline
     \hline
@@ -163,9 +157,9 @@ Various codings of traits are used throughout the databases (e.g. binary, fuzzy,
     4
     \\
     \cline{2-8} & 
-    \multicolumn{7}{c |}{fuzzy $[0-3]$}
+    \multicolumn{7}{c }{fuzzy $[0-3]$}
     \\
-    \hline
+    \bottomrule
     \end{longtable}
     \begin{minipage}{\linewidth}\small
         \textit{a} Some of the traits were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
