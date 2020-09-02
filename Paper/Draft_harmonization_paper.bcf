@@ -91,11 +91,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxbibnames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>99</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxcitenames</bcf:key>
-      <bcf:value>3</bcf:value>
+      <bcf:value>999</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>maxitems</bcf:key>
@@ -107,11 +107,11 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minbibnames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>mincitenames</bcf:key>
-      <bcf:value>1</bcf:value>
+      <bcf:value>3</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>minitems</bcf:key>
@@ -373,6 +373,7 @@
     <bcf:option datatype="boolean">eprint</bcf:option>
     <bcf:option datatype="boolean">related</bcf:option>
     <bcf:option datatype="boolean">subentry</bcf:option>
+    <bcf:option datatype="boolean">dashed</bcf:option>
     <bcf:option datatype="integer">mincrossrefs</bcf:option>
     <bcf:option datatype="integer">minxrefs</bcf:option>
     <bcf:option datatype="integer">maxnames</bcf:option>
@@ -1924,66 +1925,69 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">mcgill_rebuilding_2006</bcf:citekey>
-    <bcf:citekey order="2">poff_developing_2010</bcf:citekey>
-    <bcf:citekey order="2">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="2">bhowmik_large_2015</bcf:citekey>
-    <bcf:citekey order="2">menezes_beyond_2010</bcf:citekey>
+    <bcf:citekey order="2">heino_jani_macroecological_2013</bcf:citekey>
     <bcf:citekey order="3">southwood_habitat_1977</bcf:citekey>
     <bcf:citekey order="3">verberk_delivering_2013</bcf:citekey>
     <bcf:citekey order="4">bonada_taxonomic_2007</bcf:citekey>
     <bcf:citekey order="4">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="5">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="5">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
-    <bcf:citekey order="5">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="5">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
-    <bcf:citekey order="5">kefford_integrated_2020</bcf:citekey>
-    <bcf:citekey order="5">tomanova_trophic_2006</bcf:citekey>
-    <bcf:citekey order="6">bonada_taxonomic_2007</bcf:citekey>
+    <bcf:citekey order="5">moog_comprehensive_nodate</bcf:citekey>
+    <bcf:citekey order="6">poff_developing_2010</bcf:citekey>
+    <bcf:citekey order="6">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="6">bhowmik_large_2015</bcf:citekey>
+    <bcf:citekey order="6">menezes_beyond_2010</bcf:citekey>
     <bcf:citekey order="7">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="8">poff_developing_2010</bcf:citekey>
-    <bcf:citekey order="9">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="10">botwe_effects_2018</bcf:citekey>
+    <bcf:citekey order="7">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
+    <bcf:citekey order="7">vieira_database_nodate</bcf:citekey>
+    <bcf:citekey order="7">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
+    <bcf:citekey order="7">kefford_integrated_2020</bcf:citekey>
+    <bcf:citekey order="7">tomanova_trophic_2006</bcf:citekey>
+    <bcf:citekey order="8">bonada_taxonomic_2007</bcf:citekey>
+    <bcf:citekey order="9">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="10">poff_developing_2010</bcf:citekey>
     <bcf:citekey order="11">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="12">schafer_trait_2011</bcf:citekey>
-    <bcf:citekey order="13">schmera_proposed_2015</bcf:citekey>
-    <bcf:citekey order="14">brown_functional_2018</bcf:citekey>
-    <bcf:citekey order="15">schneider_towards_2019</bcf:citekey>
-    <bcf:citekey order="16">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="16">schneider_towards_2019</bcf:citekey>
-    <bcf:citekey order="17">culp_incorporating_2011</bcf:citekey>
-    <bcf:citekey order="18">brown_functional_2018</bcf:citekey>
-    <bcf:citekey order="19">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="19">vos_taxonomic_2017</bcf:citekey>
-    <bcf:citekey order="20">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="20">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="20">piliere_a._f._h._importance_2016</bcf:citekey>
-    <bcf:citekey order="20">aspin_extreme_2019</bcf:citekey>
-    <bcf:citekey order="21">magliozzi_functional_2019</bcf:citekey>
+    <bcf:citekey order="12">botwe_effects_2018</bcf:citekey>
+    <bcf:citekey order="13">poff_functional_2006</bcf:citekey>
+    <bcf:citekey order="14">schafer_trait_2011</bcf:citekey>
+    <bcf:citekey order="15">schmera_proposed_2015</bcf:citekey>
+    <bcf:citekey order="16">brown_functional_2018</bcf:citekey>
+    <bcf:citekey order="17">schneider_towards_2019</bcf:citekey>
+    <bcf:citekey order="18">baird_toward_2011</bcf:citekey>
+    <bcf:citekey order="18">schneider_towards_2019</bcf:citekey>
+    <bcf:citekey order="19">culp_incorporating_2011</bcf:citekey>
+    <bcf:citekey order="20">brown_functional_2018</bcf:citekey>
+    <bcf:citekey order="21">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="21">vos_taxonomic_2017</bcf:citekey>
+    <bcf:citekey order="22">poff_functional_2006</bcf:citekey>
     <bcf:citekey order="22">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="23">piliere_a._f._h._importance_2016</bcf:citekey>
+    <bcf:citekey order="22">piliere_a._f._h._importance_2016</bcf:citekey>
+    <bcf:citekey order="22">aspin_extreme_2019</bcf:citekey>
+    <bcf:citekey order="23">magliozzi_functional_2019</bcf:citekey>
     <bcf:citekey order="24">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="25">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
-    <bcf:citekey order="26">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="27">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="28">polatera_personal_information_2020</bcf:citekey>
-    <bcf:citekey order="29">kefford_integrated_2020</bcf:citekey>
-    <bcf:citekey order="30">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
-    <bcf:citekey order="31">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="32">polatera_personal_information_piercer_2020</bcf:citekey>
-    <bcf:citekey order="33">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="34">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="35">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="36">twardochleb_personal_information_mpyne_2020</bcf:citekey>
-    <bcf:citekey order="37">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="38">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="39">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="25">piliere_a._f._h._importance_2016</bcf:citekey>
+    <bcf:citekey order="26">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="27">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
+    <bcf:citekey order="28">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="29">twardochleb_trait_data_2020</bcf:citekey>
+    <bcf:citekey order="30">vieira_database_nodate</bcf:citekey>
+    <bcf:citekey order="31">polatera_personal_information_2020</bcf:citekey>
+    <bcf:citekey order="32">kefford_integrated_2020</bcf:citekey>
+    <bcf:citekey order="33">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
+    <bcf:citekey order="34">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="35">polatera_personal_information_piercer_2020</bcf:citekey>
+    <bcf:citekey order="36">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="37">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="38">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="39">twardochleb_trait_data_2020</bcf:citekey>
     <bcf:citekey order="40">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="41">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="42">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="43">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="42">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="43">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="44">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="45">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="46">kefford_integrated_2020</bcf:citekey>
+    <bcf:citekey order="45">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="46">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="47">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="48">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="49">kefford_integrated_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

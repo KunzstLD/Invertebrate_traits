@@ -67,11 +67,11 @@
            given={Ross\bibnamedelima M.},
            giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \strng{namehash}{02439551dab32292fe77119845749d9e}
+      \strng{namehash}{d8855cc9139f6d7f4fb053826bd5c66a}
       \strng{fullhash}{d8855cc9139f6d7f4fb053826bd5c66a}
-      \strng{bibnamehash}{02439551dab32292fe77119845749d9e}
-      \strng{authorbibnamehash}{02439551dab32292fe77119845749d9e}
-      \strng{authornamehash}{02439551dab32292fe77119845749d9e}
+      \strng{bibnamehash}{d8855cc9139f6d7f4fb053826bd5c66a}
+      \strng{authorbibnamehash}{d8855cc9139f6d7f4fb053826bd5c66a}
+      \strng{authornamehash}{d8855cc9139f6d7f4fb053826bd5c66a}
       \strng{authorfullhash}{d8855cc9139f6d7f4fb053826bd5c66a}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
@@ -81,17 +81,12 @@
       \field{issn}{1470160X}
       \field{journaltitle}{Ecological Indicators}
       \field{langid}{english}
-      \field{month}{7}
       \field{shortjournal}{Ecological Indicators}
       \field{shorttitle}{An integrated database of stream macroinvertebrate traits for Australia}
       \field{title}{An integrated database of stream macroinvertebrate traits for Australia: concept and application}
-      \field{urlday}{5}
-      \field{urlmonth}{5}
-      \field{urlyear}{2020}
       \field{volume}{114}
       \field{year}{2020}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{106280}
       \range{pages}{1}
       \verb{doi}

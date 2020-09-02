@@ -38,22 +38,16 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Preferences of stream invertebrate families in south-eastern Australia for dissolved oxygen (‘hydroaerophily’), current velocity (rheophily) and temperature (‘thermophily’) were estimated from occurrences in an extensive multi-year dataset covering New South Wales and the Australian Capital Territory, and tested with another dataset covering the entire Murray–Darling Basin ({MDB}). As hypothesised, all three traits were strongly associated with long-term climate (annual precipitation and average temperature), whereas taxonomic richness had only weak associations with these climatic variables. Moreover, average hydroaerophily and rheophily of families in samples from the {MDB} decreased between 2004 and 2010 during the intense ‘Millennium Drought’, while average thermophily rose. These changes were reversed during 2010–2012 after the drought broke. Hydroaerophily, rheophily and thermophily were correlated with one another and with respiration mode, suggesting a trait syndrome related to adaptation to rhithron versus potamon and lentic environments. Hydroaerophily, rheophily and thermophily have the capacity to identify species that are vulnerable to future climatic warming and drying. These traits are also correlated with diet, indicating potential consequences for ecosystem processes of climate-related shifts in the composition of stream invertebrate assemblages.}
-      \field{day}{1}
       \field{issn}{1573-5117}
       \field{journaltitle}{Hydrobiologia}
       \field{langid}{english}
-      \field{month}{3}
       \field{number}{1}
       \field{shortjournal}{Hydrobiologia}
       \field{shorttitle}{Dissolved-oxygen, current and temperature preferences of stream invertebrates estimated from field distributions}
       \field{title}{Dissolved-oxygen, current and temperature preferences of stream invertebrates estimated from field distributions: application to assemblage responses to drought}
-      \field{urlday}{8}
-      \field{urlmonth}{9}
-      \field{urlyear}{2019}
       \field{volume}{809}
       \field{year}{2018}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{141\bibrangedash 153}
       \range{pages}{13}
       \verb{doi}

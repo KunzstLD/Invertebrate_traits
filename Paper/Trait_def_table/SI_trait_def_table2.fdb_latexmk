@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Trait_def_table/SI_trait_def_table2"] 1598889370 "Trait_def_table/SI_trait_def_table2.bcf" "Trait_def_table/SI_trait_def_table2.bbl" "Trait_def_table/SI_trait_def_table2" 1598889643
-  "Trait_def_table/SI_trait_def_table2.bcf" 1598889643 87065 83c81bf50d3d5b7bb68baef07d6da286 ""
+["biber Trait_def_table/SI_trait_def_table2"] 1598980268 "Trait_def_table/SI_trait_def_table2.bcf" "Trait_def_table/SI_trait_def_table2.bbl" "Trait_def_table/SI_trait_def_table2" 1599057980
+  "Trait_def_table/SI_trait_def_table2.bcf" 1599057980 87123 9b50dd681f981451536be8960e57f88e ""
   (generated)
   "Trait_def_table/SI_trait_def_table2.bbl"
   "Trait_def_table/SI_trait_def_table2.blg"
-["pdflatex"] 1598889643 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" "Trait_def_table/SI_trait_def_table2.pdf" "SI_trait_def_table2" 1598889643
+["pdflatex"] 1599057979 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" "Trait_def_table/SI_trait_def_table2.pdf" "SI_trait_def_table2" 1599057980
   "/etc/texmf/web2c/texmf.cnf" 1544004452 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" 1598889642 25699 49fd8fe2f9f2b7be2a9515ba042f48f6 ""
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/SI_trait_def_table2.tex" 1599057977 25712 00b24eb84aa4c36948c4974626dd638e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1480098701 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm" 1480098701 1524 d89e2d087a9828407a196f428428ef4a ""
@@ -92,6 +92,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo" 1480098821 8292 e897c12e1e886ce77fe26afc5d470886 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu" 1487721667 11255 9d97362866549d3d3c994b5f28d1b9b5 ""
   "/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def" 1487721667 7784 325a2a09984cb5c4ff230f9867145ad3 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx" 1490650914 18900 3874c1b081717f3ba5f9fa8922337b3a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx" 1480098822 92 7cdbb04a1e32fba0fbb91b6e6d123497 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx" 1510525977 1672 30daac53a3b9ecb172365211fcaa2ba2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx" 1510525977 24058 cd811a83cd43b6abd1663d66fd536cfd ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg" 1480098822 69 249fa6df04d948e51b6d5c67bea30c42 ""
@@ -152,16 +154,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1544004459 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1544004481 4131366 4653ad3021cea65bda482bdd29f7dc1c ""
-  "Trait_def_table/../Draft_harmonization_paper.tex" 1598889324 25739 688fe65c471e6d0f43919c03db6ac3d0 ""
-  "Trait_def_table/SI_trait_def_table2.aux" 1598889643 2699 bab1fbc42e206429e21fd042c85d23c5 ""
-  "Trait_def_table/SI_trait_def_table2.bbl" 1598889372 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Trait_def_table/SI_trait_def_table2"
-  "Trait_def_table/SI_trait_def_table2.out" 1598889643 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Trait_def_table/SI_trait_def_table2.run.xml" 1598889643 2424 96144efcd9c9ff9e601af0c4cbeb6ac8 ""
-  "Trait_def_table/SI_trait_def_table2.tex" 1598889642 25699 49fd8fe2f9f2b7be2a9515ba042f48f6 ""
+  "Trait_def_table/../Draft_harmonization_paper.tex" 1599057782 26278 2ed45016eeba623b09946fc8d7a86632 ""
+  "Trait_def_table/SI_trait_def_table2.aux" 1599057980 2700 76a6a8019c584e56fd516bbb7fefa786 ""
+  "Trait_def_table/SI_trait_def_table2.bbl" 1598980269 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Trait_def_table/SI_trait_def_table2"
+  "Trait_def_table/SI_trait_def_table2.out" 1599057980 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Trait_def_table/SI_trait_def_table2.run.xml" 1599057980 2488 98f012cd0a11237f3c36f77ef4aeb1ce ""
+  "Trait_def_table/SI_trait_def_table2.tex" 1599057977 25712 00b24eb84aa4c36948c4974626dd638e ""
   (generated)
-  "Trait_def_table/SI_trait_def_table2.run.xml"
+  "Trait_def_table/SI_trait_def_table2.out"
   "Trait_def_table/SI_trait_def_table2.bcf"
   "Trait_def_table/SI_trait_def_table2.log"
-  "Trait_def_table/SI_trait_def_table2.out"
   "Trait_def_table/SI_trait_def_table2.pdf"
+  "Trait_def_table/SI_trait_def_table2.run.xml"
   "Trait_def_table/SI_trait_def_table2.aux"

@@ -42,11 +42,11 @@
            given={Ralf\bibnamedelima B.},
            giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
       }
-      \strng{namehash}{ab7672b65ede47bbccf412b8f5645d0b}
+      \strng{namehash}{a134c20051c63698eb6848beb3d3eda6}
       \strng{fullhash}{a134c20051c63698eb6848beb3d3eda6}
-      \strng{bibnamehash}{ab7672b65ede47bbccf412b8f5645d0b}
-      \strng{authorbibnamehash}{ab7672b65ede47bbccf412b8f5645d0b}
-      \strng{authornamehash}{ab7672b65ede47bbccf412b8f5645d0b}
+      \strng{bibnamehash}{a134c20051c63698eb6848beb3d3eda6}
+      \strng{authorbibnamehash}{a134c20051c63698eb6848beb3d3eda6}
+      \strng{authornamehash}{a134c20051c63698eb6848beb3d3eda6}
       \strng{authorfullhash}{a134c20051c63698eb6848beb3d3eda6}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
@@ -56,16 +56,11 @@
       \field{issn}{00489697}
       \field{journaltitle}{Science of The Total Environment}
       \field{langid}{english}
-      \field{month}{1}
       \field{shortjournal}{Science of The Total Environment}
       \field{title}{Effects of anthropogenic salinization on biological traits and community composition of stream macroinvertebrates}
-      \field{urlday}{26}
-      \field{urlmonth}{3}
-      \field{urlyear}{2020}
       \field{volume}{468-469}
       \field{year}{2014}
       \field{dateera}{ce}
-      \field{urldateera}{ce}
       \field{pages}{943\bibrangedash 949}
       \range{pages}{7}
       \verb{doi}
