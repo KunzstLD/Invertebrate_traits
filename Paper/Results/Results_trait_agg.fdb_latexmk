@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber Results/Results_trait_agg"] 1599052410 "Results/Results_trait_agg.bcf" "Results/Results_trait_agg.bbl" "Results/Results_trait_agg" 1599052757
+["biber Results/Results_trait_agg"] 1599052410 "Results/Results_trait_agg.bcf" "Results/Results_trait_agg.bbl" "Results/Results_trait_agg" 1599230649
   "Ref_invertebrate_DB.bib" 1599040068 84627 90297ca6ddd8b2e3dd8cb9337fb81676 ""
-  "Results/Results_trait_agg.bcf" 1599052757 87267 40a1679c2a85ee50581458e305fe643c ""
+  "Results/Results_trait_agg.bcf" 1599230648 87267 40a1679c2a85ee50581458e305fe643c ""
   (generated)
-  "Results/Results_trait_agg.bbl"
   "Results/Results_trait_agg.blg"
-["pdflatex"] 1599052756 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" "Results/Results_trait_agg.pdf" "Results_trait_agg" 1599052757
+  "Results/Results_trait_agg.bbl"
+["pdflatex"] 1599230647 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" "Results/Results_trait_agg.pdf" "Results_trait_agg" 1599230649
   "/etc/texmf/web2c/texmf.cnf" 1544004452 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" 1599052755 4508 0af8cdda90111bdd41e633c3c1c1615d ""
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" 1599230646 4506 56de9221de243618e68dce34bf619368 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1480098701 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -149,16 +149,16 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1544004481 4131366 4653ad3021cea65bda482bdd29f7dc1c ""
   "Figures/Deviances_trait_agg_chessman.png" 1596120349 460275 32f4ae5c84d9fb7e1c78e18170fa22ff ""
   "Figures/Deviances_trait_agg_pyne.png" 1596120338 735879 a5897cd1a85583b526be9599ccd4df3b ""
-  "Results/../Draft_harmonization_paper.tex" 1599052643 26304 290727b9f05833b8d387d0fe07db24b5 ""
-  "Results/Results_trait_agg.aux" 1599052757 4193 b5346d4418d52025cf59b8fe161ccbaf ""
+  "Results/../Draft_harmonization_paper.tex" 1599230029 26485 25734012f389df2f8689e466dee16880 ""
+  "Results/Results_trait_agg.aux" 1599230648 4193 b5346d4418d52025cf59b8fe161ccbaf ""
   "Results/Results_trait_agg.bbl" 1599052411 3986 767b567e2de18f3b1924fb7dcf0c296f "biber Results/Results_trait_agg"
-  "Results/Results_trait_agg.out" 1599052756 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/Results_trait_agg.run.xml" 1599052757 2474 e181f4bb7da72d71cdcd5be5176bce01 ""
-  "Results/Results_trait_agg.tex" 1599052755 4508 0af8cdda90111bdd41e633c3c1c1615d ""
+  "Results/Results_trait_agg.out" 1599230648 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/Results_trait_agg.run.xml" 1599230648 2474 e181f4bb7da72d71cdcd5be5176bce01 ""
+  "Results/Results_trait_agg.tex" 1599230646 4506 56de9221de243618e68dce34bf619368 ""
   (generated)
   "Results/Results_trait_agg.out"
-  "Results/Results_trait_agg.aux"
-  "Results/Results_trait_agg.pdf"
   "Results/Results_trait_agg.log"
+  "Results/Results_trait_agg.aux"
   "Results/Results_trait_agg.bcf"
   "Results/Results_trait_agg.run.xml"
+  "Results/Results_trait_agg.pdf"
