@@ -23,10 +23,12 @@
 \subsection*{Re-analysis of Szöcs et al. using harmonized grouping features.}
 \label{subsec:SI_szoecs_reanalysis}
 
+\subsubsection*{RDA of trait composition}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=16.5cm, height=10cm]{RDA_traits_harmonized.png}
-    \caption{RDA of traits constrained by electric conductivity using harmonized grouping features. Boxplot of site scores along the conductivity axis ($31.44 \%$ explained variance, p = 0.001, 1000 permutations). Rug on the left indicates trait scores on the conductivity axis. Only traits with a mahalanobis distance greater than 5.02 were labeled in accordance to the procedure in Szöcs et al. 2014.
+    \caption{RDA of traits constrained by electric conductivity using harmonized grouping features. Boxplot of site scores along the conductivity axis ($31.44 \%$ explained variance, p = 0.001, 1000 permutations). Rug on the left indicates trait scores on the conductivity axis. Only traits with a mahalanobis distance greater than 5.02 were labeled in accordance to the procedure in Szöcs et al. \cite{szocs_effects_2014}.
     } 
 \end{figure}
 
@@ -37,7 +39,7 @@
     } 
 \end{figure}
 
-\section*{Trait distribution along first RDA axis} 
+\subsubsection*{Trait distribution along first RDA axis} 
 \begin{figure}[H]
     \centering
     \includegraphics[width=17.5cm, height=10cm]{Trait_distrb_harmonized.png}
@@ -48,13 +50,14 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=17.5cm, height=10cm]{Trait_distrb_Szoecs_2014.png}
-    \caption{Trait scores on the first RDA axis for the traits responding to high salinity in Szöcs et al. 2014
+    \caption{Trait scores on the first RDA axis for the traits responding to high salinity in Szöcs et al. \cite{szocs_effects_2014}
     .
     }
 \end{figure}
 
 \newpage
-\section*{Linear models of trait proportions}
+\subsubsection*{Linear models of trait proportions}
+
 \textit{Linear models of trait proportions with harmonized traits:}
 \begin{table}[ht]
     \centering
@@ -77,10 +80,10 @@
 \newline
 \newline
 \newline
-\textit{Linear models of trait proportions Szöcs et al. 2014:}
+\textit{Linear models of trait proportions Szöcs et al. :}
 \begin{table}[ht]
     \centering
-    \caption{Results of linear models for the five selected traits for Szöcs et al. 2014. Trait proportions were logit transformed prior model building, estimates are on the logit scale.
+    \caption{Results of linear models for the five selected traits for Szöcs et al. \cite{szocs_effects_2014}. Trait proportions were logit transformed prior model building, estimates are on the logit scale.
     Although years were statistically not significant we kept this factor in the model to avoid temporal autocorrelation. Bold values indicate statistically
     significant effects (p $<$ 0.05).}
     \label{stab:linear_models_edi}
@@ -99,7 +102,7 @@
 \end{table}
 
 
-\section*{Trait proportions over time}
+\subsubsection*{Trait proportions over time}
 \begin{figure}[H]
     \centering
     \includegraphics[width=16.5cm, height=10cm]{Trait_proportion_harmonized.png}
@@ -111,115 +114,181 @@
 \begin{figure}[H]
     \centering
     \includegraphics[width=16.5cm, height=10cm]{Trait_proportion_Szoecs_2014.png}
-    \caption{Proportions for five selected traits for down- and upstream sites (traits that have been promoted by salinization) from Szöcs et al. 2014.} 
+    \caption{Proportions for five selected traits for down- and upstream sites (traits that have been promoted by salinization) from Szöcs et al. \cite{szocs_effects_2014}.} 
 \end{figure}
 
-% \section*{Harmonization of the European trait databases}
-% \label{sec:SI_harmonization_EU}
 
-% % \cellcolor{blue!25}
-% \begin{longtable}{lll|l}
-% %\begin{table}[ht]
-% %    \centering
-%     \caption{Representation of traits per grouping feature and their harmonization for the European trait databases. The color coding indicates traits that have been harmonized. Cyan colored traits have not been used because they were too different from the amalgamated traits.}
-%     \endfirsthead
-%     \endhead
-%     %\begin{tabular}{llll}
-%     \hline
-%     Grouping feature & Freshwater ecology & Tachet & Amalgamated traits \\ 
-%     \hline
-%     \hline
-%     Voltinism & Semivoltine & Semivoltine & Semivoltine \\ 
-%     Voltinism & Univoltine & Univoltine & Univoltine \\ 
-%     \rowcolor{gray!25}
-%     Voltinism & Bivoltine & Polyvoltine & Bi/Multivoltine \\ 
-%     \cellcolor{gray!25}Voltinism & \cellcolor{gray!25}Trivoltine &  &  \\ 
-%     \cellcolor{gray!25}Voltinism & \cellcolor{gray!25}Multivoltine &  &  \\ 
-%     \cellcolor{gray!25}Voltinism & \cellcolor{gray!25}Flexible &  &  \\ 
-%     \rowcolor{blue!25}
-%     \cellcolor{blue!25}Feeding Mode & \cellcolor{blue!25}Shredder & Shredder & Shredder \\ 
-%     \cellcolor{blue!25}Feeding Mode & \cellcolor{blue!25}Miner & Deposit-feeder & Gatherer \\ 
-%     \cellcolor{blue!25}Feeding Mode & \cellcolor{blue!25}Xylophagus & \cellcolor{blue!50}Absorber & \cellcolor{blue!50}Filterer \\ 
-%     Feeding Mode & Gatherer & \cellcolor{blue!50}Filter-feeder & Herbivore \\ 
-%     \cellcolor{blue!50}Feeding Mode & \cellcolor{blue!50}Active filterer & Scraper & Predator \\ 
-%     \cellcolor{blue!50}Feeding Mode & \cellcolor{blue!50}Passive filterer & Predator & Parasite \\ 
-%     Feeding Mode & Grazer & Parasite &  \\ 
-%     Feeding Mode & Predator & \textit{Piercer (plants or animals)} \textsuperscript{\textit{a}} &  \\ 
-%     Feeding Mode & Parasite &  &  \\ 
-%     \color{cyan}Feeding Mode & \color{cyan}Other &  &  \\ 
-%     \hline
-%     \rowcolor{green!15}
-%     Locomotion & Swimming/scating & Surface swimmer & Swimmer \\ 
-%     \cellcolor{green!15}Locomotion & \cellcolor{green!15}Swimming/diving & \cellcolor{green!15}Full water swimmer & \cellcolor{green!50}Burrower \\ 
-%     \cellcolor{green!50}Locomotion & \cellcolor{green!50}Burrowing/boring & \cellcolor{green!50}Burrower & Crawler \\
-%     Locomotion &  & \cellcolor{green!50}Interstitial & \cellcolor{green!95}Sessil \\
-%     Locomotion & Sprawling/walking & Crawler &  \\ 
-%     \cellcolor{green!95}Locomotion & \cellcolor{green!95}(semi) sessil & \cellcolor{green!95}Temporarily attachted &  \\ 
-%     \color{cyan}Locomotion & \color{cyan}Other & \cellcolor{green!95}Permanently attached &  \\ 
-%     \color{cyan}Locomotion &  & \color{cyan}Flier &  \\
-%     \hline
-%     Respiration & Tegument & Tegument & Tegument \\ 
-%     Respiration & Gill & Gill & Gills \\ 
-%     \rowcolor{orange!25}
-%     Respiration & Plastron & Plastron & Plastron, spiracle \\ 
-%     \cellcolor{orange!25}Respiration & \cellcolor{orange!25}Spiracle (aerial) & \cellcolor{orange!25}Spiracle (aerial) &  \\ 
-%     \color{cyan}Respiration & \color{cyan}Hydrostatic vesicle & \color{cyan}Hydrostatic vesicle (aerial) &  \\ 
-%     \color{cyan}Respiration & \color{cyan}Tapping (air stores of aq. plants) &  &  \\ 
-%     \color{cyan}Respiration & \color{cyan}Excursion/Extension (to surface) &  &  \\ 
-%     \hline
-%     Body size &  & $<$= 0.25cm & Small ($<$ 1 cm) \\ 
-%     Body size &  & $>$ 0.25 - 0.5cm & Medium ($>$= 1cm - 2 cm) \\ 
-%     Body size &  & $>$ 0.5- 1cm & Large ($>$= 2 cm) \\ 
-%     Body size &  & $>$ 1 – 2 cm &  \\ 
-%     Body size &  & 2 – 4 cm &  \\ 
-%     Body size &  & 4 – 8 cm &  \\ 
-%     Body size &  & $>$ 8 cm &  \\ 
-%     \hline
-%     Reproduction & ovovivipar & ovoviviparity & ovoviviparity \\ 
-%     \rowcolor{purple!25}
-%     Reproduction & free isolated eggs & isolated eggs, free & aquatic eggs \\ 
-%     \cellcolor{purple!25}Reproduction & \cellcolor{purple!25}cemented isolated eggs & \cellcolor{purple!25}isolated eggs, cemented & terrestrial eggs \\
-%     \cellcolor{purple!25}Reproduction & \cellcolor{purple!25}fixed clutches & \cellcolor{purple!25}clutches, cemented or fixed &  \\ 
-%     \cellcolor{purple!25}Reproduction & \cellcolor{purple!25}free clutches & \cellcolor{purple!25}clutches, free &  \\ 
-%     \cellcolor{purple!25}Reproduction & \cellcolor{purple!25}clutches in vegetation & \cellcolor{purple!25}clutches, in vegetation &  \\ 
-%     Reproduction & terrestrial clutches & clutches, terrestrial &  \\ 
-%     \color{cyan}Reproduction & \color{cyan}asexual & \color{cyan}asexual reproduction &  \\ 
-%     \color{cyan}Reproduction & \color{cyan}parasitic &  &  \\ 
-%     \hline
-%     %\end{tabular}
-% %\end{table}
-% \end{longtable}
-% \begin{minipage}{\linewidth}\small
-%     \textit{a} Taxa exhibiting this trait have been assigned to predators or herbivores based on a classification by Philippe Usseglio-Polatera.
-% \end{minipage}
+\subsection*{Discrepancies in trait definitions}
 
-%%%%%%%%%%%%%%%%%%%% OLD %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% \subsection*{Deviance in trait affinities between \textit{stepwise\_agg} and \textit{direct\_agg (median)}}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Deviances_stepwise_dir_overview.png}
-%     \caption{Affinity deviances for all deviating cases between the \textit{stepwise\_agg} and \textit{direct\_agg}, see section \ref{sec:dev_stepwise_direct_agg}.}
-%     \label{fig:stepwise_dir_agg}
-% \end{figure}
-
-
-% \subsection*{Comparison of trait affinity values \textit{direct\_agg} using median or mean}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Deviances_dir_median_mean_overview.png}
-%     \caption{Affinity deviances for all deviating cases between the \textit{direct\_agg (median)} and \textit{direct\_agg (mean)}, see section \ref{sec:comp_direct_agg_median_mean}.}
-%     \label{fig:dir_agg_median_mean}
-% \end{figure}
-
-% \subsection*{Deviances in trait affinities between \textit{direct\_agg} and \textit{weighted\_agg}}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Deviances_dir_weighted_overview.png}
-%     \caption{Affinity deviances for all deviating cases of comparisons between the \textit{direct\_agg (median)} and \textit{direct\_agg (mean)} with \textit{weighted\_agg}, see section \ref{sec:dev_dir_agg_weighted}.}
-%     \label{fig:dir_agg_median_mean_weighted}
-% \end{figure}
+\begin{landscape}
+    \begin{longtable}{m{1.7cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
+        \caption{Comparison of trait definitions between invertebrate trait databases. Only traits that are differently described across databases are listed. The definition is quoted if it enables differences to be identified, otherwise the differences are described. The hyphen indicates a missing trait. Reproduction was captured in multiple grouping features per database. Hence, differences for reproduction have been described in the paper. Body form traits are not different between databases, except that the North America (Vieira) database contains the trait Bluff (blocky) which does not appear in the other databases.}
+        \label{stab:trait_definitions}
+        \endfirsthead
+        \toprule[.1em]
+        Trait & Freshwaterecology & Tachet & \specialcell{North America \\ (Twardochleb)} & 
+        North America (Vieira) & Australia & New Zealand \\
+        \toprule[.1em]
+        Feeding shredder & 
+        "Feed from fallen leaves, plant tissues, CPOM" & 
+        "Eat coarse detritus, plants or \textit{animal material}" & 
+        \begin{itemize}
+            \item "Shred decomposing vascular plant tissue"
+            \item Trait herbivore includes among others insect that shred \textit{living aquatic plants} 
+        \end{itemize} & 
+        Shredder & 
+        \begin{itemize}
+            \item Detrivore \textsuperscript{\textit{a}}
+            \item Trait herbivore includes among others the trait shredder
+        \end{itemize} & 
+        Shredders
+        \\ 
+        \midrule
+        Feeding predator & 
+        "Eating from prey" & 
+        \begin{itemize}
+            \item Carvers, engulfers \& swallowers
+            \item Piercers (plants \& animals) are an additional trait
+        \end{itemize} & % Notes: Tachet -> Piercer (plants & animals)
+        Engulfers ("ingest prey whole or in parts") \& 
+        piercers ("prey tissues and suck fluids") & 
+        Predator &
+        Piercer \& engulfer &
+        Predator
+        \\ 
+        \midrule
+        Feeding filter-feeder & 
+        Distinguishes between active and passive &
+        No distinction between active and passive &
+        No distinction between active and passive &
+        No distinction between active and passive &
+        No distinction between active and passive &
+        No distinction between active and passive
+        \\
+        \toprule[.1em]
+        Semivoltine & 
+        "One generation in two years" & 
+        "Life cycle lasts \textit{at least} two years" & 
+        "$< 1$ generation per year" & 
+        "$< 1$ generation per year" & 
+        "$< 1$ generation per year" & 
+        "$< 1$ reproductive cycle per year"
+        \\
+        \midrule
+        Multivoltine & 
+        "More than \textit{three} generations per year" \textsuperscript{\textit{b}}& 
+        "Able to complete \textit{at least} two successive generations per year" &
+        "$> 1$ generations per year" &
+        "$> 1$ generations per year" & 
+        \begin{itemize}
+            \item 1-2 generations per year
+            \item bi/multivoltine
+            \item up to 5 generations per year
+            \item up to 10 generations per year
+        \end{itemize}
+        & 
+        "$> 1$ reproductive cycles per year"
+        \\
+        \toprule[.1em]
+        Locomotion swimming & 
+        \begin{itemize}
+            \item Passive movement like floating or drifting (trait swimming/scating)
+            \item Active movement (trait swimming/diving)
+        \end{itemize}. &
+        \begin{itemize}
+            \item Surface swimmers (over and under the water surface)
+            \item Full water swimmers (e.g. Baetidae).
+        \end{itemize} & 
+        "Adapted for "fishlike" swimming" & 
+        Swimmer & 
+        Distinguishes swimmer and skater & 
+        Swimmers (water column)
+        \\
+        \midrule
+        Locomotion burrowing & 
+        "Burrowing in \textit{soft} substrates or boring in \textit{hard} substrates" & 
+        \begin{itemize}
+            \item Burrowing "within the first centimeters of the benthic fine sediment"
+            \item Differentiates also the trait interstitial (endobenthic)
+        \end{itemize} & 
+        "Inhabiting \textit{fine} sediment of streams and lakes" &
+        Burrower & 
+        "Moving deep into the substrate and thus avoiding flow" &
+        Burrowers (infauna)
+        \\
+        \midrule
+        Locomotion sprawling \& walking & 
+        "Sprawling or walking actively with legs, pseudopods or on a mucus" &
+        - & 
+        Sprawling: "inhabiting the surface of floating leaves of vascular hydrophytes or fine sediments" & 
+        Sprawler &
+        - & 
+        - \\
+        \midrule
+        Locomotion crawling & 
+        - &
+        "Crawling over the bottom substrate" & 
+        Defined as crawling on the surface of floating leaves or fine sediments on the bottom & 
+        - & 
+        Database contains traits crawler, 
+        sprawler, climber and clinger. &
+        Crawlers (epibenthic) \\
+        \midrule
+        Locomotion sessil & 
+        Does not distinguish temporarily and permanently attached & 
+        Distinguishes temporarily and permanently attached & 
+        Does not distinguish temporarily and permanently attached & 
+        Does not distinguish temporarily and permanently attached & 
+        Distinguishes temporarily and permanently attached & 
+        Does not distinguish temporarily and permanently attached \\
+        \toprule[.1em]
+        Respiration plastron \& spiracle & 
+        Plastron and spiracle (aerial) are two separate traits & 
+        Definition includes respiration using air stores of aquatic plants & 
+        Plastron and spiracle combined into one trait & 
+        Distinguishes spiracular gills, plastron, atmospheric breathers and plant breathers &
+        Plastron and spiracle (termed aerial) occur as separate and combined traits. Contains also traits: air (plants), atmospheric, and functional spiracles &
+        Distinguishes plastron and spiracle (termed aerial) \\
+        \toprule[.1em]
+        Body size small & 
+        - &
+        \multirow{3}{*}{\specialcell{Multiple size \\ classifications \textsuperscript{\textit{d}}}} & 
+        $<$ 9 mm & 
+        $<$ 9 mm & 
+        $<$ 9 mm \textsuperscript{\textit{a;c}} &
+        \multirow{3}{*}{\specialcell{Multiple size \\ classifications \textsuperscript{\textit{e}}}}
+        \\
+        \cline{1-2}
+        \cline{4-6}
+        Body size medium & 
+        - &
+        &
+        9 - 16 mm & 
+        9 - 16 mm & 
+        9 - 16 mm &
+        \\
+        \cline{1-2}
+        \cline{4-6}
+        Body size large & 
+        - &
+        &
+        $>$ 16 mm &
+        $>$ 16 mm &
+        $>$ 16 mm &
+        \\
+        \bottomrule
+    \end{longtable}
+    \begin{minipage}{\linewidth}\small
+        \textit{a} Traits from Botwe et al.
+        \newline
+        \textit{b} Contains also bivoltine (two generations per year), trivoltine (three generations per year) and flexible.
+        \newline
+        \textit{c} Contains a size trait with numeric size values. Contains also traits classifying size like Tachet and like the North American trait databases. 
+        \newline
+        \textit{d} Size classifications: \textit{$<=0.25$ cm, $> 0.25-0.5$ cm, $0.5-1$ cm, $1-2$ cm, $2-4$ cm, $4-8$ cm, $> 8$ cm}. No distinction into small, medium and large.
+        \newline
+        \textit{e} Size classifications: \textit{$> 0.25-0.5$ cm, $0.5-1$ cm, $1-2$ cm, $2-4$ cm, $4-8$ cm}. No distinction into small, medium and large.
+    \end{minipage}
+\end{landscape}
 
 \end{document}

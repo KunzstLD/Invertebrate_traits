@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  2 SEP 2020 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.12.5)  5 SEP 2020 14:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1126,7 +1126,7 @@ Here is how much of TeX's memory you used:
 pdfTeX warning (dest): name{cite.0@szocs_effects_2014} has been referenced but does not exist, replaced by a fixed one
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on Results/Results_trait_harmonization.pdf (1 page, 101964 bytes).
+Output written on Results/Results_trait_harmonization.pdf (1 page, 101341 bytes).
 PDF statistics:
  41 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream

@@ -1,13 +1,12 @@
 # Fdb version 3
-["biber Results/Results_trait_harmonization"] 1599054275 "Results/Results_trait_harmonization.bcf" "Results/Results_trait_harmonization.bbl" "Results/Results_trait_harmonization" 1599058462
+["biber Results/Results_trait_harmonization"] 1599309608 "Results/Results_trait_harmonization.bcf" "Results/Results_trait_harmonization.bbl" "Results/Results_trait_harmonization" 1599309611
   "Ref_invertebrate_DB.bib" 1599040068 84627 90297ca6ddd8b2e3dd8cb9337fb81676 ""
-  "Results/Results_trait_harmonization.bcf" 1599058462 87243 6a33870ad5f20a90543de78a2246db98 ""
+  "Results/Results_trait_harmonization.bcf" 1599309611 87243 6a33870ad5f20a90543de78a2246db98 ""
   (generated)
-  "Results/Results_trait_harmonization.blg"
   "Results/Results_trait_harmonization.bbl"
-["pdflatex"] 1599058461 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex" "Results/Results_trait_harmonization.pdf" "Results_trait_harmonization" 1599058462
+["pdflatex"] 1599309610 "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex" "Results/Results_trait_harmonization.pdf" "Results_trait_harmonization" 1599309611
   "/etc/texmf/web2c/texmf.cnf" 1544004452 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex" 1599058459 2674 a39107dbd625c682f5c79f0e929f6ae0 ""
+  "/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex" 1599309606 2669 9e80d176a510c7b97b02b611b5630cdd ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1480098701 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -144,16 +143,16 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1544004459 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1544004481 4131366 4653ad3021cea65bda482bdd29f7dc1c ""
   "Figures/Species_scores_rda.png" 1593609960 60050 27137d0e502ac727795d6baae3dc3fab ""
-  "Results/../Draft_harmonization_paper.tex" 1599058312 26485 8db128bbac0b8370d76853e576736a61 ""
-  "Results/Results_trait_harmonization.aux" 1599058462 1962 a8c319b767ede032f7fb66a8205d706c ""
-  "Results/Results_trait_harmonization.bbl" 1599054276 3508 c393385ec53c7a50b4a4e72eb22d3bf8 "biber Results/Results_trait_harmonization"
-  "Results/Results_trait_harmonization.out" 1599058462 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/Results_trait_harmonization.run.xml" 1599058462 2544 516fb6c9173cb28746ebf41a43ede232 ""
-  "Results/Results_trait_harmonization.tex" 1599058459 2674 a39107dbd625c682f5c79f0e929f6ae0 ""
+  "Results/../Draft_harmonization_paper.tex" 1599309529 26548 a45724b8a4568931ec349a58b4346cb6 ""
+  "Results/Results_trait_harmonization.aux" 1599309611 1957 c696f843573ea5fdd1e2b4d8ce4d0eeb ""
+  "Results/Results_trait_harmonization.bbl" 1599309609 3508 c393385ec53c7a50b4a4e72eb22d3bf8 "biber Results/Results_trait_harmonization"
+  "Results/Results_trait_harmonization.out" 1599309611 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/Results_trait_harmonization.run.xml" 1599309611 2544 516fb6c9173cb28746ebf41a43ede232 ""
+  "Results/Results_trait_harmonization.tex" 1599309606 2669 9e80d176a510c7b97b02b611b5630cdd ""
   (generated)
   "Results/Results_trait_harmonization.run.xml"
-  "Results/Results_trait_harmonization.out"
-  "Results/Results_trait_harmonization.pdf"
   "Results/Results_trait_harmonization.bcf"
   "Results/Results_trait_harmonization.aux"
+  "Results/Results_trait_harmonization.pdf"
   "Results/Results_trait_harmonization.log"
+  "Results/Results_trait_harmonization.out"

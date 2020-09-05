@@ -1,9 +1,15 @@
-[1] Config.pm:302> INFO - This is Biber 2.9
-[1] Config.pm:305> INFO - Logfile is 'Results/SI.blg'
-[35] biber:313> INFO - === Mi Sep  2, 2020, 15:01:52
-[58] Biber.pm:371> INFO - Reading 'Results/SI.bcf'
-[124] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[130] Utils.pm:169> WARN - The file 'Results/SI.bcf' does not contain any citations!
-[138] bbl.pm:617> INFO - Writing 'Results/SI.bbl' with encoding 'UTF-8'
-[138] bbl.pm:720> INFO - Output to Results/SI.bbl
-[138] Biber.pm:110> INFO - WARNINGS: 1
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'Results/SI.blg'
+[22] biber:313> INFO - === Sa Sep  5, 2020, 14:33:57
+[38] Biber.pm:371> INFO - Reading 'Results/SI.bcf'
+[84] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[95] Biber.pm:3981> INFO - Processing section 0
+[104] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[113] bibtex.pm:1468> INFO - LaTeX decoding ...
+[183] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[201] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[201] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[202] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[202] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[207] bbl.pm:617> INFO - Writing 'Results/SI.bbl' with encoding 'UTF-8'
+[208] bbl.pm:720> INFO - Output to Results/SI.bbl
