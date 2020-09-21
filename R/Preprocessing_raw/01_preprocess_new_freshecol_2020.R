@@ -1,17 +1,4 @@
 
-# link to raw data
-data_raw <- "./Data/EU/Raw_freshecol/2020"
-
-# packages
-library(data.table)
-library(dplyr)
-library(taxize)
-
-# script with helper functions
-source(file = "./R/Preprocessing_raw/functions_used.R")
-
-
-
 #### read taxaexports ####
 filelinks <- list.files(
   path = data_raw,
@@ -82,14 +69,15 @@ setnames(
     "> 5.5-6",
     "> 6"
   ),
-  paste0("tachet_ph_", c(
+  paste0("ph_", c(
     "&le; 4",
     "> 4-4.5",
     "> 4.5-5",
     "> 5-5.5",
     "> 5.5-6",
     "> 6"
-  ))
+  ), 
+  "_tachet")
 )
 # Explanation:  ph_acidic:      acidic - pH < 7
 #               ph_neutral_alk: neutral to alkaline - ph = 7
@@ -121,12 +109,13 @@ setnames(
     "eut"
   ),
   paste0(
-    "tachet_temp_",
+    "temp_",
     c(
       "psy",
       "the",
       "eut"
-    )
+    ), 
+    "_tachet"
   )
 )
 
@@ -181,7 +170,7 @@ setnames(
     "par"
   ),
   paste0(
-    "tachet_feed_",
+    "feed_",
     c(
       "absorber",
       "deposit_feeder",
@@ -191,7 +180,8 @@ setnames(
       "piercer",
       "predator",
       "parasite"
-    )
+    ),
+    "_tachet"
   )
 )
 
@@ -247,7 +237,7 @@ setnames(
     "pat"
   ),
   paste0(
-    "tachet_locom_",
+    "locom_",
     c(
       "flier",
       "surface_swimmer",
@@ -257,7 +247,8 @@ setnames(
       "interstitial",
       "temp_attached",
       "perm_attached"
-    )
+    ),
+    "_tachet"
   )
 )
 # Explanation:  locom_swim_skate: swimming/scating - floating in lakes or drifting in rivers passively
@@ -306,14 +297,15 @@ setnames(
     "ves"
   ),
   paste0(
-    "tachet_resp_",
+    "resp_",
     c(
       "tegument",
       "gill",
       "plastron",
       "spiracle",
       "vesicle"
-    )
+    ),
+    "_tachet"
   )
 )
 # Explanation:  resp_tegument:  tegument - respiration through body surface
@@ -349,17 +341,20 @@ setnames(
 setnames(
   freshwaterecol,
   c(
+    "egg",
     "larva",
     "nymph",
     "adult"
   ),
   paste0(
-    "tachet_stage_",
+    "stage_",
     c(
+      "egg",
       "larva",
       "nymph",
       "adult"
-    )
+    ),
+    "_tachet"
   )
 )
 # Explanation:  stage_egg:    aquatic stage as egg
@@ -400,12 +395,13 @@ setnames(
     "> 1"
   ),
   paste0(
-    "tachet_voltinism_",
+    "voltinism_",
     c(
       "semi",
       "uni",
       "multi"
-    )
+    ),
+    "_tachet"
   )
 )
 # Explanation:  volt_semi:  one generation in two years
@@ -415,10 +411,62 @@ setnames(
 #               volt_multi: more than three generations per year
 #               volt_flex:  flexible number of life cycles per year
 
-## Reproduction
-names(df_EUR)[grep(c("ovo|fie|cie|fic|frc|vec|tec|ase|pas"), names(df_EUR))] <- 
-  c("rep_ovovipar", "rep_egg_free_iso", "rep_egg_cem_iso", "rep_clutch_fixed",
-    "rep_clutch_free", "rep_clutch_veg", "rep_clutch_ter", "rep_asexual", "rep_parasitic")
+# Reproduction
+setnames(
+  freshwaterecol,
+  c(
+    "ovo",
+    "fie",
+    "cie",
+    "fic",
+    "frc",
+    "vec",
+    "tec",
+    "ase",
+    "pas"
+  ),
+  paste0(
+    "rep_",
+    c(
+      "ovovivipar",
+      "egg_free_iso",
+      "egg_cem_iso",
+      "clutch_fixed",
+      "clutch_free",
+      "clutch_veg",
+      "clutch_ter",
+      "asexual",
+      "parasitic"
+    )
+  )
+)
+setnames(
+  freshwaterecol,
+  c(
+    "ovo",
+    "fie",
+    "cie",
+    "fic",
+    "frc",
+    "vec",
+    "tec",
+    "ase"
+  ),
+  paste0(
+    "rep_",
+    c(
+      "ovovivipar",
+      "egg_free_iso",
+      "egg_cem_iso",
+      "clutch_fixed",
+      "clutch_free",
+      "clutch_veg",
+      "clutch_ter",
+      "asexual"
+    ),
+    "_tachet"
+  )
+)
 
 # Explanation:  rep_ovovipar:     ovovivipar - eggs remain within the mother's body until they hatch
 #               rep_egg_free_iso: free isolated eggs - separate eggs are laid down in the water freely
@@ -432,263 +480,69 @@ names(df_EUR)[grep(c("ovo|fie|cie|fic|frc|vec|tec|ase|pas"), names(df_EUR))] <-
 
 
 # Dispercal capacity
-names(df_EUR)[grep(c("hig|low|unk|"), names(df_EUR))] <- 
-  c("dispersal_high", "dispersal_low", "dispersal_unknown")
+setnames(
+  freshwaterecol,
+  c(
+    "hig",
+    "low",
+    "unk"
+  ),
+  paste0(
+    "dispersal_",
+    c(
+      "high",
+      "low",
+      "unknown"
+    )
+  )
+)
+setnames(
+  freshwaterecol,
+  c(
+    "aquatic passive",
+    "aquatic active",
+    "aerial passive",
+    "aerial active"
+  ),
+  paste0(
+    "dispersal_",
+    c(
+      "aquatic passive",
+      "aquatic active",
+      "aerial passive",
+      "aerial active"
+    ),
+    "_tachet"
+  )
+)
 
-# Explanation:  dispersal_high:     high dispersal capacity 
+# Explanation:  dispersal_high:     high dispersal capacity
 #               dispersal_low:      low dispersal capacity
 #               dispersal_unknown:  unknown dispersal capacity
 
 # size
-
-
-
-
-# taxonomic preparation ----
-# copy of taxon column
-freshwaterecol[, taxon_cp := taxon]
-
-# - rm Ad. from taxon column
-freshwaterecol <- freshwaterecol[!grep("Ad\\.", taxon), ]
-
-# - move just CAPTIAL family taxa to new column
-# & fill empty spots
-freshwaterecol[
-  grep(".*NAE|.*DAE", taxon),
-  `:=`(
-    family = taxon,
-    taxon = NA_character_
-  )
-]
-freshwaterecol[, family := copy_till_next_occur(x = family)]
-
-# - Class/Phylum/Order entries into order_or_higher column
-# & fill empty spots
-freshwaterecol[
-  grep("^[A-z]{1,}$|\\[", taxon),
-  `:=`(
-    order_or_higher = taxon,
-    taxon = NA_character_
-  )
-]
-freshwaterecol[, order_or_higher := copy_till_next_occur(x = order_or_higher)]
-
-# Delete gen. sp
-# TODO: How to handle later in analysis?
-freshwaterecol[grep("Gen\\. sp\\.", taxon), taxon := NA_character_]
-
-# - sort out all taxa with zero information
-trait_cols <- grep("taxon.*|EU|genus|family|order.*",
-  names(freshwaterecol),
-  value = TRUE,
-  invert = TRUE
-)
-no_info <- freshwaterecol[, apply(.SD, 1, function(y) {
-  is.na(y) %>%
-    sum()
-}),
-.SDcols = trait_cols
-]
-pos <- no_info == ncol(freshwaterecol[, ..trait_cols])
-freshwaterecol <- freshwaterecol[!pos, ]
-
-# - Proceed with creating genus col
-# everything with sp. to genus column
-freshwaterecol[
-  grep("(?!.*ssp\\.)(?=[[:space:]]sp\\.)", taxon, perl = TRUE),
-  `:=`(
-    genus = taxon,
-    taxon = NA_character_
-  )
-]
-
-# - add genera from first name of species col
-freshwaterecol[
-  !is.na(taxon),
-  genus := sub(
-    "([A-z]{1,})([[:space:]])(.+)",
-    "\\1", taxon
-  )
-]
-
-# - create species column from taxon column
-setnames(freshwaterecol, "taxon", "species")
-
-# - cleaning:
-# species col:
-# rm Lv. and spp., Gr., Agg.
-freshwaterecol[
-  !is.na(species),
-  species := sub(
-    "[[:space:]]Lv\\.|[[:space:]]spp\\.|\\-Gr\\.|[[:space:]]Agg\\.",
-    "", species
-  )
-]
-freshwaterecol[grep("Thienemannimyia Gr\\.", species), species := NA]
-
-# genus col:
-# rm sp., Gen, Gr.-, (new sp. GR)
-# ?possibly duplicates introduced
-freshwaterecol[, genus := sub("[[:space:]]sp\\.|\\-Gr\\.|[[:space:]]Lv\\.", "", genus)]
-freshwaterecol[, genus := sub(
-  "[0-9].+|Pe 1",
-  "", genus
-)]
-
-# family col:
-freshwaterecol[, family := simpleCap(family)]
-
-# order_or_higher column:
-# create subfamily col for NAE taxa
-# move chironomidae from order col
-# rm [Ord: ...]
-# move suborder to new column
-freshwaterecol[grep("(?i)nae", family), `:=`(
-  subfamily_or_tribe = family,
-  family = NA_character_
-)]
-freshwaterecol[grep(".*dae", order_or_higher), `:=`(
-  family = order_or_higher,
-  order_or_higher = "Diptera"
-)]
-freshwaterecol[, order_or_higher := sub(
-  "(\\[Ord\\:)(.+)(\\])",
-  "\\2", order_or_higher
-)]
-freshwaterecol[grep("\\[UOrd\\:.+\\]", order_or_higher), `:=`(
-  suborder = order_or_higher,
-  order_or_higher = NA_character_
-)]
-
-# create class & phylum column
-freshwaterecol[
-  grep("\\[Kl\\:.+\\]", order_or_higher), `:=`(
-    class = sub("(\\[Kl\\:)(.+)(\\])", "\\2", order_or_higher),
-    order_or_higher = NA_character_
-  )
-]
-freshwaterecol[
-  grep("\\[Ph\\:.+\\]", order_or_higher), `:=`(
-    phylum = sub("(\\[Ph\\:)(.+)(\\])", "\\2", order_or_higher),
-    order_or_higher = NA_character_
-  )
-]
-
-# taxonomic corrections ----
-# few order are actually class, phylum, or suborder
-freshwaterecol[
-  order_or_higher %in% c(
-    "Porifera",
-    "Nemertini",
-    "Coelenterata",
-    "Nematomorpha",
-    "Crustacea",
-    "Bryozoa"
+setnames(
+  freshwaterecol,
+  c(
+    "&le; 0.25 cm",
+    "> 0.25-0.5 cm",
+    "> 0.5-1 cm",
+    "> 1-2 cm",
+    "> 2-4 cm",
+    "> 4-8 cm",
+    "> 8 cm"
   ),
-  `:=`(
-    phylum = order_or_higher,
-    order_or_higher = NA_character_
+  paste0(
+    "size_",
+    c(
+      "&le; 0.25 cm",
+      "> 0.25-0.5 cm",
+      "> 0.5-1 cm",
+      "> 1-2 cm",
+      "> 2-4 cm",
+      "> 4-8 cm",
+      "> 8 cm"
+    ),
+    "_tachet"
   )
-]
-freshwaterecol[
-  order_or_higher %in% c(
-    "Turbellaria",
-    "Bivalvia",
-    "Oligochaeta",
-    "Hirudinea",
-    "Polychaeta",
-    "Gastropoda"
-  ),
-  `:=`(
-    class = order_or_higher,
-    order_or_higher = NA_character_
-  )
-]
-freshwaterecol[
-  grep(
-    "Heteroptera|Hydrachnidia|Planipennia|Conchostraca", order_or_higher
-  ),
-  order_or_higher := case_when(
-    order_or_higher == "Heteroptera" ~ "Hemiptera",
-    order_or_higher == "Hydrachnidia" ~ "Trombidiformes",
-    order_or_higher == "Planipennia" ~ "Neuroptera",
-    order_or_higher == "Conchostraca" ~ "Onychura"
-  )
-]
-
-# retrieve missing tax. information with taxizie
-
-# order an higher levels
-taxa <- freshwaterecol[
-  is.na(order_or_higher) & !is.na(family),
-  family
-] %>% unique()
-ID_gbif <- get_gbifid(taxa)
-
-tax_classf <- classification(
-  id = ID_gbif,
-  db = "gbif"
 )
-
-tax_classf <- lapply(tax_classf, function(y) {
-  as.data.table(y) %>%
-    .[, .(rank, name)] %>%
-    dcast(., ... ~ rank, value.var = "name")
-})
-tax_classf <- rbindlist(tax_classf, fill = TRUE)
-setDT(tax_classf)
-tax_classf[, "." := NULL]
-
-# subfamilies
-taxa_subfamily <- freshwaterecol[!is.na(subfamily_or_tribe), genus] %>%
-  unique()
-ID_subf_gbif <- get_gbifid(taxa_subfamily,
-  rows = 1
-)
-
-taxa_subf_classf <- classification(
-  id = ID_subf_gbif,
-  db = "gbif"
-)
-taxa_subf_classf <- taxa_subf_classf[!is.na(taxa_subf_classf)]
-
-taxa_subf_classf <- lapply(taxa_subf_classf, function(y) {
-  as.data.table(y) %>%
-    .[, .(rank, name)] %>%
-    dcast(., ... ~ rank, value.var = "name")
-})
-taxa_subf_classf <- rbindlist(taxa_subf_classf, fill = TRUE)
-taxa_subf_classf[, "." := NULL]
-taxa_subf_classf <- taxa_subf_classf[!duplicated(genus), ]
-
-# merge taxonomic information back to freshecol
-freshwaterecol[tax_classf,
-  `:=`(
-    order = i.order,
-    class = i.class,
-    phylum = i.phylum
-  ),
-  on = "family"
-]
-
-merge(freshwaterecol,
-  taxa_subf_classf[, .(genus, family, order)],
-  by = "genus",
-  all.x = TRUE
-)
-
-names(freshwaterecol)[duplicated(names(freshwaterecol))]
-
-freshwaterecol[taxa_subf_classf,
-  `:=`(
-    family = i.family,
-    order = i.order,
-    class = i.class,
-    phylum = i.phylum
-  ),
-  on = "genus"
-]
-
-taxa_subf_classf[genus == "Bythinella", ]
-str(taxa_subf_classf)
-freshwaterecol[is.na(family), ]
