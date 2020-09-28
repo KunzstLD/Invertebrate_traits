@@ -98,17 +98,6 @@ for (j in cols) {
   data.table::set(trait_EU, which(is.na(trait_EU[[j]])), j, 0)
 }
 
-# taxonomical corrections
-# Microhydra sowerbyi is actually a freshwater jellyfish
-# family: Olindiidae, order: Hydrozoa
-trait_EU[grepl("Microhydra sowerbyi", species), `:=`(
-  family = "Olindiidae",
-  order = "Hydrozoa"
-)]
-
-# Bythinella
-trait_EU[genus == "Bythinella", family := "Hydrobiidae"]
-
 # save as RDS
 saveRDS(
   object = trait_EU,
