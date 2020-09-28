@@ -14,11 +14,13 @@ fc_cols <- grep("tachet.*", names(Trait_EU), value = TRUE, invert = TRUE)
 Trait_EU <- cbind(
   normalize_by_rowSum(
     Trait_EU[, ..fc_cols],
-    non_trait_cols = c("species",
-                       "genus",
-                       "family",
-                       "order",
-                       "taxon_cp")
+    non_trait_cols = c(
+      "species",
+      "genus",
+      "family",
+      "order",
+      "taxon_cp"
+    )
   ),
   normalize_by_rowSum(Trait_EU[, ..tachet_cols])
 )
@@ -29,28 +31,39 @@ Trait_EU <- cbind(
 # volt_uni
 # volt_bi_multi
 # _________________________________________________________________________
-Trait_EU[, volt_semi := apply(.SD, 1, max, na.rm = TRUE), 
-         .SDcols = c("voltinism_semi",
-                     "voltinism_semi_tachet")]
-Trait_EU[, volt_uni := apply(.SD, 1, max, na.rm = TRUE), 
-         .SDcols = c("voltinism_uni",
-                     "voltinism_uni_tachet")]
+Trait_EU[, volt_semi := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "voltinism_semi",
+    "voltinism_semi_tachet"
+  )
+]
+Trait_EU[, volt_uni := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "voltinism_uni",
+    "voltinism_uni_tachet"
+  )
+]
 Trait_EU[, volt_bi_multi := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c("voltinism_bi",
-                     "voltinism_tri",
-                     "voltinism_multi",
-                     "voltinism_multi_tachet",
-                     "voltinism_flex")]
+  .SDcols = c(
+    "voltinism_bi",
+    "voltinism_tri",
+    "voltinism_multi",
+    "voltinism_multi_tachet",
+    "voltinism_flex"
+  )
+]
 
-Trait_EU[,  c("voltinism_semi",
-              "voltinism_semi_tachet",
-              "voltinism_uni",
-              "voltinism_uni_tachet",
-              "voltinism_bi",
-              "voltinism_tri",
-              "voltinism_multi",
-              "voltinism_multi_tachet",
-              "voltinism_flex") := NULL]
+Trait_EU[, c(
+  "voltinism_semi",
+  "voltinism_semi_tachet",
+  "voltinism_uni",
+  "voltinism_uni_tachet",
+  "voltinism_bi",
+  "voltinism_tri",
+  "voltinism_multi",
+  "voltinism_multi_tachet",
+  "voltinism_flex"
+) := NULL]
 # _________________________________________________________________________
 # TODO
 #### aquatic stages ####
@@ -101,18 +114,20 @@ Trait_EU[,  c("voltinism_semi",
 # coding from PUP for piercer_t
 piercer_pup <- fread(file.path(data_in, "EU", "taxa_feed_piercer_PUP.csv"))
 piercer_pup[, taxa := coalesce(genus, family, order)]
-setnames(piercer_pup,
-         'comment (only for the trait category ""piercer"")',
-         'comment_piercer')
-# normalize 
+setnames(
+  piercer_pup,
+  'comment (only for the trait category ""piercer"")',
+  "comment_piercer"
+)
+# normalize
 normalize_by_rowSum(
   x = piercer_pup,
   non_trait_cols = c(
-    'genus',
-    'family',
-    'order',
-    'comment_piercer',
-    'taxa'
+    "genus",
+    "family",
+    "order",
+    "comment_piercer",
+    "taxa"
   )
 )
 
@@ -122,147 +137,276 @@ Trait_EU[, taxa := coalesce(species, genus, family, order)]
 # create also unique_id col for merges later on
 Trait_EU[, unique_id := 1:nrow(Trait_EU)]
 
-# merge PUP comments 
+# merge PUP comments
 Trait_EU[piercer_pup,
-       `:=`(
-         feed_absorber_tachet = i.feed_active_filter_abs,
-         feed_filter_tachet = i.feed_active_filter,
-         feed_deposit_feeder_tachet = i.feed_gatherer,
-         feed_shredder_tachet = i.feed_shredder,
-         feed_scraper_tachet = i.feed_scraper,
-         feed_predator_tachet = i.feed_predator,
-         feed_parasite_tachet = i.feed_parasite,
-         feed_piercer_tachet = i.feed_piercer_t,
-         comment_piercer = i.comment_piercer
-       ),
-       on = "taxa"]
+  `:=`(
+    feed_absorber_tachet = i.feed_active_filter_abs,
+    feed_filter_tachet = i.feed_active_filter,
+    feed_deposit_feeder_tachet = i.feed_gatherer,
+    feed_shredder_tachet = i.feed_shredder,
+    feed_scraper_tachet = i.feed_scraper,
+    feed_predator_tachet = i.feed_predator,
+    feed_parasite_tachet = i.feed_parasite,
+    feed_piercer_tachet = i.feed_piercer_t,
+    comment_piercer = i.comment_piercer
+  ),
+  on = "taxa"
+]
 
-# assign affinities from feed_piercer_t to either predator, parasite or herbivore
+# assign affinities from feed_piercer_tachet to
+# either predator, parasite or herbivore
 # Trait_EU$comment_piercer %>% unique
-Trait_EU[grep("predator\\/parasite", comment_piercer),
-         `:=`(feed_predator_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)]
-Trait_EU[grep("(?=.*predator)(?!.*parasite)(?!.*microphyte)",
-              comment_piercer,
-              perl = TRUE),
-         `:=`(feed_predator_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)] 
-Trait_EU[grep("^microinvertebrate piercer$", comment_piercer),
-         `:=`(feed_predator_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)]
-Trait_EU[grep("parasite", comment_piercer),
-         `:=`(feed_parasite_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)]
-Trait_EU[grep("microphyte.*predators.*", comment_piercer),
-         `:=`(feed_predator_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)]
-Trait_EU[grep("(?=.*macrophyte|microphyte)(?!.*predators)",
-            comment_piercer,
-            perl = TRUE),
-       `:=`(feed_scraper_tachet = feed_piercer_tachet,
-            feed_piercer_tachet = 0)]
+Trait_EU[
+  grep("predator\\/parasite", comment_piercer),
+  `:=`(
+    feed_predator_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
+Trait_EU[
+  grep("(?=.*predator)(?!.*parasite)(?!.*microphyte)",
+    comment_piercer,
+    perl = TRUE
+  ),
+  `:=`(
+    feed_predator_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
+Trait_EU[
+  grep("^microinvertebrate piercer$", comment_piercer),
+  `:=`(
+    feed_predator_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
+Trait_EU[
+  grep("parasite", comment_piercer),
+  `:=`(
+    feed_parasite_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
+Trait_EU[
+  grep("microphyte.*predators.*", comment_piercer),
+  `:=`(
+    feed_predator_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
+Trait_EU[
+  grep("(?=.*macrophyte|microphyte)(?!.*predators)",
+    comment_piercer,
+    perl = TRUE
+  ),
+  `:=`(
+    feed_scraper_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
 
-# few taxa classified based on genus and family lvl 
+# few taxa classified based on genus and family lvl
 # assessment
-# Trait_EU[feed_piercer_tachet > 0, .(species, genus, family,feed_piercer_tachet, 
-#                                     feed_predator_tachet, feed_parasite_tachet, 
+# Trait_EU[feed_piercer_tachet > 0, .(species, genus, family,feed_piercer_tachet,
+#                                     feed_predator_tachet, feed_parasite_tachet,
 #                                     feed_scraper_tachet, comment_piercer)]
 
 # genus lvl
-Trait_EU[feed_piercer_tachet > 0 & genus == "Callicorixa",
-         `:=`(feed_predator_tachet = feed_piercer_tachet,
-              feed_piercer_tachet = 0)]
+Trait_EU[
+  feed_piercer_tachet > 0 & genus == "Callicorixa",
+  `:=`(
+    feed_predator_tachet = feed_piercer_tachet,
+    feed_piercer_tachet = 0
+  )
+]
 
 # fam lvl
 families_piercer <- Trait_EU[feed_piercer_tachet > 0, family]
 lookup_piercer <-
-  Trait_EU[family %in% families_piercer & !is.na(comment_piercer),
-           .(
-             species,
-             genus,
-             family,
-             feed_piercer_tachet,
-             feed_predator_tachet,
-             feed_parasite_tachet,
-             feed_scraper_tachet,
-             comment_piercer
-           )]
+  Trait_EU[
+    family %in% families_piercer & !is.na(comment_piercer),
+    .(
+      species,
+      genus,
+      family,
+      feed_piercer_tachet,
+      feed_predator_tachet,
+      feed_parasite_tachet,
+      feed_scraper_tachet,
+      comment_piercer
+    )
+  ]
 
 # aggr. by mean
 cols <- names(lookup_piercer)[names(lookup_piercer) %like% "feed.*"]
-lookup_piercer[, (cols) := lapply(.SD, mean), 
-               .SDcols = cols, 
-               by = "family"]
+lookup_piercer[, (cols) := lapply(.SD, mean),
+  .SDcols = cols,
+  by = "family"
+]
 lookup_piercer <- lookup_piercer[!duplicated(family), ]
 
 # merge
-Trait_EU[feed_piercer_tachet > 0, .(species, genus, family,feed_piercer_tachet, 
-                                    feed_predator_tachet, feed_parasite_tachet, 
-                                    feed_scraper_tachet, comment_piercer)]
+Trait_EU_piercer <-
+  copy(Trait_EU[feed_piercer_tachet > 0, .(
+    species,
+    genus,
+    family,
+    feed_piercer_tachet,
+    feed_predator_tachet,
+    feed_parasite_tachet,
+    feed_scraper_tachet,
+    unique_id
+  )])
 
-Trait_EU[feed_piercer_tachet > 0, ][lookup_piercer,
-                                    `:=`(
-                                      feed_piercer_tachet = i.feed_piercer_tachet,
-                                      feed_predator_tachet = i.feed_predator_tachet,
-                                      feed_parasite_tachet = i.feed_parasite_tachet,
-                                      feed_scraper_tachet = i.feed_scraper_tachet
-                                    ),
-                                    on = "family"]
+Trait_EU_piercer[lookup_piercer,
+  `:=`(
+    feed_piercer_tachet = i.feed_piercer_tachet,
+    feed_predator_tachet = i.feed_predator_tachet,
+    feed_parasite_tachet = i.feed_parasite_tachet,
+    feed_scraper_tachet = i.feed_scraper_tachet
+  ),
+  on = "family"
+]
+Trait_EU[Trait_EU_piercer,
+  `:=`(
+    feed_piercer_tachet = i.feed_piercer_tachet,
+    feed_predator_tachet = i.feed_predator_tachet,
+    feed_parasite_tachet = i.feed_parasite_tachet,
+    feed_scraper_tachet = i.feed_scraper_tachet
+  ),
+  on = "unique_id"
+]
 
-# trait harmonization
+# manual assignment for few species
+# Margaritifera margaritifera filter feeder
+# and parasite as larvae
+Trait_EU[
+  species == "Margaritifera margaritifera",
+  `:=`(
+    feed_filter_tachet = 0.5,
+    feed_piercer_tachet = 0
+  )
+]
+
+# Hirudo medicinalis to parasite
+Trait_EU[
+  species == "Hirudo medicinalis",
+  `:=`(
+    feed_parasite_tachet = 1,
+    feed_piercer_tachet = 0
+  )
+]
+
+# Haemopis sanguisuga to predators
+Trait_EU[
+  species == "Haemopis sanguisuga",
+  `:=`(
+    feed_predator_tachet = 1,
+    feed_piercer_tachet = 0
+  )
+]
+
+# Piscicola geometra to parasites
+Trait_EU[
+  species == "Piscicola geometra",
+  `:=`(
+    feed_parasite_tachet = 1,
+    feed_piercer_tachet = 0
+  )
+]
+
+# Aphelocheirus aestivalis to predators
+Trait_EU[
+  species == "Aphelocheirus aestivalis",
+  `:=`(
+    feed_predator_tachet = 1,
+    feed_piercer_tachet = 0
+  )
+]
+
+# trait harmonization:
+# - for feed other use information in tachet if available
+Trait_EU[
+  feed_other > 0 & !is.na(feed_absorber_tachet),
+  feed_other := 0
+]
+
 Trait_EU[, feed_shredder := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c("feed_shredder",
-                     "feed_shredder_tachet",
-                     "feed_miner",
-                     "feed_xylo")]
+  .SDcols = c(
+    "feed_shredder",
+    "feed_shredder_tachet",
+    "feed_miner",
+    "feed_xylo"
+  )
+]
 Trait_EU[, feed_filter := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c(
-           "feed_active_filter",
-           "feed_passive_filter",
-           "feed_filter_tachet",
-           "feed_absorber_tachet"
-         )]
+  .SDcols = c(
+    "feed_active_filter",
+    "feed_passive_filter",
+    "feed_filter_tachet",
+    "feed_absorber_tachet"
+  )
+]
 Trait_EU[, feed_herbivore := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c("feed_scraper_tachet",
-                     "feed_grazer")]
+  .SDcols = c(
+    "feed_scraper_tachet",
+    "feed_grazer"
+  )
+]
 Trait_EU[, feed_gatherer := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c("feed_gatherer",
-                     "feed_deposit_feeder_tachet")]
-
-
-
-# feeding mode other:
-
-# Haliplidae -> herbivores as larvae! 
-# https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/haliplidae
-Trait_EU[feed_other > 0 & family == "Haliplidae",
-         `:=`(feed_herbivore = 10,
-              feed_other = 0)]
-
-# Dytiscidae mainly shredders according to tachet (33 out of 34 entries)
-# Gyrinidae mainly shredders? (3 genera in tachet)
-# Trait_EU[feed_other > 0, .(species, genus, family, order)] %>% 
-#   .[, unique(family)]
-
-# TODO: What to do with these taxa?
-# Trait_EU[feed_other > 0, ]
-Trait_EU <- Trait_EU[feed_other == 0, ] %>% 
-  .[, feed_other := NULL]
-
-
-# del columns
-Trait_EU[, c("feed_active_filter",
-           "feed_active_filter_abs",
-           "feed_piercer_t",
-           "piercer_comment") := NULL]
+  .SDcols = c(
+    "feed_gatherer",
+    "feed_deposit_feeder_tachet"
+  )
+]
+Trait_EU[, feed_predator := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "feed_predator",
+    "feed_predator_tachet"
+  )
+]
+Trait_EU[, feed_parasite := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "feed_parasite",
+    "feed_parasite_tachet"
+  )
+]
 
 Trait_EU[, c(
-  "feed_shred",
+  "feed_shredder_tachet",
   "feed_miner",
   "feed_xylo",
   "feed_active_filter",
-  "feed_passive_filter"
+  "feed_passive_filter",
+  "feed_filter_tachet",
+  "feed_absorber_tachet",
+  "feed_scraper_tachet",
+  "feed_grazer",
+  "feed_deposit_feeder_tachet",
+  "feed_predator_tachet",
+  "feed_parasite_tachet",
+  "feed_piercer_tachet",
+  "comment_piercer"
 ) := NULL]
+
+# feeding mode other:
+# - Haliplidae -> herbivores as larvae!
+# https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/haliplidae
+Trait_EU[
+  feed_other > 0 & family == "Haliplidae",
+  `:=`(
+    feed_herbivore = 1,
+    feed_other = 0
+  )
+]
+
+# rm for those were feed_other > 0.5
+# set to zero for other, since this
+# feeding mode does not represent one of the used categories
+Trait_EU <- Trait_EU[is.na(feed_other) | feed_other < 0.5, ]
+Trait_EU[feed_other > 0, feed_other := 0]
+Trait_EU[, "feed_other" := NULL]
+
 
 # _________________________________________________________________________
 #### Locomotion ####
@@ -271,34 +415,66 @@ Trait_EU[, c(
 # locm_burrow: burrower
 # locm_sessil: sessil (attached)
 # _________________________________________________________________________
-Trait_EU[, locom_swim := apply(.SD, 1, max),
-         .SDcols = c("locom_swim_skate", "locom_swim_dive")
+
+# like feeding mode other
+Trait_EU[
+  locom_other > 0 & !is.na(locom_crawler_tachet),
+  locom_other := 0
 ]
-setnames(Trait_EU,
-         old = c("locom_sprawl"),
-         new = c("locom_crawl")
-)
-# del
-Trait_EU[, c("locom_swim_skate", "locom_swim_dive") := NULL]
 
-# locom other -> critical taxa
+Trait_EU[, locom_swim := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "locom_swim_skate",
+    "locom_swim_dive",
+    "locom_surface_swimmer_tachet",
+    "locom_full_water_swimmer_tachet"
+  )
+]
+Trait_EU[, locom_burrow := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "locom_burrow",
+    "locom_burrower_tachet",
+    "locom_interstitial_tachet"
+  )
+]
+Trait_EU[, locom_crawl := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "locom_sprawl",
+    "locom_crawler_tachet"
+  )
+]
+Trait_EU[, locom_sessil := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "locom_sessil",
+    "locom_temp_attached_tachet",
+    "locom_perm_attached_tachet"
+  )
+]
+
+# locom other, del if 1 otherwise set to 0
 # Definition: other locomotion type like flying or jumping (mainly outside the water)
-# locom_other_taxa <- Trait_EU[locom_other > 0, coalesce(species,
-#                                                        genus,
-#                                                        family,
-#                                                        order)]
-# tachet[species %in% locom_other_taxa, ]
+Trait_EU <- Trait_EU[is.na(locom_other) | locom_other < 1, ]
+Trait_EU[locom_other > 0, locom_other := 0]
+Trait_EU[locom_flier_tachet > 0, locom_flier_tachet := 0]
 
-# really critical taxa with locom others removed
-Trait_EU <- Trait_EU[!locom_other == 10,] %>% 
-  .[, locom_other := NULL]
-
-# View(Trait_EU[locom_other > locom_burrow & locom_other > locom_crawl &
-#                   locom_other > locom_sessil & locom_other > locom_swim,
-#                 .(species, genus, family, locom_other,
-#                   locom_burrow, locom_crawl,
-#                   locom_sessil, locom_swim)]
-# )
+# del
+Trait_EU[
+  ,
+  c(
+    "locom_swim_skate",
+    "locom_swim_dive",
+    "locom_surface_swimmer_tachet",
+    "locom_full_water_swimmer_tachet",
+    "locom_burrower_tachet",
+    "locom_interstitial_tachet",
+    "locom_sprawl",
+    "locom_crawler_tachet",
+    "locom_temp_attached_tachet",
+    "locom_perm_attached_tachet",
+    "locom_other",
+    "locom_flier_tachet"
+  ) := NULL
+]
 
 # _________________________________________________________________________
 #### Respiration ####
@@ -315,22 +491,47 @@ Trait_EU <- Trait_EU[!locom_other == 10,] %>%
 # table(Trait_EU$resp_tap)
 # table(Trait_EU$resp_sur)
 # _________________________________________________________________________
-Trait_EU[, resp_pls_spi := apply(.SD, 1, max),
-         .SDcols = c("resp_spi", "resp_pls")
+Trait_EU[, resp_tegument := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "resp_tegument",
+    "resp_tegument_tachet"
+  )
 ]
+Trait_EU[, resp_gil := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "resp_gill",
+    "resp_gill_tachet"
+  )
+]
+Trait_EU[, resp_pls_spi := apply(.SD, 1, max, na.rm = TRUE),
+  .SDcols = c(
+    "resp_spiracle",
+    "resp_plastron",
+    "resp_plastron_tachet",
+    "resp_spiracle_tachet"
+  )
+]
+
 Trait_EU[, c(
-  "resp_tap",
-  "resp_ves",
-  "resp_sur",
-  "resp_spi",
-  "resp_pls"
+  "resp_tapping",
+  "resp_vesicle",
+  "resp_vesicle_tachet",
+  "resp_surface",
+  "resp_gill",
+  "resp_spiracle",
+  "resp_spiracle_tachet",
+  "resp_plastron",
+  "resp_plastron_tachet",
+  "resp_gill_tachet",
+  "resp_tegument_tachet"
 ) := NULL]
 
-# =================== Dispersal -> This needs to be fixed ======================
+# ___________________________________________________________________________
+#### Dispersal
+# -> This needs to be fixed
 # Drift/dispersal
 # use disp low, medium, high for comparability
 # del dispersal_unknown
-Trait_EU[, dispersal_unknown := NULL]
 # check for merge if information is reliable
 # two species will get changed their dispersal trait from low to medium
 # Sericostoma personatum & Silo pallipes
@@ -345,7 +546,7 @@ Trait_EU[, dispersal_unknown := NULL]
 #            on = c(species = "Species")]
 # # change NA's in dispersal medium to zeor
 # Trait_EU[is.na(dispersal_medium), dispersal_medium := 0]
-# =================================================================
+# ___________________________________________________________________________
 
 # _________________________________________________________________________
 #### Oviposition ####
@@ -356,33 +557,55 @@ Trait_EU[, dispersal_unknown := NULL]
 # rep_parasitic no entries
 # rep_asexual is deleted
 # _________________________________________________________________________
-setnames(Trait_EU,
-         old = "rep_clutch_ter",
-         new = "ovip_ter"
-)
 Trait_EU[, ovip_aqu := apply(.SD, 1, max),
-         .SDcols = c(
-           "rep_egg_cem_iso",
-           "rep_egg_free_iso",
-           "rep_clutch_free",
-           "rep_clutch_fixed",
-           "rep_clutch_veg"
-         )
+  .SDcols = c(
+    "rep_egg_cem_iso",
+    "rep_egg_free_iso",
+    "rep_clutch_free",
+    "rep_clutch_fixed",
+    "rep_clutch_veg",
+    "rep_egg_cem_iso_tachet",
+    "rep_egg_free_iso_tachet",
+    "rep_clutch_free_tachet",
+    "rep_clutch_fixed_tachet",
+    "rep_clutch_veg_tachet"
+  )
 ]
 Trait_EU[, ovip_ovo := apply(.SD, 1, max),
-         .SDcols = c("rep_parasitic", "rep_ovovipar")
+  .SDcols = c(
+    "rep_parasitic",
+    "rep_ovovivipar",
+    "rep_ovovivipar_tachet"
+  )
+]
+Trait_EU[, ovip_ter := apply(.SD, 1, max),
+  .SDcols = c(
+    "rep_clutch_ter",
+    "rep_clutch_ter_tachet"
+  )
 ]
 
-# del
+# rm
+# rep asexual just deleted, few taxa with mostly
+# low preferences -> not in accordance to our categorization
 Trait_EU[, c(
   "rep_egg_cem_iso",
   "rep_egg_free_iso",
   "rep_clutch_free",
   "rep_clutch_fixed",
   "rep_parasitic",
-  "rep_ovovipar",
+  "rep_ovovivipar",
   "rep_clutch_veg",
-  "rep_asexual"
+  "rep_asexual",
+  "rep_clutch_ter",
+  "rep_egg_cem_iso_tachet",
+  "rep_egg_free_iso_tachet",
+  "rep_clutch_free_tachet",
+  "rep_clutch_fixed_tachet",
+  "rep_clutch_veg_tachet",
+  "rep_ovovivipar_tachet",
+  "rep_clutch_ter_tachet",
+  "rep_asexual_tachet"
 ) := NULL]
 
 # _________________________________________________________________________
@@ -393,10 +616,10 @@ Trait_EU[, c(
 # temp warm (>= 18 °C)
 # temp eurytherm (no specific preference)
 # _________________________________________________________________________
-Trait_EU[, temp_cold := apply(.SD, 1, max),
-         .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")
-]
-Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
+# Trait_EU[, temp_cold := apply(.SD, 1, max),
+#   .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")
+# ]
+# Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
 
 
 # _________________________________________________________________________
@@ -427,19 +650,73 @@ body_form_pup[, (cols) := lapply(.SD, function(y) {
 # subset to EU data
 bf_EU <- body_form_pup[grepl("EU.*", array), ]
 
-# merge on species level
+
+# merge on species-level
 Trait_EU[bf_EU[!is.na(species), ],
-         `:=`(
-           bf_flattened = i.flattened,
-           bf_spherical = i.spherical,
-           bf_cylindrical = i.cylindrical,
-           bf_streamlined = i.streamlined
-         ),
-         on = "species"
+  `:=`(
+    bf_flattened = i.flattened,
+    bf_spherical = i.spherical,
+    bf_cylindrical = i.cylindrical,
+    bf_streamlined = i.streamlined
+  ),
+  on = "species"
+]
+
+# merge on genus-level
+Trait_subset <- Trait_EU[is.na(species) & !is.na(genus), ]
+Trait_subset[bf_EU,
+  `:=`(
+    bf_flattened = i.flattened,
+    bf_spherical = i.spherical,
+    bf_cylindrical = i.cylindrical,
+    bf_streamlined = i.streamlined
+  ),
+  on = "genus"
+]
+Trait_EU[Trait_subset,
+  `:=`(
+    bf_flattened = i.bf_flattened,
+    bf_spherical = i.bf_spherical,
+    bf_cylindrical = i.bf_cylindrical,
+    bf_streamlined = i.bf_streamlined
+  ),
+  on = "unique_id"
 ]
 
 # _________________________________________________________________________
-#### Pattern fo development ####
+# Size
+# size_small: size < 9 mm (EU: size < 10 mm)
+# size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
+# size_large: size > 16 mm (EU: size > 20 mm)
+# _________________________________________________________________________
+Trait_EU[, size_small := apply(.SD, 1, max),
+  .SDcols = c(
+    "size_&le; 0.25 cm_tachet",
+    "size_> 0.25-0.5 cm_tachet",
+    "size_> 0.5-1 cm_tachet"
+  )
+]
+Trait_EU[, size_large := apply(.SD, 1, max),
+  .SDcols = c(
+    "size_> 2-4 cm_tachet",
+    "size_> 4-8 cm_tachet",
+    "size_> 8 cm_tachet"
+  )
+]
+setnames(Trait_EU, "size_> 1-2 cm_tachet", "size_medium")
+
+# rm
+Trait_EU[, c(
+  "size_&le; 0.25 cm_tachet",
+  "size_> 0.25-0.5 cm_tachet",
+  "size_> 0.5-1 cm_tachet",
+  "size_> 2-4 cm_tachet",
+  "size_> 4-8 cm_tachet",
+  "size_> 8 cm_tachet"
+) := NULL]
+
+# _________________________________________________________________________
+#### Pattern of development ####
 # Holometabolous
 # hemimetabolous?
 # no insect
@@ -479,236 +756,55 @@ Trait_EU[, `:=`(
   dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
+# _________________________________________________________________________
 
-# _________________________________________________________________________
-#### Normalization Freshecol ####
-# _________________________________________________________________________
-Trait_EU <- normalize_by_rowSum(
+# normalize again 
+normalize_by_rowSum(
   x = Trait_EU,
   non_trait_cols = c(
     "order",
     "family",
     "genus",
-    "species"
+    "species",
+    "unique_id",
+    "taxon_cp",
+    "taxa"
   )
 )
 
-# exclude life stage for now
-# -> can not be complemented by tachet and not needed for now
-Trait_EU <- Trait_EU[, .SD, .SDcols = !names(Trait_EU) %like% "stage"]
-
-# _________________________________________________________________________
-#### Adding Tachet data ####
-# grouping feature size is added from tachet
-# not present in freshwaterecology DB
-
-#### Size ####
-# size_small: size < 9 mm (EU: size < 10 mm)
-# size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
-# size_large: size > 16 mm (EU: size > 20 mm)
-# Data on body size originate from tachet
-# _________________________________________________________________________
-
-# Load normalized & harmonized tachet data
-tachet <- readRDS(file.path(data_cleaned, "EU", "Trait_Tachet_pp_harmonized.rds"))
-
-# merge size information from tachet:
-# species-level
-Trait_EU[tachet[!is.na(species), ],
-         `:=`(
-           size_large = i.size_large,
-           size_medium = i.size_medium,
-           size_small = i.size_small
-         ),
-         on = "species"
-]
-
-# _________________________________________________________________________
-#### Complement with tachet data ####
-# Remaining Information from tachet is just considered for entries in
-# freshecol with missing information
-# If freshecol & tachet had trait information for the same taxon
-# on the same trait, values from freshecol were taken
-# dispersal not considered
-# _________________________________________________________________________
-
-# get names of trait columns
-name_vec <- grep("order|family|genus|species|size|dispersal",
-                 names(Trait_EU),
-                 value = TRUE,
-                 invert = TRUE
-) %>%
-  sub("\\_.*", "", .) %>%
-  unique() %>%
-  paste0("^", .)
-
-# na_before <- sum(is.na(Trait_EU))/(dim(Trait_EU)[1]*dim(Trait_EU)[2])
-final <- Trait_EU
-for (i in name_vec) {
-  subset_vec <- rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) > 0
-  
-  # subset to NA values -> complement these with Tachet traits
-  step <- coalesce_join(
-    x = final[subset_vec, ],
-    y = tachet[!is.na(species), .SD,
-               .SDcols = names(tachet) %like% paste0(i, "|", "species")
-    ],
-    by = "species",
-    join = dplyr::left_join
-  )
-  setDT(step)
-  
-  # merge back to whole dataset
-  final <- coalesce_join(
-    x = final,
-    y = step[, .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
-    by = "species",
-    join = dplyr::left_join
-  )
-  setDT(final)
-}
-# check temp & ph
-# apply(Trait_EU[, .SD, .SDcols = names(Trait_EU) %like% name_vec[5]],
-#       2,
-#       table)
-# apply(final[, .SD, .SDcols = names(Trait_EU) %like% name_vec[5]],
-#       2,
-#       table)
-# tachet[grepl("Acentria ephemerella", Species_merge), ]
-# Trait_EU[grepl("Acentria ephemerella", species), ]
-# na_after <- sum(is.na(final))/(dim(final)[1]*dim(final)[2])
-Trait_EU <- final
-
-# _________________________________________________________________________
-#### Add information from taxa that are only in tachet ####
-# _________________________________________________________________________
-
-# species-level:
-Trait_EU <- rbind(Trait_EU,
-                  tachet[!(species %in% Trait_EU$species) & !is.na(species), .SD,
-                         .SDcols = !(names(tachet) %like% "^stage|^disp")
-                  ],
-                  use.names = TRUE,
-                  fill = TRUE
+# new column order
+newcolorder <- c(
+  "species",
+  "genus",
+  "family",
+  "order",
+  "taxon_cp",
+  "taxa",
+  "unique_id",
+  grep("feed", names(Trait_EU), value = TRUE),
+  grep("resp", names(Trait_EU), value = TRUE),
+  grep("volt", names(Trait_EU), value = TRUE),
+  grep("locom", names(Trait_EU), value = TRUE),
+  grep("ovip", names(Trait_EU), value = TRUE),
+  grep("size", names(Trait_EU), value = TRUE),
+  grep("bf", names(Trait_EU), value = TRUE),
+  grep("dev", names(Trait_EU), value = TRUE)
 )
 
-# _________________________________________________________________________
-#### Add information from Tachet on lower tax. resolution ####
-# freshwaterecolgy DB only contains data on species level!
-# _________________________________________________________________________
-
-# genus-level:
-tachet_genus <- tachet[is.na(species) & !is.na(genus), ] %>%
-  .[!duplicated(genus), ]
-
-Trait_EU <- rbind(Trait_EU,
-                  tachet_genus[, .SD,
-                               .SDcols = !(names(tachet) %like% "^stage|^disp")
-                  ],
-                  use.names = TRUE,
-                  fill = TRUE
-)
-
-# family level
-tachet_family <- tachet[is.na(species) & is.na(genus) & !is.na(family), ] %>%
-  .[!duplicated(family), ]
-
-Trait_EU <- rbind(Trait_EU,
-                  tachet_family[, .SD,
-                                .SDcols = !(names(tachet) %like% "^stage|^disp")
-                  ],
-                  use.names = TRUE,
-                  fill = TRUE
-)
-
-# _________________________________________________________________________
-#### Taxonomical corrections ####
-# _________________________________________________________________________
-
-# Macromia instead of MaRcromia!
-Trait_EU[grepl("Marcromia", genus), `:=`(
-  genus = "Macromia",
-  species = sub("Marcromia", "Macromia", species)
-)]
-
-# Heteroptera is a suborder in Hemiptera
-Trait_EU[grepl("Heteroptera", order), order := "Hemiptera"]
-
-# Crustaceans:
-Trait_EU[grepl("Grapsidae", family), order := "Decapoda"]
-Trait_EU[grepl("Triopsidae", family), order := "Notostraca"]
-Trait_EU[grepl("Cambaridae", family), order := "Decapoda"]
-Trait_EU[grepl("Asellidae", family), order := "Isopoda"]
-Trait_EU[grepl("Astacidae", family), order := "Decapoda"]
-Trait_EU[grepl("Atyidae", family), order := "Decapoda"]
-
-# Oligochaeta is actually a subclass
-# Tubificidae outdated
-Trait_EU[grepl("Tubificidae", family), family := "Naididae"]
-Trait_EU[
-  grepl("Lumbricidae|Propappidae|Naididae", family),
-  order := "Haplotaxida"
-]
-
-# Hirudinea is actually a subclass
-Trait_EU[grepl("Glossiphoniidae", family), order := "Rhynchobdellida"]
-Trait_EU[grepl("Haemopidae", family), order := "Hirudiniformes"]
-
-# Gastropoda is actually a class
-Trait_EU[
-  grepl("Lymnaeidae|Planorbidae|Acroloxidae", family),
-  order := "Pulmonata"
-]
-Trait_EU[grepl("Physidae", family), order := "Basommatophora"]
-
-# Nermertia seems to be a spelling error -> should be Nemertea instead
-# (which is Phylum)
-Trait_EU[grepl("Tetrastemmatidae", family), order := "Monostilifera"]
-
-# Coelenterata is a phylum actually
-Trait_EU[grepl("Clavidae", order), `:=`(
-  family = "Hydractiniidae",
-  order = "Anthoathecata"
-)]
-
-# Turbellaria is actually a class
-Trait_EU[grepl("Turbellaria", order), order := "Tricladida"]
-
-# Bivalvia is actually a class
-Trait_EU[grepl("Margaritiferidae", family), order := "Unionida"]
-
-# Bryozoa is actually a phylum
-Trait_EU[
-  grepl("Fredericellidae|Cristatellidae|Plumatellidae", family),
-  order := "Plumatellida"
-]
-Trait_EU[grepl("Paludicellidae", family), order := "Ctenostomata"]
-# Lophopodidae currently unranked
-
-# order gentianales is actually a plant
-Trait_EU[grepl("Lepidostoma", genus), `:=`(
-  family = "Lepidostomatidae",
-  order = "Trichoptera"
-)]
-Trait_EU[grepl("Normandia", genus), `:=`(
-  family = "Elmidae",
-  order = "Coleoptera"
-)]
-Trait_EU[grepl("Stenostomum", genus), `:=`(
-  family = "Stenostomidae",
-  order = "Catenulida"
-)]
-
-# finally rm entries with taxonomical resolution higher than Family
-# no taxa on higher level than family
-# Trait_EU[!(is.na(species) & is.na(genus) & is.na(family)), ]
+setcolorder(Trait_EU, newcolorder)
 
 # save
 saveRDS(
   object = Trait_EU,
-  file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds")
+  file = file.path(
+    data_cleaned, 
+    "EU",
+    "Trait_freshecol_2020_pp_harmonized.rds")
 )
 saveRDS(
   object = Trait_EU,
-  file = file.path(data_aggr, "Data", "Trait_EU_pp_harmonized.rds")
+  file = file.path(
+    data_aggr,
+    "Data",
+    "Trait_freshecol_2020_pp_harmonized.rds")
 )
