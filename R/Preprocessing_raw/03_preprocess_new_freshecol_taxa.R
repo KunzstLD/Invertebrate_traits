@@ -106,7 +106,7 @@ ID_subf2_gbif <- get_tsn(taxa_subf_2,
   rows = 1
 )
 saveRDS(ID_subf2_gbif,
-        file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds"
+  file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds"
 )
 
 taxa_subf2_classf <- classification(
@@ -224,6 +224,17 @@ freshwaterecol[grep("Marcromia", genus), `:=`(
   family = "Macromiidae",
   taxon_cp = "Macromia splendens"
 )]
+
+# taxonomical corrections
+# Microhydra sowerbyi is actually a freshwater jellyfish
+# family: Olindiidae, order: Hydrozoa
+freshwaterecol[grepl("Microhydra sowerbyi", species), `:=`(
+  family = "Olindiidae",
+  order = "Hydrozoa"
+)]
+
+# Bythinella
+freshwaterecol[genus == "Bythinella", family := "Hydrobiidae"]
 
 # set column order
 setcolorder(

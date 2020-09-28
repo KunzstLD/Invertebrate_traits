@@ -26,11 +26,11 @@ copy_till_next_occur <- function(x) {
 #   "GHI",
 #   NA_character_
 # )
-
 # copy_till_next_occur(x = test)
 
 #### Capitalize first letter ####
 simpleCap <- function(x) {
+  x <- x[!is.na(x)]
   s <- tolower(x)
   paste0(toupper(substring(s, 1, 1)), substring(s, 2))
 }

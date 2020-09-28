@@ -151,9 +151,9 @@ setnames(
       "gatherer",
       "active_filter",
       "passive_filter",
-      "feed_predator",
-      "feed_parasite",
-      "feed_other"
+      "predator",
+      "parasite",
+      "other"
     )
   )
 )
