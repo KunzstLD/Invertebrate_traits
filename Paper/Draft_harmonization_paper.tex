@@ -52,7 +52,6 @@ sorting = none % sort by name year title
 
 \section*{Introduction}
 
-
 Explaining and predicting how communities are shaped by environmental factors is one of the main goals of ecology. Organismal traits, defined as measurable properties of an organism \cite{mcgill_rebuilding_2006}, might be beneficial in achieving this goal \cite{heino_jani_macroecological_2013}. Traits evolve through adaptations (e.g., physiological, behavioral, etc.) of organisms to their environment and indicate direct or indirect linkages between the biological response of an organism to its environment \cite{southwood_habitat_1977, verberk_delivering_2013}. Besides providing a mechanistic explanation of species-environment relationships, trait-based approaches might be suitable for large scale analysis because the variability in trait responses is lower than for taxonomic responses \cite{bonada_taxonomic_2007, baird_toward_2011}. Traits of freshwater invertebrates are difficult to determine because, unlike plants, their traits often cannot be measured directly. For example, to gain knowledge on feeding habits requires evaluating mouthpart morphology, consumed food, and the organisms function within its community \cite{moog_comprehensive_nodate}. Nevertheless, invertebrate traits have been increasingly used in freshwater ecology, e.g. by relating macroinvertebrate trait composition to environmental factors or as trait metrics in biomonitoring \cite{poff_developing_2010, szocs_effects_2014, bhowmik_large_2015, menezes_beyond_2010}.
 
 %%% Old Version:
@@ -65,7 +64,7 @@ In the last decades, freshwater ecologists developed comprehensive invertebrate 
 Analyses of invertebrate traits that synthesize information on invertebrate grouping features from more than two different biogeographic regions are rare. A grouping feature is defined by Schmera et al. as a general property (e.g. feeding mode) that comprises a "group of related traits (e.g., predator, shredder, etc.) that vary among species or among individuals within a species" \cite{schmera_proposed_2015}. To our knowledge, only Brown et al. \cite{brown_functional_2018} harmonized grouping features from more than two geographically distant invertebrate trait databases in a study on the influence of decreasing glacier cover on functional diversity and community assembly of invertebrates. 
 % TODO: ?Paper trait convergence Doledec
 
-We suspect that the heterogeneity of information in freshwater invertebrate trait databases is likely a major reason for the lack of studies across biogeographic regions. To harmonize grouping features from different regions, first commonly accepted and unambiguous trait definitions are required \cite{schneider_towards_2019}. In the best case, grouping features would be classified into the same traits across databases or they could easily be harmonized using standardized terminology. However, a lack of standardized terminology of trait definitions and poor metadata quality in many trait databases is a common issue throughout the field of trait-based ecology \cite{baird_toward_2011, schneider_towards_2019}. Secondly, consistent coding of traits facilitates the compatibility of trait data from different databases. Traits can be binary (i.e. trait exists or not), continuous, or fuzzy coded variables. Fuzzy codes represent the affinity of an organism to express a certain trait. They are used to account for plasticity in traits and are usually converted to percentages. Continuous values are typically used for grouping features that can be measured, like body size. However, invertebrate trait databases are heterogeneous with regard to the coding they use for their traits \cite{culp_incorporating_2011} (Table \ref{tab:trait_databases_coding_differentiation}). Brown et al. \cite{brown_functional_2018} harmonized grouping features based on trait databases from Europe, North America, and New Zealand because in these trait databases identical grouping features are classified differently into traits. As the traits from North America were coded binary in contrast to the fuzzy coded traits from from Europe and New Zealand, the authors consulted experts to assign fuzzy coded traits to North American taxa or inferred them from the European trait database. Thus, it becomes apparent that using invertebrate trait data from several regions requires extensive data processing prior to the actual data analysis. A centralized database with standardized and unambiguous traits and a consistent coding of traits would minimize data processing effort.
+We suspect that the heterogeneity of information in freshwater invertebrate trait databases is likely a major reason for the lack of studies across biogeographic regions. To harmonize grouping features from different regions, first commonly accepted and unambiguous trait definitions are required \cite{schneider_towards_2019}. In the best case, grouping features would be classified into the same traits across databases or they could easily be harmonized using standardized terminology. However, a lack of standardized terminology of trait definitions and poor metadata quality in many trait databases is a common issue throughout the field of trait-based ecology \cite{baird_toward_2011, schneider_towards_2019}. Secondly, consistent coding of traits facilitates the compatibility of trait data from different databases. Traits can be binary (i.e. trait exists or not), continuous, or fuzzy coded variables. Fuzzy codes represent the affinity of an organism to express a certain trait. They are used to account for plasticity in traits and are usually converted to percentages. Continuous values are typically used for grouping features that can be measured, like body size. However, invertebrate trait databases are heterogeneous with regard to the coding they use for their traits \cite{culp_incorporating_2011} (Table \ref{tab:trait_databases_coding_differentiation}). Brown et al. \cite{brown_functional_2018} harmonized grouping features based on trait databases from Europe, North America, and New Zealand because in these trait databases identical grouping features are classified differently into traits. As the traits from North America were coded binary in contrast to the fuzzy coded traits from Europe and New Zealand, the authors consulted experts to assign fuzzy coded traits to North American taxa or inferred them from the European trait database. Thus, it becomes apparent that using invertebrate trait data from several regions requires extensive data processing prior to the actual data analysis. A centralized database with standardized and unambiguous traits and a consistent coding of traits would minimize data processing effort.
 
 Differing taxonomic resolutions between the observed taxa in a study and the used trait database is another challenge when working with trait data. When observations are on a lower taxonomic level than data available in the trait databases (e.g. observations on species-level, trait data on genus-level) trait data of the higher taxonomic level are often assigned, e.g. \cite{szocs_effects_2014, vos_taxonomic_2017}. Conversely, if trait information is only available on lower taxonomic levels than the observed taxa, traits are aggregated to a higher taxonomic level, e.g. \cite{poff_functional_2006, szocs_effects_2014, piliere_a._f._h._importance_2016, aspin_extreme_2019}. Thereby, trait aggregation is often done using the mean \cite{magliozzi_functional_2019}, median \cite{szocs_effects_2014} or the mode \cite{piliere_a._f._h._importance_2016}. Up to now, studies on how and to which extent different trait aggregation methods influence trait-based analysis are missing. Knowing this can aid the choice of aggregation method for future studies.
 
@@ -138,7 +137,7 @@ Traits of the harmonized grouping feature datasets were aggregated to family-lev
 
 \subsection*{Comparison of aggregated traits with traits assigned by experts}
 
-Aggregated trait affinities of the five trait aggregation methods (\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg}) were compared to trait affinities assigned at family-level by experts, which were available for the Australian and North American database for a subset of grouping features and taxa. For the Australian database, we compared aggregated trait affinities with assigned trait affinities resolved at family-level for the grouping features feeding mode and size using data from Chessman et al. \cite{chessman_dissolved-oxygen_2018}. In Chessman et al. \cite{chessman_dissolved-oxygen_2018} feeding mode is classified similarly as in the harmonized Australian database except that the trait parasite is missing. We conducted the comparison for the 220 families available in Chessman et al. \cite{chessman_dissolved-oxygen_2018}. Considering each factor combination of family and trait (in total 8) this amounts to 1760 cases.
+Aggregated trait affinities of the five trait aggregation methods (\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg}) were compared to trait affinities assigned at family-level by experts, which were available for the Australian and North American database for a subset of grouping features and taxa. For the Australian database, we compared aggregated trait affinities with assigned trait affinities resolved at family-level for the grouping features feeding mode and size using data from Chessman \cite{chessman_dissolved-oxygen_2018}. In Chessman \cite{chessman_dissolved-oxygen_2018} feeding mode is classified similarly as in the harmonized Australian database except that the trait parasite is missing. We conducted the comparison for the 220 families available in Chessman \cite{chessman_dissolved-oxygen_2018}. Considering each factor combination of family and trait (in total 8) this amounts to 1760 cases.
 
 For the North American database, we compared aggregated trait affinities with assigned trait affinities on family-level for the grouping features feeding mode, respiration, size, voltinism, and locomotion. The assigned trait affinities at family-level are part of the North American database (\cite{twardochleb_trait_data_2020}) and originate from expert knowledge. Trait information was available for 94 families of which all were present in the aggregated North American database (total number of cases 1598). The traits were on the categorical scale and were converted to binary traits prior to the comparison with aggregated trait affinities.
 
@@ -185,10 +184,47 @@ The data processing and aforementioned analysis were carried out using R (Versio
 
 \section*{Discussion}
 
-% Stat. techniques developed -> cannot use full potential
-% if data quality is poor, when synthesizing information is hard 
-% In general, differences produced by the aggregation methods seem to arise by using mean or median, not driven by different weighting approaches (direct vs. stepwise vs. weighted) 
+% Influence of aggregation methods on trait-environment relationships:
+% 1) In general, differences produced by the aggregation methods seem to arise by using mean or median, 
+% not driven by different weighting approaches (direct vs. stepwise vs. weighted) 
+% -> link to taxonomic hierarchy, many families have only a few genera
+% -> Similarly, many genera have only a few species
+% -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
+% 
+% Differences for NOA greater due to coding?
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Ben's Comment: -> But another issues is that these aggregation methods were being compared to traits assigned at the family level, which I understand was often done by expert opinion. So, these traits assigned at the family level may not be really “correct”! The difference between the trait aggregated to family and its designation at the family level could indicate: (a) the aggregation method is “no good”, (b) the trait assigned at the family level was “no good”, or (c) both a and b.
+
+% Simulation result: 
+% -  base simulation with similar amount of speices per genus and genera per family and varying trait values
+% results can vary when variation in trait values increases 
+% However, mostly the different aggregation methods result in similar trait affinities
+% when differences occur, only for: 
+% dir_median vs stepwise median
+% direct mean vs stepwise median
+% stepwise mean vs stepwise median
+% direct mean vs direct median
+% stepwise median vs weighed agg
+% Trait variability: 0.3 and greater
+% Max diff ~ 0.2
+
+% - Results for varying taxonomic hierarchy:
+% Which levels?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% 2) Harmonization: Minor influence on RDA species scores
+% RDA species scores 
+%   -> Normalized eigenvectors
+%   -> dependent on nr. of variables? Nr. of response variables not really influential 
+% We used only a small-scale study -> What's different to large-scale studies?
+
+% Further aggr. after harmonization: no difference to the harmonized dataset
+% ?Logical because trait aggr. methods themselves showed only minor differences
+
+
+% Complex Stat. techniques developed -> cannot use full potential
 
 \newpage
 
@@ -203,28 +239,4 @@ The data processing and aforementioned analysis were carried out using R (Versio
 
 \subfile{Results/SI}
 
-% Trait definitions 
-\subfile{Trait_def_table/SI_trait_def_table2.tex}
-
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%% Examples of trait databases %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % ? Also mention Tomanova? -> not used here
-% \begin{table}[ht]
-%   \centering
-%     \caption{Examples of aquatic invertebrate trait databases established in the last decades. Differences in codings and trait definitions are outlined for these databases in Table \ref{tab:trait_databases_coding_differentiation} and Table S\ref{tab:trait_definitions}.}
-%     \label{tab:overview_trait_dbs}
-%     \begin{tabular}{lcccl}
-%     \hline
-%     Database & \specialcell{Nr. of grouping \\ features} & \specialcell{Main organism \\ groups} & \specialcell{Taxa and \\ resolution} & Citation \\ 
-%     \hline
-%     Freshwaterecology & 40 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & Species-level & \cite{schmidt-kloiber_www.freshwaterecology.info_2015} \\ 
-%     Tachet & 21 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{usseglio-polatera_biomonitoring_2000} \\ 
-%     \specialcell{North America \\ (Vieira)} & 62 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{vieira_database_nodate} \\ 
-%     \specialcell{North America \\ (Twardochleb)} & 11 & Aquatic insects & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{vieira_database_nodate} & \textit{In prep.} \\ 
-%     Australia & & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{kefford_integrated_2020} \\
-%     New Zealand & & & & \cite{Philips_and_Smith_NZ_DB_2018}\\
-%     \hline
-%     \end{tabular}
-% \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
