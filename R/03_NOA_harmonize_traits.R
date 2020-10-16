@@ -8,6 +8,10 @@ Trait_Noa <- readRDS(file = file.path(data_cleaned,
                                       "North_America",
                                       "Traits_US_pp.rds"))
 
+# convert integer cols to double
+int_cols <- names(Filter(is.integer, Trait_Noa))
+Trait_Noa[, (int_cols) := lapply(.SD, as.double), .SDcols = int_cols]
+
 # _________________________________________________________________________
 #### Voltinism ####
 # volt_semi
@@ -125,7 +129,114 @@ Trait_Noa[detrivores,
 # omnivorous to predators?
 # mouthparts of shredders often suited for scavenging
 
+# Add from final preprocessed EU data
+Trait_EU <-
+  readRDS(file = file.path(data_cleaned, "EU", "Trait_freshecol_2020_pp_harmonized.rds"))
+taxa_other_feed_mode <-
+  Trait_Noa[`Feed_mode_prim_Other (specify in comments)` > 0,
+            .(Species,
+              Genus,
+              Family,
+              Order)]
+taxa_other_feed_mode[, taxa := coalesce(Species, Genus, Family, Order)]
+
+# 98 species with feed_mode other
+# of those 10 species are covered in EU DB
+# taxa_other_feed_mode[!is.na(Species), ]
+# Trait_EU[species %in% taxa_other_feed_mode[!is.na(Species), Species], ]
+Trait_Noa[Trait_EU[species %in% taxa_other_feed_mode$taxa,
+                   .(
+                     species,
+                     genus,
+                     family,
+                     order,
+                     feed_filter,
+                     feed_gatherer,
+                     feed_predator,
+                     feed_parasite,
+                     feed_shredder,
+                     feed_herbivore
+                   )],
+          `:=`(
+            feed_filter = i.feed_filter,
+            feed_gatherer = i.feed_gatherer,
+            feed_predator = i.feed_predator,
+            feed_parasite = i.feed_parasite,
+            feed_shredder = i.feed_shredder,
+            feed_herbivore = i.feed_herbivore,
+            `Feed_mode_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Species = "species")]
+
+# create taxa column for Trait_Noa
+Trait_Noa[, Taxa := coalesce(Species, Genus, Family, Order)]
+
+# 58 taxa on genus-level with feed_mode other
+# Of these, 11 genera covered in EU data (data on genus level)
+taxa_other_feed_mode[is.na(Species) & !is.na(Genus), ]
+Trait_EU[is.na(species) & genus %in% taxa_other_feed_mode[is.na(Species) & !is.na(Genus), Genus], ] %>% 
+  .[, unique(genus)] 
+
+Trait_Noa[Trait_EU[is.na(species) &
+                     genus %in% taxa_other_feed_mode$taxa,
+                   .(
+                     genus,
+                     feed_filter,
+                     feed_gatherer,
+                     feed_predator,
+                     feed_parasite,
+                     feed_shredder,
+                     feed_herbivore
+                   )],
+          `:=`(
+            feed_filter = i.feed_filter,
+            feed_gatherer = i.feed_gatherer,
+            feed_predator = i.feed_predator,
+            feed_parasite = i.feed_parasite,
+            feed_shredder = i.feed_shredder,
+            feed_herbivore = i.feed_herbivore,
+            `Feed_mode_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Taxa = "genus")]
+
+# 31 taxa on family-level present in NOA other with feed_mode other
+# of these, 4 families covered by EU data
+taxa_other_feed_mode[is.na(Species) & is.na(Genus), ]
+Trait_EU[is.na(species) & is.na(genus) & family %in% taxa_other_feed_mode[, coalesce(Species, Genus, Family, Order)], ] %>% 
+  .[, unique(family)]
+
+Trait_Noa[Trait_EU[is.na(species) & is.na(genus) &
+                     family %in% taxa_other_feed_mode$taxa,
+                   .(
+                     family,
+                     feed_filter,
+                     feed_gatherer,
+                     feed_predator,
+                     feed_parasite,
+                     feed_shredder,
+                     feed_herbivore
+                   )],
+          `:=`(
+            feed_filter = i.feed_filter,
+            feed_gatherer = i.feed_gatherer,
+            feed_predator = i.feed_predator,
+            feed_parasite = i.feed_parasite,
+            feed_shredder = i.feed_shredder,
+            feed_herbivore = i.feed_herbivore,
+            `Feed_mode_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Taxa = "family")]
+
+# A few of the taxa can also be found in the 
+# load NOA_new
+# TODO: check as well
+# load Trait_Noa_new
+# taxa_other_feed_mode[is.na(Species) & !is.na(Genus) , Genus] %in% Trait_Noa_new[, unique(genus)]
+
+
 # del feed mode others
+# still 187 taxa
+# Trait_Noa[`Feed_mode_prim_Other (specify in comments)` > 0, .SD, .SDcols = names(Trait_Noa) %like% "(?i)Feed|Species|Genus|Family"] %>% View()
 Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 
 # _________________________________________________________________________
@@ -187,8 +298,91 @@ Trait_Noa[crawl_swim,
           `:=`(locom_crawl = 1,
                locom_swim = 1),
           on = "unique_id"]
+
+# check with EU data
+Trait_Noa[`Habit_prim_Other (specify in comments)` > 0,]
+taxa_other_locom <-
+  Trait_Noa[`Habit_prim_Other (specify in comments)` > 0,
+            .(Species,
+              Genus,
+              Family,
+              Order)]
+taxa_other_locom[, taxa := coalesce(Species, Genus, Family, Order)]
+
+# 77 species with locom_mode other
+# of those 10 species are covered in EU DB
+taxa_other_locom[!is.na(Species), ]
+Trait_EU[species %in% taxa_other_locom$taxa, ]
+
+Trait_Noa[Trait_EU[species %in% taxa_other_locom$taxa,
+                   .(species,
+                     genus,
+                     family,
+                     order,
+                     locom_burrow,
+                     locom_crawl,
+                     locom_swim,
+                     locom_sessil)],
+          `:=`(
+            locom_burrow = i.locom_burrow,
+            locom_crawl = i.locom_crawl,
+            locom_swim = i.locom_swim,
+            locom_sessil = i.locom_sessil,
+            `Habit_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Species = "species")]
+
+# 35 genera with locom_mode other
+# 6 taxa on genus-level in EU DB
+taxa_other_locom[is.na(Species) & !is.na(Genus), ]
+Trait_EU[is.na(species) & genus %in% taxa_other_locom$taxa, ]
+
+Trait_Noa[Trait_EU[is.na(species) & genus %in% taxa_other_locom$taxa,
+                   .(genus,
+                     family,
+                     order,
+                     locom_burrow,
+                     locom_crawl,
+                     locom_swim,
+                     locom_sessil)],
+          `:=`(
+            locom_burrow = i.locom_burrow,
+            locom_crawl = i.locom_crawl,
+            locom_swim = i.locom_swim,
+            locom_sessil = i.locom_sessil,
+            `Habit_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Taxa = "genus")]
+
+# 17 taxa on family-lvl with locom_mode other
+# 4 of those taxa on family-lvl present in EU DB
+taxa_other_locom[is.na(Species) & is.na(Genus) & !is.na(Family), ]
+Trait_EU[is.na(species) & is.na(genus) & family %in% taxa_other_locom$taxa, ]
+
+Trait_Noa[Trait_EU[is.na(species) & is.na(genus) &
+                     family %in% taxa_other_locom$taxa,
+                   .(family,
+                     order,
+                     locom_burrow,
+                     locom_crawl,
+                     locom_swim,
+                     locom_sessil)],
+          `:=`(
+            locom_burrow = i.locom_burrow,
+            locom_crawl = i.locom_crawl,
+            locom_swim = i.locom_swim,
+            locom_sessil = i.locom_sessil,
+            `Habit_prim_Other (specify in comments)` = 0
+          ),
+          on = c(Taxa = "family")]
+
+
 # del Habit_prim_other & Habit_prim_Clinger
+# Still 109 taxa undecided 
+# TODO: Think about removal of these
+# Trait_Noa[`Habit_prim_Other (specify in comments)` > 0,]
 Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
+
 
 # _________________________________________________________________________
 #### Respiration ####
@@ -203,27 +397,31 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 # Resp_late_Plant breathers? -> Must have spiracles (exchange 02 with the environment)
 # Resp_late_Plastron (permanent air store) -> Plastron
 # Resp_late_Spiracular gills -> Plastron!
-# Resp_late_Temporary air store -> Gills
+# Resp_late_Temporary air store -> Plastron!
 # Resp_late_Tracheal gills -> Gills
 # _________________________________________________________________________
 setnames(Trait_Noa,
-         old = c("Resp_late_Cutaneous"),
-         new = c("resp_teg"))
+         old = c("Resp_late_Cutaneous", 
+                 "Resp_late_Tracheal gills"),
+         new = c("resp_teg",
+                 "resp_gil"))
 Trait_Noa[, resp_pls_spi := apply(.SD, 1, max),
           .SDcols = c("Resp_late_Spiracular gills",
                       "Resp_late_Plastron (permanent air store)",
                       "Resp_late_Atmospheric breathers",
-                      "Resp_late_Plant breathers")]
-Trait_Noa[, resp_gil := apply(.SD, 1, max),
-          .SDcols = c("Resp_late_Temporary air store",
-                      "Resp_late_Tracheal gills")]
+                      "Resp_late_Plant breathers", 
+                      "Resp_late_Temporary air store")]
+
+# rm hemiglobin taxa
+Trait_Noa <- Trait_Noa[!Resp_late_Hemoglobin  > 0, ]
+
+# rm all other former resp traits
 Trait_Noa[, c(
   "Resp_late_Atmospheric breathers",
   "Resp_late_Plant breathers",
   "Resp_late_Spiracular gills",
   "Resp_late_Plastron (permanent air store)",
   "Resp_late_Temporary air store",
-  "Resp_late_Tracheal gills",
   "Resp_late_Hemoglobin"
 ) := NULL]
 
@@ -518,7 +716,8 @@ Trait_Noa <- normalize_by_rowSum(
                      "order",
                      "family",
                      "genus",
-                     "species")
+                     "species",
+                     "Taxa")
 )
 
 # check completenes of the trait data
@@ -527,7 +726,8 @@ completeness_trait_data(x = Trait_Noa,
                                            "order",
                                            "family",
                                            "genus",
-                                           "species"))
+                                           "species",
+                                           "Taxa"))
 # save
 saveRDS(object = Trait_Noa, 
         file = file.path(data_cleaned, 
