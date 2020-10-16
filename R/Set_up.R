@@ -5,20 +5,20 @@
 
 # libraries
 # data transformation and data handling
-library(dplyr)     
-library(data.table) 
-library(tidyr)  
-library(readxl) 
-library(zeallot) 
+library(dplyr)
+library(data.table)
+library(tidyr)
+library(readxl)
+library(zeallot)
 
-# taxonomical information 
-library(taxize) 
+# taxonomical information
+# library(taxize)
 
 # data overview
-library(Hmisc) 
+library(Hmisc)
 
 # unit testing
-library(testthat) 
+library(testthat)
 
 # Data location
 data_in <- "./Data"
@@ -29,11 +29,15 @@ data_cleaned <- "./Cleaned_data"
 # Path for data to fill missing values
 data_missing <- "./Missing_data"
 
+# data location for trait aggregation project
+data_aggr <- "/home/kunzst/Dokumente/Projects/Trait_DB/Trait-aggregation"
+
 # Path for output
 data_out <- "./Output"
 
 # Location for R scripts
 data_scr <- "./R"
+
 
 # source script with used functions
 source(file = file.path(data_scr, "functions_used_TDB.R"))

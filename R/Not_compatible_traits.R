@@ -71,6 +71,15 @@ tachet[tachet[, Reduce(`&`, lapply(.SD, `==`, 0)),.SDcols = sel_col],
        .SDcols = names(tachet) %like% "species|genus|family|order|feed.*"]
 
 
+# tachet locomotion 
+write.csv(
+  tachet[loc_flier_t > 0 | loc_interstitial_t > 0, .SD,
+         .SDcols = names(tachet) %like% "species|genus|family|order|loc.*"] %>%
+    .[order(-loc_flier_t, -loc_interstitial_t),],
+  file = file.path(data_out, "tachet_not_compatible_locomotion.csv"),
+  row.names = FALSE
+)
+
 #### North America (Vieira et al.) ####
 Trait_Noa <- readRDS(file = file.path(data_cleaned, 
                                       "North_America",
@@ -222,6 +231,53 @@ sel_col <- c("Air_respiration_aquatic_stages_fam_Chessman2017",
 Trait_AUS_resp[Trait_AUS_resp[, Reduce(`&`, lapply(.SD, `==`, 0)), .SDcols = sel_col],
                .SD,
                .SDcols = names(Trait_AUS_resp) %like% "Species|Genus|Family|Order|resp.*"]
+
+
+
+# parasite taxa
+# EU
+Trait_EU <-
+  readRDS(file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
+
+cols <- grep("order|family|genus|species|feed.*", names(Trait_EU),
+             value = TRUE)
+
+write.csv(
+  Trait_EU[feed_parasite > 0, .SD, .SDcols = cols] %>%
+    .[order(-feed_parasite), ],
+  file = file.path(data_out, "EU_parasite.csv"),
+  row.names = FALSE
+)
+
+# NOA
+Trait_Noa_new <- readRDS(file = file.path(data_cleaned,
+                                          "North_America",
+                                          "Traits_US_LauraT_pp_harmonized.rds"))
+
+cols <- grep("(?i)order|family|genus|species|feed.*", names(Trait_Noa_new),
+             value = TRUE)
+
+write.csv(
+  Trait_Noa_new[feed_parasite > 0, .SD, .SDcols = cols] %>%
+    .[order(-feed_parasite),],
+  file = file.path(data_out, "NOA_parasite.csv"),
+  row.names = FALSE
+)
+
+# AUS
+Trait_AUS <- readRDS(
+  file = file.path(
+    data_cleaned,
+    "Australia",
+    "Trait_AUS_harmonized.rds"
+  )
+)
+
+cols <- grep("order|family|genus|species|feed.*", names(Trait_AUS),
+             value = TRUE)
+write.csv(Trait_AUS[feed_parasite > 0, .SD, .SDcols = cols],
+          file = file.path(data_out, "AUS_parasite.csv"),
+          row.names = FALSE)
 
 
 

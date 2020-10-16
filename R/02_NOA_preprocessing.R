@@ -16,6 +16,20 @@ Trait_Noa <- Trait_Noa[, .SD, .SDcols = names(Trait_Noa) %like% cols]
 # Add ID col as unique identifier
 Trait_Noa[, unique_id := 1:nrow(Trait_Noa)]
 
+# taxonomical corrections
+# Parapoynx & Petrophilia
+Trait_Noa[Genus %in% c("Parapoynx",
+                       "Petrophila"), Family := "Crambidae"]
+
+# Rossiana
+Trait_Noa[Genus == "Rossiana", Family := "Rossianidae"]
+
+# Sperchonopsis
+Trait_Noa[Genus == "Sperchonopsis", Family := "Sperchonidae"]
+
+# Corbiculidae
+Trait_Noa[Family == "Corbiculidae", Order := "Venerida"]
+
 #__________________________________________________________________________
 #### Create two DB versions with different codings ####
 #__________________________________________________________________________

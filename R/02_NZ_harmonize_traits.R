@@ -232,3 +232,11 @@ Trait_NZ <- Trait_NZ[!(is.na(species) & is.na(genus) & is.na(family)), ]
 # save
 saveRDS(object = Trait_NZ,
         file = file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
+
+saveRDS(
+  object = Trait_NZ,
+  file = file.path(
+    data_aggr,
+    "Data",
+    "Trait_NZ_pp_harmonized.rds")
+)

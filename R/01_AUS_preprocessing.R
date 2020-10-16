@@ -205,6 +205,9 @@ Trait_AUS[, `:=`(
   ovip_ovo_Schaefer = ifelse(grepl("(?i)ovo", Reproduction_type_Schaefer), 1, 0))]
 Trait_AUS[, Reproduction_type_Schaefer := NULL]
 
+# rm Changes_time_until_repro_bugs_gbr column
+Trait_AUS[, "Changes_time_until_repro_bugs_gbr" := NULL]
+
 # _________________________________________________________________________
 #### Feeding mode ####
 # feed_shredder: shredder (chewers, miners, xylophagus, herbivore piercers)
@@ -404,6 +407,14 @@ Trait_AUS[grepl("Mesostigmata", Family), `:=`(
 # Family NULL?
 Trait_AUS[grepl("NULL", Family), Family := NA]
 
+# "Naididae", "Hydrobiidae", "Hydridae" assigned to different orders
+Trait_AUS[Family == "Naididae", Order := "Haplotaxida"]
+Trait_AUS[Family == "Hydrobiidae", Order := "Littorinimorpha"]
+Trait_AUS[Family == "Hydridae", Order := "Anthoathecata"]
+
+# Temnocephalidae
+Trait_AUS[Family == "Temnocephalidae", Order := "Rhabdocoela"]
+
 # one entry without genus and family information
 Trait_AUS[Species == "Cheumatopsyche deani", 
           `:=`(Genus = "Cheumatopsyche",
@@ -475,8 +486,8 @@ for(i in trait_author_pattern) {
 }
 
 # back to wide format
-Trait_AUS <- data.table::dcast(Trait_AUS, 
-                               unique_ID+Species+Genus+Family+Order ~ variable)
+Trait_AUS <- data.table::dcast(Trait_AUS,
+                               unique_ID + Species + Genus + Family + Order ~ variable)
 
 # change column names from Chessman that contain word "genus"
 setnames(
@@ -511,14 +522,9 @@ cols <- grep("(?i)unique_id|species|genus|family|order",
 #    .[, .(diff(value)), by = c("Genus", "variable")] %>%
 #    .[V1 != 0, ]
 
-# For cases where duplicate taxa entries differ for a trait by
-# 0 and 1 (or 0 and any other number) the maximum value is taken
-# since data originate from seven different databases (i.e. data 
-# complement each other).
-# This procedure is different compared to the amalgamation of duplicates
-# in other DB's, e.g. the NZ DB.
+# merging of duplicate genera using the median
 Trait_AUS[is.na(Species) & !is.na(Genus), 
-          (cols) := lapply(.SD, aggr_dupl_multDB), 
+          (cols) := lapply(.SD, median), 
           .SDcols = cols,
           by = "Genus"]
 
@@ -529,7 +535,7 @@ Trait_AUS <- Trait_AUS[!unique_ID %in% ids, ]
 
 # family column:
 Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
-          (cols) := lapply(.SD, aggr_dupl_multDB),
+          (cols) := lapply(.SD, median),
           .SDcols = cols,
           by = "Family"]
 

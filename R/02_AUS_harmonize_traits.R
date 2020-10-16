@@ -145,6 +145,9 @@ Trait_AUS[, feed_parasite := apply(.SD, 1, max),
           .SDcols = c("feed_parasite",
                       "feed_parasite_Schaefer",
                       "feeding_parasite_maxwell")]
+
+Trait_AUS$h
+
 Trait_AUS[, c(
   "feeding_shredder_Marchant",
   "Feeding_shredders_VicEPA",
@@ -476,4 +479,11 @@ saveRDS(
     "Australia",
     "Trait_AUS_harmonized.rds"
   )
+)
+saveRDS(
+  object = Trait_AUS,
+  file = file.path(
+    data_aggr,
+    "Data",
+    "Trait_AUS_harmonized.rds")
 )

@@ -260,7 +260,7 @@ cols <- grep("(?i)unique_id|species|genus|family|order|class|phylum",
              invert = TRUE)
 
 Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family),
-         (cols) := lapply(.SD, mean), .SDcols = cols]
+         (cols) := lapply(.SD, median), .SDcols = cols]
 
 # rm duplicated families
 ids <- Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
@@ -268,7 +268,7 @@ ids <- Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>%
 Trait_NZ <- Trait_NZ[!unique_id %in% ids, ]
 
 # save
-saveRDS(Trait_NZ, 
-        file = file.path(data_cleaned, 
-                         "NZ", 
+saveRDS(Trait_NZ,
+        file = file.path(data_cleaned,
+                         "NZ",
                          "Trait_NZ_taxa_pp.rds"))

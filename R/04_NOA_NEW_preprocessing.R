@@ -53,8 +53,17 @@ for(j in names(Trait_Noa_new)) {
 # There are duplicates in the species column hence we assign a unique_id column
 Trait_Noa_new[, unique_id := 1:nrow(Trait_Noa_new)]
 
+# Taxonomical corrections
+# Crambiidae to Crambidae
+Trait_Noa_new[Family == "Crambiidae", Family := "Crambidae"]
+
+# Hydrochus Hydrochidae? 
+Trait_Noa_new[Genus == "Hydrochus", Family := "Hydrochidae"]
+
 #__________________________________________________________________________
 #### Create two DB versions with different codings ####
+# fuzzy coded was just an experiment which I have not pursued 
+# The code for this is commented out
 #__________________________________________________________________________
 
 # binary coding
@@ -84,19 +93,19 @@ Trait_Noa_new <- data.table::dcast(
 
 # fuzzy coding based on frequency
 # code Laura Twardochleb with slight modifications
-Trait_Noa_new_fc <- Trait_Noa_new_lf %>%
-  filter(!is.na(Trait) & !is.na(Genus)) %>%
-  group_by(Genus, Trait_group, Trait) %>%
-  tally() %>%
-  mutate(Percent = n / sum(n)) %>%
-  dcast(., Genus ~ Trait) 
-setDT(Trait_Noa_new_fc)
-
-# merge information on family and order level back
-Trait_Noa_new_fc[Trait_Noa_new_lf,
-                 `:=`(Order = i.Order,
-                      Family = i.Family),
-                 on = "Genus"]
+# Trait_Noa_new_fc <- Trait_Noa_new_lf %>%
+#   filter(!is.na(Trait) & !is.na(Genus)) %>%
+#   group_by(Genus, Trait_group, Trait) %>%
+#   tally() %>%
+#   mutate(Percent = n / sum(n)) %>%
+#   dcast(., Genus ~ Trait) 
+# setDT(Trait_Noa_new_fc)
+# 
+# # merge information on family and order level back
+# Trait_Noa_new_fc[Trait_Noa_new_lf,
+#                  `:=`(Order = i.Order,
+#                       Family = i.Family),
+#                  on = "Genus"]
 # DT Version:
 # Trait_Noa_new_lf %>% 
 #   .[!is.na(Trait), .(.N),
@@ -106,26 +115,26 @@ Trait_Noa_new_fc[Trait_Noa_new_lf,
 #   .[grepl("Abedus", Genus), ]
   # dcast(., Genus ~ Trait+ Trait_group) %>% 
   # Hmisc::describe()
-trait_col <- grep("unique_id|Species|Genus|Family|Order",
-                  names(Trait_Noa_new_fc),
-                  value = TRUE, 
-                  invert = TRUE)
-
-# convert NAs in trait cols to 0
-for(j in trait_col){
-  data.table::set(Trait_Noa_new_fc, which(is.na(Trait_Noa_new_fc[[j]])), j, 0)
-}
-
-# change a few colnames
-setnames(x = Trait_Noa_new_fc, 
-         old = c("Genus", "Family", "Order"), 
-         new = c("genus", "family", "order"))
-
-# save as rds
-saveRDS(Trait_Noa_new_fc,
-        file = file.path(data_cleaned,
-                         "North_America",
-                         "Traits_US_pp_LauraT_fc.rds"))
+# trait_col <- grep("unique_id|Species|Genus|Family|Order",
+#                   names(Trait_Noa_new_fc),
+#                   value = TRUE, 
+#                   invert = TRUE)
+# 
+# # convert NAs in trait cols to 0
+# for(j in trait_col){
+#   data.table::set(Trait_Noa_new_fc, which(is.na(Trait_Noa_new_fc[[j]])), j, 0)
+# }
+# 
+# # change a few colnames
+# setnames(x = Trait_Noa_new_fc, 
+#          old = c("Genus", "Family", "Order"), 
+#          new = c("genus", "family", "order"))
+# 
+# # save as rds
+# saveRDS(Trait_Noa_new_fc,
+#         file = file.path(data_cleaned,
+#                          "North_America",
+#                          "Traits_US_pp_LauraT_fc.rds"))
 
 #_________________________________________________________________________
 #### Handle duplicates ####
@@ -139,7 +148,6 @@ trait_col <- grep("unique_id|Species|Genus|Family|Order",
                   names(Trait_Noa_new),
                   value = TRUE, 
                   invert = TRUE)
-  
 Trait_Noa_new[!is.na(Species) &
                 (duplicated(Species) | duplicated(Species, fromLast = TRUE)),
               (trait_col) := lapply(.SD, max),
@@ -179,6 +187,9 @@ Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 setnames(Trait_Noa_new, 
          old = c("Species", "Genus", "Family", "Order"), 
          new = c("species", "genus", "family", "order"))
+
+Trait_Noa_new[family == "Corbiculidae", ]
+# order := "Venerida"
 
 # save
 saveRDS(object = Trait_Noa_new, 
