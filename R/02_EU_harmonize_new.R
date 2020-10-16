@@ -491,7 +491,7 @@ Trait_EU[
 # table(Trait_EU$resp_tap)
 # table(Trait_EU$resp_sur)
 # _________________________________________________________________________
-Trait_EU[, resp_tegument := apply(.SD, 1, max, na.rm = TRUE),
+Trait_EU[, resp_teg := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "resp_tegument",
     "resp_tegument_tachet"
@@ -523,6 +523,7 @@ Trait_EU[, c(
   "resp_plastron",
   "resp_plastron_tachet",
   "resp_gill_tachet",
+  "resp_tegument",
   "resp_tegument_tachet"
 ) := NULL]
 
@@ -557,7 +558,7 @@ Trait_EU[, c(
 # rep_parasitic no entries
 # rep_asexual is deleted
 # _________________________________________________________________________
-Trait_EU[, ovip_aqu := apply(.SD, 1, max),
+Trait_EU[, ovip_aqu := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "rep_egg_cem_iso",
     "rep_egg_free_iso",
@@ -571,14 +572,14 @@ Trait_EU[, ovip_aqu := apply(.SD, 1, max),
     "rep_clutch_veg_tachet"
   )
 ]
-Trait_EU[, ovip_ovo := apply(.SD, 1, max),
+Trait_EU[, ovip_ovo := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "rep_parasitic",
     "rep_ovovivipar",
     "rep_ovovivipar_tachet"
   )
 ]
-Trait_EU[, ovip_ter := apply(.SD, 1, max),
+Trait_EU[, ovip_ter := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "rep_clutch_ter",
     "rep_clutch_ter_tachet"
@@ -689,14 +690,14 @@ Trait_EU[Trait_subset,
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________
-Trait_EU[, size_small := apply(.SD, 1, max),
+Trait_EU[, size_small := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "size_&le; 0.25 cm_tachet",
     "size_> 0.25-0.5 cm_tachet",
     "size_> 0.5-1 cm_tachet"
   )
 ]
-Trait_EU[, size_large := apply(.SD, 1, max),
+Trait_EU[, size_large := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "size_> 2-4 cm_tachet",
     "size_> 4-8 cm_tachet",
@@ -714,6 +715,7 @@ Trait_EU[, c(
   "size_> 4-8 cm_tachet",
   "size_> 8 cm_tachet"
 ) := NULL]
+
 
 # _________________________________________________________________________
 #### Pattern of development ####
@@ -790,7 +792,6 @@ newcolorder <- c(
   grep("bf", names(Trait_EU), value = TRUE),
   grep("dev", names(Trait_EU), value = TRUE)
 )
-
 setcolorder(Trait_EU, newcolorder)
 
 # save
