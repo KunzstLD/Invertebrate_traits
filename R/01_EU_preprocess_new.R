@@ -17,20 +17,22 @@ trait_EU <- trait_EU[, .SD,
 ]
 
 # Voltinism trait contains thermal conditions, change every string to 1
-col <- grep("^volt.*", names(trait_EU), value = TRUE)
+col <- grep("(?=volt.*)(?!.*tachet)", 
+  names(trait_EU), value = TRUE, perl = TRUE)
+
 trait_EU[, (col) := lapply(.SD, function(y) {
   ifelse(!is.na(y), 1, NA)
-}), .SDcols = names(trait_EU) %like% "^volt.*"]
+}), .SDcols = col]
 
 
 # get trait columns and transform all to numeric
-cols <- grep("order|family|genus|species|taxon.*",
+col <- grep("order|family|genus|species|taxon.*",
   names(trait_EU),
   value = TRUE,
   invert = TRUE
 )
-trait_EU[, (cols) := lapply(.SD, as.numeric),
-  .SDcols = !names(trait_EU) %like% "order|family|genus|species|taxon.*"
+trait_EU[, (col) := lapply(.SD, as.numeric),
+  .SDcols = col
 ]
 
 # select only taxa that have at least information for one trait
@@ -38,63 +40,97 @@ no_info <- trait_EU[, apply(.SD, 1, function(y) {
   is.na(y) %>%
     sum()
 }),
-.SDcols = cols
+.SDcols = col
 ]
-pos <- no_info == ncol(trait_EU[, ..cols])
+pos <- no_info == ncol(trait_EU[, ..col])
 trait_EU <- trait_EU[!pos, ]
 
-# aggr. duplicated species
+# __________________________________
+#### Consolidate duplicate taxa ####
+# __________________________________
+
+# binary columns -> aggr via max
+# fuzzy coded columns -> aggr via median
+cols_bin <- grep("(?=volt.*|resp.*)(?!.*tachet)",
+                 names(trait_EU),
+                 value = TRUE,
+                 perl = TRUE
+)  
+cols_fuzzy <- grep("(?=volt.*|resp.*|species|genus|family|order|taxon.*)(?!.*tachet)",
+                   names(trait_EU),
+                   value = TRUE,
+                   invert = TRUE,
+                   perl = TRUE
+)
+
+
+# - aggr. duplicated species:
 dupl_species <- trait_EU[!is.na(species), ] %>%
   .[duplicated(species) | duplicated(species, fromLast = TRUE), species] %>%
   .[duplicated(.)]
-
-# agg via median
+# agg via median except voltinism
 trait_EU[species %in% dupl_species,
-  (cols) := lapply(.SD, median, na.rm = TRUE),
-  .SDcols = cols,
+  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
+  .SDcols = cols_fuzzy,
   by = "species"
 ]
-
+trait_EU[species %in% dupl_species,
+         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
+         .SDcols = cols_bin,
+         by = "species"
+]
 # rm duplicates
 trait_EU <- trait_EU[!(!is.na(species) & duplicated(species)), ]
+
 
 # aggr. duplicated genus
 dupl_genus <- trait_EU[is.na(species) & !is.na(genus), ] %>%
   .[duplicated(genus) | duplicated(genus, fromLast = TRUE), genus] %>%
   .[!duplicated(.)]
-
-# agg via median
+# agg via median except voltinism
 trait_EU[is.na(species) & genus %in% dupl_genus,
-  (cols) := lapply(.SD, median, na.rm = TRUE),
-  .SDcols = cols,
+  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
+  .SDcols = cols_fuzzy,
   by = "genus"
 ]
-
+trait_EU[is.na(species) & genus %in% dupl_genus,
+         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
+         .SDcols = cols_bin,
+         by = "genus"
+]
 # rm duplicates
 rm_dupl <- trait_EU[is.na(species) & !is.na(genus), ] %>%
   .[duplicated(genus), taxon_cp]
 trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl), ]
 
+
 # aggr. duplicated families
 dupl_families <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
   .[duplicated(family) | duplicated(family, fromLast = TRUE), family] %>%
   .[!duplicated(.)]
-
-# agg via median
+# agg via median except voltinism
 trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
-  (cols) := lapply(.SD, median, na.rm = TRUE),
-  .SDcols = cols,
+  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
+  .SDcols = cols_wo_volt,
   by = "family"
 ]
+trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
+         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
+         .SDcols = cols_volt,
+         by = "family"
+]
 
-# rm duplicates
-rm_dupl <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>% 
-.[duplicated(family), taxon_cp]
-trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl),]
+# Don't rm the duplicates, some of the aggregated taxa
+# were on subfamily-tribe level which will be used later 
+# in the re-analysis of Szöcs et al. 2014
+# code to remove:
+# rm_dupl <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>% 
+# .[duplicated(family), taxon_cp]
+# trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl),]
 
 # transform all NA values to 0
 # needed for harmonization later
-for (j in cols) {
+for (j in col) {
   data.table::set(trait_EU, which(is.na(trait_EU[[j]])), j, 0)
 }
 
