@@ -2,18 +2,17 @@
 
 \begin{document}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
 \label{sec:diff_trait_agg_chessman}
 
-The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities assigned at family-level varied between 16.18 \% and 22.9 \% for the Australian database. For the North American database, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}).
+The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities originally assigned at family-level varied between 16.2 \% and 22.9 \% for the Australian dataset. For the North American dataset, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}).
 
-In general, trait aggregation methods using the median yielded fewer cases with differences compared to approaches using the mean. However, aggregation methods using the median produced greater differences for both databases. Standard deviations of absolute differences were similar for all tested aggregation methods. For both databases maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
+In general, trait aggregation methods using the median yielded fewer cases with differences compared to approaches using the mean. However, aggregation methods using the median produced greater differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. For both datasets maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
 
 A comparison of the aggregation methods with each other for the 4 datasets revealed that differences in aggregated trait affinities were largest between the \textit{stepwise\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{median}} (Figure S\ref{fig:comp_aggr_methods}).
 
+
+% PUP Comment: „Rather“ important at the „trait“ scale, but were differences so important at the „grouping feature“ scale, after transforming trait scores into a relative frequency distribution? (probably interesting to examine in order to try explaining the low impact of the selected strategy on the RDA results when revisiting the data of Szöcs et al. (2018)).
 \begin{table}[H]
   \centering
   \caption{Amount of differing cases, the minimum and maximum, and means and standard deviations of absolute differences between trait affinities assigned at family-level and aggregated trait affinities.}
@@ -28,7 +27,7 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
   & \specialcell{stepwise\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
   & \specialcell{weighted\_agg} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
   \midrule
-  \multirow{4}{*}{\specialcell{North America \\ (Pyne)}} & \specialcell{direct\_agg (median)} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
+  \multirow{4}{*}{\specialcell{North America}} & \specialcell{direct\_agg (median)} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
   & \specialcell{direct\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
   & \specialcell{stepwise\_agg (median)} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
   & \specialcell{stepwise\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
@@ -42,7 +41,7 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Absolute differences in trait affinities between aggregated traits and traits assigned at family-level by Chessman \cite{chessman_dissolved-oxygen_2018} for the grouping features feeding mode and body size. N denotes the number of cases for each comparison. The black dot indicates the mean absolute difference, the error bars the standard deviation. The gray horizontal lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities of the cases, which resulted in differences, are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
   \label{fig:diff_aggr_traits_chessman}
 \end{figure}
 
@@ -50,7 +49,7 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Absolute differences in trait affinities between aggregated traits and traits assigned at family-level in the North American dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. N denotes the number of cases for each comparison. The black dot indicates the mean absolute difference, the error bars the standard deviation. The gray horizontal lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. Absolute differences in trait affinities of the cases, which resulted in differences, are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The black dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
   \label{fig:diff_aggr_traits_pyne}
 \end{figure}
 

@@ -1,15 +1,15 @@
-[1] Config.pm:302> INFO - This is Biber 2.9
-[1] Config.pm:305> INFO - Logfile is 'Results/Results_trait_harmonization.blg'
-[38] biber:313> INFO - === Sa Sep  5, 2020, 14:40:08
-[66] Biber.pm:371> INFO - Reading 'Results/Results_trait_harmonization.bcf'
-[140] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
-[158] Biber.pm:3981> INFO - Processing section 0
-[173] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[184] bibtex.pm:1468> INFO - LaTeX decoding ...
-[302] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[335] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[335] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[336] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[336] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[343] bbl.pm:617> INFO - Writing 'Results/Results_trait_harmonization.bbl' with encoding 'UTF-8'
-[344] bbl.pm:720> INFO - Output to Results/Results_trait_harmonization.bbl
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'Results/Results_trait_harmonization.blg'
+[32] biber:313> INFO - === Do Okt 15, 2020, 17:27:05
+[55] Biber.pm:371> INFO - Reading 'Results/Results_trait_harmonization.bcf'
+[106] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[118] Biber.pm:3981> INFO - Processing section 0
+[127] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[135] bibtex.pm:1468> INFO - LaTeX decoding ...
+[205] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[224] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[224] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[224] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[224] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[229] bbl.pm:617> INFO - Writing 'Results/Results_trait_harmonization.bbl' with encoding 'UTF-8'
+[230] bbl.pm:720> INFO - Output to Results/Results_trait_harmonization.bbl

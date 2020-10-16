@@ -1906,6 +1906,63 @@
       \endverb
       \keyw{Climate,Diet,Respiration,Rheophily,River,Thermal,Trait}
     \endentry
+    \entry{bathe_biological_2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=808d2b50c374b56d81772c7661059808}{%
+           family={Bäthe},
+           familyi={B\bibinitperiod},
+           given={Jürgen},
+           giveni={J\bibinitperiod}}}%
+        {{hash=7b5847ad997ce968fca016ac1b33a5a8}{%
+           family={Coring},
+           familyi={C\bibinitperiod},
+           given={Eckhard},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{ebdd53d66879a048935923821fe75239}
+      \strng{fullhash}{ebdd53d66879a048935923821fe75239}
+      \strng{bibnamehash}{ebdd53d66879a048935923821fe75239}
+      \strng{authorbibnamehash}{ebdd53d66879a048935923821fe75239}
+      \strng{authornamehash}{ebdd53d66879a048935923821fe75239}
+      \strng{authorfullhash}{ebdd53d66879a048935923821fe75239}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The reduction and the smoothened amplitudes of the chloride concentrations since 2000 have resulted in a gradual positive development of the aquatic fauna in the River Werra. In the salinized section of the river increasing species numbers have been determined along the salinity gradient, which shows maximum chloride concentrations of about 2500mg/l, maximum potash concentrations at approximately 200mg/l, and magnesia concentrations peaked at 320mg/l. As an immediate consequence of the reduction in salt concentration the immigration of various caddis fly species into the lower River Werra was observed. The Number of taxa per sample rose from 5 to more than 30 in the lower Werra region. Changes in species-richness could be seen more frequently in river sections where chloride concentrations fluctuated around 1500mg/l.}
+      \field{day}{1}
+      \field{issn}{0075-9511}
+      \field{journaltitle}{Limnologica}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{number}{2}
+      \field{series}{Salinisation of running waters}
+      \field{shortjournal}{Limnologica}
+      \field{shorttitle}{Biological effects of anthropogenic salt-load on the aquatic Fauna}
+      \field{title}{Biological effects of anthropogenic salt-load on the aquatic Fauna: A synthesis of 17 years of biological survey on the rivers Werra and Weser}
+      \field{urlday}{16}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{volume}{41}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{125\bibrangedash 133}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.limno.2010.07.005
+      \endverb
+      \verb{file}
+      \verb ScienceDirect Full Text PDF:/home/kunzst/Zotero/storage/YMRXS8AE/Bäthe und Coring - 2011 - Biological effects of anthropogenic salt-load on t.pdf:application/pdf;ScienceDirect Snapshot:/home/kunzst/Zotero/storage/7QJ8W7DD/S0075951110000381.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951110000381
+      \endverb
+      \verb{url}
+      \verb http://www.sciencedirect.com/science/article/pii/S0075951110000381
+      \endverb
+      \keyw{Chloride,Macrobenthos,Magnesia,Potash,River Werra,Salinity,Salt tolerances}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
