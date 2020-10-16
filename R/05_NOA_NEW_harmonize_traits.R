@@ -139,10 +139,11 @@ Trait_Noa_new <- normalize_by_rowSum(
 # _________________________________________________________________________
 
 # Load harmoized & normalized Trait NOA
-Trait_Noa <- readRDS(file.path(data_cleaned, "North_America", "Traits_US_pp_harmonized.rds"))
-# Trait_Noa$order %>% table()
+Trait_Noa <-
+  readRDS(file.path(data_cleaned, "North_America", "Traits_US_pp_harmonized.rds"))
 
 # Subset to relevant orders
+# Trait_Noa$order %>% table()
 # Trait_Noa <- Trait_Noa[order %in% c(
 #   "Coleoptera",
 #   "Diptera",
@@ -302,26 +303,30 @@ name_vec <- grep("unique_id|order|family|genus|species",
 # % NA val before 
 # na_before <- sum(is.na(Trait_Noa_new))/(sum(is.na(Trait_Noa_new))+ sum(!is.na(Trait_Noa_new)))
 final <- Trait_Noa_new
-for(i in name_vec){
-  
+for (i in name_vec) {
   # check if for a certain grouping feature all the traits contain NA values
-  subset_vec <- !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
+  subset_vec <-
+    !(rowSums(is.na(final[, .SD, .SDcols = names(final) %like% i])) == 0)
   
   # subset to NA values
   # complemented with information from NOA old (if possible)
   # data need(!) to be normalized for this operation
-  step <- coalesce_join(x = final[subset_vec, ],
-                        y = Trait_Noa[!is.na(species), .SD,
-                                   .SDcols = names(Trait_Noa) %like% paste0(i, "|", "species")],
-                        by = "species",
-                        join = dplyr::left_join)
+  step <- coalesce_join(
+    x = final[subset_vec,],
+    y = Trait_Noa[!is.na(species), .SD,
+                  .SDcols = names(Trait_Noa) %like% paste0(i, "|", "species")],
+    by = "species",
+    join = dplyr::left_join
+  )
   setDT(step)
   # merge back to whole dataset
-  final <- coalesce_join(x = final,
-                         y = step[!is.na(species), 
-                                  .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
-                         by = "species",
-                         join = dplyr::left_join) 
+  final <- coalesce_join(
+    x = final,
+    y = step[!is.na(species),
+             .SD, .SDcols = names(step) %like% paste0(i, "|", "species")],
+    by = "species",
+    join = dplyr::left_join
+  )
   setDT(final)
 }
 
@@ -329,11 +334,12 @@ for(i in name_vec){
 # na_after <- sum(is.na(final))/(sum(is.na(final))+ sum(!is.na(final)))
 Trait_Noa_new <- final
 
+
 #### merge information from taxa that are only in old Noa DB ####
 # species level
 Trait_Noa_new <-
-  rbind(Trait_Noa_new, Trait_Noa[!is.na(species),] %>%
-          .[!(species %in% Trait_Noa_new[!is.na(species),]$species)])
+  rbind(Trait_Noa_new, Trait_Noa[!is.na(species), ] %>%
+          .[!(species %in% Trait_Noa_new[!is.na(species), ]$species)])
   
 # NOTE: no taxa has complete trait information (see uncommented code)
 # Trait_Noa[is.na(species) & !is.na(genus),] %>%
@@ -346,18 +352,22 @@ Trait_Noa_new <-
 # genus level
 Trait_Noa_new  <-
   rbind(Trait_Noa_new,
-        Trait_Noa[is.na(species) & !is.na(genus),] %>%
-          .[!genus %in% Trait_Noa_new[is.na(species) & !is.na(genus),]$genus, ])
+        Trait_Noa[is.na(species) & !is.na(genus), ] %>%
+          .[!genus %in% Trait_Noa_new[is.na(species) &
+                                        !is.na(genus), ]$genus,])
 
 # family level
 Trait_Noa_new <- rbind(Trait_Noa_new,
                        Trait_Noa[is.na(species) &
-                                   is.na(genus) & !is.na(family),] %>%
+                                   is.na(genus) &
+                                   !is.na(family), ] %>%
                          .[!family %in% Trait_Noa_new[is.na(species) &
-                                                        is.na(genus) & !is.na(family),]$family, ])
-
+                                                        is.na(genus) &
+                                                        !is.na(family), ]$family,])
 # taxonomical changes
 # Corbiculidae - Venerida
+Trait_Noa_new[family == "Corbiculidae", order := "Venerida"]
+
 
 # _________________________________________________________________________
 #### Pattern of development ####
@@ -400,13 +410,21 @@ Trait_Noa_new[, `:=`(
   dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
-
 # rm entries with taxonomical resolution higher than Family
 # Trait_Noa_new[!(is.na(species) & is.na(genus) & is.na(family)), ]
 
 # save
-saveRDS(object = Trait_Noa_new,
-        file = file.path(data_cleaned,
-                         "North_America",
-                         "Traits_US_LauraT_pp_harmonized.rds")
+saveRDS(
+  object = Trait_Noa_new,
+  file = file.path(
+    data_cleaned,
+    "North_America",
+    "Traits_US_LauraT_pp_harmonized.rds"
+  )
+)
+saveRDS(
+  object = Trait_Noa_new,
+  file = file.path(data_aggr,
+                   "Data",
+                   "Traits_US_LauraT_pp_harmonized.rds")
 )
