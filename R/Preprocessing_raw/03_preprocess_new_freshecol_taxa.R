@@ -236,6 +236,9 @@ freshwaterecol[grepl("Microhydra sowerbyi", species), `:=`(
 # Bythinella
 freshwaterecol[genus == "Bythinella", family := "Hydrobiidae"]
 
+# Tipulidae is order Diptera
+freshwaterecol[family == "Tipulidae", order := "Diptera"]
+
 # set column order
 setcolorder(
   freshwaterecol,
