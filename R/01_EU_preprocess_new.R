@@ -70,12 +70,12 @@ dupl_species <- trait_EU[!is.na(species), ] %>%
   .[duplicated(.)]
 # agg via median except voltinism
 trait_EU[species %in% dupl_species,
-  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
+  (cols_fuzzy) := lapply(.SD, median, na.rm = TRUE),
   .SDcols = cols_fuzzy,
   by = "species"
 ]
 trait_EU[species %in% dupl_species,
-         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
+         (cols_bin) := lapply(.SD, max, na.rm = TRUE),
          .SDcols = cols_bin,
          by = "species"
 ]
@@ -89,12 +89,12 @@ dupl_genus <- trait_EU[is.na(species) & !is.na(genus), ] %>%
   .[!duplicated(.)]
 # agg via median except voltinism
 trait_EU[is.na(species) & genus %in% dupl_genus,
-  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
+  (cols_fuzzy) := lapply(.SD, median, na.rm = TRUE),
   .SDcols = cols_fuzzy,
   by = "genus"
 ]
 trait_EU[is.na(species) & genus %in% dupl_genus,
-         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
+         (cols_bin) := lapply(.SD, max, na.rm = TRUE),
          .SDcols = cols_bin,
          by = "genus"
 ]
@@ -110,13 +110,13 @@ dupl_families <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
   .[!duplicated(.)]
 # agg via median except voltinism
 trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
-  (cols_wo_volt) := lapply(.SD, median, na.rm = TRUE),
-  .SDcols = cols_wo_volt,
+  (cols_fuzzy) := lapply(.SD, median, na.rm = TRUE),
+  .SDcols = cols_fuzzy,
   by = "family"
 ]
 trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
-         (cols_volt) := lapply(.SD, max, na.rm = TRUE),
-         .SDcols = cols_volt,
+         (cols_bin) := lapply(.SD, max, na.rm = TRUE),
+         .SDcols = cols_bin,
          by = "family"
 ]
 
