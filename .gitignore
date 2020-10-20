@@ -28,9 +28,6 @@ status.txt
 # test file for paper
 Paper/test*
 
-# figures for paper
-Paper/Figures/
-
 # Old drafts and feedback
 Paper/Feedback/
 Paper/Old_Drafts/
