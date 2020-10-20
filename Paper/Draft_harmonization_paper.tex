@@ -55,10 +55,10 @@ sorting = none % sort by name year title
 
 Explaining and predicting how communities are shaped by environmental factors is one of the main goals of ecology. Organismal traits, defined as measurable properties of an organism \cite{mcgill_rebuilding_2006}, might be beneficial in achieving this goal \cite{heino_jani_macroecological_2013}. Traits evolve through adaptations (e.g., physiological, behavioral, etc.) of organisms to their environment and indicate direct or indirect linkages between the biological response of an organism to its environment \cite{southwood_habitat_1977, verberk_delivering_2013}. Besides providing a mechanistic explanation of species-environment relationships, trait-based approaches might be suitable for large scale analysis because the variability in trait responses is lower than for taxonomic responses \cite{bonada_taxonomic_2007, baird_toward_2011}. Traits of freshwater invertebrates are difficult to determine because, unlike plants, their traits often cannot be measured directly. For example, to gain knowledge on feeding habits requires evaluating mouthpart morphology, consumed food, and the organisms function within its community \cite{moog_comprehensive_nodate}. Nevertheless, invertebrate traits have been increasingly used in freshwater ecology, e.g. by relating macroinvertebrate trait composition to environmental factors or as trait metrics in biomonitoring \cite{poff_developing_2010, szocs_effects_2014, bhowmik_large_2015, menezes_beyond_2010}.
 
-%%% Old Version:
+%%% Old Intro Version %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Explaining and predicting how aquatic communities are shaped by environmental factors is one of the main goals of freshwater ecology. Organismal traits, defined as measurable properties of an organism \cite{mcgill_rebuilding_2006}, are increasingly incorporated into freshwater ecology to support this goal, e.g. by relating macroinvertebrate trait composition to environmental factors or as trait metrics in biomonitoring \cite{poff_developing_2010, szocs_effects_2014, bhowmik_large_2015, menezes_beyond_2010}. Traits evolve through adaptations (e.g., physiological, behavioral, etc.) of organisms to their environment and indicate direct or indirect linkages between the biological response of an organism to its environment \cite{southwood_habitat_1977, verberk_delivering_2013}. 
 % Besides providing a mechanistic explanation of species-environment relationships, trait-based approaches may be suitable for large scale analysis because the variability in trait responses is lower than for taxonomic responses \cite{bonada_taxonomic_2007, baird_toward_2011}.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 In the last decades, freshwater ecologists developed comprehensive invertebrate trait databases for various biogeographic regions \cite{usseglio-polatera_biomonitoring_2000, schmidt-kloiber_www.freshwaterecology.info_2015, vieira_database_nodate, Philips_and_Smith_NZ_DB_2018, kefford_integrated_2020, tomanova_trophic_2006}. The availability of invertebrate trait data from different biogeographic regions enables comparisons of trait variation and their relation to environmental factors across large scales. However, such analyses have been carried out mostly within biogeographic regions, using information from one or two trait databases. For example, Bonada et al. \cite{bonada_taxonomic_2007} compared trait composition for mediterranean and temperate regions in Europe using traits from Usseglio-Polatera et al. \cite{usseglio-polatera_biomonitoring_2000}, Poff et al. \cite{poff_developing_2010} characterized trait composition across sites in the Western US using traits from Poff et al. \cite{poff_functional_2006}, and Botwe et al. \cite{botwe_effects_2018} investigated the effect of salinity on invertebrate traits in different sites in South Australia using trait data from Poff et al. \cite{poff_functional_2006} and Schäfer et al. \cite{schafer_trait_2011}. 
 % ? Include Saito for South America 
@@ -175,7 +175,7 @@ The data processing and aforementioned analysis were carried out using R (Versio
 
 %! Presenting results of trait analysis using harmonized traits:
 \subfile{Results/Results_trait_harmonization}
-% TODO: Fix reference to SI!
+
 
 \newpage 
 
@@ -185,9 +185,8 @@ The data processing and aforementioned analysis were carried out using R (Versio
 
 \section*{Discussion}
 
-% Stat. techniques developed -> cannot use full potential
-% if data quality is poor, when synthesizing information is hard 
 % In general, differences produced by the aggregation methods seem to arise by using mean or median, not driven by different weighting approaches (direct vs. stepwise vs. weighted) 
+% Complex Stat. techniques developed -> cannot use full potential
 
 
 \newpage
@@ -207,24 +206,3 @@ The data processing and aforementioned analysis were carried out using R (Versio
 \subfile{Trait_def_table/SI_trait_def_table2.tex}
 
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%% Examples of trait databases %%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% % ? Also mention Tomanova? -> not used here
-% \begin{table}[ht]
-%   \centering
-%     \caption{Examples of aquatic invertebrate trait databases established in the last decades. Differences in codings and trait definitions are outlined for these databases in Table \ref{tab:trait_databases_coding_differentiation} and Table S\ref{tab:trait_definitions}.}
-%     \label{tab:overview_trait_dbs}
-%     \begin{tabular}{lcccl}
-%     \hline
-%     Database & \specialcell{Nr. of grouping \\ features} & \specialcell{Main organism \\ groups} & \specialcell{Taxa and \\ resolution} & Citation \\ 
-%     \hline
-%     Freshwaterecology & 40 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & Species-level & \cite{schmidt-kloiber_www.freshwaterecology.info_2015} \\ 
-%     Tachet & 21 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{usseglio-polatera_biomonitoring_2000} \\ 
-%     \specialcell{North America \\ (Vieira)} & 62 & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{vieira_database_nodate} \\ 
-%     \specialcell{North America \\ (Twardochleb)} & 11 & Aquatic insects & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{vieira_database_nodate} & \textit{In prep.} \\ 
-%     Australia & & \specialcell{Invertebrates, biased \\ towards aquatic insects} & \specialcell{Taxa on species, \\ genus, and family-level} & \cite{kefford_integrated_2020} \\
-%     New Zealand & & & & \cite{Philips_and_Smith_NZ_DB_2018}\\
-%     \hline
-%     \end{tabular}
-% \end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
