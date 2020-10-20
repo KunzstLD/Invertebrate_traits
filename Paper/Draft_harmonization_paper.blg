@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Draft_harmonization_paper.blg'
-[21] biber:313> INFO - === Fr Okt 16, 2020, 15:49:09
-[39] Biber.pm:371> INFO - Reading 'Draft_harmonization_paper.bcf'
-[85] Biber.pm:857> INFO - Found 33 citekeys in bib section 0
-[94] Biber.pm:3981> INFO - Processing section 0
-[101] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[109] bibtex.pm:1468> INFO - LaTeX decoding ...
-[174] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[470] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[470] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[470] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[470] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[495] bbl.pm:617> INFO - Writing 'Draft_harmonization_paper.bbl' with encoding 'UTF-8'
-[516] bbl.pm:720> INFO - Output to Draft_harmonization_paper.bbl
+[26] biber:313> INFO - === Mo Okt 19, 2020, 15:46:05
+[45] Biber.pm:371> INFO - Reading 'Draft_harmonization_paper.bcf'
+[93] Biber.pm:857> INFO - Found 33 citekeys in bib section 0
+[103] Biber.pm:3981> INFO - Processing section 0
+[111] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[119] bibtex.pm:1468> INFO - LaTeX decoding ...
+[183] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[471] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[471] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[471] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[471] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[494] bbl.pm:617> INFO - Writing 'Draft_harmonization_paper.bbl' with encoding 'UTF-8'
+[517] bbl.pm:720> INFO - Output to Draft_harmonization_paper.bbl

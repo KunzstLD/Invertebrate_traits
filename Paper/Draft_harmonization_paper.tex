@@ -177,6 +177,36 @@ Traits of the harmonized grouping feature datasets were aggregated to family-lev
 % PUP: Is it the „potential number of species“ (i.e. the number of species potentially present at the selected spatial scale) or the number of species with traits/grouping features described? The grouping feature information can be available for a different set of species from a grouping feature to another. Does it mean that genus weights can be different in the aggregated family profile according to the information available on traits (regardless of the actual number of species in these different genera?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% BK:
+% # I wonder if some simulation could be useful to determine in what
+% # circumstances the different aggregation methods will produce similar
+% # or different results. E.g. If all families were to have the same number of
+% # genus and all genus the same number of species (something which would
+% #  never happen),
+% # then it will not matter (much) whether direct, stepwise or
+% # weighted aggregation is used.
+% # It only becomes important if direct, stepwise or weighted is used,
+% # as the number of genus per family and/or species per genus differ.
+% # Some simulation that varies the taxonomic hierarchy and variability in traits
+% # between genus within a family and species within genus, ….,
+
+To examine the influence of the taxonomic hierarchy and the trait variability on the outcome of the different trait aggregation methods we simulated three different taxonomic hierarchies. 
+Sim1) A family with equal number of genera and species (5 genera each with 5 species respectively).
+Sim2) A family were one genus has a much larger number of species as the other 4 genera (1 genus with 13 species, 4 genera with 3 species respectively). 
+Sim3) A family were all genera have a different number of species (8, 2, 7, 3, 5)
+Every simulated taxonomic hierarchy was assigned a hypothetical grouping feature with 3 traits. The individual affinities for each trait were sampled from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviation (0.2, 0.4, 0.6, 0.8 and 1) respectively to simulate trait variability. The truncated normal distribution was bound to 0 and 1. The traits were normalized so that they sum up to one for each species, similar to the data processing of the trait databases. 100 Simulations for each standard deviation were carried out. Hence, 
+500 simulations were run for each simulation scenario (in total 1500). 
+All trait aggregation methods were applied to each simulated dataset and the results were compared.   
+% Sampled from a truncated normal distribution values for three traits
+% (upper and lower boundaries 0 and 1)
+% Traits were normalized so that they sum up to one
+% Three different taxonomic hierarchies were simulated: 
+% Simulated one family with 25 species 
+% -> 1) 5 Genera:  5 Species respectively
+% -> 2) 5 Genera: 1 Genus 13 Species (more than ~ 50 %); 4 Genera with 3 species
+% -> 3) 5 Genera: All have different amount of species
+
+
 \begin{figure}
   \centering
   \subfile{Flowchart/Flowchart_methods.tex}
@@ -204,9 +234,9 @@ Traits of the harmonized grouping feature datasets were aggregated to family-lev
 % btw. did you try to compare this on genus level as well, e.g. the aggregated genus-level traits from fwe to the assigned genus-level traits from f et al.; this would be highly interesting!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Aggregated trait affinities of the five trait aggregation methods (\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg}) were compared to trait affinities assigned at family-level by experts, which were available for Australia and North America for a subset of grouping features and taxa. For the Australian dataset, we compared aggregated trait affinities with assigned trait affinities resolved at family-level for the grouping features feeding mode and size using data from Chessman \cite{chessman_dissolved-oxygen_2018}. In Chessman \cite{chessman_dissolved-oxygen_2018} feeding mode is classified similarly as in the Australian dataset except that the trait parasite is missing. We conducted the comparison for the 220 families available in Chessman \cite{chessman_dissolved-oxygen_2018}. Considering each factor combination of family and trait (in total 8) this amounts to 1760 cases.
+Aggregated trait affinities of the five trait aggregation methods (\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg}) were compared to trait affinities assigned at family-level by experts, which were available for Australia and North America for a subset of grouping features and taxa. For the Australian dataset, we compared aggregated trait affinities with assigned trait affinities resolved at family-level for the grouping features feeding mode and size using data from Chessman et al. \cite{chessman_dissolved-oxygen_2018}. In Chessman et al. \cite{chessman_dissolved-oxygen_2018} feeding mode is classified similarly as in the Australian dataset except that the trait parasite is missing. We conducted the comparison for the 220 families available in Chessman et al. \cite{chessman_dissolved-oxygen_2018}. Considering each factor combination of family and trait (in total 8) this amounts to 1760 cases.
 
-For the North American dataset, we compared aggregated trait affinities with assigned trait affinities on family-level for the grouping features feeding mode, respiration, size, voltinism, and locomotion. The assigned trait affinities at family-level are part of the North American database (Twardochleb) \cite{twardochleb_trait_data_2020}) and originate from expert knowledge. Trait information was available for 94 families of which all were present in the North American dataset (total number of cases 1598). The traits were on the categorical scale and were converted to binary traits prior to the comparison with aggregated trait affinities.
+For the North American dataset, we compared aggregated trait affinities with assigned trait affinities on family-level for the grouping features feeding mode, respiration, size, voltinism, and locomotion. The assigned trait affinities at family-level are part of the North American database (Twardochleb et al.) \cite{twardochleb_trait_data_2020} and originate from expert knowledge. Trait information was available for 94 families of which all were present in the North American dataset (total number of cases 1598). The traits were on the categorical scale and were converted to binary traits prior to the comparison with aggregated trait affinities.
 
 As mentioned above, trait affinities ranged from 0 to 1. Hence, the maximum difference possible in trait affinities is 1 or -1 (corresponds to 100 \%). For convenience and to improve interpretation, we report absolute trait differences.
 
@@ -277,17 +307,8 @@ The data processing and aforementioned analysis were carried out using R (Versio
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ben's Comment: -> But another issues is that these aggregation methods were being compared to traits assigned at the family level, which I understand was often done by expert opinion. So, these traits assigned at the family level may not be really “correct”! The difference between the trait aggregated to family and its designation at the family level could indicate: (a) the aggregation method is “no good”, (b) the trait assigned at the family level was “no good”, or (c) both a and b.
 
-% Sampled from a truncated normal distribution values for three traits
-% (upper and lower boundaries 0 and 1)
-% Traits were normalized so that they sum up to one
-% Three different taxonomic hierarchies were simulated: 
-% Simulated one family with 25 species 
-% -> 1) 5 Genera:  5 Species respectively
-% -> 2) 5 Genera: 1 Genus 13 Species (more than ~ 50 %); 4 Genera with 3 species
-% -> 3) 5 Genera: All have different amount of species
-
 % Simulation result: 
-% -  base simulation with similar amount of speices per genus and genera per family and varying trait values
+% -  base simulation with similar amount of species per genus and genera per family and varying trait values
 % results can vary when variation in trait values increases 
 % However, mostly the different aggregation methods result in similar trait affinities
 % when differences occur, only for: 
