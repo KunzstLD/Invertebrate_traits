@@ -11,8 +11,6 @@ In general, trait aggregation methods using the median yielded fewer cases with 
 
 A comparison of the aggregation methods with each other for the 4 datasets revealed that differences in aggregated trait affinities were largest between the \textit{stepwise\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{median}} (Figure S\ref{fig:comp_aggr_methods}).
 
-
-% PUP Comment: „Rather“ important at the „trait“ scale, but were differences so important at the „grouping feature“ scale, after transforming trait scores into a relative frequency distribution? (probably interesting to examine in order to try explaining the low impact of the selected strategy on the RDA results when revisiting the data of Szöcs et al. (2018)).
 \begin{table}[H]
   \centering
   \caption{Amount of differing cases, the minimum and maximum, and means and standard deviations of absolute differences between trait affinities assigned at family-level and aggregated trait affinities.}
@@ -53,5 +51,13 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
   \label{fig:diff_aggr_traits_pyne}
 \end{figure}
 
+\subsection*{Simulation of varying taxonomic hierarchies}
+
+For the \textit{sim\_base} scenario the trait aggregation methods based on the mean result in the same range of aggregated trait affinities irrespective of the level of trait variation. Aggregation methods using the median yielded greater ranges of aggregated trait affinities than methods using the mean. Thereby, the \textit(stepwise\_agg \textsubscript{median}) yielded the greatest range of aggregated trait affinities. 
+
+By contrast, the ranges of trait affinities differed for all aggregation methods for the simulation scenarios \textit{sim\_extreme} and \textit{sim\_variation}. The greatest ranges of trait affinities were produced by the \textit{stepwise\_agg \textsubscript{median}}. With increasing level of trait variation the \textit{stepwise\_agg \textsubscript{mean}} produced a wider range of affinities than the \textit{direct\_agg\textsubscript{mean}} and \textit{weighted\_agg}.  
+% ? direct median and stepwise median similar range
+
+% Analysis of individual runs: 
 
 \end{document}
