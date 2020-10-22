@@ -135,10 +135,9 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 Traits of the harmonized grouping feature datasets were aggregated to family-level using three approaches. I) Direct aggregation of taxa to family-level giving equal weight to every taxon using the mean or median, denoted \textit{direct\_agg\textsubscript{mean}} and \textit{direct\_agg\textsubscript{median}}, respectively. II) Stepwise aggregation, i.e. first to the genus-level and subsequently to the family-level using the mean or median. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{mean}} or \textit{stepwise\_agg\textsubscript{median}}, respectively. III) Aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights the genera according to the number of their species in the trait datasets regardless if for every used grouping feature information was available. 
 
 To examine the influence of the taxonomic hierarchy and the trait variability on the outcome of the different trait aggregation methods we created three hypothetical examples of different taxonomic hierarchies. 
-1) A family with an equal number of genera and species (5 genera each with 5 species respectively) 
-% denoted as \textit{equal scenario}.
-2) A family where one genus has a much larger number of species than the other 4 genera (1 genus with 13 species, 4 genera with 3 species respectively). 
-3) A family where all genera have a different number of species (8, 2, 7, 3, 5). Every hypothetical taxonomic hierarchy was assigned a hypothetical grouping feature with 3 traits. The affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviation (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. The traits were normalized so that they sum up to one for each species, similar to the data processing of the trait databases. 100 Simulations for each standard deviation were carried out. Hence, 500 simulations were run for each simulation scenario (in total 1500). All trait aggregation methods were applied to each simulated dataset and the results were compared.   
+1) A family with an equal number of genera and species (5 genera each with 5 species respectively), denoted as \textit{sim\_base}.
+2) A family where one genus has a much larger number of species than the other 4 genera (1 genus with 13 species, 4 genera with 3 species respectively), denotes as \textit{sim\_extreme}. 
+3) A family where all genera have a different number of species (8, 2, 7, 3, 5), denotes as \textit{sim\_variation}. In total every family consisted of 25 species. To each hypothetical taxonomic hierarchy a hypothetical grouping feature with 3 traits was assigned. The 25 affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviations (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. Simulated trait affinities were converted to percentages, similar to the data processing of the trait databases. The sampling was repeated 100 times for each standard deviation. Hence, in total 12500 ($25 * 5 * 100$) trait affinities were simulated. All trait aggregation methods were applied to each simulated dataset and the results were compared.   
 
 \begin{figure}
   \centering
@@ -198,7 +197,30 @@ The data processing and aforementioned analysis were carried out using R (Versio
 
 \section*{Discussion}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+  \item \textbf{aggregated vs assigned traits}
+  \begin{itemize}
+    \item In general, differences produced by the aggregation methods seem to arise by using mean or median, not so much driven by the different weighting approaches (direct vs. stepwise vs. weighted)
+    \item Approaches that used the median resulted in fewer differences to the assigned traits, albeit if differences occured to the assigned traits, they were greater. 
+    \item Simulation shows that approaches using the median generally produce a larger range of values $\rightarrow$ Especially with higher trait variability for situations where one genus has a lot more species than the other genera within the family 
+    \item Differences greater for the NOA dataset because of binary coding $\rightarrow$ differences are greater between traits
+    \item How is the taxonomic hierarchy in the investigated datasets? 
+    % -> link to taxonomic hierarchy, many families have only a few genera
+    % -> Similarly, many genera have only a few species
+    % -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
+    \item There is no "true" value to compare to, i.e. assigned traits can be biased. Comparison of species-lvl traits in fwe and traits on genus-lvl in tachet would be interesting in this context? 
+    \item  Suggestions from Co-Authors: \\
+     $\rightarrow$ should include where the classifications come from \\
+     $\rightarrow$ what do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? \\
+     $\rightarrow$ are the differences between continents because of evolution or only because scientists have done more research in one of the continents?
+  \end{itemize}
+  \item \textbf{Influence of aggregation methods on trait-environment relationships}
+  \begin{itemize}
+    \item We re-analysed only a small-scale study, what would be different when applying a large-scale study?
+  \end{itemize}
+\end{itemize}
+
+
 % 1) Trait aggr methods vs assigned traits:
 % - BK:
 %  All range from about 0 to 1 and all have mean values which fall within the error bars (stand dev) of the other methods. 
@@ -206,37 +228,13 @@ The data processing and aforementioned analysis were carried out using R (Versio
 % It then becomes what to make of all this. Are the slight differences between the methods important or unimportant?
 % Also why the differences between the Australian and NA datasets?
 
-
-% 2) Influence of aggregation methods on trait-environment relationships:
-% - In general, differences produced by the aggregation methods seem to arise by using mean or median, 
-% not driven by different weighting approaches (direct vs. stepwise vs. weighted) 
-% -> link to taxonomic hierarchy, many families have only a few genera
-% -> Similarly, many genera have only a few species
-% -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
-% 
-% Differences for NOA greater due to coding?
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ben's Comment: -> But another issues is that these aggregation methods were being compared to traits assigned at the family level, which I understand was often done by expert opinion. So, these traits assigned at the family level may not be really “correct”! The difference between the trait aggregated to family and its designation at the family level could indicate: (a) the aggregation method is “no good”, (b) the trait assigned at the family level was “no good”, or (c) both a and b.
 
-% Simulation result: 
-% -  base simulation with similar amount of species per genus and genera per family and varying trait values
-% results can vary when variation in trait values increases 
-% However, mostly the different aggregation methods result in similar trait affinities
-% when differences occur, only for: 
-% dir_median vs stepwise median
-% direct mean vs stepwise median
-% stepwise mean vs stepwise median
-% direct mean vs direct median
-% stepwise median vs weighed agg
-% Trait variability: 0.3 and greater
-% Max diff ~ 0.2
-
-% - Results for varying taxonomic hierarchy:
-% Which levels?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% 2) Harmonization: Minor influence on RDA species scores
+% 2) Influence of aggregation methods on trait-environment relationships: 
+% 
+% Harmonization: Minor influence on RDA species scores
 % RDA species scores 
 %   -> Normalized eigenvectors
 %   -> dependent on nr. of variables? Nr. of response variables not really influential 
@@ -244,11 +242,6 @@ The data processing and aforementioned analysis were carried out using R (Versio
 % Further aggr. after harmonization: no difference to the harmonized dataset
 % ?Logical because trait aggr. methods themselves showed only minor differences
 % Complex Stat. techniques developed -> cannot use full potential
-
-% Suggestions from Co-Authors:
-% should include where the classifications come from
-% what do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge?
-% are the differences between continents because of evolution or only because scientists have done more research in one of the continents?
 
 \newpage
 

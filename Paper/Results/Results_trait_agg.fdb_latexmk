@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Results/Results_trait_agg"] 1602772330 "Results/Results_trait_agg.bcf" "Results/Results_trait_agg.bbl" "Results/Results_trait_agg" 1602772736
-  "Results/Results_trait_agg.bcf" 1602772669 87123 9b50dd681f981451536be8960e57f88e ""
+["biber Results/Results_trait_agg"] 1602772330 "Results/Results_trait_agg.bcf" "Results/Results_trait_agg.bbl" "Results/Results_trait_agg" 1603372028
+  "Results/Results_trait_agg.bcf" 1603372028 87123 9b50dd681f981451536be8960e57f88e ""
   (generated)
   "Results/Results_trait_agg.blg"
   "Results/Results_trait_agg.bbl"
-["pdflatex"] 1602772669 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" "Results/Results_trait_agg.pdf" "Results_trait_agg" 1602772736
+["pdflatex"] 1603372027 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" "Results/Results_trait_agg.pdf" "Results_trait_agg" 1603372028
   "/etc/texmf/web2c/texmf.cnf" 1602155229 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" 1602772735 5158 9d072fb97c11333a374e1904625480a0 ""
+  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex" 1603372027 6526 312408c2fbd852ec4f2548f83c20b8a5 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -153,6 +153,7 @@
   "/usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb" 1254938640 116908 1fca96723793882c2e0160350c192fc8 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb" 1254938640 30388 702fae6a5f0e6e9c48a1d872b442ffcf ""
   "/usr/share/texmf/fonts/type1/public/lm/lmr10.pfb" 1254938640 119235 f35b44530a1d90eb90fe15d9cba67ea0 ""
+  "/usr/share/texmf/fonts/type1/public/lm/lmr7.pfb" 1254938640 121145 68312a933e2c689ed40ec0aba373e279 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmri10.pfb" 1254938640 112593 fda2373ba4420af33949610de4c28fe8 ""
   "/usr/share/texmf/fonts/type1/public/lm/lmri7.pfb" 1254938640 111437 74f3e490d3223b7d4352605020ac7fc2 ""
   "/usr/share/texmf/tex/latex/lm/lmodern.sty" 1256929440 1606 c17281c7cff2bbd7ff0173e1433487ec ""
@@ -163,18 +164,18 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1602496516 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602496527 4126804 863aa8be25f58a01810c5d5702e28373 ""
-  "Figures/Deviances_trait_agg_chessman.png" 1602769389 465906 05cf32fb4885b01b1f61ace33b7842c6 ""
-  "Figures/Deviances_trait_agg_pyne.png" 1602772328 653554 8704cab62e9d1c256c30a714694b873a ""
-  "Results/../Draft_harmonization_paper.tex" 1602763631 35086 d852fd03fb2797eaf15c2eb8903b008d ""
-  "Results/Results_trait_agg.aux" 1602772669 4975 7ecadcbeffbbbc9261991cebaaf2f106 ""
+  "Figures/Deviances_trait_agg_chessman.png" 1602861490 465348 4af31b5163351d42e929039f45b23dff ""
+  "Figures/Deviances_trait_agg_pyne.png" 1602861518 656803 934820365841ecac09d40bbdb5b309f3 ""
+  "Results/../Draft_harmonization_paper.tex" 1603366748 30041 0ce5af10909619afab21b18ed44c1b0f ""
+  "Results/Results_trait_agg.aux" 1603372028 4975 7ecadcbeffbbbc9261991cebaaf2f106 ""
   "Results/Results_trait_agg.bbl" 1602772331 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/Results_trait_agg"
-  "Results/Results_trait_agg.out" 1602772669 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/Results_trait_agg.run.xml" 1602772669 2474 e181f4bb7da72d71cdcd5be5176bce01 ""
-  "Results/Results_trait_agg.tex" 1602772735 5158 9d072fb97c11333a374e1904625480a0 ""
+  "Results/Results_trait_agg.out" 1603372027 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/Results_trait_agg.run.xml" 1603372028 2474 e181f4bb7da72d71cdcd5be5176bce01 ""
+  "Results/Results_trait_agg.tex" 1603372027 6526 312408c2fbd852ec4f2548f83c20b8a5 ""
   (generated)
+  "Results/Results_trait_agg.bcf"
+  "Results/Results_trait_agg.pdf"
+  "Results/Results_trait_agg.aux"
   "Results/Results_trait_agg.log"
   "Results/Results_trait_agg.out"
-  "Results/Results_trait_agg.aux"
   "Results/Results_trait_agg.run.xml"
-  "Results/Results_trait_agg.pdf"
-  "Results/Results_trait_agg.bcf"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  19 OCT 2020 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  22 OCT 2020 17:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1120,19 +1120,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 142.
+(Font)              <10> on input line 103.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 142.
+(Font)              <7> on input line 103.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 142.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 146.
+(Font)              <5> on input line 103.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 107.
  (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 146.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 107.
  [3]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 162--168
+Overfull \hbox (15.0pt too wide) in paragraph at lines 123--129
 []$[]$ 
  []
 
@@ -1140,7 +1140,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 162--168
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.169 \newpage
+l.130 \newpage
               ] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
@@ -1173,34 +1173,34 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 52.
 )
 
-LaTeX Warning: Float too large for page by 21.61328pt on input line 214.
+LaTeX Warning: Float too large for page by 21.61328pt on input line 146.
 
 [5] [6pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.248 
-      ]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 261.
+l.162 \subsection
+                 *{Analysis of the effect of harmonization and trait aggrega...]
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 174.
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [7] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex
-Overfull \hbox (20.0711pt too wide) in paragraph at lines 37--47
- [][] 
+Overfull \hbox (20.0711pt too wide) in paragraph at lines 36--47
+ [] 
  []
 
 ) [8pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.271 \newpage
+l.184 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.271 \newpage
+l.184 \newpage
               ] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex
-Overfull \hbox (33.43935pt too wide) in paragraph at lines 20--37
+Overfull \hbox (33.43935pt too wide) in paragraph at lines 18--35
  [][] 
  []
 
@@ -1208,25 +1208,25 @@ Overfull \hbox (33.43935pt too wide) in paragraph at lines 20--37
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.39 \newpage
+l.37 \newpage
              ]
-<Figures/Deviances_trait_agg_chessman.png, id=175, 625.8582pt x 341.3553pt>
+<Figures/Deviances_trait_agg_chessman.png, id=176, 625.8582pt x 341.3553pt>
 File: Figures/Deviances_trait_agg_chessman.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_chessman.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 43.
+Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 41.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 43--44
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 41--42
  [][] 
  []
 
-<Figures/Deviances_trait_agg_pyne.png, id=176, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=177, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 51.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 49.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 51--52
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 49--50
  [][] 
  []
 
@@ -1234,246 +1234,210 @@ Overfull \hbox (39.46648pt too wide) in paragraph at lines 51--52
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.55 
-      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>]) [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+l.53 
+      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [11pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.275 \newpage
-               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex
-<Figures/Species_scores_rda.png, id=189, 625.8582pt x 341.3553pt>
+l.59 
+      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]) [12] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex
+<Figures/Species_scores_rda.png, id=197, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 38.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 35.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 38--39
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 35--36
  [][] 
  []
 
-) [12pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+) [13pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.281 \newpage
-               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex [13]
-Overfull \hbox (26.75967pt too wide) in alignment at lines 62--64
+l.192 \newpage
+               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex [14]
+Overfull \hbox (26.75967pt too wide) in alignment at lines 56--58
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--67
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Overfull \hbox (2.4277pt too wide) in paragraph at lines 67--67
+Overfull \hbox (2.4277pt too wide) in paragraph at lines 61--61
 []|\OT1/lmr/m/n/10 Reproduction| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
 []|\OT1/lmr/m/n/10 binary;
  []
 
 
-Overfull \hbox (3.05836pt too wide) in paragraph at lines 145--145
+Overfull \hbox (3.05836pt too wide) in paragraph at lines 139--139
 []|[]| 
  []
 
 
-Overfull \hbox (26.75967pt too wide) in alignment at lines 64--165
+Overfull \hbox (26.75967pt too wide) in alignment at lines 58--159
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 165
+Underfull \vbox (badness 10000) detected at line 159
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 166--171
+Overfull \hbox (15.0pt too wide) in paragraph at lines 160--165
 []$[]$ 
  []
 
-[14
+[15
 
-]) [15
+])
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 201.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 201.
+ [16
 
-] [16] [17]
-Overfull \hbox (7.72908pt too wide) in paragraph at lines 345--345
+] [17] [18]
+Overfull \hbox (7.72908pt too wide) in paragraph at lines 250--250
 \OT1/lmr/m/sc/10 issn\OT1/lmr/m/n/10 : 1551-3793. \OT1/lmr/m/sc/10 doi\OT1/lmr/m/n/10 : []$\OT1/lmtt/m/n/10 10 . 1002 / ieam . 128$[]\OT1/lmr/m/n/10 . [On-line]. Avail-able: []$\OT1/lmtt/m/n/10 https : / / setac . onlinelibrary .
  []
 
-[18] [19] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
-<Figures/Comparison_trait_agg_methods.png, id=326, 625.8582pt x 341.3553pt>
+[19] [20] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
+<Figures/Comparison_trait_agg_methods.png, id=334, 625.8582pt x 341.3553pt>
 File: Figures/Comparison_trait_agg_methods.png Graphic file (type png)
 <use Figures/Comparison_trait_agg_methods.png>
-Package pdftex.def Info: Figures/Comparison_trait_agg_methods.png  used on input line 13.
+Package pdftex.def Info: Figures/Comparison_trait_agg_methods.png  used on input line 15.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14     \caption
+l.16     \caption
                  {Comparison of trait aggregation methods when aggregating o...
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 13--14
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 15--16
  [][] 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 ... New Zealand 777, and North America 4080.}
+l.16 ... New Zealand 777, and North America 4080.}
                                                   pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 ... New Zealand 777, and North America 4080.}
-                                                   [20 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
-<Figures/RDA_traits_harmonized.png, id=334, 1204.5pt x 651.93562pt>
+l.16 ... New Zealand 777, and North America 4080.}
+                                                  
+<Figures/Overview_sim_results.png, id=335, 711.1368pt x 369.7815pt>
+File: Figures/Overview_sim_results.png Graphic file (type png)
+<use Figures/Overview_sim_results.png>
+Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 24.
+(pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25     \caption
+                 {Ranges of aggregated trait affinities for the three exampl...
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 24--25
+ [][] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 ...tions. T1 to T3 are the simulated traits.}
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 ...tions. T1 to T3 are the simulated traits.}
+                                                   [21 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
+<Figures/Diffs_indiv_runs_sim.png, id=344, 711.1368pt x 369.7815pt>
+File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
+<use Figures/Diffs_indiv_runs_sim.png>
+Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 31.
+(pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32     \caption
+                 {Comparison of the results of the trait aggregation methods...
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 31--32
+ [][] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32 ...re differences greater than 0.1 occurred.}
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32 ...re differences greater than 0.1 occurred.}
+                                                   [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [23 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
+<Figures/RDA_traits_harmonized.png, id=354, 1204.5pt x 651.93562pt>
 File: Figures/RDA_traits_harmonized.png Graphic file (type png)
 <use Figures/RDA_traits_harmonized.png>
-Package pdftex.def Info: Figures/RDA_traits_harmonized.png  used on input line 30.
+Package pdftex.def Info: Figures/RDA_traits_harmonized.png  used on input line 46.
 (pdftex.def)             Requested size: 469.47743pt x 284.53473pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.31     \caption
+l.47     \caption
                  {RDA of traits constrained by electric conductivity using h...
-Overfull \hbox (39.47281pt too wide) in paragraph at lines 30--32
- [][] 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.32     }
-          pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.32     }
-          
-<Figures/RDA_traits_Szoecs_2014.png, id=337, 1204.5pt x 651.93562pt>
-File: Figures/RDA_traits_Szoecs_2014.png Graphic file (type png)
-<use Figures/RDA_traits_Szoecs_2014.png>
-Package pdftex.def Info: Figures/RDA_traits_Szoecs_2014.png  used on input line 37.
-(pdftex.def)             Requested size: 469.47743pt x 284.53473pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.38     \caption
-                 {RDA of traits constrained by electric conductivity. Boxplo...
-Overfull \hbox (39.47281pt too wide) in paragraph at lines 37--39
- [][] 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.39     }
-          pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.39     }
-           [21 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_harmonized.png (PNG copy)>]
-<Figures/Trait_distrb_harmonized.png, id=345, 538.1706pt x 228.855pt>
-File: Figures/Trait_distrb_harmonized.png Graphic file (type png)
-<use Figures/Trait_distrb_harmonized.png>
-Package pdftex.def Info: Figures/Trait_distrb_harmonized.png  used on input line 50.
-(pdftex.def)             Requested size: 497.9314pt x 284.53851pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.51     \caption
-                 {Trait scores on the first RDA axis for harmonized traits a...
-Overfull \hbox (67.92677pt too wide) in paragraph at lines 50--52
+Overfull \hbox (39.47281pt too wide) in paragraph at lines 46--48
  [][] 
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52     }
+l.48     }
           pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52     }
-           [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_Szoecs_2014.png (PNG copy)>]
-<Figures/Trait_distrb_Szoecs_2014.png, id=350, 538.1706pt x 229.5777pt>
-File: Figures/Trait_distrb_Szoecs_2014.png Graphic file (type png)
-<use Figures/Trait_distrb_Szoecs_2014.png>
-Package pdftex.def Info: Figures/Trait_distrb_Szoecs_2014.png  used on input line 57.
-(pdftex.def)             Requested size: 497.9314pt x 284.54378pt.
+l.48     }
+          
+<Figures/RDA_traits_Szoecs_2014.png, id=357, 1204.5pt x 651.93562pt>
+File: Figures/RDA_traits_Szoecs_2014.png Graphic file (type png)
+<use Figures/RDA_traits_Szoecs_2014.png>
+Package pdftex.def Info: Figures/RDA_traits_Szoecs_2014.png  used on input line 53.
+(pdftex.def)             Requested size: 469.47743pt x 284.53473pt.
 
-Overfull \hbox (67.92677pt too wide) in paragraph at lines 57--60
+Overfull \hbox (39.47281pt too wide) in paragraph at lines 53--55
  [][] 
  []
 
-[23 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_distrb_harmonized.png>] [24pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+[24 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_harmonized.png (PNG copy)>]
+<Figures/Trait_distrb_harmonized.png, id=364, 538.1706pt x 228.855pt>
+File: Figures/Trait_distrb_harmonized.png Graphic file (type png)
+<use Figures/Trait_distrb_harmonized.png>
+Package pdftex.def Info: Figures/Trait_distrb_harmonized.png  used on input line 66.
+(pdftex.def)             Requested size: 497.9314pt x 284.53851pt.
+
+Overfull \hbox (67.92677pt too wide) in paragraph at lines 66--68
+ [][] 
+ []
+
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.63 \newpage
-              </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_distrb_Szoecs_2014.png>]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.69     \caption
-                 {Results of linear models for the four selected harmonized ...pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.69 ...tically significant effects (p $<$ 0.05).}
-                                                  pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.69 ...tically significant effects (p $<$ 0.05).}
-                                                  
-Overfull \hbox (83.68185pt too wide) in paragraph at lines 71--84
- [][] 
- []
+l.70 
+      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_Szoecs_2014.png (PNG copy)>]
+<Figures/Trait_distrb_Szoecs_2014.png, id=372, 538.1706pt x 229.5777pt>
+File: Figures/Trait_distrb_Szoecs_2014.png Graphic file (type png)
+<use Figures/Trait_distrb_Szoecs_2014.png>
+Package pdftex.def Info: Figures/Trait_distrb_Szoecs_2014.png  used on input line 73.
+(pdftex.def)             Requested size: 497.9314pt x 284.54378pt.
 
-pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.91     \caption
-                 {Results of linear models for the five selected traits for ...pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.93     significant effects (p $<$ 0.05).}
-                                           pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.93     significant effects (p $<$ 0.05).}
-                                           
-Overfull \hbox (77.15495pt too wide) in paragraph at lines 95--107
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--108
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--108
-
- []
-
-<Figures/Trait_proportion_harmonized.png, id=367, 625.8582pt x 398.2077pt>
-File: Figures/Trait_proportion_harmonized.png Graphic file (type png)
-<use Figures/Trait_proportion_harmonized.png>
-Package pdftex.def Info: Figures/Trait_proportion_harmonized.png  used on input line 113.
-(pdftex.def)             Requested size: 469.47844pt x 284.54013pt.
-
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 113--115
- [][] 
- []
-
-[25]
-<Figures/Trait_proportion_Szoecs_2014.png, id=374, 625.8582pt x 398.2077pt>
-File: Figures/Trait_proportion_Szoecs_2014.png Graphic file (type png)
-<use Figures/Trait_proportion_Szoecs_2014.png>
-Package pdftex.def Info: Figures/Trait_proportion_Szoecs_2014.png  used on input line 121.
-(pdftex.def)             Requested size: 469.47844pt x 284.54013pt.
-
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 121--122
+Overfull \hbox (67.92677pt too wide) in paragraph at lines 73--76
  [][] 
  []
 
@@ -1481,632 +1445,701 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 121--122
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.124 
-       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_proportion_harmonized.png (PNG copy)>] [27pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+l.78 
+      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_distrb_harmonized.png>] [27pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.128 \begin{landscape}
+l.79 \newpage
+              </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_distrb_Szoecs_2014.png>]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.85     \caption
+                 {Results of linear models for the four selected harmonized ...pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.85 ...tically significant effects (p $<$ 0.05).}
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.85 ...tically significant effects (p $<$ 0.05).}
+                                                  
+Overfull \hbox (83.68185pt too wide) in paragraph at lines 87--100
+ [][] 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.107     \caption
+                  {Results of linear models for the five selected traits for...pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.109     significant effects (p $<$ 0.05).}
+                                            pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.109     significant effects (p $<$ 0.05).}
+                                            
+Overfull \hbox (77.15495pt too wide) in paragraph at lines 111--123
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--124
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--124
+
+ []
+
+<Figures/Trait_proportion_harmonized.png, id=390, 625.8582pt x 398.2077pt>
+File: Figures/Trait_proportion_harmonized.png Graphic file (type png)
+<use Figures/Trait_proportion_harmonized.png>
+Package pdftex.def Info: Figures/Trait_proportion_harmonized.png  used on input line 129.
+(pdftex.def)             Requested size: 469.47844pt x 284.54013pt.
+
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 129--131
+ [][] 
+ []
+
+[28]
+<Figures/Trait_proportion_Szoecs_2014.png, id=396, 625.8582pt x 398.2077pt>
+File: Figures/Trait_proportion_Szoecs_2014.png Graphic file (type png)
+<use Figures/Trait_proportion_Szoecs_2014.png>
+Package pdftex.def Info: Figures/Trait_proportion_Szoecs_2014.png  used on input line 137.
+(pdftex.def)             Requested size: 469.47844pt x 284.54013pt.
+
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 137--138
+ [][] 
+ []
+
+[29pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.140 
+       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_proportion_harmonized.png (PNG copy)>] [30pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.144 \begin{landscape}
                         </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Trait_proportion_Szoecs_2014.png (PNG copy)>]pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.129 ...{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
+l.145 ...{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
                                                   
-Overfull \hbox (88.95552pt too wide) in alignment at lines 129--132
+Overfull \hbox (88.95552pt too wide) in alignment at lines 145--148
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
+Underfull \hbox (badness 10000) in paragraph at lines 151--151
 []|\OT1/lmr/m/n/10 North Amer-ica
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 138--138
+Underfull \hbox (badness 2626) in paragraph at lines 154--154
 []|\OT1/lmr/m/n/10 "Feed from fallen
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 138--138
+Underfull \hbox (badness 5345) in paragraph at lines 154--154
 \OT1/lmr/m/n/10 leaves, plant tis-
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 139--139
+Underfull \hbox (badness 1189) in paragraph at lines 155--155
 []|\OT1/lmr/m/n/10 "Eat coarse de-tri-
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 141.
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 141.
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 []\OT1/lmr/m/n/10 "Shred de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+Underfull \hbox (badness 10000) in paragraph at lines 157--158
 \OT1/lmr/m/n/10 com-pos-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 []\OT1/lmr/m/n/10 Trait her-bi-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 142--143
+Underfull \hbox (badness 1009) in paragraph at lines 158--159
 \OT1/lmr/m/n/10 vore in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 \OT1/lmr/m/n/10 in-sect that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
 \OT1/lmr/m/n/10 shred \OT1/lmr/m/it/10 liv-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 []\OT1/lmr/m/n/10 Trait her-bi-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 147--148
+Underfull \hbox (badness 1009) in paragraph at lines 163--164
 \OT1/lmr/m/n/10 vore in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--148
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 \OT1/lmr/m/n/10 the trait
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--152
+Underfull \hbox (badness 10000) in paragraph at lines 168--168
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 []\OT1/lmr/m/n/10 Carvers,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 \OT1/lmr/m/n/10 en-gulfers &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 []\OT1/lmr/m/n/10 Piercers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
 \OT1/lmr/m/n/10 (plants &
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 156--157
+Underfull \hbox (badness 5622) in paragraph at lines 172--173
 \OT1/lmr/m/n/10 an-i-mals) are
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 158--159
+Underfull \hbox (badness 6625) in paragraph at lines 174--175
 []|\OT1/lmr/m/n/10 Engulfers ("in-gest
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 158--159
+Underfull \hbox (badness 2150) in paragraph at lines 174--175
 \OT1/lmr/m/n/10 prey whole or in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 165--165
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--166
+Underfull \hbox (badness 10000) in paragraph at lines 182--182
 []|\OT1/lmr/m/n/10 Distinguishes be-
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 166--166
+Underfull \hbox (badness 4686) in paragraph at lines 182--182
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 167--167
+Underfull \hbox (badness 4686) in paragraph at lines 183--183
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 168--168
+Underfull \hbox (badness 4686) in paragraph at lines 184--184
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 169--169
+Underfull \hbox (badness 4686) in paragraph at lines 185--185
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 170--170
+Underfull \hbox (badness 4686) in paragraph at lines 186--186
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 171--173
+Underfull \hbox (badness 4686) in paragraph at lines 187--189
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Overfull \hbox (2.39668pt too wide) in paragraph at lines 183--183
+Overfull \hbox (2.39668pt too wide) in paragraph at lines 199--199
 []|\OT1/lmr/m/n/10 Multivoltine| 
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 186--186
+Underfull \hbox (badness 2073) in paragraph at lines 202--202
 []|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 187--187
+Underfull \hbox (badness 2073) in paragraph at lines 203--203
 []|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 []\OT1/lmr/m/n/10 1-2 gen-er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--190
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 \OT1/lmr/m/n/10 a-tions per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 []
  []
 
 
-Overfull \hbox (5.47496pt too wide) in paragraph at lines 190--191
+Overfull \hbox (5.47496pt too wide) in paragraph at lines 206--207
 \OT1/lmr/m/n/10 bi/multivoltine 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 \OT1/lmr/m/n/10 er-a-tions per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 []\OT1/lmr/m/n/10 up to 10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 \OT1/lmr/m/n/10 gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 []\OT1/lmr/m/n/10 Passive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 \OT1/lmr/m/n/10 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 \OT1/lmr/m/n/10 like float-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 \OT1/lmr/m/n/10 or drift-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--201
+Underfull \hbox (badness 10000) in paragraph at lines 216--217
 \OT1/lmr/m/n/10 (trait swim-
  []
 
 
-Overfull \hbox (0.80827pt too wide) in paragraph at lines 200--201
+Overfull \hbox (0.80827pt too wide) in paragraph at lines 216--217
 \OT1/lmr/m/n/10 ming/scating) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 []\OT1/lmr/m/n/10 Active
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 \OT1/lmr/m/n/10 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 201--202
+Underfull \hbox (badness 10000) in paragraph at lines 217--218
 \OT1/lmr/m/n/10 (trait swim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 \OT1/lmr/m/n/10 mers (over
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 \OT1/lmr/m/n/10 and un-der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--205
+Underfull \hbox (badness 10000) in paragraph at lines 220--221
 \OT1/lmr/m/n/10 the wa-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 []\OT1/lmr/m/n/10 Full wa-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 221--222
 \OT1/lmr/m/n/10 swim-mers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--209
+Underfull \hbox (badness 10000) in paragraph at lines 225--225
 []|\OT1/lmr/m/n/10 Distinguishes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 209--209
-\OT1/lmr/m/n/10 swim-mer and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
-[]|\OT1/lmr/m/n/10 Swimmers (wa-ter
- []
-
-
-Underfull \hbox (badness 1184) in paragraph at lines 214--214
-\OT1/lmr/m/n/10 sub-strates or bor-
- []
-
-
-Underfull \hbox (badness 2970) in paragraph at lines 214--214
-\OT1/lmr/m/n/10 ing in \OT1/lmr/m/it/10 hard \OT1/lmr/m/n/10 sub-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-[]\OT1/lmr/m/n/10 Burrowing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-\OT1/lmr/m/n/10 "within the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-\OT1/lmr/m/n/10 ters of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 216--217
-\OT1/lmr/m/n/10 ben-thic fine
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-[]\OT1/lmr/m/n/10 Differentiates
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-\OT1/lmr/m/n/10 in-ter-sti-tial
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 217--218
-\OT1/lmr/m/n/10 (en-doben-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
-[]|\OT1/lmr/m/n/10 "Inhabiting \OT1/lmr/m/it/10 fine
- []
-
-
-Underfull \hbox (badness 1688) in paragraph at lines 221--221
-\OT1/lmr/m/n/10 the sub-strate and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
-[]|\OT1/lmr/m/n/10 Burrowers (in-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 225--225
+\OT1/lmr/m/n/10 swim-mer and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--228
+[]|\OT1/lmr/m/n/10 Swimmers (wa-ter
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 230--230
+\OT1/lmr/m/n/10 sub-strates or bor-
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 230--230
+\OT1/lmr/m/n/10 ing in \OT1/lmr/m/it/10 hard \OT1/lmr/m/n/10 sub-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+[]\OT1/lmr/m/n/10 Burrowing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/lmr/m/n/10 "within the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/lmr/m/n/10 ters of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
+\OT1/lmr/m/n/10 ben-thic fine
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+[]\OT1/lmr/m/n/10 Differentiates
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+\OT1/lmr/m/n/10 in-ter-sti-tial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+\OT1/lmr/m/n/10 (en-doben-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
+[]|\OT1/lmr/m/n/10 "Inhabiting \OT1/lmr/m/it/10 fine
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 237--237
+\OT1/lmr/m/n/10 the sub-strate and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+[]|\OT1/lmr/m/n/10 Burrowers (in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 241--241
 \OT1/lmr/m/n/10 sprawl-ing
  []
 
 
-Underfull \hbox (badness 5022) in paragraph at lines 226--226
+Underfull \hbox (badness 5022) in paragraph at lines 242--242
 \OT1/lmr/m/n/10 ing ac-tively with
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 228--228
+Underfull \hbox (badness 8113) in paragraph at lines 244--244
 \OT1/lmr/m/n/10 it-ing the sur-face
  []
 
 
-Underfull \hbox (badness 5288) in paragraph at lines 228--228
+Underfull \hbox (badness 5288) in paragraph at lines 244--244
 \OT1/lmr/m/n/10 of float-ing leaves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--228
+Underfull \hbox (badness 10000) in paragraph at lines 244--244
 \OT1/lmr/m/n/10 of vas-cu-lar hy-
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 228--228
+Underfull \hbox (badness 3954) in paragraph at lines 244--244
 \OT1/lmr/m/n/10 drophytes or fine
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 236--236
+Underfull \hbox (badness 2809) in paragraph at lines 252--252
 []|\OT1/lmr/m/n/10 Defined as crawl-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 236--236
+Underfull \hbox (badness 2671) in paragraph at lines 252--252
 \OT1/lmr/m/n/10 fine sed-i-ments on
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 238--239
+Underfull \hbox (badness 3919) in paragraph at lines 254--255
 []|\OT1/lmr/m/n/10 Database con-tains
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 \OT1/lmr/m/n/10 traits crawler,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 238--239
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 \OT1/lmr/m/n/10 sprawler, climber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
 []|\OT1/lmr/m/n/10 Crawlers (epiben-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 259--259
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 259--259
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--243
+Underfull \hbox (badness 10000) in paragraph at lines 259--259
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 244--244
+Underfull \hbox (badness 1616) in paragraph at lines 260--260
 []|\OT1/lmr/m/n/10 Distinguishes tem-
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 244--244
+Underfull \hbox (badness 3168) in paragraph at lines 260--260
 \OT1/lmr/m/n/10 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--245
+Underfull \hbox (badness 10000) in paragraph at lines 261--261
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--245
+Underfull \hbox (badness 10000) in paragraph at lines 261--261
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--245
+Underfull \hbox (badness 10000) in paragraph at lines 261--261
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--246
+Underfull \hbox (badness 10000) in paragraph at lines 262--262
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 247--247
+Underfull \hbox (badness 1616) in paragraph at lines 263--263
 []|\OT1/lmr/m/n/10 Distinguishes tem-
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 247--247
+Underfull \hbox (badness 3168) in paragraph at lines 263--263
 \OT1/lmr/m/n/10 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 264--265
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--250
+Underfull \hbox (badness 10000) in paragraph at lines 266--266
 []|\OT1/lmr/m/n/10 Respiration
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 250--250
+Underfull \hbox (badness 1917) in paragraph at lines 266--266
 \OT1/lmr/m/n/10 plas-tron &
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 252--252
+Underfull \hbox (badness 1158) in paragraph at lines 268--268
 []|\OT1/lmr/m/n/10 Definition in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--252
+Underfull \hbox (badness 10000) in paragraph at lines 268--268
 \OT1/lmr/m/n/10 res-pi-ra-tion us-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--254
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 []|\OT1/lmr/m/n/10 Distinguishes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--254
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 \OT1/lmr/m/n/10 spirac-u-lar gills,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--254
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 \OT1/lmr/m/n/10 plas-tron, at-mo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--254
+Underfull \hbox (badness 10000) in paragraph at lines 270--270
 \OT1/lmr/m/n/10 spheric breathers
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 255--255
+Underfull \hbox (badness 2626) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 oc-cur as sep-a-rate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 and com-bined
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 traits. Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 tains also traits:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 air (plants), at-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
+Underfull \hbox (badness 10000) in paragraph at lines 271--271
 \OT1/lmr/m/n/10 mo-spheric, and
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 256--257
+Underfull \hbox (badness 1009) in paragraph at lines 272--273
 []|\OT1/lmr/m/n/10 Distinguishes plas-
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 256--257
+Underfull \hbox (badness 3954) in paragraph at lines 272--273
 \OT1/lmr/m/n/10 tron and spir-a-cle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--258
+Underfull \hbox (badness 10000) in paragraph at lines 274--274
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--268
+Underfull \hbox (badness 10000) in paragraph at lines 284--284
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 277--277
+Underfull \hbox (badness 10000) in paragraph at lines 293--293
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Overfull \hbox (88.95552pt too wide) in alignment at lines 132--285
+Overfull \hbox (88.95552pt too wide) in alignment at lines 148--301
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 285
+Underfull \vbox (badness 10000) detected at line 301
  []
 
-[28
+[31
 
-] [29] [30]
+] [32] [33]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 293.
+(Font)              <9> on input line 309.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 286--297
+Overfull \hbox (15.0pt too wide) in paragraph at lines 302--313
 []$[]$ 
  []
 
-[31])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 354.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 354.
+[34])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 259.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 259.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 354.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 354.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 259.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 259.
 Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -2116,21 +2149,21 @@ LaTeX Warning: There were multiply-defined labels.
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 354.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 259.
  ) 
 Here is how much of TeX's memory you used:
- 24711 strings out of 492982
- 478234 string characters out of 6134895
- 894327 words of memory out of 5000000
- 27726 multiletter control sequences out of 15000+600000
+ 24731 strings out of 492982
+ 478691 string characters out of 6134895
+ 894892 words of memory out of 5000000
+ 27736 multiletter control sequences out of 15000+600000
  71940 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3664b,1746s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (31 pages, 2243028 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (34 pages, 3045692 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 427 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 108 named destinations out of 1000 (max. 500000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 
