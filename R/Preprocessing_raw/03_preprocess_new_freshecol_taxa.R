@@ -53,6 +53,7 @@ taxa <- freshwaterecol[
 ] %>% unique()
 ID_gbif <- get_gbifid(taxa, rows = 1)
 saveRDS(ID_gbif, file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
+# ID_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
 
 tax_classf <- classification(
   id = ID_gbif,
@@ -78,6 +79,7 @@ ID_subf_gbif <- get_gbifid(taxa_subfamily,
 saveRDS(ID_subf_gbif,
   file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds"
 )
+# ID_subf_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds")
 
 taxa_subf_classf <- classification(
   id = ID_subf_gbif,
@@ -108,6 +110,7 @@ ID_subf2_gbif <- get_tsn(taxa_subf_2,
 saveRDS(ID_subf2_gbif,
   file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds"
 )
+# ID_subf2_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds")
 
 taxa_subf2_classf <- classification(
   id = ID_subf2_gbif,
