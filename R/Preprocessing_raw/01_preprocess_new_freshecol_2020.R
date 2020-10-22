@@ -45,6 +45,25 @@ freshwaterecol <- Reduce(f = cbind, output_db)
 setnames(freshwaterecol, "V1", "taxon")
 freshwaterecol[, EU := NULL]
 
+# -add AQEM codes:
+aqem_path <- file.path(data_raw, "AQEM.csv")
+ind <- grep("Taxon", readLines(aqem_path))
+
+# read in
+aqem <- fread(aqem_path,
+              skip = ind,
+              sep = ";",
+              header = TRUE,
+              na.strings = (""),
+              fill = TRUE
+)
+aqem <- aqem[!(V1 %like% "Statistics|number.*"), ]
+setnames(aqem, "V1", "taxon")
+
+# merge ID
+freshwaterecol[aqem, ID_AQEM := `i.ID-AQEM (ID-fwe)`, on = "taxon"]
+
+
 # trait preparation ----
 
 # pH preference
