@@ -110,7 +110,7 @@ Body Form    & \begin{tabular}[c]{@{}l@{}}Cylindrical \\ Flattenend\\ Spherical\
 \midrule
 Size         & \begin{tabular}[c]{@{}l@{}}Small \\ Medium \\ Large\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}\textless 9 mm, \textless 10 mm \textsuperscript{\textit{b}}\\ 9 - 16 mm, 10 - 20 mm\\ \textgreater 16 mm, \textgreater 20 mm\end{tabular}                                                                                                                \\
 \midrule
-Respiration  & \begin{tabular}[c]{@{}l@{}}Gills\\ Plastron/Spiracle\\ \\ \\ Tegument\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Temporary air store, tracheal gills, gills\\ Spiracular gills, atmospheric breathers, \\ plant breathers, functional spiracles, \\ air (plants), aerial, plastron/spiracle\\ Cutaneous, tegument \end{tabular}                                                                         \\
+Respiration  & \begin{tabular}[c]{@{}l@{}}Gills\\ Plastron/Spiracle\\ \\ \\ \\ Tegument\end{tabular}                             & \begin{tabular}[c]{@{}l@{}} Tracheal gills, gills\\ Temporary air store, Spiracular gills, \\ atmospheric breathers, plant breathers, \\ functional spiracles, air (plants), aerial, \\ plastron/spiracle\\ Cutaneous, tegument \end{tabular}                                                                         \\
 \midrule
 Locomotion   & \begin{tabular}[c]{@{}l@{}}Burrower\\ Crawler\\ Sessil\\ Swimmer \end{tabular}                                     & \begin{tabular}[c]{@{}l@{}}Interstitial, boring, burrowing\\ Sprawler, walking, climber, clinger, crawler\\ Attached, sessil\\ Skating, diving, planctonic, swimming\end{tabular}                                                                                                                 \\
 \midrule
@@ -201,11 +201,11 @@ The data processing and aforementioned analysis were carried out using R (Versio
   \item \textbf{aggregated vs assigned traits}
   \begin{itemize}
     \item In general, differences produced by the aggregation methods seem to arise by using mean or median, not so much driven by the different weighting approaches (direct vs. stepwise vs. weighted)
-    \item Approaches that used the median resulted in fewer differences to the assigned traits, albeit if differences occured to the assigned traits, they were greater. 
+    \item Approaches that used the median resulted in fewer differences to the assigned traits, albeit if differences occurred to the assigned traits, they were greater. 
     \item Simulation shows that approaches using the median generally produce a larger range of values $\rightarrow$ Especially with higher trait variability for situations where one genus has a lot more species than the other genera within the family 
-    \item Differences greater for the NOA dataset because of binary coding $\rightarrow$ differences are greater between traits
-    \item How is the taxonomic hierarchy in the investigated datasets? 
-    % -> link to taxonomic hierarchy, many families have only a few genera
+    \item Differences greater for the NOA dataset because of the binary coding $\rightarrow$ differences are greater between traits
+    \item Taxonomic hierarchy in the investigated datasets? \\
+     $\rightarrow$ In every investigated dataset, most families have only one genus  
     % -> Similarly, many genera have only a few species
     % -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
     \item There is no "true" value to compare to, i.e. assigned traits can be biased. Comparison of species-lvl traits in fwe and traits on genus-lvl in tachet would be interesting in this context? 
@@ -221,19 +221,9 @@ The data processing and aforementioned analysis were carried out using R (Versio
 \end{itemize}
 
 
-% 1) Trait aggr methods vs assigned traits:
-% - BK:
-%  All range from about 0 to 1 and all have mean values which fall within the error bars (stand dev) of the other methods. 
-% Figure 3, however, does suggest some differences in terms of range, with the methods which use median have narrow ranges. In terms of mean values perhaps more difference than for the Australian analysis but even still considering the +/- the error bars I think they all overlap.
-% It then becomes what to make of all this. Are the slight differences between the methods important or unimportant?
-% Also why the differences between the Australian and NA datasets?
-
-% Ben's Comment: -> But another issues is that these aggregation methods were being compared to traits assigned at the family level, which I understand was often done by expert opinion. So, these traits assigned at the family level may not be really “correct”! The difference between the trait aggregated to family and its designation at the family level could indicate: (a) the aggregation method is “no good”, (b) the trait assigned at the family level was “no good”, or (c) both a and b.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 2) Influence of aggregation methods on trait-environment relationships: 
-% 
 % Harmonization: Minor influence on RDA species scores
 % RDA species scores 
 %   -> Normalized eigenvectors
