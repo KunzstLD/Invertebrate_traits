@@ -59,17 +59,12 @@ Besides providing a mechanistic explanation of species-environment relationships
 In the last decades, freshwater ecologists developed comprehensive invertebrate trait databases for various continents \cite{usseglio-polatera_biomonitoring_2000, schmidt-kloiber_www.freshwaterecology.info_2015, vieira_database_nodate, Philips_and_Smith_NZ_DB_2018, kefford_integrated_2020, tomanova_trophic_2006}. The availability of invertebrate trait data from different continents enables comparisons of trait variation and their relation to environmental factors across large scales. However, such analyses have been carried out mostly within continents, using information from one or two trait databases. For example, Bonada et al. \cite{bonada_taxonomic_2007} compared trait composition for Mediterranean and temperate regions in Europe using traits from the Usseglio-Polatera et al. \cite{usseglio-polatera_biomonitoring_2000}, Poff et al. \cite{poff_developing_2010} characterized trait composition across sites in the Western US using traits from Poff et al. \cite{poff_functional_2006}, and Botwe et al. \cite{botwe_effects_2018} investigated the effect of salinity on invertebrate traits in different sites in South Australia using trait data from Poff et al. \cite{poff_functional_2006} and Schäfer et al. \cite{schafer_trait_2011}. Analyses of invertebrate traits that synthesize information on invertebrate grouping features from more than two different continents are rare. 
 
 In this study, we follow the terminology proposed by Schmera et al., where a grouping feature is defined as a general property (e.g. feeding mode) that comprises a "group of related traits (e.g., predator, shredder, etc.) that vary among species or among individuals within a species" \cite{schmera_proposed_2015}. Thus, we use the term grouping feature in place of which many studies use the term "trait", and the term trait instead of "trait state", "modality" or "trait category". 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % TODO: Description of affinity
-% A trait can described using a binary coding (exists or not), or using affinity scores that indicate the which extent an organism expresses a certain trait.  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 To our knowledge, only Brown et al. \cite{brown_functional_2018} harmonized grouping features from more than two geographically distant invertebrate trait databases in a study on the influence of decreasing glacier cover on functional diversity and community assembly of invertebrates. 
-% TODO: ?Paper trait convergence Doledec
 
 We suspect that the heterogeneity of information in freshwater invertebrate trait databases, besides the diversity of taxa across regions, is likely a major reason for the lack of studies across continents. To harmonize grouping features from different regions, first commonly accepted and unambiguous trait definitions are required \cite{schneider_towards_2019}. In the best case, grouping features would be classified into the same traits across databases or they could easily be harmonized using standardized terminology. However, a lack of standardized terminology of trait definitions and poor metadata quality in many trait databases are common issues throughout the field of trait-based ecology \cite{baird_toward_2011, schneider_towards_2019}. Secondly, consistent coding of traits facilitates the compatibility of trait data from different databases. 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Alternative from Ben:
 Traits can be described in a binary fashion with no uncertainty how the trait is expressed in any particularly organism (e.g. adult terrestrial stage, presence of gills), continuous (e.g. tolerance of pollution, body size) or using multiple descriptions (e.g. feeding mode) with some uncertainty as to which trait the organism should be coded to. One approach for dealing with the uncertainty in the latter is the use of fuzzy coded variables. Fuzzy codes are used to account for plasticity in traits, variability in traits within taxonomic groups above species, and incomplete knowledge and are usually converted to proportions.
 
@@ -208,7 +203,7 @@ The data processing and aforementioned analysis were carried out using R (Versio
      $\rightarrow$ In every investigated dataset, most families have only one genus  
     % -> Similarly, many genera have only a few species
     % -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
-    \item There is no "true" value to compare to, i.e. assigned traits can be biased. Comparison of species-lvl traits in fwe and traits on genus-lvl in tachet would be interesting in this context? 
+    \item There is no "true" value to compare to, i.e. assigned traits at genus or family level can be biased as well (i.e. the person who assigned the trait was thinking about particular species within a genus not all). Comparison of species-lvl traits in fwe and traits on genus-lvl in tachet would be interesting in this context? 
     \item  Suggestions from Co-Authors: \\
      $\rightarrow$ should include where the classifications come from \\
      $\rightarrow$ what do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? \\
