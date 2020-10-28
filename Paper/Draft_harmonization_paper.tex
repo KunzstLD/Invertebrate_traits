@@ -127,7 +127,7 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 
 \subsection*{Trait aggregation}
 
-Traits of the harmonized grouping feature datasets were aggregated to family-level using three approaches. I) Direct aggregation of taxa to family-level giving equal weight to every taxon using the mean or median, denoted \textit{direct\_agg\textsubscript{mean}} and \textit{direct\_agg\textsubscript{median}}, respectively. II) Stepwise aggregation, i.e. first to the genus-level and subsequently to the family-level using the mean or median. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{mean}} or \textit{stepwise\_agg\textsubscript{median}}, respectively. III) Aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights the genera according to the number of their species in the trait datasets regardless if for every used grouping feature information was available. 
+Traits of the harmonized grouping feature datasets were aggregated to family-level using three approaches. I) Direct aggregation of taxa to family-level giving equal weight to every taxon using the mean or median, denoted \textit{direct\_agg\textsubscript{mean}} and \textit{direct\_agg\textsubscript{median}}, respectively. II) Stepwise aggregation, i.e. first to the genus-level and subsequently to the family-level using the mean or median. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{mean}} or \textit{stepwise\_agg\textsubscript{median}}, respectively. III) Aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights the genera according to the number of their species in the trait datasets regardless if for every used grouping feature information was available (Figure \ref{fig:data_proc_overview}). 
 
 To examine the influence of the taxonomic hierarchy and the trait variability on the outcome of the different trait aggregation methods we created three hypothetical examples of different taxonomic hierarchies. 
 1) A family with an equal number of genera and species (5 genera each with 5 species respectively), denoted as \textit{sim\_base}.
@@ -138,6 +138,7 @@ To examine the influence of the taxonomic hierarchy and the trait variability on
   \centering
   \subfile{Flowchart/Flowchart_methods.tex}
   \caption{Data processing steps of the selected traits. Intermediate (gray) and main (orange) steps of data preparation are depicted. The dashed bottom box illustrates the different trait aggregation methods using a small made-up example (data in the upper left corner). The aggregation methods (blue) and intermediate steps of the aggregation methods (purple) are displayed. Abbreviations: EU: Europe, NOA: North America, AUS: Australia, NZ: New Zealand, DB: Database.}
+  \label{fig:data_proc_overview}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -200,10 +201,8 @@ The data processing and aforementioned analysis were carried out using R (Versio
     \item Simulation shows that approaches using the median generally produce a larger range of values $\rightarrow$ Especially with higher trait variability for situations where one genus has a lot more species than the other genera within the family 
     \item Differences greater for the NOA dataset because of the binary coding $\rightarrow$ differences are greater between traits
     \item Taxonomic hierarchy in the investigated datasets? \\
-     $\rightarrow$ In every investigated dataset, most families have only one genus  
-    % -> Similarly, many genera have only a few species
-    % -> linear relationship: the more genus per family, the more species (although there are exceptions -> e.g. Europe)
-    \item There is no "true" value to compare to, i.e. assigned traits at genus or family level can be biased as well (i.e. the person who assigned the trait was thinking about particular species within a genus not all). Comparison of species-lvl traits in fwe and traits on genus-lvl in tachet would be interesting in this context? 
+     $\rightarrow$ In every investigated dataset families have only 1 to few genera. 76 (North America) to 93 \% (New Zealand) of the families have 5 or less genera (see SI). 
+    \item There is no "true" value to compare to, i.e. assigned traits at genus or family level can be biased as well (i.e. the person who assigned the trait was thinking about particular species within a genus not all). Comparison of species-level traits in fwe and traits on genus-level in tachet would be interesting in this context? 
     \item  Suggestions from Co-Authors: \\
      $\rightarrow$ should include where the classifications come from \\
      $\rightarrow$ what do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? \\
