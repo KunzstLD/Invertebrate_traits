@@ -1,4 +1,3 @@
-
 #### read taxaexports ####
 filelinks <- list.files(
   path = data_raw,
@@ -45,11 +44,11 @@ freshwaterecol <- Reduce(f = cbind, output_db)
 setnames(freshwaterecol, "V1", "taxon")
 freshwaterecol[, EU := NULL]
 
-# -add AQEM codes:
+# - add AQEM codes:
 aqem_path <- file.path(data_raw, "AQEM.csv")
 ind <- grep("Taxon", readLines(aqem_path))
 
-# read in
+# read in aqem
 aqem <- fread(aqem_path,
               skip = ind,
               sep = ";",

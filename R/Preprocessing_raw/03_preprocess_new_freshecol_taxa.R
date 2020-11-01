@@ -51,8 +51,8 @@ taxa <- freshwaterecol[
   is.na(order_or_higher) & !is.na(family),
   family
 ] %>% unique()
-ID_gbif <- get_gbifid(taxa, rows = 1)
-saveRDS(ID_gbif, file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
+# ID_gbif <- get_gbifid(taxa, rows = 1)
+# saveRDS(ID_gbif, file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
 # ID_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
 
 tax_classf <- classification(
@@ -68,18 +68,17 @@ tax_classf <- rbindlist(tax_classf, fill = TRUE)
 setDT(tax_classf)
 tax_classf[, "." := NULL]
 
-
 # for subfamilies
 # - first, take the genus (easier to find and match)
 taxa_subfamily <- freshwaterecol[!is.na(subfamily_or_tribe), genus] %>%
   unique()
-ID_subf_gbif <- get_gbifid(taxa_subfamily,
-  rows = 1
-)
-saveRDS(ID_subf_gbif,
-  file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds"
-)
-# ID_subf_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds")
+# ID_subf_gbif <- get_gbifid(taxa_subfamily,
+#   rows = 1
+# )
+# saveRDS(ID_subf_gbif,
+#   file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds"
+# )
+ID_subf_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily.rds")
 
 taxa_subf_classf <- classification(
   id = ID_subf_gbif,
@@ -104,13 +103,13 @@ taxa_subf_2 <- freshwaterecol[
 ] %>%
   sub(" Gen\\. sp\\.", "", .) %>%
   unique()
-ID_subf2_gbif <- get_tsn(taxa_subf_2,
-  rows = 1
-)
-saveRDS(ID_subf2_gbif,
-  file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds"
-)
-# ID_subf2_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds")
+# ID_subf2_gbif <- get_tsn(taxa_subf_2,
+#   rows = 1
+# )
+# saveRDS(ID_subf2_gbif,
+#   file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds"
+# )
+ID_subf2_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_subfamily_2.rds")
 
 taxa_subf2_classf <- classification(
   id = ID_subf2_gbif,
@@ -254,7 +253,8 @@ setcolorder(
     "suborder",
     "class",
     "phylum",
-    "taxon_cp"
+    "taxon_cp",
+    "ID_AQEM"
   )
 )
 

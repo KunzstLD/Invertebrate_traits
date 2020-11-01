@@ -29,7 +29,7 @@ freshwaterecol[
 freshwaterecol[, order_or_higher := copy_till_next_occur(x = order_or_higher)]
 
 # - sort out all taxa with zero information
-trait_cols <- grep("taxon.*|EU|genus|family|order.*",
+trait_cols <- grep("taxon.*|EU|genus|family|order.*|ID_AQEM",
   names(freshwaterecol),
   value = TRUE,
   invert = TRUE
@@ -43,9 +43,8 @@ no_info <- freshwaterecol[, apply(.SD, 1, function(y) {
 pos <- no_info == ncol(freshwaterecol[, ..trait_cols])
 freshwaterecol <- freshwaterecol[!pos, ]
 
-# - Add gen. sp with endign dae/nae/ini to family column
+# - Add gen. sp with ending dae/nae/ini to family column
 # or subfamily column
-# delete the rest frp, genus col
 freshwaterecol[grep(".*dae.*Gen\\..+", taxon), `:=`(
   family = taxon,
   taxon = NA_character_
@@ -57,60 +56,40 @@ freshwaterecol[grep("(?i).*ini Gen\\. sp\\.|.*nae Gen\\. sp\\.", taxon), `:=`(
 freshwaterecol[grep("Gen\\. sp\\.", taxon), taxon := NA_character_]
 
 # - Proceed with creating genus col
-# everything with sp. to genus column
-freshwaterecol[
-  grep("(?!.*ssp\\.)(?=[[:space:]]sp\\.)", taxon, perl = TRUE),
-  `:=`(
-    genus = taxon,
-    taxon = NA_character_
-  )
-]
+# add genera from first name of species col
+# leave sp. into species col
+freshwaterecol[!is.na(taxon), genus := sub("([A-z]{1,})([[:space:]])(.*)", "\\1", taxon)]
 
-# - add genera from first name of species col
-freshwaterecol[
-  !is.na(taxon),
-  genus := sub(
-    "([A-z]{1,})([[:space:]])(.+)",
-    "\\1", taxon
-  )
-]
+# new sp. GR are newly not yet in the studied area observed taxa
+# If no values assigned take values from corresponding sp.!
+target <- freshwaterecol[grepl("new sp\\. GR", taxon), sub("([A-z]{1,})([[:space:]])(sp\\.)(.*)", 
+                                                           "\\1", taxon)]
+target <- target[!duplicated(target)]
+target <- paste(target, "sp\\.")
+
+for(sp_taxa in target){
+  assign <- freshwaterecol[taxon %like% sp_taxa, ][1, ..trait_cols]
+  freshwaterecol[taxon %like% sp_taxa, (trait_cols) := assign]
+}
+
+# rm Lv. from taxa in taxon col
+freshwaterecol[, taxon := sub(" Lv\\.", "", taxon)]
 
 # - create species column from taxon column
 setnames(freshwaterecol, "taxon", "species")
 
 # - cleaning:
-# species col:
-# rm Lv. and spp., Gr., Agg.
-freshwaterecol[
-  !is.na(species),
-  species := sub(
-    "[[:space:]]Lv\\.|[[:space:]]spp\\.|\\-Gr\\.|[[:space:]]Agg\\.",
-    "", species
-  )
-]
-freshwaterecol[grep("Thienemannimyia Gr\\.", species), species := NA]
+# species col: Thienemannimyia Gr. deleted from specie scol
+freshwaterecol[grepl("Thienemannimyia Gr\\.", species), species := NA]
 
 # genus col:
-# rm sp., Gen, Gr.-, (new sp. GR)
-# ?possibly duplicates introduced
-freshwaterecol[, genus := sub(
-  "[[:space:]]sp\\.|\\-Gr\\..+|[[:space:]]Lv\\.|[[:space:]]sp\\.[[:space:]]Lv\\.",
-  "", genus
-)]
-freshwaterecol[, genus := sub(
-  "[[:space:]][0-9].+|[[:space:]]Pe[[:space:]]1",
-  "", genus
-)]
+freshwaterecol[grepl("Bezzia-Gr\\.", genus), genus := "Bezzia"]
 
 # family col:
-freshwaterecol[, family := sub(
-  "[[:space:]]Gen\\.[[:space:]].+|\\,.*|[[:space:]]Gen.*[[:digit:]]",
-  "", family
-)]
-freshwaterecol[, family := sub(
-  "[[:space:]]\\(.+\\)[[:space:]]sp\\.",
-  "", family
-)]
+# change capital letters to normal writing
+# Ceratopogonidae new Gen sp. has already same values as Ceratopogonidae Gen sp.
+# freshwaterecol[grepl("Ceratopogonidae", family), ..trait_cols]
+# freshwaterecol[grepl("new Gen\\. sp\\.", family), ]
 freshwaterecol[, family := simpleCap(family)]
 
 # order_or_higher column:

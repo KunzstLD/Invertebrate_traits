@@ -19,7 +19,8 @@ Trait_EU <- cbind(
       "genus",
       "family",
       "order",
-      "taxon_cp"
+      "taxon_cp",
+      "ID_AQEM"
     )
   ),
   normalize_by_rowSum(Trait_EU[, ..tachet_cols])
@@ -133,9 +134,6 @@ normalize_by_rowSum(
 
 # new taxa col for trait EU
 Trait_EU[, taxa := coalesce(species, genus, family, order)]
-
-# create also unique_id col for merges later on
-Trait_EU[, unique_id := 1:nrow(Trait_EU)]
 
 # merge PUP comments
 Trait_EU[piercer_pup,
@@ -255,7 +253,7 @@ Trait_EU_piercer <-
     feed_predator_tachet,
     feed_parasite_tachet,
     feed_scraper_tachet,
-    unique_id
+    ID_AQEM
   )])
 
 Trait_EU_piercer[lookup_piercer,
@@ -274,7 +272,7 @@ Trait_EU[Trait_EU_piercer,
     feed_parasite_tachet = i.feed_parasite_tachet,
     feed_scraper_tachet = i.feed_scraper_tachet
   ),
-  on = "unique_id"
+  on = "ID_AQEM"
 ]
 
 # manual assignment for few species
@@ -651,7 +649,6 @@ body_form_pup[, (cols) := lapply(.SD, function(y) {
 # subset to EU data
 bf_EU <- body_form_pup[grepl("EU.*", array), ]
 
-
 # merge on species-level
 Trait_EU[bf_EU[!is.na(species), ],
   `:=`(
@@ -681,7 +678,7 @@ Trait_EU[Trait_subset,
     bf_cylindrical = i.bf_cylindrical,
     bf_streamlined = i.bf_streamlined
   ),
-  on = "unique_id"
+  on = "ID_AQEM"
 ]
 
 # _________________________________________________________________________
@@ -768,7 +765,7 @@ normalize_by_rowSum(
     "family",
     "genus",
     "species",
-    "unique_id",
+    "ID_AQEM",
     "taxon_cp",
     "taxa"
   )
@@ -782,7 +779,7 @@ newcolorder <- c(
   "order",
   "taxon_cp",
   "taxa",
-  "unique_id",
+  "ID_AQEM",
   grep("feed", names(Trait_EU), value = TRUE),
   grep("resp", names(Trait_EU), value = TRUE),
   grep("volt", names(Trait_EU), value = TRUE),
@@ -794,7 +791,7 @@ newcolorder <- c(
 )
 setcolorder(Trait_EU, newcolorder)
 
-# save
+# save for further analysis
 saveRDS(
   object = Trait_EU,
   file = file.path(
@@ -808,4 +805,58 @@ saveRDS(
     data_aggr,
     "Data",
     "Trait_freshecol_2020_pp_harmonized.rds")
+)
+
+
+#### Add Ecoregions ####
+ecoregions_path <- file.path(data_raw, "ecoregions.csv")
+ind <- grep("Taxon", readLines(ecoregions_path))
+
+# read in ecoregions & preprocess
+ecoregions <- fread(
+  ecoregions_path,
+  skip = ind,
+  sep = ";",
+  header = TRUE,
+  na.strings = (""),
+  fill = TRUE
+)
+ecoregions <- ecoregions[!(V1 %like% "Statistics|number.*"), ]
+setnames(ecoregions,
+         c("V1",
+           "ID-AQEM (ID-fwe)"),
+         c("taxon",
+           "ID_AQEM"))
+ecoregions[, c("EU", "ERX", "ERY") := NULL]
+
+# subset where ID is present
+ecoregions <- ecoregions[!is.na(ID_AQEM), ]
+
+# set values to 1
+cols <- grep("taxon|ID.*",
+             names(ecoregions), 
+             value = TRUE, 
+             invert = TRUE)
+for(j in cols){
+  data.table::set(ecoregions, which(!is.na(ecoregions[[j]])), j, 1)
+}
+
+# merge
+Trait_EU_ecoreg <- merge(x = Trait_EU,
+                         y = ecoregions[, -c("taxon")],
+                         by = "ID_AQEM",
+                         all.x = TRUE)
+
+# as .csv and .rds
+write.csv(
+  x = Trait_EU_ecoreg,
+  file = file.path(data_cleaned, "EU", "Trait_freshecol_2020_pp_harmonized_ecoregions.csv"),
+  row.names = FALSE
+)
+saveRDS(
+  object = Trait_EU_ecoreg,
+  file = file.path(
+    data_cleaned, 
+    "EU",
+    "Trait_freshecol_2020_pp_harmonized_ecoregions.rds")
 )

@@ -10,6 +10,7 @@ library(data.table)
 library(tidyr)
 library(readxl)
 library(zeallot)
+library(taxize)
 
 # taxonomical information
 # library(taxize)
@@ -29,7 +30,7 @@ data_cleaned <- "./Cleaned_data"
 # Path for data to fill missing values
 data_missing <- "./Missing_data"
 
-# data location for trait aggregation project
+# Data location for trait aggregation project
 data_aggr <- "/home/kunzst/Dokumente/Projects/Trait_DB/Trait-aggregation"
 
 # Path for output
@@ -38,6 +39,11 @@ data_out <- "./Output"
 # Location for R scripts
 data_scr <- "./R"
 
+# Link to raw data
+data_raw <- "./Data/EU/Raw_freshecol/2020"
 
 # source script with used functions
 source(file = file.path(data_scr, "functions_used_TDB.R"))
+
+# script with helper functions for preprocessing of raw data
+source(file = "./R/Preprocessing_raw/functions_used.R")
