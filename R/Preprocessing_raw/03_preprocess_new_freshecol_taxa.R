@@ -53,7 +53,7 @@ taxa <- freshwaterecol[
 ] %>% unique()
 # ID_gbif <- get_gbifid(taxa, rows = 1)
 # saveRDS(ID_gbif, file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
-# ID_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
+ID_gbif <- readRDS(file = "./R/Preprocessing_raw/Cache/ID_gbif_family.rds")
 
 tax_classf <- classification(
   id = ID_gbif,
@@ -93,7 +93,6 @@ taxa_subf_classf <- lapply(taxa_subf_classf, function(y) {
 })
 taxa_subf_classf <- rbindlist(taxa_subf_classf, fill = TRUE)
 taxa_subf_classf[, "." := NULL]
-
 
 # subfamilies where no genus
 # information was available

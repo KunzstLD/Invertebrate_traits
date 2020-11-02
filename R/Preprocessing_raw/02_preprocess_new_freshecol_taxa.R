@@ -56,24 +56,29 @@ freshwaterecol[grep("(?i).*ini Gen\\. sp\\.|.*nae Gen\\. sp\\.", taxon), `:=`(
 freshwaterecol[grep("Gen\\. sp\\.", taxon), taxon := NA_character_]
 
 # - Proceed with creating genus col
+# move sp. into genus col
+freshwaterecol[grepl("(?![[:space:]]ssp\\.)(?=[[:space:]]sp\\.)", taxon, perl = TRUE),
+               `:=`(genus = taxon,
+                    taxon = NA)]
+
 # add genera from first name of species col
-# leave sp. into species col
 freshwaterecol[!is.na(taxon), genus := sub("([A-z]{1,})([[:space:]])(.*)", "\\1", taxon)]
 
 # new sp. GR are newly not yet in the studied area observed taxa
 # If no values assigned take values from corresponding sp.!
-target <- freshwaterecol[grepl("new sp\\. GR", taxon), sub("([A-z]{1,})([[:space:]])(sp\\.)(.*)", 
-                                                           "\\1", taxon)]
+target <- freshwaterecol[grepl("new sp\\. GR", genus), sub("([A-z]{1,})([[:space:]])(sp\\.)(.*)", 
+                                                           "\\1", genus)]
 target <- target[!duplicated(target)]
 target <- paste(target, "sp\\.")
 
 for(sp_taxa in target){
-  assign <- freshwaterecol[taxon %like% sp_taxa, ][1, ..trait_cols]
-  freshwaterecol[taxon %like% sp_taxa, (trait_cols) := assign]
+  assign <- freshwaterecol[genus %like% sp_taxa, ][1, ..trait_cols]
+  freshwaterecol[genus %like% sp_taxa, (trait_cols) := assign]
 }
 
-# rm Lv. from taxa in taxon col
+# rm "Lv." from taxa names in taxon & genus col
 freshwaterecol[, taxon := sub(" Lv\\.", "", taxon)]
+freshwaterecol[, genus := sub(" Lv\\.", "", genus)]
 
 # - create species column from taxon column
 setnames(freshwaterecol, "taxon", "species")

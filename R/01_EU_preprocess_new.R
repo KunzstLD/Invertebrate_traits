@@ -83,8 +83,8 @@ cols_fuzzy <- grep("(?=volt.*|resp.*|species|genus|family|order|taxon.*|ID.*)(?!
 # ]
 # # rm duplicates
 # trait_EU <- trait_EU[!(!is.na(species) & duplicated(species)), ]
-# 
-# 
+ 
+
 # # aggr. duplicated genus
 # dupl_genus <- trait_EU[is.na(species) & !is.na(genus), ] %>%
 #   .[duplicated(genus) | duplicated(genus, fromLast = TRUE), genus] %>%

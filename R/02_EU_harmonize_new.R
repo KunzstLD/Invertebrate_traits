@@ -6,7 +6,6 @@
 Trait_EU <-
   readRDS(file.path(data_cleaned, "EU", "Trait_freshecol_2020_pp_for_harm.rds"))
 
-
 # normalize freshecol & tachet separately
 tachet_cols <- grep("tachet.*", names(Trait_EU), value = TRUE)
 fc_cols <- grep("tachet.*", names(Trait_EU), value = TRUE, invert = TRUE)
@@ -134,6 +133,7 @@ normalize_by_rowSum(
 
 # new taxa col for trait EU
 Trait_EU[, taxa := coalesce(species, genus, family, order)]
+Trait_EU[, taxa_adjusted := sub(" sp\\.", "", taxa)]
 
 # merge PUP comments
 Trait_EU[piercer_pup,
@@ -148,7 +148,7 @@ Trait_EU[piercer_pup,
     feed_piercer_tachet = i.feed_piercer_t,
     comment_piercer = i.comment_piercer
   ),
-  on = "taxa"
+  on = c(taxa_adjusted = "taxa")
 ]
 
 # assign affinities from feed_piercer_tachet to
@@ -661,24 +661,14 @@ Trait_EU[bf_EU[!is.na(species), ],
 ]
 
 # merge on genus-level
-Trait_subset <- Trait_EU[is.na(species) & !is.na(genus), ]
-Trait_subset[bf_EU,
+Trait_EU[bf_EU,
   `:=`(
     bf_flattened = i.flattened,
     bf_spherical = i.spherical,
     bf_cylindrical = i.cylindrical,
     bf_streamlined = i.streamlined
   ),
-  on = "genus"
-]
-Trait_EU[Trait_subset,
-  `:=`(
-    bf_flattened = i.bf_flattened,
-    bf_spherical = i.bf_spherical,
-    bf_cylindrical = i.bf_cylindrical,
-    bf_streamlined = i.bf_streamlined
-  ),
-  on = "ID_AQEM"
+  on = c(taxa_adjusted = "genus")
 ]
 
 # _________________________________________________________________________
