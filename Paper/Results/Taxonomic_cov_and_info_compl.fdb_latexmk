@@ -1,11 +1,12 @@
 # Fdb version 3
-["biber Results/Taxonomic_cov_and_info_compl"] 1602850602 "Results/Taxonomic_cov_and_info_compl.bcf" "Results/Taxonomic_cov_and_info_compl.bbl" "Results/Taxonomic_cov_and_info_compl" 1602850604
-  "Results/Taxonomic_cov_and_info_compl.bcf" 1602850604 87123 9b50dd681f981451536be8960e57f88e ""
+["biber Results/Taxonomic_cov_and_info_compl"] 1602850602 "Results/Taxonomic_cov_and_info_compl.bcf" "Results/Taxonomic_cov_and_info_compl.bbl" "Results/Taxonomic_cov_and_info_compl" 1604406280
+  "Results/Taxonomic_cov_and_info_compl.bcf" 1604406280 87123 9b50dd681f981451536be8960e57f88e ""
   (generated)
   "Results/Taxonomic_cov_and_info_compl.bbl"
-["pdflatex"] 1602850603 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex" "Results/Taxonomic_cov_and_info_compl.pdf" "Taxonomic_cov_and_info_compl" 1602850604
+  "Results/Taxonomic_cov_and_info_compl.blg"
+["pdflatex"] 1604406279 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex" "Results/Taxonomic_cov_and_info_compl.pdf" "Taxonomic_cov_and_info_compl" 1604406280
   "/etc/texmf/web2c/texmf.cnf" 1602155229 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex" 1602850601 2402 ba595ab022b470be6abd98e39d52523a ""
+  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex" 1604406278 2401 df845ebd1fdc6b6d6e953364b2b67a32 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -154,16 +155,16 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1602496516 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602496527 4126804 863aa8be25f58a01810c5d5702e28373 ""
-  "Results/../Draft_harmonization_paper.tex" 1602850543 36139 5a928e0fceb9a94260e171a54997a699 ""
-  "Results/Taxonomic_cov_and_info_compl.aux" 1602850604 1942 aaa7618af3c5f2101c68895efecc51f7 ""
+  "Results/../Draft_harmonization_paper.tex" 1603893721 29203 04b2f682a2cefaf1687a110a6b9e00a9 ""
+  "Results/Taxonomic_cov_and_info_compl.aux" 1604406280 1942 aaa7618af3c5f2101c68895efecc51f7 ""
   "Results/Taxonomic_cov_and_info_compl.bbl" 1602850603 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/Taxonomic_cov_and_info_compl"
-  "Results/Taxonomic_cov_and_info_compl.out" 1602850604 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/Taxonomic_cov_and_info_compl.run.xml" 1602850604 2551 d989ffd2e1c23c56b6300b529b01f23e ""
-  "Results/Taxonomic_cov_and_info_compl.tex" 1602850601 2402 ba595ab022b470be6abd98e39d52523a ""
+  "Results/Taxonomic_cov_and_info_compl.out" 1604406280 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/Taxonomic_cov_and_info_compl.run.xml" 1604406280 2551 d989ffd2e1c23c56b6300b529b01f23e ""
+  "Results/Taxonomic_cov_and_info_compl.tex" 1604406278 2401 df845ebd1fdc6b6d6e953364b2b67a32 ""
   (generated)
-  "Results/Taxonomic_cov_and_info_compl.aux"
   "Results/Taxonomic_cov_and_info_compl.out"
-  "Results/Taxonomic_cov_and_info_compl.log"
-  "Results/Taxonomic_cov_and_info_compl.bcf"
   "Results/Taxonomic_cov_and_info_compl.pdf"
   "Results/Taxonomic_cov_and_info_compl.run.xml"
+  "Results/Taxonomic_cov_and_info_compl.bcf"
+  "Results/Taxonomic_cov_and_info_compl.aux"
+  "Results/Taxonomic_cov_and_info_compl.log"
