@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  3 NOV 2020 18:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  9 NOV 2020 18:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1116,23 +1116,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 53.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 53.
- [1
+
+Overfull \hbox (6.9407pt too wide) in paragraph at lines 59--60
+[]\OT1/lmr/m/n/10 In the last decades, fresh-wa-ter ecol-o-gists have com-piled com-pre-hen-sive in-ver-te-brate trait databases
+ []
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 98.
+(Font)              <10> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 98.
+(Font)              <7> on input line 97.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 98.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 102.
+(Font)              <5> on input line 97.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 101.
  (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 102.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 101.
  [3]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 118--124
+Overfull \hbox (15.0pt too wide) in paragraph at lines 117--123
 []$[]$ 
  []
 
@@ -1140,7 +1145,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 118--124
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.125 \newpage
+l.124 \newpage
               ] [5] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
@@ -1173,15 +1178,15 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 52.
 )
 
-LaTeX Warning: Float too large for page by 21.61328pt on input line 142.
+LaTeX Warning: Float too large for page by 21.61328pt on input line 141.
 
 [6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.155 
+l.154 
       ]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 170.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 169.
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [8] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Taxonomic_cov_and_info_compl.tex
@@ -1193,61 +1198,61 @@ Overfull \hbox (20.0711pt too wide) in paragraph at lines 37--47
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.180 \newpage
+l.179 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.180 \newpage
+l.179 \newpage
               ] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_agg.tex
-Overfull \hbox (33.43935pt too wide) in paragraph at lines 18--35
+Overfull \hbox (33.43935pt too wide) in paragraph at lines 24--41
  [][] 
  []
 
-[10pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
+[10] [11pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.37 \newpage
+l.43 \newpage
              ]
-<Figures/Deviances_trait_agg_chessman.png, id=181, 625.8582pt x 341.3553pt>
+<Figures/Deviances_trait_agg_chessman.png, id=188, 625.8582pt x 341.3553pt>
 File: Figures/Deviances_trait_agg_chessman.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_chessman.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 41.
+Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 47.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 41--42
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 47--48
  [][] 
  []
 
-<Figures/Deviances_trait_agg_pyne.png, id=182, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=189, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 49.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 55.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 49--50
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 55--56
  [][] 
  []
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.53 
-      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [12pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.59 
-      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]) [13] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex
-<Figures/Species_scores_rda.png, id=203, 625.8582pt x 341.3553pt>
+      </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>]) [13pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.183 \newpage
+               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/Results_trait_harmonization.tex
+<Figures/Species_scores_rda.png, id=204, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 35.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 44.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 35--36
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 44--45
  [][] 
  []
 
@@ -1255,7 +1260,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 35--36
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.188 \newpage
+l.187 \newpage
                </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Trait_def_table/Trait_definitions_table.tex [15]
 Overfull \hbox (26.75967pt too wide) in alignment at lines 56--58
  [] [] [] [] [] [] [] [] 
@@ -1298,12 +1303,12 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 160--165
 [16
 
 ])
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 197.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 196.
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 197.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 196.
  [17
 
 ] [18] [19]
@@ -1312,7 +1317,7 @@ Overfull \hbox (7.72908pt too wide) in paragraph at lines 234--234
  []
 
 [20] [21] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
-<Figures/Comparison_trait_agg_methods.png, id=339, 625.8582pt x 341.3553pt>
+<Figures/Comparison_trait_agg_methods.png, id=340, 625.8582pt x 341.3553pt>
 File: Figures/Comparison_trait_agg_methods.png Graphic file (type png)
 <use Figures/Comparison_trait_agg_methods.png>
 Package pdftex.def Info: Figures/Comparison_trait_agg_methods.png  used on input line 15.
@@ -1335,7 +1340,7 @@ l.16 ... New Zealand 777, and North America 4080.}
                    \relax 
 l.16 ... New Zealand 777, and North America 4080.}
                                                   
-<Figures/Overview_sim_results.png, id=340, 711.1368pt x 369.7815pt>
+<Figures/Overview_sim_results.png, id=341, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results.png Graphic file (type png)
 <use Figures/Overview_sim_results.png>
 Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 24.
@@ -1358,7 +1363,7 @@ l.25 ...tions. T1 to T3 are the simulated traits.}
                    \relax 
 l.25 ...tions. T1 to T3 are the simulated traits.}
                                                    [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
-<Figures/Diffs_indiv_runs_sim.png, id=349, 711.1368pt x 369.7815pt>
+<Figures/Diffs_indiv_runs_sim.png, id=350, 711.1368pt x 369.7815pt>
 File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
 <use Figures/Diffs_indiv_runs_sim.png>
 Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 31.
@@ -1381,7 +1386,7 @@ l.32 ...re differences greater than 0.1 occurred.}
                    \relax 
 l.32 ...re differences greater than 0.1 occurred.}
                                                    [23 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_EU.png, id=355, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_EU.png, id=356, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_EU.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_EU.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_EU.png  used on input line 40.
@@ -1404,7 +1409,7 @@ l.41 ...s with more than 10 genera are displayed.}
                    \relax 
 l.41 ...s with more than 10 genera are displayed.}
                                                    [24 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NOA.png, id=360, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=361, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 47.
@@ -1415,7 +1420,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 47--48
  []
 
 [25 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_EU.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_AUS.png, id=367, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_AUS.png, id=368, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 54.
@@ -1431,7 +1436,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 54--55
                                                   \fi \fi 
 l.58 
       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NZ.png, id=374, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NZ.png, id=375, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NZ.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NZ.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NZ.png  used on input line 61.
@@ -1452,7 +1457,7 @@ l.65
                                                   \fi \fi 
 l.66 \newpage
               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NZ.png (PNG copy)>]
-<Figures/RDA_traits_harmonized.png, id=385, 1204.5pt x 651.93562pt>
+<Figures/RDA_traits_harmonized.png, id=386, 1204.5pt x 651.93562pt>
 File: Figures/RDA_traits_harmonized.png Graphic file (type png)
 <use Figures/RDA_traits_harmonized.png>
 Package pdftex.def Info: Figures/RDA_traits_harmonized.png  used on input line 75.
@@ -1462,7 +1467,7 @@ Overfull \hbox (39.47281pt too wide) in paragraph at lines 75--77
  [][] 
  []
 
-<Figures/RDA_traits_Szoecs_2014.png, id=388, 1204.5pt x 651.93562pt>
+<Figures/RDA_traits_Szoecs_2014.png, id=389, 1204.5pt x 651.93562pt>
 File: Figures/RDA_traits_Szoecs_2014.png Graphic file (type png)
 <use Figures/RDA_traits_Szoecs_2014.png>
 Package pdftex.def Info: Figures/RDA_traits_Szoecs_2014.png  used on input line 82.
@@ -1478,7 +1483,7 @@ Overfull \hbox (39.47281pt too wide) in paragraph at lines 82--84
                                                   \fi \fi 
 l.86 
       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_harmonized.png (PNG copy)>]
-<Figures/Trait_distrb_harmonized.png, id=396, 538.1706pt x 228.855pt>
+<Figures/Trait_distrb_harmonized.png, id=397, 538.1706pt x 228.855pt>
 File: Figures/Trait_distrb_harmonized.png Graphic file (type png)
 <use Figures/Trait_distrb_harmonized.png>
 Package pdftex.def Info: Figures/Trait_distrb_harmonized.png  used on input line 95.
@@ -1494,7 +1499,7 @@ Overfull \hbox (67.92677pt too wide) in paragraph at lines 95--97
                                                   \fi \fi 
 l.99 
       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/RDA_traits_Szoecs_2014.png (PNG copy)>]
-<Figures/Trait_distrb_Szoecs_2014.png, id=402, 538.1706pt x 229.5777pt>
+<Figures/Trait_distrb_Szoecs_2014.png, id=403, 538.1706pt x 229.5777pt>
 File: Figures/Trait_distrb_Szoecs_2014.png Graphic file (type png)
 <use Figures/Trait_distrb_Szoecs_2014.png>
 Package pdftex.def Info: Figures/Trait_distrb_Szoecs_2014.png  used on input line 102.
@@ -1558,7 +1563,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--153
 
  []
 
-<Figures/Trait_proportion_harmonized.png, id=421, 625.8582pt x 398.2077pt>
+<Figures/Trait_proportion_harmonized.png, id=422, 625.8582pt x 398.2077pt>
 File: Figures/Trait_proportion_harmonized.png Graphic file (type png)
 <use Figures/Trait_proportion_harmonized.png>
 Package pdftex.def Info: Figures/Trait_proportion_harmonized.png  used on input line 158.
@@ -1569,7 +1574,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 158--160
  []
 
 [33]
-<Figures/Trait_proportion_Szoecs_2014.png, id=427, 625.8582pt x 398.2077pt>
+<Figures/Trait_proportion_Szoecs_2014.png, id=428, 625.8582pt x 398.2077pt>
 File: Figures/Trait_proportion_Szoecs_2014.png Graphic file (type png)
 <use Figures/Trait_proportion_Szoecs_2014.png>
 Package pdftex.def Info: Figures/Trait_proportion_Szoecs_2014.png  used on input line 166.
@@ -2217,16 +2222,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
 Here is how much of TeX's memory you used:
  24766 strings out of 492982
  479621 string characters out of 6134895
- 896016 words of memory out of 5000000
+ 896035 words of memory out of 5000000
  27757 multiletter control sequences out of 15000+600000
  71940 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3664b,1746s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (39 pages, 3996516 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (39 pages, 3981833 bytes).
 PDF statistics:
- 564 PDF objects out of 1000 (max. 8388607)
- 471 compressed objects within 5 object streams
+ 565 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
  118 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
