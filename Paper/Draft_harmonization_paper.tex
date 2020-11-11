@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{tikz}
+\usepackage{rotating}
 % \graphicspath{{/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/}}
 \graphicspath{{Figures/}}
 \usepackage{rotating}
@@ -131,7 +132,7 @@ Traits of the harmonized grouping feature datasets were aggregated to family-lev
 To examine the influence of the taxonomic hierarchy and the trait variability on the outcome of the different trait aggregation methods we created three hypothetical examples of different taxonomic hierarchies. 
 1) A family with an equal number of genera and species (5 genera each with 5 species respectively), denoted as \textit{sim\_base}.
 2) A family where one genus has a much larger number of species than the other 4 genera (1 genus with 13 species, 4 genera with 3 species respectively), denoted as \textit{sim\_extreme}. 
-3) A family where all genera have a different number of species (8, 2, 7, 3, 5), denoted as \textit{sim\_variation}. In total every family consisted of 25 species. To each hypothetical taxonomic hierarchy a hypothetical grouping feature with 3 traits was assigned. The 25 affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviations (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. Simulated trait affinities were converted to percentages, similar to the data processing of the trait databases. The sampling was repeated 100 times for each standard deviation. Hence, in total 12500 ($25 * 5 * 100$) trait affinities were simulated. All trait aggregation methods were applied to each simulated dataset and the results were compared.   
+3) A family where all genera have a different number of species (8, 2, 7, 3, 5), denoted as \textit{sim\_variation}. In total every family consisted of 25 species. To each hypothetical taxonomic hierarchy a hypothetical grouping feature with 3 traits was assigned. The 25 affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviations (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. Simulated trait affinities were converted to percentages, similar to the data processing of the trait databases. The sampling was repeated 100 times for each standard deviation. Hence, in total 12500 ($25 * 5 * 100$) trait affinities were simulated. All trait aggregation methods were applied to each simulated dataset. The results were compared based on the produced range of aggregated trait affinities between levels of trait variability and hypothetical taxonomic hierarchies. We also compared for each simulated dataset the differences in trait affinities obtained by each aggregation method.  
 
 \begin{figure}
   \centering
@@ -143,8 +144,6 @@ To examine the influence of the taxonomic hierarchy and the trait variability on
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Comparison of family-level aggregated traits with family-level assigned traits}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Aggregated trait affinities of the five trait aggregation methods (\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg}) were compared to trait affinities assigned at family-level by experts, which were available for Australia and North America for a subset of grouping features and taxa. For the Australian dataset, we compared aggregated trait affinities with assigned trait affinities resolved at family-level for the grouping features feeding mode and size using data from Chessman et al. \cite{chessman_dissolved-oxygen_2018}. In Chessman et al. \cite{chessman_dissolved-oxygen_2018} feeding mode is classified similarly as in the Australian dataset except that the trait parasite is missing. We conducted the comparison for the 220 families available in Chessman et al. \cite{chessman_dissolved-oxygen_2018}. Considering each factor combination of family and trait (in total 8) this amounts to 1760 cases.
 
@@ -160,7 +159,7 @@ We repeated the analysis of Szöcs et al. \cite{szocs_effects_2014} who studied 
 
 The river Werra has been subject to effluents from the potash industry since the mid of the 20th century and allows to study responses of invertebrates and their trait compositions to salinization \cite{bathe_biological_2011}. Sites downstream, upstream, and close to the salt discharge (transition) were compared regarding their trait composition. Further details can be found in Szöcs et al. \cite{szocs_effects_2014}. 
 
-We substituted 6 of the grouping features from the original data with harmonized grouping features from the European trait dataset. We compared the results of the redundancy analysis (RDA) from the original study to the case when using harmonized grouping features. Specifically, the trait composition expressed as community weighted mean (CWM) traits was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA, i.e. the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots. For our analysis, we used the same 21 grouping features that Szöcs et al. \cite{szocs_effects_2014} used. The 6 harmonized grouping features used were \textit{Size, Feeding mode, Locomotion, Oviposition, Respiration}, and \textit{Voltinism}. Additionally, for testing the effect of aggregated traits we assigned to each taxon in Szöcs et al. \cite{szocs_effects_2014} the aggregated trait value for its corresponding family and repeated the RDA.  
+We substituted 6 of the grouping features from the original data with harmonized grouping features from the European trait dataset. We compared the results of the redundancy analysis (RDA) from the original study to the case when using harmonized grouping features. Specifically, the trait composition expressed as community weighted mean (CWM) traits was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA, i.e. the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots. Following the original study, we identified traits associated with high or low salinity based on their distance to the ordination axis median using the mahalanobis distance. Traits with a mahalanobis distance greater than the $97.5 \%$ -quantile of the Chi-square distribution (5.02) were regarded as traits responding to either low or high salinity. For our analysis, we used the same 21 grouping features that Szöcs et al. \cite{szocs_effects_2014} used. The 6 harmonized grouping features used were \textit{Size, Feeding mode, Locomotion, Oviposition, Respiration}, and \textit{Voltinism}. Additionally, for testing the effect of aggregated traits we assigned to each taxon in Szöcs et al. \cite{szocs_effects_2014} the aggregated trait value for its corresponding family and repeated the RDA.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -173,22 +172,289 @@ The data processing and aforementioned analyses were carried out using R (Versio
 \newpage
 \section*{Results}
 
-%! Completeness of trait information and taxonomical coverage
-\subfile{Results/Taxonomic_cov_and_info_compl}
+\subsection*{Taxonomic coverage of the harmonized trait datasets}
+
+Regarding the taxonomic coverage, the New Zealand dataset has the smallest taxon pool (478 taxa, Table \ref{tab:tax_coverage}). By contrast, the European trait dataset has the largest taxon pool with 4601 taxa followed by the North American trait dataset that contained trait information on 3753 taxa. The Australian dataset contains 1402 taxa. The European, New Zealand, and North American datasets have most taxa on the species-level whereas the Australian dataset has a similar number of taxa on species and genus-level.
+
+\begin{table}[ht]
+    \centering
+    \caption{Number of taxa per harmonized dataset and per taxonomic level. Numbers in parenthesis show rounded relative frequencies in percentage.} 
+    \label{tab:tax_coverage}
+    \begin{tabular}{lccccc}
+    \toprule[.1em]
+    Database & Nr. of taxa & Species & Genus & Family & Nr. aquatic insects \\ 
+    \toprule[.1em]
+    EU & 4601 & 3739 (81) & 704 (15) & 158 (3) & 3942 (86) \\ 
+    NOA & 3753 & 2414 (64) & 1163 (31) & 176 (5) & 3305 (88) \\ 
+    AUS & 1402 & 564 (40) & 578 (41) & 260 (19) & 1016 (72) \\ 
+    NZ & 478 & 404 (85) & 47 (10) & 27 (6) & 443 (93) \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Completeness of trait information}
+
+The amount of entries with available information for the selected grouping features varied strongly for the preprocessed European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (between 94 \% and 100 \%).
+
+\begin{table}[ht]
+    \centering
+    \caption{Rounded percentage of entries that have 
+    information for the individual grouping features
+    shown per trait dataset.} 
+    \label{tab:trait_coverage}
+    \begin{tabular}{lccccccc}
+    \toprule[.1em]
+    Database & Body form & Oviposition & Voltinism & Locomotion & Size & Respiration & Feeding mode \\ 
+    \toprule[.1em]
+    EU & 8 & 15 & 23 & 36 & 11 & 57 & 76 \\ 
+    NOA & 28 & 13 & 47 & 52 & 73 & 44 & 63 \\ 
+    AUS & 4 & 46 & 49 & 39 & 75 & 68 & 99 \\ 
+    NZ & 100 & 94 & 100 & 99 & 100 & 100 & 99 \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Simulation of varying taxonomic hierarchies}
+
+We evaluate the simulation results based on the range of produced aggregated trait affinities and by comparing results of every simulated dataset. 
+
+% range base simulation
+The trait aggregation methods \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}} and \textit{weighted\_agg} yielded similar ranges of aggregated trait affinities within each level of trait variability for the \textit{sim\_base} scenario.  
+
+Aggregation methods using the median yielded greater ranges of aggregated trait affinities than methods using the mean. Thereby, the \textit(stepwise\_agg \textsubscript{median}) yielded the greatest range of aggregated trait affinities (Figure S\ref{fig:overview_sim_results}). 
+
+% Other simulation scenarios
+By contrast, the ranges of trait affinities differed for all aggregation methods for the simulation scenarios \textit{sim\_extreme} and \textit{sim\_variation}. \textit{Weighted\_agg} and \textit{stepwise\_agg\textsubscript{mean}} produced a wider range of values than the \textit{direct\_agg\textsubscript{mean}} in the \textit{sim\_extreme} scenario. For most levels of trait variability the \textit{stepwise\_agg \textsubscript{median}} resulted in the largest range of trait affinities in both scenarios
+
+Analysing the individual simulation runs showed that differences between the results of the aggregation methods increased with increasing trait variability. Most differences occurred for the \textit{sim\_extreme} scenario. Differences greater than an absolute trait affinity of 0.1 occurred between methods using the median and the mean. Thereby, the most frequent differences above 0.1 were found between the aggregation methods \textit{direct\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}, and \textit{stepwise\_agg\textsubscript{median}} and \textit{weighted\_agg} (Figure S\ref{fig:sim_indv_runs}). 
+
+% TODO: What's good and what's bad -> that's maybe the wrong question, but what's the direction of each method? 
+% Overall, 
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results.png}
+  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Boxplots depict results for each trait aggregation method of 100 simulations. T1, T2, and T3 are the simulated traits.}
+  \label{fig:overview_sim_results}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Diffs_indiv_runs_sim.png}
+  \caption{Comparison of the results of the trait aggregation methods for every simulated dataset. Simulated datasets where absolute differences between aggregated trait affinities were greater than 0.1 are depicted. Only the comparisons are shown were differences greater than 0.1 occurred.}
+  \label{fig:sim_indv_runs}
+\end{figure}
+
+
+\subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
+\label{sec:diff_trait_agg_chessman}
+
+The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities originally assigned at family-level varied between 16.2 \% and 22.9 \% for the Australian dataset. For the North American dataset, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}).
+
+In general, trait aggregation methods using the median yielded fewer cases with differences compared to approaches using the mean. However, aggregation methods using the median produced greater differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. For both datasets maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
+
+A comparison of the aggregation methods with each other for the 4 datasets revealed that differences in aggregated trait affinities were largest between the \textit{stepwise\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{median}} (Figure S\ref{fig:comp_aggr_methods}).
+
+\begin{table}[H]
+  \centering
+  \caption{Amount of differing cases, the minimum and maximum, and means and standard deviations of absolute differences between trait affinities assigned at family-level and aggregated trait affinities.}
+  \label{tab:summary_stat_aggr_vs_fam_assigned}
+  \begin{tabular}{ll|ccccc}
+  \toprule[.1em]
+  Database & \specialcell{Comparison to\\ traits at fam.-lvl.} & \specialcell{Differing \\ cases [\%]} & \specialcell{Min. \\ differences} & \specialcell{Max. \\ differences} & \specialcell{Mean abs. \\ differences} & \specialcell{SD abs. \\ differences} \\ 
+  \toprule[.1em]
+  \multirow{4}{*}{\specialcell{Australia \\ (Chessman)}} & \specialcell{direct\_agg (median)} & 16.53 & 0.01 & 1.00 & 0.45 & 0.27 \\ 
+  & \specialcell{direct\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.34 & 0.23 \\ 
+  & \specialcell{stepwise\_agg (median)} & 17.90 & 0.01 & 1.00 & 0.42 & 0.26 \\ 
+  & \specialcell{stepwise\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
+  & \specialcell{weighted\_agg} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
+  \midrule
+  \multirow{4}{*}{\specialcell{North America}} & \specialcell{direct\_agg (median)} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
+  & \specialcell{direct\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
+  & \specialcell{stepwise\_agg (median)} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
+  & \specialcell{stepwise\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
+  & \specialcell{weighted\_agg} & 47.00 & $< 0.01$ & 1.00 & 0.31 & 0.28 \\ 
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
+  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \label{fig:diff_aggr_traits_chessman}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
+  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The black dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \label{fig:diff_aggr_traits_pyne}
+\end{figure}
 
 \newpage 
-%! Comparison of trait aggregation methods
-\subfile{Results/Results_trait_agg}
 
-\newpage 
-%! Presenting results of trait analysis using harmonized traits:
-\subfile{Results/Results_trait_harmonization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage 
-%! Discrepancies in trait definitions
-\subfile{Trait_def_table/Trait_definitions_table}
+\subsection*{Re-analysis of Szöcs et al. using harmonized and aggregated grouping features}
 
+The original RDA in Szöcs et al. \cite{szocs_effects_2014} indicated that downstream sites (high salinity) were characterised by the traits shredder, ovoviviparity, multivoltinism, long life cycle ($> 1$ year), and gill respiration and upstream sites (low salinity) were characterized by univoltinism, oviposition in clutches and short life cycle duration ($< 1$ year). 
 
+Using harmonized grouping features resulted in fewer traits that distinguish upstream and downstream sites in comparison to the original analysis (Figure \ref{fig:rda_species_scores} and Figure \ref{fig:boxplots_scores_on_constrained_axis}). According to the RDA of the trait composition, downstream sites were characterised by taxa with the traits multivoltinism and ovoviviparity and upstream sites were characterised by univoltine taxa that lay their eggs in an aquatic environment (aquatic eggs). The traits shredder, gill respiration and long life cycle duration did not characterise sites with high salinisation. Also, the trait short life cycle duration did not characterise upstream sites with low salinity.
+
+Using at family-level aggregated traits from the harmonized dataset showed results similar to the original analysis (Figure \ref{fig:rda_species_scores} and Figure \ref{fig:boxplots_scores_on_constrained_axis}). The \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} 
+characterised the downstream sites with the same traits as the original analysis except that downstream sites were not characterised by the trait shredder. Upstream sites were characterised by the traits univoltinism, aquatic eggs and short life cycle duration. The trait aquatic eggs of the harmonized grouping feature oviposition has been derived by amalgamating the trait oviposition in clutches and other related traits (Table \ref{tab:traits_harmonization}). The same results were obtained when re-analysing the data with traits aggregated by the \textit{stepwise\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, with the exception that none of the life cycle traits characterised upstream or downstream sites. Thus, in our comparison the direct and weighted family-level aggregation methods yielded to the least change in species scores of all methods compared to the original results.
+
+\begin{figure}[H]
+    \label{fig:rda_species_scores}
+    \centering
+    \includegraphics[width=16.5cm, height=10cm]{Species_scores_rda.png}
+    \caption{Species scores obtained by RDA from the original analysis \cite{szocs_effects_2014}, using harmonized grouping features, and using harmonized grouping features with traits aggregated to family-level. The dots represent the individual species scores for each analysed trait. The violin plot shows the density estimate of the species scores. Gray vertical lines indicate the median of the obtained species scores.}
+\end{figure}
+
+\begin{sidewaysfigure}
+  \label{fig:boxplots_scores_on_constrained_axis}
+  \centering
+  \includegraphics[width= 22cm, height=12cm]{Scores_on_constrained_axis_combined.pdf}
+  \caption{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled.}
+\end{sidewaysfigure}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Discrepancies of invertebrate trait definitions}
+
+Definitions of grouping features and traits varied in their level of detail in the original trait databases. The freshwaterecology.info database, the Tachet database and the North American database (Twardochleb et al.) provided more detailed descriptions of their trait information compared to the North American (Vieira et al.) and New Zealand database. An exception is the Australian trait database which is a collection of seven specific trait datasets \cite{kefford_integrated_2020}. Thus, grouping features occur multiple times with varying differentiation into traits. Depending on the dataset trait information is described with more or less detail.
+
+The definition of grouping features varied across databases mainly concerning their differentiation into traits but also in their scope. We provide a summary of discrepancies in trait definitions in the appendix (Table S\ref{stab:trait_definitions}). Both, differences in differentiation and scope can lead to discrepancies in trait definitions. For example, for the grouping feature feeding mode discrepancies arise because traits are assigned in different ways. The Tachet database defines predators as carvers, engulfers and swallowers. By contrast, in the North American (Twardochleb et al.) database predators are defined as engulfers and carnivorous piercers. In turn, in the Tachet database, piercers are defined as a separate trait encompassing herbivorous and carnivorous piercers. Furthermore, the scope in the freshwaterecology.info database for feeding mode is primarily on the food source of a species (except for filterers), while the other databases focus on the strategies of food acquisition. Therefore, the freshwaterecology.info database defines e.g. predator as "eating from prey", while the other databases use the mouthpart morphology as basis of their definition. The Tachet database captures the food source in an additional grouping feature. Varying levels of differentiation are also present in all other investigated grouping features between the trait databases (Table \ref{tab:trait_databases_coding_differentiation} and Table S\ref{stab:trait_definitions}). Locomotion definitions differ also in scope between databases. Freshwaterecology.info and New Zealand databases describe locomotion as the way of movement of an organism, Tachet as substrate relation and locomotion, the North American (Vieira et al.) as how organisms deal with flow, Australia as attachment, and the North American (Twardochleb et al.) database includes not only the way of movement, but also the location of movement. Similarly, regarding the reproduction traits, databases differ in their scope. Reproduction is captured in one grouping feature and defined as location of oviposit clutches and mode of reproduction in the freshwaterecology.info and Tachet databases. North America (Vieira et al.) provides information on the oviposition location but not on reproductive behavior. The Australian database report traits for reproductive behavior but also on oviposition site. The New Zealand database distinguishes three grouping features related to reproduction: reproductive technique, oviposition site (e.g. water surface, terrestrial), and egg/egg mass (e.g. free, cemented).
+
+Various codings of traits are used throughout the databases (e.g. binary, fuzzy, continuous). The freshwaterecology.info and Australian use different codings in their databases. Tachet and the New Zealand database exclusively use fuzzy coding. Both North American trait databases contain categorical grouping features that can be converted into traits using a binary coding (Table \ref{tab:trait_databases_coding_differentiation}). Binary coding represents a simple approach in which a taxon either expresses a trait or not. Fuzzy coding characterizes the affinity of an organism to exert a certain trait. It is used to account for plasticity in traits, e.g. taking into account that traits can change over the development time of an organism. Usually, fuzzy coded affinities are converted into proportional values. Continuous coding is used for traits like body size.
+% Last sentences are a bit redundant
+
+% None of the seven grouping features compared here has the same differentiation of traits across all databases (Table \ref{tab:trait_databases})
+\begin{landscape}
+    \begin{longtable}{m{2.5cm}|m{1.8cm}|m{2.3cm}|m{1.8cm}|m{3cm}|m{2cm}|m{2cm}|m{1.8cm}}
+    \caption{Number of traits per grouping feature and type of coding of the traits for the respective grouping feature per database.}
+    \endfirsthead
+    \toprule[.1em]
+    \label{tab:trait_databases_coding_differentiation}
+    Database & Feeding Mode & Voltinism & Locomotion & Respiration & Reproduction & Size & Body Form \\ 
+    \toprule[.1em]
+    \multirow{2}{*}[-5mm]{ \specialcell{Freshwater- \\ ecology.info}} & 
+    10 & 
+    6 &
+    6 & 
+    7 & 
+    9 & 
+    - & 
+    - 
+    \\
+    \cline{2-8} & 
+    \specialcell{10 point \\ assignment \\ system} &
+    \specialcell{single category \\ assignment \\ system} &
+    \specialcell{10 point \\ assignment \\ system} &
+    \multicolumn{2}{c |}{\specialcell{binary}} &
+    - & 
+    - \\
+    \hline
+    \hline
+    \multirow{2}{*}{Tachet} & 
+    7 & 
+    3 &
+    8 & 
+    5 & 
+    8 & 
+    7 & 
+    - 
+    \\
+    \cline{2-8} &
+    \multicolumn{2}{c |}{fuzzy $[0-3]$} &
+    fuzzy $[0-5]$ & 
+    \multicolumn{3}{c |}{fuzzy $[0-3]$} & 
+    -
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{\specialcell{North America \\ (Twardochleb)}} & 
+    6 & 
+    3 &
+    10 & 
+    3 & 
+    10 & 
+    3 & 
+    - 
+    \\
+    \cline{2-8} &
+    \multicolumn{6}{c |}{binary} &
+    -
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{\specialcell{North America \\ (Vieira)}} & 
+    8 & 
+    3 &
+    9 & 
+    8 & 
+    10 & 
+    3 & 
+    5 
+    \\
+    \cline{2-8} &
+    \multicolumn{7}{c }{binary}
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}[-4mm]{Australia} & 
+    16 \textsuperscript{\textit{a}} & 
+    7 &
+    9 & 
+    10 &
+    13 \textsuperscript{\textit{b}} & 
+    9 & 
+    4
+    \\
+    \cline{2-8} & 
+    \multicolumn{2}{c |}{\specialcell{binary; proportional $[0 - 1]$; \\ fuzzy $[0 - 3]$}} & 
+    binary; fuzzy $[0 - 3]$ & 
+    \specialcell{binary; proportional \\ scale $[0 - 1]$; \\ fuzzy $[0 - 3]$} & 
+    categorical & 
+    \specialcell{binary; \\ continuous; \\ fuzzy $[0 - 3]$} & 
+    fuzzy codes $[0-3]$
+    \\
+    \hline
+    \hline
+    \multirow{2}{*}{New Zealand} & 
+    6 & 
+    3 & 
+    4 & 
+    4 & 
+    4 & 
+    5 & 
+    4
+    \\
+    \cline{2-8} & 
+    \multicolumn{7}{c }{fuzzy $[0-3]$}
+    \\
+    \bottomrule
+    \end{longtable}
+    \begin{minipage}{\linewidth}\small
+        \textit{a} Some of the traits were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
+        \newline
+        \textit{b} Many traits were rather comments than traits in the original database and were not considered.
+    \end{minipage}
+\end{landscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Discussion}
 
@@ -215,8 +481,6 @@ The data processing and aforementioned analyses were carried out using R (Versio
 
 % Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 % 2) Influence of aggregation methods on trait-environment relationships: 
 % Harmonization: Minor influence on RDA species scores
 % RDA species scores 
@@ -229,12 +493,12 @@ The data processing and aforementioned analyses were carried out using R (Versio
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \printbibliography
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% %%%%%%%%%%%%%%% Supporting information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Supporting information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setcounter{table}{0}
 \setcounter{figure}{0}
 
