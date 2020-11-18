@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  11 NOV 2020 17:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  13 NOV 2020 15:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1112,25 +1112,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 15--16
  [][] 
  []
 
-<Figures/taxonomic_hierarchy_EU.png, id=8, 625.8582pt x 341.3553pt>
-File: Figures/taxonomic_hierarchy_EU.png Graphic file (type png)
-<use Figures/taxonomic_hierarchy_EU.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_EU.png  used on input line 40.
-(pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 40--41
- [][] 
- []
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.44 
-      <./Figures/Comparison_trait_agg_methods.png>]
-<Figures/taxonomic_hierarchy_NOA.png, id=22, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=8, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 47.
@@ -1140,13 +1122,15 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 47--48
  [][] 
  []
 
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.51 
-      <./Figures/taxonomic_hierarchy_EU.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_AUS.png, id=29, 625.8582pt x 341.3553pt>
+      <./Figures/Comparison_trait_agg_methods.png>]
+<Figures/taxonomic_hierarchy_AUS.png, id=22, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 54.
@@ -1156,33 +1140,17 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 54--55
  [][] 
  []
 
-[3pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.58 
-      <./Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NZ.png, id=35, 625.8582pt x 341.3553pt>
-File: Figures/taxonomic_hierarchy_NZ.png Graphic file (type png)
-<use Figures/taxonomic_hierarchy_NZ.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_NZ.png  used on input line 61.
-(pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 61--62
- [][] 
- []
-
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.65 
-      <./Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [5pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+      <./Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [3pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.66 \newpage
-              <./Figures/taxonomic_hierarchy_NZ.png (PNG copy)>] [6]
+              <./Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [4]
 Overfull \hbox (88.95552pt too wide) in alignment at lines 172--175
  [] [] [] [] [] [] [] 
  []
@@ -1800,9 +1768,9 @@ Overfull \hbox (88.95552pt too wide) in alignment at lines 175--328
 Underfull \vbox (badness 10000) detected at line 328
  []
 
-[7
+[5
 
-] [8] [9]
+] [6] [7]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 336.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -1812,7 +1780,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 329--340
 []$[]$ 
  []
 
-[10]
+[8]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 342.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 342.
  (Results/SI.aux)
@@ -1825,18 +1793,18 @@ Package logreq Info: Writing requests to 'SI.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22667 strings out of 492982
- 422903 string characters out of 6134895
- 884027 words of memory out of 5000000
- 25832 multiletter control sequences out of 15000+600000
+ 22652 strings out of 492982
+ 422493 string characters out of 6134895
+ 883860 words of memory out of 5000000
+ 25823 multiletter control sequences out of 15000+600000
  49239 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,20n,56p,2692b,744s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on Results/SI.pdf (10 pages, 1232785 bytes).
+Output written on Results/SI.pdf (8 pages, 793991 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 109 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
 

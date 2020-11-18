@@ -61,6 +61,7 @@ In the last decades, freshwater ecologists have compiled comprehensive invertebr
 
 In this study, we follow the terminology proposed by Schmera et al., where a grouping feature is defined as a general property (e.g. feeding mode) that comprises a "group of related traits (e.g., predator, shredder, etc.) that vary among species or among individuals within a species" \cite{schmera_proposed_2015}. Thus, we use the term grouping feature in place of which many studies use the term "trait", and the term trait instead of "trait state", "modality" or "trait category". Traits can be described using different codings (binary, fuzzy) that represent the prevalence of a characteristic in an organism.
 % TODO: bring affinity/affinity scores in
+% Could say that we call the proportionate description (0-1) "affinity" 
 
 To our knowledge, only Brown et al. \cite{brown_functional_2018} harmonized grouping features from more than two geographically distant invertebrate trait databases, for a limited set of grouping features (8) and taxa (112), in a study on the influence of decreasing glacier cover on functional diversity and community assembly of invertebrates. 
 
@@ -73,8 +74,10 @@ However, invertebrate trait databases are heterogeneous regarding the coding the
 Discrepancies in the taxonomic resolutions (e.g. species, genus or family) when linking observational taxonomic data to trait database represents another challenge. When observations are on a more precise taxonomic level than data available in the trait databases (e.g. observations on species-level, trait data on genus-level) trait information of the less precise taxonomic level is often assigned (e.g. \cite{szocs_effects_2014, vos_taxonomic_2017}). Conversely, if trait information is only available on more precise taxonomic levels than the observed taxa, traits are aggregated to a less precise taxonomic level, e.g. \cite{poff_functional_2006, szocs_effects_2014, piliere_a._f._h._importance_2016, aspin_extreme_2019}. Studies have used different methods of trait aggregation, e.g. the mean \cite{magliozzi_functional_2019}, median \cite{szocs_effects_2014} or the mode \cite{piliere_a._f._h._importance_2016}. Up to now, studies on how and to which extent different trait aggregation methods influence trait-based analysis are missing. However, related knowledge would inform future studies regarding the choice of the aggregation method.
 
 % TODO: clarify, see Ralf's comment
-% Add novel harmonised trait databases?
-We studied the influence of grouping feature harmonization and trait aggregation on trait-environment relationships. In particular, we aimed to (1) determine the effect of different harmonization methods using 4 invertebrate trait database for 7 grouping features from Europe, North America, New Zealand, and Australia. Furthermore, we (2) compared trait affinities obtained through different trait aggregation methods to trait affinities assigned at family-level by experts. We (3) re-analysed data on the effect of anthropogenic salinisation on biological traits by Szöcs et al. \cite{szocs_effects_2014} using harmonized grouping features and aggregated traits. By comparison with the original analysis, we investigated how harmonizing and aggregating trait data can modify the outcome of trait-environment relationships. Finally, we (4) present an overview of discrepancies in trait definition between the used invertebrate trait datasets and discuss challenges of trait data synthesis.
+The necessity to aggregate and harmonize trait data due to the discrepancies in trait definitions motivated us to compare different trait aggregation methods and evaluate whether the harmonization of trait data ...
+As a basis for our analysis, we (1) established 4 novel invertebrate trait datasets consisting of  7 grouping features based on trait databases from Europe, North America, Australia, and New Zealand. To evaluate different trait aggregation methods we (2) compared trait affinities obtained through different trait aggregation methods to trait affinities assigned at family-level by experts for two of the established trait datasets. % Mention simulation
+(3) To evaluate how harmonizing grouping features and aggregating traits can modify results of trait-environment relationships we re-analysed data on the effect of anthropogenic salinisation on biological traits by Szöcs et al. \cite{szocs_effects_2014} using trait data from the established harmonized European trait datasets. By comparison with the original analysis, we investigated how harmonizing and aggregating trait data can modify the outcome of trait-environment relationships. Finally, we (4) present an overview of discrepancies in trait definition between the used invertebrate trait datasets and discuss challenges of trait data synthesis.
+
 
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -87,7 +90,7 @@ We extracted information from 6 trait databases from Europe, North America, Aust
  
 We selected traits of seven grouping features that were available in all databases, are commonly applied in trait-based ecological studies, and describe different parts of the biology of a species: life history (Voltinism), morphology (Respiration, Body form, Size), ecology (Locomotion, Feeding mode) and reproduction (Oviposition). We omitted ecological traits that describe habitat preferences (e.g. temperature preference) because these traits are missing in the New Zealand trait database. The grouping features were differently classified across the databases, we therefore harmonized them into 26 traits (Table \ref{tab:traits_harmonization}). Harmonization was undertaken by amalgamating similar traits into one trait (e.g. crawlers and sprawlers into crawlers). Thereby, for a particular taxa the highest trait affinity score among the amalgamated traits was taken. 
 
-We used fuzzy coded traits for establishing our harmonized datasets unless data quality prohibited. In the latter case we used binary traits, i.e. categorical and continuous traits were converted into binary traits. For example, in the  freshwaterecology.info database, the classification of the trait voltinism accounts for different faunistic regions. Hence, the entries such as "arctic" or "boreal" of the e.g. the trait univoltine were substituted with a value of 1. Implicitly, we assumed for binary traits that a value of 1 and 0 corresponds to the highest and no affinity for a particular trait. Fuzzy codes are reported with different ranges in the trait databases (e.g. freshwaterecology.info 0 to 10, Tachet database 0 to 3 or 0 to 5). We standardized these to a range between 0 and 1 and converted trait affinities to percentages. Thus, fuzzy coded and binary traits were in the same range. 
+We used fuzzy coded traits for establishing our harmonized datasets unless data quality prohibited. In the latter case we used binary traits, i.e. categorical and continuous traits were converted into binary traits. For example, in the  freshwaterecology.info database, the classification of the trait voltinism accounts for different faunistic regions. Hence, entries such as "arctic" or "boreal" of e.g. the trait univoltine were substituted with a value of 1. Implicitly, we assumed for binary traits that a value of 1 and 0 corresponds to the highest and no affinity for a particular trait. Fuzzy codes are reported with different ranges in the trait databases (e.g. freshwaterecology.info 0 to 10, Tachet database 0 to 3 or 0 to 5). We standardized these to a range between 0 and 1 and converted trait affinities to percentages. Thus, fuzzy coded and binary traits were in the same range. 
 
 Prior to harmonization we consolidated duplicate taxa on species, genus or family-level if present within a dataset, by either applying the median for fuzzy coded traits, or the maximum for binary traits. We omitted taxa with a lower taxonomic precision than family-level.
 
@@ -132,7 +135,7 @@ Traits of the harmonized grouping feature datasets were aggregated to family-lev
 To examine the influence of the taxonomic hierarchy and the trait variability on the outcome of the different trait aggregation methods we created three hypothetical examples of different taxonomic hierarchies. 
 1) A family with an equal number of genera and species (5 genera each with 5 species respectively), denoted as \textit{sim\_base}.
 2) A family where one genus has a much larger number of species than the other 4 genera (1 genus with 13 species, 4 genera with 3 species respectively), denoted as \textit{sim\_extreme}. 
-3) A family where all genera have a different number of species (8, 2, 7, 3, 5), denoted as \textit{sim\_variation}. In total every family consisted of 25 species. To each hypothetical taxonomic hierarchy a hypothetical grouping feature with 3 traits was assigned. The 25 affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviations (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. Simulated trait affinities were converted to percentages, similar to the data processing of the trait databases. The sampling was repeated 100 times for each standard deviation. Hence, in total 12500 ($25 * 5 * 100$) trait affinities were simulated. All trait aggregation methods were applied to each simulated dataset. The results were compared based on the produced range of aggregated trait affinities between levels of trait variability and hypothetical taxonomic hierarchies. We also compared for each simulated dataset the differences in trait affinities obtained by each aggregation method.  
+3) A family where all genera have a different number of species (8, 2, 7, 3, 5), denoted as \textit{sim\_variation}. In total every family consisted of 25 species. To each hypothetical taxonomic hierarchy a hypothetical grouping feature with 3 traits was assigned. The 25 affinities for each trait were simulated by sampling from a truncated normal distribution with a mean value of 0.5 and 5 levels of standard deviations (0.2, 0.4, 0.6, 0.8, and 1) respectively to simulate different levels of trait variability. The truncated normal distribution was bound to 0 and 1. Simulated trait affinities were converted to percentages, similar to the data processing of the trait databases. The sampling was repeated 100 times for each standard deviation. Hence, in total 100 datasets for each level of trait variability were simulated, resulting in 12500 simulated trait affinities ($25$ species per family $* 5$ levels of trait variability $* 100$ replicates). All trait aggregation methods were applied to each simulated dataset. The results were compared based on the produced range of aggregated trait affinities between levels of trait variability and hypothetical taxonomic hierarchies. We also compared for each simulated dataset the differences in trait affinities obtained by each aggregation method.  
 
 \begin{figure}
   \centering
@@ -222,20 +225,16 @@ The amount of entries with available information for the selected grouping featu
 
 \subsection*{Simulation of varying taxonomic hierarchies}
 
-We evaluate the simulation results based on the range of produced aggregated trait affinities and by comparing results of every simulated dataset. 
+We evaluate the simulation results based on the produced range of aggregated trait affinities and by comparing results of every simulated dataset. 
 
-% range base simulation
-The trait aggregation methods \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}} and \textit{weighted\_agg} yielded similar ranges of aggregated trait affinities within each level of trait variability for the \textit{sim\_base} scenario.  
+The trait aggregation methods \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}} and \textit{weighted\_agg} yielded similar ranges of aggregated trait affinities within each level of trait variability for the \textit{sim\_base} scenario. The \textit(stepwise\_agg \textsubscript{median}) and \textit(direct\_agg \textsubscript{median}) yielded mostly greater ranges of aggregated trait affinities for the \textit{sim\_base} scenario. As expected with increasing trait variability the produced range of trait affinities increased (Figure \ref{fig:overview_sim_results}). By contrast, the ranges of trait affinities slightly differed for all aggregation methods for the simulation scenarios \textit{sim\_extreme} and \textit{sim\_variation}. \textit{Weighted\_agg} and \textit{stepwise\_agg\textsubscript{mean}} produced a wider range of trait affinities than the \textit{direct\_agg\textsubscript{mean}} in the \textit{sim\_extreme} scenario. For most levels of trait variability the \textit{stepwise\_agg \textsubscript{median}} resulted in the largest range of trait affinities in the \textit{sim\_extreme} and \textit{sim\_variation} scenarios.
 
-Aggregation methods using the median yielded greater ranges of aggregated trait affinities than methods using the mean. Thereby, the \textit(stepwise\_agg \textsubscript{median}) yielded the greatest range of aggregated trait affinities (Figure S\ref{fig:overview_sim_results}). 
+% 10 unique comparisons, 100 datasets, 5 levels of trait variability, 3 sim scenarios  
+A comparison of the results of the aggregation methods for each simulated data set showed that in most simulated datasets the differences between the aggregated traits were small. Only 1.42 \% (213 out of 15.000) of all comparisons showed a difference equal or greater than an absolute trait affinity of 0.1. Most of these differences occurred for the \textit{sim\_extreme} scenario (83.5 \%). The majority of the differences equal or above 0.1 were found between the aggregation methods \textit{direct\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}, and \textit{stepwise\_agg\textsubscript{median}} and \textit{weighted\_agg} (Figure S\ref{fig:sim_indv_runs}). 
+% Differences were rather small, largest difference 0.265 for sim_extreme (stepwise_median vs weighted_agg) 
 
-% Other simulation scenarios
-By contrast, the ranges of trait affinities differed for all aggregation methods for the simulation scenarios \textit{sim\_extreme} and \textit{sim\_variation}. \textit{Weighted\_agg} and \textit{stepwise\_agg\textsubscript{mean}} produced a wider range of values than the \textit{direct\_agg\textsubscript{mean}} in the \textit{sim\_extreme} scenario. For most levels of trait variability the \textit{stepwise\_agg \textsubscript{median}} resulted in the largest range of trait affinities in both scenarios
+Overall, differences between the results of the aggregation methods for each simulated dataset increased with increasing trait variability. According to the simulation results, the different aggregation methods often result in similar trait affinities.  If differences occurred, than mostly between aggregation methods using the median and aggregation methods using the mean. 
 
-Analysing the individual simulation runs showed that differences between the results of the aggregation methods increased with increasing trait variability. Most differences occurred for the \textit{sim\_extreme} scenario. Differences greater than an absolute trait affinity of 0.1 occurred between methods using the median and the mean. Thereby, the most frequent differences above 0.1 were found between the aggregation methods \textit{direct\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}, and \textit{stepwise\_agg\textsubscript{median}} and \textit{weighted\_agg} (Figure S\ref{fig:sim_indv_runs}). 
-
-% TODO: What's good and what's bad -> that's maybe the wrong question, but what's the direction of each method? 
-% Overall, 
 
 \begin{figure}[H]
   \centering
@@ -247,18 +246,27 @@ Analysing the individual simulation runs showed that differences between the res
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Diffs_indiv_runs_sim.png}
-  \caption{Comparison of the results of the trait aggregation methods for every simulated dataset. Simulated datasets where absolute differences between aggregated trait affinities were greater than 0.1 are depicted. Only the comparisons are shown were differences greater than 0.1 occurred.}
+  \caption{Comparison of the aggregated trait affinities produced by the different trait aggregation methods for every simulated dataset across all 3 simulated traits. Dots depict comparisons where absolute differences between aggregated trait affinities were greater than 0.1. \newline
+  Comparison: \newline
+  1) Direct\_agg (median) - Stepwise\_agg (mean) \newline
+  2) Direct\_agg (median) - Weighted\_agg, \newline
+  3) Stepwise\_agg (mean) - Stepwise\_agg (median), \newline
+  4) Stepwise\_agg (mean) - Weighted\_agg, \newline  
+  5) Direct\_agg (mean) - Stepwise\_agg (median), \newline
+  6) Direct\_agg (median) - Stepwise\_agg (median), \newline
+  7) Stepwise\_agg (median) - Weighted\_agg \newline
+  }
   \label{fig:sim_indv_runs}
 \end{figure}
 
+\newpage
 
 \subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
 \label{sec:diff_trait_agg_chessman}
 
-The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities originally assigned at family-level varied between 16.2 \% and 22.9 \% for the Australian dataset. For the North American dataset, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}).
+The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities originally assigned at family-level varied between 16.2 \% and 22.9 \% for the Australian dataset. For the North American dataset, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, trait aggregation methods using the median yielded fewer cases with differences compared to approaches using the mean. However, aggregation methods using the median produced greater differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. For both datasets maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
 
-In general, trait aggregation methods using the median yielded fewer cases with differences compared to approaches using the mean. However, aggregation methods using the median produced greater differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. For both datasets maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
-
+% Is that necessary?
 A comparison of the aggregation methods with each other for the 4 datasets revealed that differences in aggregated trait affinities were largest between the \textit{stepwise\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{median}} (Figure S\ref{fig:comp_aggr_methods}).
 
 \begin{table}[H]
@@ -289,7 +297,7 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \caption{Display of the cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
   \label{fig:diff_aggr_traits_chessman}
 \end{figure}
 
@@ -297,7 +305,7 @@ A comparison of the aggregation methods with each other for the 4 datasets revea
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Display of the cases where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The black dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
+  \caption{Display of the cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
   \label{fig:diff_aggr_traits_pyne}
 \end{figure}
 
@@ -457,6 +465,48 @@ Various codings of traits are used throughout the databases (e.g. binary, fuzzy,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Discussion}
+
+\subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
+
+
+% Summarize briefly results and synthesize (with Simulation)  
+Our results show that aggregation of traits by the median compared to aggregating by the mean is often closer to the assigned traits at family level, i.e. it yields less differing cases. 
+% This part needs to be improved:
+% However, aggregation methods using the median tend to produce greater differences between aggregated and assigned traits.
+The different weighting methods, i.e. aggregating stepwise, direct or weighted, did not seem to have a strong impact, because the distribution of absolute trait affinity differences to assigned traits obtained by the \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}} and \textit{weighted\_agg} were relatively similar in both tested datasets.  %as well as for direct\agg (median) and stepwise\_agg (median)
+Instead, using the mean or the median changed the distribution of differences in trait affinities between aggregated and assigned traits.
+% Wording!
+A reason that using different weightings for the taxa when aggregating doesn't seem to have a big influence is on the one hand, that the used taxa had only a low number of genera in the used trait datasets or don't have species entries at all. From the taxa that were compared from the North American trait dataset to the assigned traits at family-level, 13.8 \%, 61.7 \% were resolved on genus-level. 52.1 \% had 5 or less genera and 12.8 \% contained just one genus (Figure S\ref{fig:tax_hierarchy_NOA}). In the Australian dataset 21.4 \% of the compared taxa had trait information resolved on family-level, 39.5 \% resolved on genus level, and 39.1 \% resolved on species-level. 67.73 \% of the taxa contain 5 or less genera and 39.6 \% just contained one genus (Figure S\ref{fig:tax_hierarchy_AUS}). The simulation results indicated that the choice of the aggregation method for small numbers of genera per family (5) can be important when one genus has a much larger number of species compared to other genera within a particular family. 
+% How often in the trait datasets?
+However, inspecting the simulated datasets revealed that often aggregated traits only differ slightly obtained from the different aggregation methods .
+
+% Differences between datasets 
+Observed differences between aggregated and assigned traits were higher for the North American trait dataset. This can be explained by the binary coding of the traits in the North American dataset. As a results, traits have been assigned affinities of either 1 or 0. Thus naturally, even after normalization, traits of a particular grouping feature have a high difference of trait affinities to each other compared to when they were coded using fuzzy codes.
+
+% Of course all the comparisons have no "generellen Gültigkeisanspruch" - what's the true aggregated trait affinity characterising a particular family? Expert assignments maybe also biased based on experience with a particular group of taxa within a family.  
+Evaluation of the differences between aggregated and assigned traits is difficult because it remains unclear what the true value of a particular trait for a particular organism on family-level is. It is indeed questionable whether the aggregation of trait information on species or genus-level to a point estimate on family-level can be an adequate description of a particular trait at all, especially for traits with a high variability. In fact, traits can vary strongly on more precise taxonomic levels than the family-level. For example, Monaghan and Soares found a high dispersion of trait affinities at genus-level within families in the Tachet database for traits of the grouping features body size, flow preference, and reproduction \cite{monaghan_improving_2013}. Furthermore, studies focusing on the lability of traits, i.e. how much traits are unconstrained by phylogeny, found that traits of ecological preferences (e.g. thermal preference), body size, resistance forms, and to a lesser extent feeding mode are labile, and thus possibly highly variable \cite{poff_functional_2006,wilkes_traitbased_2020}. Thus, it is likely that assigned traits and aggregated traits at family-level will especially differ in affinities for the aforementioned traits. Our analysis could confirm this partially. The highest possible difference of 1 between aggregated trait affinities and assigned trait affinities (in total in 6.9 \% of all cases) for the Australian dataset occurred most often for body size large and medium (42.5 \% and 39.2 \% of all cases with a difference of 1, respectively) across all comparisons. Both traits had also the highest mean and standard deviation in the absolute difference of trait affinities across all tested comparisons (mean size medium 0.5, sd 0.29; mean size large 0.59, sd 0.32). For the taxa compared from the North American dataset, the highest possible difference in trait affinities occurred most often for the trait body size medium (15.8 \% of all cases with a maximum difference), followed by the traits respiration via plastron and spiracle and respiration via tegument (both 13 \% of all cases with a maximum difference). Respiration via plastron and spiracle showed the highest mean and standard deviation in the absolute difference of trait affinities across all comparisons (mean 0.71, sd 0.33), followed by respiration via tegument (mean 0.5, sd 0.34) and body size medium (mean 0.49, sd 0.3). 
+
+% Outlook: combine trait information for priors like in species distribution models/population growth models,
+% see Kindvater et al and Brown & Roff 
+% ? Constructing priors from fuzzy coded traits
+
+
+
+% Further ideas: 
+%   - Differences across grouping features
+%   - Still some similarities between compared datasets -> Where does the classification come from?
+%     Few sources used in NOA also used in AUS:
+%     AUS: Merrit & Cummins 1978/1984 for feeding mode for a few genera and families 
+%     NOA: Merritt, Richard W., Cummins, Berg 2008 -> but not clear if for feeding mode as well; according to trait   %     description "Cummins, K. W. Trophic Relations of Aquatic Insects" was used
+%   - Could not include all data due to data gaps -> much needed to be filled -> would maybe change the picture?
+
+\subsection*{Re-analysis of Szöcs et al. using harmonized and aggregated grouping features}
+
+% Were the traits promoted by the harmonized dataset on the most extreme points on the conductivity axis?
+% Large scale studies?
+
+% What does this imply for future studies -> return to the introduction
+
 
 \begin{itemize}
   \item \textbf{aggregated vs assigned traits}

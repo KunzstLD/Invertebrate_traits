@@ -1963,6 +1963,172 @@
       \endverb
       \keyw{Chloride,Macrobenthos,Magnesia,Potash,River Werra,Salinity,Salt tolerances}
     \endentry
+    \entry{monaghan_improving_2013}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b71e2923d9da81501304bf0a67a79932}{%
+           family={Monaghan},
+           familyi={M\bibinitperiod},
+           given={Kieran\bibnamedelima A.},
+           giveni={K\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=6f413317b2506025db9ec9bf68924c75}{%
+           family={Soares},
+           familyi={S\bibinitperiod},
+           given={Amadeu\bibnamedelima M.V.M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=4398933b4ac4c83329c4fd6f1a079eef}{%
+           family={Richardson},
+           familyi={R\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{fullhash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{bibnamehash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{authorbibnamehash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{authornamehash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{authorfullhash}{ce442b17f0487ef4b8030ac2ee5325ba}
+      \strng{editorbibnamehash}{4398933b4ac4c83329c4fd6f1a079eef}
+      \strng{editornamehash}{4398933b4ac4c83329c4fd6f1a079eef}
+      \strng{editorfullhash}{4398933b4ac4c83329c4fd6f1a079eef}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Weighting family-level trait descriptions by taxon frequencies improved the accuracy of macroinvertebrate traits deﬁned at both the individual and community level compared with trait descriptions derived from the proportionate inclusion of all taxa. Applying a priori data on (i) national rarity (rarity model) and (ii) frequency occurrence at reference sites (quality model), the deviation of family trait descriptions was measured in relation to a nonweighted null model. Overall, the quality model was more divergent than the rarity model, reﬂecting the respective speciﬁc and general survey protocols associated with their source data. Assessing performance with contrasting datasets demonstrated that taxon-weighting provided improved accuracy even when survey protocols associated with model data and test sites were discordant. However, accuracy generally increased as the geographic coverage and sampling methods of weighted models and test data corresponded more closely. Measuring trait variability within families provides a useful indicator of the expected accuracy of generalized trait descriptions, while distinguishing variability in terms of even or skewed dispersion suggests options for the further reﬁnement of assessment protocols.}
+      \field{issn}{0706-652X, 1205-7533}
+      \field{journaltitle}{Canadian Journal of Fisheries and Aquatic Sciences}
+      \field{langid}{english}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shortjournal}{Can. J. Fish. Aquat. Sci.}
+      \field{title}{Improving the accuracy of aquatic macroinvertebrate trait assignment — the importance of taxon-weighting}
+      \field{urlday}{16}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{volume}{70}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{885\bibrangedash 894}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1139/cjfas-2012-0402
+      \endverb
+      \verb{file}
+      \verb Monaghan und Soares - 2013 - Improving the accuracy of aquatic macroinvertebrat.pdf:/home/kunzst/Zotero/storage/7R4T4YMP/Monaghan und Soares - 2013 - Improving the accuracy of aquatic macroinvertebrat.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://www.nrcresearchpress.com/doi/10.1139/cjfas-2012-0402
+      \endverb
+      \verb{url}
+      \verb http://www.nrcresearchpress.com/doi/10.1139/cjfas-2012-0402
+      \endverb
+    \endentry
+    \entry{wilkes_traitbased_2020}{article}{}
+      \name{author}{12}{}{%
+        {{hash=c27694876bd58ab1f95b3bc78835668b}{%
+           family={Wilkes},
+           familyi={W\bibinitperiod},
+           given={Martin\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ac20cdc1761140ff2cb90bbd805a786c}{%
+           family={Edwards},
+           familyi={E\bibinitperiod},
+           given={François},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c6b9f84ff215320f45dcebe543b908c0}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={J.\bibnamedelimi Iwan},
+           giveni={J\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=d4b1d7f71841a831dbefdb4fd66272fb}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={John\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=747b23810798f43d0d24db37639efb46}{%
+           family={England},
+           familyi={E\bibinitperiod},
+           given={Judy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ec13e6e5f2107477f0cfe3d9827bc554}{%
+           family={Friberg},
+           familyi={F\bibinitperiod},
+           given={Nikolai},
+           giveni={N\bibinitperiod}}}%
+        {{hash=006b484f6021362b7346692d563e40c5}{%
+           family={Hering},
+           familyi={H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bd876228ec5e2f584fb1ba36557a7113}{%
+           family={Poff},
+           familyi={P\bibinitperiod},
+           given={N.\bibnamedelimi {LeRoy}},
+           giveni={N\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=aed38a260fe5c724956e80260a838ddf}{%
+           family={Usseglio‐Polatera},
+           familyi={U\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=709c4042d3331312282927bd43e66d2b}{%
+           family={Verberk},
+           familyi={V\bibinitperiod},
+           given={Wilco\bibnamedelimb C.\bibnamedelimi E.\bibnamedelimi P.},
+           giveni={W\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=acb517f17c6c59560f90561ab5d189c9}{%
+           family={Webb},
+           familyi={W\bibinitperiod},
+           given={Jon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=08af533199e76af5c808556b8049642c}{%
+           family={Brown},
+           familyi={B\bibinitperiod},
+           given={Lee\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \strng{fullhash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \strng{bibnamehash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \strng{authorbibnamehash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \strng{authornamehash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \strng{authorfullhash}{151336dd538b3a9c2bab9184f4c5ffd6}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The growing use of functional traits in ecological research has brought new insights into biodiversity responses to global environmental change. However, further progress depends on overcoming three major challenges involving (a) statistical correlations between traits, (b) phylogenetic constraints on the combination of traits possessed by any single species, and (c) spatial effects on trait structure and trait–environment relationships. Here, we introduce a new framework for quantifying trait correlations, phylogenetic constraints and spatial variability at large scales by combining openly available species’ trait, occurrence and phylogenetic data with gridded, high-resolution environmental layers and computational modelling. Our approach is suitable for use among a wide range of taxonomic groups inhabiting terrestrial, marine and freshwater habitats. We demonstrate its application using freshwater macroinvertebrate data from 35 countries in Europe. We identified a subset of available macroinvertebrate traits, corresponding to a life-history model with axes of resistance, resilience and resource use, as relatively unaffected by correlations and phylogenetic constraints. Trait structure responded more consistently to environmental variation than taxonomic structure, regardless of location. A re-analysis of existing data on macroinvertebrate communities of European alpine streams supported this conclusion, and demonstrated that occurrence-based functional diversity indices are highly sensitive to the traits included in their calculation. Overall, our findings suggest that the search for quantitative trait–environment relationships using single traits or simple combinations of multiple traits is unlikely to be productive. Instead, there is a need to embrace the value of conceptual frameworks linking community responses to environmental change via traits which correspond to the axes of life-history models. Through a novel integration of tools and databases, our flexible framework can address this need.}
+      \field{day}{18}
+      \field{issn}{1354-1013, 1365-2486}
+      \field{journaltitle}{Global Change Biology}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{shortjournal}{Glob. Change Biol.}
+      \field{shorttitle}{Trait‐based ecology at large scales}
+      \field{title}{Trait‐based ecology at large scales: Assessing functional trait correlations, phylogenetic constraints and spatial variability using open data}
+      \field{urlday}{22}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{gcb.15344}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/gcb.15344
+      \endverb
+      \verb{file}
+      \verb Wilkes et al. - 2020 - Trait‐based ecology at large scales Assessing fun.pdf:/home/kunzst/Zotero/storage/UYZ68J8C/Wilkes et al. - 2020 - Trait‐based ecology at large scales Assessing fun.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/gcb.15344
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/10.1111/gcb.15344
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  11 NOV 2020 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  18 NOV 2020 17:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1119,30 +1119,30 @@ Overfull \hbox (6.9407pt too wide) in paragraph at lines 60--61
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 98.
+(Font)              <10> on input line 101.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 98.
+(Font)              <7> on input line 101.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 98.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 102.
+(Font)              <5> on input line 101.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 105.
  (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 102.
- [3]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 118--124
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 105.
+ [4]
+Overfull \hbox (15.0pt too wide) in paragraph at lines 121--127
 []$[]$ 
  []
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+[5pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.125 \newpage
-              ] [5] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+l.128 \newpage
+              ] [6] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -1174,206 +1174,211 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 52.
 )
 
-LaTeX Warning: Float too large for page by 21.61328pt on input line 142.
+LaTeX Warning: Float too large for page by 21.61328pt on input line 145.
 
-[6] [7pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
+[7] [8pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.152 A
-       s mentioned above, trait affinities ranged from 0 to 1. Hence, the ma...]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 168.
+l.154 
+      ]
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 171.
  (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [8]
-Overfull \hbox (20.0711pt too wide) in paragraph at lines 207--217
+) [9]
+Overfull \hbox (20.0711pt too wide) in paragraph at lines 210--220
  [][] 
  []
 
-[9pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+[10pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 \newpage
+l.222 \newpage
               pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 \newpage
+l.222 \newpage
               ]
-<Figures/Overview_sim_results.png, id=171, 711.1368pt x 369.7815pt>
+<Figures/Overview_sim_results.png, id=175, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results.png Graphic file (type png)
 <use Figures/Overview_sim_results.png>
-Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 242.
+Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 241.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 242--243
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 241--242
  [][] 
  []
 
-[10]
-<Figures/Diffs_indiv_runs_sim.png, id=179, 711.1368pt x 369.7815pt>
+[11]
+<Figures/Diffs_indiv_runs_sim.png, id=183, 711.1368pt x 483.4863pt>
 File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
 <use Figures/Diffs_indiv_runs_sim.png>
-Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 249.
-(pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
+Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 248.
+(pdftex.def)             Requested size: 469.4711pt x 284.53145pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 249--250
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 248--258
  [][] 
  []
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--258
+
+ []
+
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.253 
-       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>]
-Overfull \hbox (33.43935pt too wide) in paragraph at lines 268--285
+l.261 
+       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [13pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.262 \newpage
+               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
+Overfull \hbox (33.43935pt too wide) in paragraph at lines 276--293
  [][] 
  []
 
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+[14pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.286 
-       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>] [13pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.287 \newpage
+l.295 \newpage
               ]
-<Figures/Deviances_trait_agg_chessman.png, id=201, 625.8582pt x 341.3553pt>
+<Figures/Deviances_trait_agg_chessman.png, id=205, 625.8582pt x 341.3553pt>
 File: Figures/Deviances_trait_agg_chessman.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_chessman.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 291.
+Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 299.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 291--292
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 299--300
  [][] 
  []
 
-<Figures/Deviances_trait_agg_pyne.png, id=202, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=206, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 299.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 307.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 299--300
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 307--308
  [][] 
  []
 
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.303 
-       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [15pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
+l.311 
+       </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [16pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.304 \newpage
+l.312 \newpage
                </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]
 
-Package hyperref Warning: Suppressing empty link on input line 312.
+Package hyperref Warning: Suppressing empty link on input line 320.
 
 
-Package hyperref Warning: Suppressing empty link on input line 312.
+Package hyperref Warning: Suppressing empty link on input line 320.
 
 
-Package hyperref Warning: Suppressing empty link on input line 314.
+Package hyperref Warning: Suppressing empty link on input line 322.
 
 
-Package hyperref Warning: Suppressing empty link on input line 314.
+Package hyperref Warning: Suppressing empty link on input line 322.
 
-<Figures/Species_scores_rda.png, id=213, 625.8582pt x 341.3553pt>
+<Figures/Species_scores_rda.png, id=217, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 320.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 328.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 320--321
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 328--329
  [][] 
  []
 
-[16]
-<Figures/Scores_on_constrained_axis_combined.pdf, id=221, 796.6487pt x 448.10245pt>
+[17]
+<Figures/Scores_on_constrained_axis_combined.pdf, id=225, 796.6487pt x 448.10245pt>
 File: Figures/Scores_on_constrained_axis_combined.pdf Graphic file (type pdf)
 <use Figures/Scores_on_constrained_axis_combined.pdf>
-Package pdftex.def Info: Figures/Scores_on_constrained_axis_combined.pdf  used on input line 327.
+Package pdftex.def Info: Figures/Scores_on_constrained_axis_combined.pdf  used on input line 335.
 (pdftex.def)             Requested size: 625.96625pt x 341.43658pt.
 
-Overfull \hbox (69.48969pt too wide) in paragraph at lines 327--328
+Overfull \hbox (69.48969pt too wide) in paragraph at lines 335--336
  [][] 
  []
 
-[17pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
+[18pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.331 \newpage
-               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] [18pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+l.339 \newpage
+               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] [19pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.331 \newpage
-               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_combined.pdf>] [19]
-Overfull \hbox (26.75967pt too wide) in alignment at lines 346--348
+l.339 \newpage
+               </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_combined.pdf>] [20]
+Overfull \hbox (26.75967pt too wide) in alignment at lines 354--356
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--351
+Underfull \hbox (badness 10000) in paragraph at lines 359--359
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Overfull \hbox (2.4277pt too wide) in paragraph at lines 351--351
+Overfull \hbox (2.4277pt too wide) in paragraph at lines 359--359
 []|\OT1/lmr/m/n/10 Reproduction| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--428
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
 []|\OT1/lmr/m/n/10 binary;
  []
 
 
-Overfull \hbox (3.05836pt too wide) in paragraph at lines 429--429
+Overfull \hbox (3.05836pt too wide) in paragraph at lines 437--437
 []|[]| 
  []
 
 
-Overfull \hbox (26.75967pt too wide) in alignment at lines 348--449
+Overfull \hbox (26.75967pt too wide) in alignment at lines 356--457
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 449
+Underfull \vbox (badness 10000) detected at line 457
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 450--455
+Overfull \hbox (15.0pt too wide) in paragraph at lines 458--463
 []$[]$ 
  []
 
-[20
+[21
+
+] [22
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 462.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 512.
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 462.
- [21
-
-] [22] [23]
-Overfull \hbox (7.72908pt too wide) in paragraph at lines 498--498
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 512.
+ [23] [24] [25]
+Overfull \hbox (7.72908pt too wide) in paragraph at lines 548--548
 \OT1/lmr/m/sc/10 issn\OT1/lmr/m/n/10 : 1551-3793. \OT1/lmr/m/sc/10 doi\OT1/lmr/m/n/10 : []$\OT1/lmtt/m/n/10 10 . 1002 / ieam . 128$[]\OT1/lmr/m/n/10 . [On-line]. Avail-able: []$\OT1/lmtt/m/n/10 https : / / setac . onlinelibrary .
  []
 
-[24] [25] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
-<Figures/Comparison_trait_agg_methods.png, id=376, 625.8582pt x 341.3553pt>
+[26] [27] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
+<Figures/Comparison_trait_agg_methods.png, id=399, 625.8582pt x 341.3553pt>
 File: Figures/Comparison_trait_agg_methods.png Graphic file (type png)
 <use Figures/Comparison_trait_agg_methods.png>
 Package pdftex.def Info: Figures/Comparison_trait_agg_methods.png  used on input line 15.
@@ -1396,58 +1401,35 @@ l.16 ... New Zealand 777, and North America 4080.}
                    \relax 
 l.16 ... New Zealand 777, and North America 4080.}
                                                   
-<Figures/taxonomic_hierarchy_EU.png, id=377, 625.8582pt x 341.3553pt>
-File: Figures/taxonomic_hierarchy_EU.png Graphic file (type png)
-<use Figures/taxonomic_hierarchy_EU.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_EU.png  used on input line 40.
-(pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.41     \caption
-                 {Number of genera per family and species per genus for the ...
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 40--41
- [][] 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.41 ...s with more than 10 genera are displayed.}
-                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.41 ...s with more than 10 genera are displayed.}
-                                                   [26 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
-<Figures/taxonomic_hierarchy_NOA.png, id=386, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=400, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 47.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48     \caption
-                 {Number of genera per family and species per genus for the ...
+                 {Number of genera per family and species per genus for thos...
 Overfull \hbox (39.47382pt too wide) in paragraph at lines 47--48
  [][] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 ...s with more than 15 genera are displayed.}
-                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.48 ...s with more than 15 genera are displayed.}
-                                                   [27 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_EU.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_AUS.png, id=392, 625.8582pt x 341.3553pt>
+                                                   [28 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
+<Figures/taxonomic_hierarchy_AUS.png, id=409, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 54.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.55     \caption
@@ -1456,38 +1438,15 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 54--55
  [][] 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.55 ...es with more than 7 genera are displayed.}
-                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.55 ...es with more than 7 genera are displayed.}
-                                                   [28 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NZ.png, id=397, 625.8582pt x 341.3553pt>
-File: Figures/taxonomic_hierarchy_NZ.png Graphic file (type png)
-<use Figures/taxonomic_hierarchy_NZ.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_NZ.png  used on input line 61.
-(pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.62     \caption
-                 {Number of genera per family and species per genus for the ...
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 61--62
- [][] 
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.62 ...es with more than 5 genera are displayed.}
-                                                  pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.62 ...es with more than 5 genera are displayed.}
-                                                   [29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NZ.png (PNG copy)>] [31]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+                                                   [29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [31]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.172 ...{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
@@ -2096,31 +2055,31 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 329--340
  []
 
 [35])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 507.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 507.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 507.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 507.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
 Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 507.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
  ) 
 Here is how much of TeX's memory you used:
- 24710 strings out of 492982
- 477531 string characters out of 6134895
- 894938 words of memory out of 5000000
- 27736 multiletter control sequences out of 15000+600000
+ 24707 strings out of 492982
+ 477453 string characters out of 6134895
+ 895365 words of memory out of 5000000
+ 27731 multiletter control sequences out of 15000+600000
  71940 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3664b,1746s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (35 pages, 4365381 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (35 pages, 3753478 bytes).
 PDF statistics:
- 527 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 102 named destinations out of 1000 (max. 500000)
- 68 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 541 PDF objects out of 1000 (max. 8388607)
+ 459 compressed objects within 5 object streams
+ 106 named destinations out of 1000 (max. 500000)
+ 58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
