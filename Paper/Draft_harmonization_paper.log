@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  18 NOV 2020 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  20 NOV 2020 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1366,19 +1366,19 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 458--463
 ] [22
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 512.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 517.
  (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 512.
- [23] [24] [25]
-Overfull \hbox (7.72908pt too wide) in paragraph at lines 548--548
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 517.
+ [23] [24] [25] [26]
+Overfull \hbox (7.72908pt too wide) in paragraph at lines 553--553
 \OT1/lmr/m/sc/10 issn\OT1/lmr/m/n/10 : 1551-3793. \OT1/lmr/m/sc/10 doi\OT1/lmr/m/n/10 : []$\OT1/lmtt/m/n/10 10 . 1002 / ieam . 128$[]\OT1/lmr/m/n/10 . [On-line]. Avail-able: []$\OT1/lmtt/m/n/10 https : / / setac . onlinelibrary .
  []
 
-[26] [27] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
-<Figures/Comparison_trait_agg_methods.png, id=399, 625.8582pt x 341.3553pt>
+[27] [28] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
+<Figures/Comparison_trait_agg_methods.png, id=404, 625.8582pt x 341.3553pt>
 File: Figures/Comparison_trait_agg_methods.png Graphic file (type png)
 <use Figures/Comparison_trait_agg_methods.png>
 Package pdftex.def Info: Figures/Comparison_trait_agg_methods.png  used on input line 15.
@@ -1401,7 +1401,7 @@ l.16 ... New Zealand 777, and North America 4080.}
                    \relax 
 l.16 ... New Zealand 777, and North America 4080.}
                                                   
-<Figures/taxonomic_hierarchy_NOA.png, id=400, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=405, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 47.
@@ -1423,8 +1423,8 @@ l.48 ...s with more than 15 genera are displayed.}
 <to be read again> 
                    \relax 
 l.48 ...s with more than 15 genera are displayed.}
-                                                   [28 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
-<Figures/taxonomic_hierarchy_AUS.png, id=409, 625.8582pt x 341.3553pt>
+                                                   [29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png>]
+<Figures/taxonomic_hierarchy_AUS.png, id=414, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 54.
@@ -1446,640 +1446,652 @@ l.55 ...es with more than 7 genera are displayed.}
 <to be read again> 
                    \relax 
 l.55 ...es with more than 7 genera are displayed.}
-                                                   [29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [31]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+                                                   [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [31 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.172 ...{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
+l.72     \caption
+                 {Mean, median and standard deviation of the traits that wer...pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72 ...ith the harmonized dataset trait dataset.}
+                                                  pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72 ...ith the harmonized dataset trait dataset.}
+                                                   [32] [33]pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.214 ...{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}}
                                                   
-Overfull \hbox (88.95552pt too wide) in alignment at lines 172--175
+Overfull \hbox (88.95552pt too wide) in alignment at lines 214--217
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
+Underfull \hbox (badness 10000) in paragraph at lines 220--220
 []|\OT1/lmr/m/n/10 North Amer-ica
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--180
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 181--181
+Underfull \hbox (badness 2626) in paragraph at lines 223--223
 []|\OT1/lmr/m/n/10 "Feed from fallen
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 181--181
+Underfull \hbox (badness 5345) in paragraph at lines 223--223
 \OT1/lmr/m/n/10 leaves, plant tis-
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 182--182
+Underfull \hbox (badness 1189) in paragraph at lines 224--224
 []|\OT1/lmr/m/n/10 "Eat coarse de-tri-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 []\OT1/lmr/m/n/10 "Shred de-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
 \OT1/lmr/m/n/10 com-pos-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 []\OT1/lmr/m/n/10 Trait her-bi-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 185--186
+Underfull \hbox (badness 1009) in paragraph at lines 227--228
 \OT1/lmr/m/n/10 vore in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 \OT1/lmr/m/n/10 in-sect that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 \OT1/lmr/m/n/10 shred \OT1/lmr/m/it/10 liv-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 []\OT1/lmr/m/n/10 Trait her-bi-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 190--191
+Underfull \hbox (badness 1009) in paragraph at lines 232--233
 \OT1/lmr/m/n/10 vore in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 \OT1/lmr/m/n/10 the trait
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--195
+Underfull \hbox (badness 10000) in paragraph at lines 237--237
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 []\OT1/lmr/m/n/10 Carvers,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--199
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 \OT1/lmr/m/n/10 en-gulfers &
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 []\OT1/lmr/m/n/10 Piercers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--200
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 \OT1/lmr/m/n/10 (plants &
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 199--200
+Underfull \hbox (badness 5622) in paragraph at lines 241--242
 \OT1/lmr/m/n/10 an-i-mals) are
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 201--202
+Underfull \hbox (badness 6625) in paragraph at lines 243--244
 []|\OT1/lmr/m/n/10 Engulfers ("in-gest
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 201--202
+Underfull \hbox (badness 2150) in paragraph at lines 243--244
 \OT1/lmr/m/n/10 prey whole or in
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--208
+Underfull \hbox (badness 10000) in paragraph at lines 250--250
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--209
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
 []|\OT1/lmr/m/n/10 Distinguishes be-
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 209--209
+Underfull \hbox (badness 4686) in paragraph at lines 251--251
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 210--210
+Underfull \hbox (badness 4686) in paragraph at lines 252--252
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 211--211
+Underfull \hbox (badness 4686) in paragraph at lines 253--253
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 212--212
+Underfull \hbox (badness 4686) in paragraph at lines 254--254
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 213--213
+Underfull \hbox (badness 4686) in paragraph at lines 255--255
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 214--216
+Underfull \hbox (badness 4686) in paragraph at lines 256--258
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
 
-Overfull \hbox (2.39668pt too wide) in paragraph at lines 226--226
+Overfull \hbox (2.39668pt too wide) in paragraph at lines 268--268
 []|\OT1/lmr/m/n/10 Multivoltine| 
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 229--229
+Underfull \hbox (badness 2073) in paragraph at lines 271--271
 []|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 230--230
+Underfull \hbox (badness 2073) in paragraph at lines 272--272
 []|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 []\OT1/lmr/m/n/10 1-2 gen-er-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 \OT1/lmr/m/n/10 a-tions per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
 []
  []
 
 
-Overfull \hbox (5.47496pt too wide) in paragraph at lines 233--234
+Overfull \hbox (5.47496pt too wide) in paragraph at lines 275--276
 \OT1/lmr/m/n/10 bi/multivoltine 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 \OT1/lmr/m/n/10 er-a-tions per
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 []\OT1/lmr/m/n/10 up to 10
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 277--278
 \OT1/lmr/m/n/10 gen-er-a-tions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 []\OT1/lmr/m/n/10 Passive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 \OT1/lmr/m/n/10 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 \OT1/lmr/m/n/10 like float-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 \OT1/lmr/m/n/10 or drift-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--244
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 \OT1/lmr/m/n/10 (trait swim-
  []
 
 
-Overfull \hbox (0.80827pt too wide) in paragraph at lines 243--244
+Overfull \hbox (0.80827pt too wide) in paragraph at lines 285--286
 \OT1/lmr/m/n/10 ming/scating) 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 []\OT1/lmr/m/n/10 Active
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 \OT1/lmr/m/n/10 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 286--287
 \OT1/lmr/m/n/10 (trait swim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 \OT1/lmr/m/n/10 mers (over
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 \OT1/lmr/m/n/10 and un-der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 289--290
 \OT1/lmr/m/n/10 the wa-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 []\OT1/lmr/m/n/10 Full wa-ter
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--249
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 \OT1/lmr/m/n/10 swim-mers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--252
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
 []|\OT1/lmr/m/n/10 Distinguishes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--252
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
 \OT1/lmr/m/n/10 swim-mer and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 253--255
+Underfull \hbox (badness 10000) in paragraph at lines 295--297
 []|\OT1/lmr/m/n/10 Swimmers (wa-ter
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 257--257
+Underfull \hbox (badness 1184) in paragraph at lines 299--299
 \OT1/lmr/m/n/10 sub-strates or bor-
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 257--257
+Underfull \hbox (badness 2970) in paragraph at lines 299--299
 \OT1/lmr/m/n/10 ing in \OT1/lmr/m/it/10 hard \OT1/lmr/m/n/10 sub-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 []\OT1/lmr/m/n/10 Burrowing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 \OT1/lmr/m/n/10 "within the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 \OT1/lmr/m/n/10 ters of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 301--302
 \OT1/lmr/m/n/10 ben-thic fine
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 []\OT1/lmr/m/n/10 Differentiates
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 \OT1/lmr/m/n/10 in-ter-sti-tial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 260--261
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
 \OT1/lmr/m/n/10 (en-doben-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--262
+Underfull \hbox (badness 10000) in paragraph at lines 304--304
 []|\OT1/lmr/m/n/10 "Inhabiting \OT1/lmr/m/it/10 fine
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 264--264
+Underfull \hbox (badness 1688) in paragraph at lines 306--306
 \OT1/lmr/m/n/10 the sub-strate and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--267
+Underfull \hbox (badness 10000) in paragraph at lines 307--309
 []|\OT1/lmr/m/n/10 Burrowers (in-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 268--268
+Underfull \hbox (badness 10000) in paragraph at lines 310--310
 \OT1/lmr/m/n/10 sprawl-ing
  []
 
 
-Underfull \hbox (badness 5022) in paragraph at lines 269--269
+Underfull \hbox (badness 5022) in paragraph at lines 311--311
 \OT1/lmr/m/n/10 ing ac-tively with
  []
 
 
-Underfull \hbox (badness 8113) in paragraph at lines 271--271
+Underfull \hbox (badness 8113) in paragraph at lines 313--313
 \OT1/lmr/m/n/10 it-ing the sur-face
  []
 
 
-Underfull \hbox (badness 5288) in paragraph at lines 271--271
+Underfull \hbox (badness 5288) in paragraph at lines 313--313
 \OT1/lmr/m/n/10 of float-ing leaves
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 271--271
+Underfull \hbox (badness 10000) in paragraph at lines 313--313
 \OT1/lmr/m/n/10 of vas-cu-lar hy-
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 271--271
+Underfull \hbox (badness 3954) in paragraph at lines 313--313
 \OT1/lmr/m/n/10 drophytes or fine
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 279--279
+Underfull \hbox (badness 2809) in paragraph at lines 321--321
 []|\OT1/lmr/m/n/10 Defined as crawl-
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 279--279
+Underfull \hbox (badness 2671) in paragraph at lines 321--321
 \OT1/lmr/m/n/10 fine sed-i-ments on
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 281--282
+Underfull \hbox (badness 3919) in paragraph at lines 323--324
 []|\OT1/lmr/m/n/10 Database con-tains
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 \OT1/lmr/m/n/10 traits crawler,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
 \OT1/lmr/m/n/10 sprawler, climber
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 283--284
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 []|\OT1/lmr/m/n/10 Crawlers (epiben-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--286
+Underfull \hbox (badness 10000) in paragraph at lines 328--328
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 287--287
+Underfull \hbox (badness 1616) in paragraph at lines 329--329
 []|\OT1/lmr/m/n/10 Distinguishes tem-
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 287--287
+Underfull \hbox (badness 3168) in paragraph at lines 329--329
 \OT1/lmr/m/n/10 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 330--330
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 330--330
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--288
+Underfull \hbox (badness 10000) in paragraph at lines 330--330
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--289
+Underfull \hbox (badness 10000) in paragraph at lines 331--331
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 290--290
+Underfull \hbox (badness 1616) in paragraph at lines 332--332
 []|\OT1/lmr/m/n/10 Distinguishes tem-
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 290--290
+Underfull \hbox (badness 3168) in paragraph at lines 332--332
 \OT1/lmr/m/n/10 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 []|\OT1/lmr/m/n/10 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 \OT1/lmr/m/n/10 guish tem-porar-ily
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 291--292
+Underfull \hbox (badness 10000) in paragraph at lines 333--334
 \OT1/lmr/m/n/10 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
+Underfull \hbox (badness 10000) in paragraph at lines 335--335
 []|\OT1/lmr/m/n/10 Respiration
  []
 
 
-Underfull \hbox (badness 1917) in paragraph at lines 293--293
+Underfull \hbox (badness 1917) in paragraph at lines 335--335
 \OT1/lmr/m/n/10 plas-tron &
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 295--295
+Underfull \hbox (badness 1158) in paragraph at lines 337--337
 []|\OT1/lmr/m/n/10 Definition in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--295
+Underfull \hbox (badness 10000) in paragraph at lines 337--337
 \OT1/lmr/m/n/10 res-pi-ra-tion us-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 339--339
 []|\OT1/lmr/m/n/10 Distinguishes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 339--339
 \OT1/lmr/m/n/10 spirac-u-lar gills,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 339--339
 \OT1/lmr/m/n/10 plas-tron, at-mo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 297--297
+Underfull \hbox (badness 10000) in paragraph at lines 339--339
 \OT1/lmr/m/n/10 spheric breathers
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 298--298
+Underfull \hbox (badness 2626) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 oc-cur as sep-a-rate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 and com-bined
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 traits. Con-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 tains also traits:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 air (plants), at-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 340--340
 \OT1/lmr/m/n/10 mo-spheric, and
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 299--300
+Underfull \hbox (badness 1009) in paragraph at lines 341--342
 []|\OT1/lmr/m/n/10 Distinguishes plas-
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 299--300
+Underfull \hbox (badness 3954) in paragraph at lines 341--342
 \OT1/lmr/m/n/10 tron and spir-a-cle
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 301--301
+Underfull \hbox (badness 10000) in paragraph at lines 343--343
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 311--311
+Underfull \hbox (badness 10000) in paragraph at lines 353--353
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 320--320
+Underfull \hbox (badness 10000) in paragraph at lines 362--362
 []|\OT1/lmr/m/n/10 Body size
  []
 
 
-Overfull \hbox (88.95552pt too wide) in alignment at lines 175--328
+Overfull \hbox (88.95552pt too wide) in alignment at lines 217--370
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 328
+Underfull \vbox (badness 10000) detected at line 370
  []
 
-[32
+[34
 
-] [33] [34]
+] [35] [36]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 336.
+(Font)              <9> on input line 378.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 329--340
+Overfull \hbox (15.0pt too wide) in paragraph at lines 371--382
 []$[]$ 
  []
 
-[35])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
+[37])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 562.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 562.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 557.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 562.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 562.
 Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 562.
  ) 
 Here is how much of TeX's memory you used:
- 24707 strings out of 492982
- 477453 string characters out of 6134895
- 895365 words of memory out of 5000000
- 27731 multiletter control sequences out of 15000+600000
+ 24711 strings out of 492982
+ 477512 string characters out of 6134895
+ 895571 words of memory out of 5000000
+ 27732 multiletter control sequences out of 15000+600000
  71940 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3664b,1746s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (35 pages, 3753478 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3756440 bytes).
 PDF statistics:
- 541 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 556 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 
