@@ -115,7 +115,6 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 }
 \end{minipage}
 
-\newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Trait aggregation}
@@ -143,6 +142,7 @@ Aggregated trait affinities of the five trait aggregation methods (\textit{direc
 For the North American dataset, we compared aggregated trait affinities with assigned trait affinities on family-level for the grouping features feeding mode, respiration, size, voltinism, and locomotion. The assigned trait affinities at family-level are part of the North American database (Twardochleb et al.) \cite{twardochleb_trait_data_2020} and originate from expert knowledge. Trait information was available for 94 families of which all were present in the North American dataset (total number of cases 1598). The traits were on the categorical scale and were converted to binary traits prior to the comparison with aggregated trait affinities.
 
 As mentioned above, trait affinities ranged from 0 to 1. Hence, the maximum difference possible in trait affinities is 1 or -1 (corresponds to 100 \%). For convenience and to improve interpretation, we report absolute trait differences.
+\textit{\color{blue} Comment Ralf: Bei Abbildung 1 - finde ich hier nicht, sollte es "lower than" heißen}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -162,7 +162,6 @@ The data processing and aforementioned analyses were carried out using R (Versio
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
 \section*{Results}
 
 \subsection*{Taxonomic coverage of the harmonized trait datasets}
@@ -454,57 +453,74 @@ characterised the downstream sites with the same traits as the original analysis
 
 \subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
 
-Our results indicated that aggregation of traits by the median compared to aggregating by the mean is often closer to the assigned traits at family level. However, in those cases where differences between trait aggregation methods that use the median and assigned traits occurred, these differences were greater compared to the aggregation methods that used the mean. The different weightings used by the aggregation methods, i.e. aggregating stepwise, direct or weighted, did not seem to have a strong impact, because the distribution of absolute trait affinity differences to assigned traits obtained by the \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}} and \textit{weighted\_agg} were relatively similar in both tested datasets. This also applies to the distributions of absolute trait affinity differences obtained by \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}. Instead, using the mean or the median changed the distribution of differences in trait affinities between aggregated and assigned traits. A possible reason why the use of different weightings for taxa had little impact on trait aggregation is that a considerable portion of taxa used have low numbers of genera or species entries. From the taxa that were compared from the North American trait dataset to the assigned traits at family-level, 13.8 \% were resolved on family-level and 61.7 \% were resolved on genus-level. 52.1 \% had 5 or less genera and 12.8 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). In the Australian dataset 21.4 \% of the compared taxa had trait information resolved on family-level, 39.5 \% resolved on genus level, and 39.1 \% resolved on species-level. 67.73 \% of the taxa contain 5 or less genera and 39.6 \% just contained one genus (Figure \ref{fig:tax_hierarchy_AUS}). The simulation results indicated that the choice of the aggregation method for small numbers of genera per family (5) can be important when one genus has a much larger number of species compared to other genera within a particular family. % How often in the trait datasets?
+Our results indicated that aggregation of traits by the median compared to aggregating by the mean is often closer to the assigned traits at family level. However, in those cases where differences between trait aggregation methods that use the median and assigned traits occurred, these differences were greater compared to the aggregation methods that used the mean. The different weightings used by the aggregation methods, i.e. aggregating stepwise, direct or weighted, did not seem to have a strong impact, because the distribution of absolute trait affinity differences to assigned traits obtained by the \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}} and \textit{weighted\_agg} were relatively similar in both tested datasets. This also applies to the distributions of absolute trait affinity differences obtained by \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}. Instead, using the mean or the median changed the distribution of differences in trait affinities between aggregated and assigned traits. A possible reason why the use of different weightings for taxa had little impact on trait aggregation is that a considerable portion of taxa used have low numbers of genera or species entries. From the taxa that were compared from the North American trait dataset to the assigned traits at family-level, 13.8 \% were resolved on family-level and 61.7 \% were resolved on genus-level. 52.1 \% had 5 or less genera and 12.8 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). In the Australian dataset 21.4 \% of the compared taxa had trait information resolved on family-level, 39.5 \% resolved on genus level, and 39.1 \% resolved on species-level. 67.73 \% of the taxa contain 5 or less genera and 39.6 \% just contained one genus (Figure \ref{fig:tax_hierarchy_AUS}). The simulation results indicated that the choice of the aggregation method for small numbers of genera per family (5) can be important when one genus has a much larger number of species compared to other genera within a particular family. 
+\textit{\color{blue} Maybe include: How often does such a taxonomic data occur in the trait datasets?}
 
-% Improve wording
+\textit{\color{red}Need to improve the wording in the next paragraph} 
+
 Observed differences between aggregated and assigned traits were higher for the North American trait dataset. This can be explained by the binary coding of the traits in the North American dataset. As a result, traits have been assigned affinities of either 1 or 0.  Therefore, traits of a certain grouping feature have in most cases a higher difference in trait affinities to each other than if they were coded with fuzzy codes.
 
-% Discussion on differences between aggregated and assigned traits  
 Evaluation of the differences between aggregated and assigned traits is difficult because it remains unclear what the true value of a particular trait for a particular family is. Aggregation of trait information on species or genus-level to a point estimate on family-level suggests a precision which is not necessarily present, especially not for traits with a high variability or if trait information on species-level is missing. Some traits can vary strongly on more precise taxonomic levels than the family-level. For example, Monaghan and Soares found a high intra-family trait dispersion in the Tachet database for traits of the grouping features body size, flow preference, and reproduction \cite{monaghan_improving_2013}. Furthermore, studies focusing on the lability of traits, i.e. how much traits are unconstrained by phylogeny, found that traits of ecological preferences (e.g. thermal preference), body size, resistance forms, and to a lesser extent feeding mode are labile, and thus possibly highly variable \cite{poff_functional_2006, wilkes_traitbased_2020}.
-% ?Mention intra-species variation of some traits (voltinism varies along climatic gradients)
-% ? Mention: obtaining trait information on species-level is challenging
-% Could lead to data gaps in the datasets
-% ?Would like to connect both parts, but maybe this doesn't make too much sense
-Our analysis showed that disagreement between aggregated and assigned traits was largest for body size and respiration traits. The highest possible difference of 1 between aggregated trait affinities and assigned trait affinities (in total in 6.9 \% of all cases) for the Australian dataset occurred most often for body size large and medium (42.5 \% and 39.2 \% of all cases with a difference of 1, respectively) across all comparisons of aggregated and assigned traits. Both traits had also the highest mean and standard deviation in the absolute difference of trait affinities across all comparisons (size medium: mean 0.5, sd 0.29; size large: mean 0.59, sd 0.32). % A reason for this is also that body size was coded binary.
-For the taxa compared from the North American dataset, the highest possible difference in trait affinities occurred most often for the trait body size medium (15.8 \% of all cases with the maximum difference of 1), followed by the traits respiration via plastron and spiracle and respiration via tegument (both 13 \% of all cases with a maximum difference of 1). Respiration via plastron and spiracle showed the highest mean and standard deviation of the absolute difference of trait affinities across all comparisons (mean 0.71, sd 0.33), followed by respiration via tegument (mean 0.5, sd 0.34) and body size medium (mean 0.49, sd 0.3). % So these traits might be highly variable, confirming the earlier mentioned studies partially.
+\textit{\color{blue} Could mention here: \begin{itemize}
+  \item Intra-species variation of some traits (voltinism varies along climatic gradients)
+  \item Obtaining trait information on species-level is challenging
+\end{itemize}}
 
-% Conclude:
-% The uncertainty of trait information should be taken into account when aggregating traits is necessary and appropriate measures to capture this uncertainty should be established. 
-% Fuzzy coding is one option to express uncertainty but is not only used for variabality in traits within taxononomic groups above species-level. Also, for variation in traits during development of an organism,
-% ? 
-% ? Other measures possible, e.g. report SD 
+Our analysis showed that disagreement between aggregated and assigned traits was largest for body size and respiration traits. The highest possible difference of 1 between aggregated trait affinities and assigned trait affinities (in total in 6.9 \% of all cases) for the Australian dataset occurred most often for body size large and medium (42.5 \% and 39.2 \% of all cases with a difference of 1, respectively) across all comparisons of aggregated and assigned traits. Both traits had also the highest mean and standard deviation in the absolute difference of trait affinities across all comparisons (size medium: mean 0.5, sd 0.29; size large: mean 0.59, sd 0.32). A reason for the large differences we obtained is also that body size was coded binary. For the taxa compared from the North American dataset, the highest possible difference in trait affinities occurred most often for the trait body size medium (15.8 \% of all cases with the maximum difference of 1), followed by the traits respiration via plastron and spiracle and respiration via tegument (both 13 \% of all cases with a maximum difference of 1). Respiration via plastron and spiracle showed the highest mean and standard deviation of the absolute difference of trait affinities across all comparisons (mean 0.71, sd 0.33), followed by respiration via tegument (mean 0.5, sd 0.34) and body size medium (mean 0.49, sd 0.3). 
 
-% Include?:
-% Which traits are more consistent
-% How have the aggregation and assignments performed when looking back at the original data?
-% What do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? Where does the classification come from?
-%   - Where does the classification come from?
-%     Few sources used in NOA also used in AUS:
-%     AUS: Merrit & Cummins 1978/1984 for feeding mode for a few genera and families 
-%     NOA: Merritt, Richard W., Cummins, Berg 2008 -> but not clear if for feeding mode as well; according to trait description "Cummins, K. W. Trophic Relations of Aquatic Insects" was used for feeding mode
-%   - Could not include all data due to data gaps -> much needed to be filled -> would maybe change the picture?
-% Are the differences between continents because of evolution or only because scientists have done more research in one of the continents?
+\textit{\color{blue} This paragraph misses a connection to the paragraph above, e.g.: 
+\begin{itemize}
+  \item These traits might be highly variable, confirming the earlier mentioned studies partially.
+\end{itemize}}
+
+
+\textit{\color{blue} Ideas for concluding this section:
+\begin{itemize}
+  \item The uncertainty of trait information should be taken into account when aggregating traits and appropriate measures to capture this uncertainty should be established.
+  \item Fuzzy coding is one option to express uncertainty, but it's not only used for variability in traits within taxononomic groups above species-level. It's also used for variation in traits during the development of an organism. So it's not really clear for fuzzy coded taxa on family-level what uncertainty is expressed?
+  \item Are other measures of uncertainty thinkable, e.g. based on SD or Variance 
+\end{itemize}
+}
+
+
+\textit{\color{blue} Further ideas what could be included: 
+\begin{itemize}
+  \item Which traits are more consistent
+  \item How have the aggregation and assignments performed when looking back at the original data?
+  \item hat do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? Where does the classification come from?
+  \item Where does the classification come from?
+  \begin{itemize}
+    \item  Where does the classification come from? Few sources used in NOA also used in AUS:
+    \item AUS: Merrit \& Cummins 1978/1984 for feeding mode for a few genera and families 
+    \item     NOA: Merritt, Richard W., Cummins, Berg 2008 -> but not clear if for feeding mode as well; according to trait description "Cummins, K. W. Trophic Relations of Aquatic Insects" was used for feeding mode
+  \end{itemize}
+  \item Could not include all data due to data gaps. Would the picture change if these would be filled?
+  \item Are the differences between continents because of evolution or only because scientists have done more research in one of the continents? (from Co-authors)
+\end{itemize}
+}
 
 \subsection*{Re-analysis of Szöcs et al. using harmonized and aggregated grouping features}
 
 The re-analysis showed that neither using harmonised grouping features nor aggregated traits changed drastically the results of the original study. The traits that did not respond t<o the salinity gradient (i.e. not on the extremes of the conductivity axis) in the re-analysis were those closest to the criterion that defined when a trait was associated with either high or low salinity (mahalanobis distance greater than the 97.5 \% quantile of the Chi-square distribution, see methods), namely feeding mode shredder, respiration gills, and life cycle duration traits. During harmonisation the trait shredder has been amalgamated based on three traits (Miner, xylophagus, and shredder). As a result, the trait affinities in the original dataset have a higher mean and standard deviation than in the aggregated and harmonized datasets (Table S\ref{tab:SI_resp_traits_summary_stats}). Hence, the signal in the original data for the trait shredder has presumably been weakened by the harmonization, which might be the reason that shredders showed a less strong reaction to the salinity gradient. 
 
-% Situation with Resp gil complicated: 
-% - Original data has a lot of zeros, which are not anymore present in the harmonized & aggregated datasets (see Table S2)
-% - In the analysis with the harmonized dataset resp_gil is not responding to the salinity gradient 
-% - Aggregated data look similar to the harmonized ones, but resp_gil is here one of the traits 
-% responding to conductivity!  
-
-% Why did some aggregated datasets promote life cycle duration traits and others not?
-% - Results using trait data obtained when aggregating with stepwise_agg (median) and stepwise_agg (mean) indicate that life cycle duration traits are not characterising upstream or downstream sites. 
-% Results using trait data obtained with the other aggregation methods indicate that life cycle duration traits characterise upstream or downstream sites.
-% However: Mean, median and SD of these traits are all relatively similar across all aggregated datasets.
-
-% Extrapolate to "large" scale studies, i.e. studies with a stronger gradient?
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion
-
+\textit{\color{blue}
+\begin{itemize}
+  \item Resp gills: Original data has a lot of zeros, which are not present in the harmonized \& aggregated datasets (see Table S2)
+  \begin{itemize}
+    \item In the analysis with the harmonized dataset resp gills is not responding to the salinity gradient
+    \item Aggregated data look similar to the harmonized ones, but resp gills is here one of the traits 
+    responding to conductivity!
+  \end{itemize} 
+  \item Why did some aggregated datasets promote life cycle duration traits and others not
+  \begin{itemize}
+    \item Results using trait data obtained when aggregating with stepwise\_agg (median) and stepwise\_agg (mean) indicate that life cycle duration traits are not characterising upstream or downstream sites.
+    \item Results using trait data obtained with the other aggregation methods indicate that life cycle duration traits characterise upstream or downstream sites
+    \item However: Mean, median and SD of these traits are all relatively similar across all aggregated datasets (see Table S2). 
+  \end{itemize}
+  \item Extrapolate to "large" scale studies, i.e. studies with a stronger gradient?
+  \item Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion 
+\end{itemize}
+}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
