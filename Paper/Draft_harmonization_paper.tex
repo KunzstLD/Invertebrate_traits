@@ -142,7 +142,7 @@ Aggregated trait affinities of the five trait aggregation methods (\textit{direc
 For the North American dataset, we compared aggregated trait affinities with assigned trait affinities on family-level for the grouping features feeding mode, respiration, size, voltinism, and locomotion. The assigned trait affinities at family-level are part of the North American database (Twardochleb et al.) \cite{twardochleb_trait_data_2020} and originate from expert knowledge. Trait information was available for 94 families of which all were present in the North American dataset (total number of cases 1598). The traits were on the categorical scale and were converted to binary traits prior to the comparison with aggregated trait affinities.
 
 As mentioned above, trait affinities ranged from 0 to 1. Hence, the maximum difference possible in trait affinities is 1 or -1 (corresponds to 100 \%). For convenience and to improve interpretation, we report absolute trait differences.
-\textit{\color{blue} Comment Ralf: Bei Abbildung 1 - finde ich hier nicht, sollte es "lower than" heißen}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -451,21 +451,43 @@ characterised the downstream sites with the same traits as the original analysis
 
 \section*{Discussion}
 
+% Start general
+% Why do we need trait-based analysis, what's the problem with the state of data coverage
+% Implications of trait definitions chapter
+
+% Keine Überscrhiften kopieren: sollte eher eine generelle Aussage haben
 \subsection*{Differences in trait affinities obtained by trait aggregation methods compared to traits assigned at family-level}
 
-Our results indicated that aggregation of traits by the median compared to aggregating by the mean is often closer to the assigned traits at family level. However, in those cases where differences between trait aggregation methods that use the median and assigned traits occurred, these differences were greater compared to the aggregation methods that used the mean. The different weightings used by the aggregation methods, i.e. aggregating stepwise, direct or weighted, did not seem to have a strong impact, because the distribution of absolute trait affinity differences to assigned traits obtained by the \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}} and \textit{weighted\_agg} were relatively similar in both tested datasets. This also applies to the distributions of absolute trait affinity differences obtained by \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}. Instead, using the mean or the median changed the distribution of differences in trait affinities between aggregated and assigned traits. A possible reason why the use of different weightings for taxa had little impact on trait aggregation is that a considerable portion of taxa used have low numbers of genera or species entries. From the taxa that were compared from the North American trait dataset to the assigned traits at family-level, 13.8 \% were resolved on family-level and 61.7 \% were resolved on genus-level. 52.1 \% had 5 or less genera and 12.8 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). In the Australian dataset 21.4 \% of the compared taxa had trait information resolved on family-level, 39.5 \% resolved on genus level, and 39.1 \% resolved on species-level. 67.73 \% of the taxa contain 5 or less genera and 39.6 \% just contained one genus (Figure \ref{fig:tax_hierarchy_AUS}). The simulation results indicated that the choice of the aggregation method for small numbers of genera per family (5) can be important when one genus has a much larger number of species compared to other genera within a particular family. 
+% Hier erstmal ein Satz allgemeiner Einstieg
+% Z.B.: We analysed the difference between aggregated and traits assigned by experts for two data sets on..
+Our results indicated that aggregation of traits by median compared to aggregating by mean is often closer to the assigned traits at family level. 
+% Those cases...R: schwierig einzuordnen - waren das viele - was sind das für fälle
+However, in those cases where differences between trait aggregation methods that use the median and assigned traits occurred, these differences were greater compared to the aggregation methods that used the mean. The different weightings used by the aggregation methods, i.e. aggregating stepwise, direct or weighted, had a minor impact, 
+% R: Unverständlich - kann auch sein, weil ich die neue Sodom nebenbei höre - aber soll das erklären, warum der impact minor war - oder erklärt das noch mal die Ergebnisse
+because the distribution of absolute trait affinity differences to assigned traits obtained by the \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}} and \textit{weighted\_agg} were relatively similar in both tested datasets. This also applies to the distributions of absolute trait affinity differences obtained by \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}.
+% R: Steht das nicht schon im zweiten Satz? True rm!
+% Klarstellen was gemacht wurde 
+Instead, using the mean or the median changed the distribution of differences in trait affinities between aggregated and assigned traits. The minor impact on trait aggregation of the weightings may be explained by the fact that a considerable portion of taxa had low numbers of genera or species entries. % R: Too much precision with the numbers
+From the taxa that were compared from the North American trait dataset to the assigned traits at family-level, 13.8 \% were resolved on family-level and 61.7 \% were resolved on genus-level. 52.1 \% had 5 or less genera and 12.8 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). 
+% R: Das Argument ist schwer greifbar für den Leser - es wäre einfacher zu folgen, wenn Du schreiben würdest, wann man denn mit unterschieden rechnen würde und warum - und dann deine Daten beschreiben. Also wenn es sehr viele Genera und diese mit sehr unterschiedlicher Anzahl an Arten wären usw. . Die Diskussion sollte vor allen Dingen allgemeiner verständniclih sein und nicht technisch die Resultate fortsetzen.
+In the Australian dataset 21.4 \% of the compared taxa had trait information resolved on family-level, 39.5 \% resolved on genus level, and 39.1 \% resolved on species-level. 67.73 \% of the taxa contain 5 or less genera and 39.6 \% just contained one genus (Figure \ref{fig:tax_hierarchy_AUS}). The simulation results indicated that the choice of the aggregation method for small numbers of genera per family (5) can be important when one genus has a much larger number of species compared to other genera within a particular family. 
+
+% R: Allgemein in Trait data sets - ja geht in die Richtung, wobei du ja hier nicht noch analysen für alle möglichen Tiere und traits machen kannst, aber zumindest aufzeigen unter welchen Umständen es bedeutsam ist - und was dann gemacht werden sollte. Der Leser will ja aus der Diskussion etwas mitnehmen, ggf. auch was er tun soll
 \textit{\color{blue} Maybe include: How often does such a taxonomic data occur in the trait datasets?}
 
-\textit{\color{red}Need to improve the wording in the next paragraph} 
-
+% R: OK - hier soll einfach gesagt werden, dass bei 0 1 Codierung die Differenzen auch größer werden. Macht Sinn, kann man so schreiben - sollte aber auch stärker mit dem vorherigen Abschnitt verknüpft werden. The differences between aggregated and assigned traits (kann man das nicht irgendwo kürzer und eleganter beschreiben?) depended on the coding. The database with .. coding had the highest..
 Observed differences between aggregated and assigned traits were higher for the North American trait dataset. This can be explained by the binary coding of the traits in the North American dataset. As a result, traits have been assigned affinities of either 1 or 0.  Therefore, traits of a certain grouping feature have in most cases a higher difference in trait affinities to each other than if they were coded with fuzzy codes.
 
+% R: Man könnte das ggf. auch an den Anfang ziehen. Also einleitend: Warum ist die Frage wichtig, was haben wir überhaupt gemacht - und dann eben erst mal sagen, dass die Analysen zwischen aggregated und assigned traits jetzt nicht die ultimative Wahrheit sind. Gleichwohl unsere Ergebnisse anzeigen können, welche Methoden überhaupt und unter welchen Umständen zu unterschiedlichen Ergebnissen führen, so dass die Leser dort entsprechend vorsichtig sein müssten
 Evaluation of the differences between aggregated and assigned traits is difficult because it remains unclear what the true value of a particular trait for a particular family is. Aggregation of trait information on species or genus-level to a point estimate on family-level suggests a precision which is not necessarily present, especially not for traits with a high variability or if trait information on species-level is missing. Some traits can vary strongly on more precise taxonomic levels than the family-level. For example, Monaghan and Soares found a high intra-family trait dispersion in the Tachet database for traits of the grouping features body size, flow preference, and reproduction \cite{monaghan_improving_2013}. Furthermore, studies focusing on the lability of traits, i.e. how much traits are unconstrained by phylogeny, found that traits of ecological preferences (e.g. thermal preference), body size, resistance forms, and to a lesser extent feeding mode are labile, and thus possibly highly variable \cite{poff_functional_2006, wilkes_traitbased_2020}.
+
+% R: Könnte man beides erwähnen - aber insgesamt würde ich nicht zu viele Sachen reinpacken, sonst mäandert es so sehr. Aber ein Hinweis, dass es bei großskaligen Analysen vielleicht auch wichtiger ist usw. wegen klimatischer Unterschiede - wobei die ja eher dann auch intra-species variieren und das ja gar nicht viel mit dem aktuellen Vergleich der aggregationsmethoden zu tun hat. Im Prinzip gehört das eher in einen einleitenden Abschnitt zu traits allgemeiner
 \textit{\color{blue} Could mention here: \begin{itemize}
   \item Intra-species variation of some traits (voltinism varies along climatic gradients)
   \item Obtaining trait information on species-level is challenging
 \end{itemize}}
 
+% Das liest sich wie einer erweiterte Resultate Sectioin - das ist nicht Sinn der Diskussion. Du sollst da nicht neue Ergebnisse vorstellen sondern dann eher auf eine Abbildung verweisen und in der Regel in 2-3 Sätzen die Ergebnissen in einfachen Sätzen nennen und diskutieren d.h. in Kontext anderer Studien stellen - oder wenn es diese nicht gibt, was auch gesagt werden müsste, dann sagen, was daraus folgt.
 Our analysis showed that disagreement between aggregated and assigned traits was largest for body size and respiration traits. The highest possible difference of 1 between aggregated trait affinities and assigned trait affinities (in total in 6.9 \% of all cases) for the Australian dataset occurred most often for body size large and medium (42.5 \% and 39.2 \% of all cases with a difference of 1, respectively) across all comparisons of aggregated and assigned traits. Both traits had also the highest mean and standard deviation in the absolute difference of trait affinities across all comparisons (size medium: mean 0.5, sd 0.29; size large: mean 0.59, sd 0.32). A reason for the large differences we obtained is also that body size was coded binary. For the taxa compared from the North American dataset, the highest possible difference in trait affinities occurred most often for the trait body size medium (15.8 \% of all cases with the maximum difference of 1), followed by the traits respiration via plastron and spiracle and respiration via tegument (both 13 \% of all cases with a maximum difference of 1). Respiration via plastron and spiracle showed the highest mean and standard deviation of the absolute difference of trait affinities across all comparisons (mean 0.71, sd 0.33), followed by respiration via tegument (mean 0.5, sd 0.34) and body size medium (mean 0.49, sd 0.3). 
 
 \textit{\color{blue} This paragraph misses a connection to the paragraph above, e.g.: 
@@ -473,7 +495,7 @@ Our analysis showed that disagreement between aggregated and assigned traits was
   \item These traits might be highly variable, confirming the earlier mentioned studies partially.
 \end{itemize}}
 
-
+% Stay focused! Schneide nicht zu viele Themen an - Du musst nicht jedes einzelne Thema diskutieren. Generell kann die Diskussion so 3-4 Abschnitte haben, die jeweils die wichtigsten Resultate oder Aspekte diskutieren. Eine generelle Diskussion der Fuzzy Coding und intra-species variation wäre aus meiner Sicht eher ein eigener, wenn auch nicht allzulanger Abschnit
 \textit{\color{blue} Ideas for concluding this section:
 \begin{itemize}
   \item The uncertainty of trait information should be taken into account when aggregating traits and appropriate measures to capture this uncertainty should be established.
@@ -487,6 +509,8 @@ Our analysis showed that disagreement between aggregated and assigned traits was
 \begin{itemize}
   \item Which traits are more consistent
   \item How have the aggregation and assignments performed when looking back at the original data?
+  
+  % eigenes Thema/abschnitt - sicherlich nicht umspannen - wäre eher so am ende auch, was an Forschung noch notwendig ist - quality evaluation of traits als Thema..
   \item hat do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? Where does the classification come from?
   \item Where does the classification come from?
   \begin{itemize}
@@ -494,21 +518,23 @@ Our analysis showed that disagreement between aggregated and assigned traits was
     \item AUS: Merrit \& Cummins 1978/1984 for feeding mode for a few genera and families 
     \item     NOA: Merritt, Richard W., Cummins, Berg 2008 -> but not clear if for feeding mode as well; according to trait description "Cummins, K. W. Trophic Relations of Aquatic Insects" was used for feeding mode
   \end{itemize}
-  \item Could not include all data due to data gaps. Would the picture change if these would be filled?
-  \item Are the differences between continents because of evolution or only because scientists have done more research in one of the continents? (from Co-authors)
 \end{itemize}
 }
 
 \subsection*{Re-analysis of Szöcs et al. using harmonized and aggregated grouping features}
 
-The re-analysis showed that neither using harmonised grouping features nor aggregated traits changed drastically the results of the original study. The traits that did not respond t<o the salinity gradient (i.e. not on the extremes of the conductivity axis) in the re-analysis were those closest to the criterion that defined when a trait was associated with either high or low salinity (mahalanobis distance greater than the 97.5 \% quantile of the Chi-square distribution, see methods), namely feeding mode shredder, respiration gills, and life cycle duration traits. During harmonisation the trait shredder has been amalgamated based on three traits (Miner, xylophagus, and shredder). As a result, the trait affinities in the original dataset have a higher mean and standard deviation than in the aggregated and harmonized datasets (Table S\ref{tab:SI_resp_traits_summary_stats}). Hence, the signal in the original data for the trait shredder has presumably been weakened by the harmonization, which might be the reason that shredders showed a less strong reaction to the salinity gradient. 
+% R: Misses a starting sentence, Why did we conduct this analysis?
+The re-analysis showed that both using harmonised grouping features and aggregated traits lead to similar results as the original study.
+% R: Schwer zu verstehen - versuche positive Sätze nicht negative - also nicht "did not respond" eher "without response" or eben wirklcih positiv "traits that responded only in the original analysis but were non-responsive in the reanalysis
+The traits that did not respond to the salinity gradient (i.e. not on the extremes of the conductivity axis) in the re-analysis were those closest to the criterion that defined when a trait was associated with either high or low salinity (mahalanobis distance greater than the 97.5 \% quantile of the Chi-square distribution, see methods), namely feeding mode shredder, respiration gills, and life cycle duration traits. During harmonisation the trait shredder has been amalgamated based on three traits (Miner, xylophagus, and shredder). As a result, the trait affinities in the original dataset have a higher mean and standard deviation than in the aggregated and harmonized datasets (Table S\ref{tab:SI_resp_traits_summary_stats}). Hence, the signal in the original data for the trait shredder has presumably been weakened by the harmonization, which might be the reason that shredders showed a less strong reaction to the salinity gradient. 
 
+% Keep it simple!
 \textit{\color{blue}
 \begin{itemize}
   \item Resp gills: Original data has a lot of zeros, which are not present in the harmonized \& aggregated datasets (see Table S2)
   \begin{itemize}
     \item In the analysis with the harmonized dataset resp gills is not responding to the salinity gradient
-    \item Aggregated data look similar to the harmonized ones, but resp gills is here one of the traits 
+    \item Aggregated data look similar to the harmonized ones, but resp gills is here one of the traits
     responding to conductivity!
   \end{itemize} 
   \item Why did some aggregated datasets promote life cycle duration traits and others not
@@ -518,9 +544,19 @@ The re-analysis showed that neither using harmonised grouping features nor aggre
     \item However: Mean, median and SD of these traits are all relatively similar across all aggregated datasets (see Table S2). 
   \end{itemize}
   \item Extrapolate to "large" scale studies, i.e. studies with a stronger gradient?
+  
+ % R: Ja, müsste aber wenn an den Anfang wo es um generell um Traits geht, siehe auch email. Könnte mir vorstellen 4 Abschnitte zu machen: 1. Trait Database - Unterschiede zwischen Regionen und Trait Genauigkeit - Was kann man machen - Andere Studien zur Trait Harmonisierung usw. 2. + 3. die aktuellen Abschnitte (obwohl sie auch etwas ähnliche Themen beinhalten - geht ja immer um was ähnliches - wie gut sind die Aggregationsmethoden - könnte man vielleicht auch zusammenfassen 4. Ausblick und offene Fragen für zukünftige Studien
+  
   \item Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion 
 \end{itemize}
 }
+
+% 1. Allgemeiner Satz zum Thema, der auf eine offene Frage o.ä. hinweist
+% 2. Was haben wir herausgefunden?
+% 3. Was haben andere schon herausgefunden
+% 4. Was bedeutet das für zukünftige Studien?
+
+
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
