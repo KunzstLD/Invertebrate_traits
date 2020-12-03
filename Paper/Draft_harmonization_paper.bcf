@@ -1952,7 +1952,7 @@
     <bcf:citekey order="16">brown_functional_2018</bcf:citekey>
     <bcf:citekey order="17">schneider_towards_2019</bcf:citekey>
     <bcf:citekey order="18">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="18">schneider_towards_2019</bcf:citekey>
+    <bcf:citekey order="18">kissling_towards_2018</bcf:citekey>
     <bcf:citekey order="19">culp_incorporating_2011</bcf:citekey>
     <bcf:citekey order="20">brown_functional_2018</bcf:citekey>
     <bcf:citekey order="21">szocs_effects_2014</bcf:citekey>
@@ -1989,9 +1989,12 @@
     <bcf:citekey order="48">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="49">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="50">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="51">monaghan_improving_2013</bcf:citekey>
-    <bcf:citekey order="52">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="52">wilkes_traitbased_2020</bcf:citekey>
+    <bcf:citekey order="51">garnier_towards_2017</bcf:citekey>
+    <bcf:citekey order="52">baird_toward_2011</bcf:citekey>
+    <bcf:citekey order="53">schneider_towards_2019</bcf:citekey>
+    <bcf:citekey order="54">monaghan_improving_2013</bcf:citekey>
+    <bcf:citekey order="55">poff_functional_2006</bcf:citekey>
+    <bcf:citekey order="55">wilkes_traitbased_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

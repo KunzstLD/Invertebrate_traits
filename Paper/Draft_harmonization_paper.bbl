@@ -1440,6 +1440,196 @@
       \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13288
       \endverb
     \endentry
+    \entry{kissling_towards_2018}{article}{}
+      \name{author}{29}{}{%
+        {{hash=bda7271479e24ee343ede94b32108441}{%
+           family={Kissling},
+           familyi={K\bibinitperiod},
+           given={W.\bibnamedelimi Daniel},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=93dc903642bb53f6184333311fdee269}{%
+           family={Walls},
+           familyi={W\bibinitperiod},
+           given={Ramona},
+           giveni={R\bibinitperiod}}}%
+        {{hash=25257737ef33376133a3e80c0f26c641}{%
+           family={Bowser},
+           familyi={B\bibinitperiod},
+           given={Anne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=47b0be960327ec09e32e555e4f0b622f}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Matthew\bibnamedelima O.},
+           giveni={M\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=91470a33f0779997f5b5934a52abc273}{%
+           family={Kattge},
+           familyi={K\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5888b964d9217de57fb070882d9a51d8}{%
+           family={Agosti},
+           familyi={A\bibinitperiod},
+           given={Donat},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c6667c0d6edf08c5d0df569e66bc706e}{%
+           family={Amengual},
+           familyi={A\bibinitperiod},
+           given={Josep},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e5f5fd26a38bb0a587889e83fb49c87a}{%
+           family={Basset},
+           familyi={B\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod}}}%
+        {{hash=dac9016ed7bb33aa1788cf6428bfc14b}{%
+           family={Bodegom},
+           familyi={B\bibinitperiod},
+           given={Peter\bibnamedelima M.},
+           giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=59199cd41f1dcf2209b714a87daff5f9}{%
+           family={Cornelissen},
+           familyi={C\bibinitperiod},
+           given={Johannes\bibnamedelimb H.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=dfd7d544a6183c59c4e6bd1b1e8727b1}{%
+           family={Denny},
+           familyi={D\bibinitperiod},
+           given={Ellen\bibnamedelima G.},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b790894e18b4bb5918d2a67d0404c4a3}{%
+           family={Deudero},
+           familyi={D\bibinitperiod},
+           given={Salud},
+           giveni={S\bibinitperiod}}}%
+        {{hash=82b8a7f0b53a38ef6648d387c73bdbda}{%
+           family={Egloff},
+           familyi={E\bibinitperiod},
+           given={Willi},
+           giveni={W\bibinitperiod}}}%
+        {{hash=5c76fbd1739a87c56cdb74cb875e933f}{%
+           family={Elmendorf},
+           familyi={E\bibinitperiod},
+           given={Sarah\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=b6d71b89305a6ab71c7febdfdc8c909c}{%
+           family={Alonso\bibnamedelima García},
+           familyi={A\bibinitperiod\bibinitdelim G\bibinitperiod},
+           given={Enrique},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e22d267b38ea405ff8762e14209bee95}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Katherine\bibnamedelima D.},
+           giveni={K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=194aa372e4b48b8c40cd1af9da4c7410}{%
+           family={Jones},
+           familyi={J\bibinitperiod},
+           given={Owen\bibnamedelima R.},
+           giveni={O\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=677db54ef11e52aff5462cb3e4de80a0}{%
+           family={Lavorel},
+           familyi={L\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod}}}%
+        {{hash=abc23215f674459b5b2c710c680f264e}{%
+           family={Lear},
+           familyi={L\bibinitperiod},
+           given={Dan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a8d06a8a30ae67db515b5ec6e0632e9b}{%
+           family={Navarro},
+           familyi={N\bibinitperiod},
+           given={Laetitia\bibnamedelima M.},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=7fa99d295b73144b614f33a1e199bb18}{%
+           family={Pawar},
+           familyi={P\bibinitperiod},
+           given={Samraat},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a7c130d59ca31bc44b7b97b5a41f8c13}{%
+           family={Pirzl},
+           familyi={P\bibinitperiod},
+           given={Rebecca},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8b2a937c8166e066826d307b90e1bdcf}{%
+           family={Rüger},
+           familyi={R\bibinitperiod},
+           given={Nadja},
+           giveni={N\bibinitperiod}}}%
+        {{hash=6c0b337163cf1e2fb7ddc103e2513831}{%
+           family={Sal},
+           familyi={S\bibinitperiod},
+           given={Sofia},
+           giveni={S\bibinitperiod}}}%
+        {{hash=6ce107c6ec6dcf41fcf33571e10d5547}{%
+           family={Salguero-Gómez},
+           familyi={S\bibinithyphendelim G\bibinitperiod},
+           given={Roberto},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f4000e801ee2175ff03f51ff1f035888}{%
+           family={Schigel},
+           familyi={S\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2618807fed3448b5e9eb92b3c5e65644}{%
+           family={Schulz},
+           familyi={S\bibinitperiod},
+           given={Katja-Sabine},
+           giveni={K\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=909cb3d88a1757abf18dd983ddbdc7a0}{%
+           family={Skidmore},
+           familyi={S\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c5c7d974be97bd625c4c12b795d7c991}{%
+           family={Guralnick},
+           familyi={G\bibinitperiod},
+           given={Robert\bibnamedelima P.},
+           giveni={R\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \strng{fullhash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \strng{bibnamehash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \strng{authorbibnamehash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \strng{authornamehash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \strng{authorfullhash}{9b9ce80ace0d8d648a8407fd47a74a4b}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Essential Biodiversity Variables ({EBVs}) allow observation and reporting of global biodiversity change, but a detailed framework for the empirical derivation of specific {EBVs} has yet to be developed. Here, we re-examine and refine the previous candidate set of species traits {EBVs} and show how traits related to phenology, morphology, reproduction, physiology and movement can contribute to {EBV} operationalization. The selected {EBVs} express intra-specific trait variation and allow monitoring of how organisms respond to global change. We evaluate the societal relevance of species traits {EBVs} for policy targets and demonstrate how open, interoperable and machine-readable trait data enable the building of {EBV} data products. We outline collection methods, meta(data) standardization, reproducible workflows, semantic tools and licence requirements for producing species traits {EBVs}. An operationalization is critical for assessing progress towards biodiversity conservation and sustainable development goals and has wide implications for data-intensive science in ecology, biogeography, conservation and Earth observation.}
+      \field{issn}{2397-334X}
+      \field{journaltitle}{Nature Ecology \& Evolution}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{note}{Number: 10 Publisher: Nature Publishing Group}
+      \field{number}{10}
+      \field{title}{Towards global data products of Essential Biodiversity Variables on species traits}
+      \field{urlday}{30}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{volume}{2}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1531\bibrangedash 1540}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1038/s41559-018-0667-3
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunzst/Zotero/storage/TWP2EK7J/Kissling et al. - 2018 - Towards global data products of Essential Biodiver.pdf:application/pdf;Snapshot:/home/kunzst/Zotero/storage/PYFVQV2W/s41559-018-0667-3.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.nature.com/articles/s41559-018-0667-3
+      \endverb
+      \verb{url}
+      \verb https://www.nature.com/articles/s41559-018-0667-3
+      \endverb
+    \endentry
     \entry{culp_incorporating_2011}{article}{}
       \name{author}{8}{}{%
         {{hash=365b3bb8b6133f87b30f1faf36588d52}{%
@@ -1962,6 +2152,190 @@
       \verb http://www.sciencedirect.com/science/article/pii/S0075951110000381
       \endverb
       \keyw{Chloride,Macrobenthos,Magnesia,Potash,River Werra,Salinity,Salt tolerances}
+    \endentry
+    \entry{garnier_towards_2017}{article}{}
+      \name{author}{28}{}{%
+        {{hash=adce00945e25fd9866396dce1da9fb57}{%
+           family={Garnier},
+           familyi={G\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4788c9d1d913199e2d67d79784712ae4}{%
+           family={Stahl},
+           familyi={S\bibinitperiod},
+           given={Ulrike},
+           giveni={U\bibinitperiod}}}%
+        {{hash=b357f6261952c62f0482a862fe939015}{%
+           family={Laporte},
+           familyi={L\bibinitperiod},
+           given={Marie-Angélique},
+           giveni={M\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=91470a33f0779997f5b5934a52abc273}{%
+           family={Kattge},
+           familyi={K\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=236d0b8baba892b7c9396fd4974f9c81}{%
+           family={Mougenot},
+           familyi={M\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+        {{hash=aebb086f1c370a4598dce013898b6ae7}{%
+           family={Kühn},
+           familyi={K\bibinitperiod},
+           given={Ingolf},
+           giveni={I\bibinitperiod}}}%
+        {{hash=03cef30d051ee8b1364ff48b7b8ec367}{%
+           family={Laporte},
+           familyi={L\bibinitperiod},
+           given={Baptiste},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8a7103d5a41648f5557b6db752e411f2}{%
+           family={Amiaud},
+           familyi={A\bibinitperiod},
+           given={Bernard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=c300d95c0ebbcdda85139cdee1712244}{%
+           family={Ahrestani},
+           familyi={A\bibinitperiod},
+           given={Farshid\bibnamedelima S.},
+           giveni={F\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=238a8f7fc16402f342d501bd6901e52f}{%
+           family={Bönisch},
+           familyi={B\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+        {{hash=a63d2b49f7a01be74bfac3d54ad68625}{%
+           family={Bunker},
+           familyi={B\bibinitperiod},
+           given={Daniel\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=35f27578a7fc94a2e0529e7037d6cc63}{%
+           family={Cornelissen},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi Hans\bibnamedelima C.},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=ed6eaa17f8dd2a43bb7cf4de6de23fed}{%
+           family={Díaz},
+           familyi={D\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod}}}%
+        {{hash=65212fc1a7ff452a91bb0b51c2e24b74}{%
+           family={Enquist},
+           familyi={E\bibinitperiod},
+           given={Brian\bibnamedelima J.},
+           giveni={B\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=1e73f3d7b72d62e3700eab189c45f437}{%
+           family={Gachet},
+           familyi={G\bibinitperiod},
+           given={Sophie},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d49f21fe2270a3d4187db99287ebded7}{%
+           family={Jaureguiberry},
+           familyi={J\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2f0415ad471857b18c349382d54e052b}{%
+           family={Kleyer},
+           familyi={K\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=677db54ef11e52aff5462cb3e4de80a0}{%
+           family={Lavorel},
+           familyi={L\bibinitperiod},
+           given={Sandra},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a86f17bdc9a8b65d441316875027d9c7}{%
+           family={Maicher},
+           familyi={M\bibinitperiod},
+           given={Lutz},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f09b0f2d757f23afc317c32452ab72c2}{%
+           family={Pérez‐Harguindeguy},
+           familyi={P\bibinitperiod},
+           given={Natalia},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ff7af752d0c98c463b93503dbb18ab47}{%
+           family={Poorter},
+           familyi={P\bibinitperiod},
+           given={Hendrik},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9174a02a6d67f73c5432c35d36822d0a}{%
+           family={Schildhauer},
+           familyi={S\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fe8693ba623b1a6061f0ed7dcab4e401}{%
+           family={Shipley},
+           familyi={S\bibinitperiod},
+           given={Bill},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8f524674b7870bae7bfbc772ee46b984}{%
+           family={Violle},
+           familyi={V\bibinitperiod},
+           given={Cyrille},
+           giveni={C\bibinitperiod}}}%
+        {{hash=24f69aaedcc707fc26053036a6cd2b9c}{%
+           family={Weiher},
+           familyi={W\bibinitperiod},
+           given={Evan},
+           giveni={E\bibinitperiod}}}%
+        {{hash=de49409fce552eab07851fb3b451cee4}{%
+           family={Wirth},
+           familyi={W\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=774dc39f88a59406788266a8f4f1fa41}{%
+           family={Wright},
+           familyi={W\bibinitperiod},
+           given={Ian\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=d3ed8af15fa4066e5939c4ecc47fcae8}{%
+           family={Klotz},
+           familyi={K\bibinitperiod},
+           given={Stefan},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \strng{fullhash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \strng{bibnamehash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \strng{authorbibnamehash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \strng{authornamehash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \strng{authorfullhash}{81867900e5e05fe50d32f8dce81bf1f7}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Ecological research produces a tremendous amount of data, but the diversity in scales and topics covered and the ways in which studies are carried out result in large numbers of small, idiosyncratic data sets using heterogeneous terminologies. Such heterogeneity can be attributed, in part, to a lack of standards for acquiring, organizing and describing data. Here, we propose a terminological resource, a Thesaurus Of Plant characteristics ({TOP}), whose aim is to harmonize and formalize concepts for plant characteristics widely used in ecology. {TOP} concentrates on two types of plant characteristics: traits and environmental associations. It builds on previous initiatives for several aspects: (i) characteristics are designed following the entity-quality ({EQ}) model (a characteristic is modelled as the ‘Quality’ {<}Q{>} of an ‘Entity’ {<}E{>}) used in the context of Open Biological Ontologies; (ii) whenever possible, the Entities and Qualities are taken from existing terminology standards, mainly the Plant Ontology ({PO}) and Phenotypic Quality Ontology ({PATO}) ontologies; and (iii) whenever a characteristic already has a definition, if appropriate, it is reused and referenced. The development of {TOP}, which complies with semantic web principles, was carried out through the involvement of experts from both the ecology and the semantics research communities. Regular updates of {TOP} are planned, based on community feedback and involvement. {TOP} provides names, definitions, units, synonyms and related terms for about 850 plant characteristics. {TOP} is available online (www.top-thesaurus.org), and can be browsed using an alphabetical list of characteristics, a hierarchical tree of characteristics, a faceted and a free-text search, and through an Application Programming Interface. Synthesis. Harmonizing definitions of concepts, as proposed by {TOP}, forms the basis for better integration of data across heterogeneous data sets and terminologies, thereby increasing the potential for data reuse. It also allows enhanced scientific synthesis. {TOP} therefore has the potential to improve research and communication not only within the field of ecology, but also in related fields with interest in plant functioning and distribution.}
+      \field{issn}{1365-2745}
+      \field{journaltitle}{Journal of Ecology}
+      \field{langid}{english}
+      \field{note}{\_eprint: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-2745.12698}
+      \field{number}{2}
+      \field{shorttitle}{Towards a thesaurus of plant characteristics}
+      \field{title}{Towards a thesaurus of plant characteristics: an ecological contribution}
+      \field{urlday}{30}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{volume}{105}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{298\bibrangedash 309}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1111/1365-2745.12698
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunzst/Zotero/storage/W9WKVCZU/Garnier et al. - 2017 - Towards a thesaurus of plant characteristics an e.pdf:application/pdf;Snapshot:/home/kunzst/Zotero/storage/W59DTC9X/1365-2745.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2745.12698
+      \endverb
+      \verb{url}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2745.12698
+      \endverb
+      \keyw{ecology,biodiversity,controlled vocabulary,informatics,ontology,plant characteristics,plant environmental association,plant trait,semantics,thesaurus}
     \endentry
     \entry{monaghan_improving_2013}{article}{}
       \name{author}{2}{}{%
