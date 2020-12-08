@@ -1989,12 +1989,19 @@
     <bcf:citekey order="48">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="49">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="50">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="51">garnier_towards_2017</bcf:citekey>
-    <bcf:citekey order="52">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="53">schneider_towards_2019</bcf:citekey>
-    <bcf:citekey order="54">monaghan_improving_2013</bcf:citekey>
-    <bcf:citekey order="55">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="55">wilkes_traitbased_2020</bcf:citekey>
+    <bcf:citekey order="51">baird_toward_2011</bcf:citekey>
+    <bcf:citekey order="51">brink_traits-based_2011</bcf:citekey>
+    <bcf:citekey order="52">garnier_towards_2017</bcf:citekey>
+    <bcf:citekey order="53">baird_toward_2011</bcf:citekey>
+    <bcf:citekey order="54">schneider_towards_2019</bcf:citekey>
+    <bcf:citekey order="55">serra_synthesising_2016</bcf:citekey>
+    <bcf:citekey order="56">marshall_taxonomic_2006</bcf:citekey>
+    <bcf:citekey order="56">resh_which_2008</bcf:citekey>
+    <bcf:citekey order="57">beketov_spear_2009</bcf:citekey>
+    <bcf:citekey order="58">monaghan_improving_2013</bcf:citekey>
+    <bcf:citekey order="59">poff_functional_2006</bcf:citekey>
+    <bcf:citekey order="59">wilkes_traitbased_2020</bcf:citekey>
+    <bcf:citekey order="60">beketov_spear_2009</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
