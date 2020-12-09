@@ -13,7 +13,7 @@
 
 \tikzset{
 	font = {\sffamily},
-	intstepsnode/.style = {rectangle, draw = black, fill = gray!50, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
+  intstepsnode/.style = {rectangle, draw = black, fill = gray!50, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
   aggrtypesnode/.style = {rectangle, draw = black, fill = blue!25, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
   aggrstepsnode/.style = {rectangle, draw = black, fill = purple!40, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
   mainnode/.style = {rectangle, draw = black, fill = orange!50, minimum width = 4cm, minimum height = 1.5cm, text centered, rounded corners, very thick},
@@ -26,18 +26,18 @@
       %% Nodes
       \node(duplTaxa)[intstepsnode, align = center] at (-5cm,0cm){Consolidating duplicate \\ taxa in  EU, NOA, AUS \& \\ NZ DBs};
       \node(normalAUS)[intstepsnode, align = center, xshift = 0cm, yshift = 0cm]{AUS traits standardized to [0-1] \\ because multiple codings used \\ throughout this database};
-      \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Omitted taxa lower \\ family-level};
+      \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Taxa more precise than \\ family-level};
 
       \node (frameProcessing) [frame, fit = (duplTaxa) (normalAUS) (omission) ] {};
       \node (frameText) [above, black, inner sep = 2mm] at (frameProcessing.north){Data preprocessing};
 
-      \node(harmonization)[mainnode, align = center, xshift = -5cm, yshift = -2.5cm]{Harmonization};
+      \node(harmonisation)[mainnode, align = center, xshift = -5cm, yshift = -2.5cm]{Harmonisation};
 
       \node(conversionPerc)[intstepsnode, align = center, xshift = 0cm, yshift = -2.5cm]{Traits converted to percentages \\ and normalized to [0-1]};
 
       \node(traitAgg)[mainnode, align = center, xshift = 5cm, yshift = -2.5cm]{Trait aggregation};
 
-      \node(frameHarmAggr) [frame, fit = (harmonization) (traitAgg)] {};
+      \node(frameHarmAggr) [frame, fit = (harmonisation) (traitAgg)] {};
 
 
 
@@ -98,7 +98,7 @@
       %%lines
       \draw[->] (duplTaxa.east) -- (normalAUS.west);
       \draw[->] (normalAUS.east) -- (omission.west);
-      \draw[->] (harmonization.east) -- (conversionPerc.west);
+      \draw[->] (harmonisation.east) -- (conversionPerc.west);
       \draw[->] (conversionPerc.east) -- (traitAgg.west);
       \draw[arrow1] (traitAgg.south) -- (frameExample.north);
       \draw[->] (directAgg.south) -- (tab_direct_agg.north);
