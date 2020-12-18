@@ -315,12 +315,13 @@ INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png
+INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_combined.pdf
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_combined.pdf
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_combined.pdf
+INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_comb_ALT.pdf
+INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_comb_ALT.pdf
+INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_comb_ALT.pdf
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmcsc10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex
@@ -328,7 +329,6 @@ INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy9.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Comparison_trait_agg_methods.png
@@ -343,10 +343,10 @@ INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_h
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rmsc.enc
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb

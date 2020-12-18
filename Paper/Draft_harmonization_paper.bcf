@@ -2002,6 +2002,8 @@
     <bcf:citekey order="59">poff_functional_2006</bcf:citekey>
     <bcf:citekey order="59">wilkes_traitbased_2020</bcf:citekey>
     <bcf:citekey order="60">beketov_spear_2009</bcf:citekey>
+    <bcf:citekey order="61">milosevic_application_2020</bcf:citekey>
+    <bcf:citekey order="61">hoye_deep_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

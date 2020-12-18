@@ -2838,6 +2838,184 @@
       \verb https://onlinelibrary.wiley.com/doi/10.1111/gcb.15344
       \endverb
     \endentry
+    \entry{milosevic_application_2020}{article}{}
+      \name{author}{9}{}{%
+        {{hash=bcbeea3b74c141ff8593e60f265ea8cd}{%
+           family={Milošević},
+           familyi={M\bibinitperiod},
+           given={Djuradj},
+           giveni={D\bibinitperiod}}}%
+        {{hash=bd0308c01e7f3379314f5c1c55088f1f}{%
+           family={Milosavljević},
+           familyi={M\bibinitperiod},
+           given={Aleksandar},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5afda100ee3165e0f378552aaf09601a}{%
+           family={Predić},
+           familyi={P\bibinitperiod},
+           given={Bratislav},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e05ea7e7ce7df12868786a120497db3a}{%
+           family={Medeiros},
+           familyi={M\bibinitperiod},
+           given={Andrew\bibnamedelima S.},
+           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=569d0decd1ed6972e4969240f693ba31}{%
+           family={Savić-Zdravković},
+           familyi={S\bibinithyphendelim Z\bibinitperiod},
+           given={Dimitrija},
+           giveni={D\bibinitperiod}}}%
+        {{hash=00bede71cd7e8ace4a36d46f5c5115ec}{%
+           family={Stojković\bibnamedelima Piperac},
+           familyi={S\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Milica},
+           giveni={M\bibinitperiod}}}%
+        {{hash=48f7fafe89ff4389991cc35427a6899f}{%
+           family={Kostić},
+           familyi={K\bibinitperiod},
+           given={Tijana},
+           giveni={T\bibinitperiod}}}%
+        {{hash=28caf853be904cc4470852316e2543c1}{%
+           family={Spasić},
+           familyi={S\bibinitperiod},
+           given={Filip},
+           giveni={F\bibinitperiod}}}%
+        {{hash=b8603e4ad60912841e4b8d3f2450d813}{%
+           family={Leese},
+           familyi={L\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{657937a524062e2f1c15ca7e31264758}
+      \strng{fullhash}{657937a524062e2f1c15ca7e31264758}
+      \strng{bibnamehash}{657937a524062e2f1c15ca7e31264758}
+      \strng{authorbibnamehash}{657937a524062e2f1c15ca7e31264758}
+      \strng{authornamehash}{657937a524062e2f1c15ca7e31264758}
+      \strng{authorfullhash}{657937a524062e2f1c15ca7e31264758}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{issn}{00489697}
+      \field{journaltitle}{Science of The Total Environment}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shortjournal}{Science of The Total Environment}
+      \field{shorttitle}{Application of deep learning in aquatic bioassessment}
+      \field{title}{Application of deep learning in aquatic bioassessment: Towards automated identification of non-biting midges}
+      \field{urlday}{7}
+      \field{urlmonth}{12}
+      \field{urlyear}{2020}
+      \field{volume}{711}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{135160}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.scitotenv.2019.135160
+      \endverb
+      \verb{file}
+      \verb Milošević et al. - 2020 - Application of deep learning in aquatic bioassessm.pdf:/home/kunzst/Zotero/storage/N9M3UJPS/Milošević et al. - 2020 - Application of deep learning in aquatic bioassessm.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0048969719351526
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0048969719351526
+      \endverb
+    \endentry
+    \entry{hoye_deep_2020}{article}{}
+      \name{author}{10}{}{%
+        {{hash=2ea5f0b57c579e8d12cb289df83eb1a1}{%
+           family={Høye},
+           familyi={H\bibinitperiod},
+           given={Toke\bibnamedelima T.},
+           giveni={T\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=2eb24728de70f4af21e7d53657e3a97c}{%
+           family={Ärje},
+           familyi={Ä\bibinitperiod},
+           given={Johanna},
+           giveni={J\bibinitperiod}}}%
+        {{hash=8cb6fdd1589da63468231b266d996588}{%
+           family={Bjerge},
+           familyi={B\bibinitperiod},
+           given={Kim},
+           giveni={K\bibinitperiod}}}%
+        {{hash=505354072360e6ed814a572cf11e5564}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Oskar\bibnamedelimb L.\bibnamedelimi P.},
+           giveni={O\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=130817e12d94059f0069863cd24062fc}{%
+           family={Iosifidis},
+           familyi={I\bibinitperiod},
+           given={Alexandros},
+           giveni={A\bibinitperiod}}}%
+        {{hash=b8603e4ad60912841e4b8d3f2450d813}{%
+           family={Leese},
+           familyi={L\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=47d62293a21cbb3c6d748d2965ed38b1}{%
+           family={Mann},
+           familyi={M\bibinitperiod},
+           given={Hjalte\bibnamedelimb M.\bibnamedelimi R.},
+           giveni={H\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=04abc2bdfd68daa4bfa47ff1dfec6c9c}{%
+           family={Meissner},
+           familyi={M\bibinitperiod},
+           given={Kristian},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5f4da5fe20fd21786a236337b3c954e8}{%
+           family={Melvad},
+           familyi={M\bibinitperiod},
+           given={Claus},
+           giveni={C\bibinitperiod}}}%
+        {{hash=e38801ec0eb94be7194a2bedd143269b}{%
+           family={Raitoharju},
+           familyi={R\bibinitperiod},
+           given={Jenni},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \strng{fullhash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \strng{bibnamehash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \strng{authorbibnamehash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \strng{authornamehash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \strng{authorfullhash}{c24e0337152c2dd59e2c598ba15bd5e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{<}h3{>}{ABSTRACT}{<}/h3{>} {<}p{>}Most animal species on Earth are insects, and recent reports suggest that their abundance is in drastic decline. Although these reports come from a wide range of insect taxa and regions, the evidence to assess the extent of the phenomenon is still sparse. Insect populations are challenging to study and most monitoring methods are labour intensive and inefficient. Advances in computer vision and deep learning provide potential new solutions to this global challenge. Cameras and other sensors that can effectively, continuously, and non-invasively perform entomological observations throughout diurnal and seasonal cycles. The physical appearance of specimens can also be captured by automated imaging in the lab. When trained on these data, deep learning models can provide estimates of insect abundance, biomass, and diversity. Further, deep learning models can quantify variation in phenotypic traits, behaviour, and interactions. Here, we connect recent developments in deep learning and computer vision to the urgent demand for more cost-efficient monitoring of insects and other invertebrates. We present examples of sensor-based monitoring of insects. We show how deep learning tools can be applied to the big data outputs to derive ecological information and discuss the challenges that lie ahead for the implementation of such solutions in entomology. We identify four focal areas, which will facilitate this transformation: 1) Validation of image-based taxonomic identification, 2) generation of sufficient training data, 3) development of public, curated reference databases, and 4) solutions to integrate deep learning and molecular tools.{<}/p{>}{<}h3{>}Significance statement{<}/h3{>} {<}p{>}Insect populations are challenging to study, but computer vision and deep learning provide opportunities for continuous and non-invasive monitoring of biodiversity around the clock and over entire seasons. These tools can also facilitate the processing of samples in a laboratory setting. Automated imaging in particular can provide an effective way of identifying and counting specimens to measure abundance. We present examples of sensors and devices of relevance to entomology and show how deep learning tools can convert the big data streams into ecological information. We discuss the challenges that lie ahead and identify four focal areas to make deep learning and computer vision game changers for entomology.{<}/p{>}}
+      \field{day}{4}
+      \field{journaltitle}{{bioRxiv}}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{note}{Publisher: Cold Spring Harbor Laboratory Section: New Results}
+      \field{title}{Deep learning and computer vision will transform entomology}
+      \field{urlday}{17}
+      \field{urlmonth}{12}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2020.07.03.187252}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1101/2020.07.03.187252
+      \endverb
+      \verb{file}
+      \verb Snapshot:/home/kunzst/Zotero/storage/9ADMN2HC/2020.07.03.187252v1.html:text/html;Full Text PDF:/home/kunzst/Zotero/storage/4W8836UW/Høye et al. - 2020 - Deep learning and computer vision will transform e.pdf:application/pdf;Snapshot:/home/kunzst/Zotero/storage/SNPMVJW4/2020.07.03.187252v1.html:text/html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.biorxiv.org/content/10.1101/2020.07.03.187252v1
+      \endverb
+      \verb{url}
+      \verb https://www.biorxiv.org/content/10.1101/2020.07.03.187252v1
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
