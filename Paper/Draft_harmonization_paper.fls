@@ -194,6 +194,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.bbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.bbx
 INPUT /usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
