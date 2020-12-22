@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Results/SI"] 1608544699 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1608544765
-  "Results/SI.bcf" 1608544764 94451 b4e2ea1cf179daad3a583f1e3567aa7e ""
+["biber Results/SI"] 1608635528 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1608635552
+  "Results/SI.bcf" 1608635552 94451 85b24369490231b37d796871139fcbab ""
   (generated)
   "Results/SI.bbl"
   "Results/SI.blg"
-["pdflatex"] 1608544764 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1608544765
+["pdflatex"] 1608635552 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1608635552
   "/etc/texmf/web2c/texmf.cnf" 1602155229 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1608544763 18966 ed6007f8af0b7e1fb20d4d89883d9b70 ""
+  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1608635551 18968 426dd772206790ce0cd825e8fb0d4ada ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -82,6 +82,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty" 1514674017 424118 1402b1a3a696e6f4e49a786cce7813a4 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def" 1514674017 13194 9fbd4a8c96337f2861e1135f26105b22 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def" 1510525977 30073 10669ddd7ddf93c5f51a4cd567da1d0d ""
+  "/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-natbib.def" 1480098822 2220 b5807ac88e42a70e10fc730a8cb1ee93 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/authoryear.cbx" 1510525977 3952 a0c673f7ef44d262fe59ca94649e7476 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/american.lbx" 1480098822 169 40f2892b6b9cee1ffa9c07b78605a5a1 ""
   "/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx" 1514674017 36428 276fde039b559ca03d7fa2a27c765234 ""
@@ -183,16 +184,16 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602496527 4126804 863aa8be25f58a01810c5d5702e28373 ""
   "Figures/taxonomic_hierarchy_AUS.png" 1605524723 252692 873312142d812415d26d554af97d4967 ""
   "Figures/taxonomic_hierarchy_NOA.png" 1605276483 253753 2cd7021a531eb17feffcb338e09da1fe ""
-  "Results/../Draft_harmonization_paper.tex" 1608544510 69963 2139c82d0aae52d78dbf10b51cb12f2b ""
-  "Results/SI.aux" 1608544764 4900 6906e1fd4e24c775916a4f51501cf17b ""
-  "Results/SI.bbl" 1608544699 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/SI"
-  "Results/SI.out" 1608544764 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/SI.run.xml" 1608544764 2393 da6afd762aa01ba155e7ca23d9d7ed2c ""
-  "Results/SI.tex" 1608544763 18966 ed6007f8af0b7e1fb20d4d89883d9b70 ""
+  "Results/../Draft_harmonization_paper.tex" 1608635534 70296 46537a7fd86a0768cebfd2a291dae13b ""
+  "Results/SI.aux" 1608635552 4901 344054294a7da38daefe3edbf1b9ded8 ""
+  "Results/SI.bbl" 1608635529 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/SI"
+  "Results/SI.out" 1608635552 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/SI.run.xml" 1608635552 2427 5c7239c4a0bd9a74cdd3196279f24da0 ""
+  "Results/SI.tex" 1608635551 18968 426dd772206790ce0cd825e8fb0d4ada ""
   (generated)
-  "Results/SI.pdf"
   "Results/SI.aux"
-  "Results/SI.out"
-  "Results/SI.run.xml"
+  "Results/SI.pdf"
   "Results/SI.bcf"
+  "Results/SI.run.xml"
   "Results/SI.log"
+  "Results/SI.out"

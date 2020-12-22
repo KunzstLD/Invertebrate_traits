@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  22 DEC 2020 11:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  22 DEC 2020 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1373,7 +1373,7 @@ Underfull \hbox (badness 1681) in paragraph at lines 557--557
  []
 
 [26] [27] [28] [29] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [30]
-Overfull \hbox (88.95552pt too wide) in alignment at lines 11--14
+Overfull \hbox (94.64598pt too wide) in alignment at lines 11--14
  [] [] [] [] [] [] [] 
  []
 
@@ -1449,13 +1449,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--30
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 29--30
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
 \OT1/lmr/m/n/10 vore in-cludes
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 29--30
-\OT1/lmr/m/n/10 the trait
+\OT1/lmr/m/n/10 among oth-
+ []
+
+
+Underfull \hbox (badness 6961) in paragraph at lines 29--30
+\OT1/lmr/m/n/10 ers the trait
  []
 
 
@@ -1529,7 +1534,12 @@ Underfull \hbox (badness 4686) in paragraph at lines 51--51
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 52--52
+Underfull \hbox (badness 4779) in paragraph at lines 52--52
+[]|\OT1/lmr/m/n/10 No dis-tinc-tion be-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
 \OT1/lmr/m/n/10 tween ac-tive and
  []
 
@@ -1551,41 +1561,6 @@ Underfull \hbox (badness 2073) in paragraph at lines 68--68
 
 Underfull \hbox (badness 2073) in paragraph at lines 69--69
 []|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-[]\OT1/lmr/m/n/10 1-2 gen-er-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
-\OT1/lmr/m/n/10 a-tions per
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
-[]
- []
-
-
-Overfull \hbox (5.47496pt too wide) in paragraph at lines 72--73
-\OT1/lmr/m/n/10 bi/multivoltine 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-\OT1/lmr/m/n/10 er-a-tions per
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-[]\OT1/lmr/m/n/10 up to 10
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
-\OT1/lmr/m/n/10 gen-er-a-tions
  []
 
 
@@ -1659,13 +1634,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 87--88
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
-[]|\OT1/lmr/m/n/10 Distinguishes
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
-\OT1/lmr/m/n/10 swim-mer and
+Underfull \hbox (badness 1715) in paragraph at lines 91--91
+[]|\OT1/lmr/m/n/10 Distinguishes swim-
  []
 
 
@@ -1724,7 +1694,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--101
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 103--103
+Underfull \hbox (badness 2875) in paragraph at lines 103--103
+[]|\OT1/lmr/m/n/10 "Moving deep into
+ []
+
+
+Underfull \hbox (badness 7796) in paragraph at lines 103--103
 \OT1/lmr/m/n/10 the sub-strate and
  []
 
@@ -1774,7 +1749,7 @@ Underfull \hbox (badness 2671) in paragraph at lines 118--118
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 120--121
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 []|\OT1/lmr/m/n/10 Database con-tains
  []
 
@@ -1849,13 +1824,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--128
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 129--129
+Underfull \hbox (badness 10000) in paragraph at lines 129--129
 []|\OT1/lmr/m/n/10 Distinguishes tem-
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 129--129
-\OT1/lmr/m/n/10 porar-ily and per-
  []
 
 
@@ -1914,23 +1884,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--136
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 137--137
+Underfull \hbox (badness 3058) in paragraph at lines 137--137
+\OT1/lmr/m/n/10 cle (termed aerial)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
 \OT1/lmr/m/n/10 oc-cur as sep-a-rate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 and com-bined
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 traits. Con-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 tains also traits:
  []
 
 
@@ -1969,7 +1929,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--159
  []
 
 
-Overfull \hbox (88.95552pt too wide) in alignment at lines 14--167
+Overfull \hbox (94.64598pt too wide) in alignment at lines 14--167
  [] [] [] [] [] [] [] 
  []
 
@@ -2021,13 +1981,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 570.
 Here is how much of TeX's memory you used:
  26232 strings out of 492982
  506469 string characters out of 6134895
- 954253 words of memory out of 5000000
+ 954254 words of memory out of 5000000
  29229 multiletter control sequences out of 15000+600000
  68881 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3663b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3005013 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3005060 bytes).
 PDF statistics:
  540 PDF objects out of 1000 (max. 8388607)
  460 compressed objects within 5 object streams
