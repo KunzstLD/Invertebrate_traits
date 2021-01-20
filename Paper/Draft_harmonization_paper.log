@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  23 DEC 2020 12:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  20 JAN 2021 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1055,7 +1055,6 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 71.
 LaTeX Info: Redefining \pageref on input line 71.
 LaTeX Info: Redefining \nameref on input line 71.
- (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out) (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out)
 \@outlinefile=\write6
 \openout6 = `Draft_harmonization_paper.out'.
 
@@ -1127,12 +1126,12 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `Draft_harmonization_paper.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'Draft_harmonization_paper.bbl' found.
-(/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl)
+Package biblatex Info: ... file 'Draft_harmonization_paper.bbl' not found.
+No file Draft_harmonization_paper.bbl.
 Package biblatex Info: Reference section=0 on input line 71.
 Package biblatex Info: Reference segment=0 on input line 71.
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 73.
- (/usr/share/texmf/tex/latex/lm/omllmm.fd
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 73.
@@ -1152,29 +1151,217 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+LaTeX Warning: Citation 'mcgill_rebuilding_2006' on page 2 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'heino_jani_macroecological_2013' on page 2 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'southwood_habitat_1977' on page 2 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'verberk_delivering_2013' on page 2 undefined on input line 96.
+
+
+LaTeX Warning: Citation 'bonada_taxonomic_2007' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'baird_toward_2011' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'moog_comprehensive_nodate' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'bhowmik_large_2015' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'menezes_beyond_2010' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'poff_developing_2010' on page 2 undefined on input line 97.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 2 undefined on input line 97.
+
+
+Overfull \hbox (31.79903pt too wide) in paragraph at lines 96--98
+\OT1/lmr/m/n/10 goals of ecol-ogy. Species traits, de-fined as mea-sur-able prop-er-ties of an or-gan-ism ([]),
+ []
+
+
+LaTeX Warning: Citation 'usseglio-polatera_biomonitoring_2000' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'schmidt-kloiber_www.freshwaterecology.info_2015' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'vieira_database_nodate' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'Philips_and_Smith_NZ_DB_2018' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'kefford_integrated_2020' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'tomanova_trophic_2006' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'bonada_taxonomic_2007' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'ussegliopolatera_biological_2000' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'poff_developing_2010' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'poff_functional_2006' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'botwe_effects_2018' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'poff_functional_2006' on page 2 undefined on input line 99.
+
+
+LaTeX Warning: Citation 'schafer_trait_2011' on page 2 undefined on input line 99.
+
+
 Overfull \hbox (6.9407pt too wide) in paragraph at lines 99--100
 []\OT1/lmr/m/n/10 In the last decades, fresh-wa-ter ecol-o-gists have com-piled com-pre-hen-sive in-ver-te-brate trait databases
  []
 
-[2] [3]
+
+Overfull \hbox (105.56026pt too wide) in paragraph at lines 99--100
+\OT1/lmr/m/n/10 for var-i-ous con-ti-nents ([]; [];
+ []
+
+
+Overfull \hbox (89.25252pt too wide) in paragraph at lines 99--100
+[]\OT1/lmr/m/n/10 ; []; []; []).
+ []
+
+
+LaTeX Warning: Citation 'schmera_proposed_2015' on page 2 undefined on input line 104.
+
+
+LaTeX Warning: Citation 'brown_functional_2018' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Citation 'schneider_towards_2019' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Citation 'baird_toward_2011' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Citation 'kissling_towards_2018' on page 2 undefined on input line 108.
+
+[2]
+
+LaTeX Warning: Citation 'culp_incorporating_2011' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'brown_functional_2018' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'vos_taxonomic_2017' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'aspin_extreme_2019' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'piliere_a._f._h._importance_2016' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'poff_functional_2006' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'magliozzi_functional_2019' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 3 undefined on input line 112.
+
+
+LaTeX Warning: Citation 'piliere_a._f._h._importance_2016' on page 3 undefined on input line 112.
+
+
+Overfull \hbox (25.70805pt too wide) in paragraph at lines 112--113
+[]\OT1/lmr/m/n/10 ; []; []; []).
+ []
+
+
+Overfull \hbox (10.12413pt too wide) in paragraph at lines 112--113
+\OT1/lmr/m/n/10 Stud-ies have used dif-fer-ent meth-ods of trait ag-gre-ga-tion, e.g. the mean ([]),
+ []
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 3 undefined on input line 114.
+
+[3]
+
+LaTeX Warning: Citation 'schmidt-kloiber_www.freshwaterecology.info_2015' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'ussegliopolatera_biological_2000' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'twardochleb_trait_data_2020' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'vieira_database_nodate' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'polatera_personal_information_2020' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'kefford_integrated_2020' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Citation 'Philips_and_Smith_NZ_DB_2018' on page 4 undefined on input line 123.
+
+
+LaTeX Warning: Reference `tab:traits_harmonisation' on page 4 undefined on input line 125.
+
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 130.
+(Font)              <10> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 130.
+(Font)              <7> on input line 135.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 130.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 134.
- (/usr/share/texmf/tex/latex/lm/omllmr.fd
+(Font)              <5> on input line 135.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 139.
+(/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 134.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 139.
  [4]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 150--156
+
+LaTeX Warning: Citation 'polatera_personal_information_2020' on page 5 undefined on input line 156.
+
+
+LaTeX Warning: Citation 'usseglio-polatera_biomonitoring_2000' on page 5 undefined on input line 158.
+
+
+LaTeX Warning: Citation 'polatera_personal_information_piercer_2020' on page 5 undefined on input line 158.
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 155--161
 []$[]$ 
  []
 
-[5] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+[5]
+
+LaTeX Warning: Reference `fig:data_proc_overview' on page 6 undefined on input line 166.
+
+(/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -1206,128 +1393,215 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 52.
 )
 
-LaTeX Warning: Float too large for page by 19.66885pt on input line 175.
+LaTeX Warning: Float too large for page by 19.66885pt on input line 180.
 
-[6] [7] [8]
-Overfull \hbox (20.0711pt too wide) in paragraph at lines 240--250
+
+LaTeX Warning: Citation 'chessman_dissolved-oxygen_2018' on page 6 undefined on input line 186.
+
+
+LaTeX Warning: Citation 'chessman_dissolved-oxygen_2018' on page 6 undefined on input line 186.
+
+
+LaTeX Warning: Citation 'chessman_dissolved-oxygen_2018' on page 6 undefined on input line 186.
+
+[6] [7]
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 8 undefined on input line 197.
+
+
+LaTeX Warning: Citation 'bathe_biological_2011' on page 8 undefined on input line 199.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 8 undefined on input line 199.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 8 undefined on input line 201.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 8 undefined on input line 201.
+
+[8]
+
+LaTeX Warning: Reference `tab:tax_coverage' on page 9 undefined on input line 215.
+
+
+LaTeX Warning: Reference `tab:trait_coverage' on page 9 undefined on input line 237.
+
+
+Overfull \hbox (13.40462pt too wide) in paragraph at lines 245--255
  [][] 
  []
 
-[9] [10]
-Overfull \hbox (38.14061pt too wide) in alignment at lines 265--267
- [] [] [] [] [] [] [] [] 
- []
+[9]
+
+LaTeX Warning: Citation 'kefford_integrated_2020' on page 10 undefined on input line 263.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--270
+LaTeX Warning: Reference `stab:trait_definitions' on page 10 undefined on input line 265.
+
+
+LaTeX Warning: Reference `tab:trait_databases_coding_differentiation' on page 10 undefined on input line 265.
+
+
+LaTeX Warning: Reference `stab:trait_definitions' on page 10 undefined on input line 265.
+
+
+LaTeX Warning: Reference `tab:trait_databases_coding_differentiation' on page 10 undefined on input line 267.
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 275--275
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Overfull \hbox (2.4277pt too wide) in paragraph at lines 270--270
+Overfull \hbox (2.4277pt too wide) in paragraph at lines 275--275
 []|\OT1/lmr/m/n/10 Reproduction| 
  []
 
 
-Overfull \hbox (6.40367pt too wide) in paragraph at lines 307--307
+Overfull \hbox (6.40367pt too wide) in paragraph at lines 312--312
 []|[]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--347
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
 []|\OT1/lmr/m/n/10 binary;
  []
 
 
-Overfull \hbox (3.05836pt too wide) in paragraph at lines 348--348
+Overfull \hbox (3.05836pt too wide) in paragraph at lines 353--353
 []|[]| 
  []
 
 
-Overfull \hbox (38.14061pt too wide) in alignment at lines 267--368
+Overfull \hbox (38.14061pt too wide) in alignment at lines 272--373
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 368
+Underfull \vbox (badness 10000) detected at line 373
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 369--374
+Package longtable Warning: Column widths have changed
+(longtable)                in table 4 on input line 373.
+
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 374--379
 []$[]$ 
  []
 
 [11
 
 ]
-<Figures/Overview_sim_results.png, id=196, 711.1368pt x 369.7815pt>
+
+LaTeX Warning: Reference `fig:overview_sim_results' on page 12 undefined on input line 387.
+
+
+LaTeX Warning: Reference `fig:sim_indv_runs' on page 12 undefined on input line 394.
+
+<Figures/Overview_sim_results.png, id=92, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results.png Graphic file (type png)
 <use Figures/Overview_sim_results.png>
-Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 389.
+Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 399.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 389--390
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 399--400
  [][] 
  []
 
 [12
 
 ]
-<Figures/Diffs_indiv_runs_sim.png, id=204, 711.1368pt x 483.4863pt>
+<Figures/Diffs_indiv_runs_sim.png, id=98, 711.1368pt x 483.4863pt>
 File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
 <use Figures/Diffs_indiv_runs_sim.png>
-Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 396.
+Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 406.
 (pdftex.def)             Requested size: 469.4711pt x 284.53145pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 396--406
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 406--416
  [][] 
  []
 
 [13 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [14 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
-Overfull \hbox (33.43935pt too wide) in paragraph at lines 424--441
+
+LaTeX Warning: Reference `tab:summary_stat_aggr_vs_fam_assigned' on page 15 undefined on input line 425.
+
+
+LaTeX Warning: Reference `fig:diff_aggr_traits_chessman' on page 15 undefined on input line 425.
+
+
+LaTeX Warning: Reference `fig:diff_aggr_traits_pyne' on page 15 undefined on input line 425.
+
+
+Overfull \hbox (33.43935pt too wide) in paragraph at lines 434--451
  [][] 
  []
 
 [15]
-<Figures/Deviances_trait_agg_chessman.png, id=225, 625.8582pt x 341.3553pt>
+<Figures/Deviances_trait_agg_chessman.png, id=116, 625.8582pt x 341.3553pt>
 File: Figures/Deviances_trait_agg_chessman.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_chessman.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 447.
+Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 457.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 447--448
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 457--458
  [][] 
  []
 
-<Figures/Deviances_trait_agg_pyne.png, id=226, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=117, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 455.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 465.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 455--456
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 465--466
  [][] 
  []
 
 [16 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [17 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]
-<Figures/Species_scores_rda.png, id=241, 625.8582pt x 341.3553pt>
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 18 undefined on input line 476.
+
+
+LaTeX Warning: Reference `fig:violin_plot_species_sc' on page 18 undefined on input line 480.
+
+
+LaTeX Warning: Reference `fig:boxplots_scores_on_constrained_axis' on page 18 undefined on input line 480.
+
+
+LaTeX Warning: Reference `tab:traits_harmonisation' on page 18 undefined on input line 480.
+
+
+LaTeX Warning: Reference `fig:violin_plot_species_sc' on page 18 undefined on input line 482.
+
+
+LaTeX Warning: Reference `fig:boxplots_scores_on_constrained_axis' on page 18 undefined on input line 482.
+
+<Figures/Species_scores_rda.png, id=128, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 475.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 487.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 475--476
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 487--488
  [][] 
  []
 
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 18 undefined on input line 488.
+
+
+LaTeX Warning: Citation 'szocs_effects_2014' on page 18 undefined on input line 488.
+
 [18]
-<Figures/Scores_on_constrained_axis_comb_ALT.pdf, id=251, 448.10245pt x 796.6487pt>
+<Figures/Scores_on_constrained_axis_comb_ALT.pdf, id=134, 448.10245pt x 796.6487pt>
 File: Figures/Scores_on_constrained_axis_comb_ALT.pdf Graphic file (type pdf)
 <use Figures/Scores_on_constrained_axis_comb_ALT.pdf>
-Package pdftex.def Info: Figures/Scores_on_constrained_axis_comb_ALT.pdf  used on input line 490.
+Package pdftex.def Info: Figures/Scores_on_constrained_axis_comb_ALT.pdf  used on input line 502.
 (pdftex.def)             Requested size: 469.4753pt x 711.3369pt.
 
-Overfull \hbox (39.47067pt too wide) in paragraph at lines 490--491
+Overfull \hbox (39.47067pt too wide) in paragraph at lines 502--503
  [][] 
  []
 
@@ -1337,47 +1611,79 @@ Overfull \vbox (154.86034pt too high) has occurred while \output is active []
  [20 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_comb_ALT.pdf>]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 493.
+(caption)                outside box or environment on input line 505.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 493.
+(caption)                particular \caption on input line 505.
 See the caption package documentation for explanation.
 
 [21
 
-] [22] [23] [24] [25]
-Underfull \hbox (badness 1810) in paragraph at lines 557--557
-[][]\OT1/lmr/m/n/10 Brink, P. J. V. d., Alexan-der, A. C., Desrosiers, M., Goed-koop, W., Goethals, P. L.,
- []
+]
+
+LaTeX Warning: Citation 'baird_toward_2011' on page 22 undefined on input line 519.
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 557--557
-\OT1/lmr/m/n/10 Liess, M., & Dyer, S. D. (2011). Traits-based ap-proaches in bioassess-ment and
- []
+LaTeX Warning: Citation 'brink_traits-based_2011' on page 22 undefined on input line 519.
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 557--557
-\OT1/lmr/m/n/10 eco-log-i-cal risk as-sess-ment: Strengths, weak-nesses, op-por-tu-ni-ties and threats. \OT1/lmr/m/it/10 In-
- []
+LaTeX Warning: Citation 'garnier_towards_2017' on page 22 undefined on input line 519.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 557--557
-\OT1/lmr/m/it/10 te-grated En-vi-ron-men-tal As-sess-ment and Man-age-ment\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 7\OT1/lmr/m/n/10 (2), 198{208. []eprint:
- []
+LaTeX Warning: Citation 'baird_toward_2011' on page 22 undefined on input line 519.
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 557--557
-\OT1/lmr/m/n/10 https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.109. doi:[]$https : / / doi . org /
- []
-
-[26] [27] [28] [29] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [30]
-Overfull \hbox (94.64598pt too wide) in alignment at lines 11--14
- [] [] [] [] [] [] [] 
- []
+LaTeX Warning: Citation 'schneider_towards_2019' on page 22 undefined on input line 519.
 
 
+LaTeX Warning: Citation 'serra_synthesising_2016' on page 22 undefined on input line 523.
+
+
+LaTeX Warning: Citation 'marshall_taxonomic_2006' on page 22 undefined on input line 523.
+
+
+LaTeX Warning: Citation 'resh_which_2008' on page 22 undefined on input line 523.
+
+
+LaTeX Warning: Citation 'beketov_spear_2009' on page 22 undefined on input line 523.
+
+
+LaTeX Warning: Citation 'monaghan_improving_2013' on page 22 undefined on input line 529.
+
+
+LaTeX Warning: Citation 'poff_functional_2006' on page 22 undefined on input line 529.
+
+
+LaTeX Warning: Citation 'wilkes_traitbased_2020' on page 22 undefined on input line 529.
+
+[22]
+
+LaTeX Warning: Reference `fig:tax_hierarchy_NOA' on page 23 undefined on input line 531.
+
+
+LaTeX Warning: Reference `fig:tax_hierarchy_AUS' on page 23 undefined on input line 531.
+
+[23]
+
+LaTeX Warning: Reference `tab:SI_resp_traits_summary_stats' on page 24 undefined on input line 535.
+
+
+LaTeX Warning: Citation 'beketov_spear_2009' on page 24 undefined on input line 535.
+
+[24]
+
+LaTeX Warning: Citation 'hoye_deep_2020' on page 25 undefined on input line 549.
+
+
+LaTeX Warning: Citation 'milosevic_application_2020' on page 25 undefined on input line 549.
+
+[25]
+
+LaTeX Warning: Empty bibliography on input line 572.
+
+(/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [26]
 Overfull \hbox (3.55823pt too wide) in paragraph at lines 16--16
 []|[]| 
  []
@@ -1937,13 +2243,17 @@ Overfull \hbox (94.64598pt too wide) in alignment at lines 14--167
 Underfull \vbox (badness 10000) detected at line 167
  []
 
-[31
 
-] [32] [33]
+Package longtable Warning: Column widths have changed
+(longtable)                in table S1 on input line 167.
+
+[27
+
+] [28] [29]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 175.
- [34]
-<Figures/taxonomic_hierarchy_NOA.png, id=425, 625.8582pt x 341.3553pt>
+ [30]
+<Figures/taxonomic_hierarchy_NOA.png, id=215, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 220.
@@ -1953,7 +2263,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 220--221
  [][] 
  []
 
-<Figures/taxonomic_hierarchy_AUS.png, id=426, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_AUS.png, id=216, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 227.
@@ -1963,34 +2273,55 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 227--228
  [][] 
  []
 
-[35
+[31
 
- </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [36 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [37])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 570.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 570.
- (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 570.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 570.
-Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+ </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [32 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [33])
+
+Package longtable Warning: Table widths have changed. Rerun LaTeX.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 586.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 586.
+(/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 586.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 586.
+
+
+Package rerunfilecheck Warning: File `Draft_harmonization_paper.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Draft_harmonization_paper.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Draft_harmonization_paper
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 570.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 586.
  ) 
 Here is how much of TeX's memory you used:
- 26232 strings out of 492982
- 506469 string characters out of 6134895
- 954348 words of memory out of 5000000
- 29229 multiletter control sequences out of 15000+600000
- 68881 words of font info for 48 fonts, out of 8000000 for 9000
+ 25824 strings out of 492982
+ 494416 string characters out of 6134895
+ 941611 words of memory out of 5000000
+ 28875 multiletter control sequences out of 15000+600000
+ 71824 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,22n,61p,3663b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3006259 bytes).
+ 55i,22n,61p,3611b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (33 pages, 3009872 bytes).
 PDF statistics:
- 539 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 124 named destinations out of 1000 (max. 500000)
+ 323 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 75 named destinations out of 1000 (max. 500000)
  53 words of extra memory for PDF output out of 10000 (max. 10000000)
 

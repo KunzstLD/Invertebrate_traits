@@ -226,12 +226,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -243,9 +237,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bcf
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl
-INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr17.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr8.tfm
@@ -266,6 +257,7 @@ INPUT /usr/share/texmf/fonts/tfm/public/lm/lmex10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr7.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmr5.tfm
@@ -279,6 +271,7 @@ INPUT /usr/share/texmf/tex/latex/lm/omllmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/omllmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri7.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri8.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex
@@ -333,7 +326,6 @@ INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy9.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
@@ -345,11 +337,12 @@ INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_h
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
+INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb
