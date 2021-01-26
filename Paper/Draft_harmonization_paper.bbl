@@ -1647,95 +1647,6 @@
       \verb http://www.sciencedirect.com/science/article/pii/S0169534706000334
       \endverb
     \endentry
-    \entry{milosevic_application_2020}{article}{}
-      \name{author}{9}{}{%
-        {{hash=bcbeea3b74c141ff8593e60f265ea8cd}{%
-           family={Milošević},
-           familyi={M\bibinitperiod},
-           given={Djuradj},
-           giveni={D\bibinitperiod}}}%
-        {{hash=bd0308c01e7f3379314f5c1c55088f1f}{%
-           family={Milosavljević},
-           familyi={M\bibinitperiod},
-           given={Aleksandar},
-           giveni={A\bibinitperiod}}}%
-        {{hash=5afda100ee3165e0f378552aaf09601a}{%
-           family={Predić},
-           familyi={P\bibinitperiod},
-           given={Bratislav},
-           giveni={B\bibinitperiod}}}%
-        {{hash=e05ea7e7ce7df12868786a120497db3a}{%
-           family={Medeiros},
-           familyi={M\bibinitperiod},
-           given={Andrew\bibnamedelima S.},
-           giveni={A\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
-        {{hash=569d0decd1ed6972e4969240f693ba31}{%
-           family={Savić-Zdravković},
-           familyi={S\bibinithyphendelim Z\bibinitperiod},
-           given={Dimitrija},
-           giveni={D\bibinitperiod}}}%
-        {{hash=00bede71cd7e8ace4a36d46f5c5115ec}{%
-           family={Stojković\bibnamedelima Piperac},
-           familyi={S\bibinitperiod\bibinitdelim P\bibinitperiod},
-           given={Milica},
-           giveni={M\bibinitperiod}}}%
-        {{hash=48f7fafe89ff4389991cc35427a6899f}{%
-           family={Kostić},
-           familyi={K\bibinitperiod},
-           given={Tijana},
-           giveni={T\bibinitperiod}}}%
-        {{hash=28caf853be904cc4470852316e2543c1}{%
-           family={Spasić},
-           familyi={S\bibinitperiod},
-           given={Filip},
-           giveni={F\bibinitperiod}}}%
-        {{hash=b8603e4ad60912841e4b8d3f2450d813}{%
-           family={Leese},
-           familyi={L\bibinitperiod},
-           given={Florian},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{2ecc41c6fa74f594bc6e5734b15aedb3}
-      \strng{fullhash}{657937a524062e2f1c15ca7e31264758}
-      \strng{bibnamehash}{657937a524062e2f1c15ca7e31264758}
-      \strng{authorbibnamehash}{657937a524062e2f1c15ca7e31264758}
-      \strng{authornamehash}{2ecc41c6fa74f594bc6e5734b15aedb3}
-      \strng{authorfullhash}{657937a524062e2f1c15ca7e31264758}
-      \field{sortinit}{M}
-      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{issn}{00489697}
-      \field{journaltitle}{Science of The Total Environment}
-      \field{langid}{english}
-      \field{shortjournal}{Science of The Total Environment}
-      \field{shorttitle}{Application of deep learning in aquatic bioassessment}
-      \field{title}{Application of deep learning in aquatic bioassessment: Towards automated identification of non-biting midges}
-      \field{urlday}{7}
-      \field{urlmonth}{12}
-      \field{urlyear}{2020}
-      \field{volume}{711}
-      \field{year}{2020}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{135160}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.scitotenv.2019.135160
-      \endverb
-      \verb{file}
-      \verb Milošević et al. - 2020 - Application of deep learning in aquatic bioassessm.pdf:/home/kunzst/Zotero/storage/N9M3UJPS/Milošević et al. - 2020 - Application of deep learning in aquatic bioassessm.pdf:application/pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0048969719351526
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0048969719351526
-      \endverb
-    \endentry
     \entry{monaghan_improving_2013}{article}{}
       \name{author}{2}{}{%
         {{hash=b71e2923d9da81501304bf0a67a79932}{%
@@ -2735,15 +2646,15 @@
       \verb https://doi.org/10.1007/s10750-005-1255-5
       \endverb
     \endentry
-    \entry{twardochleb_trait_data_2020}{misc}{}
-      \name{author}{5}{}{%
-        {{hash=ac902395903b5fafc8bf9228d373afc6}{%
+    \entry{twardochleb_freshwater_nodate}{article}{}
+      \name{author}{4}{}{%
+        {{hash=77c1c8d42ee53f26e7b5d387755cb228}{%
            family={Twardochleb},
            familyi={T\bibinitperiod},
-           given={Laura\bibnamedelima A.},
-           giveni={L\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=e413b455df7facbec3faf31f215fc719}{%
-           family={Hilter},
+           given={Laura},
+           giveni={L\bibinitperiod}}}%
+        {{hash=b69de7180788eb44280fdc2def573826}{%
+           family={Hiltner},
            familyi={H\bibinitperiod},
            given={Ethan},
            giveni={E\bibinitperiod}}}%
@@ -2752,33 +2663,50 @@
            familyi={P\bibinitperiod},
            given={Matthew},
            giveni={M\bibinitperiod}}}%
-        {{hash=701aa3471f71f25c2873e53e692071ba}{%
-           family={Bills},
-           familyi={B\bibinitperiod},
-           given={Patrick},
-           giveni={P\bibinitperiod}}}%
-        {{hash=a0992a56831a5cc79c797d48fad53089}{%
+        {{hash=46ab7c792417af63a13f82a9f0b0bae6}{%
            family={Zarnetske},
            familyi={Z\bibinitperiod},
-           given={Pheobe\bibnamedelima L.},
-           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+           given={Phoebe},
+           giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{f125290c55323c65e0d3d15c8049031a}
-      \strng{fullhash}{668e57b63d14555b02400a078d4142a1}
-      \strng{bibnamehash}{668e57b63d14555b02400a078d4142a1}
-      \strng{authorbibnamehash}{668e57b63d14555b02400a078d4142a1}
-      \strng{authornamehash}{f125290c55323c65e0d3d15c8049031a}
-      \strng{authorfullhash}{668e57b63d14555b02400a078d4142a1}
+      \strng{namehash}{fea0bd0a585fb3e8fcc025ab2502bc87}
+      \strng{fullhash}{4e13f02d6c494fde397b3c77b4a24150}
+      \strng{bibnamehash}{4e13f02d6c494fde397b3c77b4a24150}
+      \strng{authorbibnamehash}{4e13f02d6c494fde397b3c77b4a24150}
+      \strng{authornamehash}{fea0bd0a585fb3e8fcc025ab2502bc87}
+      \strng{authorfullhash}{4e13f02d6c494fde397b3c77b4a24150}
       \field{sortinit}{T}
       \field{sortinithash}{6f7aff9db9dcfeb7f95fd5bbd2f78df9}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
+      \field{labeldatesource}{nodate}
       \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{howpublished}{\\ https://doi.org/10.6073/pasta/8238ea9bc15840844b3a023b6b6ed158}
-      \field{title}{Freshwater insect occurrences and traits for the contiguous United States, 2001 - 2018 ver 5. Environmental Data Initiative.}
-      \field{year}{2020}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Motivation Freshwater insects comprise 60\% of freshwater animal diversity; they are widely used to assess water quality, and they provide prey for numerous freshwater and terrestrial taxa. Our knowledge of the distribution of freshwater insect diversity in the {USA} is incomplete because we lack comprehensive, standardized data on their distributions and functional traits at the scale of the contiguous United States ({CONUS}). We fill this knowledge gap by presenting Freshwater insects {CONUS}: A database of freshwater insect occurrences and traits for the contiguous United States. This database includes 2.05 million occurrence records for 932 genera in the major freshwater insect orders, at 51,044 stream locations sampled between 2001 and 2018 by federal and state biological monitoring programmes. Compared with existing open-access databases, we tripled the number of occurrence records and locations and added records for 118 genera. We also present life-history, dispersal, morphological and ecological traits and trait affinities (analogous to fuzzy-coded traits) for 1,007 stream insect genera, assembled from existing databases, reference books and the primary literature. We nearly doubled the number of traits for 11 trait groups and added traits for 180 genera that were not available from open-access databases. Our database, Freshwater insects {CONUS}, facilitates the mapping of freshwater insect taxonomic and functional diversity and, when paired with environmental data, will provide a powerful resource for quantifying how the environment shapes stream insect diversity and taxon-specific distributions. Main types of variables contained Georeferenced occurrence records and traits for stream insects. Spatial location and grain Contiguous United States at a grain of c. 1 m2. Time period and grain Occurrence records from January 2001 to December 2018, with 1-day temporal resolution. Traits from January 1911 to December 2018. Major taxa and level of measurement Genera from the orders Coleoptera, Diptera, Ephemeroptera, Hemiptera, Lepidoptera, Megaloptera, Neuroptera, Odonata, Plecoptera and Trichoptera. Software format .csv.}
+      \field{issn}{1466-8238}
+      \field{issue}{n/a}
+      \field{journaltitle}{Global Ecology and Biogeography}
+      \field{langid}{english}
+      \field{note}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/geb.13257}
+      \field{shorttitle}{Freshwater insects {CONUS}}
+      \field{title}{Freshwater insects {CONUS}: A database of freshwater insect occurrences and traits for the contiguous United States}
+      \field{urlday}{26}
+      \field{urlmonth}{1}
+      \field{urlyear}{2021}
+      \field{volume}{n/a}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb https://doi.org/10.1111/geb.13257
+      \endverb
+      \verb{file}
+      \verb Snapshot:/home/kunzst/Zotero/storage/FJZRKJFF/geb.html:text/html;Full Text PDF:/home/kunzst/Zotero/storage/7FLU27DM/Twardochleb et al. - Freshwater insects CONUS A database of freshwater.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13257
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/geb.13257
+      \endverb
+      \keyw{contiguous United States,freshwater insects,functional traits,fuzzy-coded traits,macroinvertebrates,occurrence records,streams,trait affinities}
     \endentry
     \entry{usseglio-polatera_biomonitoring_2000}{article}{}
       \name{author}{4}{}{%

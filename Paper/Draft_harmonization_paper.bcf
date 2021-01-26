@@ -2118,7 +2118,7 @@
     <bcf:citekey order="29">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="30">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
     <bcf:citekey order="31">ussegliopolatera_biological_2000</bcf:citekey>
-    <bcf:citekey order="32">twardochleb_trait_data_2020</bcf:citekey>
+    <bcf:citekey order="32">twardochleb_freshwater_nodate</bcf:citekey>
     <bcf:citekey order="33">vieira_database_nodate</bcf:citekey>
     <bcf:citekey order="34">polatera_personal_information_2020</bcf:citekey>
     <bcf:citekey order="35">kefford_integrated_2020</bcf:citekey>
@@ -2153,7 +2153,6 @@
     <bcf:citekey order="61">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="62">beketov_spear_2009</bcf:citekey>
     <bcf:citekey order="63">hoye_deep_2020</bcf:citekey>
-    <bcf:citekey order="63">milosevic_application_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

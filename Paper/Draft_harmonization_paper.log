@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  26 JAN 2021 19:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  26 JAN 2021 22:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1025,26 +1025,26 @@ File: american.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
 \openout1 = `Draft_harmonization_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
-LaTeX Font Info:    ... okay on input line 71.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 71.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 74.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 71.
+Package hyperref Info: Link coloring OFF on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -1052,9 +1052,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count333
 )
-LaTeX Info: Redefining \ref on input line 71.
-LaTeX Info: Redefining \pageref on input line 71.
-LaTeX Info: Redefining \nameref on input line 71.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out) (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out)
 \@outlinefile=\write6
 \openout6 = `Draft_harmonization_paper.out'.
@@ -1129,48 +1129,48 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Draft_harmonization_paper.bbl' found.
 (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl)
-Package biblatex Info: Reference section=0 on input line 71.
-Package biblatex Info: Reference segment=0 on input line 71.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 73.
+Package biblatex Info: Reference section=0 on input line 74.
+Package biblatex Info: Reference segment=0 on input line 74.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 76.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 73.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 76.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 73.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 76.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 73.
+(Font)              <12> on input line 76.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 73.
+(Font)              <8> on input line 76.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 73.
+(Font)              <6> on input line 76.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (6.9407pt too wide) in paragraph at lines 102--103
+Overfull \hbox (6.9407pt too wide) in paragraph at lines 105--106
 []\OT1/lmr/m/n/10 In the last decades, fresh-wa-ter ecol-o-gists have com-piled com-pre-hen-sive in-ver-te-brate trait databases
  []
 
 [2] [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 138.
+(Font)              <10> on input line 141.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 138.
+(Font)              <7> on input line 141.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 138.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 142.
+(Font)              <5> on input line 141.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 145.
  (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 142.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 145.
  [4]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 158--164
+Overfull \hbox (15.0pt too wide) in paragraph at lines 161--167
 []$[]$ 
  []
 
@@ -1206,128 +1206,123 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
 (Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 52.
 )
 
-LaTeX Warning: Float too large for page by 19.66885pt on input line 183.
+LaTeX Warning: Float too large for page by 19.66885pt on input line 188.
 
 [6] [7] [8]
-Overfull \hbox (13.40462pt too wide) in paragraph at lines 248--258
+Overfull \hbox (13.40462pt too wide) in paragraph at lines 253--263
  [][] 
  []
 
 [9] [10]
-Overfull \hbox (38.14061pt too wide) in alignment at lines 273--275
+Overfull \hbox (18.22375pt too wide) in alignment at lines 278--280
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 278--278
+Underfull \hbox (badness 10000) in paragraph at lines 283--283
 []|\OT1/lmr/m/n/10 Feeding
  []
 
 
-Overfull \hbox (2.4277pt too wide) in paragraph at lines 278--278
+Overfull \hbox (2.4277pt too wide) in paragraph at lines 283--283
 []|\OT1/lmr/m/n/10 Reproduction| 
  []
 
 
-Overfull \hbox (6.40367pt too wide) in paragraph at lines 315--315
-[]|[]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 355--355
+Underfull \hbox (badness 10000) in paragraph at lines 360--360
 []|\OT1/lmr/m/n/10 binary;
  []
 
 
-Overfull \hbox (3.05836pt too wide) in paragraph at lines 356--356
+Overfull \hbox (3.05836pt too wide) in paragraph at lines 361--361
 []|[]| 
  []
 
 
-Overfull \hbox (38.14061pt too wide) in alignment at lines 275--376
+Overfull \hbox (18.22375pt too wide) in alignment at lines 280--381
  [] [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 376
+Underfull \vbox (badness 10000) detected at line 381
  []
 
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 377--382
+Overfull \hbox (15.0pt too wide) in paragraph at lines 382--387
 []$[]$ 
  []
 
 [11
 
 ]
-<Figures/Overview_sim_results.png, id=199, 711.1368pt x 369.7815pt>
+<Figures/Overview_sim_results.png, id=201, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results.png Graphic file (type png)
 <use Figures/Overview_sim_results.png>
-Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 402.
+Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 407.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 402--403
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 407--408
  [][] 
  []
 
 [12
 
 ]
-<Figures/Diffs_indiv_runs_sim.png, id=207, 711.1368pt x 483.4863pt>
+<Figures/Diffs_indiv_runs_sim.png, id=209, 711.1368pt x 483.4863pt>
 File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
 <use Figures/Diffs_indiv_runs_sim.png>
-Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 409.
+Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 414.
 (pdftex.def)             Requested size: 469.4711pt x 284.53145pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 409--419
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 414--424
  [][] 
  []
 
 [13 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [14 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
-Overfull \hbox (33.43935pt too wide) in paragraph at lines 437--454
+Overfull \hbox (33.43935pt too wide) in paragraph at lines 442--459
  [][] 
  []
 
 [15]
-<Figures/Deviances_trait_agg_chessman.png, id=228, 625.8582pt x 341.3553pt>
+<Figures/Deviances_trait_agg_chessman.png, id=230, 625.8582pt x 341.3553pt>
 File: Figures/Deviances_trait_agg_chessman.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_chessman.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 460.
+Package pdftex.def Info: Figures/Deviances_trait_agg_chessman.png  used on input line 465.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 460--461
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 465--466
  [][] 
  []
 
-<Figures/Deviances_trait_agg_pyne.png, id=229, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=231, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 468.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 473.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 468--469
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 473--474
  [][] 
  []
 
 [16 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_chessman.png (PNG copy)>] [17 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]
-<Figures/Species_scores_rda.png, id=246, 625.8582pt x 341.3553pt>
+<Figures/Species_scores_rda.png, id=248, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 490.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 495.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 490--491
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 495--496
  [][] 
  []
 
 [18]
-<Figures/Scores_on_constrained_axis_comb_ALT.pdf, id=256, 448.10245pt x 796.6487pt>
+<Figures/Scores_on_constrained_axis_comb_ALT.pdf, id=258, 448.10245pt x 796.6487pt>
 File: Figures/Scores_on_constrained_axis_comb_ALT.pdf Graphic file (type pdf)
 <use Figures/Scores_on_constrained_axis_comb_ALT.pdf>
-Package pdftex.def Info: Figures/Scores_on_constrained_axis_comb_ALT.pdf  used on input line 505.
+Package pdftex.def Info: Figures/Scores_on_constrained_axis_comb_ALT.pdf  used on input line 510.
 (pdftex.def)             Requested size: 469.4753pt x 711.3369pt.
 
-Overfull \hbox (39.47067pt too wide) in paragraph at lines 505--506
+Overfull \hbox (39.47067pt too wide) in paragraph at lines 510--511
  [][] 
  []
 
@@ -1337,42 +1332,62 @@ Overfull \vbox (154.86034pt too high) has occurred while \output is active []
  [20 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Scores_on_constrained_axis_comb_ALT.pdf>]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 508.
+(caption)                outside box or environment on input line 513.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 508.
+(caption)                particular \caption on input line 513.
 See the caption package documentation for explanation.
 
 [21
 
 ] [22] [23] [24] [25]
-Underfull \hbox (badness 1810) in paragraph at lines 574--574
+Underfull \hbox (badness 1810) in paragraph at lines 579--579
 [][]\OT1/lmr/m/n/10 Brink, P. J. V. d., Alexan-der, A. C., Desrosiers, M., Goed-koop, W., Goethals, P. L.,
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 574--574
+Underfull \hbox (badness 3646) in paragraph at lines 579--579
 \OT1/lmr/m/n/10 Liess, M., & Dyer, S. D. (2011). Traits-based ap-proaches in bioassess-ment and
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 574--574
+Underfull \hbox (badness 6893) in paragraph at lines 579--579
 \OT1/lmr/m/n/10 eco-log-i-cal risk as-sess-ment: Strengths, weak-nesses, op-por-tu-ni-ties and threats. \OT1/lmr/m/it/10 In-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--574
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
 \OT1/lmr/m/it/10 te-grated En-vi-ron-men-tal As-sess-ment and Man-age-ment\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 7\OT1/lmr/m/n/10 (2), 198{208. []eprint:
  []
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 574--574
+Underfull \hbox (badness 1681) in paragraph at lines 579--579
 \OT1/lmr/m/n/10 https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.109. doi:[]$https : / / doi . org /
  []
 
-[26] [27] [28] [29] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [30]
+[26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+[][]\OT1/lmr/m/n/10 Twardochleb, L., Hilt-ner, E., Pyne, M., & Zar-netske, P. (n.d.). Fresh-wa-ter in-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+\OT1/lmr/m/n/10 sects CONUS: A database of fresh-wa-ter in-sect oc-cur-rences and traits for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--579
+\OT1/lmr/m/n/10 the con-tigu-ous united states. \OT1/lmr/m/it/10 Global Ecol-ogy and Bio-geog-ra-phy\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 n/a\OT1/lmr/m/n/10 . []eprint:
+ []
+
+
+Underfull \hbox (badness 1533) in paragraph at lines 579--579
+\OT1/lmr/m/n/10 https://onlinelibrary.wiley.com/doi/pdf/10.1111/geb.13257. doi:[]$https : / / doi . org / 10 .
+ []
+
+[28] [29] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [30]
 Overfull \hbox (94.64598pt too wide) in alignment at lines 11--14
  [] [] [] [] [] [] [] 
  []
@@ -1943,7 +1958,7 @@ Underfull \vbox (badness 10000) detected at line 167
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 175.
  [34]
-<Figures/taxonomic_hierarchy_NOA.png, id=432, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=433, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 220.
@@ -1953,7 +1968,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 220--221
  [][] 
  []
 
-<Figures/taxonomic_hierarchy_AUS.png, id=433, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_AUS.png, id=434, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 227.
@@ -1966,28 +1981,28 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 227--228
 [35
 
  </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>] [36 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [37])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 592.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 592.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 587.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 592.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 592.
 Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 592.
  ) 
 Here is how much of TeX's memory you used:
- 26239 strings out of 492982
- 506714 string characters out of 6134895
- 954667 words of memory out of 5000000
- 29235 multiletter control sequences out of 15000+600000
+ 26238 strings out of 492982
+ 506663 string characters out of 6134895
+ 955272 words of memory out of 5000000
+ 29234 multiletter control sequences out of 15000+600000
  68881 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,61p,3663b,1780s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3006480 bytes).
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (37 pages, 3006720 bytes).
 PDF statistics:
  546 PDF objects out of 1000 (max. 8388607)
  465 compressed objects within 5 object streams

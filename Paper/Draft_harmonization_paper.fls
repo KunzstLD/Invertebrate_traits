@@ -280,6 +280,7 @@ INPUT /usr/share/texmf/tex/latex/lm/omllmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri7.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri8.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmri10.tfm
+INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
@@ -333,7 +334,6 @@ INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/tex/latex/lm/omslmr.fd
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmmi9.tfm
 INPUT /usr/share/texmf/fonts/tfm/public/lm/lmsy9.tfm
-INPUT /usr/share/texmf/fonts/tfm/public/lm/rm-lmbx10.tfm
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png
@@ -345,9 +345,9 @@ INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_h
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out
 INPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
 OUTPUT /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.run.xml
-INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc
 INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc
+INPUT /usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb
 INPUT /usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb
