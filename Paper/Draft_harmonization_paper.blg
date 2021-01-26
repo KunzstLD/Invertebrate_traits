@@ -1,13 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Draft_harmonization_paper.blg'
-[22] biber:313> INFO - === Fr Jan 22, 2021, 18:06:04
-[43] Biber.pm:371> INFO - Reading 'Draft_harmonization_paper.bcf'
-[95] Biber.pm:857> INFO - Found 45 citekeys in bib section 0
-[104] Biber.pm:3981> INFO - Processing section 0
-[113] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[124] bibtex.pm:1468> INFO - LaTeX decoding ...
-[210] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[210] Utils.pm:169> WARN - Duplicate entry key: 'ussegliopolatera_biological_2000' in file 'Ref_invertebrate_DB.bib', skipping ...
-[597] Utils.pm:185> ERROR - BibTeX subsystem: /tmp/Tc74XauZoZ/Ref_invertebrate_DB.bib_15359.utf8, line 71, syntax error: found "@article", expected end of entry ("}" or ")") (skipping to next "@")
-[598] Biber.pm:110> INFO - WARNINGS: 1
-[598] Biber.pm:114> INFO - ERRORS: 1
+[28] biber:313> INFO - === Di Jan 26, 2021, 19:57:33
+[46] Biber.pm:371> INFO - Reading 'Draft_harmonization_paper.bcf'
+[100] Biber.pm:857> INFO - Found 45 citekeys in bib section 0
+[111] Biber.pm:3981> INFO - Processing section 0
+[120] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[132] bibtex.pm:1468> INFO - LaTeX decoding ...
+[218] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[756] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[757] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[757] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[757] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[831] bbl.pm:617> INFO - Writing 'Draft_harmonization_paper.bbl' with encoding 'UTF-8'
+[870] bbl.pm:720> INFO - Output to Draft_harmonization_paper.bbl
