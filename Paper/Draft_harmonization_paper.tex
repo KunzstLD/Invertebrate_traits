@@ -205,47 +205,54 @@ As mentioned above, trait affinities ranged from 0 to 1. Hence, the maximum diff
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Effects of harmonisation and trait aggregation on trait-environment relationships}
+\subsection*{Effects of harmonisation and trait aggregation on trait-environment relationship inferences}
 
-We repeated the analysis of \citet{szocs_effects_2014} who studied the effect of anthropogenic salinisation on invertebrates in the River Werra in Germany. For this re-analysis we used the established harmonised grouping feature dataset for Europe and additionally aggregated traits using the aforementioned aggregation methods. 
+To further evaluate the effects of grouping-feature harmonisation and trait aggregation on characterisation of trait–environment relationships, we repeated the analysis of \citet{szocs_effects_2014}, who studied the effects of anthropogenic salinisation on invertebrates in the River Werra in Germany. The River Werra has been subject to effluents from the potash industry since the mid- 20th century, which makes it a useful system for studying the responses of invertebrates and their trait compositions to salinisation (\cite{bathe_biological_2011}). \citet{szocs_effects_2014}  used redundancy analysis (RDA) to compare trait compositions among sites downstream, upstream, and close to salt discharge (transition). Further details about the original study can be found in \citet{szocs_effects_2014}.
 
-The River Werra has been subject to effluents from the potash industry since the mid- 20th century and allows to study responses of invertebrates and their trait compositions to salinisation (\cite{bathe_biological_2011}). Sites downstream, upstream, and close to the salt discharge (transition) were compared regarding their trait composition. Further details can be found in \citet{szocs_effects_2014}. 
-
-We substituted 6 of the grouping features from the original data with harmonised grouping features from the European trait dataset. We compared the results of the redundancy analysis (RDA) from the original study to the case when using harmonised grouping features. Specifically, the trait composition expressed as community weighted mean (CWM) traits was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA, i.e. the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots. Following the original study, we identified traits associated with higher or lower salinity based on their distance to the ordination axis median using the Mahalanobis distance. CWM traits with a Mahalanobis distance greater than the $97.5 \%$ -quantile of the Chi-square distribution (5.02) were regarded as traits responding to either lower or higher salinity. For our analysis, we used the same 21 grouping features as in \citet{szocs_effects_2014}. The 6 harmonised grouping features used were \textit{Size, Feeding mode, Locomotion, Oviposition, Respiration}, and \textit{Voltinism}. Additionally, for testing the effect of aggregated traits we assigned to each taxon in \citet{szocs_effects_2014} the aggregated trait value for its corresponding family and repeated the RDA.  
+We re-analysed the \citet{szocs_effects_2014} study by performing a RDA with harmonised grouping features from the dataset for Europe and additionally with traits that we aggregated to family level with the five aggregation methods described above. We used all 21 grouping features from the original study, but replaced 6 with harmonised grouping features from our European trait dataset, namely: size, feeding mode, locomotion, oviposition, respiration, and voltinism.
+We compared the results of the original study’s RDA with the results of the RDA from the harmonised grouping features. Specifically, the trait composition, expressed as community weighted mean (CWM) traits, was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA (i.e., the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots). Following the original study, we used the Mahalanobis distance measure and identified traits associated with higher or lower salinity based on their distance to the ordination axis median. We considered CWM traits with a Mahalanobis distance greater than the 97.5 \%-quantile of the Chi-square distribution (5.02) to have responded to either lower or higher salinity. Additionally, for testing the effect of different aggregation methods on inference about CWM trait–salinisation relationships, we repeated the RDA five times, each with family-level aggregated trait values assigned to corresponding taxa from \citet{szocs_effects_2014}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Data analysis}
 
-The data processing and aforementioned analyses were carried out using R (Version 3.6.1). Raw data and the R code for data processing and grouping feature harmonisation are located in the Github repository: \url{https://github.com/KunzstLD/Invertebrate_traits}. Scripts and data to reproduce the trait aggregation and analysis with aggregated traits are located in the Github repository \url{https://github.com/KunzstLD/Trait-aggregation}.
+All data processing and RDA analyses were carried out using R (\cite{cite_R}). RDA was computed using the vegan package (\cite{cite_vegan}). Raw data and the R code for data processing and grouping feature harmonisation are located in the Github repository: \url{https://github.com/KunzstLD/Invertebrate_traits}. Scripts and data to reproduce the trait aggregation, comparison of aggregated and assigned traits, and the RDA analysis are located in the Github repository \url{https://github.com/KunzstLD/Trait-aggregation}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Results}
 
+\subsection*{Harmonised trait datasets}
+
 \subsection*{Taxonomic coverage of the harmonised trait datasets}
 
-Regarding taxonomic coverage, the New Zealand dataset has the smallest taxon pool (478 taxa, Table \ref{tab:tax_coverage}). By contrast, the European trait dataset has the largest taxon pool with 4601 taxa followed by the North American dataset that contains trait information on 3753 taxa. The Australian dataset contains 1402 taxa. The European, New Zealand, and North American datasets contain most taxa at the species-level whereas the Australian dataset comprises a similar number of taxa at species and genus-level.
+The harmonised European, North American, Australian, and New Zealand trait datasets differed in terms of their taxonomic coverage. The European trait dataset had the largest taxon pool with 4601 taxa (Table \ref{tab:tax_coverage}) followed by the North American dataset (3753 taxa), the Australian dataset (1402 taxa), and the New Zealand dataset with the smallest taxon pool (478 taxa). The European, New Zealand, and North American datasets contained most taxa at the species level, whereas the Australian dataset comprised a similar number of taxa at species and genus level.
 
 \begin{table}[ht]
     \centering
-    \caption{Number of taxa per harmonised dataset and per taxonomic level. Numbers in parenthesis show rounded relative frequencies in percent.} 
+    \caption{Number (Nr.) of taxa per harmonised dataset and per taxonomic level. Numbers in parenthesis show rounded relative frequencies in percent.} 
     \label{tab:tax_coverage}
     \begin{tabular}{lccccc}
     \toprule[.1em]
-    Dataset & Nr. of taxa & Species & Genus & Family & Nr. aquatic insects \\ 
+    Dataset & Taxa (Nr.) & Aquatic insects (Nr.) & Species & Genus & Family \\ 
     \toprule[.1em]
-    EU & 4601 & 3739 (81) & 704 (15) & 158 (3) & 3942 (86) \\ 
-    NOA & 3753 & 2414 (64) & 1163 (31) & 176 (5) & 3305 (88) \\ 
-    AUS & 1402 & 564 (40) & 578 (41) & 260 (19) & 1016 (72) \\ 
-    NZ & 478 & 404 (85) & 47 (10) & 27 (6) & 443 (93) \\ 
+    EU & 4601 & 3942 (86) & 3739 (81) & 704 (15) & 158 (3) \\ 
+    NOA & 3753 & 3305 (88) & 2414 (64) & 1163 (31) & 176 (5)  \\ 
+    AUS & 1402 & 1016 (72) & 564 (40) & 578 (41) & 260 (19) \\ 
+    NZ & 478 & 443 (93) & 404 (85) & 47 (10) & 27 (6) \\ 
     \bottomrule
     \end{tabular}
 \end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+\centering
+Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zealand.
+\end{minipage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Completeness of trait information}
+
+The numbers of entries with available information for the selected grouping features varied considerably within the harmonised European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (94–100\%).
 
 The amount of entries with available information for the selected grouping features varied strongly for the developed European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (between 94 \% and 100 \%).
 
@@ -266,6 +273,10 @@ The amount of entries with available information for the selected grouping featu
     \bottomrule
     \end{tabular}
 \end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+\centering
+Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zealand.
+\end{minipage}
 
 \newpage
 
