@@ -169,7 +169,7 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 \subsection*{Comparing trait aggregation methods}
 
 For our study aim of comparing the effects of different aggregation methods on trait–environment relationship inference, we aggregated the traits of two of the harmonised datasets to the family level.
-We used three different aggregation approaches: (1) direct aggregation of taxa to family level with either the mean or median, giving equal weight to every taxon. We denote these aggregation methods as \textit{direct\_agg\textsubscript{mean}} and \textit{direct\_agg\textsubscript{median}}, respectively; (2) stepwise aggregation, first to the genus level and subsequently to the family level with either the mean or median. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{mean}} or \textit{stepwise\_agg\textsubscript{median}}, respectively; and (3) aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights each genus according to its number of species in the trait datasets, regardless of whether information was available for every used grouping feature (Figure \ref{fig:data_proc_overview}). When we refer to \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg} together we denote these methods as mean aggregation methods and when we refer to \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}} together, we denote these methods as median aggregation methods.
+We used three different aggregation approaches: (1) direct aggregation of taxa to family level with either the median or mean, giving equal weight to every taxon. We denote these aggregation methods as \textit{direct\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{mean}}, respectively; (2) stepwise aggregation, first to the genus level and subsequently to the family level with either the median or mean. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{median}} or \textit{stepwise\_agg\textsubscript{mean}}, respectively; and (3) aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights each genus according to its number of species in the trait datasets, regardless of whether information was available for every used grouping feature (Figure \ref{fig:data_proc_overview}). 
 
 \subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 
@@ -284,125 +284,101 @@ Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zeala
 
 \subsection*{Discrepancies in invertebrate trait definitions across databases}
 
-Definitions of grouping features and traits varied in their level of detail in the investigated trait databases. The freshwaterecology.info database, the Tachet database and the CONUS database provided more detailed descriptions of their trait information compared to the Vieira database and New Zealand database. The Australian trait database (\cite{kefford_integrated_2020}) is a collection of seven specific trait datasets. Thus, grouping features occur multiple times with varying differentiation into traits. Depending on the dataset trait information is described with more or less detail.
+Definitions of grouping features and traits varied in their level of detail in the investigated trait databases. The freshwaterecology.info, Tachet, and CONUS databases provided more detailed descriptions of trait information than the Vieira and New Zealand databases provided. The Australian trait database (\cite{kefford_integrated_2020}) was a collection of seven specific trait datasets; thus, grouping features occurred multiple times with varying differentiation into traits. Depending on the dataset, trait information was described with more or less detail.
 
-The definition of grouping features varied across databases mainly concerning their differentiation into traits but also in their focus. We provide a summary of discrepancies in trait definitions in the appendix (Table \ref{stab:trait_definitions}). Both, differences in differentiation and focus can lead to discrepancies in trait definitions. For example, for the grouping feature feeding mode discrepancies arise because traits are assigned in different ways. The Tachet database defines predators as carvers, engulfers and swallowers. By contrast, in the CONUS database predators are defined as engulfers and carnivorous piercers. In turn, in the Tachet database, piercers are defined as a separate trait encompassing herbivorous and carnivorous piercers. Furthermore, the focus in the freshwaterecology.info database for feeding mode is primarily on the food source of a species (except for filterers), while the other databases focus on the strategies of food acquisition. Therefore, the freshwaterecology.info database defines e.g. predator as "eating from prey", while the other databases use the mouthpart morphology as basis of their definition. The Tachet database captures the food source in an additional grouping feature. Varying levels of differentiation are also present in all other investigated grouping features between the trait databases (Table \ref{tab:trait_databases_coding_differentiation} and Table \ref{stab:trait_definitions}). Locomotion definitions differ also in focus between databases. Freshwaterecology.info and New Zealand databases describe locomotion as the way of movement of an organism, Tachet as substrate relation and locomotion, the Vieira as how organisms deal with flow, Australia as attachment, and the CONUS database includes not only the way of movement, but also the location of movement. Similarly, regarding reproduction traits, databases differ in their focus. Reproduction is captured in one grouping feature and defined as location of oviposit clutches and mode of reproduction in the freshwaterecology.info and Tachet databases. The Vieira database provides information on the oviposition location but not on reproductive behaviour. The Australian database report traits for reproductive behaviour but also on oviposition site. The New Zealand database distinguishes three grouping features related to reproduction: reproductive technique, oviposition site (e.g. water surface, terrestrial), and egg/egg mass (e.g. free, cemented).
+The definitions of grouping features also varied across databases in their differentiation into traits and in their focus, both which can lead to discrepancies in trait definitions. We provide a summary of discrepancies in trait definitions in the appendix (Table \ref{stab:trait_definitions}). Varying levels of differentiation among the trait databases were present in all investigated grouping features (Table \ref{tab:trait_databases_coding_differentiation} and Table \ref{stab:trait_definitions}).
 
-Various codings to describe traits are used throughout the databases (e.g. binary, fuzzy, continuous). The freshwaterecology.info and Australian databases use different codings, while the Tachet and the New Zealand database exclusively use fuzzy coding. The Vieira and CONUS databases contain categorical grouping features that can be converted into traits using a binary coding (Table \ref{tab:trait_databases_coding_differentiation}). 
+For example, for the grouping feature feeding mode, discrepancies arose because traits were assigned in different ways. The Tachet database defined predators as carvers, engulfers, and swallowers. By contrast, the CONUS database defined predators as engulfers and carnivorous piercers. In turn, the Tachet database defined piercers as a separate trait encompassing both herbivorous and carnivorous piercers. Furthermore, the focus in the freshwaterecology.info database for feeding mode was primarily on the food source of a species (except for filterers), whereas the other databases focused on the strategies of food acquisition. For example, the freshwaterecology.info database defined predator as "eating from prey", and the other databases used the mouthpart morphology as basis for their definitions. The Tachet database captured the food source in an additional grouping feature. Locomotion definitions also differed in focus among databases. The New Zealand and freshwaterecology.info databases described locomotion as an organism’s way of movement, Tachet as substrate relation and locomotion, Vieira as how organisms deal with flow, Australia as attachment, and CONUS included not only the method of movement but also the location of movement. Similarly, databases differed in their focus for reproduction traits. In the freshwaterecology.info and Tachet databases, reproduction was captured in one grouping feature and was defined as location of oviposit clutches and mode of reproduction. The Vieira database provided information on the oviposition location but not on reproductive behaviour. The Australian database reported grouping features for reproductive behaviour but also on oviposition location separately. The New Zealand database distinguished three grouping features related to reproduction: reproductive technique, oviposition location (e.g. water surface, terrestrial), and egg/egg mass (e.g. free, cemented).
+
+Trait affinity scores also varied among the databases and were described by varying coding methods (e.g., binary, fuzzy, continuous). In the freshwaterecology.info and Australian databases a combination of coding methods is used, whereas in the Tachet and New Zealand databases exclusively fuzzy coding is used. The Vieira and CONUS databases contained categorical grouping features that can be converted into binary trait affinities (Table \ref{tab:trait_databases_coding_differentiation}).
+
 
 \begin{landscape}
-  \begin{longtable}{m{2.2cm}|m{1.8cm}|m{2.3cm}|m{1.8cm}|m{3cm}|m{2cm}|m{2cm}|m{1.8cm}}
-  \caption{Number of traits per grouping feature and type of coding of the traits for the respective grouping feature per database.}
-  \endfirsthead
-  \toprule[.1em]
-  \label{tab:trait_databases_coding_differentiation}
-  Database & Feeding Mode & Voltinism & Locomotion & Respiration & Reproduction & Size & Body Form \\ 
-  \toprule[.1em]
-  \multirow{2}{*}[-5mm]{ \specialcell{Freshwater- \\ ecology.info}} & 
-  10 & 
-  6 &
-  6 & 
-  7 & 
-  9 & 
-  - & 
-  - 
-  \\
-  \cline{2-8} & 
-  \specialcell{10 point \\ assignment \\ system} &
-  \specialcell{single category \\ assignment \\ system} &
-  \specialcell{10 point \\ assignment \\ system} &
-  \multicolumn{2}{c |}{\specialcell{binary}} &
-  - & 
-  - \\
-  \hline
-  \hline
-  \multirow{2}{*}{Tachet} & 
-  7 & 
-  3 &
-  8 & 
-  5 & 
-  8 & 
-  7 & 
-  - 
-  \\
-  \cline{2-8} &
-  \multicolumn{2}{c |}{fuzzy $[0-3]$} &
-  fuzzy $[0-5]$ & 
-  \multicolumn{3}{c |}{fuzzy $[0-3]$} & 
-  -
-  \\
-  \hline
-  \hline
-  \multirow{2}{*}{\specialcell{CONUS}} & 
-  6 & 
-  3 &
-  10 & 
-  3 & 
-  10 & 
-  3 & 
-  - 
-  \\
-  \cline{2-8} &
-  \multicolumn{6}{c |}{binary} &
-  -
-  \\
-  \hline
-  \hline
-  \multirow{2}{*}{\specialcell{Vieira}} & 
-  8 & 
-  3 &
-  9 & 
-  8 & 
-  10 & 
-  3 & 
-  5 
-  \\
-  \cline{2-8} &
-  \multicolumn{7}{c }{binary}
-  \\
-  \hline
-  \hline
-  \multirow{2}{*}[-4mm]{Australia} & 
-  16 \textsuperscript{\textit{a}} & 
-  7 &
-  9 & 
-  10 &
-  13 \textsuperscript{\textit{b}} & 
-  9 & 
-  4
-  \\
-  \cline{2-8} & 
-  \multicolumn{2}{c |}{\specialcell{binary; proportional $[0 - 1]$; \\ fuzzy $[0 - 3]$}} & 
-  binary; fuzzy $[0 - 3]$ & 
-  \specialcell{binary; proportional \\ scale $[0 - 1]$; \\ fuzzy $[0 - 3]$} & 
-  categorical & 
-  \specialcell{binary; \\ continuous; \\ fuzzy $[0 - 3]$} & 
-  fuzzy $[0-3]$
-  \\
-  \hline
-  \hline
-  \multirow{2}{*}{New Zealand} & 
-  6 & 
-  3 & 
-  4 & 
-  4 & 
-  4 & 
-  5 & 
-  4
-  \\
-  \cline{2-8} & 
-  \multicolumn{7}{c }{fuzzy $[0-3]$}
-  \\
-  \bottomrule
-  \end{longtable}
-  \begin{minipage}{\linewidth}\small
-      \textit{a} Some of the feeding mode traits used in the Australian database were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
+\begin{longtable}{m{2.3cm}|m{3cm}|m{1.8cm}|m{1.4cm}|m{1.4cm}|m{4.1cm}|m{2cm}}
+\caption{Number of traits per grouping feature and type of coding of the traits for the grouping features used in this study per database. Oviposition location was used for the New Zealand database.}
+\endfirsthead
+\toprule[.1em]
+\label{tab:trait_databases_coding_differentiation}
+\specialcell{Grouping \\ feature} & \specialcell{freshwater- \\ ecology.info} & Tachet & CONUS & Vieira & Australia & New Zealand \\
+\toprule[.1em]
+Feeding Mode & \begin{tabular}[c]{@{}l@{}}10 traits; \\ 10 point assginment \\ system\end{tabular}       & \begin{tabular}[c]{@{}l@{}}7 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}6 traits; \\ binary\end{tabular}   & \begin{tabular}[c]{@{}l@{}}8 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}16 traits$^{\dagger}$; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}6 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Voltinism                                                           & \begin{tabular}[c]{@{}l@{}}6 traits; \\ single category \\ assignment system\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits;\\ binary\end{tabular}    & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}7 traits; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}3 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Locomotion                                                          & \begin{tabular}[c]{@{}l@{}}6 traits; \\ 10 point assignment \\ system\end{tabular}        & \begin{tabular}[c]{@{}l@{}}8 traits; \\ fuzzy {[}0 - 5{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary, fuzzy  {[}0 - 3{]}\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Respiration                                                         & \begin{tabular}[c]{@{}l@{}}7 traits; \\ binary\end{tabular}                               & \begin{tabular}[c]{@{}l@{}}5 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits;  \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}8 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+\begin{tabular}[c]{@{}l@{}}Reproduction/\\ Oviposition\end{tabular} & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary\end{tabular}                               & \begin{tabular}[c]{@{}l@{}}8 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits;  \\ binary\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary\end{tabular} & \begin{tabular}[c]{@{}l@{}}13 traits$^{\ddagger}$; \\ binary\end{tabular}                                                 & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Size                                                                & -                                                                                         & \begin{tabular}[c]{@{}l@{}}7 traits;\\ fuzzy {[}0 - 3{]}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}   & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary, continuous, \\ \\ fuzzy {[}0 - 3{]}\end{tabular}             & \begin{tabular}[c]{@{}l@{}}5 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Body Form                                                           & -                                                                                         & -                                                                      & -                                                             & \begin{tabular}[c]{@{}l@{}}4 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular}                                       & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}\small
+      $\dagger$ Some of the feeding mode traits used in the Australian database were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
       \newline
-      \textit{b} Not all traits were considered because trait information was partly presented as comments to describe other traits or due to incomplete information.
+      $\ddagger$ Not all traits were considered because trait information was partly presented as comments to describe other traits or due to incomplete information.
   \end{minipage}
 \end{landscape}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Comparing aggregation methods} 
+
+\subsection*{Comparison of family-level aggregated traits with family-level assigned traits}
+\label{sec:diff_trait_agg_chessman}
+
+
+The comparison of family-level aggregated trait affinities with those assigned by experts for the Australian and North American databases showed that aggregation method (median or mean) had a greater effect than overall approach (direct, stepwise, or weighted) in whether trait affinities differed from those assigned by experts.
+
+The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean and weighted aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
+
+\begin{table}[H]
+  \centering
+  \caption{Percentage of differing cases, minimum, maximum, mean, and standard deviation of absolute differences between trait affinities assigned at family level by experts and aggregated trait affinities from five different aggregation methods.}
+  \label{tab:summary_stat_aggr_vs_fam_assigned}
+  \begin{tabular}{ll|ccccc}
+  \toprule[.1em]
+  Database & \specialcell{Comparison to\\ traits at family level} & \specialcell{Differing \\ cases [\%]} & \specialcell{Min. \\ differences} & \specialcell{Max. \\ differences} & \specialcell{Mean abs. \\ differences} & \specialcell{SD abs. \\ differences} \\ 
+  \toprule[.1em]
+  \multirow{4}{*}{\specialcell{Australia}} & \specialcell{\textit{direct\_agg (median)}} & 16.53 & 0.01 & 1.00 & 0.45 & 0.27 \\ 
+  & \specialcell{\textit{direct\_agg (mean)}} & 23.24 & $< 0.01$ & 0.99 & 0.34 & 0.23 \\ 
+  & \specialcell{\textit{stepwise\_agg (median)}} & 17.90 & 0.01 & 1.00 & 0.42 & 0.26 \\ 
+  & \specialcell{\textit{stepwise\_agg (mean)}} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
+  & \specialcell{\textit{weighted\_agg}} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
+  \midrule
+  \multirow{4}{*}{\specialcell{North America}} & \specialcell{\textit{direct\_agg (median)}} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
+  & \specialcell{\textit{direct\_agg (mean)}} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
+  & \specialcell{\textit{stepwise\_agg (median)}} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
+  & \specialcell{\textit{stepwise\_agg (mean)}} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
+  & \specialcell{\textit{weighted\_agg}} & 47.00 & $< 0.01$ & 1.00 & 0.31 & 0.28 \\ 
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\newpage
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
+  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian dataset for the grouping features feeding mode and body size. Violin plots - mirrored density plots - show
+  the density of the absolute trait affinity differences. Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate.}
+  \label{fig:diff_aggr_traits_chessman}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
+  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
+  \label{fig:diff_aggr_traits_pyne}
+\end{figure}
+
+\newpage 
+
 
 \subsection*{Simulation of varying taxonomic hierarchies}
 
@@ -443,55 +419,7 @@ Each trait aggregation method yielded one aggregated affinity for every simulate
 
 \newpage
 
-\subsection*{Comparison of family-level aggregated traits with family-level assigned traits}
-\label{sec:diff_trait_agg_chessman}
 
-The percentage of differing cases of trait affinities obtained by the trait aggregation methods compared to trait affinities originally assigned at family-level varied between 16.2 \% and 22.9 \% for the Australian dataset. For the North American dataset, comparison of the trait aggregation methods to trait affinities assigned at family-level yielded between 15.3 \% and 47 \% differing cases (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared to mean aggregation methods. However, median aggregation methods produced greater differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. For both datasets maximum differences of 1 occurred for all investigated grouping features (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
-
-% Is that necessary?
-% A comparison of the aggregation methods with each other for the 4 datasets revealed that differences in aggregated trait affinities were largest between the \textit{stepwise\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{median}} (Figure \ref{fig:comp_aggr_methods}).
-
-\begin{table}[H]
-  \centering
-  \caption{Frequency of differing cases, minimum, maximum, means, and standard deviations of absolute differences between trait affinities assigned at family-level and aggregated trait affinities.}
-  \label{tab:summary_stat_aggr_vs_fam_assigned}
-  \begin{tabular}{ll|ccccc}
-  \toprule[.1em]
-  Database & \specialcell{Comparison to\\ traits at fam.-lvl.} & \specialcell{Differing \\ cases [\%]} & \specialcell{Min. \\ differences} & \specialcell{Max. \\ differences} & \specialcell{Mean abs. \\ differences} & \specialcell{SD abs. \\ differences} \\ 
-  \toprule[.1em]
-  \multirow{4}{*}{\specialcell{Australia}} & \specialcell{direct\_agg (median)} & 16.53 & 0.01 & 1.00 & 0.45 & 0.27 \\ 
-  & \specialcell{direct\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.34 & 0.23 \\ 
-  & \specialcell{stepwise\_agg (median)} & 17.90 & 0.01 & 1.00 & 0.42 & 0.26 \\ 
-  & \specialcell{stepwise\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
-  & \specialcell{weighted\_agg} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
-  \midrule
-  \multirow{4}{*}{\specialcell{North America}} & \specialcell{direct\_agg (median)} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
-  & \specialcell{direct\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
-  & \specialcell{stepwise\_agg (median)} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
-  & \specialcell{stepwise\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
-  & \specialcell{weighted\_agg} & 47.00 & $< 0.01$ & 1.00 & 0.31 & 0.28 \\ 
-  \bottomrule
-  \end{tabular}
-\end{table}
-
-\newpage
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
-  \label{fig:diff_aggr_traits_chessman}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
-  \label{fig:diff_aggr_traits_pyne}
-\end{figure}
-
-\newpage 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
