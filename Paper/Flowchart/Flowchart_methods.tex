@@ -7,7 +7,10 @@
                 backgrounds,
                 fit,
                 matrix,
-                shapes.geometric}
+                shapes.geometric,
+                decorations.pathreplacing, 
+                angles,
+                quotes}
 
 \begin{document}
 
@@ -24,16 +27,16 @@
 
 \begin{tikzpicture}
       %% Nodes
-      \node(duplTaxa)[intstepsnode, align = center] at (-5cm,0cm){Consolidating duplicate \\ taxa in  EU, NOA, AUS \& \\ NZ DBs};
-      \node(normalAUS)[intstepsnode, align = center, xshift = 0cm, yshift = 0cm]{AUS traits standardized to [0-1] \\ because multiple codings used \\ throughout this database};
-      \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Taxa more precise than \\ family-level};
+      \node(duplTaxa)[intstepsnode, align = center] at (-5cm,0cm){Consolidating duplicate \\ taxa in  EU, NOA, AUS \& \\ NZ databases};
+      \node(normalAUS)[intstepsnode, align = center, xshift = 0cm, yshift = 0cm]{AUS traits standardised to [0 - 1] \\ because multiple codings used \\ throughout this database};
+      \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Omitted taxa less \\ precise than family-level};
 
       \node (frameProcessing) [frame, fit = (duplTaxa) (normalAUS) (omission) ] {};
       \node (frameText) [above, black, inner sep = 2mm] at (frameProcessing.north){Data preprocessing};
 
       \node(harmonisation)[mainnode, align = center, xshift = -5cm, yshift = -2.5cm]{Harmonisation};
 
-      \node(conversionPerc)[intstepsnode, align = center, xshift = 0cm, yshift = -2.5cm]{Traits converted to percentages \\ and normalized to [0-1]};
+      \node(conversionPerc)[intstepsnode, align = center, xshift = 0cm, yshift = -2.5cm]{Traits converted to proportions \\ and normalised to [0 - 1]};
 
       \node(traitAgg)[mainnode, align = center, xshift = 5cm, yshift = -2.5cm]{Trait aggregation};
 
@@ -83,8 +86,6 @@
 
       \node(stepwiseAgg2)[aggrstepsnode, align = center, xshift = -3.5cm, yshift = -14.7cm]{ $A\_h_1 = mean(0.4167, 0.125, 0.25)$ \\ $ = 0.26$};
 
-
-
       \node(weightedAgg)[aggrtypesnode, xshift = 4cm, yshift = -10.3cm]{Weighted aggregation};
 
       \node(weights)[aggrstepsnode, align = center, xshift = 4cm, yshift = -12.7cm]{Weights based on \\ species per genera: \\
@@ -100,7 +101,8 @@
       \draw[->] (normalAUS.east) -- (omission.west);
       \draw[->] (harmonisation.east) -- (conversionPerc.west);
       \draw[->] (conversionPerc.east) -- (traitAgg.west);
-      \draw[arrow1] (traitAgg.south) -- (frameExample.north);
+      \draw[arrow1] (traitAgg.south) to [out=200,in=40] (frameExample.north);
+      \draw[arrow1] (traitAgg.south) to [out=360,in=80] (frameExample.east);
       \draw[->] (directAgg.south) -- (tab_direct_agg.north);
       \draw[->] (stepwiseAgg.south) -- (tab_stepwise_agg.north);
       \draw[->] (tab_stepwise_agg.south) -- (stepwiseAgg2.north);
