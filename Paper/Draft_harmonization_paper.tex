@@ -373,113 +373,61 @@ The percentage of differing cases of aggregated versus assigned trait affinities
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
+  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family level. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
   \label{fig:diff_aggr_traits_pyne}
 \end{figure}
 
 \newpage 
 
 
-\subsection*{Simulation of varying taxonomic hierarchies}
+\subsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
 
-We evaluated the simulation results based on the produced range of aggregated trait affinities and by comparing results of every simulated dataset. 
-
-As expected the produced range of trait affinities increased for all aggregation methods with increasing trait variability (Figure \ref{fig:overview_sim_results}).% Ben would add: 
+Our simulation results showed that both taxonomic hierarchical structure and trait variability affected aggregated trait affinities and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of taxonomic hierarchy differed across aggregation methods, but, as we expected, the produced range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: 
  % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
- 
- % Ben further suggests: When each genus has the same number of species (sim base) ...... . In contrast with most species in one genus and fewer in the other genera (sim_extreme) .... . While with variable number of species per genera () ..... .
- 
-For the \textit{sim\_base} scenario, the mean aggregation methods yielded similar ranges of aggregated trait affinities within each level of trait variability whereas the median aggregation methods produced mostly greater ranges of aggregated trait affinities. By contrast, the ranges of trait affinities slightly differed for all aggregation methods for the simulation scenarios \textit{sim\_extreme} and \textit{sim\_variation}. \textit{Weighted\_agg} and \textit{stepwise\_agg\textsubscript{mean}} produced a wider range of trait affinities than the \textit{direct\_agg\textsubscript{mean}} in the \textit{sim\_extreme} scenario. For most levels of trait variability the \textit{stepwise\_agg \textsubscript{median}} resulted in the largest range of trait affinities in the \textit{sim\_extreme} and \textit{sim\_variation} scenarios.
 
-Each trait aggregation method yielded one aggregated affinity for every simulated dataset, in total 15000 comparisons ($100$ replicates $*$ 5 levels of trait variability $* 10$ unique comparisons of trait aggregation methods $* 3$ scenarios). In most simulated datasets the different aggregation methods often resulted in similar trait affinities. Only 1.42 \% (213 out of 15.000) of all comparisons showed a difference equal or greater than an absolute trait affinity of 0.1. Most of these differences occurred for the \textit{sim\_extreme} scenario (83.5 \%). The majority of the differences equal or above 0.1 were found between the aggregation methods \textit{direct\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}, and \textit{stepwise\_agg\textsubscript{median}} and \textit{weighted\_agg} (Figure \ref{fig:sim_indv_runs}). 
-% Differences were rather small, largest difference 0.265 for sim_extreme (stepwise_median vs weighted_agg) 
+Taxonomic hierarchical structure appeared to influence the outcomes of the different aggregation methods. For the \textit{sim\_base} scenario (equal numbers of genera and species), the mean and weighted aggregation methods yielded similar ranges of aggregated trait affinities within each level of trait variability, and the median aggregation methods consistently produced greater ranges of aggregated trait affinities than the other methods. The largest ranges were produced by the \textit{stepwise\_agg \textsubscript{median}} method. For the more complex taxonomic hierarchical structures, \textit{sim\_extreme} (one genus with a much larger number of species than the other four) and \textit{sim\_variation} (all genera with a different number of species), the \textit{stepwise\_agg \textsubscript{median}} method still produced the largest ranges of trait affinities for most levels of trait variability (and \textit{direct\_agg\textsubscript{mean}} produced the narrowest ranges for most levels of trait variability), but there was much less consistency in the ranges of trait affinities for all aggregation methods (i.e., the ranges were different among all aggregation methods).
+
+Although trait aggregation methods were affected by taxonomic hierarchical structure and trait variability to some degree, in most simulated datasets, the different aggregation methods resulted in similar trait affinities. Only 1.42 \%, or 213 out of 15.000 total comparisons (3 scenarios $*$ 5 levels of trait variability $*$ 10 unique comparisons of trait aggregation methods $*$ 100 replicates) showed a difference equal or greater than an absolute trait affinity of 0.1. Most  (83.5 \%) of these differences occurred in the \textit{sim\_extreme} scenario and were found between the aggregation methods \textit{direct\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}}, and \textit{stepwise\_agg\textsubscript{median}} and \textit{weighted\_agg} (Figure \ref{fig:sim_indv_runs}). 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results.png}
-  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Boxplots depict results for each trait aggregation method of 100 simulations. T1, T2, and T3 are the simulated traits.}
+  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Boxplots depict results for 100 replicated simulations of each trait aggregation method. The boxplot depicts the median and encompasses the 25\textsuperscript{th} and 75\textsuperscript{th} percentile. Horizontal black lines depict the median. Whiskers extend to the largest and smallest value respectively no further than 1.5 $*$ of the inter-quartile range. Outliers beyond the end of the whiskers are plotted as grey dots.}
   \label{fig:overview_sim_results}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Diffs_indiv_runs_sim.png}
-  \caption{Comparison of the aggregated trait affinities produced by the different trait aggregation methods for every simulated dataset across all 3 simulated traits. Dots depict comparisons where absolute differences between aggregated trait affinities were greater than 0.1. \newline
-  Comparison: \newline
-  1) Direct\_agg (median) - Stepwise\_agg (mean) \newline
-  2) Direct\_agg (median) - Weighted\_agg, \newline
-  3) Stepwise\_agg (mean) - Stepwise\_agg (median), \newline
-  4) Stepwise\_agg (mean) - Weighted\_agg, \newline  
-  5) Direct\_agg (mean) - Stepwise\_agg (median), \newline
-  6) Direct\_agg (median) - Stepwise\_agg (median), \newline
-  7) Stepwise\_agg (median) - Weighted\_agg \newline
+  \caption{Comparison between the aggregated trait affinities produced by the different trait aggregation methods for every simulated dataset across all 3 simulated traits (5,000 comparisons per taxonomic hierarchy scenario). Results are shown for different levels of trait variability which is represented by the standard deviation (SD) of the simulated traits. Dots depict comparisons where absolute differences between aggregated trait affinities were greater than 0.1. Overall, there are 10 possible unique comparisons of which 7 produced absolute differences greater than 0.1. \newline
+  Comparisons: \newline
+  1) \textit{direct\_agg (median)} - \textit{Stepwise\_agg (mean)} \newline
+  2) \textit{Direct\_agg (median)} - \textit{Weighted\_agg} \newline
+  3) \textit{Stepwise\_agg (mean)} - \textit{Stepwise\_agg (median)} \newline
+  4) \textit{Stepwise\_agg (mean)} - \textit{Weighted\_agg} \newline  
+  5) \textit{Direct\_agg (mean)} - \textit{Stepwise\_agg (median)} \newline
+  6) \textit{Direct\_agg (median)} - \textit{Stepwise\_agg (median)} \newline
+  7) \textit{Stepwise\_agg (median)} - \textit{Weighted\_agg} \newline
   }
   \label{fig:sim_indv_runs}
 \end{figure}
 
 \newpage
 
-
-<<<<<<< HEAD
-\begin{table}[H]
-  \centering
-  \caption{Frequency of differing cases, minimum, maximum, means, and standard deviations of absolute differences between trait affinities assigned at family-level and aggregated trait affinities.}
-  \label{tab:summary_stat_aggr_vs_fam_assigned}
-  \begin{tabular}{ll|ccccc}
-  \toprule[.1em]
-  Database & \specialcell{Comparison to\\ traits at fam.-lvl.} & \specialcell{Differing \\ cases [\%]} & \specialcell{Min. \\ differences} & \specialcell{Max. \\ differences} & \specialcell{Mean abs. \\ differences} & \specialcell{SD abs. \\ differences} \\ 
-  \toprule[.1em]
-  \multirow{4}{*}{\specialcell{Australia}} & \specialcell{direct\_agg (median)} & 16.53 & 0.01 & 1.00 & 0.45 & 0.27 \\ 
-  & \specialcell{direct\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.34 & 0.23 \\ 
-  & \specialcell{stepwise\_agg (median)} & 17.90 & 0.01 & 1.00 & 0.42 & 0.26 \\ 
-  & \specialcell{stepwise\_agg (mean)} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
-  & \specialcell{weighted\_agg} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
-  \midrule
-  \multirow{4}{*}{\specialcell{North America}} & \specialcell{direct\_agg (median)} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
-  & \specialcell{direct\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
-  & \specialcell{stepwise\_agg (median)} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
-  & \specialcell{stepwise\_agg (mean)} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
-  & \specialcell{weighted\_agg} & 47.00 & $< 0.01$ & 1.00 & 0.31 & 0.28 \\ 
-  \bottomrule
-  \end{tabular}
-\end{table}
-
-\newpage
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the Australian dataset for the grouping features feeding mode and body size. Absolute differences in trait affinities are depicted as gray dots. N denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences and the error bars the standard deviation. The gray vertical lines show the 25th, 50th and 75th quantile of the density estimate.}
-  \label{fig:diff_aggr_traits_chessman}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family-level. Violin plots - a mirrored density plot - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
-  \label{fig:diff_aggr_traits_pyne}
-\end{figure}
-
-\newpage    
-=======
->>>>>>> dcfb038be0251b833001b350d3e336fd4f22a9fc
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Effects of harmonisation and trait aggregation on trait-environment relationships}
 
-The original RDA in \citet{szocs_effects_2014} indicated that downstream sites (higher salinity) were characterised by the traits shredder, ovoviviparity, multivoltinism, long life cycle duration ($> 1$ year), and gill respiration, whereas upstream sites (lower salinity) were characterized by univoltinism, oviposition in clutches and short life cycle duration ($< 1$ year). 
+Our re-analysis of the \citet{szocs_effects_2014} study on the effects of salinisation on invertebrate traits showed that the use of harmonised and aggregated trait data may be useful for ecological studies on trait–environment relationships. Overall, harmonised trait data and all aggregation methods produced similar distributions of RDA species scores (\ref{fig:violin_plot_species_sc}) compared with the original analysis, and they resulted in similar, but fewer, traits that distinguished upstream and downstream sites than the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}).
 
-Overall, harmonised trait data and all aggregation methods produced similar distributions of RDA species scores (Figures \ref{fig:violin_plot_species_sc}) compared to the original analysis in \citet{szocs_effects_2014}. Using harmonised grouping features resulted in less traits that distinguish upstream and downstream sites in comparison to the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). According to the RDA of the trait composition, downstream sites were characterised by taxa with the traits multivoltinism, ovoviviparity and long life cycle duration. Upstream sites were characterised by univoltine taxa with a short life cycle duration that lay their eggs in an aquatic environment (aquatic eggs). The trait aquatic eggs of the harmonised grouping feature oviposition was derived by amalgamating the trait oviposition in clutches and other related traits (Table \ref{tab:traits_harmonisation}). The traits shredder and gill respiration did not characterise sites with higher salinisation.
+RDA using harmonised, but not aggregated, grouping features identified some, but not all, of the same traits that were identified by the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). The original RDA in \citet{szocs_effects_2014} indicated that downstream sites (higher salinity) were characterised by the traits: ovoviviparity, multivoltinism, long life-cycle duration ($> 1$ year), shredder, and gill respiration, whereas RDA with the harmonised data identified the first three traits but did not include shredder or gill respiration traits. The original RDA indicated that upstream sites (lower salinity) were characterised by the traits: univoltinism, oviposition in clutches, and short life-cycle duration ($< 1$ year), and RDA with the harmonised data characterised upstream sites by univoltine taxa with short life-cycle durations that lay their eggs in an aquatic environment (aquatic eggs). This difference in oviposition trait is not substantial because the trait aquatic eggs of the harmonised grouping feature oviposition was derived by combining the trait oviposition in clutches and other related traits (Table \ref{tab:traits_harmonisation}).
 
-Using traits aggregated at family-level from the harmonised dataset also showed results similar to the original analysis, but with less traits distinguishing upstream and downstream sites (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). The \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} 
-characterised the downstream sites with the same traits as the original analysis except that downstream sites were not characterised by the trait shredder. Upstream sites were characterised by the traits univoltinism, aquatic eggs and short life cycle duration. The same results were obtained when re-analysing the data with traits aggregated by the \textit{stepwise\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}}, with the exception that none of the life cycle traits characterised upstream or downstream sites. Thus, in our comparison aggregating by \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} yielded the least change in interpretation of the RDA results compared to the original findings.
+RDA using harmonised traits that were aggregated to family level also produced results similar to the original analysis but with fewer traits distinguishing upstream and downstream sites (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). The \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} characterised the downstream sites with the same traits as the original analysis except the trait shredder. As for the RDA with harmonised but not aggregated data, RDA with these three aggregation methods characterised upstream sites by the traits univoltinism, short life-cycle duration, and aquatic eggs. The \textit{stepwise\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}} methods produced the same results except that none of the life-cycle traits characterised upstream or downstream sites. Thus, compared with the original study’s findings, aggregating by the direct and weighted methods yielded less change than the stepwise methods in interpretation of the RDA results.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=16.5cm, height=10cm]{Species_scores_rda.png}
-    \caption{Species scores obtained by RDA from the original analysis (\cite{szocs_effects_2014}), using harmonised grouping features, and using harmonised grouping features with traits aggregated to family-level. The dots represent the individual species scores for each analysed trait along the conductivity axis. The violin plot shows the density estimate of the species scores. Gray vertical lines indicate the median of the obtained species scores.}
+    \caption{Species scores obtained by RDA from the original analysis (\cite{szocs_effects_2014}), using harmonised grouping features, and using harmonised grouping features with traits aggregated to family level with five different aggregation methods. The dots represent the individual species scores for each analysed trait along the conductivity axis. The violin plot shows the density estimate of the species scores. Grey vertical lines indicate the median of the obtained species scores.}
     \label{fig:violin_plot_species_sc}
 \end{figure}
 
