@@ -218,7 +218,7 @@ All data processing and RDA analyses were carried out using R (\cite{cite_R}). R
 
 \subsection*{Harmonised trait datasets}
 
-\subsection*{Taxonomic coverage of the harmonised trait datasets}
+\subsubsection*{Taxonomic coverage of the harmonised trait datasets}
 
 The harmonised European, North American, Australian, and New Zealand trait datasets differed in terms of their taxonomic coverage. The European trait dataset had the largest taxon pool with 4601 taxa (Table \ref{tab:tax_coverage}) followed by the North American dataset (3753 taxa), the Australian dataset (1402 taxa), and the New Zealand dataset with the smallest taxon pool (478 taxa). The European, New Zealand, and North American datasets contained most taxa at the species level, whereas the Australian dataset comprised a similar number of taxa at species and genus level.
 
@@ -245,7 +245,7 @@ Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zeala
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Completeness of trait information}
+\subsubsection*{Completeness of trait information}
 
 The numbers of entries with available information for the selected grouping features varied considerably within the harmonised European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (94–100\%).
 
@@ -278,7 +278,7 @@ Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zeala
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Discrepancies in invertebrate trait definitions across databases}
+\subsubsection*{Discrepancies in invertebrate trait definitions across databases}
 
 Definitions of grouping features and traits varied in their level of detail in the investigated trait databases. The freshwaterecology.info, Tachet, and CONUS databases provided more detailed descriptions of trait information than the Vieira and New Zealand databases provided. The Australian trait database (\cite{kefford_integrated_2020}) was a collection of seven specific trait datasets; thus, grouping features occurred multiple times with varying differentiation into traits. Depending on the dataset, trait information was described with more or less detail.
 
@@ -324,13 +324,12 @@ Body Form                                                           & -         
 
 \subsection*{Comparing aggregation methods} 
 
-\subsection*{Comparison of family-level aggregated traits with family-level assigned traits}
+\subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 \label{sec:diff_trait_agg_chessman}
-
 
 The comparison of family-level aggregated trait affinities with those assigned by experts for the Australian and North American databases showed that aggregation method (median or mean) had a greater effect than the overall approach (direct, stepwise, or weighted by the number of species) in whether trait affinities differed from those assigned by experts.
 
-The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean and weighted aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
+The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean and weighted aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_combined}).
 
 \begin{table}[H]
   \centering
@@ -359,27 +358,17 @@ The percentage of differing cases of aggregated versus assigned trait affinities
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian dataset for the grouping features feeding mode and body size. Violin plots - mirrored density plots - show
-  the density of the absolute trait affinity differences. Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate.}
-  \label{fig:diff_aggr_traits_chessman}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family level. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
-  \label{fig:diff_aggr_traits_pyne}
+  \includegraphics[width=16.5cm, height=12cm]{Deviances_trait_agg_combined.png}
+  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate.}
+  \label{fig:diff_aggr_traits_combined}
 \end{figure}
 
 \newpage 
 
 
-\subsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
+\subsubsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
 
-Our simulation results showed that both taxonomic hierarchical structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of taxonomic hierarchy differed across aggregation methods, but, as we expected, the produced range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: 
- % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
+Our simulation results showed that both taxonomic hierarchical structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of taxonomic hierarchy differed across aggregation methods, but, as we expected, the produced range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
 
 Taxonomic hierarchical structure appeared to influence the outcomes of the different aggregation methods. For the \textit{sim\_base} scenario (equal numbers of genera and species), the mean and weighted aggregation methods yielded similar ranges of aggregated trait affinities within each level of trait variability, and the median aggregation methods consistently produced greater ranges of aggregated trait affinities than the other methods. The largest ranges were produced by the \textit{stepwise\_agg \textsubscript{median}} method. For the more complex taxonomic hierarchical structures, \textit{sim\_extreme} (one genus with a much larger number of species than the other four) and \textit{sim\_variation} (all genera with a different number of species), the \textit{stepwise\_agg \textsubscript{median}} method still produced the largest ranges of trait affinities for most levels of trait variability (and \textit{direct\_agg\textsubscript{mean}} produced the narrowest ranges for most levels of trait variability), but there was much less consistency in the ranges of trait affinities for all aggregation methods (i.e., the ranges were different among all aggregation methods).
 
@@ -388,7 +377,7 @@ Although trait aggregation methods were affected by taxonomic hierarchical struc
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results.png}
-  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Shown are the results only for one simulated trait (T1). Similar results were obtained for the other simulated traits (see appendix).  Boxplots depict results for 100 replicated simulations of each trait aggregation method. The boxplot depicts the median and encompasses the 25\textsuperscript{th} and 75\textsuperscript{th} percentile. Horizontal black lines depict the median. Whiskers extend to the largest and smallest value respectively no further than 1.5 $*$ the inter-quartile range. Outliers beyond the end of the whiskers are plotted as grey dots.}
+  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Shown are the results only for one simulated trait (T1). Similar results were obtained for the other simulated traits (Figure \ref{fig:overview_sim_results_T2_T3}). Boxplots depict results for 100 replicated simulations of each trait aggregation method. The boxplot depicts the median and encompasses the 25\textsuperscript{th} and 75\textsuperscript{th} percentile. Horizontal black lines depict the median. Whiskers extend to the largest and smallest value respectively no further than 1.5 $*$ the inter-quartile range. Outliers beyond the end of the whiskers are plotted as grey dots. Trait aggregation methods are in order of least to greatest produced ranges to improve visual inspection.}
   \label{fig:overview_sim_results}
 \end{figure}
 
@@ -427,21 +416,11 @@ RDA using harmonised traits that were aggregated to family level also produced r
     \label{fig:violin_plot_species_sc}
 \end{figure}
 
-% Old figure:
-% \begin{sidewaysfigure}
-%   \label{fig:boxplots_scores_on_constrained_axis}
-%   \centering
-%   \includegraphics[width= 22cm, height=12cm]{Scores_on_constrained_axis_combined.pdf}
-%   \caption{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled.}
-% \end{sidewaysfigure}
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16.5cm, height=25cm]{Scores_on_constrained_axis_comb_ALT.pdf}
+  \includegraphics[width=17cm, height=14.5cm]{boxplot_scores_combined.png}
+  \caption{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information. lcd, life cycle duration; nr.cy, potential number of cycles per year}
 \end{figure}
-\clearpage % insert a page break
-\captionof{figure}{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1.} 
-\label{fig:boxplots_scores_on_constrained_axis}
 
 \newpage
 

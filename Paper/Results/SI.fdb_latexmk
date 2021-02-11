@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Results/SI"] 1608635528 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1608635552
-  "Results/SI.bcf" 1608635552 94451 85b24369490231b37d796871139fcbab ""
+["biber Results/SI"] 1613039583 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1613040219
+  "Results/SI.bcf" 1613040219 94451 85b24369490231b37d796871139fcbab ""
   (generated)
   "Results/SI.bbl"
   "Results/SI.blg"
-["pdflatex"] 1608635552 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1608635552
+["pdflatex"] 1613040218 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1613040219
   "/etc/texmf/web2c/texmf.cnf" 1602155229 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1608635551 18968 426dd772206790ce0cd825e8fb0d4ada ""
+  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1613040217 13363 f4ebe25be5ecaa293c7ce099fd97b5a2 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -182,18 +182,21 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1520210507 32485 c64754543d8ac501bea6e75e209ea521 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1602496516 2700761 ac0584cc9514ab21918550a6948c4ee2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1602496527 4126804 863aa8be25f58a01810c5d5702e28373 ""
+  "Figures/Deviances_trait_agg_pyne.png" 1613037550 485194 4dbc3df0783d262e5f2a24dedfefb188 ""
+  "Figures/Overview_sim_results_T2_T3.png" 1613038813 292144 4712800d8db69cf94e99bb68cd7ce394 ""
+  "Figures/Scores_on_constrained_axis_comb_ALT.pdf" 1608382441 175832 059a193e59f88a2b8a2ee306b4dc8932 ""
   "Figures/taxonomic_hierarchy_AUS.png" 1605524723 252692 873312142d812415d26d554af97d4967 ""
   "Figures/taxonomic_hierarchy_NOA.png" 1605276483 253753 2cd7021a531eb17feffcb338e09da1fe ""
-  "Results/../Draft_harmonization_paper.tex" 1608635534 70296 46537a7fd86a0768cebfd2a291dae13b ""
-  "Results/SI.aux" 1608635552 4901 344054294a7da38daefe3edbf1b9ded8 ""
-  "Results/SI.bbl" 1608635529 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/SI"
-  "Results/SI.out" 1608635552 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/SI.run.xml" 1608635552 2427 5c7239c4a0bd9a74cdd3196279f24da0 ""
-  "Results/SI.tex" 1608635551 18968 426dd772206790ce0cd825e8fb0d4ada ""
+  "Results/../Draft_harmonization_paper.tex" 1613040196 78438 a96f5cd1522d9d7896cd97f2a7333755 ""
+  "Results/SI.aux" 1613040219 8282 32ef8d4b37e5c59173a9ee61f116cddd ""
+  "Results/SI.bbl" 1613039583 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/SI"
+  "Results/SI.out" 1613040219 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/SI.run.xml" 1613040219 2427 5c7239c4a0bd9a74cdd3196279f24da0 ""
+  "Results/SI.tex" 1613040217 13363 f4ebe25be5ecaa293c7ce099fd97b5a2 ""
   (generated)
+  "Results/SI.out"
+  "Results/SI.bcf"
   "Results/SI.aux"
   "Results/SI.pdf"
-  "Results/SI.bcf"
   "Results/SI.run.xml"
   "Results/SI.log"
-  "Results/SI.out"

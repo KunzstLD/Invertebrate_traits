@@ -5,7 +5,9 @@
 \section*{Supporting Information}
 \label{sec:SI}
 
-\subsection*{Discrepancies in trait definitions}
+\subsection*{Harmonised trait datasets}
+
+\subsubsection*{Discrepancies in trait definitions}
 
 \begin{landscape}
     \begin{longtable}{m{1.8cm}|m{3cm}|m{3cm}|m{3cm}|m{3cm}|m{3.2cm}|m{3cm}}
@@ -177,42 +179,31 @@
     \end{minipage}
 \end{landscape}
 
-% \subsection*{Differences in trait affinities obtained by trait aggregation methods com-pared to traits assigned at family-level}
+\newpage
 
-% \subsubsection*{Comparison of the trait aggregation methods with each other}
-% \label{sec:compa_aggr_methods}
+\subsection*{Comparing aggregation methods}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Comparison_trait_agg_methods.png}
-%     \caption{Comparison of trait aggregation methods when aggregating over all traits for all datasets. Displayed are means of absolute differences in trait affinities with standard deviations (truncated at 0). Compared aggregation methods are displayed on the y-axis. N indicates the number of cases where differences occurred. Total number of cases: Australia 2223, Europe 3352, New Zealand 777, and North America 4080.}
-%     \label{fig:comp_aggr_methods}
-% \end{figure}
+\subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 
-%\subsubsection*{Simulation of varying taxonomic hierarchies}
- 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results.png}
-%     \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Boxplots depict results for each trait aggregation method of 100 simulations. T1 to T3 are the simulated traits.}
-%     \label{fig:overview_sim_results}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=16.5cm, height=12cm]{Deviances_trait_agg_pyne.png}
+    \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features locomotion, respiration, and body size. For more details see Figure \ref{fig:diff_aggr_traits_combined}.}
+    \label{fig:diff_aggr_traits_pyne}
+  \end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Diffs_indiv_runs_sim.png}
-%     \caption{Comparison of the results of the trait aggregation methods for every simulated dataset. Simulated datasets where absolute differences between aggregated trait affinities were greater than 0.1 are depicted. Only the comparisons are shown were differences greater than 0.1 occurred.}
-%     \label{fig:sim_indv_runs}
-% \end{figure}
+
+\subsubsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results_T2_T3.png}
+    \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Shown are the results for the simulated traits T2 and T3. Boxplots depict results for 100 replicated simulations of each trait aggregation method. Trait aggregation methods are in order of least to greatest produced ranges to improve visual inspection. For more details see Figure \ref{fig:overview_sim_results}.}
+    \label{fig:overview_sim_results_T2_T3}
+  \end{figure}
 
 \subsubsection*{Taxonomic hierarchy in the trait datasets used for comparisons with assigned traits at family level}
 \label{sec:taxonomic_hierarchy}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{taxonomic_hierarchy_EU.png}
-%     \caption{Number of genera per family and species per genus for the European trait dataset. For better visual display only families with more than 10 genera are displayed.}
-%     \label{fig:tax_hierarchy_EU}
-% \end{figure}
 
 \begin{figure}[H]
     \centering
@@ -228,16 +219,8 @@
     \label{fig:tax_hierarchy_AUS}
 \end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{taxonomic_hierarchy_NZ.png}
-%     \caption{Number of genera per family and species per genus for the New Zealand trait dataset. For better visual display only families with more than 5 genera are displayed.}
-%     \label{fig:tax_hierarchy_NZ}
-% \end{figure}
 
-\newpage
-
-\subsection*{Re-analysis of Szöcs et al. using harmonised and aggregated grouping features}
+\subsection*{Effects of harmonisation and trait aggregation on trait-environment relationships}
 
 \begin{table}[ht]
     \centering
@@ -282,107 +265,13 @@
     \end{tabular}
 \end{table}
 
-%\subsection*{Re-analysis of Szöcs et al. using harmonized grouping features.}
-%\label{subsec:SI_szoecs_reanalysis}
-
-% \subsubsection*{RDA of trait composition}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{RDA_traits_harmonized.png}
-%     \caption{RDA of traits constrained by electric conductivity using harmonized grouping features. Boxplot of site scores along the conductivity axis ($31.44 \%$ explained variance, p = 0.001, 1000 permutations). Rug on the right indicates trait scores on the conductivity axis. Only traits with a mahalanobis distance greater than 5.02 were labeled in accordance to the procedure in Szöcs et al. \cite{szocs_effects_2014}.
-%     } 
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{RDA_traits_Szoecs_2014.png}
-%     \caption{RDA of traits constrained by electric conductivity. Boxplot of site scores along the conductivity axis ($30.09 \%$ explained variance, p = 0.001, 1000 permutations). Rug on the right indicates trait scores on the conductivity axis. Only traits with a mahalanobis distance greater than 5.02 were labeled.
-%     } 
-% \end{figure}
-
-% Not sure if the next two sections are really needed
-% Need also to run analysis again
-%\subsubsection*{Trait distribution along first RDA axis} 
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=17.5cm, height=10cm]{Trait_distrb_harmonized.png}
-%     \caption{Trait scores on the first RDA axis for harmonized traits and traits of the grouping feature \textit{life cycle duration}.
-%     } 
-% \end{figure}
-
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=17.5cm, height=10cm]{Trait_distrb_Szoecs_2014.png}
-%     \caption{Trait scores on the first RDA axis for the traits responding to high salinity in Szöcs et al. \cite{szocs_effects_2014}
-%     .
-%     }
-% \end{figure}
-
-\newpage
-% \subsubsection*{Linear models of trait proportions}
-
-% \textit{Linear models of trait proportions with harmonized traits:}
-% \begin{table}[ht]
-%     \centering
-%     \caption{Results of linear models for the four selected harmonized traits and life cycle duration $>$ 1 year. Trait proportions were logit transformed prior model building, estimates are on the logit scale. Although years were statistically not significant we kept this factor in the model to avoid temporal autocorrelation. Bold values indicate statistically significant effects (p $<$ 0.05).}
-%     \label{stab:linear_models_new}
-%     \begin{tabular}{l|ccccc}
-%     \toprule[.1em]
-%     & \specialcell{Feeding mode:\\ shredder} & \specialcell{Life cycle duration:\\ $>$ 1 year} & \specialcell{Voltinism:\\ bi- or multivoltine} & \specialcell{Reproduction:\\ ovoviviparity} & \specialcell{Respiration:\\ gills} \\ 
-%     \toprule[.1em]
-%     Intercept ($=$ upstream) & \textbf{-1.041} & \textbf{-0.486} & 0.375* & \textbf{-0.823} & 0.092\\ 
-%     Downstream & \textbf{0.926} & \textbf{0.605} & \textbf{1.376} & \textbf{1.684} & \textbf{0.854}\\ 
-%     Downstream x 2008 & -0.117 & 0.106 & -0.235 & -0.088 & -0.317\\ 
-%     Downstream x 2009 & 0.030 & -0.056 & 0.001 & 0.245 & 0.180\\ 
-%     Year 2008 & -0.167 & -0.115 & 0.033 & -0.182 & -0.151\\ 
-%     Year 2009 & 0.175 & 0.086 & -0.088 & 0.246 & 0.141\\ 
-%     \bottomrule
-%     \end{tabular}
-%     \textit{* p.value = 0.055}
-% \end{table}
-% \newline
-% \newline
-% \newline
-% \textit{Linear models of trait proportions Szöcs et al. :}
-% \begin{table}[ht]
-%     \centering
-%     \caption{Results of linear models for the five selected traits for Szöcs et al. \cite{szocs_effects_2014}. Trait proportions were logit transformed prior model building, estimates are on the logit scale.
-%     Although years were statistically not significant we kept this factor in the model to avoid temporal autocorrelation. Bold values indicate statistically
-%     significant effects (p $<$ 0.05).}
-%     \label{stab:linear_models_edi}
-%     \begin{tabular}{l|ccccc}
-%     \toprule[.1em]
-%     & \specialcell{Feeding habits:\\ shredder} & \specialcell{Life cycle duration:\\ $>$ 1 year} & \specialcell {Cycles per year:\\ $>$ 1} & \specialcell{Reproduction:\\ ovoviviparity} & \specialcell{Respiration:\\ gills} \\ 
-%     \toprule[.1em]
-%     Intercept ($=$ upstream) & \textbf{-0.853} & \textbf{-0.478} & \textbf{0.603} & \textbf{-0.838} & 0.111 \\ 
-%     Downstream & \textbf{0.819} & \textbf{0.594} & \textbf{1.297} & \textbf{1.679} & \textbf{0.839} \\ 
-%     Downstream x 2008 & -0.155 & 0.102 & -0.227 & -0.070 & -0.314 \\ 
-%     Downstream x 2009 & 0.073 & -0.053 & -0.020 & 0.248 & 0.176 \\ 
-%     Year 2008 & -0.122 & -0.112 & 0.026 & -0.192 & -0.154 \\ 
-%     Year 2009 & 0.167 & 0.084 & -0.104 & 0.250 & 0.139 \\ 
-%     \bottomrule
-%     \end{tabular} 
-% \end{table}
-
-
-% \subsubsection*{Trait proportions over time}
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Trait_proportion_harmonized.png}
-%     \caption{Proportions for the four harmonized traits that have been promoted by salinization and life cycle duration $>$ 1 year for down- and upstream sites.
-%     } 
-% \end{figure}
-
-% % Trait proportions over time
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=16.5cm, height=10cm]{Trait_proportion_Szoecs_2014.png}
-%     \caption{Proportions for five selected traits for down- and upstream sites (traits that have been promoted by salinization) from Szöcs et al. \cite{szocs_effects_2014}.} 
-% \end{figure}
-
-
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=16.5cm, height=25cm]{Scores_on_constrained_axis_comb_ALT.pdf}
+\end{figure}
+  \clearpage % insert a page break
+  \captionof{figure}{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1.} 
+\label{fig:boxplots_scores_on_constrained_axis}
 
 
 \end{document}
