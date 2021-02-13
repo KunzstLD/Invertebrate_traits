@@ -8,7 +8,8 @@
                 fit,
                 matrix,
                 shapes.geometric,
-                decorations.pathreplacing, 
+                decorations.pathreplacing,
+                %calligraphy,
                 angles,
                 quotes}
 
@@ -101,8 +102,9 @@
       \draw[->] (normalAUS.east) -- (omission.west);
       \draw[->] (harmonisation.east) -- (conversionPerc.west);
       \draw[->] (conversionPerc.east) -- (traitAgg.west);
-      \draw[arrow1] (traitAgg.south) to [out=200,in=40] (frameExample.north);
-      \draw[arrow1] (traitAgg.south) to [out=360,in=80] (frameExample.east);
+      %\draw[arrow1] (traitAgg.south) to [out=200,in=40] (frameExample.north);
+      %\draw[arrow1] (traitAgg.south) to [out=360,in=80] (frameExample.east);
+      \draw [decorate,decoration={brace, amplitude=20pt}, line width = 2pt](2.9, -4) -- (7.1, -4);
       \draw[->] (directAgg.south) -- (tab_direct_agg.north);
       \draw[->] (stepwiseAgg.south) -- (tab_stepwise_agg.north);
       \draw[->] (tab_stepwise_agg.south) -- (stepwiseAgg2.north);

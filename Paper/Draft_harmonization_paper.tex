@@ -203,6 +203,7 @@ To examine the influence of taxonomic hierarchy and trait variability on the out
 
 \begin{figure}
   \centering
+  % \includegraphics[width=22cm, height=28cm]{Flowchart_methods.pdf}
   \subfile{Flowchart/Flowchart_methods.tex}
   \caption{Data processing steps of the selected traits. Intermediate (grey) and main (orange) steps of data preparation are depicted. The dashed bottom box illustrates the different trait aggregation methods (hypothetical data in the upper left corner). The aggregation methods (purple) and intermediate steps of the aggregation methods (pink) are displayed. Abbreviations: EU, Europe; NOA, North America; AUS, Australia; NZ, New Zealand.}
   \label{fig:data_proc_overview}
@@ -368,13 +369,19 @@ The percentage of differing cases of aggregated versus assigned trait affinities
   \bottomrule
   \end{tabular}
 \end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+  \centering
+  Abbreviations: Min., Minimum; Max., Maximum; abs., absolute; SD, Standard deviation.
+  }
+  \end{minipage}
+
 
 \newpage
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=12cm]{Deviances_trait_agg_combined.png}
-  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate.}
+  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate. Abbreviations: AUS, Australia; NOA, North America.}
   \label{fig:diff_aggr_traits_combined}
 \end{figure}
 
@@ -434,7 +441,7 @@ RDA using harmonised traits that were aggregated to family level also produced r
 \begin{figure}[H]
   \centering
   \includegraphics[width=17cm, height=14.5cm]{boxplot_scores_combined.png}
-  \caption{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information (Figure \ref{fig:boxplots_scores_on_constrained_axis_REMAIN}). lcd, life cycle duration; nr.cy, potential number of cycles per year}
+  \caption{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information (Figure \ref{fig:boxplots_scores_on_constrained_axis_REMAIN}). Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
   \label{fig:boxplot_scores_on_constrained_axis}
 \end{figure}
 
@@ -504,7 +511,7 @@ Harmonised invertebrate trait datasets for Australia, Europe, North America and 
 \section*{Acknowledgments}
 
 % Verena Schreiner body form traits?
-Stefan Kunz acknowledges that this paper was part of his PhD thesis. The project is funded by the German research society (DFG \textit{insert project number}).
+We thank Brooke Cassell for technical editing of the manuscript. The project is funded by the German research society (DFG \textit{insert project number}).
 
 \section*{Conflict of interest}
 
