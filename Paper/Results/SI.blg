@@ -1,9 +1,9 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Results/SI.blg'
-[26] biber:313> INFO - === Do Feb 11, 2021, 11:33:03
-[45] Biber.pm:371> INFO - Reading 'Results/SI.bcf'
-[111] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[123] Utils.pm:169> WARN - The file 'Results/SI.bcf' does not contain any citations!
-[144] bbl.pm:617> INFO - Writing 'Results/SI.bbl' with encoding 'UTF-8'
-[145] bbl.pm:720> INFO - Output to Results/SI.bbl
-[145] Biber.pm:110> INFO - WARNINGS: 1
+[24] biber:313> INFO - === Sa Feb 13, 2021, 13:55:02
+[42] Biber.pm:371> INFO - Reading 'Results/SI.bcf'
+[95] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
+[101] Utils.pm:169> WARN - The file 'Results/SI.bcf' does not contain any citations!
+[106] bbl.pm:617> INFO - Writing 'Results/SI.bbl' with encoding 'UTF-8'
+[107] bbl.pm:720> INFO - Output to Results/SI.bbl
+[107] Biber.pm:110> INFO - WARNINGS: 1

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  11 FEB 2021 11:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  13 FEB 2021 13:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,11 +748,18 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2013/06/09 v1.4-94 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
+) (/usr/share/texlive/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip55
+\@affilsep=\skip56
+\c@Maxaffil=\count130
+\c@authors=\count131
+\c@affil=\count132
 ) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count130
-\Gm@cntv=\count131
-\c@Gm@tempcnt=\count132
+\Gm@cnth=\count133
+\Gm@cntv=\count134
+\c@Gm@tempcnt=\count135
 \Gm@bindingoffset=\dimen179
 \Gm@wd@mp=\dimen180
 \Gm@odd@mp=\dimen181
@@ -804,70 +811,70 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
  (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count133
+\etb@tempcnta=\count136
 ) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count134
+\lrq@indent=\count137
  (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
-\integerpart=\count135
-\decimalpart=\count136
+\integerpart=\count138
+\decimalpart=\count139
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count137
-\c@listtotal=\count138
-\c@listcount=\count139
-\c@liststart=\count140
-\c@liststop=\count141
-\c@citecount=\count142
-\c@citetotal=\count143
-\c@multicitecount=\count144
-\c@multicitetotal=\count145
-\c@instcount=\count146
-\c@maxnames=\count147
-\c@minnames=\count148
-\c@maxitems=\count149
-\c@minitems=\count150
-\c@citecounter=\count151
-\c@savedcitecounter=\count152
-\c@uniquelist=\count153
-\c@uniquename=\count154
-\c@refsection=\count155
-\c@refsegment=\count156
-\c@maxextratitle=\count157
-\c@maxextratitleyear=\count158
-\c@maxextradate=\count159
-\c@maxextraalpha=\count160
-\c@abbrvpenalty=\count161
-\c@highnamepenalty=\count162
-\c@lownamepenalty=\count163
-\c@maxparens=\count164
-\c@parenlevel=\count165
-\blx@tempcnta=\count166
-\blx@tempcntb=\count167
-\blx@tempcntc=\count168
-\blx@maxsection=\count169
-\blx@maxsegment@0=\count170
-\blx@notetype=\count171
-\blx@parenlevel@text=\count172
-\blx@parenlevel@foot=\count173
-\blx@sectionciteorder@0=\count174
-\labelnumberwidth=\skip55
-\labelalphawidth=\skip56
-\biblabelsep=\skip57
-\bibitemsep=\skip58
-\bibnamesep=\skip59
-\bibinitsep=\skip60
-\bibparsep=\skip61
-\bibhang=\skip62
+\c@tabx@nest=\count140
+\c@listtotal=\count141
+\c@listcount=\count142
+\c@liststart=\count143
+\c@liststop=\count144
+\c@citecount=\count145
+\c@citetotal=\count146
+\c@multicitecount=\count147
+\c@multicitetotal=\count148
+\c@instcount=\count149
+\c@maxnames=\count150
+\c@minnames=\count151
+\c@maxitems=\count152
+\c@minitems=\count153
+\c@citecounter=\count154
+\c@savedcitecounter=\count155
+\c@uniquelist=\count156
+\c@uniquename=\count157
+\c@refsection=\count158
+\c@refsegment=\count159
+\c@maxextratitle=\count160
+\c@maxextratitleyear=\count161
+\c@maxextradate=\count162
+\c@maxextraalpha=\count163
+\c@abbrvpenalty=\count164
+\c@highnamepenalty=\count165
+\c@lownamepenalty=\count166
+\c@maxparens=\count167
+\c@parenlevel=\count168
+\blx@tempcnta=\count169
+\blx@tempcntb=\count170
+\blx@tempcntc=\count171
+\blx@maxsection=\count172
+\blx@maxsegment@0=\count173
+\blx@notetype=\count174
+\blx@parenlevel@text=\count175
+\blx@parenlevel@foot=\count176
+\blx@sectionciteorder@0=\count177
+\labelnumberwidth=\skip57
+\labelalphawidth=\skip58
+\biblabelsep=\skip59
+\bibitemsep=\skip60
+\bibnamesep=\skip61
+\bibinitsep=\skip62
+\bibparsep=\skip63
+\bibhang=\skip64
 \blx@bcfin=\read3
 \blx@bcfout=\write5
-\c@mincomprange=\count175
-\c@maxcomprange=\count176
-\c@mincompwidth=\count177
+\c@mincomprange=\count178
+\c@maxcomprange=\count179
+\c@mincompwidth=\count180
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
@@ -878,90 +885,90 @@ File: apa.dbx 2017/11/05 v7.5 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count178
-\c@savedafterword=\count179
-\c@annotator=\count180
-\c@savedannotator=\count181
-\c@author=\count182
-\c@savedauthor=\count183
-\c@bookauthor=\count184
-\c@savedbookauthor=\count185
-\c@commentator=\count186
-\c@savedcommentator=\count187
-\c@editor=\count188
-\c@savededitor=\count189
-\c@editora=\count190
-\c@savededitora=\count191
-\c@editorb=\count192
-\c@savededitorb=\count193
-\c@editorc=\count194
-\c@savededitorc=\count195
-\c@foreword=\count196
-\c@savedforeword=\count197
-\c@holder=\count198
-\c@savedholder=\count199
-\c@introduction=\count266
-\c@savedintroduction=\count267
-\c@namea=\count268
-\c@savednamea=\count269
-\c@nameb=\count270
-\c@savednameb=\count271
-\c@namec=\count272
-\c@savednamec=\count273
-\c@translator=\count274
-\c@savedtranslator=\count275
-\c@shortauthor=\count276
-\c@savedshortauthor=\count277
-\c@shorteditor=\count278
-\c@savedshorteditor=\count279
-\c@with=\count280
-\c@savedwith=\count281
-\c@writer=\count282
-\c@savedwriter=\count283
-\c@producer=\count284
-\c@savedproducer=\count285
-\c@execproducer=\count286
-\c@savedexecproducer=\count287
-\c@director=\count288
-\c@saveddirector=\count289
-\c@labelname=\count290
-\c@savedlabelname=\count291
-\c@institution=\count292
-\c@savedinstitution=\count293
-\c@lista=\count294
-\c@savedlista=\count295
-\c@listb=\count296
-\c@savedlistb=\count297
-\c@listc=\count298
-\c@savedlistc=\count299
-\c@listd=\count300
-\c@savedlistd=\count301
-\c@liste=\count302
-\c@savedliste=\count303
-\c@listf=\count304
-\c@savedlistf=\count305
-\c@location=\count306
-\c@savedlocation=\count307
-\c@organization=\count308
-\c@savedorganization=\count309
-\c@origlocation=\count310
-\c@savedoriglocation=\count311
-\c@origpublisher=\count312
-\c@savedorigpublisher=\count313
-\c@publisher=\count314
-\c@savedpublisher=\count315
-\c@language=\count316
-\c@savedlanguage=\count317
-\c@origlanguage=\count318
-\c@savedoriglanguage=\count319
-\c@pageref=\count320
-\c@savedpageref=\count321
-\shorthandwidth=\skip63
-\shortjournalwidth=\skip64
-\shortserieswidth=\skip65
-\shorttitlewidth=\skip66
-\shortauthorwidth=\skip67
-\shorteditorwidth=\skip68
+\c@afterword=\count181
+\c@savedafterword=\count182
+\c@annotator=\count183
+\c@savedannotator=\count184
+\c@author=\count185
+\c@savedauthor=\count186
+\c@bookauthor=\count187
+\c@savedbookauthor=\count188
+\c@commentator=\count189
+\c@savedcommentator=\count190
+\c@editor=\count191
+\c@savededitor=\count192
+\c@editora=\count193
+\c@savededitora=\count194
+\c@editorb=\count195
+\c@savededitorb=\count196
+\c@editorc=\count197
+\c@savededitorc=\count198
+\c@foreword=\count199
+\c@savedforeword=\count266
+\c@holder=\count267
+\c@savedholder=\count268
+\c@introduction=\count269
+\c@savedintroduction=\count270
+\c@namea=\count271
+\c@savednamea=\count272
+\c@nameb=\count273
+\c@savednameb=\count274
+\c@namec=\count275
+\c@savednamec=\count276
+\c@translator=\count277
+\c@savedtranslator=\count278
+\c@shortauthor=\count279
+\c@savedshortauthor=\count280
+\c@shorteditor=\count281
+\c@savedshorteditor=\count282
+\c@with=\count283
+\c@savedwith=\count284
+\c@writer=\count285
+\c@savedwriter=\count286
+\c@producer=\count287
+\c@savedproducer=\count288
+\c@execproducer=\count289
+\c@savedexecproducer=\count290
+\c@director=\count291
+\c@saveddirector=\count292
+\c@labelname=\count293
+\c@savedlabelname=\count294
+\c@institution=\count295
+\c@savedinstitution=\count296
+\c@lista=\count297
+\c@savedlista=\count298
+\c@listb=\count299
+\c@savedlistb=\count300
+\c@listc=\count301
+\c@savedlistc=\count302
+\c@listd=\count303
+\c@savedlistd=\count304
+\c@liste=\count305
+\c@savedliste=\count306
+\c@listf=\count307
+\c@savedlistf=\count308
+\c@location=\count309
+\c@savedlocation=\count310
+\c@organization=\count311
+\c@savedorganization=\count312
+\c@origlocation=\count313
+\c@savedoriglocation=\count314
+\c@origpublisher=\count315
+\c@savedorigpublisher=\count316
+\c@publisher=\count317
+\c@savedpublisher=\count318
+\c@language=\count319
+\c@savedlanguage=\count320
+\c@origlanguage=\count321
+\c@savedoriglanguage=\count322
+\c@pageref=\count323
+\c@savedpageref=\count324
+\shorthandwidth=\skip65
+\shortjournalwidth=\skip66
+\shortserieswidth=\skip67
+\shorttitlewidth=\skip68
+\shortauthorwidth=\skip69
+\shorteditorwidth=\skip70
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
@@ -971,13 +978,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count322
-\c@textcitetotal=\count323
-\c@textcitemaxnames=\count324
-\c@biburlnumpenalty=\count325
-\c@biburlucpenalty=\count326
-\c@biburllcpenalty=\count327
-\c@smartand=\count328
+\c@textcitecount=\count325
+\c@textcitetotal=\count326
+\c@textcitemaxnames=\count327
+\c@biburlnumpenalty=\count328
+\c@biburlucpenalty=\count329
+\c@biburllcpenalty=\count330
+\c@smartand=\count331
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -992,8 +999,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count329
-\c@bbx:relatedtotal=\count330
+\c@bbx:relatedcount=\count332
+\c@bbx:relatedtotal=\count333
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1028,8 +1035,8 @@ Package biblatex Info: ... file 'american.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/american.lbx
 File: american.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
 ))
-\@quotelevel=\count331
-\@quotereset=\count332
+\@quotelevel=\count334
+\@quotereset=\count335
 )) (Results/SI.aux)
 \openout1 = `SI.aux'.
 
@@ -1058,7 +1065,7 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count333
+\c@section@level=\count336
 )
 LaTeX Info: Redefining \ref on input line 3.
 LaTeX Info: Redefining \pageref on input line 3.
@@ -1069,16 +1076,16 @@ LaTeX Info: Redefining \nameref on input line 3.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count334
+\scratchcounter=\count337
 \scratchdimen=\dimen187
 \scratchbox=\box45
-\nofMPsegments=\count335
-\nofMParguments=\count336
+\nofMPsegments=\count338
+\nofMParguments=\count339
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count337
+\MPscratchCnt=\count340
 \MPscratchDim=\dimen188
-\MPnumerator=\count338
-\makeMPintoPDFobject=\count339
+\MPnumerator=\count341
+\makeMPintoPDFobject=\count342
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1718,16 +1725,16 @@ Underfull \vbox (badness 10000) detected at line 168
 
 ] [3] [4]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 176.
+(Font)              <9> on input line 170.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 176.
+(Font)              <6> on input line 170.
 
 Overfull \hbox (15.0pt too wide) in paragraph at lines 169--180
 []$[]$ 
  []
 
 [5]
-<Figures/Deviances_trait_agg_pyne.png, id=43, 711.1368pt x 369.7815pt>
+<Figures/Deviances_trait_agg_pyne.png, id=44, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
 Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 190.
@@ -1743,7 +1750,7 @@ LaTeX Warning: Reference `fig:diff_aggr_traits_combined' on page 6 undefined on 
 
 LaTeX Warning: Reference `fig:diff_aggr_traits_combined' on page 6 undefined on input line 191.
 
-<Figures/Overview_sim_results_T2_T3.png, id=44, 711.1368pt x 369.7815pt>
+<Figures/Overview_sim_results_T2_T3.png, id=45, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results_T2_T3.png Graphic file (type png)
 <use Figures/Overview_sim_results_T2_T3.png>
 Package pdftex.def Info: Figures/Overview_sim_results_T2_T3.png  used on input line 200.
@@ -1762,7 +1769,7 @@ LaTeX Warning: Reference `fig:overview_sim_results' on page 6 undefined on input
 [6
 
  <./Figures/Deviances_trait_agg_pyne.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NOA.png, id=52, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=53, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 210.
@@ -1773,7 +1780,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 210--211
  []
 
 [7 <./Figures/Overview_sim_results_T2_T3.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_AUS.png, id=60, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_AUS.png, id=61, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
 Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 217.
@@ -1784,34 +1791,25 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 217--218
  []
 
 [8 <./Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
-<Figures/Scores_on_constrained_axis_comb_ALT.pdf, id=67, 448.10245pt x 796.6487pt>
-File: Figures/Scores_on_constrained_axis_comb_ALT.pdf Graphic file (type pdf)
-<use Figures/Scores_on_constrained_axis_comb_ALT.pdf>
-Package pdftex.def Info: Figures/Scores_on_constrained_axis_comb_ALT.pdf  used on input line 270.
-(pdftex.def)             Requested size: 469.4753pt x 711.3369pt.
+<Figures/boxplot_scores_combined_REMAIN_SI.png, id=68, 995.6397pt x 711.1368pt>
+File: Figures/boxplot_scores_combined_REMAIN_SI.png Graphic file (type png)
+<use Figures/boxplot_scores_combined_REMAIN_SI.png>
+Package pdftex.def Info: Figures/boxplot_scores_combined_REMAIN_SI.png  used on input line 270.
+(pdftex.def)             Requested size: 526.38pt x 455.24536pt.
 
-Overfull \hbox (39.47067pt too wide) in paragraph at lines 270--271
+Overfull \hbox (96.37538pt too wide) in paragraph at lines 270--271
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 154.86034pt on input line 271.
-
-[9 <./Figures/taxonomic_hierarchy_AUS.png (PNG copy)>] [10] [11 <./Figures/Scores_on_constrained_axis_comb_ALT.pdf>]
-
-Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 273.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `fig:boxplot_scores_on_constrained_axis' on page 9 undefined on input line 271.
 
 
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 273.
-See the caption package documentation for explanation.
+LaTeX Warning: Reference `fig:boxplot_scores_on_constrained_axis' on page 9 undefined on input line 271.
 
-[12
-
-]
+[9 <./Figures/taxonomic_hierarchy_AUS.png (PNG copy)>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 277.
+ [10] [11 <./Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 277.
  (Results/SI.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 277.
@@ -1827,18 +1825,18 @@ Package logreq Info: Writing requests to 'SI.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24019 strings out of 492982
- 448206 string characters out of 6134895
- 943857 words of memory out of 5000000
- 27162 multiletter control sequences out of 15000+600000
+ 24099 strings out of 492982
+ 449057 string characters out of 6134895
+ 947021 words of memory out of 5000000
+ 27240 multiletter control sequences out of 15000+600000
  49239 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,20n,56p,2265b,853s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on Results/SI.pdf (12 pages, 1636807 bytes).
+ 64i,18n,56p,2265b,853s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
+Output written on Results/SI.pdf (11 pages, 1769089 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 113 compressed objects within 2 object streams
- 29 named destinations out of 1000 (max. 500000)
+ 139 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
  38 words of extra memory for PDF output out of 10000 (max. 10000000)
 
