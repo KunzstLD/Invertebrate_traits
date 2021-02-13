@@ -5,14 +5,13 @@
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{color, colortbl}
 \usepackage{longtable}
-%\usepackage[sort&compress,square,comma,authoryear]{natbib}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{tikz}
 \usepackage{rotating}
 \usepackage{caption}
-% \graphicspath{{/home/kunz/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/}}
+\usepackage{authblk}
 \graphicspath{{Figures/}}
 \usepackage{rotating}
 \usepackage{geometry}
@@ -68,12 +67,32 @@ uniquelist=false
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Tackling discrepancies in freshwater invertebrate trait databases: Harmonising across continents and aggregating taxonomic resolution}
-\author{}%Stefan Kunz 
+\author[1]{Stefan Kunz}
+\author[2]{Ben J. Kefford}
+\author[3]{Leon Metzeling}
+\author[4]{Astrid Schmidt-Kloiber}
+\author[4]{Wolfram Graf}
+\author[5]{Philippe Usseglio-Polatera}
+\author[6]{Christoph D. Matthaei}
+\author[7]{Charles P. Hawkins}
+\author[8]{N. LeRoy Poff}
+\author[9]{Laura Twardochleb}
+\author[1]{Ralf B. Schäfer}
+\affil[1]{Institute for Environmental Sciences, University of Koblenz-Landau, Landau, Germany}
+\affil[2]{Centre for Applied Water Science, Institute for Applied Ecology, University of Canberra, Canberra, Australia}
+\affil[3]{Environment Protection Authority Victoria, Applied Sciences Division, Macleod, Australia}
+\affil[4]{Institute of Hydrobiology and Aquatic Ecosystem Management, University of Natural Resources and Life Sciences Vienna (BOKU), Vienna, Austria}
+\affil[5]{University of Lorraine, CNRS, LIEC, Metz, France}
+\affil[6]{Department of Zoology, University of Otago, Dunedin, New Zealand}
+\affil[7]{Department of Watershed Sciences and the Ecology Center, Utah State University, Logan, USA}
+\affil[8]{Department of Biology, Colorado State University, Fort Collins, USA}
+\affil[9]{Department of Fisheries and Wildlife, Michigan State University, East Lansing, USA}
 \date{}
 
 \begin{document}
 \maketitle
 
+\newpage
 
 \section*{Abstract}
 
@@ -85,8 +104,7 @@ uniquelist=false
 
 1. Use of invertebrate traits rather than species composition may facilitate large-scale comparisons of community structure and responses to disturbance in freshwater ecology because the same traits can potentially occur everywhere.  In recent years, comprehensive invertebrate trait databases have been established at different scales (e.g. regions, continents). The wide availability of invertebrate trait data supports trait-based studies, especially at large scales. However, a number of data-related issues complicate the use of invertebrate traits for ecological studies. For example, standardised definitions for for freshwater invertebrate traits are lacking, which impedes comparisons across regions. Moreover, it is uncertain how harmonising varying trait definitions among databases might influence identification of trait-environment relationships. In addition, taxonomic resolution between observational taxonomic data and trait data can differ, making aggregation of traits necessary. At present, it is unknown how different trait aggregation approaches compare with expert-assigned trait affinities. In this study we aimed to identify discrepancies in trait definitions across freshwater invertebrate databases and to compare trait aggregation methods to identify how taxonomic hierarchy structure and trait variability influence results from different aggregation approaches.
 
-2. We describe discrepancies in the definitions of traits used to create freshwater invertebrate trait databases in Europe, North America, New Zealand, and Australia. Based on our comparisons of these trait databases, we established four novel trait datasets by harmonising trait definitions of commonly used traits. Next, we used two of these datasets to compare aggregated traits obtained by different aggregation methods with traits assigned by experts, both at the family level. The trait aggregation methods we compared used either the mean or the median and different weightings. %Thereby, we simulated how taxonomic resolution and trait variability can change the result of different aggregation approaches.
-We further explored the effects of harmonisation and trait aggregation by re-analysing data from a case study.
+2. We describe discrepancies in the definitions of traits used to create freshwater invertebrate trait databases in Europe, North America, New Zealand, and Australia. Based on our comparisons of these trait databases, we established four novel trait datasets by harmonising trait definitions of commonly used traits. Next, we used two of these datasets to compare aggregated traits obtained by different aggregation methods with traits assigned by experts, both at the family level. The trait aggregation methods we compared used either the mean or the median and different weightings. We further explored the effects of harmonisation and trait aggregation by re-analysing data from a case study.
 
 3. We found that among trait databases, trait definitions often differed because varying numbers of traits were used to describe groups of related traits (e.g., respiration traits) and the focus of descriptions for groups of related traits also varied (e.g., for feeding mode some databases focused on the food source, whereas others focused on mouthpart morphology). The coding to describe traits (binary, fuzzy) also varied among databases. Our comparison of different aggregation methods showed that family-level aggregated and expert-assigned traits were similar, especially from approaches using the median, and that trait coding method, uneven taxonomic hierarchical structure, and high trait variability can influence aggregated trait affinities. We further showed that harmonised and aggregated data performed similarly to observational data in identifying trait–environment relationships.
 
@@ -169,16 +187,13 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 \subsection*{Comparing trait aggregation methods}
 
 For our study aim of comparing the effects of different aggregation methods on trait–environment relationship inference, we aggregated the traits of two of the harmonised datasets to the family level.
-We used three different aggregation approaches: (1) direct aggregation of taxa to family level with either the median or mean, giving equal weight to every taxon. We denote these aggregation methods as \textit{direct\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{mean}}, respectively; (2) stepwise aggregation, first to the genus level and subsequently to the family level with either the median or mean. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{median}} or \textit{stepwise\_agg\textsubscript{mean}}, respectively; and (3) aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights each genus according to its number of species in the trait datasets, regardless of whether information was available for every used grouping feature (Figure \ref{fig:data_proc_overview}). 
+We used three different aggregation approaches: (1) direct aggregation of taxa to family level with either the median or mean, giving equal weight to every taxon. We denote these aggregation methods as \textit{direct\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{mean}}, respectively; (2) stepwise aggregation, first to the genus level and subsequently to the family level with either the median or mean. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{median}} or \textit{stepwise\_agg\textsubscript{mean}}, respectively; and (3) aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights each genus according to its number of species in the trait datasets, regardless of whether information was available for every used grouping feature (Figure \ref{fig:data_proc_overview}). When we refer to \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg} together we denote these methods as mean aggregation methods and when we refer to \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}} together, we denote these methods as median aggregation methods.
 
 
 \subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 
 To evaluate the effect of the five trait aggregation methods
-(\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, 
-\textit{stepwise\_agg\textsubscript{median}},
-\textit{stepwise\_agg\textsubscript{mean}},
-\textit{weighted\_agg}) on the assignment of trait affinity scores, we compared our aggregated affinities with trait affinities assigned at family level by experts. Expert-assigned trait data were available for a subset of grouping features and taxa for Australia (\cite{chessman_dissolved-oxygen_2018}) and North America (CONUS database), so we conducted this comparison only for these two datasets. For the Australian dataset, we used the grouping features feeding mode (all traits listed in Table 1 except parasite) and size (220 families $*$ 8 family–trait combinations = 1760 comparisons). For the North American dataset, we used the grouping features feeding mode, respiration, size, voltinism, and locomotion (94 families $*$ 17 family–trait combinations = 1598 comparisons). Assigned traits from North America were on a categorical scale, and we converted them to binary prior to comparing them with aggregated trait affinities. Size was assigned as continuous variable for Australia, thus, we converted size into three traits (small, medium, and large) with a binary coding. Because trait affinities ranged from 0 to 1, the maximum difference possible in trait affinity was 1 to –1, either which corresponds to 100 \%. For convenience and to improve interpretation, we calculated absolute trait differences.
+(\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, \textit{weighted\_agg}) on the assignment of trait affinity scores, we compared our aggregated affinities with trait affinities assigned at family level by experts. Expert-assigned trait data were available for a subset of grouping features and taxa for Australia (\cite{chessman_dissolved-oxygen_2018}) and North America (CONUS database), so we conducted this comparison only for these two datasets. For the Australian dataset, we used the grouping features feeding mode (all traits listed in Table 1 except parasite) and size (220 families $*$ 8 family–trait combinations = 1760 comparisons). For the North American dataset, we used the grouping features feeding mode, respiration, size, voltinism, and locomotion (94 families $*$ 17 family–trait combinations = 1598 comparisons). Assigned traits from North America were on a categorical scale, and we converted them to binary prior to comparing them with aggregated trait affinities. Size was assigned as continuous variable for Australia, thus, we converted size into three traits (small, medium, and large) with a binary coding. Because trait affinities ranged from 0 to 1, the maximum difference possible in trait affinity was 1 to –1, either which corresponds to 100 \%. For convenience and to improve interpretation, we calculated absolute trait differences.
 
 \newpage
 
@@ -188,6 +203,7 @@ To examine the influence of taxonomic hierarchy and trait variability on the out
 
 \begin{figure}
   \centering
+  % \includegraphics[width=22cm, height=28cm]{Flowchart_methods.pdf}
   \subfile{Flowchart/Flowchart_methods.tex}
   \caption{Data processing steps of the selected traits. Intermediate (grey) and main (orange) steps of data preparation are depicted. The dashed bottom box illustrates the different trait aggregation methods (hypothetical data in the upper left corner). The aggregation methods (purple) and intermediate steps of the aggregation methods (pink) are displayed. Abbreviations: EU, Europe; NOA, North America; AUS, Australia; NZ, New Zealand.}
   \label{fig:data_proc_overview}
@@ -201,7 +217,8 @@ To examine the influence of taxonomic hierarchy and trait variability on the out
 
 To further evaluate the effects of grouping-feature harmonisation and trait aggregation on characterisation of trait–environment relationships, we repeated the analysis of \citet{szocs_effects_2014}, who studied the effects of anthropogenic salinisation on invertebrates in the River Werra in Germany. The River Werra has been subject to effluents from the potash industry since the mid- 20th century, which makes it a useful system for studying the responses of invertebrates and their trait compositions to salinisation (\cite{bathe_biological_2011}). \citet{szocs_effects_2014}  used redundancy analysis (RDA) to compare trait compositions among sites downstream, upstream, and close to salt discharge (transition). Further details about the original study can be found in \citet{szocs_effects_2014}.
 
-We re-analysed the \citet{szocs_effects_2014} study by performing a RDA with harmonised grouping features from the dataset for Europe and additionally with traits that we aggregated to family level with the five aggregation methods described above. We used all 21 grouping features from the original study, but replaced 6 with harmonised grouping features from our European trait dataset, namely: size, feeding mode, locomotion, oviposition, respiration, and voltinism. We compared the results of the original study’s RDA with the results of the RDA from the harmonised grouping features. Specifically, the trait composition, expressed as community weighted mean (CWM) traits, was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA (i.e., the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots). Following the original study, we used the Mahalanobis distance measure and identified traits associated with higher or lower salinity based on their distance to the ordination axis median. We considered CWM traits with a Mahalanobis distance greater than the 97.5 \%-quantile of the Chi-square distribution (5.02) to have responded to either lower or higher salinity. Additionally, for testing the effect of different aggregation methods on inference about CWM trait–salinisation relationships, we repeated the RDA five times, each with family-level aggregated trait values assigned to corresponding taxa from \citet{szocs_effects_2014}.
+We re-analysed the \citet{szocs_effects_2014} study by performing a RDA with harmonised grouping features from the dataset for Europe and with traits that we aggregated to family level with the five aggregation methods described above. We used all 21 grouping features from the original study, but replaced 6 with harmonised grouping features from our European trait dataset, namely: size, feeding mode, locomotion, oviposition, respiration, and voltinism.
+We compared the results of the original study’s RDA with the results of the RDA from the harmonised grouping features. Specifically, the trait composition, expressed as community weighted mean (CWM) traits, was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA (i.e., the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots). Following the original study, we used the Mahalanobis distance measure and identified traits associated with higher or lower salinity based on their distance to the ordination axis median. We considered CWM traits with a Mahalanobis distance greater than the 97.5 \%-quantile of the Chi-square distribution (5.02) to have responded to either lower or higher salinity. Additionally, for testing the effect of different aggregation methods on inference about CWM trait–salinisation relationships, we repeated the RDA five times, each with family-level aggregated trait values assigned to corresponding taxa from \citet{szocs_effects_2014}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -217,7 +234,7 @@ All data processing and RDA analyses were carried out using R (\cite{cite_R}). R
 
 \subsection*{Harmonised trait datasets}
 
-\subsection*{Taxonomic coverage of the harmonised trait datasets}
+\subsubsection*{Taxonomic coverage of the harmonised trait datasets}
 
 The harmonised European, North American, Australian, and New Zealand trait datasets differed in terms of their taxonomic coverage. The European trait dataset had the largest taxon pool with 4601 taxa (Table \ref{tab:tax_coverage}) followed by the North American dataset (3753 taxa), the Australian dataset (1402 taxa), and the New Zealand dataset with the smallest taxon pool (478 taxa). The European, New Zealand, and North American datasets contained most taxa at the species level, whereas the Australian dataset comprised a similar number of taxa at species and genus level.
 
@@ -244,7 +261,7 @@ Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zeala
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Completeness of trait information}
+\subsubsection*{Completeness of trait information}
 
 The numbers of entries with available information for the selected grouping features varied considerably within the harmonised European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (94–100\%).
 
@@ -277,7 +294,7 @@ Abbreviations: EU, European; NOA, North American; AUS, Australian; NZ, New Zeala
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Discrepancies in invertebrate trait definitions across databases}
+\subsubsection*{Discrepancies in invertebrate trait definitions across databases}
 
 Definitions of grouping features and traits varied in their level of detail in the investigated trait databases. The freshwaterecology.info, Tachet, and CONUS databases provided more detailed descriptions of trait information than the Vieira and New Zealand databases provided. The Australian trait database (\cite{kefford_integrated_2020}) was a collection of seven specific trait datasets; thus, grouping features occurred multiple times with varying differentiation into traits. Depending on the dataset, trait information was described with more or less detail.
 
@@ -323,13 +340,12 @@ Body Form                                                           & -         
 
 \subsection*{Comparing aggregation methods} 
 
-\subsection*{Comparison of family-level aggregated traits with family-level assigned traits}
+\subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 \label{sec:diff_trait_agg_chessman}
-
 
 The comparison of family-level aggregated trait affinities with those assigned by experts for the Australian and North American databases showed that aggregation method (median or mean) had a greater effect than the overall approach (direct, stepwise, or weighted by the number of species) in whether trait affinities differed from those assigned by experts.
 
-The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean and weighted aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_chessman} and Figure \ref{fig:diff_aggr_traits_pyne}).
+The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_combined}).
 
 \begin{table}[H]
   \centering
@@ -353,32 +369,28 @@ The percentage of differing cases of aggregated versus assigned trait affinities
   \bottomrule
   \end{tabular}
 \end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+  \centering
+  Abbreviations: Min., Minimum; Max., Maximum; abs., absolute; SD, Standard deviation.
+  }
+  \end{minipage}
+
 
 \newpage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_chessman.png}
-  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian dataset for the grouping features feeding mode and body size. Violin plots - mirrored density plots - show
-  the density of the absolute trait affinity differences. Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate.}
-  \label{fig:diff_aggr_traits_chessman}
-\end{figure}
-
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=16.5cm, height=10cm]{Deviances_trait_agg_pyne.png}
-  \caption{Cases (factor combination investigated families and traits) where differences occurred between aggregated traits and traits assigned at family level. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the North America dataset for the grouping features feeding mode, locomotion, respiration, body size and voltinism. For more details see Figure \ref{fig:diff_aggr_traits_chessman}.}
-  \label{fig:diff_aggr_traits_pyne}
+  \includegraphics[width=16.5cm, height=12cm]{Deviances_trait_agg_combined.png}
+  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate. Abbreviations: AUS, Australia; NOA, North America.}
+  \label{fig:diff_aggr_traits_combined}
 \end{figure}
 
 \newpage 
 
 
-\subsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
+\subsubsection*{Comparison of aggregation methods with varying taxonomic hierarchies and trait variability}
 
-Our simulation results showed that both taxonomic hierarchical structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of taxonomic hierarchy differed across aggregation methods, but, as we expected, the produced range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: 
- % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
+Our simulation results showed that both taxonomic hierarchical structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of taxonomic hierarchy differed across aggregation methods, but, as we expected, the produced range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
 
 Taxonomic hierarchical structure appeared to influence the outcomes of the different aggregation methods. For the \textit{sim\_base} scenario (equal numbers of genera and species), the mean and weighted aggregation methods yielded similar ranges of aggregated trait affinities within each level of trait variability, and the median aggregation methods consistently produced greater ranges of aggregated trait affinities than the other methods. The largest ranges were produced by the \textit{stepwise\_agg \textsubscript{median}} method. For the more complex taxonomic hierarchical structures, \textit{sim\_extreme} (one genus with a much larger number of species than the other four) and \textit{sim\_variation} (all genera with a different number of species), the \textit{stepwise\_agg \textsubscript{median}} method still produced the largest ranges of trait affinities for most levels of trait variability (and \textit{direct\_agg\textsubscript{mean}} produced the narrowest ranges for most levels of trait variability), but there was much less consistency in the ranges of trait affinities for all aggregation methods (i.e., the ranges were different among all aggregation methods).
 
@@ -387,7 +399,7 @@ Although trait aggregation methods were affected by taxonomic hierarchical struc
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Overview_sim_results.png}
-  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Shown are the results only for one simulated trait (T1). Similar results were obtained for the other simulated traits (see appendix).  Boxplots depict results for 100 replicated simulations of each trait aggregation method. The boxplot depicts the median and encompasses the 25\textsuperscript{th} and 75\textsuperscript{th} percentile. Horizontal black lines depict the median. Whiskers extend to the largest and smallest value respectively no further than 1.5 $*$ the inter-quartile range. Outliers beyond the end of the whiskers are plotted as grey dots.}
+  \caption{Ranges of aggregated trait affinities for the three examples of taxonomic hierarchies and simulated levels of trait variability. Shown are the results only for one simulated trait (T1). Similar results were obtained for the other simulated traits (Figure \ref{fig:overview_sim_results_T2_T3}). Boxplots depict results for 100 replicated simulations of each trait aggregation method. The boxplot depicts the median and encompasses the 25\textsuperscript{th} and 75\textsuperscript{th} percentile. Horizontal black lines depict the median. Whiskers extend to the largest and smallest value respectively no further than 1.5 $*$ the inter-quartile range. Outliers beyond the end of the whiskers are plotted as grey dots. Trait aggregation methods are in order of least to greatest produced ranges to improve visual inspection.}
   \label{fig:overview_sim_results}
 \end{figure}
 
@@ -413,11 +425,11 @@ Although trait aggregation methods were affected by taxonomic hierarchical struc
 
 \subsection*{Effects of harmonisation and trait aggregation on trait-environment relationships}
 
-Our re-analysis of the \citet{szocs_effects_2014} study on the effects of salinisation on invertebrate traits showed that the use of harmonised and aggregated trait data may be useful for ecological studies on trait–environment relationships. Overall, harmonised trait data and all aggregation methods produced similar distributions of RDA species scores (\ref{fig:violin_plot_species_sc}) compared with the original analysis, and they resulted in similar, but fewer, traits that distinguished upstream and downstream sites than the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}).
+Our re-analysis of the \citet{szocs_effects_2014} study on the effects of salinisation on invertebrate traits showed that the use of harmonised and aggregated trait data may be useful for ecological studies on trait–environment relationships. Overall, harmonised trait data and all aggregation methods produced similar distributions of RDA species scores (\ref{fig:violin_plot_species_sc}) compared with the original analysis, and they resulted in similar, but fewer, traits that distinguished upstream and downstream sites than the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplot_scores_on_constrained_axis}).
 
-RDA using harmonised, but not aggregated, grouping features identified some, but not all, of the same traits that were identified by the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). The original RDA in \citet{szocs_effects_2014} indicated that downstream sites (higher salinity) were characterised by the traits: ovoviviparity, multivoltinism, long life-cycle duration ($> 1$ year), shredder, and gill respiration, whereas RDA with the harmonised data identified the first three traits but did not include shredder or gill respiration traits. The original RDA indicated that upstream sites (lower salinity) were characterised by the traits: univoltinism, oviposition in clutches, and short life-cycle duration ($< 1$ year), and RDA with the harmonised data characterised upstream sites by univoltine taxa with short life-cycle durations that lay their eggs in an aquatic environment (aquatic eggs). This difference in oviposition trait is not substantial because the trait aquatic eggs of the harmonised grouping feature oviposition was derived by combining the trait oviposition in clutches and other related traits (Table \ref{tab:traits_harmonisation}).
+RDA using harmonised, but not aggregated, grouping features identified some, but not all, of the same traits that were identified by the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplot_scores_on_constrained_axis}). The original RDA in \citet{szocs_effects_2014} indicated that downstream sites (higher salinity) were characterised by the traits: ovoviviparity, multivoltinism, long life-cycle duration ($> 1$ year), shredder, and gill respiration, whereas RDA with the harmonised data identified the first three traits but did not include shredder or gill respiration traits. The original RDA indicated that upstream sites (lower salinity) were characterised by the traits: univoltinism, oviposition in clutches, and short life-cycle duration ($< 1$ year), and RDA with the harmonised data characterised upstream sites by univoltine taxa with short life-cycle durations that lay their eggs in an aquatic environment (aquatic eggs). This difference in oviposition trait is not substantial because the trait aquatic eggs of the harmonised grouping feature oviposition was derived by combining the trait oviposition in clutches and other related traits (Table \ref{tab:traits_harmonisation}).
 
-RDA using harmonised traits that were aggregated to family level also produced results similar to the original analysis but with fewer traits distinguishing upstream and downstream sites (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplots_scores_on_constrained_axis}). The \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} characterised the downstream sites with the same traits as the original analysis except the trait shredder. As for the RDA with harmonised but not aggregated data, RDA with these three aggregation methods characterised upstream sites by the traits univoltinism, short life-cycle duration, and aquatic eggs. The \textit{stepwise\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}} methods produced the same results except that none of the life-cycle traits characterised upstream or downstream sites. Thus, compared with the original study’s findings, aggregating by the direct and weighted methods yielded less change than the stepwise methods in interpretation of the RDA results.
+RDA using harmonised traits that were aggregated to family level also produced results similar to the original analysis but with fewer traits distinguishing upstream and downstream sites (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplot_scores_on_constrained_axis}). The \textit{direct\_agg\textsubscript{mean}}, \textit{direct\_agg\textsubscript{median}}, and \textit{weighted\_agg} characterised the downstream sites with the same traits as the original analysis except the trait shredder. As for the RDA with harmonised but not aggregated data, RDA with these three aggregation methods characterised upstream sites by the traits univoltinism, short life-cycle duration, and aquatic eggs. The \textit{stepwise\_agg\textsubscript{mean}} and \textit{stepwise\_agg\textsubscript{median}} methods produced the same results except that none of the life-cycle traits characterised upstream or downstream sites. Thus, compared with the original study’s findings, aggregating by the direct and weighted methods yielded less change than the stepwise methods in interpretation of the RDA results.
 
 \begin{figure}[H]
     \centering
@@ -426,21 +438,12 @@ RDA using harmonised traits that were aggregated to family level also produced r
     \label{fig:violin_plot_species_sc}
 \end{figure}
 
-% Old figure:
-% \begin{sidewaysfigure}
-%   \label{fig:boxplots_scores_on_constrained_axis}
-%   \centering
-%   \includegraphics[width= 22cm, height=12cm]{Scores_on_constrained_axis_combined.pdf}
-%   \caption{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled.}
-% \end{sidewaysfigure}
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=16.5cm, height=25cm]{Scores_on_constrained_axis_comb_ALT.pdf}
+  \includegraphics[width=17cm, height=14.5cm]{boxplot_scores_combined.png}
+  \caption{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information (Figure \ref{fig:boxplots_scores_on_constrained_axis_REMAIN}). Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
+  \label{fig:boxplot_scores_on_constrained_axis}
 \end{figure}
-\clearpage % insert a page break
-\captionof{figure}{RDA of traits constrained by electric conductivity for the tested methods and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1.} 
-\label{fig:boxplots_scores_on_constrained_axis}
 
 \newpage
 
@@ -466,16 +469,14 @@ To resolve definition discrepancies and facilitate data synthesis in the future,
 Observational data for freshwater invertebrates are often resolved to a variety of taxonomic levels because species-level identification can be complicated, time-consuming, and expensive (\cite{marshall_taxonomic_2006, resh_which_2008}). Consequently, trait information at family level has been widely used by freshwater ecologists, for example in bioassessment (\cite{beketov_spear_2009}).
 However, assigned traits at family level may not reflect the real trait diversity within, for example, a taxon in the large, ecologically diverse family Chironomidae (\cite{serra_synthesising_2016}). Additionally, various trait aggregation methods have been used by researchers to allow comparison among traits at different taxonomic levels. Evaluation of the differences between aggregated and assigned traits is difficult because it remains unclear what the true value of a particular trait is for a particular family. Aggregation of trait information at species or genus level to a point estimate at family level suggests a precision that is not necessarily present, especially not for traits with high variability or if trait information at species level is missing. Indeed, some traits can vary strongly at more precise taxonomic levels than the family level. For example, \citet{monaghan_improving_2013} found a high intra-family trait dispersion in the Tachet database for traits of the grouping features body size, flow preference, and reproduction. Further, studies focusing on the lability of traits, (i.e. how much traits are constrained by phylogeny), found that traits of ecological preferences (e.g. thermal preference), body size, resistance forms, and, to a lesser extent, feeding mode are labile, and thus possibly highly variable (\cite{poff_functional_2006, wilkes_traitbased_2020}). 
 
-If trait aggregation is necessary, however, our study can offer insight about the circumstances under which the choice of aggregation method may be important. The 5 aggregation methods we tested used either the mean or the median and different weightings to assign family-level affinities. Our results indicated that for both the Australian and North American datasets (1) the median aggregation methods provided affinities that were often closer to the assigned traits than were those provided by the mean aggregation methods and (2) the different weighting approaches exerted only a minor influence on the aggregated trait affinities. However, when differences occurred between median aggregation methods and assigned traits, these differences were greater in absolute value compared with the mean aggregation methods, particularly for the North American dataset where mean absolute differences for median aggregations were twice as high as for mean aggregations. This pattern of greater differences for median than mean aggregations can, in large part, be explained by the binary coding used in the North American trait dataset and by the assigned traits. Binary coded traits have affinities of either 1 or 0; therefore, traits of a particular grouping feature showed, in most cases, a higher difference in trait affinities to each other than if they were fuzzy coded. Median-aggregated binary-coded taxa often resulted in a value of 0 or 1, whereas mean aggregation often yielded values between 0 and 1.
-Thus, using the median led for the North American dataset either to agreement with the assigned traits or to higher differences compared to the mean aggregation methods. This pattern inherent in using median-aggregation methods to aggregate binary-coded data should be considered when researchers choose methods to resolve affinities at different taxonomic levels. 
+If trait aggregation is necessary, however, our study can offer insight about the circumstances under which the choice of aggregation method may be important. The 5 aggregation methods we tested used either the mean or the median and different weightings to assign family-level affinities. Our results indicated that for both the Australian and North American datasets (1) the median aggregation methods provided affinities that were often closer to the assigned traits than were those provided by the mean aggregation methods and (2) the different weighting approaches exerted only a minor influence on the aggregated trait affinities. However, when differences occurred between median aggregation methods and assigned traits, these differences were greater in absolute value compared with the mean aggregation methods, particularly for the North American dataset where mean absolute differences for median aggregations were twice as high as for mean aggregations. This pattern of greater differences for median than mean aggregations can, in large part, be explained by the binary coding used in the North American trait dataset and by the assigned traits. Binary coded traits have affinities of either 1 or 0; therefore, traits of a particular grouping feature showed, in most cases, a higher difference in trait affinities to each other than if they were fuzzy coded. Median-aggregated binary-coded taxa often resulted in a value of 0 or 1, whereas mean aggregation often yielded values between 0 and 1. Thus, using the median led for the North American dataset either to agreement with the assigned traits or to higher differences compared to the mean aggregation methods. This pattern inherent in using median-aggregation methods to aggregate binary-coded data should be considered when researchers choose methods to resolve affinities at different taxonomic levels. 
 
 We expected that, in addition to averaging measure, different weighting approaches to aggregation (i.e., equal weight to each taxon, equal weight to each genus, or weighted by number of species) would affect affinities for families with varying taxonomic hierarchical structure. However, we found through simulations that although taxonomic structural unevenness appeared to produce variation in affinities among weighting approaches, especially for a family where one genus had a much larger number of species than its other genera, trait variability had a greater effect on the range of affinities (i.e., greater ranges of affinities at higher levels of variance) and on the differences in affinities between weighting methods. Also, the number of differing cases and the mean absolute differences in trait affinities, as well as the distributions of absolute trait affinity differences to assigned traits, were similar across the mean aggregation and across the median aggregation methods, which suggests a small influence of the weighting approach on the aggregation outcomes. The minor impact of the weighting approaches on trait aggregation may be explained by the fact that a considerable portion of taxa had low numbers of genera or species. Of the taxa that were compared from the North American trait dataset, 14 \% were identified at family and 62 \% at genus level, 52 \% comprised five or fewer genera, and 13 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). In the Australian dataset, 21 \% of the compared taxa were identified at family, 40 \% at genus, and 39 \% at species level, 68 \% of the taxa contained five or fewer genera, and 40 \% just one genus (Figure \ref{fig:tax_hierarchy_AUS}). Hence, these results could change when more species-level trait information becomes available. Our findings show that the choice of aggregation method may matter less when taxonomic hierarchical structure is fairly even and traits are less variable, but the \textit{stepwise\_agg\textsubscript{median}} method tended to produce the widest range in affinities, especially with high taxonomic unevenness and high trait variability. 
 
 \subsection*{Using harmonised and aggregated datasets for ecological research}
 
 By reanalysing trait–environment relationships identified in \citet{szocs_effects_2014} with our harmonised and family-level aggregated datasets, we have illustrated the potential for the use of harmonised and aggregated data in ecological research. As far as we are aware, ours is the first study to compare trait–environment relationships using harmonised and non-harmonised data.
-Our re-analysis of the data on salinisation effects on biological traits yielded only slightly different results compared with the original study, which agrees with previous findings that family-level traits can be sensitive enough to detect environmental impacts (\cite{beketov_spear_2009}). However, some of the traits that had responded in the original analysis did not respond in the re-analysis: feeding mode shredder, respiration gills, and life-cycle duration traits. There are several possible reasons for these discrepancies. The non-responsive traits were those closest to the threshold for association with either higher or lower salinity, and so the precision lost through trait harmonisation may have decreased our ability to detect a relatively weak association. Feeding mode shredder was the only trait that was non-responsive when using harmonised (but not aggregated) data as well as when using aggregated data.
-This result was likely because of the harmonisation procedure, when this trait was combined based on three traits (miner, xylophagus, and shredder). Consequently, the trait affinities in the original data had a higher mean and standard deviation than in the harmonised and aggregated data (Table \ref{tab:SI_resp_traits_summary_stats}), suggesting that the signal in the original data was weakened by harmonisation. Following this result, we suggest that if harmonisation is necessary, harmonised and non-harmonised data, if available, should be compared, and possible averaging effects should be considered in further analyses. However, our results illustrate that where site-level data are not available, harmonised and aggregated datasets may be useful in identifying at least the strongest associations between traits and environmental conditions. 
+Our re-analysis of the data on salinisation effects on biological traits yielded only slightly different results compared with the original study, which agrees with previous findings that family-level traits can be sensitive enough to detect environmental impacts (\cite{beketov_spear_2009}). However, some of the traits that had responded in the original analysis did not respond in the re-analysis: feeding mode shredder, respiration gills, and life-cycle duration traits. There are several possible reasons for these discrepancies. The non-responsive traits were those closest to the threshold for association with either higher or lower salinity, and so the precision lost through trait harmonisation may have decreased our ability to detect a relatively weak association. Feeding mode shredder was the only trait that was non-responsive when using harmonised (but not aggregated) data as well as when using aggregated data. This result was likely because of the harmonisation procedure, when this trait was combined based on three traits (miner, xylophagus, and shredder). Consequently, the trait affinities in the original data had a higher mean and standard deviation than in the harmonised and aggregated data (Table \ref{tab:SI_resp_traits_summary_stats}), suggesting that the signal in the original data was weakened by harmonisation. Following this result, we suggest that if harmonisation is necessary, harmonised and non-harmonised data, if available, should be compared, and possible averaging effects should be considered in further analyses. However, our results illustrate that where site-level data are not available, harmonised and aggregated datasets may be useful in identifying at least the strongest associations between traits and environmental conditions. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -483,8 +484,8 @@ This result was likely because of the harmonisation procedure, when this trait w
 
 Although comprehensive freshwater invertebrate trait databases have been developed for several regions in the past, data synthesis presents challenges because of discrepancies in trait definitions, coding of trait affinities, and taxonomic resolution. By providing an overview of definition discrepancies, we have set a starting point for the development of standardised trait terminology through which invertebrate trait databases can be linked. Agreement on standard terminology and the subsequent development of ontologies are the next steps to facilitate trait-based analysis at large geographical scales. As our analysis showed, some grouping features might need to be re-classified to fit into such a standardised terminology. Although we showed that trait affinities from fuzzy and binary coding can be used together, we also recommend that a uniform coding of traits should be addressed during trait standardisation. 
 
-As ecological knowledge increases, and with the aid of new  methods such as computer vision for species and trait identification (\cite{hoye_deep_2020}), more observational and species-level trait data at may become available in the future, reducing the need for trait aggregation. However, we showed that trait aggregation is often in agreement with expert assignments, especially through aggregation approaches that use the median. No aggregation method is objectively best, and except for cases where traits are highly variable and taxonomic hierarchical structure is highly uneven, choice of aggregation method does not appear to be influential on the outcome. Weighting trait information based on the taxa present in the database used does not seem to have much influence except when the taxonomic hierarchical structure is highly uneven. However, we recommend that the type of coding used to describe traits (binary, fuzzy) should be considered, because median and mean aggregations can yield very different results for binary-coded traits. We also suggest that a measure of trait dispersion should be reported to indicate the uncertainty of the aggregated estimate. Through the use of carefully synthesised data from freshwater invertebrate trait databases, while acknowledging the limitations inherent in harmonised and aggregated data, the ability to investigate a wide range of large-scale ecological questions is enhanced.
-
+As ecological knowledge increases, and with the aid of new  methods such as computer vision for species and trait identification (\cite{hoye_deep_2020}), more observational and species-level trait data may become available in the future, reducing the need for trait aggregation. However, we showed that trait aggregation is often in agreement with expert assignments, especially through aggregation approaches that use the median. No aggregation method is objectively the best, and except for cases where traits are highly variable and taxonomic hierarchical structure is highly uneven, choice of aggregation method does not appear to be influential on the outcome. Weighting trait information based on the taxa present in the database used does not seem to have much influence except when the taxonomic hierarchical structure is highly uneven. However, we recommend that the type of coding used to describe traits (binary, fuzzy) should be considered, because median and mean aggregations can yield very different results for binary-coded traits. We also suggest that a measure of trait dispersion should be reported to indicate the uncertainty of the aggregated estimate. Through the use of carefully synthesised data from freshwater invertebrate trait databases, while acknowledging the limitations inherent in harmonised and aggregated data, the ability to investigate a wide range of large-scale ecological questions is enhanced.
+ 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Further ideas for the discussion:
 % - What do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? 
@@ -501,6 +502,20 @@ As ecological knowledge increases, and with the aid of new  methods such as comp
 % Include Ben's point? Discussion on evolutionary history?
 % Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion  
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Data availability statement}
+
+Harmonised invertebrate trait datasets for Australia, Europe, North America and New Zealand are deposited \textit{Zenondo/Github?}
+
+\section*{Acknowledgments}
+
+% Verena Schreiner body form traits?
+We thank Brooke Cassell for technical editing of the manuscript. The project is funded by the German research society (DFG \textit{insert project number}).
+
+\section*{Conflict of interest}
+
+The authors declare no conflict of interest.
 
 \newpage
 

@@ -1,9 +1,0 @@
-[0] Config.pm:302> INFO - This is Biber 2.9
-[0] Config.pm:305> INFO - Logfile is 'Results/Taxonomic_cov_and_info_compl.blg'
-[22] biber:313> INFO - === Fr Okt 16, 2020, 14:16:43
-[41] Biber.pm:371> INFO - Reading 'Results/Taxonomic_cov_and_info_compl.bcf'
-[88] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[93] Utils.pm:169> WARN - The file 'Results/Taxonomic_cov_and_info_compl.bcf' does not contain any citations!
-[98] bbl.pm:617> INFO - Writing 'Results/Taxonomic_cov_and_info_compl.bbl' with encoding 'UTF-8'
-[99] bbl.pm:720> INFO - Output to Results/Taxonomic_cov_and_info_compl.bbl
-[99] Biber.pm:110> INFO - WARNINGS: 1

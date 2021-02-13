@@ -1,9 +1,0 @@
-[0] Config.pm:302> INFO - This is Biber 2.9
-[0] Config.pm:305> INFO - Logfile is 'Results/Results_trait_agg.blg'
-[23] biber:313> INFO - === Do Okt 15, 2020, 16:32:11
-[40] Biber.pm:371> INFO - Reading 'Results/Results_trait_agg.bcf'
-[88] Biber.pm:857> INFO - Found 0 citekeys in bib section 0
-[93] Utils.pm:169> WARN - The file 'Results/Results_trait_agg.bcf' does not contain any citations!
-[99] bbl.pm:617> INFO - Writing 'Results/Results_trait_agg.bbl' with encoding 'UTF-8'
-[100] bbl.pm:720> INFO - Output to Results/Results_trait_agg.bbl
-[100] Biber.pm:110> INFO - WARNINGS: 1
