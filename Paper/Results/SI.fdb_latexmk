@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber Results/SI"] 1613220902 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1613220978
-  "Results/SI.bcf" 1613220978 94451 85b24369490231b37d796871139fcbab ""
+["biber Results/SI"] 1613220902 "Results/SI.bcf" "Results/SI.bbl" "Results/SI" 1613389225
+  "Results/SI.bcf" 1613389225 94451 85b24369490231b37d796871139fcbab ""
   (generated)
   "Results/SI.bbl"
   "Results/SI.blg"
-["pdflatex"] 1613220977 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1613220978
+["pdflatex"] 1613389224 "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" "Results/SI.pdf" "SI" 1613389225
   "/etc/texmf/web2c/texmf.cnf" 1602155229 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1613220977 13818 2e7fc7177871da2a255e2fb92dbf5d41 ""
+  "/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex" 1613389224 13285 98bdccb132f4313d5f1ae91041e6630a ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1480098806 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1480098815 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -190,16 +190,16 @@
   "Figures/boxplot_scores_combined_REMAIN_SI.png" 1613125871 306344 b6ba368539dc011b6bbcb0c58f7c8207 ""
   "Figures/taxonomic_hierarchy_AUS.png" 1605524723 252692 873312142d812415d26d554af97d4967 ""
   "Figures/taxonomic_hierarchy_NOA.png" 1605276483 253753 2cd7021a531eb17feffcb338e09da1fe ""
-  "Results/../Draft_harmonization_paper.tex" 1613146551 81474 49fed36c5d8ae053dd77b6095c293fa3 ""
-  "Results/SI.aux" 1613220978 8373 078e455a0c7ef90ea7c39044cbf69662 ""
+  "Results/../Draft_harmonization_paper.tex" 1613389151 81818 423be34ad1aecbf118e365d68b851c68 ""
+  "Results/SI.aux" 1613389225 8403 3b3a90a8cbcd328b3f3282359abf87d5 ""
   "Results/SI.bbl" 1613220902 466 5e94f251ea8a419bbae6173a1e9a9c1d "biber Results/SI"
-  "Results/SI.out" 1613220978 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "Results/SI.run.xml" 1613220978 2427 5c7239c4a0bd9a74cdd3196279f24da0 ""
-  "Results/SI.tex" 1613220977 13818 2e7fc7177871da2a255e2fb92dbf5d41 ""
+  "Results/SI.out" 1613389225 0 d41d8cd98f00b204e9800998ecf8427e ""
+  "Results/SI.run.xml" 1613389225 2427 5c7239c4a0bd9a74cdd3196279f24da0 ""
+  "Results/SI.tex" 1613389224 13285 98bdccb132f4313d5f1ae91041e6630a ""
   (generated)
-  "Results/SI.log"
-  "Results/SI.run.xml"
-  "Results/SI.bcf"
   "Results/SI.aux"
   "Results/SI.out"
   "Results/SI.pdf"
+  "Results/SI.bcf"
+  "Results/SI.run.xml"
+  "Results/SI.log"
