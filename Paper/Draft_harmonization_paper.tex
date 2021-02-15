@@ -23,7 +23,7 @@
 \usepackage[
 backend = biber,
 natbib,
-bibstyle = apa,
+style = apa,
 citestyle = authoryear,
 maxcitenames = 2, 
 maxbibnames = 99, 
@@ -47,8 +47,7 @@ uniquelist=false
 % More than 7 authors: Rutter, M., Caspi, A., Fergusson, D., Horwood, L. J., Goodman, R., Maughan, B., … Carroll, J. (2004). Sex differences in developmental reading disability: New findings from 4 epidemiological studies. Journal of the American Medical Association, 291(16), 2007–2012. DOI: 10.1001/jama.291.16.2007
 
 % In press or forthcoming: van Bergen, E., de Jong, P. F., Maassen, B., Krikhaar, E., Plakas, A., & van der Leij, A. (in press). IQ of four-year-olds who go on to develop dyslexia. Journal of Learning Disabilities. DOI: 10.1177/0022219413479673
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
@@ -58,10 +57,19 @@ uniquelist=false
 % horizontal space between two columns
 \setlength{\tabcolsep}{2mm}
 
+%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newcommand{\specialcell}[2][c]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
 
 \renewcommand*{\thefootnote}{\alph{footnote}}
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \small	
+  \textbf{\textit{Keywords---}} #1
+}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,24 +77,24 @@ uniquelist=false
 \title{Tackling discrepancies in freshwater invertebrate trait databases: Harmonising across continents and aggregating taxonomic resolution}
 \author[1]{Stefan Kunz}
 \author[2]{Ben J. Kefford}
-\author[3]{Leon Metzeling}
-\author[4]{Astrid Schmidt-Kloiber}
-\author[4]{Wolfram Graf}
+\author[3]{Astrid Schmidt-Kloiber}
+\author[4]{Christoph D. Matthaei}
 \author[5]{Philippe Usseglio-Polatera}
-\author[6]{Christoph D. Matthaei}
-\author[7]{Charles P. Hawkins}
-\author[8]{N. LeRoy Poff}
-\author[9]{Laura Twardochleb}
+\author[4]{Wolfram Graf}
+\author[6]{N. LeRoy Poff}
+\author[7]{Leon Metzeling}
+\author[8]{Laura Twardochleb}
+\author[9]{Charles P. Hawkins}
 \author[1]{Ralf B. Schäfer}
 \affil[1]{Institute for Environmental Sciences, University of Koblenz-Landau, Landau, Germany}
 \affil[2]{Centre for Applied Water Science, Institute for Applied Ecology, University of Canberra, Canberra, Australia}
-\affil[3]{Environment Protection Authority Victoria, Applied Sciences Division, Macleod, Australia}
-\affil[4]{Institute of Hydrobiology and Aquatic Ecosystem Management, University of Natural Resources and Life Sciences Vienna (BOKU), Vienna, Austria}
+\affil[3]{Institute of Hydrobiology and Aquatic Ecosystem Management, University of Natural Resources and Life Sciences Vienna (BOKU), Vienna, Austria}
+\affil[4]{Department of Zoology, University of Otago, Dunedin, New Zealand}
 \affil[5]{University of Lorraine, CNRS, LIEC, Metz, France}
-\affil[6]{Department of Zoology, University of Otago, Dunedin, New Zealand}
-\affil[7]{Department of Watershed Sciences and the Ecology Center, Utah State University, Logan, USA}
-\affil[8]{Department of Biology, Colorado State University, Fort Collins, USA}
-\affil[9]{Department of Fisheries and Wildlife, Michigan State University, East Lansing, USA}
+\affil[6]{Department of Biology, Colorado State University, Fort Collins, USA}
+\affil[7]{Environment Protection Authority Victoria, Applied Sciences Division, Macleod, Australia}
+\affil[8]{Department of Fisheries and Wildlife, Michigan State University, East Lansing, USA}
+\affil[9]{Department of Watershed Sciences and the Ecology Center, Utah State University, Logan, USA}
 \date{}
 
 \begin{document}
@@ -109,7 +117,9 @@ uniquelist=false
 3. We found that among trait databases, trait definitions often differed because varying numbers of traits were used to describe groups of related traits (e.g., respiration traits) and the focus of descriptions for groups of related traits also varied (e.g., for feeding mode some databases focused on the food source, whereas others focused on mouthpart morphology). The coding to describe traits (binary, fuzzy) also varied among databases. Our comparison of different aggregation methods showed that family-level aggregated and expert-assigned traits were similar, especially from approaches using the median, and that trait coding method, uneven taxonomic hierarchical structure, and high trait variability can influence aggregated trait affinities. We further showed that harmonised and aggregated data performed similarly to observational data in identifying trait–environment relationships.
 
 4. By outlining discrepancies in trait definitions we hope to motivate the development of standardised terminology for invertebrate traits. Our results also illustrate the usefulness of harmonised datasets for ecological study and provide guidance for the circumstances under which the choice of trait aggregation method is important.
-
+\\
+\\
+\keywords{trait definitions, trait aggregation, data synthesis}
 
 \newpage
 
@@ -119,14 +129,13 @@ Explaining and predicting how communities are shaped by environmental factors is
 
 Invertebrate traits have been increasingly used in freshwater ecology, e.g. by relating macroinvertebrate trait composition to environmental factors (\cite{bhowmik_large_2015, poff_developing_2010, szocs_effects_2014}). In the last decades, freshwater ecologists have compiled comprehensive invertebrate trait databases, which typically include data for a single region or continent (\cite{kefford_integrated_2020, Philips_and_Smith_NZ_DB_2018, schmidt-kloiber_www.freshwaterecology.info_2015, tomanova_trophic_2006, ussegliopolatera_biological_2000, vieira_database_nodate}). The availability of invertebrate trait data from different continents enables comparisons of regional trait variation and allows for testing the consistency of trait structure–environmental factor relationships across both small and large spatial extents. To date, such analyses have been carried out mostly within continents, using information from one or two trait databases. For example, \citet{bonada_taxonomic_2007} compared trait composition for Mediterranean and temperate regions in Europe based on traits from \citet{ussegliopolatera_biological_2000} (typically referred to as the Tachet database), \citet{poff_developing_2010} characterized trait composition across sites in the Western USA based on traits from \citet{poff_functional_2006}, and \citet{botwe_effects_2018} used trait definitions from \citet{poff_functional_2006} and \citet{schafer_trait_2011} to test for effects of salinity on invertebrate traits across different sites in South Australia. Analyses that synthesize invertebrate trait information from more than two different continents are rare, but see \citet{brown_functional_2018} and \citet{statzner_reproductive_1997}. 
 
-The heterogeneity of information in freshwater invertebrate trait databases, besides the diversity of taxa across regions, is likely a major reason for the lack of studies across continents. There are several challenges presented by using invertebrate trait data from multiple established databases in ecological studies. One such challenge is inconsistency in terminology. In this study, we follow the terminology proposed by \citet{schmera_proposed_2015}, where a grouping feature is defined as a general property (e.g. feeding mode) that comprises a "group of related traits (e.g., predator, shredder, etc.) that vary among species or among individuals within a species". Thus, we use the term grouping feature in place of the term trait, and the term trait instead of trait state, modality or trait category. 
+The heterogeneity of information in freshwater invertebrate trait databases, besides the diversity of taxa across regions, is likely a major reason for the lack of studies across continents. There are several challenges presented by using invertebrate trait data from multiple established databases in ecological studies. One such challenge is inconsistency in terminology. In this study, we follow the terminology proposed by \citet{schmera_proposed_2015}, where a grouping feature is defined as a general property (e.g. feeding mode) that comprises a "group of related traits (e.g., predator, shredder, etc.) that vary among species or among individuals within a species" (page number 825). Thus, to use consistent terminology in this study, we use the term grouping feature in place of the term trait, and the term trait instead of trait state, modality or trait category. 
 
 Another challenge to using data from multiple continents is that invertebrate trait databases include different grouping features and related traits. To harmonize grouping features from different regions, or to structure them in such a way as to facilitate cross-database comparison, commonly accepted and unambiguous trait definitions are required (\cite{schneider_towards_2019}). Ideally, the same traits and grouping features would be reported across databases or standardised terminology would exist to easily harmonise them; however, there is a lack of standardised terminology of trait definitions and poor metadata quality in many trait databases, making grouping-feature harmonisation difficult (\cite{baird_toward_2011, kissling_towards_2018}). To our knowledge, only \citet{brown_functional_2018} harmonised grouping features from more than two geographically distant invertebrate trait databases, for a limited set of grouping features (8) and taxa (112), in a study on the influence of decreasing glacier cover on functional diversity and invertebrate assemblages.
 
 A third challenge to comparing across invertebrate trait databases is inconsistent coding of trait data (\cite{culp_incorporating_2011}), or assigning affinities (aka affinity scores). Traits of individual freshwater invertebrates can be difficult to quantify because, unlike plant traits, they are often difficult to measure directly. For example, to describe feeding habits requires that we understand mouthpart morphology, feeding behaviour, and specific food sources (\cite{moog_comprehensive_nodate}). Some traits can be described as binary or categorical, which ignores uncertainty in how traits are expressed in any particular organism (e.g., adult terrestrial stage, presence of gills). Other traits are better suited to being described as continuous (e.g., tolerance of pollution, body size). One approach for dealing with uncertainty is the use of fuzzy coding, where traits are assigned probabilistic values. Fuzzy codes, which are usually converted to proportions, are used to account for plasticity in traits, variability in traits within taxonomic groups above the species level, and incomplete knowledge. A challenge is presented by the use of different types of coding for trait affinities in different databases. For example, in the study from \citet{brown_functional_2018} the authors needed to reclassify trait affinities because the individual databases employed different coding approaches (i.e., European and New Zealand databases used fuzzy coding, North American database used binary coding). 
 
 Finally, discrepancies in the taxonomic resolutions (e.g., species, genus, or family) when comparing among trait databases, or when linking observational taxonomic data to trait databases, presents another challenge. When observations or data in one trait database are at a more precise taxonomic level than other data (e.g. observations at species-level and trait data at genus-level) trait information of the less precise taxonomic level is often assigned (e.g. \cite{szocs_effects_2014, vos_taxonomic_2017}). Conversely, if trait information is only available at more precise taxonomic levels than observed taxa, traits are aggregated to a less precise taxonomic level (e.g. \cite{aspin_extreme_2019, piliere_a._f._h._importance_2016, poff_functional_2006, szocs_effects_2014}). To date, studies have used different methods of trait aggregation, e.g. the mean (\cite{magliozzi_functional_2019}), median (\cite{szocs_effects_2014}) or mode (\cite{piliere_a._f._h._importance_2016}), but studies on how and to what extent different trait aggregation methods influence trait-based analyses are missing. 
-%However, related knowledge would inform future studies regarding the choice of the aggregation method.
 
 These challenges when working with or synthesizing trait data motivated us to assess the characteristics and comparability of freshwater invertebrate trait data contained in disparate databases. We aimed to explore methods of improving the comparability of trait data across databases, despite differences in trait definitions and the taxonomic level of data in three ways: (1) by investigating and describing discrepancies in trait definitions between trait databases from Europe, North America, Australia, and New Zealand; (2) by harmonising trait definitions across databases to provide consistent trait grouping features for comparison across geographic locations; and (3) by comparing the influence of different trait aggregation methods and grouping-feature harmonisation on the identification of trait–environment relationships.
 
@@ -505,16 +514,20 @@ As ecological knowledge increases, and with the aid of new  methods such as comp
 
 \section*{Data availability statement}
 
-Harmonised invertebrate trait datasets for Australia, Europe, North America and New Zealand are deposited \textit{Zenondo/Github?}
+Harmonised invertebrate trait datasets for Australia, Europe, North America and New Zealand are deposited on Github. % Add link
 
 \section*{Acknowledgments}
 
 % Verena Schreiner body form traits?
-We thank Brooke Cassell for technical editing of the manuscript. The project, in which this study was conducted, is funded by the German research society (DFG \textit{insert project number}).
+We thank Brooke Cassell for technical editing of the manuscript. The project, in which this study was conducted, is funded by the German research society (DFG, project number 338785727).
 
 \section*{Conflict of interest}
 
 The authors declare no conflict of interest.
+
+\section*{Author contribution}
+R.B.S. and S.K. designed the study; B.J.K. and L.M. provided trait data for Australia; P.U-P. provided trait data from the Tachet database; C.P.H., N.L.P., and L.T. provided trait data for North America; C.D.M. provided trait data for New Zealand;
+B.J.K., A.S-K., C.D.M, W.G., N.L.P., L.M., and C.P.H. provided in depth information on trait data and discussed procedure of analysis; S.K. conducted data processing and the statistical analyses.; S.K. wrote the manuscript; B.J.K, A-S.K., C.D.M, P.U-P., C.P.H., and R.B.S. discussed the results and provided suggestions on the manuscript.
 
 \newpage
 
