@@ -1038,66 +1038,6 @@
       \endverb
       \keyw{ecology,biodiversity,controlled vocabulary,informatics,ontology,plant characteristics,plant environmental association,plant trait,semantics,thesaurus}
     \endentry
-    \entry{heino_jani_macroecological_2013}{article}{}
-      \name{author}{3}{}{%
-        {{hash=2eb202c3308430fccb414265a1f89a93}{%
-           family={Heino},
-           familyi={H\bibinitperiod},
-           given={Jani},
-           giveni={J\bibinitperiod}}}%
-        {{hash=e9f36c123ab5a9f39846e61cd80434f2}{%
-           family={Schmera},
-           familyi={S\bibinitperiod},
-           given={Dénes},
-           giveni={D\bibinitperiod}}}%
-        {{hash=f748f46526682b0f683e016b579a57c7}{%
-           family={Erős},
-           familyi={E\bibinitperiod},
-           given={Tibor},
-           giveni={T\bibinitperiod}}}%
-      }
-      \strng{namehash}{1b664453112c997b9a819fcd0481539f}
-      \strng{fullhash}{51e3dfbd25cf8cace4094eeeea34ec7b}
-      \strng{bibnamehash}{51e3dfbd25cf8cace4094eeeea34ec7b}
-      \strng{authorbibnamehash}{51e3dfbd25cf8cace4094eeeea34ec7b}
-      \strng{authornamehash}{1b664453112c997b9a819fcd0481539f}
-      \strng{authorfullhash}{51e3dfbd25cf8cace4094eeeea34ec7b}
-      \field{sortinit}{H}
-      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Summary Other than some classical ideas, large?scale approaches to understand variation in organismal traits (or the trait composition of an ecological community) across stream ecosystems are rather recent. Recent case studies and review papers show clear evidence for the usefulness of trait?based analyses in bioassessment, but how community traits vary along natural gradients at large scales has not yet been synthesised. Here, we attempt to fill this gap by providing a synthesis of trait patterns of stream communities from a macroecological perspective. We argue that although both natural and anthropogenic filters shape community traits, examination of poorly understood natural filters, including those acting at large scales, should receive increasing attention. Such knowledge is vital for reliably inferring anthropogenic impacts on stream communities and ecosystems. We synthesise knowledge of two large?scale spatial patterns of stream communities: among drainage basins (i.e. geographical variation) and within drainage basins (i.e. longitudinal variation). We also examine the temporal dimension of organismal traits. Our review highlights clear evidence for large?scale influences on the trait composition in stream systems. For example, despite previous contentions that organismal traits should vary negligibly across large geographical gradients, there is actually clear geographical variation across near?pristine systems. Furthermore, in accordance with theory, organismal traits in actual data sets vary along the longitudinal gradient of stream systems. We provide an overview of empirical and statistical approaches to understanding the trait composition of stream communities in macroecological studies and conclude that the methodology should be carefully considered in comparisons among studies, because contrasting results may reflect not only ecological differences but also differences in methodology (e.g. choice of species traits, trait quantification and analytical methods). We conclude that the question of how the trait composition of stream communities varies along geographical and environmental gradients is far from settled. A challenge for large?scale stream ecology is to provide a more specific view of trait variation in multiple taxonomic groups (e.g. do traits vary similarly in different organisms groups?), along major environmental gradients (e.g. is trait variation similar along the same environmental gradients in different regions?) and among different regional entities (e.g. do the traits vary, on average, among different regions?).}
-      \field{issn}{0046-5070}
-      \field{journaltitle}{Freshwater Biology}
-      \field{number}{8}
-      \field{shortjournal}{Freshwater Biology}
-      \field{title}{A macroecological perspective of trait patterns in stream communities}
-      \field{urlday}{14}
-      \field{urlmonth}{4}
-      \field{urlyear}{2018}
-      \field{volume}{58}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{1539\bibrangedash 1555}
-      \range{pages}{17}
-      \verb{doi}
-      \verb 10.1111/fwb.12164
-      \endverb
-      \verb{file}
-      \verb Full Text PDF:/home/kunz/Zotero/storage/KY24PEYR/Heino Jani et al. - 2013 - A macroecological perspective of trait patterns in.pdf:application/pdf;Snapshot:/home/kunz/Zotero/storage/5HA4W6HI/fwb.html:text/html
-      \endverb
-      \verb{urlraw}
-      \verb https://onlinelibrary.wiley.com/doi/full/10.1111/fwb.12164
-      \endverb
-      \verb{url}
-      \verb https://onlinelibrary.wiley.com/doi/full/10.1111/fwb.12164
-      \endverb
-      \keyw{species traits,community organisation,fish,geographical gradients,habitat templets,invertebrates}
-    \endentry
     \entry{hoye_deep_2020}{article}{}
       \name{author}{10}{}{%
         {{hash=2ea5f0b57c579e8d12cb289df83eb1a1}{%
@@ -2560,6 +2500,58 @@
       \verb https://www.jstor.org/stable/3817
       \endverb
     \endentry
+    \entry{statzner_perspectives_2001}{article}{}
+      \name{author}{4}{}{%
+        {{hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=8dbad5465a3dc684626bba2146ea3510}{%
+           family={Bis},
+           familyi={B\bibinitperiod},
+           given={Barbara},
+           giveni={B\bibinitperiod}}}%
+        {{hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9161674522b89b60aaab1ef1a3c85632}{%
+           family={Usseglio-Polatera},
+           familyi={U\bibinithyphendelim P\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{fullhash}{3555db552c7b77e2a27e66d7230993d8}
+      \strng{bibnamehash}{3555db552c7b77e2a27e66d7230993d8}
+      \strng{authorbibnamehash}{3555db552c7b77e2a27e66d7230993d8}
+      \strng{authornamehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{authorfullhash}{3555db552c7b77e2a27e66d7230993d8}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Environmental policies increasingly focus on the enhancement of ecological functions across large geographical areas and thus call for biomonitoring tools that assess these functions at large spatial scales. A potential answer to this call would be to use general biological traits of organisms that in-dicate ecological functions, as such traits will be comparable among communities even across bio-geographic regions that differ in their taxonomic composition. Here, we used benthic invertebrates and European running waters as example to illustrate how multiple biological traits could provide a measure for the large-scale biomonitoring of the functional composition of communities. Our measure considered the relative abundance of 63 categories of 11 biological traits (such as size, re-productive and dispersal potential, food and feeding habits) that indicate various ecological func-tions. Comparing this measure for 10 most natural French reference regions with 37 other most natural regions/stream types scattered across Europe demonstrated an extremely high spatial and temporal stability of the functional composition of natural invertebrate communities at the Euro-pean scale. Thus, our functional measure corresponds to a fundamental standard for a large-scale biomonitoring tool, which is the stable and reliable indication of the natural reference state across ecoregions that differ more or less in their taxonomic composition. Applying our functional mea-sure to regulated stream sites below dams (in England, Finland and Spain) and to streams receiving sewage inputs (in Wales, Poland and Sardinia) demonstrated highly significant (p {<} 10 –6) differences in the functional composition between the human-impacted and the natural reference communities. In addition, some of the trait categories responded in a consistently contrasting way to each of the two types (regulation, sewage) of human impact. Consequently, our measure for the functional composition of invertebrate communities provides a first unified European baseline for future stream and river management: it was stable in the most natural but otherwise very different run-ning water types across Europe, it safely indicated human impact, and it could potentially discrimi-nate specific types of human disturbances. As all living organisms have multiple biological traits, our approach could serve to generate, for other types of communities and ecosystems, a set of large-scale biomonitoring tools that use similar and perhaps even comparable measures for the functional community composition.}
+      \field{day}{31}
+      \field{journaltitle}{Basic and Applied Ecology - {BASIC} {APPL} {ECOL}}
+      \field{month}{12}
+      \field{shortjournal}{Basic and Applied Ecology - {BASIC} {APPL} {ECOL}}
+      \field{shorttitle}{Perspectives for biomonitoring at large spatial scales}
+      \field{title}{Perspectives for biomonitoring at large spatial scales: A unified measure for the functional composition of invertebrate communities in European running waters}
+      \field{volume}{2}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1078/1439-1791-00039
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunzst/Zotero/storage/GYPHTC54/Statzner et al. - 2001 - Perspectives for biomonitoring at large spatial sc.pdf:application/pdf
+      \endverb
+    \endentry
     \entry{statzner_reproductive_1997}{article}{}
       \name{author}{4}{}{%
         {{hash=615e8a66370c723ca39c61c650ff638e}{%
@@ -2593,7 +2585,6 @@
       \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
-      \true{uniqueprimaryauthor}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{1. Using world-wide data on the reproductive biology of 131 species (in eight orders) of aquatic insects, we used multivariate analyses to examine: (i) relationships among reproductive traits determining life cycle, fecundity, morphology, behaviour and physiology; (ii) relationships among traits determining spatial and temporal habitat characteristics at different scales; and (iii) the relationship between reproductive and habitat-use traits. This provided a test of predictions of the habitat templet concept on trends of species traits along gradients of habitat heterogeneity. 2. The major trends observed in the relationships among reproductive traits were that larger females had larger eggs, which were more vulnerable to perturbations such as droughts and often laid in cocoons. In addition, they laid the eggs in larger numbers of smaller clutches than smaller females. Other traits (e.g. egg number or incubation time) did not show clear trends. 3. Females that deposited eggs at sites of low local temporal heterogeneity (within plants) used, at the same time, gross habitats of high temporal heterogeneity (temporary waters). In contrast, traits in habitat use hardly differed on well-known gradients of temporal heterogeneity along running waters (from source to estuary). The number of habitat units used by ovipositing females generally increased with the spatial scale considered, most species oviposited in a single small habitat unit but in several gross habitats. 4. A significant (P {<} 0.01) relationship between traits in reproduction and habitat use demonstrated that habitat acted as a templet for reproductive strategies. This relationship was dominated by larger females having larger, unattached eggs which were more vulnerable to droughts and were oviposited in temporally more stable small-scale habitats (within wood or macrophytes, or within cocoons spun by the female) but more unstable large-scale habitats (primarily temporary waters). Thus, only on the small habitat scale did some of our observations correspond to the predictions of the habitat templet concept (e.g. larger size or higher vulnerability in more stable habitats). However, many species had traits in reproduction that did not show trends as predicted by the concept. 5. This and other recent studies of the relationships between traits of freshwater organisms and the heterogeneity of their habitats have shown that habitat acts as a templet for species life history traits. However, many of the details observed in these studies did not correspond to predictions of the templet concept because of trade-offs among the traits and scale problems in the description of habitat heterogeneity. Therefore, future studies should focus on groups of organisms which are as similar as possible in the trade-offs among their species traits and on the potential relationships of habitat heterogeneity across multiple scales.}
