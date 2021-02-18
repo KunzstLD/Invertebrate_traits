@@ -29,7 +29,7 @@
 \begin{tikzpicture}
       %% Nodes
       \node(duplTaxa)[intstepsnode, align = center] at (-5cm,0cm){Consolidating duplicate \\ taxa in  EU, NOA, AUS \& \\ NZ databases};
-      \node(normalAUS)[intstepsnode, align = center, xshift = 0cm, yshift = 0cm]{AUS traits standardised to [0 - 1] \\ because multiple codings used \\ throughout this database};
+      \node(normalAUS)[intstepsnode, align = center, xshift = 0cm, yshift = 0cm]{ Normalised AUS \\ traits ([0 - 1]) to work \\ with multiple codings};
       \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Omitted taxa less \\ precise than family-level};
 
       \node (frameProcessing) [frame, fit = (duplTaxa) (normalAUS) (omission) ] {};
@@ -45,7 +45,7 @@
 
 
 
-      \node(tab_aggregation)[xshift = -3cm, yshift = -6.6cm]{
+      \node(tab_aggregation)[xshift = -3cm, yshift = -7.2cm]{
         \begin{tabular}{ccc|ccc}
         Family & Genus & Species & \specialcell{Trait \\ A\_h\textsubscript{1}} & \specialcell{Trait \\ A\_h\textsubscript{2}} & \specialcell{Trait \\ A\_h\textsubscript{3}} \\
         \hline
@@ -57,9 +57,10 @@
          F\textsubscript{1} & \textit{NA} & \textit{NA} & 0.25 & 0.75 & 0 \\
       \end{tabular}};
 
-      \node(directAgg)[aggrtypesnode, align = center, xshift = 4cm, yshift = -5cm]{Direct aggregation};
 
-      \node(tab_direct_agg)[xshift = 4cm, yshift = -7.5cm]{
+      \node(directAgg)[aggrtypesnode, align = center, xshift = 4.2cm, yshift = -5cm]{Direct aggregation};
+
+      \node(tab_direct_agg)[xshift = 4.2cm, yshift = -8.2cm]{
         \begin{tabular}{c|ccc}
         Family & Trait & Method & Value \\
         \hline
@@ -74,9 +75,9 @@
 
 
 
-      \node(stepwiseAgg)[aggrtypesnode, align = center, xshift = -3.5cm, yshift = -10.3cm]{Stepwise aggregation};
+      \node(stepwiseAgg)[aggrtypesnode, align = center, xshift = -3.5cm, yshift = -11.3cm]{Stepwise aggregation};
  
-      \node(tab_stepwise_agg)[xshift = -3.5cm, yshift = -12.5cm]{
+      \node(tab_stepwise_agg)[xshift = -3.5cm, yshift = -13.6cm]{
         \begin{tabular}{cc|ccc}
         Family &Genus & Trait & Method & Value \\
         \hline
@@ -85,15 +86,15 @@
         F\textsubscript{1}& NA & A\_h\textsubscript{1} & - & 0.25\\
       \end{tabular}};
 
-      \node(stepwiseAgg2)[aggrstepsnode, align = center, xshift = -3.5cm, yshift = -14.7cm]{ $A\_h_1 = mean(0.4167, 0.125, 0.25)$ \\ $ = 0.26$};
+      \node(stepwiseAgg2)[aggrstepsnode, align = center, xshift = -3.5cm, yshift = -16cm]{ $A\_h_1 = mean(0.4167, 0.125, 0.25)$ \\ $ = 0.26$};
 
-      \node(weightedAgg)[aggrtypesnode, xshift = 4cm, yshift = -10.3cm]{Weighted aggregation};
+      \node(weightedAgg)[aggrtypesnode, xshift = 4.2cm, yshift = -11.3cm]{Weighted aggregation};
 
-      \node(weights)[aggrstepsnode, align = center, xshift = 4cm, yshift = -12.7cm]{Weights based on \\ species per genera: \\
+      \node(weights)[aggrstepsnode, align = center, xshift = 4.2cm, yshift = -13.4cm]{Weights based on \\ species per genera: \\
       $3$ for $G_1$, $1$ for $G_2$, \\
       weight for $F_1$ set to $1$};
 
-      \node(weights2)[aggrstepsnode, align = center, xshift = 4cm, yshift = -15.1cm]{$A\_h_1 = \frac{0.25*3+0.5*3+...+ 0.25*1}{3+3...+1}$ \\ \\ $ = 0.35$};
+      \node(weights2)[aggrstepsnode, align = center, xshift = 4.2cm, yshift = -16cm]{$A\_h_1 = \frac{0.25*3+0.5*3+...+ 0.25*1}{3+3...+1}$ \\ \\ $ = 0.35$};
 
       \node(frameExample) [frame, fit = (tab_aggregation) (directAgg)(tab_direct_agg) (weights2)] {};
 

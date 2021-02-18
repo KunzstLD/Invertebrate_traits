@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{float}
@@ -12,7 +12,9 @@
 \usepackage{rotating}
 \usepackage{caption}
 \usepackage{authblk}
+\usepackage{csquotes}
 \graphicspath{{Figures/}}
+\usepackage{setspace}
 \usepackage{rotating}
 \usepackage{geometry}
 \usepackage{array}
@@ -23,7 +25,7 @@
 \usepackage[
 backend = biber,
 natbib,
-style = apa,
+style = apa6,
 citestyle = authoryear,
 maxcitenames = 2, 
 maxbibnames = 99, 
@@ -51,13 +53,13 @@ uniquelist=false
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
-% functions and definitions
+%%%% Functions and definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{Gray}{gray}{0.9}
 
 % horizontal space between two columns
 \setlength{\tabcolsep}{2mm}
 
-%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\specialcell}[2][c]{%
   \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
@@ -71,6 +73,9 @@ uniquelist=false
   \textbf{\textit{Keywords---}} #1
 }
 
+%%%% Formatting options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +85,7 @@ uniquelist=false
 \author[3]{Astrid Schmidt-Kloiber}
 \author[4]{Christoph D. Matthaei}
 \author[5]{Philippe Usseglio-Polatera}
-\author[4]{Wolfram Graf}
+\author[3]{Wolfram Graf}
 \author[6]{N. LeRoy Poff}
 \author[7]{Leon Metzeling}
 \author[8]{Laura Twardochleb}
@@ -159,13 +164,15 @@ We established four datasets, one for each of the four geographic regions, by ha
 
 Next, we selected taxa for inclusion in our datasets and normalised the trait affinity scores for each taxon. We first omitted all taxa with a lower taxonomic precision than family level and consolidated duplicate taxa that appeared within a database, by either applying the median for fuzzy coded traits, or the maximum for binary traits. We then established our harmonised datasets by using either fuzzy coding or, when unavailable, binary coding. Fuzzy codes are reported with different ranges in the trait databases (e.g., freshwaterecology.info: 0–10, Tachet database: 0–3 or 0–5). We normalised these to a range between 0 and 1 and converted trait affinities to proportions. In cases where binary coding was needed, we converted categorical and continuous traits into binary traits with values of 1 and 0, which, thus, corresponded with the range of fuzzy coded traits. For example, in the  freshwaterecology.info database, the classification of the grouping feature voltinism accounts for different faunistic regions and we substituted a value of 1 for entries such as “arctic” or “boreal”. We assumed that values of 1 and 0 for binary traits corresponded to the highest and no affinity for a particular trait.
 
-\begin{table}[H]
-\centering
+\newpage
+
+\begin{longtable}{m{2.5cm}|m{4cm}|m{7cm}}
 \caption{Traits of harmonised grouping features from six invertebrate trait databases and four geographic regions. The last column indicates traits that were combined for harmonisation (no combining needed if empty).}
-\label{tab:traits_harmonisation}
-\begin{tabular}{lll}
+\endfirsthead
 \toprule[.1em]
-Grouping feature & Trait & Combined traits\\
+\label{tab:traits_harmonisation}
+%\begin{tabular}
+\specialcell{Grouping \\ feature} & Trait & Combined traits\\
 \toprule[.1em]
 Voltinism    & \begin{tabular}[c]{@{}l@{}}Semivoltine\\ Univoltine\\ Bi/multivoltine\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}\textless 1 generation per year\\ 1 generation per year\\ \textgreater 1 generation per year\end{tabular}                                                                                                                                            \\
 \midrule
@@ -181,8 +188,8 @@ Feeding mode & \begin{tabular}[c]{@{}l@{}}Filterer\\ \\ Gatherer\\ \\ Herbivore\
 \hline
 Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terrestrial eggs\end{tabular}                            & \begin{tabular}[c]{@{}l@{}}Eggs attached to substrate/plants/stones,\\ free/fixed eggs/clutches\\ \\ Terrestrial clutches, terrestrial \end{tabular}     \\
 \bottomrule[.1em]
-\end{tabular}
-\end{table}
+%\end{tabular}
+\end{longtable}
 \begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
     $\dagger$ The trait "bluff (blocky)" occurred in the Vieira database and was newly classified by expert knowledge into cylindrical and flattened (\cite{polatera_personal_information_2020}). \\  
     $\ddagger$ Reflects the different size classifications by the Vieira and CONUS databases from the other trait databases. \\
@@ -192,9 +199,11 @@ Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terr
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
+
 \subsection*{Comparing trait aggregation methods}
 
-For our study aim of comparing the effects of different aggregation methods on trait–environment relationship inference, we aggregated the traits of two of the harmonised datasets to the family level.
+For our study aim of comparing the effects of different aggregation methods on trait\-environment relationship inference, we aggregated the traits of two of the harmonised datasets to the family level.
 We used three different aggregation approaches: (1) direct aggregation of taxa to family level with either the median or mean, giving equal weight to every taxon. We denote these aggregation methods as \textit{direct\_agg\textsubscript{median}} and \textit{direct\_agg\textsubscript{mean}}, respectively; (2) stepwise aggregation, first to the genus level and subsequently to the family level with either the median or mean. This approach gives equal weights to each genus. Hereafter, we denote this aggregation type as \textit{stepwise\_agg\textsubscript{median}} or \textit{stepwise\_agg\textsubscript{mean}}, respectively; and (3) aggregation using a weighted mean approach, denoted as \textit{weighted\_agg}. This method weights each genus according to its number of species in the trait datasets, regardless of whether information was available for every used grouping feature (Figure \ref{fig:data_proc_overview}). When we refer to \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{weighted\_agg} together we denote these methods as mean aggregation methods and when we refer to \textit{direct\_agg\textsubscript{median}} and \textit{stepwise\_agg\textsubscript{median}} together, we denote these methods as median aggregation methods.
 
 
@@ -221,9 +230,9 @@ To examine the influence of taxonomic hierarchy and trait variability on the out
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Effects of harmonisation and trait aggregation on trait-environment relationship inferences}
+\subsection*{Effects of harmonisation and trait aggregation on trait-environ\-ment relationship inferences}
 
-To further evaluate the effects of grouping-feature harmonisation and trait aggregation on characterisation of trait–environment relationships, we repeated the analysis of \citet{szocs_effects_2014}, who studied the effects of anthropogenic salinisation on invertebrates in the River Werra in Germany. The River Werra has been subject to effluents from the potash industry since the mid- 20th century, which makes it a useful system for studying the responses of invertebrates and their trait compositions to salinisation (\cite{bathe_biological_2011}). \citet{szocs_effects_2014}  used redundancy analysis (RDA) to compare trait compositions among sites downstream, upstream, and close to salt discharge (transition). Further details about the original study can be found in \citet{szocs_effects_2014}.
+To further evaluate the effects of grouping-feature harmonisation and trait aggregation on characterisation of trait–environment relationships, we repeated the analysis of \citet{szocs_effects_2014}, who studied the effects of anthropogenic salinisation on invertebrates in the River Werra in Germany. The River Werra has been subject to effluents from the potash industry since the mid- 20th century, which makes it a useful system for studying the responses of invertebrates and their trait compositions to salinisation (\cite{bathe_biological_2011}). \citet{szocs_effects_2014}  used redundancy analysis (RDA) to compare trait compositions among sites downstream and upstream to the salt discharge. Further details about the original study can be found in \citet{szocs_effects_2014}.
 
 We re-analysed the \citet{szocs_effects_2014} study by performing a RDA with harmonised grouping features from the dataset for Europe and with traits that we aggregated to family level with the five aggregation methods described above. We used all 21 grouping features from the original study, but replaced 6 with harmonised grouping features from our European trait dataset, namely: size, feeding mode, locomotion, oviposition, respiration, and voltinism.
 We compared the results of the original study’s RDA with the results of the RDA from the harmonised grouping features. Specifically, the trait composition, expressed as community weighted mean (CWM) traits, was ordinated along an electric conductivity gradient. We compared the species scores obtained from the RDA (i.e., the coordinates of the tips of the vectors representing the CWM traits in the bi- or triplots). Following the original study, we used the Mahalanobis distance measure and identified traits associated with higher or lower salinity based on their distance to the ordination axis median. We considered CWM traits with a Mahalanobis distance greater than the 97.5 \%-quantile of the Chi-square distribution (5.02) to have responded to either lower or higher salinity. Additionally, for testing the effect of different aggregation methods on inference about CWM trait–salinisation relationships, we repeated the RDA five times, each with family-level aggregated trait values assigned to corresponding taxa from \citet{szocs_effects_2014}.
@@ -250,7 +259,7 @@ The harmonised European, North American, Australian, and New Zealand trait datas
     \centering
     \caption{Number (Nr.) of taxa per harmonised dataset and per taxonomic level. Numbers in parenthesis show rounded relative frequencies in percent.} 
     \label{tab:tax_coverage}
-    \begin{tabular}{lccccc}
+    \begin{tabular}{l|c|c|c|c|c}
     \toprule[.1em]
     Dataset & Taxa (Nr.) & Aquatic insects (Nr.) & Species & Genus & Family \\ 
     \toprule[.1em]
@@ -275,15 +284,15 @@ The numbers of entries with available information for the selected grouping feat
 
 The amount of entries with available information for the selected grouping features varied strongly for the developed European, North American, and Australian datasets (Table \ref{tab:trait_coverage}). By contrast, the New Zealand dataset contained complete trait information for most of the investigated grouping features (between 94 \% and 100 \%).
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Rounded percentage of entries that include 
     information for the individual grouping features
     shown per trait dataset.} 
     \label{tab:trait_coverage}
-    \begin{tabular}{lccccccc}
+    \begin{tabular}{l|c|c|c|c|c|c|c}
     \toprule[.1em]
-    Dataset & Body form & Oviposition & Voltinism & Locomotion & Size & Respiration & Feeding mode \\ 
+    Dataset & \specialcell{Body \\ form} & Oviposition & Voltinism & Locomotion & Size & Respiration & \specialcell{Feeding \\ mode} \\ 
     \toprule[.1em]
     EU & 8 & 15 & 23 & 36 & 11 & 57 & 76 \\ 
     NOA & 28 & 13 & 47 & 52 & 73 & 44 & 63 \\ 
@@ -336,10 +345,11 @@ Size                                                                & -         
 Body Form                                                           & -                                                                                         & -                                                                      & -                                                             & \begin{tabular}[c]{@{}l@{}}4 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular}                                       & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
 \bottomrule
 \end{longtable}
-\begin{minipage}{\linewidth}\small
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
       $\dagger$ Some of the feeding mode traits used in the Australian database were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
       \newline
       $\ddagger$ Not all traits were considered because trait information was partly presented as comments to describe other traits or due to incomplete information.
+      }
   \end{minipage}
 \end{landscape}
 
@@ -355,6 +365,7 @@ The comparison of family-level aggregated trait affinities with those assigned b
 
 The percentage of differing cases of aggregated versus assigned trait affinities varied by method between 16.2 and 22.9 \% for the Australian dataset and between 15.3 and 47 \% for the North American dataset (Table \ref{tab:summary_stat_aggr_vs_fam_assigned}). In general, median aggregation methods yielded fewer cases with differences compared with mean aggregation methods. However, median aggregation methods produced, on average, greater absolute differences for both datasets. Standard deviations of absolute differences were similar for all tested aggregation methods. Maximum differences of 1 (i.e., the maximum possible difference) occurred for all investigated grouping features in both datasets (Figure \ref{fig:diff_aggr_traits_combined}).
 
+\begin{landscape}
 \begin{table}[H]
   \centering
   \caption{Percentage of differing cases, minimum, maximum, mean, and standard deviation of absolute differences between trait affinities assigned at family level by experts and aggregated trait affinities from five different aggregation methods.}
@@ -381,7 +392,8 @@ The percentage of differing cases of aggregated versus assigned trait affinities
   \centering
   Abbreviations: Min., Minimum; Max., Maximum; abs., absolute; SD, Standard deviation.
   }
-  \end{minipage}
+ \end{minipage}
+\end{landscape}
 
 
 \newpage
@@ -431,7 +443,7 @@ Although trait aggregation methods were affected by taxonomic hierarchical struc
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{Effects of harmonisation and trait aggregation on trait-environment relationships}
+\subsection*{Effects of harmonisation and trait aggregation on trait-environ\-ment relationships}
 
 Our re-analysis of the \citet{szocs_effects_2014} study on the effects of salinisation on invertebrate traits showed that the use of harmonised and aggregated trait data may be useful for ecological studies on trait–environment relationships. Overall, harmonised trait data and all aggregation methods produced similar distributions of RDA species scores (\ref{fig:violin_plot_species_sc}) compared with the original analysis, and they resulted in similar, but fewer, traits that distinguished upstream and downstream sites than the original analysis (Figures \ref{fig:violin_plot_species_sc} and \ref{fig:boxplot_scores_on_constrained_axis}).
 
@@ -526,8 +538,8 @@ We thank Brooke Cassell for technical editing of the manuscript. The project, in
 The authors declare no conflict of interest.
 
 \section*{Author contribution}
-R.B.S. and S.K. designed the study; B.J.K. and L.M. provided trait data for Australia; P.U-P. provided trait data from the Tachet database; C.P.H., N.L.P., and L.T. provided trait data for North America; C.D.M. provided trait data for New Zealand;
-B.J.K., A.S-K., C.D.M, W.G., N.L.P., L.M., and C.P.H. provided in depth information on trait data and discussed procedure of analysis; S.K. conducted data processing and the statistical analyses.; S.K. wrote the manuscript; B.J.K, A-S.K., C.D.M, P.U-P., C.P.H., and R.B.S. discussed the results and provided suggestions on the manuscript.
+R.B.S. and S.K. designed the study; B.J.K. and L.M. provided trait data for Australia; P.U-P. provided body form trait data for European and North American invertebrates; C.P.H., N.L.P., and L.T. provided trait data for North America; C.D.M. provided trait data for New Zealand;
+B.J.K., A.S-K., C.D.M, W.G., N.L.P., L.M., and C.P.H. provided in depth information on trait data and discussed the procedure of analysis; S.K. conducted data processing and the statistical analyses.; S.K. wrote the manuscript; B.J.K, A-S.K., C.D.M, P.U-P., C.P.H., and R.B.S. discussed the results and provided suggestions on the manuscript.
 
 \newpage
 
