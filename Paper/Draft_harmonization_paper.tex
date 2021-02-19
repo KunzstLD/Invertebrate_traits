@@ -11,7 +11,6 @@
 \usepackage{tikz}
 \usepackage{rotating}
 \usepackage{caption}
-\usepackage{ccaption}
 \usepackage{authblk}
 \usepackage{csquotes}
 \graphicspath{{Figures/}}
@@ -26,7 +25,7 @@
 \usepackage[
 backend = biber,
 natbib,
-style = apa6,
+style = apa,
 citestyle = authoryear,
 maxcitenames = 2, 
 maxbibnames = 99, 
@@ -101,7 +100,6 @@ uniquelist=false
 \affil[7]{Environment Protection Authority Victoria, Applied Sciences Division, Macleod, Australia}
 \affil[8]{Department of Fisheries and Wildlife, Michigan State University, East Lansing, USA}
 \affil[9]{Department of Watershed Sciences, National Aquatic Monitoring Center, and the Ecology Center, Utah State University, Logan, USA}
-\date{}
 
 \begin{document}
 \maketitle
@@ -110,13 +108,7 @@ uniquelist=false
 
 \section*{Abstract}
 
-% FROM FRESHWATER BIOLOGY Website:
-% All papers should include a summary, in short numbered paragraphs, limited to about 3% of the length of the text, and in any case to not more than 500 words. This should provide a concise statement of the scope of the work and its principal findings and be fully intelligible without reference to the main text. It is helpful to structure your abstract as follows: point 1 = background to and reason for the study and the aims; point 2 = brief description of methods used; point 3 = main project results (address the aims); point 4 = conclusions of your study; point 5 = the contribution that your results make to the field / why your study is useful to an international audience. Referring to abstracts in recently published issues may help with structuring an abstract.
-
-
-% Alternative start: Invertebrate traits are increasingly used in ecological studies because they provide a mechanistic understanding of species-environment relationships and are suitable for large scale analysis due to their consistent response to environmental gradients.
-
-1. Use of invertebrate traits rather than species composition may facilitate large-scale comparisons of community structure and responses to disturbance in freshwater ecology because the same traits can potentially occur everywhere.  In recent years, comprehensive invertebrate trait databases have been established at different scales (e.g. regions, continents). The wide availability of invertebrate trait data supports trait-based studies, especially at large scales. However, a number of data-related issues complicate the use of invertebrate traits for ecological studies. For example, standardised definitions for freshwater invertebrate traits are lacking, which impedes comparisons across regions. Moreover, it is uncertain how harmonising varying trait definitions among databases might influence identification of trait-environment relationships. In addition, taxonomic resolution between taxonomic composition data and trait data can differ, making aggregation of traits necessary. At present, it is unknown how different trait aggregation approaches compare with expert-assigned trait affinities. In this study we aimed to identify discrepancies in trait definitions across freshwater invertebrate databases and to compare trait aggregation methods to identify how taxonomic hierarchy structure and trait variability influence results from different aggregation approaches.
+1. Use of invertebrate traits rather than species composition may facilitate large-scale comparisons of community structure and responses to disturbance in freshwater ecology because the same traits can potentially occur everywhere.  In recent years, comprehensive invertebrate trait databases have been established at different scales (e.g. regions, continents). The wide availability of invertebrate trait data supports trait-based studies, especially at large scales. However, a number of data-related issues complicate the use of invertebrate traits for ecological studies. For example, standardised definitions for freshwater invertebrate traits are lacking, which impedes comparisons across regions. Moreover, it is uncertain how harmonising varying trait definitions among databases might influence identification of trait-environment relationships. In addition, taxonomic resolution between taxonomic composition data and trait data can differ, making aggregation of traits necessary. At present, it is unknown how different trait aggregation approaches compare with expert-assigned trait affinities. In this study we aimed to identify discrepancies in trait definitions across freshwater invertebrate databases and to compare trait aggregation methods to identify how phylogenetic structure and trait variability influence results from different aggregation approaches.
 
 2. We describe discrepancies in the definitions of traits used to create freshwater invertebrate trait databases in Europe, North America, New Zealand, and Australia. Based on our comparisons of these trait databases, we established four novel trait datasets by harmonising trait definitions of commonly used traits. Next, we used two of these datasets to compare aggregated traits obtained by different aggregation methods with traits assigned by experts, both at the family level. The trait aggregation methods we compared used either the mean or the median and different weightings. We further explored the effects of harmonisation and trait aggregation by re-analysing data from a case study.
 
@@ -139,22 +131,18 @@ The variability and inconsistencies of information in freshwater invertebrate tr
 
 Another challenge to using data from multiple continents is that invertebrate trait databases include different grouping features and related traits. To harmonise grouping features from different regions, or to structure them in such a way as to facilitate cross-database comparison, commonly accepted and unambiguous trait definitions are required (\cite{schneider_towards_2019}). Ideally, the same traits and grouping features would be reported across databases or standardised terminology would exist to easily harmonise them; however, standardised terminology of trait definitions is lacking and poor metadata quality in many trait databases make, harmonisation of grouping features difficult (\cite{baird_toward_2011, kissling_towards_2018}). To our knowledge, only \citet{brown_functional_2018} harmonised grouping features from more than two geographically distant invertebrate trait databases, for a limited set of grouping features (8) and taxa (112), in a study on the influence of decreasing glacier cover on the functional diversity of invertebrate assemblages.
 
-A third challenge to comparing across invertebrate trait databases is inconsistent coding of trait data (\cite{culp_incorporating_2011}). Coding of trait data is usually done by assigning an affinity (aka affinity score) of an invertebrate taxon to express a particular trait %, either using a binary classification (0/1), continuous or fuzzy classification (0 - 1 or 0 - 100 \%).
-Traits of individual freshwater invertebrates can be difficult to quantify because, unlike plant traits, they are often difficult to measure directly. For example, to describe feeding habits requires that we understand mouthpart morphology, feeding behaviour, and what is being eaten (\cite{moog_comprehensive_nodate}). Some traits can be described in categorical terms, which ignores uncertainty in how traits are expressed in any particular organism (e.g., adult terrestrial stage, presence of gills). Other traits are better suited to being described as continuous (e.g., tolerance of pollution, body size). One approach for dealing with uncertainty is the use of fuzzy coding, where traits are assigned probabilistic values. Fuzzy codes, which are usually converted to proportions, are used to account for plasticity in traits, variability in traits within taxonomic groups above the species level, and incomplete knowledge. The use of different types of coding for trait affinities in different databases limits comparisons. For example, in the study from \citet{brown_functional_2018} the authors needed to reclassify trait affinities because the individual databases employed different coding approaches (i.e., European and New Zealand databases used fuzzy coding whereas the North American database used binary coding). 
+A third challenge to comparing across invertebrate trait databases is inconsistent coding of trait data (\cite{culp_incorporating_2011}). Coding of trait data is usually done by assigning an affinity (aka affinity score) of an invertebrate taxon to express a particular trait. Traits of individual freshwater invertebrates can be difficult to quantify because, unlike plant traits, they are often difficult to measure directly. For example, to describe feeding habits requires that we understand mouthpart morphology, feeding behaviour, and what is being eaten (\cite{moog_comprehensive_nodate}). Some traits can be described in categorical terms, which ignores uncertainty in how traits are expressed in any particular organism (e.g., adult terrestrial stage, presence of gills). Other traits are better suited to being described as continuous (e.g., tolerance of pollution, body size). One approach for dealing with uncertainty is the use of fuzzy coding, where traits are assigned probabilistic values. Fuzzy codes, which are usually converted to proportions, are used to account for plasticity in traits, variability in traits within taxonomic groups above the species level, and incomplete knowledge. The use of different types of coding for trait affinities in different databases limits comparisons. For example, in the study from \citet{brown_functional_2018} the authors needed to reclassify trait affinities because the individual databases employed different coding approaches (i.e., European and New Zealand databases used fuzzy coding whereas the North American database used binary coding). 
 
 Finally, discrepancies in the taxonomic resolutions (e.g., species, genus, or family) used when comparing among trait databases, or when linking counted taxonomic data to trait databases, presents another challenge. When taxonomic composition or data in on trait database are at a more precise taxonomic level than other trait data (e.g. observations at species-level and trait data at genus-level) trait information of the less precise taxonomic level is often assigned (e.g. \cite{szocs_effects_2014, vos_taxonomic_2017}). If trait information is only available at more precise taxonomic levels than for taxonomic composition, traits are aggregated to a less precise taxonomic level (e.g. \cite{aspin_extreme_2019, piliere_a._f._h._importance_2016, poff_functional_2006, szocs_effects_2014}). To date, studies have used different methods of trait aggregation, e.g. the mean (\cite{magliozzi_functional_2019}), median (\cite{szocs_effects_2014}) or mode (\cite{piliere_a._f._h._importance_2016}), but studies on how and to what extent different trait aggregation methods influence trait-based analyses are missing. 
 
 These challenges motivated us to assess the characteristics and comparability of different freshwater invertebrate trait databases with the goal of facilitating future syntheses. We aimed to identify methods of improving the comparability of trait data across databases, despite differences in trait definitions and the taxonomic level of data in three ways: (1) by describing discrepancies in trait definitions between trait databases from Europe, North America, Australia, and New Zealand; (2) by harmonising trait definitions across databases to provide consistent trait grouping features for comparison across geographic locations; and (3) by comparing the influence of different trait aggregation methods and grouping-feature harmonisation on the detection of trait–environment relationships.
 
-% Other alternative from Brooke: These challenges when working with or synthesizing trait data motivated us to assess the characteristics and comparability of freshwater invertebrate trait data contained in disparate databases. We aimed to explore methods of improving the comparability of trait data across databases, despite differences in trait grouping-feature definitions, affinity score coding, and taxonomic level of data, through two study objectives: (1) to investigate the plausibility of comparing across databases from different geographic regions by providing harmonised datasets from Europe, North America, Australia, and New Zealand; and (2) to compare the influence of different trait aggregation methods on the characterisation of trait–environment relationships.
-
-
 \newpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Methods}
 
-To address our study objectives, we took a multi-prong approach to describing, combining, and assessing multiple sources of freshwater invertebrate data that differed in grouping-feature definitions and taxonomic resolution. Discrepancies in trait definitions served as a starting point to develop four novel invertebrate trait datasets by harmonising seven grouping features present in the existing trait databases. The harmonised trait datasets were used to evaluate the influence of different trait aggregation approaches on the identification of trait–environment relationships, our third study objective, in two ways by (1) comparing family-level aggregated trait affinities with family-level trait affinities assigned by experts for two of the established trait datasets where such data were available and (2) comparing the influence of taxonomic hierarchy and trait variability on the outcomes of the different trait aggregation approaches for simulated data. Finally, to further investigate how harmonising and aggregating trait data can modify the outcomes of trait–environment relationship characterisation, we used data from one of the newly established datasets with harmonised and aggregated traits to repeat an analysis of salinisation effects on biological traits (\cite{szocs_effects_2014}) and compared our results with those of the original study.
+To address our study objectives, we took a multi-prong approach to describing, combining, and assessing multiple sources of freshwater invertebrate data that differed in grouping-feature definitions and taxonomic resolution. Discrepancies in trait definitions served as a starting point to develop four novel invertebrate trait datasets by harmonising seven grouping features present in the existing trait databases. The harmonised trait datasets were used to evaluate the influence of different trait aggregation approaches on the identification of trait–environment relationships, our third study objective, in two ways by (1) comparing family-level aggregated trait affinities with family-level trait affinities assigned by experts for two of the established trait datasets where such data were available and (2) comparing the influence of taxonomic phylogeny and trait variability on the outcomes of the different trait aggregation approaches for simulated data. Finally, to further investigate how harmonising and aggregating trait data can modify the outcomes of trait–environment relationship characterisation, we used data from one of the newly established datasets with harmonised and aggregated traits to repeat an analysis of salinisation effects on biological traits (\cite{szocs_effects_2014}) and compared our results with those of the original study.
 
 \subsection*{Selection of traits and harmonisation of trait databases}
 
@@ -218,7 +206,6 @@ To evaluate the effect of the five trait aggregation methods
 
 To examine the influence of phylogeny and trait variability on the outcomes of the different trait aggregation methods, we created three hypothetical scenarios. We simulated three different families, each containing 25 total species but with different phylogenetic structures. The three families consisted of (1) a family with an equal number of genera and species (five genera each with five species each), denoted as \textit{sim\_base}; (2) a family in which one genus had a much larger number of species than the other four genera (1 genus with 13 species, 4 genera with 3 species each), denoted as \textit{sim\_extreme}; (3) a family in which all genera had a different number of species (8, 2, 7, 3, 5), denoted as \textit{sim\_variation}. We assigned a hypothetical grouping feature with three traits (T1, T2, and T3) to each scenario. We then simulated the 25 affinities, one per species, for each trait, by sampling from a truncated normal distribution bound by 0 and 1 and with a mean value of 0.5. To simulate different levels of trait variability, we repeated the sampling 100 times for each of the 5 standard deviations (0.2, 0.4, 0.6, 0.8, and 1), resulting in 12,500 simulated trait affinities for each simulated trait ($25$ species per family $\times$ 5 levels of trait variability $\times$ 100 replicates). We converted simulated trait affinities to proportions, as was done during trait database processing, and assigned the 12,500 simulated affinities per trait to each of the three family scenarios. We then applied the five trait aggregation methods described above to each simulated dataset. We compared the resulting ranges of aggregated trait affinities between levels of trait variability and taxonomic hierarchical scenario as well as the differences in trait affinities obtained by each aggregation method.
 
-% TODO Figure caption next page?
 \begin{figure}
   \centering
   % \includegraphics[width=22cm, height=28cm]{Flowchart_methods.pdf}
@@ -231,10 +218,9 @@ To examine the influence of phylogeny and trait variability on the outcomes of t
 \label{fig:data_proc_overview}
 \end{center}
 
-
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Effects of harmonisation and trait aggregation on inferences regarding trait-environment relationships}
 
@@ -282,7 +268,7 @@ Abbreviations: EUR, Europe; NOA, North America; AUS, Australia; NZ, New Zealand.
 }
 \end{minipage}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsubsection*{Completeness of trait information}
 
@@ -407,7 +393,7 @@ The percentage of differing cases of aggregated versus assigned trait affinities
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=12cm]{Deviances_trait_agg_combined.png}
-  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate. Abbreviations: AUS, Australia; NOA, North America.}
+  \caption{Cases (factor combination of investigated families and traits) where differences occurred between aggregated traits and expert assigned traits at family level for the Australian and North American dataset. Violin plots - mirrored density plots - show the density of the absolute trait affinity differences for the grouping features feeding mode and body size. Results for the North American dataset for the grouping features locomotion, respiration, and voltinism are shown in the supporting information (Figure \ref{fig:diff_aggr_traits_pyne}). Absolute differences in trait affinities are depicted as grey dots. \textit{n} denotes the number of cases per comparison where differences occurred. The blue dot indicates the mean of absolute differences, and the error bars show the standard deviation. The grey vertical lines show the 25\textsuperscript{th}, 50\textsuperscript{th} and 75\textsuperscript{th} quantiles of the density estimate. Abbreviations: AUS, Australia; NA, North America.}
   \label{fig:diff_aggr_traits_combined}
 \end{figure}
 
@@ -416,7 +402,7 @@ The percentage of differing cases of aggregated versus assigned trait affinities
 
 \subsubsection*{Comparison of aggregation methods with varying phylogenies and trait variability}
 
-The simulations showed that both phylogenetic structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of phylogenetic structure differed across aggregation methods, but, as we expected, the range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). % Ben would add: % as indicated by the increasing range of the boxes and wiskers with increasing standard deviation. 
+The simulations showed that both phylogenetic structure and trait variability affected aggregated trait affinities, although only to a small degree, and that aggregation method mattered in terms of the ranges of trait affinities produced over simulation replicates. The effect of phylogenetic structure differed across aggregation methods, but, as we expected, the range of trait affinities increased with increasing trait variability for all aggregation methods (Figure \ref{fig:overview_sim_results}). 
 
 Phylogenetic structure appeared to influence the outcomes of the different aggregation methods. For the \textit{sim\_base} scenario (equal numbers of genera and species), the mean and weighted aggregation methods yielded similar ranges of aggregated trait affinities within each level of trait variability, and the median aggregation methods consistently produced greater ranges of aggregated trait affinities than the other methods. The largest ranges were produced by the \textit{stepwise\_agg \textsubscript{median}} method. For the more complex phylogenetic structures, \textit{sim\_extreme} (one genus with a much larger number of species than the other four) and \textit{sim\_variation} (all genera with a different number of species), the \textit{stepwise\_agg \textsubscript{median}} method still produced the largest ranges of trait affinities for most levels of trait variability (and \textit{direct\_agg\textsubscript{mean}} produced the narrowest ranges for most levels of trait variability), but there was much less consistency in the ranges of trait affinities for all aggregation methods (i.e., the ranges were different among all aggregation methods).
 
@@ -432,7 +418,7 @@ Although trait aggregation methods were affected by phylogenetic structure and t
 \begin{figure}[H]
   \centering
   \includegraphics[width=16.5cm, height=10cm]{Diffs_indiv_runs_sim.png}
-  \caption{Comparison between the aggregated trait affinities produced by the different trait aggregation methods for every simulated dataset across all 3 simulated traits (5,000 comparisons per taxonomic hierarchy scenario). Results are shown for different levels of trait variability which is represented by the standard deviation (SD) of the simulated traits. Dots depict comparisons where absolute differences between aggregated trait affinities were greater than 0.1. Overall, there are 10 possible unique comparisons of which 7 produced absolute differences greater than 0.1. \newline
+  \caption{Comparison between the aggregated trait affinities produced by the different trait aggregation methods for every simulated dataset across all 3 simulated traits (5,000 comparisons per scenario). Results are shown for different levels of trait variability which is represented by the standard deviation (SD) of the simulated traits. Dots depict comparisons where absolute differences between aggregated trait affinities were greater than 0.1. Overall, there are 10 possible unique comparisons of which 7 produced absolute differences greater than 0.1. \newline
   Comparisons: \newline
   1) \textit{direct\_agg (median)} - \textit{stepwise\_agg (mean)} \newline
   2) \textit{direct\_agg (median)} - \textit{weighted\_agg} \newline
@@ -488,7 +474,7 @@ Synthesizing trait information from multiple trait databases is crucial for deve
 
 To resolve definition discrepancies and facilitate data synthesis in the future, terminological standards are needed. Harmonised definitions and concepts of traits have been developed in the past for other organism groups, such as for plants with the \textit{Thesaurus of Plant Characteristics} (TOP) initiative (\cite{garnier_towards_2017}). The core of this harmonisation initiative is to provide standardised trait definitions and to draw connections to synonyms, related terms, and surrounding concepts by linking to other controlled vocabularies or ontologies in the field. Such initiatives should encourage freshwater ecologists to establish unambiguous terminologies for invertebrate traits. The existing freshwater invertebrate trait databases could be linked through standardised terminologies or ontologies, as suggested by \citet{baird_toward_2011}. By following the recently proposed \textit{Ecological Trait-data Standard Vocabulary} (ETS), providers of invertebrate trait data could connect their traits to such ontologies (\cite{schneider_towards_2019}). Once standardised trait definitions are established, they will improve trait data sharing, trait data processing when working with multiple trait databases, and, ultimately, interpretation of the derived results. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Trait aggregation method choice}
 
@@ -548,7 +534,7 @@ B.J.K., A.S-K., C.D.M, W.G., N.L.P., L.M., and C.P.H. provided in depth informat
 
 \newpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \printbibliography
 

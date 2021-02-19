@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  15 FEB 2021 12:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  19 FEB 2021 17:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -9,8 +9,8 @@ LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@section=\count80
@@ -742,11 +742,33 @@ Package: authblk 2001/02/27 1.3 (PWD)
 \c@Maxaffil=\count130
 \c@authors=\count131
 \c@affil=\count132
+) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
+ (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count133
+)
+\csq@reset=\count134
+\csq@gtype=\count135
+\csq@glevel=\count136
+\csq@qlevel=\count137
+\csq@maxlvl=\count138
+\csq@tshold=\count139
+\csq@ltx@everypar=\toks35
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2018/02/11 v5.2c csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
 ) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count133
-\Gm@cntv=\count134
-\c@Gm@tempcnt=\count135
+\Gm@cnth=\count140
+\Gm@cntv=\count141
+\c@Gm@tempcnt=\count142
 \Gm@bindingoffset=\dimen179
 \Gm@wd@mp=\dimen180
 \Gm@odd@mp=\dimen181
@@ -755,7 +777,7 @@ Package: geometry 2010/09/12 v5.6 Page Geometry
 \Gm@layoutheight=\dimen184
 \Gm@layouthoffset=\dimen185
 \Gm@layoutvoffset=\dimen186
-\Gm@dimlist=\toks35
+\Gm@dimlist=\toks36
 ) (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 ) (/usr/share/texlive/texmf-dist/tex/latex/tools/hhline.sty
@@ -796,59 +818,56 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 ) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2017/12/19 v3.10 programmable bibliographies (PK/JW/AB)
- (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count136
-) (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
-\lrq@indent=\count137
+\lrq@indent=\count143
  (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 )) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write4
-\integerpart=\count138
-\decimalpart=\count139
+\integerpart=\count144
+\decimalpart=\count145
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 )
-\c@tabx@nest=\count140
-\c@listtotal=\count141
-\c@listcount=\count142
-\c@liststart=\count143
-\c@liststop=\count144
-\c@citecount=\count145
-\c@citetotal=\count146
-\c@multicitecount=\count147
-\c@multicitetotal=\count148
-\c@instcount=\count149
-\c@maxnames=\count150
-\c@minnames=\count151
-\c@maxitems=\count152
-\c@minitems=\count153
-\c@citecounter=\count154
-\c@savedcitecounter=\count155
-\c@uniquelist=\count156
-\c@uniquename=\count157
-\c@refsection=\count158
-\c@refsegment=\count159
-\c@maxextratitle=\count160
-\c@maxextratitleyear=\count161
-\c@maxextradate=\count162
-\c@maxextraalpha=\count163
-\c@abbrvpenalty=\count164
-\c@highnamepenalty=\count165
-\c@lownamepenalty=\count166
-\c@maxparens=\count167
-\c@parenlevel=\count168
-\blx@tempcnta=\count169
-\blx@tempcntb=\count170
-\blx@tempcntc=\count171
-\blx@maxsection=\count172
-\blx@maxsegment@0=\count173
-\blx@notetype=\count174
-\blx@parenlevel@text=\count175
-\blx@parenlevel@foot=\count176
-\blx@sectionciteorder@0=\count177
+\c@tabx@nest=\count146
+\c@listtotal=\count147
+\c@listcount=\count148
+\c@liststart=\count149
+\c@liststop=\count150
+\c@citecount=\count151
+\c@citetotal=\count152
+\c@multicitecount=\count153
+\c@multicitetotal=\count154
+\c@instcount=\count155
+\c@maxnames=\count156
+\c@minnames=\count157
+\c@maxitems=\count158
+\c@minitems=\count159
+\c@citecounter=\count160
+\c@savedcitecounter=\count161
+\c@uniquelist=\count162
+\c@uniquename=\count163
+\c@refsection=\count164
+\c@refsegment=\count165
+\c@maxextratitle=\count166
+\c@maxextratitleyear=\count167
+\c@maxextradate=\count168
+\c@maxextraalpha=\count169
+\c@abbrvpenalty=\count170
+\c@highnamepenalty=\count171
+\c@lownamepenalty=\count172
+\c@maxparens=\count173
+\c@parenlevel=\count174
+\blx@tempcnta=\count175
+\blx@tempcntb=\count176
+\blx@tempcntc=\count177
+\blx@maxsection=\count178
+\blx@maxsegment@0=\count179
+\blx@notetype=\count180
+\blx@parenlevel@text=\count181
+\blx@parenlevel@foot=\count182
+\blx@sectionciteorder@0=\count183
 \labelnumberwidth=\skip57
 \labelalphawidth=\skip58
 \biblabelsep=\skip59
@@ -859,99 +878,97 @@ Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 \bibhang=\skip64
 \blx@bcfin=\read2
 \blx@bcfout=\write5
-\c@mincomprange=\count178
-\c@maxcomprange=\count179
-\c@mincompwidth=\count180
+\c@mincomprange=\count184
+\c@maxcomprange=\count185
+\c@mincompwidth=\count186
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def)
-Package biblatex Info: Trying to load biblatex citestyle data model...
-Package biblatex Info: ... file 'authoryear.dbx' not found.
-Package biblatex Info: Trying to load biblatex bibstyle data model...
+Package biblatex Info: Trying to load biblatex style data model...
 Package biblatex Info: ... file 'apa.dbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/apa.dbx
 File: apa.dbx 2017/11/05 v7.5 APA biblatex style data model
 )
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
-\c@afterword=\count181
-\c@savedafterword=\count182
-\c@annotator=\count183
-\c@savedannotator=\count184
-\c@author=\count185
-\c@savedauthor=\count186
-\c@bookauthor=\count187
-\c@savedbookauthor=\count188
-\c@commentator=\count189
-\c@savedcommentator=\count190
-\c@editor=\count191
-\c@savededitor=\count192
-\c@editora=\count193
-\c@savededitora=\count194
-\c@editorb=\count195
-\c@savededitorb=\count196
-\c@editorc=\count197
-\c@savededitorc=\count198
-\c@foreword=\count199
-\c@savedforeword=\count266
-\c@holder=\count267
-\c@savedholder=\count268
-\c@introduction=\count269
-\c@savedintroduction=\count270
-\c@namea=\count271
-\c@savednamea=\count272
-\c@nameb=\count273
-\c@savednameb=\count274
-\c@namec=\count275
-\c@savednamec=\count276
-\c@translator=\count277
-\c@savedtranslator=\count278
-\c@shortauthor=\count279
-\c@savedshortauthor=\count280
-\c@shorteditor=\count281
-\c@savedshorteditor=\count282
-\c@with=\count283
-\c@savedwith=\count284
-\c@writer=\count285
-\c@savedwriter=\count286
-\c@producer=\count287
-\c@savedproducer=\count288
-\c@execproducer=\count289
-\c@savedexecproducer=\count290
-\c@director=\count291
-\c@saveddirector=\count292
-\c@labelname=\count293
-\c@savedlabelname=\count294
-\c@institution=\count295
-\c@savedinstitution=\count296
-\c@lista=\count297
-\c@savedlista=\count298
-\c@listb=\count299
-\c@savedlistb=\count300
-\c@listc=\count301
-\c@savedlistc=\count302
-\c@listd=\count303
-\c@savedlistd=\count304
-\c@liste=\count305
-\c@savedliste=\count306
-\c@listf=\count307
-\c@savedlistf=\count308
-\c@location=\count309
-\c@savedlocation=\count310
-\c@organization=\count311
-\c@savedorganization=\count312
-\c@origlocation=\count313
-\c@savedoriglocation=\count314
-\c@origpublisher=\count315
-\c@savedorigpublisher=\count316
-\c@publisher=\count317
-\c@savedpublisher=\count318
-\c@language=\count319
-\c@savedlanguage=\count320
-\c@origlanguage=\count321
-\c@savedoriglanguage=\count322
-\c@pageref=\count323
-\c@savedpageref=\count324
+\c@afterword=\count187
+\c@savedafterword=\count188
+\c@annotator=\count189
+\c@savedannotator=\count190
+\c@author=\count191
+\c@savedauthor=\count192
+\c@bookauthor=\count193
+\c@savedbookauthor=\count194
+\c@commentator=\count195
+\c@savedcommentator=\count196
+\c@editor=\count197
+\c@savededitor=\count198
+\c@editora=\count199
+\c@savededitora=\count266
+\c@editorb=\count267
+\c@savededitorb=\count268
+\c@editorc=\count269
+\c@savededitorc=\count270
+\c@foreword=\count271
+\c@savedforeword=\count272
+\c@holder=\count273
+\c@savedholder=\count274
+\c@introduction=\count275
+\c@savedintroduction=\count276
+\c@namea=\count277
+\c@savednamea=\count278
+\c@nameb=\count279
+\c@savednameb=\count280
+\c@namec=\count281
+\c@savednamec=\count282
+\c@translator=\count283
+\c@savedtranslator=\count284
+\c@shortauthor=\count285
+\c@savedshortauthor=\count286
+\c@shorteditor=\count287
+\c@savedshorteditor=\count288
+\c@with=\count289
+\c@savedwith=\count290
+\c@writer=\count291
+\c@savedwriter=\count292
+\c@producer=\count293
+\c@savedproducer=\count294
+\c@execproducer=\count295
+\c@savedexecproducer=\count296
+\c@director=\count297
+\c@saveddirector=\count298
+\c@labelname=\count299
+\c@savedlabelname=\count300
+\c@institution=\count301
+\c@savedinstitution=\count302
+\c@lista=\count303
+\c@savedlista=\count304
+\c@listb=\count305
+\c@savedlistb=\count306
+\c@listc=\count307
+\c@savedlistc=\count308
+\c@listd=\count309
+\c@savedlistd=\count310
+\c@liste=\count311
+\c@savedliste=\count312
+\c@listf=\count313
+\c@savedlistf=\count314
+\c@location=\count315
+\c@savedlocation=\count316
+\c@organization=\count317
+\c@savedorganization=\count318
+\c@origlocation=\count319
+\c@savedoriglocation=\count320
+\c@origpublisher=\count321
+\c@savedorigpublisher=\count322
+\c@publisher=\count323
+\c@savedpublisher=\count324
+\c@language=\count325
+\c@savedlanguage=\count326
+\c@origlanguage=\count327
+\c@savedoriglanguage=\count328
+\c@pageref=\count329
+\c@savedpageref=\count330
 \shorthandwidth=\skip65
 \shortjournalwidth=\skip66
 \shortserieswidth=\skip67
@@ -967,13 +984,13 @@ Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2017/12/19 v3.10 biblatex compatibility (PK/JW/AB)
-\c@textcitecount=\count325
-\c@textcitetotal=\count326
-\c@textcitemaxnames=\count327
-\c@biburlnumpenalty=\count328
-\c@biburlucpenalty=\count329
-\c@biburllcpenalty=\count330
-\c@smartand=\count331
+\c@textcitecount=\count331
+\c@textcitetotal=\count332
+\c@textcitemaxnames=\count333
+\c@biburlnumpenalty=\count334
+\c@biburlucpenalty=\count335
+\c@biburllcpenalty=\count336
+\c@smartand=\count337
 )
 Package biblatex Info: Trying to load natbib compatibility...
 Package biblatex Info: ... file 'blx-natbib.def' found.
@@ -988,8 +1005,8 @@ Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
 File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
-\c@bbx:relatedcount=\count332
-\c@bbx:relatedtotal=\count333
+\c@bbx:relatedcount=\count338
+\c@bbx:relatedtotal=\count339
 ))
 Package biblatex Info: Trying to load citation style 'authoryear'...
 Package biblatex Info: ... file 'authoryear.cbx' found.
@@ -1011,10 +1028,12 @@ File: biblatex.cfg
 Package: subfiles 2012/05/23 Federico Garcia
  (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks36
-\verbatim@line=\toks37
+\every@verbatim=\toks37
+\verbatim@line=\toks38
 \verbatim@in@stream=\read3
 ))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
 Package biblatex Info: Trying to load language 'english' -> 'english-apa'...
 Package biblatex Info: ... file 'english-apa.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex-apa/english-apa.lbx
@@ -1028,59 +1047,60 @@ Package biblatex Info: Trying to load language 'american'...
 Package biblatex Info: ... file 'american.lbx' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/american.lbx
 File: american.lbx 2017/12/19 v3.10 biblatex localization (PK/JW/AB)
-))
-\@quotelevel=\count334
-\@quotereset=\count335
- (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
+)) (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux
+
+LaTeX Warning: Label `fig:data_proc_overview' multiply defined.
+
+)
 \openout1 = `Draft_harmonization_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 92.
-LaTeX Font Info:    ... okay on input line 92.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 92.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 104.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 \AtBeginShipoutBox=\box44
-Package hyperref Info: Link coloring OFF on input line 92.
+Package hyperref Info: Link coloring OFF on input line 104.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count336
+\c@section@level=\count340
 )
-LaTeX Info: Redefining \ref on input line 92.
-LaTeX Info: Redefining \pageref on input line 92.
-LaTeX Info: Redefining \nameref on input line 92.
+LaTeX Info: Redefining \ref on input line 104.
+LaTeX Info: Redefining \pageref on input line 104.
+LaTeX Info: Redefining \nameref on input line 104.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out) (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.out)
 \@outlinefile=\write6
 \openout6 = `Draft_harmonization_paper.out'.
 
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
+\scratchcounter=\count341
 \scratchdimen=\dimen187
 \scratchbox=\box45
-\nofMPsegments=\count338
-\nofMParguments=\count339
-\everyMPshowfont=\toks38
-\MPscratchCnt=\count340
+\nofMPsegments=\count342
+\nofMParguments=\count343
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count344
 \MPscratchDim=\dimen188
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
-\everyMPtoPDFconversion=\toks39
+\MPnumerator=\count345
+\makeMPintoPDFobject=\count346
+\everyMPtoPDFconversion=\toks40
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
  (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
@@ -1115,12 +1135,12 @@ Package caption Info: End \AtBeginDocument code.
 * \topmargin=-13.87262pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=10.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1138,47 +1158,79 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Draft_harmonization_paper.bbl' found.
 (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.bbl)
-Package biblatex Info: Reference section=0 on input line 92.
-Package biblatex Info: Reference segment=0 on input line 92.
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 93.
+Package biblatex Info: Reference section=0 on input line 104.
+Package biblatex Info: Reference segment=0 on input line 104.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 105.
  (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 93.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 105.
  (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 93.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 105.
  (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 93.
+(Font)              <14.4> on input line 105.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 93.
+(Font)              <10> on input line 105.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 93.
+(Font)              <7> on input line 105.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 117--121
+
+ []
+
+[4]
+Overfull \hbox (17.37714pt too wide) in paragraph at lines 130--131
+[]\OT1/lmr/m/n/10.95 The vari-abil-ity and in-con-sis-ten-cies of in-for-ma-tion in fresh-wa-ter in-ver-te-brate trait databases,
+ []
+
+[5] [6] [7] [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 157.
+(Font)              <10.95> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 157.
+(Font)              <8> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 157.
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 161.
+(Font)              <6> on input line 162.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 166.
  (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 161.
- [6]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 177--183
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10.95> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 166.
+
+Overfull \hbox (7.23686pt too wide) in paragraph at lines 174--175
+[]|[]| 
+ []
+
+
+Overfull \hbox (1.52042pt too wide) in paragraph at lines 178--179
+[]|[]| 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 181
+ []
+
+[10]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 183.
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 182--188
 []$[]$ 
  []
 
-[7] [8] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
+[11]
+Overfull \hbox (2.05028pt too wide) in paragraph at lines 200--202
+\OT1/lmr/m/it/10.95 step-wise[]agg$[]$\OT1/lmr/m/n/10.95 , \OT1/lmr/m/it/10.95 step-wise[]agg$[]$\OT1/lmr/m/n/10.95 , \OT1/lmr/m/it/10.95 weighted[]agg\OT1/lmr/m/n/10.95 ) on the as-sign-ment of trait affin-ity scores,
+ []
+
+[12] [13] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
@@ -1207,7 +1259,7 @@ File: tikzlibrarymatrix.code.tex 2013/07/12 v3.0.1a (rcs-revision 1.4)
 \pgfdecoratedinputsegmentcompleteddistance=\dimen192
 \pgfdecoratedinputsegmentremainingdistance=\dimen193
 \pgf@decorate@distancetomove=\dimen194
-\pgf@decorate@repeatstate=\count343
+\pgf@decorate@repeatstate=\count347
 \pgfdecorationsegmentamplitude=\dimen195
 \pgfdecorationsegmentlength=\dimen196
 )
@@ -1221,695 +1273,873 @@ LaTeX Font Info:    Try loading font information for OT1+lmss on input line 31.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <10> not available
-(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 56.
-)
-
-LaTeX Warning: Float too large for page by 19.66885pt on input line 209.
-
-[9] [10] [11]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 255--260
-[]$[]$ 
- []
-
-
-Overfull \hbox (13.40462pt too wide) in paragraph at lines 275--285
- [][] 
- []
-
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 286--291
-[]$[]$ 
- []
-
-[12] [13]
-Overfull \hbox (2.2526pt too wide) in paragraph at lines 315--315
-[]|[]| 
- []
-
-
-Overfull \hbox (2.5934pt too wide) in paragraph at lines 315--315
-[]|[]| 
- []
-
-
-Overfull \hbox (2.5934pt too wide) in paragraph at lines 317--317
-[]|[]| 
- []
-
-
-Overfull \hbox (2.2526pt too wide) in paragraph at lines 319--319
-[]|[]| 
- []
-
-
-Overfull \hbox (2.5934pt too wide) in paragraph at lines 321--321
-[]|[]| 
- []
-
-
-Underfull \vbox (badness 10000) detected at line 329
- []
-
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 331.
+(Font)              <12> on input line 49.
+LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/lmss/m/sl' tried instead on input line 56.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 330--335
-[]$[]$ 
- []
-
-[14
-
-]
-Overfull \hbox (32.5727pt too wide) in paragraph at lines 353--370
+Overfull \hbox (1.97371pt too wide) in paragraph at lines 114--115
  [][] 
  []
 
+) [14] [15]
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 371--376
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 217.
+See the caption package documentation for explanation.
+
+[16] [17] [18]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 265--270
 []$[]$ 
  []
 
-[15
+
+Overfull \hbox (18.38681pt too wide) in paragraph at lines 285--295
+ [][] 
+ []
+
+[19]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 296--301
+[]$[]$ 
+ []
+
+[20] [21] [22]
+Underfull \hbox (badness 10000) in paragraph at lines 323--324
+[]|\OT1/lmr/m/n/10.95 New
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 325--325
+[]|\OT1/lmr/m/n/10.95 Feeding
+ []
+
+
+Overfull \hbox (10.57545pt too wide) in paragraph at lines 325--325
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 325--325
+[]|[]| 
+ []
+
+
+Overfull \hbox (13.92194pt too wide) in paragraph at lines 325--325
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.70154pt too wide) in paragraph at lines 327--327
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 327--327
+[]|[]| 
+ []
+
+
+Overfull \hbox (13.92194pt too wide) in paragraph at lines 327--327
+[]|[]| 
+ []
+
+
+Overfull \hbox (10.57545pt too wide) in paragraph at lines 329--329
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 329--329
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.44943pt too wide) in paragraph at lines 329--329
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 331--331
+[]|[]| 
+ []
+
+
+Overfull \hbox (13.92194pt too wide) in paragraph at lines 331--331
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.0033pt too wide) in paragraph at lines 333--333
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 333--333
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.44943pt too wide) in paragraph at lines 333--333
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.44943pt too wide) in paragraph at lines 333--333
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.36008pt too wide) in paragraph at lines 335--335
+[]|[]| 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 339
+ []
+
+[23
 
 ]
-<Figures/Deviances_trait_agg_combined.png, id=227, 682.7106pt x 483.4863pt>
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 340--346
+[]$[]$ 
+ []
+
+[24] [25
+
+]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 383--388
+[]$[]$ 
+ []
+
+[26
+
+]
+<Figures/Deviances_trait_agg_combined.png, id=271, 682.7106pt x 483.4863pt>
 File: Figures/Deviances_trait_agg_combined.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_combined.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_combined.png  used on input line 382.
+Package pdftex.def Info: Figures/Deviances_trait_agg_combined.png  used on input line 395.
 (pdftex.def)             Requested size: 469.47697pt x 341.44069pt.
 
-Overfull \hbox (39.47235pt too wide) in paragraph at lines 382--383
+Overfull \hbox (39.47235pt too wide) in paragraph at lines 395--396
  [][] 
  []
 
-[16 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_combined.png (PNG copy)>]
-<Figures/Overview_sim_results.png, id=237, 711.1368pt x 369.7815pt>
+[27
+
+ </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_combined.png (PNG copy)>]
+<Figures/Overview_sim_results.png, id=281, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results.png Graphic file (type png)
 <use Figures/Overview_sim_results.png>
-Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 400.
+Package pdftex.def Info: Figures/Overview_sim_results.png  used on input line 413.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 400--401
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 413--414
  [][] 
  []
 
-[17]
-<Figures/Diffs_indiv_runs_sim.png, id=247, 711.1368pt x 483.4863pt>
+[28]
+<Figures/Diffs_indiv_runs_sim.png, id=291, 711.1368pt x 483.4863pt>
 File: Figures/Diffs_indiv_runs_sim.png Graphic file (type png)
 <use Figures/Diffs_indiv_runs_sim.png>
-Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 407.
+Package pdftex.def Info: Figures/Diffs_indiv_runs_sim.png  used on input line 420.
 (pdftex.def)             Requested size: 469.4711pt x 284.53145pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 407--417
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 420--430
  [][] 
  []
 
-[18 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [19 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
-<Figures/Species_scores_rda.png, id=268, 625.8582pt x 341.3553pt>
+[29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results.png (PNG copy)>] [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Diffs_indiv_runs_sim.png (PNG copy)>]
+<Figures/Species_scores_rda.png, id=311, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
-Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 435.
+Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 448.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 435--436
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 448--449
  [][] 
  []
 
-[20]
-<Figures/boxplot_scores_combined.png, id=278, 782.4432pt x 625.8582pt>
+[31]
+<Figures/boxplot_scores_combined.png, id=323, 782.4432pt x 625.8582pt>
 File: Figures/boxplot_scores_combined.png Graphic file (type png)
 <use Figures/boxplot_scores_combined.png>
-Package pdftex.def Info: Figures/boxplot_scores_combined.png  used on input line 442.
+Package pdftex.def Info: Figures/boxplot_scores_combined.png  used on input line 455.
 (pdftex.def)             Requested size: 483.68903pt x 412.57109pt.
 
-Overfull \hbox (53.6844pt too wide) in paragraph at lines 442--443
+Overfull \hbox (53.6844pt too wide) in paragraph at lines 455--456
  [][] 
  []
 
-[21 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>] [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/boxplot_scores_combined.png (PNG copy)>] [23] [24] [25] [26]
-Overfull \hbox (200.95383pt too wide) in paragraph at lines 524--524
-\OT1/lmr/m/it/10 grated En-vi-ron-men-tal As-sess-ment and Man-age-ment\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 7\OT1/lmr/m/n/10 (2), 209{215. []eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.129.
+[32 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Species_scores_rda.png>]
+Overfull \vbox (40.09451pt too high) has occurred while \output is active []
+
+ [33 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/boxplot_scores_combined.png (PNG copy)>] [34] [35] [36] [37] [38] [39] [40]
+Overfull \hbox (45.4728pt too wide) in paragraph at lines 540--540
+\OT1/lmr/m/it/12 7\OT1/lmr/m/n/12 (2), 209{215. []eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.129.
+ []
+
+[41]
+Overfull \hbox (138.3737pt too wide) in paragraph at lines 540--540
+\OT1/lmr/m/it/12 and Man-age-ment\OT1/lmr/m/n/12 , \OT1/lmr/m/it/12 7\OT1/lmr/m/n/12 (2), 187{197. []eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.128.
  []
 
 
-Overfull \hbox (35.44908pt too wide) in paragraph at lines 524--524
-\OT1/lmr/m/it/10 Man-age-ment\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 7\OT1/lmr/m/n/10 (2), 198{208. []eprint: https://setac.onlinelibrary.wiley.com/doi/pdf/10.1002/ieam.109.
+Overfull \hbox (193.50578pt too wide) in paragraph at lines 540--540
+\OT1/lmr/m/n/12 tion. \OT1/lmr/m/it/12 Jour-nal of Ecol-ogy\OT1/lmr/m/n/12 , \OT1/lmr/m/it/12 105\OT1/lmr/m/n/12 (2), 298{309. []eprint: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/1365-
  []
 
-[27] [28]
-Overfull \hbox (26.29735pt too wide) in paragraph at lines 524--524
-\OT1/lmr/m/it/10 Ecol-ogy and Bio-geog-ra-phy\OT1/lmr/m/n/10 , \OT1/lmr/m/it/10 n/a\OT1/lmr/m/n/10 . []eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/geb.13257.
+[42] [43] [44]
+Overfull \hbox (231.0836pt too wide) in paragraph at lines 540--540
+\OT1/lmr/m/n/12 ous united states. \OT1/lmr/m/it/12 Global Ecol-ogy and Bio-geog-ra-phy\OT1/lmr/m/n/12 , \OT1/lmr/m/it/12 n/a\OT1/lmr/m/n/12 . []eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/geb.13257.
  []
 
-[29] [30] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [31]
-Overfull \hbox (94.64598pt too wide) in alignment at lines 13--16
+[45] [46] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Results/SI.tex [47]pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.13 ...{3.3cm}|m{2.7cm}|m{3cm}|m{3.2cm}|m{2.5cm}}
+                                                  
+Overfull \hbox (91.80054pt too wide) in alignment at lines 13--16
  [] [] [] [] [] [] [] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 20--20
-[]|\OT1/lmr/m/n/10 Feeding
+[]|\OT1/lmr/m/n/10.95 Feeding
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 21--21
-[]|\OT1/lmr/m/n/10 "Feed from fallen
+Underfull \hbox (badness 2951) in paragraph at lines 21--21
+[]|\OT1/lmr/m/n/10.95 "Feed from fallen
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 21--21
-\OT1/lmr/m/n/10 leaves, plant tis-
+Underfull \hbox (badness 5802) in paragraph at lines 21--21
+\OT1/lmr/m/n/10.95 leaves, plant tis-
  []
 
 
-Underfull \hbox (badness 1189) in paragraph at lines 22--22
-[]|\OT1/lmr/m/n/10 "Eat coarse de-tri-
+Underfull \hbox (badness 1377) in paragraph at lines 22--22
+[]|\OT1/lmr/m/n/10.95 "Eat coarse de-tri-
  []
 
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 24.
 (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 24.
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
-[]\OT1/lmr/m/n/10 "Shred de-
+[]\OT1/lmr/m/n/10.95 "Shred
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 24--25
-\OT1/lmr/m/n/10 com-pos-ing
+\OT1/lmr/m/n/10.95 de-com-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+\OT1/lmr/m/n/10.95 pos-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+\OT1/lmr/m/n/10.95 vas-cu-lar
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+\OT1/lmr/m/n/10.95 plant
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
-[]\OT1/lmr/m/n/10 Trait her-bi-
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 25--26
-\OT1/lmr/m/n/10 vore in-cludes
+[]\OT1/lmr/m/n/10.95 Trait
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
-\OT1/lmr/m/n/10 in-sect that
+\OT1/lmr/m/n/10.95 her-bi-vore
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 25--26
-\OT1/lmr/m/n/10 shred \OT1/lmr/m/it/10 liv-ing
+\OT1/lmr/m/n/10.95 in-cludes
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-[]\OT1/lmr/m/n/10 Trait her-bi-
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\OT1/lmr/m/n/10.95 among
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-\OT1/lmr/m/n/10 vore in-cludes
+Underfull \hbox (badness 2600) in paragraph at lines 25--26
+\OT1/lmr/m/n/10.95 sect that
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-\OT1/lmr/m/n/10 among oth-
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\OT1/lmr/m/n/10.95 shred
  []
 
 
-Underfull \hbox (badness 6961) in paragraph at lines 30--31
-\OT1/lmr/m/n/10 ers the trait
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\OT1/lmr/m/it/10.95 liv-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+\OT1/lmr/m/it/10.95 aquatic
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 30--31
+[]\OT1/lmr/m/n/10.95 Trait her-bi-
+ []
+
+
+Underfull \hbox (badness 5446) in paragraph at lines 30--31
+\OT1/lmr/m/n/10.95 among oth-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 35--35
-[]|\OT1/lmr/m/n/10 Feeding
+[]|\OT1/lmr/m/n/10.95 Feeding
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
-[]\OT1/lmr/m/n/10 Carvers,
+[]\OT1/lmr/m/n/10.95 Carvers,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 38--39
-\OT1/lmr/m/n/10 en-gulfers &
+\OT1/lmr/m/n/10.95 en-gulfers &
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
-[]\OT1/lmr/m/n/10 Piercers
+[]\OT1/lmr/m/n/10.95 Piercers
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 39--40
-\OT1/lmr/m/n/10 (plants &
+\OT1/lmr/m/n/10.95 (plants &
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 39--40
-\OT1/lmr/m/n/10 an-i-mals) are
+Underfull \hbox (badness 2617) in paragraph at lines 39--40
+\OT1/lmr/m/n/10.95 an-i-mals) are
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 41--42
-[]|\OT1/lmr/m/n/10 Engulfers ("in-gest
+Underfull \hbox (badness 3568) in paragraph at lines 41--42
+[]|\OT1/lmr/m/n/10.95 Engulfers ("in-
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 41--42
-\OT1/lmr/m/n/10 prey whole or in
+Underfull \hbox (badness 3735) in paragraph at lines 41--42
+\OT1/lmr/m/n/10.95 piercers ("prey
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 48--48
-[]|\OT1/lmr/m/n/10 Feeding
+[]|\OT1/lmr/m/n/10.95 Feeding
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+\OT1/lmr/m/n/10.95 filter-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 49--49
-[]|\OT1/lmr/m/n/10 Distinguishes be-
+[]|\OT1/lmr/m/n/10.95 Distinguishes be-
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 49--49
-\OT1/lmr/m/n/10 tween ac-tive and
+Underfull \hbox (badness 5161) in paragraph at lines 49--49
+\OT1/lmr/m/n/10.95 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 50--50
-\OT1/lmr/m/n/10 tween ac-tive and
+Underfull \hbox (badness 5161) in paragraph at lines 50--50
+\OT1/lmr/m/n/10.95 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 51--51
-\OT1/lmr/m/n/10 tween ac-tive and
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]|\OT1/lmr/m/n/10.95 No dis-tinc-tion
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 52--52
-\OT1/lmr/m/n/10 tween ac-tive and
+Underfull \hbox (badness 4634) in paragraph at lines 51--51
+\OT1/lmr/m/n/10.95 be-tween ac-tive
  []
 
 
-Underfull \hbox (badness 4779) in paragraph at lines 53--53
-[]|\OT1/lmr/m/n/10 No dis-tinc-tion be-
+Underfull \hbox (badness 2547) in paragraph at lines 53--53
+\OT1/lmr/m/n/10.95 tween ac-tive and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--53
-\OT1/lmr/m/n/10 tween ac-tive and
+Overfull \hbox (1.29811pt too wide) in paragraph at lines 57--57
+[]|\OT1/lmr/m/n/10.95 Semivoltine| 
  []
 
 
-Underfull \hbox (badness 4686) in paragraph at lines 54--56
-\OT1/lmr/m/n/10 tween ac-tive and
+Underfull \hbox (badness 3088) in paragraph at lines 62--62
+[]|\OT1/lmr/m/n/10.95 "$\OML/lmm/m/it/10.95 < \OT1/lmr/m/n/10.95 1$ gen-er-a-tion
  []
 
 
-Overfull \hbox (2.39668pt too wide) in paragraph at lines 66--66
-[]|\OT1/lmr/m/n/10 Multivoltine| 
+Underfull \hbox (badness 10000) in paragraph at lines 66--66
+[]|\OT1/lmr/m/n/10.95 Multi-
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 69--69
-[]|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
+Underfull \hbox (badness 3724) in paragraph at lines 69--69
+[]|\OT1/lmr/m/n/10.95 "$\OML/lmm/m/it/10.95 > \OT1/lmr/m/n/10.95 1$ gen-er-a-
  []
 
 
-Underfull \hbox (badness 2073) in paragraph at lines 70--70
-[]|\OT1/lmr/m/n/10 "$\OML/lmm/m/it/10 > \OT1/lmr/m/n/10 1$ gen-er-a-tions
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+[]\OT1/lmr/m/n/10.95 1-2 gen-er-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+\OT1/lmr/m/n/10.95 a-tions per
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+[]
+ []
+
+
+Overfull \hbox (10.41321pt too wide) in paragraph at lines 73--74
+\OT1/lmr/m/n/10.95 bi/multivoltine 
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 74--75
+\OT1/lmr/m/n/10.95 er-a-tions per
+ []
+
+
+Underfull \hbox (badness 1675) in paragraph at lines 75--76
+\OT1/lmr/m/n/10.95 er-a-tions per
+ []
+
+
+Overfull \hbox (2.3625pt too wide) in paragraph at lines 81--81
+[]|\OT1/lmr/m/n/10.95 Locomotion
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
-[]\OT1/lmr/m/n/10 Passive
+[]\OT1/lmr/m/n/10.95 Passive
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
-\OT1/lmr/m/n/10 move-ment
+\OT1/lmr/m/n/10.95 move-ment
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
-\OT1/lmr/m/n/10 like float-ing
+\OT1/lmr/m/n/10.95 like float-ing
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 83--84
-\OT1/lmr/m/n/10 or drift-ing
+\OT1/lmr/m/n/10.95 or drift-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--84
-\OT1/lmr/m/n/10 (trait swim-
+Underfull \hbox (badness 6252) in paragraph at lines 83--84
+\OT1/lmr/m/n/10.95 (trait swim-
  []
 
 
-Overfull \hbox (0.80827pt too wide) in paragraph at lines 83--84
-\OT1/lmr/m/n/10 ming/scating) 
+Overfull \hbox (2.45773pt too wide) in paragraph at lines 83--84
+\OT1/lmr/m/n/10.95 ming/scating) 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
-[]\OT1/lmr/m/n/10 Active
+[]\OT1/lmr/m/n/10.95 Active
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 84--85
-\OT1/lmr/m/n/10 move-ment
+\OT1/lmr/m/n/10.95 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--85
-\OT1/lmr/m/n/10 (trait swim-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-\OT1/lmr/m/n/10 mers (over
+Underfull \hbox (badness 6252) in paragraph at lines 84--85
+\OT1/lmr/m/n/10.95 (trait swim-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 87--88
-\OT1/lmr/m/n/10 and un-der
+[]\OT1/lmr/m/n/10.95 Surface
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 87--88
-\OT1/lmr/m/n/10 the wa-ter
+\OT1/lmr/m/n/10.95 swim-mers
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 88--89
-[]\OT1/lmr/m/n/10 Full wa-ter
+[]\OT1/lmr/m/n/10.95 Full wa-ter
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 88--89
-\OT1/lmr/m/n/10 swim-mers
+\OT1/lmr/m/n/10.95 swim-mers
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 92--92
-[]|\OT1/lmr/m/n/10 Distinguishes swim-
+Underfull \hbox (badness 10000) in paragraph at lines 90--90
+[]|\OT1/lmr/m/n/10.95 "Adapted for
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]|\OT1/lmr/m/n/10.95 Distinguishes
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+\OT1/lmr/m/n/10.95 swim-mer and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 93--95
-[]|\OT1/lmr/m/n/10 Swimmers (wa-ter
+[]|\OT1/lmr/m/n/10.95 Swimmers
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 97--97
-\OT1/lmr/m/n/10 sub-strates or bor-
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+\OT1/lmr/m/n/10.95 (wa-ter col-
  []
 
 
-Underfull \hbox (badness 2970) in paragraph at lines 97--97
-\OT1/lmr/m/n/10 ing in \OT1/lmr/m/it/10 hard \OT1/lmr/m/n/10 sub-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
-[]\OT1/lmr/m/n/10 Burrowing
+Overfull \hbox (2.3625pt too wide) in paragraph at lines 96--96
+[]|\OT1/lmr/m/n/10.95 Locomotion
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--100
-\OT1/lmr/m/n/10 "within the
+[]\OT1/lmr/m/n/10.95 Burrowing
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--100
-\OT1/lmr/m/n/10 ters of the
+\OT1/lmr/m/n/10.95 "within the
+ []
+
+
+Underfull \hbox (badness 7576) in paragraph at lines 99--100
+\OT1/lmr/m/n/10.95 ters of the
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 99--100
-\OT1/lmr/m/n/10 ben-thic fine
+\OT1/lmr/m/n/10.95 ben-thic fine
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
-[]\OT1/lmr/m/n/10 Differentiates
+[]\OT1/lmr/m/n/10.95 Differentiates
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
-\OT1/lmr/m/n/10 in-ter-sti-tial
+\OT1/lmr/m/n/10.95 in-ter-sti-tial
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 100--101
-\OT1/lmr/m/n/10 (en-doben-
+\OT1/lmr/m/n/10.95 (en-doben-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 102--102
-[]|\OT1/lmr/m/n/10 "Inhabiting \OT1/lmr/m/it/10 fine
+[]|\OT1/lmr/m/n/10.95 "Inhabiting
  []
 
 
-Underfull \hbox (badness 2875) in paragraph at lines 104--104
-[]|\OT1/lmr/m/n/10 "Moving deep into
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
+\OT1/lmr/m/it/10.95 fine \OT1/lmr/m/n/10.95 sed-i-ment
  []
 
 
-Underfull \hbox (badness 7796) in paragraph at lines 104--104
-\OT1/lmr/m/n/10 the sub-strate and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 105--107
-[]|\OT1/lmr/m/n/10 Burrowers (in-
+Overfull \hbox (2.3625pt too wide) in paragraph at lines 108--108
+[]|\OT1/lmr/m/n/10.95 Locomotion
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 108--108
-\OT1/lmr/m/n/10 sprawl-ing
+\OT1/lmr/m/n/10.95 sprawl-ing
  []
 
 
-Underfull \hbox (badness 5022) in paragraph at lines 109--109
-\OT1/lmr/m/n/10 ing ac-tively with
- []
-
-
-Underfull \hbox (badness 8113) in paragraph at lines 111--111
-\OT1/lmr/m/n/10 it-ing the sur-face
- []
-
-
-Underfull \hbox (badness 5288) in paragraph at lines 111--111
-\OT1/lmr/m/n/10 of float-ing leaves
+Underfull \hbox (badness 5504) in paragraph at lines 109--109
+\OT1/lmr/m/n/10.95 ing ac-tively with
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 111--111
-\OT1/lmr/m/n/10 of vas-cu-lar hy-
+[]|\OT1/lmr/m/n/10.95 Sprawling:
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 111--111
-\OT1/lmr/m/n/10 drophytes or fine
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+\OT1/lmr/m/n/10.95 "in-hab-it-ing
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 119--119
-[]|\OT1/lmr/m/n/10 Defined as crawl-
+Underfull \hbox (badness 3769) in paragraph at lines 111--111
+\OT1/lmr/m/n/10.95 the sur-face of
  []
 
 
-Underfull \hbox (badness 2671) in paragraph at lines 119--119
-\OT1/lmr/m/n/10 fine sed-i-ments on
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+\OT1/lmr/m/n/10.95 float-ing leaves
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--111
+\OT1/lmr/m/n/10.95 of vas-cu-lar
+ []
+
+
+Underfull \hbox (badness 1953) in paragraph at lines 111--111
+\OT1/lmr/m/n/10.95 hy-drophytes or
+ []
+
+
+Overfull \hbox (2.3625pt too wide) in paragraph at lines 116--116
+[]|\OT1/lmr/m/n/10.95 Locomotion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+[]|\OT1/lmr/m/n/10.95 Defined as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+\OT1/lmr/m/n/10.95 ing leaves or
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+\OT1/lmr/m/n/10.95 fine sed-i-ments
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 121--122
-[]|\OT1/lmr/m/n/10 Database con-tains
+\OT1/lmr/m/n/10.95 traits crawler,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-\OT1/lmr/m/n/10 traits crawler,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
-\OT1/lmr/m/n/10 sprawler, climber
+Underfull \hbox (badness 6284) in paragraph at lines 121--122
+\OT1/lmr/m/n/10.95 sprawler, climber
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 123--124
-[]|\OT1/lmr/m/n/10 Crawlers (epiben-
+[]|\OT1/lmr/m/n/10.95 Crawlers
+ []
+
+
+Overfull \hbox (2.3625pt too wide) in paragraph at lines 125--125
+[]|\OT1/lmr/m/n/10.95 Locomotion
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 126--126
-[]|\OT1/lmr/m/n/10 Does not dis-tin-
+[]|\OT1/lmr/m/n/10.95 Does not dis-tin-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 126--126
-\OT1/lmr/m/n/10 guish tem-porar-ily
+\OT1/lmr/m/n/10.95 guish tem-porar-ily
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 126--126
-\OT1/lmr/m/n/10 and per-ma-nently
+\OT1/lmr/m/n/10.95 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 1616) in paragraph at lines 127--127
-[]|\OT1/lmr/m/n/10 Distinguishes tem-
+Underfull \hbox (badness 2111) in paragraph at lines 127--127
+[]|\OT1/lmr/m/n/10.95 Distinguishes tem-
  []
 
 
-Underfull \hbox (badness 3168) in paragraph at lines 127--127
-\OT1/lmr/m/n/10 porar-ily and per-
+Underfull \hbox (badness 3525) in paragraph at lines 127--127
+\OT1/lmr/m/n/10.95 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
-[]|\OT1/lmr/m/n/10 Does not dis-tin-
+Underfull \hbox (badness 1231) in paragraph at lines 129--129
+[]|\OT1/lmr/m/n/10.95 Does not dis-tin-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
-\OT1/lmr/m/n/10 guish tem-porar-ily
+Underfull \hbox (badness 1142) in paragraph at lines 129--129
+\OT1/lmr/m/n/10.95 and per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 128--128
-\OT1/lmr/m/n/10 and per-ma-nently
+Underfull \hbox (badness 1565) in paragraph at lines 130--130
+\OT1/lmr/m/n/10.95 porar-ily and per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
-[]|\OT1/lmr/m/n/10 Does not dis-tin-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
-\OT1/lmr/m/n/10 guish tem-porar-ily
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--129
-\OT1/lmr/m/n/10 and per-ma-nently
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
-[]|\OT1/lmr/m/n/10 Distinguishes tem-
+Underfull \hbox (badness 6125) in paragraph at lines 131--132
+\OT1/lmr/m/n/10.95 tin-guish tem-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
-[]|\OT1/lmr/m/n/10 Does not dis-tin-
+\OT1/lmr/m/n/10.95 porar-ily and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 131--132
-\OT1/lmr/m/n/10 guish tem-porar-ily
+\OT1/lmr/m/n/10.95 per-ma-nently
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--132
-\OT1/lmr/m/n/10 and per-ma-nently
+Overfull \hbox (0.93312pt too wide) in paragraph at lines 133--133
+[]|\OT1/lmr/m/n/10.95 Respiration
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
-[]|\OT1/lmr/m/n/10 Respiration
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 133--133
-\OT1/lmr/m/n/10 plas-tron &
- []
-
-
-Underfull \hbox (badness 1158) in paragraph at lines 135--135
-[]|\OT1/lmr/m/n/10 Definition in-cludes
+Underfull \hbox (badness 1558) in paragraph at lines 135--135
+[]|\OT1/lmr/m/n/10.95 Definition in-cludes
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 135--135
-\OT1/lmr/m/n/10 res-pi-ra-tion us-ing
+\OT1/lmr/m/n/10.95 res-pi-ra-tion us-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+[]|\OT1/lmr/m/n/10.95 Plastron and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
+\OT1/lmr/m/n/10.95 spir-a-cle com-
+ []
+
+
+Underfull \hbox (badness 1210) in paragraph at lines 136--136
+\OT1/lmr/m/n/10.95 bined into one
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--137
-[]|\OT1/lmr/m/n/10 Distinguishes
+[]|\OT1/lmr/m/n/10.95 Distinguishes
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 spirac-u-lar gills,
+\OT1/lmr/m/n/10.95 spirac-u-lar gills,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 plas-tron, at-mo-
+\OT1/lmr/m/n/10.95 plas-tron, at-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 137--137
-\OT1/lmr/m/n/10 spheric breathers
+\OT1/lmr/m/n/10.95 mo-spheric
  []
 
 
-Underfull \hbox (badness 3058) in paragraph at lines 138--138
-\OT1/lmr/m/n/10 cle (termed aerial)
+Underfull \hbox (badness 10000) in paragraph at lines 137--137
+\OT1/lmr/m/n/10.95 breathers and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
-\OT1/lmr/m/n/10 oc-cur as sep-a-rate
+[]|\OT1/lmr/m/n/10.95 Plastron and
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
-\OT1/lmr/m/n/10 air (plants), at-
+\OT1/lmr/m/n/10.95 spir-a-cle (termed
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 138--138
-\OT1/lmr/m/n/10 mo-spheric, and
+\OT1/lmr/m/n/10.95 aerial) oc-cur as
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 139--140
-[]|\OT1/lmr/m/n/10 Distinguishes plas-
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+\OT1/lmr/m/n/10.95 sep-a-rate and
  []
 
 
-Underfull \hbox (badness 3954) in paragraph at lines 139--140
-\OT1/lmr/m/n/10 tron and spir-a-cle
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+\OT1/lmr/m/n/10.95 com-bined traits.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
-[]|\OT1/lmr/m/n/10 Body size
+Underfull \hbox (badness 10000) in paragraph at lines 138--138
+\OT1/lmr/m/n/10.95 Con-tains also
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--151
-[]|\OT1/lmr/m/n/10 Body size
+Underfull \hbox (badness 5787) in paragraph at lines 138--138
+\OT1/lmr/m/n/10.95 at-mo-spheric, and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--160
-[]|\OT1/lmr/m/n/10 Body size
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+[]|\OT1/lmr/m/n/10.95 Distinguishes
  []
 
 
-Overfull \hbox (94.64598pt too wide) in alignment at lines 16--168
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+\OT1/lmr/m/n/10.95 plas-tron
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+\OT1/lmr/m/n/10.95 and spir-a-cle
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 141--141
+[]|\OT1/lmr/m/n/10.95 Body size
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 151--151
+[]|\OT1/lmr/m/n/10.95 Body size
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 160--160
+[]|\OT1/lmr/m/n/10.95 Body size
+ []
+
+
+Overfull \hbox (91.80054pt too wide) in alignment at lines 16--168
  [] [] [] [] [] [] [] 
  []
 
@@ -1917,96 +2147,104 @@ Overfull \hbox (94.64598pt too wide) in alignment at lines 16--168
 Underfull \vbox (badness 10000) detected at line 168
  []
 
-[32
+[48
 
-] [33] [34]
-Overfull \hbox (15.0pt too wide) in paragraph at lines 169--180
+] [49] [50] [51] [52] [53] [54]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 169--181
 []$[]$ 
  []
 
-[35]
-<Figures/Deviances_trait_agg_pyne.png, id=439, 711.1368pt x 369.7815pt>
+[55]
+<Figures/Deviances_trait_agg_pyne.png, id=526, 711.1368pt x 369.7815pt>
 File: Figures/Deviances_trait_agg_pyne.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_pyne.png>
-Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 190.
+Package pdftex.def Info: Figures/Deviances_trait_agg_pyne.png  used on input line 191.
 (pdftex.def)             Requested size: 469.4711pt x 341.4557pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 190--191
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 191--192
  [][] 
  []
 
-<Figures/Overview_sim_results_T2_T3.png, id=442, 711.1368pt x 369.7815pt>
+<Figures/Overview_sim_results_T2_T3.png, id=529, 711.1368pt x 369.7815pt>
 File: Figures/Overview_sim_results_T2_T3.png Graphic file (type png)
 <use Figures/Overview_sim_results_T2_T3.png>
-Package pdftex.def Info: Figures/Overview_sim_results_T2_T3.png  used on input line 200.
+Package pdftex.def Info: Figures/Overview_sim_results_T2_T3.png  used on input line 201.
 (pdftex.def)             Requested size: 469.4711pt x 284.54642pt.
 
-Overfull \hbox (39.46648pt too wide) in paragraph at lines 200--201
+Overfull \hbox (39.46648pt too wide) in paragraph at lines 201--202
  [][] 
  []
 
-[36
+[56
 
  </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Deviances_trait_agg_pyne.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_NOA.png, id=451, 625.8582pt x 341.3553pt>
+<Figures/taxonomic_hierarchy_NOA.png, id=538, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_NOA.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_NOA.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 210.
+Package pdftex.def Info: Figures/taxonomic_hierarchy_NOA.png  used on input line 211.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 210--211
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 211--212
  [][] 
  []
 
-[37 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results_T2_T3.png (PNG copy)>]
-<Figures/taxonomic_hierarchy_AUS.png, id=458, 625.8582pt x 341.3553pt>
+[57 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/Overview_sim_results_T2_T3.png (PNG copy)>]
+<Figures/taxonomic_hierarchy_AUS.png, id=544, 625.8582pt x 341.3553pt>
 File: Figures/taxonomic_hierarchy_AUS.png Graphic file (type png)
 <use Figures/taxonomic_hierarchy_AUS.png>
-Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 217.
+Package pdftex.def Info: Figures/taxonomic_hierarchy_AUS.png  used on input line 218.
 (pdftex.def)             Requested size: 469.47844pt x 284.53322pt.
 
-Overfull \hbox (39.47382pt too wide) in paragraph at lines 217--218
+Overfull \hbox (39.47382pt too wide) in paragraph at lines 218--219
  [][] 
  []
 
-[38 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
-<Figures/boxplot_scores_combined_REMAIN_SI.png, id=464, 995.6397pt x 711.1368pt>
+[58 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_NOA.png (PNG copy)>]
+Overfull \hbox (11.3907pt too wide) in paragraph at lines 230--267
+ [][] 
+ []
+
+<Figures/boxplot_scores_combined_REMAIN_SI.png, id=550, 995.6397pt x 711.1368pt>
 File: Figures/boxplot_scores_combined_REMAIN_SI.png Graphic file (type png)
 <use Figures/boxplot_scores_combined_REMAIN_SI.png>
-Package pdftex.def Info: Figures/boxplot_scores_combined_REMAIN_SI.png  used on input line 270.
+Package pdftex.def Info: Figures/boxplot_scores_combined_REMAIN_SI.png  used on input line 271.
 (pdftex.def)             Requested size: 526.38pt x 455.24536pt.
 
-Overfull \hbox (96.37538pt too wide) in paragraph at lines 270--271
+Overfull \hbox (96.37538pt too wide) in paragraph at lines 271--272
  [][] 
  []
 
-) [39 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 537.
- [40] [41 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 537.
+) [59 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/taxonomic_hierarchy_AUS.png (PNG copy)>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 553.
+ [60] [61 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 553.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 537.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 537.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 553.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 553.
 Package rerunfilecheck Info: File `Draft_harmonization_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package logreq Info: Writing requests to 'Draft_harmonization_paper.run.xml'.
 \openout1 = `Draft_harmonization_paper.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 537.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 553.
  ) 
 Here is how much of TeX's memory you used:
- 26883 strings out of 492982
- 526820 string characters out of 6134895
- 973774 words of memory out of 5000000
- 29839 multiletter control sequences out of 15000+600000
- 64661 words of font info for 47 fonts, out of 8000000 for 9000
+ 27456 strings out of 492982
+ 536065 string characters out of 6134895
+ 993045 words of memory out of 5000000
+ 30380 multiletter control sequences out of 15000+600000
+ 75771 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,22n,70p,3663b,2262s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf/fonts/type1/public/lm/lmri9.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (41 pages, 3726008 bytes).
+ 55i,22n,70p,3663b,2273s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Draft_harmonization_paper.pdf (61 pages, 3673485 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
- 141 named destinations out of 1000 (max. 500000)
+ 661 PDF objects out of 1000 (max. 8388607)
+ 557 compressed objects within 6 object streams
+ 162 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
