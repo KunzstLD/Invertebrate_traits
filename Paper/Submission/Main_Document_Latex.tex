@@ -194,9 +194,7 @@ To examine the influence of phylogeny and trait variability on the outcomes of t
 
 \begin{figure}
   \centering
-  % \includegraphics[width=22cm, height=28cm]{Flowchart_methods.pdf}
   \subfile{Flowchart/Flowchart_methods.tex}
-  % \label{fig:data_proc_overview}
 \end{figure}
 \newpage
 \begin{center}
@@ -450,9 +448,6 @@ RDA based on harmonised traits that were aggregated to family level also produce
 
 \section*{Discussion}
 
-% From Freshwater biology: 
-% This should highlight the significance of the results and place them in the context of other work. It should not include references to figures or tables cited in the Results – check that all of your Results are presented in the Results section. Figures (e.g. photographs, conceptual diagrams) or tables presented specifically as part of the Discussion are welcome and may be cited there.
-
 Freshwater invertebrate trait databases are a valuable source of data that are freely available to researchers and that can offer opportunities for large-scale, cross-regional ecological study without the need for time-consuming and expensive field work. However, a lack of consistency among regional and continent-wide databases in trait definitions, trait affinity coding, and taxonomic resolution can greatly limit the use of combined databases. We explored the effects of harmonising grouping features and aggregating trait affinities at different taxonomic levels from databases from four different continents on the outcomes of trait affinities and on analysis of trait–environment relationships. We found that despite discrepancies in trait definitions and taxonomic resolution across databases, harmonised and aggregated data were generally effective in identifying trait–environmental relationships, as evidenced by similar results from RDA as were found using observational data. Our results have implications for future multi-regional ecological studies that may benefit from the use of existing databases and provide insight into methods for harmonising traits with differing trait definitions and selecting aggregation methods that minimize either cases or ranges of differences in trait affinity scores when aggregating from higher to lower taxonomic precision.
 
 \subsection*{Harmonising trait databases}
@@ -484,22 +479,6 @@ Although comprehensive freshwater invertebrate trait databases have been develop
 
 As ecological knowledge increases, and with the help of new methods such as computer vision for species and trait identification (\cite{hoye_deep_2020}), more observed taxa will be identified to the species level and trait data will be available at the species level in the future, reducing the need for trait aggregation. However, we showed that trait aggregation is often in agreement with expert assignments, especially through aggregation approaches that use the median. Based on this analysis, we cannot claim that a specific aggregation method is objectively the best, and except for cases where traits are highly variable and phylogenetic structure is highly uneven, the choice of aggregation method does not appear to be influential to the outcome. Weighting trait information based on the taxa present in the database used does not seem to have much influence except when the phylogenetic structure is highly uneven. However, we recommend that the type of coding used to describe traits (binary, fuzzy) should be considered, because median and mean aggregations can yield very different results for binary-coded traits. We also suggest that a measure of trait dispersion should be reported to indicate the uncertainty of the aggregated estimate. Use of carefully harmonised and integrated trait data as described here should enhance our ability to study a wide range of large-scale ecological questions with greater rigor than currently exists.
  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Further ideas for the discussion:
-% - What do we really know because someone has watched the animals and published their behaviour; what is extrapolated knowledge? 
-% - Where does the classification come from? Few sources used in NOA also used in AUS:
-% AUS: Merrit \& Cummins 1978/1984 for feeding mode for a few genera and families 
-% NOA: Merritt, Richard W., Cummins, Berg 2008 -> but not clear if for feeding mode as well; according to trait description "Cummins, K. W. Trophic Relations of Aquatic Insects" was used for feeding mode
-% - Discussion on fuzzy coding -> Uncertainty captured by fuzzy codes? 
-% - Extrapolate to "large" scale studies, i.e. studies with a stronger gradient?
-% - Traits that responded differently after harmonisation:
-% Resp gills: Original data has a lot of zeros, which are not present in the harmonised \& aggregated datasets. In the analysis with the harmonised dataset resp gills is not responding to the salinity gradient. Aggregated data look similar to the harmonised ones, but resp gills is here one of the traits responding to conductivity!
-% Why did some aggregated datasets promote life cycle duration traits and others not? Results using trait data obtained when aggregating with stepwise\_agg (median) and stepwise\_agg (mean) indicate that life cycle duration traits are not characterising upstream or downstream sites.
-% Results using trait data obtained with the other aggregation methods indicate that life cycle duration traits characterise upstream or downstream sites
-% However: Mean, median and SD of these traits are all relatively similar across all aggregated datasets (see Table S2). 
-% Include Ben's point? Discussion on evolutionary history?
-% Discussion point BK: It is intersting that Australia has fewer species and genus than NOA and EU (not suprisngly since the datasets in Oz were mostly delveoped at family level) but more families than these other regions. I wonder if this indicates that Family richness is really higher in Australia. Perhaps it might be as Australia has a wider range of evolutionary histories. This would be worth considering in the discussion  
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Acknowledgments}
@@ -532,7 +511,7 @@ B.J.K., A.S-K., C.D.M, W.G., N.L.P., L.M., and C.P.H. provided in depth informat
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 
-\subfile{Results/SI}
+\subfile{SI}
 
 
 

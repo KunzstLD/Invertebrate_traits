@@ -1,0 +1,117 @@
+\documentclass[../Main_Document_Latex.tex]{subfiles}
+\usetikzlibrary{trees,
+                arrows,
+                shapes.geometric,
+                positioning,
+                calc,
+                backgrounds,
+                fit,
+                matrix,
+                shapes.geometric,
+                decorations.pathreplacing,
+                %calligraphy,
+                angles,
+                quotes}
+
+\begin{document}
+
+\tikzset{
+	font = {\sffamily},
+  intstepsnode/.style = {rectangle, draw = black, fill = gray!50, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
+  aggrtypesnode/.style = {rectangle, draw = black, fill = blue!25, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
+  aggrstepsnode/.style = {rectangle, draw = black, fill = purple!40, minimum width = 4cm, minimum height = 1cm, text centered, rounded corners, very thick},
+  mainnode/.style = {rectangle, draw = black, fill = orange!50, minimum width = 4cm, minimum height = 1.5cm, text centered, rounded corners, very thick},
+  frame/.style = {draw, rectangle, rounded corners, dashed, black, line width = 1pt, inner sep = 2.5mm},
+  roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
+  arrow1/.style = {->, > = stealth, draw = black, color = gray!80, line width = 2.5pt}
+}
+
+\begin{tikzpicture}
+      %% Nodes
+      \node(duplTaxa)[intstepsnode, align = center] at (-5cm,0cm){Consolidating duplicate \\ taxa in  EU, NOA, AUS \& \\ NZ databases};
+      \node(normalAUS)[intstepsnode, align = center, xshift = 0.1cm, yshift = 0cm]{ Normalised AUS \\ traits ([0 - 1]) to work \\ with multiple codings};
+      \node(omission)[intstepsnode, align = center, xshift = 5cm, yshift = 0cm]{Omitted taxa less \\ precise than family-level};
+
+      \node (frameProcessing) [frame, fit = (duplTaxa) (normalAUS) (omission) ] {};
+      \node (frameText) [above, black, inner sep = 2mm] at (frameProcessing.north){Data preprocessing};
+
+      \node(harmonisation)[mainnode, align = center, xshift = -5cm, yshift = -2.5cm]{Harmonisation};
+
+      \node(conversionPerc)[intstepsnode, align = center, xshift = 0cm, yshift = -2.5cm]{Traits converted to proportions \\ and normalised to [0 - 1]};
+
+      \node(traitAgg)[mainnode, align = center, xshift = 5cm, yshift = -2.5cm]{Trait aggregation};
+
+      \node(frameHarmAggr) [frame, fit = (harmonisation) (traitAgg)] {};
+
+
+
+      \node(tab_aggregation)[xshift = -3cm, yshift = -7.2cm]{
+        \begin{tabular}{ccc|ccc}
+        Family & Genus & Species & \specialcell{Trait \\ A\_h\textsubscript{1}} & \specialcell{Trait \\ A\_h\textsubscript{2}} & \specialcell{Trait \\ A\_h\textsubscript{3}} \\
+        \hline
+         F\textsubscript{1} & G\textsubscript{1} & S\textsubscript{1} & 0.25 & 0.75 & 0\\
+         F\textsubscript{1} & G\textsubscript{1} & S\textsubscript{2} & 0.5 & 0.5 & 0\\
+         F\textsubscript{1} & G\textsubscript{1} & S\textsubscript{3} & 0.5 & 0.5 & 0 \\
+         F\textsubscript{1} & G\textsubscript{2} & S\textsubscript{4} & 0 & 1.0 & 0 \\
+         F\textsubscript{1} & G\textsubscript{2} & \textit{NA} & 0.25 & 0.75 & 0 \\
+         F\textsubscript{1} & \textit{NA} & \textit{NA} & 0.25 & 0.75 & 0 \\
+      \end{tabular}};
+
+
+      \node(directAgg)[aggrtypesnode, align = center, xshift = 4.2cm, yshift = -5cm]{Direct aggregation};
+
+      \node(tab_direct_agg)[xshift = 4.2cm, yshift = -8.2cm]{
+        \begin{tabular}{c|ccc}
+        Family & Trait & Method & Value \\
+        \hline
+        F\textsubscript{1} & A\_h\textsubscript{1} & mean & 0.29 \\
+        F\textsubscript{1} & A\_h\textsubscript{2} & mean & 0.71 \\
+        F\textsubscript{1} & A\_h\textsubscript{3} & mean & 0 \\
+        \hline
+        F\textsubscript{1} & A\_h\textsubscript{1} & median & 0.25 \\
+        F\textsubscript{1} & A\_h\textsubscript{2} & median & 0.75 \\
+        F\textsubscript{1} & A\_h\textsubscript{3} & median & 0 \\
+      \end{tabular}};
+
+
+
+      \node(stepwiseAgg)[aggrtypesnode, align = center, xshift = -3.5cm, yshift = -11.3cm]{Stepwise aggregation};
+ 
+      \node(tab_stepwise_agg)[xshift = -3.5cm, yshift = -13.6cm]{
+        \begin{tabular}{cc|ccc}
+        Family &Genus & Trait & Method & Value \\
+        \hline
+        F\textsubscript{1}& G\textsubscript{1} & A\_h\textsubscript{1} & mean & 0.4167\\
+        F\textsubscript{1}& G\textsubscript{2} & A\_h\textsubscript{1} & mean & 0.125\\
+        F\textsubscript{1}& NA & A\_h\textsubscript{1} & - & 0.25\\
+      \end{tabular}};
+
+      \node(stepwiseAgg2)[aggrstepsnode, align = center, xshift = -3.5cm, yshift = -16cm]{ $A\_h_1 = mean(0.4167, 0.125, 0.25)$ \\ $ = 0.26$};
+
+      \node(weightedAgg)[aggrtypesnode, xshift = 4.2cm, yshift = -11.3cm]{Weighted aggregation};
+
+      \node(weights)[aggrstepsnode, align = center, xshift = 4.2cm, yshift = -13.4cm]{Weights based on \\ species per genera: \\
+      $3$ for $G_1$, $1$ for $G_2$, \\
+      weight for $F_1$ set to $1$};
+
+      \node(weights2)[aggrstepsnode, align = center, xshift = 4.2cm, yshift = -16cm]{$A\_h_1 = \frac{0.25*3+0.5*3+...+ 0.25*1}{3+3...+1}$ \\ \\ $ = 0.35$};
+
+      \node(frameExample) [frame, fit = (tab_aggregation) (directAgg)(tab_direct_agg) (weights2)] {};
+
+      %%lines
+      \draw[->] (duplTaxa.east) -- (normalAUS.west);
+      \draw[->] (normalAUS.east) -- (omission.west);
+      \draw[->] (harmonisation.east) -- (conversionPerc.west);
+      \draw[->] (conversionPerc.east) -- (traitAgg.west);
+      %\draw[arrow1] (traitAgg.south) to [out=200,in=40] (frameExample.north);
+      %\draw[arrow1] (traitAgg.south) to [out=360,in=80] (frameExample.east);
+      \draw [decorate,decoration={brace, amplitude=20pt}, line width = 2pt](2.9, -4) -- (7.1, -4);
+      \draw[->] (directAgg.south) -- (tab_direct_agg.north);
+      \draw[->] (stepwiseAgg.south) -- (tab_stepwise_agg.north);
+      \draw[->] (tab_stepwise_agg.south) -- (stepwiseAgg2.north);
+      \draw[->] (weightedAgg.south) -- (weights.north);
+      \draw[->] (weights.south) -- (weights2.north);
+\end{tikzpicture}
+
+
+\end{document}
