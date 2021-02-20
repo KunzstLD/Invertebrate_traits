@@ -27,8 +27,8 @@
 \usepackage[
 backend = biber,
 natbib,
-style = apa,
 citestyle = authoryear,
+bibstyle = apa6,
 maxcitenames = 2, 
 maxbibnames = 99, 
 uniquename=false,
@@ -68,20 +68,20 @@ uniquelist=false
 
 \renewcommand*{\thefootnote}{\alph{footnote}}
 
+% raplace "and" in authoryear in-text citations with "&" 
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace\&\space}
+
 % Keywords command
 \providecommand{\keywords}[1]
 {
-  \small	
+  {\small	
   \textbf{\textit{Keywords---}} #1
-}
+}}
 
 %%%% Formatting options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \onehalfspacing
-
-\captionsetup{font=small}
-
-\AtBeginEnvironment{tabular}{\small}
-\AtBeginEnvironment{longtable}{\small}
 
 \listfiles
 
@@ -108,6 +108,7 @@ uniquelist=false
 \affil[7]{Environment Protection Authority Victoria, Applied Sciences Division, Macleod, Australia}
 \affil[8]{Department of Fisheries and Wildlife, Michigan State University, East Lansing, USA}
 \affil[9]{Department of Watershed Sciences, National Aquatic Monitoring Center, and the Ecology Center, Utah State University, Logan, USA}
+\date{}
 
 \begin{document}
 \maketitle
@@ -124,8 +125,8 @@ uniquelist=false
 
 4. By identifying discrepancies in trait definitions we hope to motivate the development of standardised terminology for invertebrate traits. Our results also illustrate the usefulness of harmonised datasets for ecological study and provide guidance for the circumstances under which the choice of trait aggregation method is important.
 \\
-\\
 \keywords{trait definitions, trait aggregation, data synthesis}
+
 
 \newpage
 
@@ -156,12 +157,8 @@ To address our study objectives, we took a multi-prong approach to describing, c
 
 We assessed how six databases differed in how they assigned and described traits of freshwater invertebrates. These databases (from Europe, North America, Australia, and New Zealand) differed in how grouping features were defined and the taxonomic resolution used to assign traits. For Europe we obtained trait information from the freshwaterecology.info database (\cite{schmidt-kloiber_www.freshwaterecology.info_2015}), which assigns traits at the species level, and the Tachet database (\cite{ussegliopolatera_biological_2000}), which assigns traits at species, genus, and family levels. For North America we primarily obtained trait information from \citet{twardochleb_freshwater_nodate} (hereafter referred to as the CONUS database) and where taxa were missing from that database, we obtained data from \citet{vieira_database_nodate} (hereafter referred to as the Vieira database). Both databases contain taxa at species, genus and family levels. Data on body form for European and North American taxa were based on expert knowledge (\cite{polatera_personal_information_2020}). For Australia and New Zealand, we used trait databases from \citet{kefford_integrated_2020} (hereafter referred to as the Australian database) and \citet{Philips_and_Smith_NZ_DB_2018} (hereafter referred to as the New Zealand database). These databases assigned traits at species, genus, family, and coarser taxonomic levels.
 
-We established four datasets, one for each of the four geographic regions, by harmonising the traits of seven grouping features from the trait databases. We selected traits that were available in all databases, are commonly applied in trait-based ecological studies, and describe different aspects of the biology of a species: life history (Voltinism), morphology (Respiration, Body form, Size), ecology (Locomotion, Feeding mode) and reproduction (Oviposition). We omitted ecological traits that describe habitat preferences (e.g. temperature preference) because these traits are missing in the New Zealand trait database. Grouping features were classified differently across the databases, so we harmonised 7 grouping features that collectively included 26 traits (Table \ref{tab:traits_harmonisation}). To do so we combined similar traits into one trait (e.g. crawlers and sprawlers into crawlers) and for each taxon we assigned for the new combined trait the highest affinity score of those originally assigned to the subsequently combined traits. 
-% and assigned the highest trait affinity score among the combined traits for each taxon.  
-Next, we selected taxa for inclusion in our datasets and normalised the trait affinity scores for each taxon. We first omitted all taxa with a lower taxonomic precision than family level and consolidated duplicate taxa that appeared within a database, by either applying the median for fuzzy coded traits, or the maximum for binary traits. We then used either fuzzy coding or, when unavailable, binary coding to create the final harmonised datasets. Fuzzy codes are reported with different ranges in the trait databases (e.g., freshwaterecology.info: 0–10, Tachet database: 0–3 or 0–5). We normalised these to a range between 0 and 1 and converted trait affinities to proportions. In cases where binary coding was needed, we converted categorical and continuous traits into binary traits with values of 1 and 0, which, therefore, had the same range as fuzzy coded traits. For example, in the  freshwaterecology.info database, voltinism traits are associated with different faunistic regions, and we substituted a value of 1 for entries such as “arctic” or “boreal” % and 0 if no region was given. 
+We established four datasets, one for each of the four geographic regions, by harmonising the traits of seven grouping features from the trait databases. We selected traits that were available in all databases, are commonly applied in trait-based ecological studies, and describe different aspects of the biology of a species: life history (Voltinism), morphology (Respiration, Body form, Size), ecology (Locomotion, Feeding mode) and reproduction (Oviposition). We omitted ecological traits that describe habitat preferences (e.g. temperature preference) because these traits are missing in the New Zealand trait database. Grouping features were classified differently across the databases, so we harmonised 7 grouping features that collectively included 26 traits (Table \ref{tab:traits_harmonisation}). To do so we combined similar traits into one trait (e.g. crawlers and sprawlers into crawlers) by assigning for each taxon for the new combined trait the highest affinity score of those originally assigned. Next, we selected taxa for inclusion in our datasets and normalised the trait affinity scores for each taxon. We first omitted all taxa with a lower taxonomic precision than family level and consolidated duplicate taxa that appeared within a database, by either applying the median for fuzzy coded traits, or the maximum for binary traits. We then used either fuzzy coding or, when unavailable, binary coding to create the final harmonised datasets. Fuzzy codes are reported with different ranges in the trait databases (e.g., freshwaterecology.info: 0–10, Tachet database: 0–3 or 0–5). We normalised these to a range between 0 and 1 and converted trait affinities to proportions. In cases where binary coding was needed, we converted categorical and continuous traits into binary traits with values of 1 and 0, which, therefore, had the same range as fuzzy coded traits. For example, in the  freshwaterecology.info database, voltinism traits are associated with different faunistic regions, and we substituted a value of 1 for entries such as “arctic” or “boreal” % and 0 if no region was given. 
 We assumed that values of 1 and 0 for binary traits corresponded to the highest and lowest affinity for a particular trait.
-
-\newpage
 
 
 \begin{longtable}{m{2.5cm}|m{4cm}|m{7cm}}
@@ -207,9 +204,7 @@ To compare the effects of different aggregation methods on trait\-environment re
 \subsubsection*{Comparison of family-level aggregated traits with family-level assigned traits}
 
 To evaluate the effect of the five trait aggregation methods
-(\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, \textit{weighted\_agg}) on the assignment of trait affinity scores, we compared our aggregated affinities with trait affinities assigned at family level by experts. Expert-assigned trait data were available for a subset of grouping features and taxa for Australia (\cite{chessman_dissolved-oxygen_2018}) and North America (CONUS database), so we conducted this comparison only for these two datasets. For the Australian dataset, we used the grouping features feeding mode (all traits listed in Table 1 except parasite) and size (220 families $\times$ 8 family–trait combinations = 1760 comparisons). For the North American dataset, we used the grouping features feeding mode, respiration, size, voltinism, and locomotion (94 families $\times$ 17 family–trait combinations = 1598 comparisons). Assigned traits from North America were on a categorical scale, and we converted them to binary prior to comparing them with aggregated trait affinities. Size is a continuous variable in the Australian database, so, we converted size into three traits (small, medium, and large) each with a binary coding. Because trait affinities ranged from 0 to 1, the maximum difference possible in trait affinity was 1 to –1, both of which corresponds to 100 \%. For convenience and to improve interpretation, we calculated absolute values of the trait differences, i.e. a difference of -1 was converted to 1.
-
-\newpage
+(\textit{direct\_agg\textsubscript{median}}, \textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, \textit{weighted\_agg}) on the assignment of trait affinity scores, we compared our aggregated affinities with trait affinities assigned at family level by experts. Expert-assigned trait data were available for a subset of grouping features and taxa for Australia (\cite{chessman_dissolved-oxygen_2018}) and North America (CONUS database), so we conducted this comparison only for these two datasets. For the Australian dataset, we used the grouping features feeding mode (all traits listed in Table 1 except parasite) and size (220 families $\times$ 8 family–trait combinations = 1760 comparisons). For the North American dataset, we used the grouping features feeding mode, respiration, size, voltinism, and locomotion (94 families $\times$ 17 family–trait combinations = 1598 comparisons). Assigned traits from North America were on a categorical scale, and we converted them to binary prior to comparing them with aggregated trait affinities. Size is a continuous variable in the Australian database, so, we converted size into three traits (small, medium, and large) each with a binary coding. Because trait affinities ranged from 0 to 1, the maximum difference possible in trait affinity was 1 to –1, both of which corresponds to 100 \%. For convenience and to improve interpretation, we calculated absolute values of the trait differences, e.g. a difference of -1 was converted to 1.
 
 \subsubsection*{Effect of phylogeny and trait variability on aggregation outcomes}
 
@@ -219,7 +214,7 @@ To examine the influence of phylogeny and trait variability on the outcomes of t
   \centering
   % \includegraphics[width=22cm, height=28cm]{Flowchart_methods.pdf}
   \subfile{Flowchart/Flowchart_methods.tex}
-  \label{fig:data_proc_overview}
+  % \label{fig:data_proc_overview}
 \end{figure}
 \newpage
 \begin{center}
@@ -227,9 +222,7 @@ To examine the influence of phylogeny and trait variability on the outcomes of t
 \label{fig:data_proc_overview}
 \end{center}
 
-\newpage
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{Effects of harmonisation and trait aggregation on inferences regarding trait-environment relationships}
 
@@ -242,7 +235,7 @@ We compared the results of the original study’s RDA with the results of the RD
 
 \subsection*{Software used in data analyses}
 
-All data processing and RDA analyses were carried out using R (\cite{cite_R}). RDA was computed using the vegan package (\cite{cite_vegan}). Raw data and the R code for data processing and grouping feature harmonisation are located in the Github repository: \url{https://github.com/KunzstLD/Invertebrate_traits}. Scripts and data to reproduce the trait aggregation, comparison of aggregated and assigned traits, and the RDA analysis are located in the Github repository \url{https://github.com/KunzstLD/Trait-aggregation}.
+All data processing and RDA analyses were carried out using R version 3.6.1 (\cite{cite_R}). RDA was computed using the vegan package (\cite{cite_vegan}). Raw data and the R code for data processing and grouping feature harmonisation are located in the Github repository: \url{https://github.com/KunzstLD/Invertebrate_traits}. Scripts and data to reproduce the trait aggregation, comparison of aggregated and assigned traits, and the RDA analysis are located in the Github repository \url{https://github.com/KunzstLD/Trait-aggregation}.
 
 \newpage
 
@@ -464,9 +457,12 @@ RDA based on harmonised traits that were aggregated to family level also produce
 \begin{figure}[H]
   \centering
   \includegraphics[width=17cm, height=14.5cm]{boxplot_scores_combined.png}
-  \caption{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information (Figure \ref{fig:boxplots_scores_on_constrained_axis_REMAIN}). Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
-  \label{fig:boxplot_scores_on_constrained_axis}
 \end{figure}
+\begin{center}
+\captionof{figure}{RDA of traits constrained by electric conductivity for harmonised but not aggregated data, data aggregated with \textit{stepwise\_agg \textsubscript{median}} (largest difference in terms of responsive traits to salinity to the original study), data aggregated with \textit{direct\_agg \textsubscript{median}} (smallest difference in terms of responsive traits to salinity to the original study), and the original study. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. Only traits with a Mahalanobis distance greater than the $97.5 \%$ quantile of the Chi-square distribution (5.02) were labelled. For better comparability, species scores of the original analysis were multiplied by -1. Results for the other aggregated methods are shown in the supporting information (Figure \ref{fig:boxplots_scores_on_constrained_axis_REMAIN}). Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
+\label{fig:boxplot_scores_on_constrained_axis}
+\end{center}
+
 
 \newpage
 
