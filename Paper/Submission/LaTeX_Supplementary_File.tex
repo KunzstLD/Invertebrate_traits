@@ -1,4 +1,4 @@
-\begin{document}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 \usepackage{float}
@@ -24,15 +24,38 @@
 \usepackage{hhline}
 \usepackage{lmodern}
 
-\section*{Supporting Information}
-\label{sec:SI}
+%%%% Functions and definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{Gray}{gray}{0.9}
+
+% % horizontal space between two columns
+\setlength{\tabcolsep}{2mm}
+
+% %%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\renewcommand*{\thefootnote}{\alph{footnote}}
+
+
+% %%%% Formatting options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+
+\listfiles
+
+
+\title{Supporting Information}
+\date{}
+
+\begin{document}
+\maketitle
 
 \subsection*{Harmonised trait datasets}
 
 \subsubsection*{Discrepancies in trait definitions}
 
 \begin{landscape}
-    \begin{longtable}{m{1.9cm}|m{3.3cm}|m{3.3cm}|m{2.7cm}|m{3cm}|m{3.2cm}|m{2.5cm}}
+    \begin{longtable}{m{2cm}|m{3.3cm}|m{3.3cm}|m{2.7cm}|m{3cm}|m{3.2cm}|m{2.5cm}}
         \caption{Comparison of trait definitions between invertebrate trait databases. Only traits that are differently described across databases are listed. The definition is quoted if it enables differences to be identified, otherwise the differences are described. The hyphen indicates a missing trait. Reproduction was captured in multiple grouping features per database. Hence, differences for reproduction have been described in the paper. Body form traits are not different between databases, except that the Vieira database contains the trait Bluff (blocky) which does not appear in the other databases.}
         \label{stab:trait_definitions}
         \endfirsthead
@@ -246,7 +269,7 @@
 
 \subsection*{Effects of harmonisation and trait aggregation on inferences regarding trait-environment relationships}
 
-\begin{table}[ht]
+\begin{table}[H]
     \centering
     \caption{Mean, median and standard deviation of the affinities of traits that were responsive to the salinity gradient in the original study but not in the re-analysis using the harmonised European trait dataset.} 
     \label{tab:SI_resp_traits_summary_stats}

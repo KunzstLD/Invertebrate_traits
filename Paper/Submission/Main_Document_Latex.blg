@@ -1,0 +1,15 @@
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'Main_Document_Latex.blg'
+[25] biber:313> INFO - === So Feb 21, 2021, 10:12:01
+[46] Biber.pm:371> INFO - Reading 'Main_Document_Latex.bcf'
+[116] Biber.pm:857> INFO - Found 46 citekeys in bib section 0
+[130] Biber.pm:3981> INFO - Processing section 0
+[143] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[157] bibtex.pm:1468> INFO - LaTeX decoding ...
+[249] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[760] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[760] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[761] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[761] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[827] bbl.pm:617> INFO - Writing 'Main_Document_Latex.bbl' with encoding 'UTF-8'
+[871] bbl.pm:720> INFO - Output to Main_Document_Latex.bbl

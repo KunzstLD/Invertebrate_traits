@@ -41,41 +41,46 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>Draft_harmonization_paper.bcf</file>
+      <file>Main_Document_Latex.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>Draft_harmonization_paper.bbl</file>
+      <file>Main_Document_Latex.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
+      <file>apa.dbx</file>
       <file>blx-compat.def</file>
       <file>biblatex.def</file>
       <file>blx-natbib.def</file>
+      <file>apa.bbx</file>
+      <file>standard.bbx</file>
       <file>authoryear.cbx</file>
       <file>biblatex.cfg</file>
+      <file>english-apa.lbx</file>
       <file>english.lbx</file>
+      <file>american.lbx</file>
     </requires>
   </internal>
-  <external package="biblatex" priority="5" active="1">
+  <external package="biblatex" priority="5" active="0">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>Draft_harmonization_paper</infile>
+      <infile>Main_Document_Latex</infile>
     </cmdline>
     <input>
-      <file>Draft_harmonization_paper.bcf</file>
+      <file>Main_Document_Latex.bcf</file>
     </input>
     <output>
-      <file>Draft_harmonization_paper.bbl</file>
+      <file>Main_Document_Latex.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>Draft_harmonization_paper.bbl</file>
+      <file>Main_Document_Latex.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>Draft_harmonization_paper.bcf</file>
+      <file>Main_Document_Latex.bcf</file>
     </requires>
     <requires type="editable">
       <file>Ref_invertebrate_DB.bib</file>
