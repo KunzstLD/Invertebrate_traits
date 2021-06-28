@@ -57,7 +57,10 @@ Trait_Noa_new_agg <- normalize_by_rowSum(x = Trait_Noa_new_agg,
           cols = names(.[, -c("family",
                               "order")]))
   
-  
+dim(Trait_Noa_new_agg)  
+
 # save
 saveRDS(object = Trait_Noa_new_agg,
-        file = file.path(data_out, "Trait_Noa_agg.rds"))
+        file = file.path(data_out, "Trait_NOA_agg.rds"))
+saveRDS(object = Trait_Noa_new_agg,
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NOA_agg.rds")

@@ -67,7 +67,7 @@ Trait_NZ_agg <-
           cols = names(.[, -c("family",
                               "order")]))
 
-# dim(Trait_NZ_agg)
-
 # save
 saveRDS(object = Trait_NZ_agg, file = file.path(data_out, "Trait_NZ_agg.rds"))
+saveRDS(object = Trait_NZ_agg, 
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NZ_agg.rds")

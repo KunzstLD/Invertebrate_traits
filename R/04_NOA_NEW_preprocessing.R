@@ -21,7 +21,6 @@ cols <-
     "Voltinism_abbrev"
   )
 Trait_Noa_new <- Trait_Noa_new[, .SD, .SDcols = cols]
-
 Trait_Noa_new[which(Trait_Noa_new$Habit_prim == "Other (specify in comments)"),]
 
 # create species column
@@ -160,6 +159,9 @@ Trait_Noa_new[!is.na(Species) &
 dupl_unique_id <- Trait_Noa_new[duplicated(Species) & !is.na(Species), unique_id]
 Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 
+
+Trait_Noa_new[Species == "Ephemerella subvaria", ]
+
 # genus-level:
 Trait_Noa_new[is.na(Species) & !is.na(Genus) &
                 (duplicated(Genus) |
@@ -187,9 +189,6 @@ Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 setnames(Trait_Noa_new, 
          old = c("Species", "Genus", "Family", "Order"), 
          new = c("species", "genus", "family", "order"))
-
-Trait_Noa_new[family == "Corbiculidae", ]
-# order := "Venerida"
 
 # save
 saveRDS(object = Trait_Noa_new, 

@@ -405,7 +405,6 @@ Trait_EU <- Trait_EU[is.na(feed_other) | feed_other < 0.5, ]
 Trait_EU[feed_other > 0, feed_other := 0]
 Trait_EU[, "feed_other" := NULL]
 
-
 # _________________________________________________________________________
 #### Locomotion ####
 # locm_swim:  swimmer, scater (active & passive)
@@ -609,18 +608,30 @@ Trait_EU[, c(
 
 # _________________________________________________________________________
 #### Temperature ####
-# temp very cold (< 6 °C)
-# temp cold (< 10 °C)
-# temp moderate (< 18 °C)
-# temp warm (>= 18 °C)
+# temp_coldsteno: cold stenotherm (cos); preference for a small cold temperature range (below 10°C)
+# temp_warmsteno: warm stenotherm	(was);	preference for a small warm temperature range (above 18°C)
+# temp_euryt: eurytherm	(eut)	no specific preference, wide temperature range
 # temp eurytherm (no specific preference)
+# psychrophilic (< 15 °C)
+# thermophilic (> 15 °C)
+# -> temp_eury, temp_cold, temp_warm (themophilic & stenotherm)
 # _________________________________________________________________________
-# Trait_EU[, temp_cold := apply(.SD, 1, max),
-#   .SDcols = c("temp_cold", "temp_moderate", "temp_very_cold")
-# ]
-# Trait_EU[, c("temp_moderate", "temp_very_cold") := NULL]
-
-
+Trait_EU[, temp_eury := apply(.SD, 1, max, na.rm = TRUE),
+         .SDcols = c("temp_euryt",
+                     "temp_euryt_tachet")]
+Trait_EU[, temp_cold := apply(.SD, 1, max, na.rm = TRUE),
+         .SDcols = c("temp_coldsteno",
+                     "temp_psychrophil_tachet")]
+Trait_EU[, temp_warm := apply(.SD, 1, max, na.rm = TRUE),
+         .SDcols = c("temp_warmsteno", "temp_thermophil_tachet")
+]
+Trait_EU[, c("temp_euryt", 
+             "temp_euryt_tachet",
+             "temp_coldsteno",
+             "temp_psychrophil_tachet",
+             "temp_warmsteno", 
+             "temp_thermophil_tachet"
+             ) := NULL]
 # _________________________________________________________________________
 #### Body form ####
 # bf_streamlined: streamlined/fusiform
@@ -850,3 +861,7 @@ saveRDS(
     "EU",
     "Trait_freshecol_2020_pp_harmonized_ecoregions.rds")
 )
+
+# Save also for convergence of trait profiles analysis
+saveRDS(object = Trait_EU_ecoreg,
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_freshecol_2020_pp_harmonized_ecoregions.rds")

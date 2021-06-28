@@ -9,14 +9,14 @@ Trait_Noa <- readRDS(file = file.path(data_cleaned,
                                       "North_America",
                                       "Traits_US_taxa_pp.rds"))
 
-# subset to relevant traits:
+# Subset to relevant traits:
 cols <- "Resp_late|Ovipos_behav_prim|stages|Habit_prim|Thermal_pref|Larval_disp|Feed_mode_prim|Voltinism|size|Body\\_shape|Order|Family|Genus|Species"
 Trait_Noa <- Trait_Noa[, .SD, .SDcols = names(Trait_Noa) %like% cols]
 
 # Add ID col as unique identifier
 Trait_Noa[, unique_id := 1:nrow(Trait_Noa)]
 
-# taxonomical corrections
+# Taxonomical corrections
 # Parapoynx & Petrophilia
 Trait_Noa[Genus %in% c("Parapoynx",
                        "Petrophila"), Family := "Crambidae"]
@@ -32,6 +32,7 @@ Trait_Noa[Family == "Corbiculidae", Order := "Venerida"]
 
 #__________________________________________________________________________
 #### Create two DB versions with different codings ####
+# NOTE: "Fuzzy coded" version not used
 #__________________________________________________________________________
 
 # transform categories to columns!

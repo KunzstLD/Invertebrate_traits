@@ -5,7 +5,9 @@
 # read in harmonized, preprocessed & already normalized EU Trait DB
 # data are already normalized!
 Trait_EU <-
-  readRDS(file = file.path(data_cleaned, "EU", "Trait_EU_pp_harmonized.rds"))
+  readRDS(file = file.path(data_cleaned, 
+                           "EU",
+                           "Trait_freshecol_2020_pp_harmonized.rds"))
 
 # check completeness of trait data
 completeness_trait_data(x = Trait_EU,
@@ -31,7 +33,6 @@ Trait_EU <- Trait_EU[, .SD,
     "Neuroptera"
   ),]
 
-
 # trait aggregation to family-lvl
 Trait_EU_agg <- direct_agg(
   trait_data = Trait_EU,
@@ -50,7 +51,6 @@ Trait_EU_agg <- normalize_by_rowSum(x = Trait_EU_agg,
           cols = names(.[, -c("family",
                               "order")]))
 
-  
 # TODO: BF information, check that again!
 # family information in tachet not completely covered in agg. freshwaterecol
 # BF information missing for few families
@@ -69,5 +69,8 @@ Trait_EU_agg <- normalize_by_rowSum(x = Trait_EU_agg,
 #   "Diptera"
 # ), ]
 
-# cache as RDS object
+# Save as RDS object
 saveRDS(object = Trait_EU_agg, file = file.path(data_out, "Trait_EU_agg.rds"))
+# For TPG analysis
+saveRDS(object = Trait_EU_agg, 
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_EU_agg.rds")

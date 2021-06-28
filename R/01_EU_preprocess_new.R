@@ -10,10 +10,11 @@ trait_EU <- readRDS(
     "Trait_freshecol_2020_pp.rds"
   )
 )
+names(trait_EU)
 
 # Subset to relevant traits
 trait_EU <- trait_EU[, .SD,
-  .SDcols = names(trait_EU) %like% "^order$|^family$|genus|species|taxon.*|feed|loco|resp|volt|rep|size|ID.*"
+  .SDcols = names(trait_EU) %like% "^order$|^family$|genus|species|taxon.*|feed|loco|resp|volt|rep|size|temp|ID.*"
 ]
 
 # Voltinism trait contains thermal conditions, change every string to 1
@@ -44,17 +45,16 @@ no_info <- trait_EU[, apply(.SD, 1, function(y) {
 pos <- no_info == ncol(trait_EU[, ..col])
 trait_EU <- trait_EU[!pos, ]
 
-# __________________________________
+# __________________________________________________________________________________________________
 #### Consolidate duplicate taxa ####
 # only for family-level
-# species and genus duplicates have been introduced in the past
-# by rm e.g. "new Gen. sp." from some species
+# species and genus duplicates have been introduced by rm e.g. "new Gen. sp." from some species
 # has not been done now
-# __________________________________
+# __________________________________________________________________________________________________
 
 # binary columns -> aggr via max
 # fuzzy coded columns -> aggr via median
-cols_bin <- grep("(?=volt.*|resp.*)(?!.*tachet)",
+cols_bin <- grep("(?=volt.*|resp.*|temp.*)(?!.*tachet)",
                  names(trait_EU),
                  value = TRUE,
                  perl = TRUE
@@ -127,7 +127,7 @@ trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
 # were on subfamily-tribe level which will be used later 
 # in the re-analysis of Szöcs et al. 2014
 # code to remove:
-# rm_dupl <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>% 
+# rm_dupl <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
 # .[duplicated(family), taxon_cp]
 # trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl),]
 

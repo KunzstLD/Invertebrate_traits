@@ -102,3 +102,5 @@ Trait_AUS_agg <- normalize_by_rowSum(Trait_AUS_agg,
 # save
 saveRDS(object = Trait_AUS_agg,
         file = file.path(data_out, "Trait_AUS_agg.rds"))
+saveRDS(object = Trait_AUS_agg, 
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_AUS_agg.rds")
