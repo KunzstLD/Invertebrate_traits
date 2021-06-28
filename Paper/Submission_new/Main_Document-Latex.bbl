@@ -3365,6 +3365,67 @@
       \verb Vieira et al. - A Database of Lotic Invertebrate Traits for North .pdf:/home/kunz/Zotero/storage/CDMQKC8L/Vieira et al. - A Database of Lotic Invertebrate Traits for North .pdf:application/pdf
       \endverb
     \endentry
+    \entry{villegerNewMultidimensionalFunctional2008a}{article}{}
+      \name{author}{3}{}{%
+        {{hash=26d9a17a7e2b39c5ddee533773b534c1}{%
+           family={Villéger},
+           familyi={V\bibinitperiod},
+           given={Sébastien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2e89bf484ac972472b133cc3fa2c3d84}{%
+           family={Mason},
+           familyi={M\bibinitperiod},
+           given={Norman\bibnamedelimb W.\bibnamedelimi H.},
+           giveni={N\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=96b10b375fa4bb1d3b00810e90e08f2e}{%
+           family={Mouillot},
+           familyi={M\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2129f1b7f61bbe1e47da53dfcaf10638}
+      \strng{fullhash}{76f15088022d23b756385d26207882fa}
+      \strng{bibnamehash}{76f15088022d23b756385d26207882fa}
+      \strng{authorbibnamehash}{76f15088022d23b756385d26207882fa}
+      \strng{authornamehash}{2129f1b7f61bbe1e47da53dfcaf10638}
+      \strng{authorfullhash}{76f15088022d23b756385d26207882fa}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Functional diversity is increasingly identified as an important driver of ecosystem functioning. Various indices have been proposed to measure the functional diversity of a community, but there is still no consensus on which are most suitable. Indeed, none of the existing indices meets all the criteria required for general use. The main criteria are that they must be designed to deal with several traits, take into account abundances, and measure all the facets of functional diversity. Here we propose three indices to quantify each facet of functional diversity for a community with species distributed in a multidimensional functional space: functional richness (volume of the functional space occupied by the community), functional evenness (regularity of the distribution of abundance in this volume), and functional divergence (divergence in the distribution of abundance in this volume). Functional richness is estimated using the existing convex hull volume index. The new functional evenness index is based on the minimum spanning tree which links all the species in the multidimensional functional space. Then this new index quantifies the regularity with which species abundances are distributed along the spanning tree. Functional divergence is measured using a novel index which quantifies how species diverge in their distances (weighted by their abundance) from the center of gravity in the functional space. We show that none of the indices meets all the criteria required for a functional diversity index, but instead we show that the set of three complementary indices meets these criteria. Through simulations of artificial data sets, we demonstrate that functional divergence and functional evenness are independent of species richness and that the three functional diversity indices are independent of each other. Overall, our study suggests that decomposition of functional diversity into its three primary components provides a meaningful framework for its quantification and for the classification of existing functional diversity indices. This decomposition has the potential to shed light on the role of biodiversity on ecosystem functioning and on the influence of biotic and abiotic filters on the structure of species communities. Finally, we propose a general framework for applying these three functional diversity indices.}
+      \field{annotation}{\_eprint: https://esajournals.onlinelibrary.wiley.com/doi/pdf/10.1890/07-1206.1}
+      \field{issn}{1939-9170}
+      \field{journaltitle}{Ecology}
+      \field{langid}{english}
+      \field{number}{8}
+      \field{title}{New {{Multidimensional Functional Diversity Indices}} for a {{Multifaceted Framework}} in {{Functional Ecology}}}
+      \field{urlday}{15}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{89}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2290\bibrangedash 2301}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1890/07-1206.1
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/9VJ9SCJG/Villéger et al. - 2008 - New Multidimensional Functional Diversity Indices .pdf;/home/kunzst/Zotero/storage/ZWZVDK85/07-1206.html
+      \endverb
+      \verb{urlraw}
+      \verb https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/07-1206.1
+      \endverb
+      \verb{url}
+      \verb https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/07-1206.1
+      \endverb
+      \keyw{competitive filtering,environmental filtering,functional divergence,functional evenness,functional niche,functional richness,functional traits,null model}
+    \endentry
     \entry{vos_taxonomic_2017}{article}{}
       \name{author}{2}{}{%
         {{hash=6ba54d612e089ec979967be0e519d384}{%

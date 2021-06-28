@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  28 JUN 2021 18:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  28 JUN 2021 22:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1913,29 +1913,60 @@ Overfull \hbox (96.37538pt too wide) in paragraph at lines 379--381
  [][] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 386.
-[20 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 386.
+<Figures/Correlation_fd_metrics_FRic.png, id=123, 956.6139pt x 432.6564pt>
+File: Figures/Correlation_fd_metrics_FRic.png Graphic file (type png)
+<use Figures/Correlation_fd_metrics_FRic.png>
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FRic.png  used on input line 389.
+(pdftex.def)             Requested size: 483.69197pt x 341.45152pt.
+
+Overfull \hbox (53.68735pt too wide) in paragraph at lines 389--390
+ [][] 
+ []
+
+<Figures/Correlation_fd_metrics_FDiv.png, id=124, 889.6437pt x 431.9337pt>
+File: Figures/Correlation_fd_metrics_FDiv.png Graphic file (type png)
+<use Figures/Correlation_fd_metrics_FDiv.png>
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FDiv.png  used on input line 396.
+(pdftex.def)             Requested size: 483.69914pt x 341.44797pt.
+
+Overfull \hbox (53.69452pt too wide) in paragraph at lines 396--397
+ [][] 
+ []
+
+<Figures/Correlation_fd_metrics_FEve.png, id=125, 889.6437pt x 431.9337pt>
+File: Figures/Correlation_fd_metrics_FEve.png Graphic file (type png)
+<use Figures/Correlation_fd_metrics_FEve.png>
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FEve.png  used on input line 403.
+(pdftex.def)             Requested size: 483.69914pt x 341.44797pt.
+
+Overfull \hbox (53.69452pt too wide) in paragraph at lines 403--404
+ [][] 
+ []
+
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 409.
+ [21 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>] [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FRic.png (PNG copy)>] [23 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FDiv.png (PNG copy)>] [24 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FEve.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 409.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 386.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 386.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 409.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 409.
 Package rerunfilecheck Info: File `Latex_Supplementary_File.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 386.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 409.
  ) 
 Here is how much of TeX's memory you used:
- 18277 strings out of 492982
- 338546 string characters out of 6134895
- 464318 words of memory out of 5000000
- 21465 multiletter control sequences out of 15000+600000
+ 18303 strings out of 492982
+ 339284 string characters out of 6134895
+ 466165 words of memory out of 5000000
+ 21480 multiletter control sequences out of 15000+600000
  46651 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,18n,54p,1954b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.pdf (20 pages, 2265124 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.pdf (24 pages, 3100402 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 133 compressed objects within 2 object streams
- 36 named destinations out of 1000 (max. 500000)
- 48 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
