@@ -765,6 +765,61 @@
       \endverb
       \keyw{Climate,Diet,Respiration,Rheophily,River,Thermal,Trait}
     \endentry
+    \entry{chevenet_francois_fuzzy_1994}{article}{}
+      \name{author}{3}{}{%
+        {{hash=81142c6fdbf1b2bc834da08a18af1ac7}{%
+           family={Chevenet},
+           familyi={C\bibinitperiod},
+           given={Francois},
+           giveni={F\bibinitperiod}}}%
+        {{hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{hash=dcfab8c3553be709ce4e4745b4692da1}{%
+           family={Chessel},
+           familyi={C\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{310fe24f8605eb93bcd44178485d2568}
+      \strng{fullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{bibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authorbibnamehash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \strng{authornamehash}{310fe24f8605eb93bcd44178485d2568}
+      \strng{authorfullhash}{9cd56ff16ffd27370bba657c4f7db7fb}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{{SUMMARY} 1 We present an unconventional procedure (fuzzy coding) to structure biological and environmental information, which uses positive scores to describe the affinity of a species for different modalities (i.e. categories) of a given variable. Fuzzy coding is essential for the synthesis of long?term ecological data because it enables analysis of diverse kinds of biological information derived from a variety of sources (e.g. samples, literature). 2 A fuzzy coded table can be processed by correspondence analysis. An example using aquatic beetles illustrates the properties of such a fuzzy correspondence analysis. Fuzzy coded tables were used in all articles of this issue to examine relationships between spatial?temporal habitat variability and species traits, which were obtained from a long?term study of the Upper Rhône River, France. 3 Fuzzy correspondence analysis can be programmed with the equations given in this paper or can be performed using {ADE} (Environmental Data Analysis) software that has been adapted to analyse such long?term ecological data. On Macintosh {AppleTM} computers, {ADE} performs simple linear ordination, more recently developed methods (e.g. principal component analysis with respect to instrumental variables, canonical correspondence analysis, co?inertia analysis, local and spatial analyses), and provides a graphical display of results of these and other types of analysis (e.g. biplot, mapping, modelling curves). 4 {ADE} consists of a program library that exploits the potential of the {HyperCardTM} interface. {ADE} in an open system, which offers the user a variety of facilities to create a specific sequence of programs. The mathematical background of {ADE} is supported by the algebraic model known as ?duality diagram?.}
+      \field{issn}{0046-5070}
+      \field{journaltitle}{Freshwater Biology}
+      \field{number}{3}
+      \field{shortjournal}{Freshwater Biology}
+      \field{title}{A fuzzy coding approach for the analysis of long‐term ecological data}
+      \field{volume}{31}
+      \field{year}{1994}
+      \field{dateera}{ce}
+      \field{pages}{295\bibrangedash 309}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{file}
+      \verb Full Text PDF:/home/kunz/Zotero/storage/D35DSWPL/CHEVENE FRANçOIS et al. - 2006 - A fuzzy coding approach for the analysis of long‐t.pdf:application/pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.1994.tb01742.x
+      \endverb
+    \endentry
     \entry{culp_incorporating_2011}{article}{}
       \name{author}{8}{}{%
         {{hash=365b3bb8b6133f87b30f1faf36588d52}{%
@@ -1030,6 +1085,179 @@
       \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2745.12698
       \endverb
       \keyw{ecology,biodiversity,controlled vocabulary,informatics,ontology,plant characteristics,plant environmental association,plant trait,semantics,thesaurus}
+    \endentry
+    \entry{gayraudInvertebrateTraitsBiomonitoring2003}{article}{}
+      \name{author}{7}{}{%
+        {{hash=7e6657bf57392fe5856db4732d4c5a96}{%
+           family={Gayraud},
+           familyi={G\bibinitperiod},
+           given={Sébastien},
+           giveni={S\bibinitperiod}}}%
+        {{hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=1ba4dc23ca5ffbca5e9bfd010c3e7c13}{%
+           family={Bady},
+           familyi={B\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=018d6d9751dafb7d2f1394399d41c896}{%
+           family={Haybachp},
+           familyi={H\bibinitperiod},
+           given={Arne},
+           giveni={A\bibinitperiod}}}%
+        {{hash=2f29c24b3169644be9dda9fec9945d7d}{%
+           family={Schöll},
+           familyi={S\bibinitperiod},
+           given={Franz},
+           giveni={F\bibinitperiod}}}%
+        {{hash=9161674522b89b60aaab1ef1a3c85632}{%
+           family={Usseglio-Polatera},
+           familyi={U\bibinithyphendelim P\bibinitperiod},
+           given={Philippe},
+           giveni={P\bibinitperiod}}}%
+        {{hash=9e168fd838a6ab574c9543313d533a14}{%
+           family={Bacchi},
+           familyi={B\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{ee105005698cfde038f1eece4c56a7c4}
+      \strng{fullhash}{9199c5d2fe13c166986b724937de5fb1}
+      \strng{bibnamehash}{9199c5d2fe13c166986b724937de5fb1}
+      \strng{authorbibnamehash}{9199c5d2fe13c166986b724937de5fb1}
+      \strng{authornamehash}{ee105005698cfde038f1eece4c56a7c4}
+      \strng{authorfullhash}{9199c5d2fe13c166986b724937de5fb1}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. The application of environmental policy and legislation across large-scale administrative units creates a growing need for standard tools to assess and monitor the ‘ecological health’ of rivers, a requirement that can be achieved through the description of ecological functions of lotic invertebrate species in river communities. 2. To assess alternative metrics, we tested how the functional structure (described by 14 biological traits) of invertebrate communities in 190 large river reaches differed with respect to differences in taxonomic resolution (species, genus, family), taxa weighting of traits (raw abundance, ln-transformed abundance, presence–absence data) and consideration of alien species (inclusion or exclusion), and how these differences influenced the potential of functional descriptions to discriminate river reaches across a gradient of multiple human impacts. 3. Functional descriptions derived at the level of species, genera and families were very similar, whereas functional descriptions derived from raw abundances differed significantly from those derived from both ln-transformed abundances and presence–absence data. Functional descriptions after the exclusion of alien species differed considerably from those including alien species. 4. Generally, the functional descriptions significantly discriminated river reaches according to the level of human impact. Taxonomic resolution scarcely influenced the discrimination of impact levels, whereas the use of raw abundances decreased impact discrimination in comparison with ln-transformed abundances and presence–absence data. Exclusion of alien species also decreased discrimination of impact levels. 5. When considered separately, individual biological traits describing maximal size, number of descendants per reproductive cycle, number of reproductive cycles per individual, life duration of adults, reproductive method, parental care, body form and feeding habits had the highest potential to discriminate the level of human impact. 6. Our findings indicate that genus or perhaps family identifications are sufficient for large-river biomonitoring using invertebrate traits. Although raw abundances could provide a better discrimination of low levels of human impact, presence–absence data should be sufficient to discriminate functional community changes caused by elevated levels of human impact across Europe.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1046/j.1365-2427.2003.01139.x}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{11}
+      \field{shorttitle}{Invertebrate Traits for the Biomonitoring of Large {{European}} Rivers}
+      \field{title}{Invertebrate Traits for the Biomonitoring of Large {{European}} Rivers: An Initial Assessment of Alternative Metrics}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{48}
+      \field{year}{2003}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{2045\bibrangedash 2064}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1046/j.1365-2427.2003.01139.x
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/QV4XFXMR/Gayraud et al. - 2003 - Invertebrate traits for the biomonitoring of large.pdf;/home/kunzst/Zotero/storage/MUUDQKRF/j.1365-2427.2003.01139.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2003.01139.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1046/j.1365-2427.2003.01139.x
+      \endverb
+      \keyw{alien species,benthos,taxa weighting,taxonomic resolution}
+    \endentry
+    \entry{gutierrez-canovasPopulationsHighvaluePredators2021}{article}{}
+      \name{author}{9}{}{%
+        {{hash=1a93c46a72ae8e6c6d8305fd74bd6923}{%
+           family={Gutiérrez-Cánovas},
+           familyi={G\bibinithyphendelim C\bibinitperiod},
+           given={Cayetano},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d99332fe775fbb4c137d164df0339b85}{%
+           family={Worthington},
+           familyi={W\bibinitperiod},
+           given={Thomas\bibnamedelima A.},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=95f995aacb8c7c46b7381fc23b4f46cd}{%
+           family={Jâms},
+           familyi={J\bibinitperiod},
+           given={Ifan\bibnamedelima B.},
+           giveni={I\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=152e497ef915e5044d7abca87b35de11}{%
+           family={Noble},
+           familyi={N\bibinitperiod},
+           given={David\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b844c5696cd0b9969b836c8234f70648}{%
+           family={Perkins},
+           familyi={P\bibinitperiod},
+           given={Daniel\bibnamedelima M.},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=0229738322044eda74a01828fd568a73}{%
+           family={Vaughan},
+           familyi={V\bibinitperiod},
+           given={Ian\bibnamedelima P.},
+           giveni={I\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=b06b7f209abdfdb38ea86e3dca769af7}{%
+           family={Woodward},
+           familyi={W\bibinitperiod},
+           given={Guy},
+           giveni={G\bibinitperiod}}}%
+        {{hash=be739794a0761e6b4d0870c0645810da}{%
+           family={Ormerod},
+           familyi={O\bibinitperiod},
+           given={Steve\bibnamedelima J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=02ed65e92569bf331c28f450f832f59b}{%
+           family={Durance},
+           familyi={D\bibinitperiod},
+           given={Isabelle},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a25ee188df8f4a2f1a1f2ada19b3b08e}
+      \strng{fullhash}{4c24a60199e407ede2480bfbaaa3a7e9}
+      \strng{bibnamehash}{4c24a60199e407ede2480bfbaaa3a7e9}
+      \strng{authorbibnamehash}{4c24a60199e407ede2480bfbaaa3a7e9}
+      \strng{authornamehash}{a25ee188df8f4a2f1a1f2ada19b3b08e}
+      \strng{authorfullhash}{4c24a60199e407ede2480bfbaaa3a7e9}
+      \field{sortinit}{G}
+      \field{sortinithash}{5e8d2bf9d38de41b1528bd307546008f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The extent to which prey traits combine to influence the abundance of predators is still poorly understood, particularly for mixed predators in sympatry and in aquatic ecosystems. In this study, we characterise prey use and distribution in iconic bird (grey wagtails and Eurasian dippers) and fish species (brown trout and Atlantic salmon) to assess whether prey traits could predict populations of these four riverine predators. Specifically, we hypothesised that: 1) prey key traits would predict predator populations more effectively than 2) diversity of prey traits, 3) the taxonomic abundance or richness of prey (known as traditional or mass-effect types of biodiversity) or 4) the prevailing environmental conditions. Combined predator population sizes were predicted better by a few key traits – specifically those revealing prey habitat use, size and drifting behaviour – than by prey diversity or prey trait diversity or environmental conditions. Our findings demonstrate that the complex relationships between prey assemblages and multiple predator species can be represented mechanistically when the key prey traits that govern encounter and consumption rates are identified. Given their apparent potential to reveal trophic relationships, and to complement more traditional measures of prey abundance, we advocate further development of trait-based approaches in predator–prey research.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/ecog.05438}
+      \field{issn}{1600-0587}
+      \field{journaltitle}{Ecography}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{title}{Populations of High-Value Predators Reflect the Traits of Their Prey}
+      \field{urlday}{28}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{44}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{690\bibrangedash 702}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/ecog.05438
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/N8GIXT88/Gutiérrez-Cánovas et al. - 2021 - Populations of high-value predators reflect the tr.pdf;/home/kunzst/Zotero/storage/RRY543PE/ecog.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.05438
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.05438
+      \endverb
+      \keyw{aquatic ecosystems,Atlantic salmon,biodiversity,brown trout,ecosystem services,Eurasian dipper,grey wagtails,predator–prey interactions}
     \endentry
     \entry{hoye_deep_2020}{article}{}
       \name{author}{10}{}{%
@@ -2545,6 +2773,66 @@
       \verb Full Text PDF:/home/kunzst/Zotero/storage/GYPHTC54/Statzner et al. - 2001 - Perspectives for biomonitoring at large spatial sc.pdf:application/pdf
       \endverb
     \endentry
+    \entry{statznerConservationTaxonomicBiological2007}{article}{}
+      \name{author}{3}{}{%
+        {{hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod}}}%
+        {{hash=55475b8c2acc1cff1a931637aed37159}{%
+           family={Bonada},
+           familyi={B\bibinitperiod},
+           given={Núria},
+           giveni={N\bibinitperiod}}}%
+        {{hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{fullhash}{1d516570f6982cee265920dcde41b02d}
+      \strng{bibnamehash}{1d516570f6982cee265920dcde41b02d}
+      \strng{authorbibnamehash}{1d516570f6982cee265920dcde41b02d}
+      \strng{authornamehash}{398240ecb3ebaada07498742d43a8270}
+      \strng{authorfullhash}{1d516570f6982cee265920dcde41b02d}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The use of databases for the conservation of biodiversity is increasing. During the last decade, such a database has been created for European stream macroinvertebrates. Today, it includes 527 sites that are the least human-impacted representatives of many stream types across many European regions. It includes data on the abundance of 312 invertebrate genera, several environmental site characteristics, collection methods, bibliographic data sources, and 11 biological traits of the genera (e.g. size, life cycle, food and feeding habits, described in 61 categories). The database will be useful in addressing many topics that are potentially relevant to biodiversity conservation. To illustrate this potential, we provide examples of how the data could be exploited. First, we describe the frequency of some taxonomic and biological characteristics (e.g. richness and diversity of genera and traits) of the macroinvertebrate communities and assess how these characteristics are related (e.g. how trait richness increases with genus richness). Second, we describe the frequency of some characteristics of the genera and traits (e.g. occurrence frequency, abundance, dispersion index) and again assess how these characteristics are related (e.g. how occurrence increases with abundance). Finally, we suggest how the database could be developed into a collective, publicly accessible database that covers stream types and regions of Europe more comprehensively.}
+      \field{issn}{1572-9710}
+      \field{journaltitle}{Biodiversity and Conservation}
+      \field{langid}{english}
+      \field{number}{12}
+      \field{shortjournal}{Biodivers Conserv}
+      \field{shorttitle}{Conservation of Taxonomic and Biological Trait Diversity of {{European}} Stream Macroinvertebrate Communities}
+      \field{title}{Conservation of Taxonomic and Biological Trait Diversity of {{European}} Stream Macroinvertebrate Communities: A Case for a Collective Public Database}
+      \field{urlday}{26}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{16}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{3609\bibrangedash 3632}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1007/s10531-007-9150-1
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/4ETJLKSG/Statzner et al. - 2007 - Conservation of taxonomic and biological trait div.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10531-007-9150-1
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10531-007-9150-1
+      \endverb
+    \endentry
     \entry{statzner_reproductive_1997}{article}{}
       \name{author}{4}{}{%
         {{hash=615e8a66370c723ca39c61c650ff638e}{%
@@ -2767,7 +3055,6 @@
       \field{urlday}{26}
       \field{urlmonth}{1}
       \field{urlyear}{2021}
-      \field{volume}{n/a}
       \field{year}{2021}
       \field{dateera}{ce}
       \field{urldateera}{ce}

@@ -1,0 +1,280 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xr-hyper}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{color, colortbl}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{caption}
+\usepackage{authblk}
+\usepackage{csquotes}
+\graphicspath{{Figures/}}
+\usepackage{setspace}
+\usepackage{rotating}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{etoolbox}
+\usepackage{hhline}
+\usepackage{lmodern}
+\usepackage[
+backend = biber,
+natbib,
+citestyle = authoryear,
+bibstyle = apa,
+maxcitenames = 2, 
+maxbibnames = 99, 
+uniquename=false,
+uniquelist=false
+%sorting = none % sort by name year title
+]{biblatex}
+\addbibresource{Ref_invertebrate_DB.bib}
+
+\usepackage{subfiles} % Best loaded last in the preamble
+
+%%%% Functions and definitions %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{Gray}{gray}{0.9}
+
+% horizontal space between two columns
+\setlength{\tabcolsep}{2mm}
+
+%%%%% New Commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\makeatletter
+\newcommand*{\addFileDependency}[1]{% argument=file name and extension
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
+}
+\makeatother
+
+\newcommand*{\myexternaldocument}[1]{%
+    \externaldocument{#1}%
+    \addFileDependency{#1.tex}%
+    \addFileDependency{#1.aux}%
+}
+
+\newcommand{\specialcell}[2][c]{%
+  \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}}
+
+\renewcommand*{\thefootnote}{\alph{footnote}}
+
+% raplace "and" in authoryear in-text citations with "&" 
+\renewcommand*{\finalnamedelim}{%
+  \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+  \addspace\&\space}
+
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  {\small	
+  \textbf{\textit{Keywords---}} #1
+}}
+
+%%%% Formatting options %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\onehalfspacing
+
+\listfiles
+
+\myexternaldocument{Latex_Supplementary_File}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Tables - Tackling discrepancies in freshwater invertebrate trait databases: Harmonising across continents and aggregating taxonomic resolution}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+% Table 1:Excerpt from differences in trait definitions
+\begin{landscape}
+  \begin{longtable}{m{2.0cm}|m{3.5cm}|m{3.4cm}|m{4.2cm}|m{1.7cm}|m{2.5cm}|m{2.2cm}}
+      \caption{Excerpt of the comparison of trait definitions between invertebrate trait databases for the traits predator and swimming. The definition is quoted if it enables differences to be identified, otherwise the differences are described. The full version and further information can be found in the supporting information Table S\ref{stab:trait_definitions}.}
+      \label{stab:trait_definitions}
+      \endfirsthead
+      \toprule[.1em]
+      Trait & \specialcell{Freshwater- \\ ecology.info} & Tachet & CONUS & Vieira & Australia & \specialcell{New \\ Zealand} \\
+      \toprule[.1em]
+      Feeding predator & 
+        "Eating from prey" & 
+        \begin{itemize}
+            \item Carvers, engulfers \& swallowers
+            \item Piercers (plants \& animals) are an additional trait
+        \end{itemize} & % Notes: Tachet -> Piercer (plants & animals)
+        Engulfers ("ingest prey whole or in parts") \& 
+        piercers ("prey tissues and suck fluids") & 
+        Predator &
+        Piercer \& engulfer &
+        Predator
+        \\ 
+        \toprule[.1em]
+        Locomotion swimming & 
+        \begin{itemize}
+            \item Passive movement like floating or drifting (trait swimming/scating)
+            \item Active movement (trait swimming/diving)
+        \end{itemize}. &
+        \begin{itemize}
+            \item Surface swimmers (over and under the water surface)
+            \item Full water swimmers (e.g. Baetidae).
+        \end{itemize} & 
+        "Adapted for "fishlike" swimming" & 
+        Swimmer & 
+        Distinguishes swimmer and skater & 
+        Swimmers (water column)
+        \\
+      \bottomrule
+  \end{longtable}
+\end{landscape}
+
+% Table 2
+\begin{longtable}{m{2.5cm}|m{4cm}|m{7.5cm}}
+\caption{Traits of harmonised grouping features from six invertebrate trait databases and four geographic regions. The last column indicates traits that were combined for harmonisation (no combining needed if empty).}
+\endfirsthead
+\toprule[.1em]
+\label{tab:traits_harmonisation}
+%\begin{tabular}
+\specialcell{Grouping \\ feature} & Trait & Combined traits\\
+\toprule[.1em]
+Voltinism    & \begin{tabular}[c]{@{}l@{}}Semivoltine\\ Univoltine\\ Bi/multivoltine\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}\textless 1 generation per year\\ 1 generation per year\\ \textgreater 1 generation per year\end{tabular}                                                                                                                                            \\
+\midrule
+Body Form    & \begin{tabular}[c]{@{}l@{}}Cylindrical \\ Flattenend\\ Spherical\\ Streamlined\end{tabular}                       & \begin{tabular}[c]{@{}l@{}}Cylindrical, tubular\\ Flattenend, dorsoventrally flattened$^{\dagger}$ \\ Spherical, round (humped)\\ Streamlined, fusiform\end{tabular}                                                                                                                                                                          \\
+\midrule
+Size         & \begin{tabular}[c]{@{}l@{}}Small \\ Medium \\ Large\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}\textless 9 mm, \textless 10 mm$^{\ddagger}$ \\ 9 - 16 mm, 10 - 20 mm\\ \textgreater 16 mm, \textgreater 20 mm\end{tabular}                                                                                                                \\
+\midrule
+Respiration  & \begin{tabular}[c]{@{}l@{}}Gills\\ Plastron/Spiracle\\ \\ \\ \\ Tegument\end{tabular}                             & \begin{tabular}[c]{@{}l@{}} Tracheal gills, gills\\ Temporary air store, spiracular gills, \\ atmospheric breathers, plant breathers, \\ functional spiracles, air (plants), aerial, \\ plastron/spiracle\\ Cutaneous, tegument \end{tabular}                                                                         \\
+\midrule
+Locomotion   & \begin{tabular}[c]{@{}l@{}}Burrower\\ Crawler\\ Sessile\\ Swimmer \end{tabular}                                     & \begin{tabular}[c]{@{}l@{}}Interstitial, boring, burrowing\\ Sprawler, walking, climber, clinger, crawler\\ Attached, sessile\\ Skating, diving, planctonic, swimming\end{tabular}                                                                                                                 \\
+\midrule
+Feeding mode & \begin{tabular}[c]{@{}l@{}}Filterer\\ \\ Gatherer\\ \\ Herbivore\\ \\ Parasite\\ Predator\\ Shredder \\ \\ \end{tabular} & \begin{tabular}[c]{@{}l@{}}Active/passive filterer, absorber, \\ filter-feeder, collector-filterer, filterer\\ Deposit-feeder, collector-gatherer, \\ detrivore, gatherer\\ Grazer, scraper, piercer herbivore, \\ herbivore, algal piercer, piercer (plants)$^{\mathsection}$\\ \\ Piercer (animals)$^{\mathsection}$, predator \\ Miner, xylophagus, shredder, \\ shredder detrivore\end{tabular} \\
+\hline
+Oviposition  & \begin{tabular}[c]{@{}l@{}}Aquatic eggs\\ \\ Ovoviviparity\\ Terrestrial eggs\end{tabular}                            & \begin{tabular}[c]{@{}l@{}}Eggs attached to substrate/plants/stones,\\ free/fixed eggs/clutches\\ \\ Terrestrial clutches, terrestrial \end{tabular}     \\
+\bottomrule[.1em]
+%\end{tabular}
+\end{longtable}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+    $\dagger$ The trait "bluff (blocky)" occurred in the Vieira database and was newly classified by expert knowledge into cylindrical and flattened (\cite{polatera_personal_information_2020}). \\  
+    $\ddagger$ Reflects the different size classifications by the Vieira and CONUS databases from the other trait databases. \\
+    $\mathsection$ The trait piercer was defined in the Tachet database for piercing plants and animals, in contrast to the other databases (\cite{usseglio-polatera_biomonitoring_2000}). Taxa exhibiting this trait have been assigned to predators or herbivores based on expert knowledge (\cite{polatera_personal_information_piercer_2020}).
+}
+\end{minipage}
+
+\newpage
+% Table 2 (Start Results)
+\begin{table}[ht]
+    \centering
+    \caption{Number (Nr.) of taxa per harmonised dataset and per taxonomic level. Numbers in parenthesis show rounded relative frequencies in percent.} 
+    \label{tab:tax_coverage}
+    \begin{tabular}{l|c|c|c|c|c}
+    \toprule[.1em]
+    Dataset & Taxa (Nr.) & Aquatic insects (Nr.) & Species & Genus & Family \\ 
+    \toprule[.1em]
+    EUR & 4601 & 3942 (86) & 3739 (81) & 704 (15) & 158 (3) \\ 
+    NA & 3753 & 3305 (88) & 2414 (64) & 1163 (31) & 176 (5)  \\ 
+    AUS & 1402 & 1016 (72) & 564 (40) & 578 (41) & 260 (19) \\ 
+    NZ & 478 & 443 (93) & 404 (85) & 47 (10) & 27 (6) \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+\centering
+Abbreviations: EUR, Europe; NOA, North America; AUS, Australia; NZ, New Zealand.
+}
+\end{minipage}
+
+% Table 3
+\begin{table}[H]
+    \centering
+    \caption{Rounded percentage of entries that include 
+    information for the individual grouping features
+    shown per trait dataset.} 
+    \label{tab:trait_coverage}
+    \begin{tabular}{l|c|c|c|c|c|c|c}
+    \toprule[.1em]
+    Dataset & \specialcell{Body \\ form} & Oviposition & Voltinism & Locomotion & Size & Respiration & \specialcell{Feeding \\ mode} \\ 
+    \toprule[.1em]
+    EUR & 8 & 15 & 23 & 36 & 11 & 57 & 76 \\ 
+    NA & 28 & 13 & 47 & 52 & 73 & 44 & 63 \\ 
+    AUS & 4 & 46 & 49 & 39 & 75 & 68 & 99 \\ 
+    NZ & 100 & 94 & 100 & 99 & 100 & 100 & 99 \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+\centering
+Abbreviations: EUR, Europe; NA, North America; AUS, Australia; NZ, New Zealand.
+}
+\end{minipage}
+
+% Table 4
+\begin{landscape}
+\begin{longtable}{m{2.5cm}|m{3.5cm}|m{2cm}|m{1.5cm}|m{1.5cm}|m{4.8cm}|m{2cm}}
+\caption{Number of traits per grouping feature and type of coding of the traits for the grouping features used in this study per database. Oviposition location was used for the New Zealand database.}
+\endfirsthead
+\toprule[.1em]
+\label{tab:trait_databases_coding_differentiation}
+\specialcell{Grouping \\ feature} & \specialcell{freshwater- \\ ecology.info} & Tachet & CONUS & Vieira & Australia & New Zealand \\
+\toprule[.1em]
+Feeding Mode & \begin{tabular}[c]{@{}l@{}}10 traits; \\ 10 point assginment \\ system\end{tabular}       & \begin{tabular}[c]{@{}l@{}}7 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}6 traits; \\ binary\end{tabular}   & \begin{tabular}[c]{@{}l@{}}8 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}16 traits$^{\dagger}$; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}6 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Voltinism                                                           & \begin{tabular}[c]{@{}l@{}}6 traits; \\ single category \\ assignment system\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits;\\ binary\end{tabular}    & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}7 traits; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}3 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Locomotion                                                          & \begin{tabular}[c]{@{}l@{}}6 traits; \\ 10 point assignment \\ system\end{tabular}        & \begin{tabular}[c]{@{}l@{}}8 traits; \\ fuzzy {[}0 - 5{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary, fuzzy  {[}0 - 3{]}\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Respiration                                                         & \begin{tabular}[c]{@{}l@{}}7 traits; \\ binary\end{tabular}                               & \begin{tabular}[c]{@{}l@{}}5 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}3 traits;  \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}8 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary, proportional {[}0 - 1{]}, \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+\begin{tabular}[c]{@{}l@{}}Reproduction/\\ Oviposition\end{tabular} & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary\end{tabular}                               & \begin{tabular}[c]{@{}l@{}}8 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits;  \\ binary\end{tabular} & \begin{tabular}[c]{@{}l@{}}10 traits; \\ binary\end{tabular} & \begin{tabular}[c]{@{}l@{}}13 traits$^{\ddagger}$; \\ binary\end{tabular}                                                 & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Size                                                                & -                                                                                         & \begin{tabular}[c]{@{}l@{}}7 traits;\\ fuzzy {[}0 - 3{]}\end{tabular}  & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}   & \begin{tabular}[c]{@{}l@{}}3 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}9 traits; \\ binary, continuous, \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}5 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\midrule
+Body Form & - & - & -                                                             & \begin{tabular}[c]{@{}l@{}}4 traits; \\ binary\end{tabular}  & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}4 traits; \\ fuzzy {[}0 - 3{]}\end{tabular} \\
+\bottomrule
+\end{longtable}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+      $\dagger$ Some of the feeding mode traits used in the Australian database were similar (e.g. trait \textit{Shredder}, \textit{Shredder, Detrivore}, and \textit{Collector, Shredder}).
+      \newline
+      $\ddagger$ Not all traits were considered because trait information was partly presented as comments to describe other traits or due to incomplete information.
+      }
+  \end{minipage}
+\end{landscape}
+
+% Table 5
+\begin{landscape}
+\begin{table}[H]
+  \centering
+  \caption{Percentage of differing cases, minimum, maximum, mean, and standard deviation of absolute differences between trait affinities assigned at family level by experts and aggregated trait affinities from five different aggregation methods.}
+  \label{tab:summary_stat_aggr_vs_fam_assigned}
+  \begin{tabular}{ll|ccccc}
+  \toprule[.1em]
+  \specialcell{Data \\ origin} & \specialcell{Comparison to\\ traits at family level} & \specialcell{Differing \\ cases [\%]} & \specialcell{Min. \\ differences} & \specialcell{Max. \\ differences} & \specialcell{Mean abs. \\ differences} & \specialcell{SD abs. \\ differences} \\ 
+  \toprule[.1em]
+  \multirow{4}{*}{\specialcell{AUS}} & \specialcell{\textit{direct\_agg\textsubscript{median}}} & 16.53 & 0.01 & 1.00 & 0.45 & 0.27 \\ 
+  & \specialcell{\textit{direct\_agg\textsubscript{mean}}} & 23.24 & $< 0.01$ & 0.99 & 0.34 & 0.23 \\ 
+  & \specialcell{\textit{stepwise\_agg\textsubscript{median}}} & 17.90 & 0.01 & 1.00 & 0.42 & 0.26 \\ 
+  & \specialcell{\textit{stepwise\_agg\textsubscript{mean}}} & 23.24 & $< 0.01$ & 0.99 & 0.33 & 0.22 \\ 
+  & \specialcell{\textit{weighted\_agg}} & 23.24 & $< 0.01$ & 1.00 & 0.34 & 0.24 \\ 
+  \midrule
+  \multirow{4}{*}{\specialcell{NA}} & \specialcell{\textit{direct\_agg\textsubscript{median}}} & 15.33 & 0.17 & 1.00 & 0.70 & 0.26 \\ 
+  & \specialcell{\textit{direct\_agg\textsubscript{mean}}} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.26 \\ 
+  & \specialcell{\textit{stepwise\_agg\textsubscript{median}}} & 18.00 & 0.08 & 1.00 & 0.63 & 0.28 \\ 
+  & \specialcell{\textit{stepwise\_agg\textsubscript{mean}}} & 47.00 & $< 0.01$ & 1.00 & 0.30 & 0.27 \\ 
+  & \specialcell{\textit{weighted\_agg}} & 47.00 & $< 0.01$ & 1.00 & 0.31 & 0.28 \\ 
+  \bottomrule
+  \end{tabular}
+\end{table}
+\begin{minipage}{\linewidth}{\fontsize{8}{10}\selectfont
+  \centering
+  Abbreviations: Min., Minimum; Max., Maximum; abs., absolute; SD, Standard deviation; AUS, Australia; NA, North America.
+  }
+ \end{minipage}
+\end{landscape}
+
+\end{document}

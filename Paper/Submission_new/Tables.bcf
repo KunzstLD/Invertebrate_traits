@@ -2073,94 +2073,9 @@
     <bcf:datasource type="file" datatype="bibtex">Ref_invertebrate_DB.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">mcgill_rebuilding_2006</bcf:citekey>
-    <bcf:citekey order="2">statzner_perspectives_2001</bcf:citekey>
-    <bcf:citekey order="3">southwood_habitat_1977</bcf:citekey>
-    <bcf:citekey order="3">verberk_delivering_2013</bcf:citekey>
-    <bcf:citekey order="4">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="4">bonada_taxonomic_2007</bcf:citekey>
-    <bcf:citekey order="5">bhowmik_large_2015</bcf:citekey>
-    <bcf:citekey order="5">poff_developing_2010</bcf:citekey>
-    <bcf:citekey order="5">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="6">vos_taxonomic_2017</bcf:citekey>
-    <bcf:citekey order="6">gutierrez-canovasPopulationsHighvaluePredators2021</bcf:citekey>
-    <bcf:citekey order="7">beketov_spear_2009</bcf:citekey>
-    <bcf:citekey order="8">kefford_integrated_2020</bcf:citekey>
-    <bcf:citekey order="8">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
-    <bcf:citekey order="8">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
-    <bcf:citekey order="8">tomanova_trophic_2006</bcf:citekey>
-    <bcf:citekey order="8">ussegliopolatera_biological_2000</bcf:citekey>
-    <bcf:citekey order="8">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="8">gayraudInvertebrateTraitsBiomonitoring2003</bcf:citekey>
-    <bcf:citekey order="8">statznerConservationTaxonomicBiological2007</bcf:citekey>
-    <bcf:citekey order="9">bonada_taxonomic_2007</bcf:citekey>
-    <bcf:citekey order="10">ussegliopolatera_biological_2000</bcf:citekey>
-    <bcf:citekey order="11">poff_developing_2010</bcf:citekey>
-    <bcf:citekey order="12">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="13">botwe_effects_2018</bcf:citekey>
-    <bcf:citekey order="14">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="15">schafer_trait_2011</bcf:citekey>
-    <bcf:citekey order="16">brown_functional_2018</bcf:citekey>
-    <bcf:citekey order="17">statzner_reproductive_1997</bcf:citekey>
-    <bcf:citekey order="18">schmera_proposed_2015</bcf:citekey>
-    <bcf:citekey order="19">schneider_towards_2019</bcf:citekey>
-    <bcf:citekey order="20">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="20">kissling_towards_2018</bcf:citekey>
-    <bcf:citekey order="21">brown_functional_2018</bcf:citekey>
-    <bcf:citekey order="22">culp_incorporating_2011</bcf:citekey>
-    <bcf:citekey order="23">moog_comprehensive_nodate</bcf:citekey>
-    <bcf:citekey order="24">chevenet_francois_fuzzy_1994</bcf:citekey>
-    <bcf:citekey order="25">brown_functional_2018</bcf:citekey>
-    <bcf:citekey order="26">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="26">vos_taxonomic_2017</bcf:citekey>
-    <bcf:citekey order="27">aspin_extreme_2019</bcf:citekey>
-    <bcf:citekey order="27">piliere_a._f._h._importance_2016</bcf:citekey>
-    <bcf:citekey order="27">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="27">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="28">magliozzi_functional_2019</bcf:citekey>
-    <bcf:citekey order="29">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="30">piliere_a._f._h._importance_2016</bcf:citekey>
-    <bcf:citekey order="31">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="32">schmidt-kloiber_www.freshwaterecology.info_2015</bcf:citekey>
-    <bcf:citekey order="33">ussegliopolatera_biological_2000</bcf:citekey>
-    <bcf:citekey order="34">twardochleb_freshwater_nodate</bcf:citekey>
-    <bcf:citekey order="35">vieira_database_nodate</bcf:citekey>
-    <bcf:citekey order="36">polatera_personal_information_2020</bcf:citekey>
-    <bcf:citekey order="37">kefford_integrated_2020</bcf:citekey>
-    <bcf:citekey order="38">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
-    <bcf:citekey order="39">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="40">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="41">bathe_biological_2011</bcf:citekey>
-    <bcf:citekey order="42">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="43">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="44">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="45">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="46">cite_R</bcf:citekey>
-    <bcf:citekey order="47">cite_vegan</bcf:citekey>
-    <bcf:citekey order="48">kefford_integrated_2020</bcf:citekey>
-    <bcf:citekey order="49">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="50">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="51">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="52">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="53">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="53">brink_traits-based_2011</bcf:citekey>
-    <bcf:citekey order="54">garnier_towards_2017</bcf:citekey>
-    <bcf:citekey order="55">baird_toward_2011</bcf:citekey>
-    <bcf:citekey order="56">schneider_towards_2019</bcf:citekey>
-    <bcf:citekey order="57">marshall_taxonomic_2006</bcf:citekey>
-    <bcf:citekey order="57">resh_which_2008</bcf:citekey>
-    <bcf:citekey order="58">beketov_spear_2009</bcf:citekey>
-    <bcf:citekey order="59">serra_synthesising_2016</bcf:citekey>
-    <bcf:citekey order="60">monaghan_improving_2013</bcf:citekey>
-    <bcf:citekey order="61">poff_functional_2006</bcf:citekey>
-    <bcf:citekey order="61">wilkes_traitbased_2020</bcf:citekey>
-    <bcf:citekey order="62">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="63">beketov_spear_2009</bcf:citekey>
-    <bcf:citekey order="64">hoye_deep_2020</bcf:citekey>
-    <bcf:citekey order="65">polatera_personal_information_2020</bcf:citekey>
-    <bcf:citekey order="66">usseglio-polatera_biomonitoring_2000</bcf:citekey>
-    <bcf:citekey order="67">polatera_personal_information_piercer_2020</bcf:citekey>
-    <bcf:citekey order="68">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="1">polatera_personal_information_2020</bcf:citekey>
+    <bcf:citekey order="2">usseglio-polatera_biomonitoring_2000</bcf:citekey>
+    <bcf:citekey order="3">polatera_personal_information_piercer_2020</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">
@@ -2200,13 +2115,4 @@
     </bcf:sort>
   </bcf:sortingtemplate>
   <!-- DATALISTS -->
-  <bcf:datalist section="0"
-                name="apa/global//global/global"
-                type="entry"
-                sortingtemplatename="apa"
-                sortingnamekeytemplatename="global"
-                labelprefix=""
-                uniquenametemplatename="global"
-                labelalphanametemplatename="global">
-  </bcf:datalist>
 </bcf:controlfile>
