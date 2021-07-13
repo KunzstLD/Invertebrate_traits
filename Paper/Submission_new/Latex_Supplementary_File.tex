@@ -23,6 +23,18 @@
 \usepackage{etoolbox}
 \usepackage{hhline}
 \usepackage{lmodern}
+\usepackage[
+backend = biber,
+natbib,
+citestyle = authoryear,
+bibstyle = apa,
+maxcitenames = 2, 
+maxbibnames = 99, 
+uniquename=false,
+uniquelist=false
+%sorting = none % sort by name year title
+]{biblatex}
+\addbibresource{Ref_invertebrate_DB.bib}
 
 \usepackage{subfiles} % Best loaded last in the preamble
 
@@ -78,8 +90,8 @@
 \maketitle
 
 \begin{landscape}
-    \begin{longtable}{m{1.9cm}|m{3.4cm}|m{3.3cm}|m{2.7cm}|m{3cm}|m{3.6cm}|m{2.5cm}}
-        \caption{Comparison of trait definitions between invertebrate trait databases. Only traits that are differently described across databases are listed. The definition is quoted if it enables differences to be identified, otherwise the differences are described. The hyphen indicates a missing trait. Reproduction was captured in multiple grouping features per database. Hence, differences for reproduction have been described in the paper. Body form traits are not different between databases, except that the Vieira database contains the trait Bluff (blocky) which does not appear in the other databases.}
+    \begin{longtable}{m{2cm}|m{3.25cm}|m{3.2cm}|m{3.1cm}|m{2.9cm}|m{3.4cm}|m{2.4cm}}
+        \caption{Comparison of trait definition differences between invertebrate trait databases. Only traits that are differently described across databases are listed. The definition is quoted if it enables differences to be identified, otherwise the differences are described. Bullet points indicate when several traits have been used to describe a morphological or behavioural property. The hyphen indicates a missing trait. Reproduction was captured in multiple grouping features per database. Hence, differences for reproduction have been described in the paper. Body form traits are not different between databases, except that the Vieira database contains the trait Bluff (blocky) which does not appear in the other databases.}
         \label{stab:trait_definitions}
         \endfirsthead
         \toprule[.1em]
@@ -114,7 +126,10 @@
         \\ 
         \midrule
         Feeding filter-feeder & 
-        Distinguishes between active and passive &
+        \begin{itemize}
+            \item Active filter feeders
+            \item Passive filter feeders
+        \end{itemize} &
         No distinction between active and passive &
         No distinction between active and passive &
         No distinction between active and passive &
@@ -138,7 +153,7 @@
         "$> 1$ generations per year" & 
         \begin{itemize}
             \item 1-2 generations per year
-            \item bi/multivoltine
+            \item bi - or multivoltine
             \item up to 5 generations per year
             \item up to 10 generations per year
         \end{itemize}
@@ -157,7 +172,10 @@
         \end{itemize} & 
         "Adapted for "fishlike" swimming" & 
         Swimmer & 
-        Distinguishes swimmer and skater & 
+        \begin{itemize}
+            \item Swimmer
+            \item Skater
+        \end{itemize} & 
         Swimmers (water column)
         \\
         \midrule
@@ -165,7 +183,7 @@
         "Burrowing in \textit{soft} substrates or boring in \textit{hard} substrates" & 
         \begin{itemize}
             \item Burrowing "within the first centimeters of the benthic fine sediment"
-            \item Differentiates also the trait interstitial (endobenthic)
+            \item Interstitial (endobenthic)
         \end{itemize} & 
         "Inhabiting \textit{fine} sediment of streams and lakes" &
         Burrower & 
@@ -186,25 +204,49 @@
         "Crawling over the bottom substrate" & 
         Defined as crawling on the surface of floating leaves or fine sediments on the bottom & 
         - & 
-        Database contains traits crawler, 
-        sprawler, climber and clinger. &
+        \begin{itemize}
+            \item Crawler
+            \item Sprawler
+            \item Climber
+            \item Clinger
+        \end{itemize} &
         Crawlers (epibenthic) \\
         \midrule
         Locomotion sessil & 
         Does not distinguish temporarily and permanently attached & 
-        Distinguishes temporarily and permanently attached & 
+        \begin{itemize}
+            \item Temporarily attached
+            \item Permanently attached
+        \end{itemize} & 
         Does not distinguish temporarily and permanently attached & 
         Does not distinguish temporarily and permanently attached & 
-        Distinguishes temporarily and permanently attached & 
+        \begin{itemize}
+            \item Temporarily attached
+            \item Permanently attached
+        \end{itemize} & 
         Does not distinguish temporarily and permanently attached \\
         \toprule[.1em]
         Respiration plastron \& spiracle & 
         Plastron and spiracle (aerial) are two separate traits & 
         Definition includes respiration using air stores of aquatic plants & 
         Plastron and spiracle combined into one trait & 
-        Distinguishes spiracular gills, plastron, atmospheric breathers and plant breathers &
-        Plastron and spiracle (termed aerial) occur as separate and combined traits. Contains also traits: air (plants), atmospheric, and functional spiracles &
-        Distinguishes plastron and spiracle (termed aerial) \\
+        \begin{itemize}
+            \item Spiracular gills
+            \item Plastron
+            \item Atmosph. breathers
+            \item Plant breathers
+        \end{itemize} &
+        \begin{itemize}
+            \item Plastron and spiracle (termed aerial) occur as separate and combined traits
+            \item Air (plants)
+            \item Atmospheric
+            \item Functional spiracles
+        \end{itemize} &
+        \begin{itemize}
+            \item Plastron
+            \item Spiracle (termed aerial)
+        \end{itemize} 
+        \\
         \toprule[.1em]
         Body size small & 
         - &
@@ -309,6 +351,12 @@ Although trait aggregation methods were affected by phylogenetic structure and t
     \label{fig:sim_indv_runs}
   \end{figure}
 
+\paragraph*{Discussion: Comparison of aggregation methods with varying phylogenies and trait variability}
+\hfill
+\\
+
+We expected that, in addition to averaging measures, different weighting approaches to aggregation (i.e., equal weight to each taxon, equal weight to each genus, or weighted by number of species) would affect affinities for families with varying phylogenetic structure. However, we found through simulations that trait variability had a greater effect on the range of affinities (i.e., greater ranges of affinities at higher levels of variance) and on the differences in affinities between weighting approaches. In the simulation, taxonomic structural unevenness appeared to produce some variation in affinities among weighting approaches, especially for a family where one genus had a much larger number of species than its other genera. The comparison between aggregated and assigned traits showed, that the number of differing cases and the mean absolute differences in trait affinities, as well as the distributions of absolute trait affinity differences to assigned traits, were similar across the mean aggregation and across the median aggregation methods, which suggests a small influence of the weighting approach on the aggregation outcomes. The minor impact of the weighting approaches on trait aggregation might be explained by the fact that a considerable portion of taxa had low numbers of genera or species. Of the taxa that were compared from the North American trait dataset, 14 \% were identified at family and 62 \% at genus level, 52 \% comprised five or fewer genera, and 13 \% contained just one genus (Figure \ref{fig:tax_hierarchy_NOA}). In the Australian dataset, 21 \% of the compared taxa were identified at family, 40 \% at genus, and 39 \% at species level, 68 \% of the taxa contained five or fewer genera, and 40 \% just one genus (Figure \ref{fig:tax_hierarchy_AUS}). Hence, these results could change when more species-level trait information becomes available. Our findings show that the choice of aggregation method may matter less when phylogenetic structure is fairly even and traits are less variable, but the \textit{stepwise\_agg\textsubscript{median}} method tended to produce the widest range in affinities, especially with high taxonomic unevenness and high trait variability. 
+
 
 \subsubsection*{Taxonomic hierarchy in the trait datasets used for comparisons with assigned traits at family level}
 \label{sec:taxonomic_hierarchy}
@@ -374,13 +422,21 @@ Although trait aggregation methods were affected by phylogenetic structure and t
     \end{tabular}
 \end{table}
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=18.5cm, height=16cm]{boxplot_scores_combined_REMAIN_SI.png}
     \caption{RDA of traits constrained by electric conductivity for the data aggregated with \textit{direct\_agg \textsubscript{mean}}, \textit{stepwise\_agg \textsubscript{mean}}, and \textit{weighted\_agg}. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. For more details see Figure 6. %\ref{fig:boxplot_scores_on_constrained_axis}. 
     Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
     \label{fig:boxplots_scores_on_constrained_axis_REMAIN}
 \end{figure}
+
+\subsubsection*{Fourth corner analysis}
+
+We selected the ecologically relevant traits identified by \citet{szocs_effects_2014} that increased (shredder, life cycle duration $ > 1 $ year, gills, bi/multivoltine, ovoviviparity) or decreased (univoltine, eggs in clutches/cemented or fixed, life cycle duration $ <= 1$ year) with increasing salinity and used these in the fourth corner analysis. The selected traits have also reacted to salinity in other studies (but see the discussion in \citet{szocs_effects_2014}). 
+For some sites, environmental and abundance data have been sampled multiple times per year. \citet{szocs_effects_2014} used the full data and did not consider repeated sampling. We applied two analysis: one where we did not consider multiple samplings. And second where we selected, for the sites with multiple samplings, only those sampling events with the highest macroinvertebrate abundances per year and accordingly only used the conductivity data for these sampling events (this was not done for the RDA approach).Fourth corner analysis was carried out in R with the \textit{fourthcorner()} function from the ade4 package.
+With the fourth corner analysis fewer trait-conductivity relationships than with the RDA approach were detected. With the original dataset significant relationships to conductivity were found for the traits shredder and ovoviviparity. In three out of the six aggregated and harmonised datasets (\textit{direct\_agg\textsubscript{mean}}, \textit{weighted\_agg}, harmonised (not aggregated)) four to five significant relationships (for the traits shredder, univoltinism, bi/multivoltine, ovoviviparity, and aquatic oviposition) were detected. In the remaining three datasets (\textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and \textit{direct\_agg\textsubscript{median}}) two significant relationships for the traits univoltinism and bi/multivoltinism were detected. Results were only slightly different when not considering multiple samplings (original dataset: one significant trait-conductivity relationship, others three to four). For the significant trait-conductivity relationships, the classification into characteristic traits for downstream and upstream sites was consistent with the results of the RDA analysis.
+
+
 
 \subsection*{Effect of harmonisation and trait aggregation on functional diversity metrics}
 

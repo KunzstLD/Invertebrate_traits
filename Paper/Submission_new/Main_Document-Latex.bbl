@@ -428,6 +428,62 @@
       \verb http://doi.wiley.com/10.1111/j.1365-2486.2007.01375.x
       \endverb
     \endentry
+    \entry{botta-dukatTestingAbilityFunctional2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=00781e00f46b88ed88639d47893cc94c}{%
+           family={Botta-Dukát},
+           familyi={B\bibinithyphendelim D\bibinitperiod},
+           given={Zoltán},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=486274959e8d75a52735a9731216b1c8}{%
+           family={Czúcz},
+           familyi={C\bibinitperiod},
+           given={Bálint},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \strng{fullhash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \strng{bibnamehash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \strng{authorbibnamehash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \strng{authornamehash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \strng{authorfullhash}{d3b9fa9a95b91802726ad6e04b03120d}
+      \field{sortinit}{B}
+      \field{sortinithash}{276475738cc058478c1677046f857703}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The quest for ‘assembly rules’, that is the processes shaping the species composition of communities, is a central issue in community ecology. Nevertheless, so far there is no general agreement on a framework to detect assembly rules in real-life data: several key elements are still missing or heavily disputed, including the choice of the appropriate test statistic (e.g. functional diversity index) and randomization strategy for each major assembly process. Simulation studies based on artificial communities can help to explore the usefulness of different approaches in detecting assembly rules. Nevertheless, the currently dominant approach to simulate artificial communities (i.e. selecting species from a pool based solely on trait values) oversimplifies the complex processes involved in community assembly and thus fails to produce realistic patterns. Consequently, its value for testing methodologies is seriously limited. In this study, we implemented a flexible, individual-based algorithm simulating real-life community processes (individuals are born, survive, compete for resources, reproduce and die), to generate artificial species composition data. With the help of this algorithm, we estimated the type I error rates and the statistical power of five different diversity indices (FRic, Rao's quadratic entropy, FEve, the variance of functional distances, and the variance of nearest-neighbour distances) in combination with three randomization strategies (randomization of trait values in the whole data set, within-plots and within the range of trait values occurring in each plot) for detecting two underlying assembly processes (habitat filtering and limiting similarity). We also tested the influence of all adjustable simulation parameters on the simulation results in a sensitivity analysis framework. The results of the sensitivity analysis show that the individual-based simulation framework proposed here can be used for creating artificial community data with realistic pattern of trait values. Based on the results, Rao's quadratic entropy performed best for detecting both habitat filtering (trait convergence) and limiting similarity (trait divergence). Functional richness may also be suitable for detect traiting convergence. Functional evenness and variance of nearest-neighbour distances, however, should not be used for finding assembly rules.}
+      \field{annotation}{\_eprint: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.12450}
+      \field{issn}{2041-210X}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{title}{Testing the Ability of Functional Diversity Indices to Detect Trait Convergence and Divergence Using Individual-Based Simulation}
+      \field{urlday}{7}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{7}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{114\bibrangedash 126}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1111/2041-210X.12450
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/4NDD6BNZ/Botta-Dukát und Czúcz - 2016 - Testing the ability of functional diversity indice.pdf;/home/kunzst/Zotero/storage/P4F84M9L/2041-210X.html
+      \endverb
+      \verb{urlraw}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12450
+      \endverb
+      \verb{url}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.12450
+      \endverb
+      \keyw{assembly rules,functional evenness,functional richness,Rao's quadratic entropy,statistical power,type I error rate}
+    \endentry
     \entry{botwe_effects_2018}{article}{}
       \name{author}{7}{}{%
         {{hash=f76c8544a3a3ed75b5e47600bfb1667d}{%
@@ -900,6 +956,123 @@
       \verb https://setac.onlinelibrary.wiley.com/doi/abs/10.1002/ieam.128
       \endverb
     \endentry
+    \entry{doledecAccurateDescriptionAbundance2000}{article}{}
+      \name{author}{3}{}{%
+        {{hash=76af3d39bf896b1e236149b5cd268ef0}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=a3ead35159743ce5aa6d86a901aa993a}{%
+           family={Olivier},
+           familyi={O\bibinitperiod},
+           given={J.\bibnamedelimi M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=9f042a7220cab9643f2a344570a1deec}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Schweizerbart'sche Verlagsbuchhandlung}%
+      }
+      \strng{namehash}{11027773b91fc17edc268fff7b9699b2}
+      \strng{fullhash}{5a22d76244509804cf4d767372aca91c}
+      \strng{bibnamehash}{5a22d76244509804cf4d767372aca91c}
+      \strng{authorbibnamehash}{5a22d76244509804cf4d767372aca91c}
+      \strng{authornamehash}{11027773b91fc17edc268fff7b9699b2}
+      \strng{authorfullhash}{5a22d76244509804cf4d767372aca91c}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{13}
+      \field{issn}{,}
+      \field{journaltitle}{Archiv für Hydrobiologie}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{shorttitle}{Accurate Description of the Abundance of Taxa and Their Biological Traits in Stream Invertebrate Communities}
+      \field{title}{Accurate Description of the Abundance of Taxa and Their Biological Traits in Stream Invertebrate Communities: Effects of Taxonomic and Spatial Resolution.}
+      \field{urlday}{2}
+      \field{urlmonth}{7}
+      \field{urlyear}{2021}
+      \field{year}{2000}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{25\bibrangedash 43}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1127/archiv-hydrobiol/148/2000/25
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/YXX3GFRU/Accurate_description_of_the_abundance_of_taxa_and_.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.schweizerbart.de/papers/fal/detail/148/86041/Accurate_description_of_the_abundance_of_taxa_and_?af=crossref
+      \endverb
+      \verb{url}
+      \verb https://www.schweizerbart.de/papers/fal/detail/148/86041/Accurate_description_of_the_abundance_of_taxa_and_?af=crossref
+      \endverb
+    \endentry
+    \entry{doledecInvertebrateTraitsBiomonitoring2008a}{article}{}
+      \name{author}{2}{}{%
+        {{hash=247bd9697f53b72a7c553809f51265ae}{%
+           family={Dolédec},
+           familyi={D\bibinitperiod},
+           given={Sylvain},
+           giveni={S\bibinitperiod}}}%
+        {{hash=615e8a66370c723ca39c61c650ff638e}{%
+           family={Statzner},
+           familyi={S\bibinitperiod},
+           given={Bernhard},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c72c197eea721b03a13c40808b4703f}
+      \strng{fullhash}{4c72c197eea721b03a13c40808b4703f}
+      \strng{bibnamehash}{4c72c197eea721b03a13c40808b4703f}
+      \strng{authorbibnamehash}{4c72c197eea721b03a13c40808b4703f}
+      \strng{authornamehash}{4c72c197eea721b03a13c40808b4703f}
+      \strng{authorfullhash}{4c72c197eea721b03a13c40808b4703f}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{1. The power of selected biological invertebrate traits for discriminating different types of human impact (heavy metal pollution and cargo-ship traffic) were tested using ecological reasoning and linear Discriminant Function Analysis (DFA). 2. Frequency distributions of individual traits and categories of traits from 68 least impacted river reaches (LIRRs) and 304 impacted river reaches were used to define simple assessment rules based on ecological reasoning for specific impairments in large European rivers. In calibration, a maximum of three variables with a priori predictions and two different impairment threshold levels were used. Similarly, DFA was performed on the same variables included in the ecological reasoning approach, but also on all available traits or trait categories. 3. Validation with an independent data set (40 LIRRs, 291 variously impacted river reaches) and using the ecological reasoning approach showed that 75–78\% of the reaches were correctly assign with rules on all impact types, 35–57\% with rules on heavy metal pollution and 78–93\% with rules on cargo-ship traffic. By comparison, validation showed that DFA performed globally poorer than the ecological reasoning approach. In addition, the performance of the rules based on ecological reasoning remained stable, whereas DFA performance changed between calibration and validation. 4. Although not defined for this purpose, our study provided alarming evidence regarding the impact of cargo-ship traffic on invertebrate communities in river reaches. Reaches with cargo-ship traffic were found to have more genera with long life cycles that reproduce repeatedly by ovoviviparity and have a sessile life. 5. The performance of our trait-based approach to correctly assign reaches to either least impacted or impacted conditions should promote further research on the topic across larger geographic areas (without regionalization) and across smaller stream types to provide a powerful biomonitoring tool that fulfils current European Union directives.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1365-2427.2007.01924.x}
+      \field{issn}{1365-2427}
+      \field{journaltitle}{Freshwater Biology}
+      \field{langid}{english}
+      \field{number}{3}
+      \field{shorttitle}{Invertebrate Traits for the Biomonitoring of Large {{European}} Rivers}
+      \field{title}{Invertebrate Traits for the Biomonitoring of Large {{European}} Rivers: An Assessment of Specific Types of Human Impact}
+      \field{urlday}{12}
+      \field{urlmonth}{7}
+      \field{urlyear}{2021}
+      \field{volume}{53}
+      \field{year}{2008}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{617\bibrangedash 634}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1111/j.1365-2427.2007.01924.x
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/YXXCKLSR/Dolédec und Statzner - 2008 - Invertebrate traits for the biomonitoring of large.pdf;/home/kunzst/Zotero/storage/FLEXDZXS/j.1365-2427.2007.01924.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.2007.01924.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1365-2427.2007.01924.x
+      \endverb
+      \keyw{benthos,biological traits,cargo-ship traffic,heavy metal pollution,human impacts}
+    \endentry
     \entry{garnier_towards_2017}{article}{}
       \name{author}{28}{}{%
         {{hash=adce00945e25fd9866396dce1da9fb57}{%
@@ -1258,6 +1431,113 @@
       \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.05438
       \endverb
       \keyw{aquatic ecosystems,Atlantic salmon,biodiversity,brown trout,ecosystem services,Eurasian dipper,grey wagtails,predator–prey interactions}
+    \endentry
+    \entry{hamiltonLimitationsTraitbasedApproaches2020}{article}{}
+      \name{author}{12}{}{%
+        {{hash=1d370499797fb17bc1c6c7203ee58efd}{%
+           family={Hamilton},
+           familyi={H\bibinitperiod},
+           given={Anna\bibnamedelima T.},
+           giveni={A\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=3f209b50103e96ba9109945ad46237ee}{%
+           family={Schäfer},
+           familyi={S\bibinitperiod},
+           given={Ralf\bibnamedelima B.},
+           giveni={R\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=db093782b53fe16611d97193328637d5}{%
+           family={Pyne},
+           familyi={P\bibinitperiod},
+           given={Matthew\bibnamedelima I.},
+           giveni={M\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=5b999b645a1d21fd090a684421113c30}{%
+           family={Chessman},
+           familyi={C\bibinitperiod},
+           given={Bruce},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e07df93ec5dc6fd5079afe6a3776591c}{%
+           family={Kakouei},
+           familyi={K\bibinitperiod},
+           given={Karan},
+           giveni={K\bibinitperiod}}}%
+        {{hash=fbb14911cdef8c2d5e57bb5775794c40}{%
+           family={Boersma},
+           familyi={B\bibinitperiod},
+           given={Kate\bibnamedelima S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=888d839ee48789b612a0019f721acf28}{%
+           family={Verdonschot},
+           familyi={V\bibinitperiod},
+           given={Piet\bibnamedelimb F.\bibnamedelimi M.},
+           giveni={P\bibinitperiod\bibinitdelim F\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=f7082e254287e6bfb58545b126c39e0a}{%
+           family={Verdonschot},
+           familyi={V\bibinitperiod},
+           given={Ralf\bibnamedelimb C.\bibnamedelimi M.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=db5109417d155af309114819f7d0667f}{%
+           family={Mims},
+           familyi={M\bibinitperiod},
+           given={Meryl},
+           giveni={M\bibinitperiod}}}%
+        {{hash=69cd2e863542d12196e5c3151cfda39e}{%
+           family={Khamis},
+           familyi={K\bibinitperiod},
+           given={Kieran},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3fb551ec2bcbc8fdfbff60d8b21273de}{%
+           family={Bierwagen},
+           familyi={B\bibinitperiod},
+           given={Britta},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3bb53de3ae7061a57b9e13cffeba080f}{%
+           family={Stamp},
+           familyi={S\bibinitperiod},
+           given={Jen},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{039476f0d1a1855576032a23b6eeca11}
+      \strng{fullhash}{3bb6702ac8d3e88343e0ee6cf7f87840}
+      \strng{bibnamehash}{3bb6702ac8d3e88343e0ee6cf7f87840}
+      \strng{authorbibnamehash}{3bb6702ac8d3e88343e0ee6cf7f87840}
+      \strng{authornamehash}{039476f0d1a1855576032a23b6eeca11}
+      \strng{authorfullhash}{3bb6702ac8d3e88343e0ee6cf7f87840}
+      \field{sortinit}{H}
+      \field{sortinithash}{5f15a7bc777ad49ff15aa4d2831b1681}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The appeal of trait-based approaches for assessing environmental vulnerabilities arises from the potential insight they provide into the mechanisms underlying the changes in populations and community structure. Traits can provide ecologically based explanations for observed responses to environmental changes, along with predictive power gained by developing relationships between traits and environmental variables. Despite these potential benefits, questions remain regarding the utility and limitations of these approaches, which we explore focusing on the following questions: (a) How reliable are predictions of biotic responses to changing conditions based on single trait–environment relationships? (b) What factors constrain detection of single trait–environment relationships, and how can they be addressed? (c) Can we use information on meta-community processes to reveal conditions when assumptions underlying trait-based studies are not met? We address these questions by reviewing published literature on aquatic invertebrate communities from stream ecosystems. Our findings help to define factors that influence the successful application of trait-based approaches in addressing the complex, multifaceted effects of changing climate conditions on hydrologic and thermal regimes in stream ecosystems. Key conclusions are that observed relationships between traits and environmental stressors are often inconsistent with predefined hypotheses derived from current trait-based thinking, particularly related to single trait–environment relationships. Factors that can influence findings of trait-based assessments include intercorrelations of among traits and among environmental variables, spatial scale, strength of biotic interactions, intensity of habitat disturbance, degree of abiotic stress, and methods of trait characterization. Several recommendations are made for practice and further study to address these concerns, including using phylogenetic relatedness to address intercorrelation. With proper consideration of these issues, trait-based assessment of organismal vulnerability to environmental changes can become a useful tool to conserve threatened populations into the future.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/gcb.14846}
+      \field{issn}{1365-2486}
+      \field{journaltitle}{Global Change Biology}
+      \field{langid}{english}
+      \field{number}{2}
+      \field{shorttitle}{Limitations of Trait-Based Approaches for Stressor Assessment}
+      \field{title}{Limitations of Trait-Based Approaches for Stressor Assessment: {{The}} Case of Freshwater Invertebrates and Climate Drivers}
+      \field{urlday}{27}
+      \field{urlmonth}{7}
+      \field{urlyear}{2020}
+      \field{volume}{26}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{364\bibrangedash 379}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1111/gcb.14846
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/93UYWAGD/Hamilton et al. - 2020 - Limitations of trait-based approaches for stressor.pdf;/home/kunzst/Zotero/storage/5EX5AX3Q/gcb.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.14846
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/gcb.14846
+      \endverb
+      \keyw{bioassessment,climate stressor responses,freshwater invertebrates,invertebrate traits,stressor assessment,trait-based assessment}
     \endentry
     \entry{hoye_deep_2020}{article}{}
       \name{author}{10}{}{%
@@ -1627,6 +1907,58 @@
       \verb https://www.nature.com/articles/s41559-018-0667-3
       \endverb
     \endentry
+    \entry{maasriGlobalUnifiedTrait2019}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4f8087312ffad7066c54456570dd6222}{%
+           family={Maasri},
+           familyi={M\bibinitperiod},
+           given={Alain},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Frontiers}%
+      }
+      \strng{namehash}{4f8087312ffad7066c54456570dd6222}
+      \strng{fullhash}{4f8087312ffad7066c54456570dd6222}
+      \strng{bibnamehash}{4f8087312ffad7066c54456570dd6222}
+      \strng{authorbibnamehash}{4f8087312ffad7066c54456570dd6222}
+      \strng{authornamehash}{4f8087312ffad7066c54456570dd6222}
+      \strng{authorfullhash}{4f8087312ffad7066c54456570dd6222}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{A Global and Unified Trait Database for Aquatic Macroinvertebrates: The Missing Piece in a Global Approach}
+      \field{issn}{2296-665X}
+      \field{journaltitle}{Frontiers in Environmental Science}
+      \field{langid}{english}
+      \field{shortjournal}{Front. Environ. Sci.}
+      \field{shorttitle}{A {{Global}} and {{Unified Trait Database}} for {{Aquatic Macroinvertebrates}}}
+      \field{title}{A {{Global}} and {{Unified Trait Database}} for {{Aquatic Macroinvertebrates}}: {{The Missing Piece}} in a {{Global Approach}}}
+      \field{urlday}{7}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.3389/fenvs.2019.00065
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/LT2TAH8U/Maasri - 2019 - A Global and Unified Trait Database for Aquatic Ma.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.frontiersin.org/articles/10.3389/fenvs.2019.00065/full
+      \endverb
+      \verb{url}
+      \verb https://www.frontiersin.org/articles/10.3389/fenvs.2019.00065/full
+      \endverb
+      \keyw{aquatic ecosystems,functional ecology,macroinvertebrates,Nearctic fauna,Palearctic fauna,Traits}
+    \endentry
     \entry{magliozzi_functional_2019}{article}{}
       \name{author}{4}{}{%
         {{hash=6b917d2089bd43bd28ced75a60a3f87a}{%
@@ -1795,6 +2127,68 @@
       \verb{url}
       \verb http://www.sciencedirect.com/science/article/pii/S0169534706000334
       \endverb
+    \endentry
+    \entry{millerFunctionalTraitsCommunity2019}{article}{}
+      \name{author}{3}{}{%
+        {{hash=43abf9b7a507dee6f6888aba6b3bc962}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Jesse\bibnamedelimb E.\bibnamedelimi D.},
+           giveni={J\bibinitperiod\bibinitdelim E\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=ffdbb49f3a81ea1091227f7c74893594}{%
+           family={Damschen},
+           familyi={D\bibinitperiod},
+           given={Ellen\bibnamedelima I.},
+           giveni={E\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=2af20caa5f73a31ce458842551805cc6}{%
+           family={Ives},
+           familyi={I\bibinitperiod},
+           given={Anthony\bibnamedelima R.},
+           giveni={A\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{435afba0dcd686de8ac69cc5d41a46db}
+      \strng{fullhash}{5cb08af87f63a11c8d8706e18ec5e602}
+      \strng{bibnamehash}{5cb08af87f63a11c8d8706e18ec5e602}
+      \strng{authorbibnamehash}{5cb08af87f63a11c8d8706e18ec5e602}
+      \strng{authornamehash}{435afba0dcd686de8ac69cc5d41a46db}
+      \strng{authorfullhash}{5cb08af87f63a11c8d8706e18ec5e602}
+      \field{sortinit}{M}
+      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Of the several approaches that are used to analyse functional trait–environment relationships, the most popular is community-weighted mean regressions (CWMr) in which species trait values are averaged at the site level and then regressed against environmental variables. Other approaches include model-based methods and weighted correlations of different metrics of trait–environment associations, the best known of which is the fourth-corner correlation method. We investigated these three general statistical approaches for trait–environment associations: CWMr, five weighted correlation metrics (Peres-Neto, Dray, \& ter Braak, Ecography, 40, 806–816, 2017), and two multilevel models (MLM) using four different methods for computing p-values. We first compared the methods applied to a plant community dataset. To determine the validity of the statistical conclusions, we then performed a simulation study. CWMr gave highly significant associations for both traits, whereas the other methods gave a mix of support. CWMr had inflated type I errors for some simulation scenarios, implying that the significant results for the data could be spurious. The weighted correlation methods had generally good type I error control but had low power. One of the multilevel models, that from Jamil, Ozinga, Kleyer, and ter Braak (Journal of Vegetation Science, 24, 988–1000, 2013) had both good type I error control and high power when an appropriate method was used to obtain p-values. In particular, if there was no correlation among species in their abundances among sites, a parametric bootstrap likelihood ratio test (LRT) gave the best power. When there was correlation among species in their abundances, a conditional parametric LRT had correct type I errors but had lower power. There is no overall best method for identifying trait–environment associations. For the simple task of testing associations between single environmental variables and single traits, the weighted correlations with permutation tests all had good type I error control, and their ease of implementation is an advantage. For the more complex task of multivariate analyses and model fitting, and when high statistical power is needed, we recommend MLM2 (Jamil et al., 2013). However, care must be taken to ensure against inflated type I errors for both weighted correlations and MLM2. Because CWMr exhibited highly inflated type I error rates, it should always be avoided.}
+      \field{annotation}{\_eprint: https://besjournals.onlinelibrary.wiley.com/doi/pdf/10.1111/2041-210X.13119}
+      \field{issn}{2041-210X}
+      \field{journaltitle}{Methods in Ecology and Evolution}
+      \field{langid}{english}
+      \field{number}{3}
+      \field{shorttitle}{Functional Traits and Community Composition}
+      \field{title}{Functional Traits and Community Composition: {A} Comparison among Community-Weighted Means, Weighted Correlations, and Multilevel Models}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{10}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{415\bibrangedash 425}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/2041-210X.13119
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/E3WCEYNC/Miller et al. - 2019 - Functional traits and community composition A com.pdf;/home/kunzst/Zotero/storage/E2XYC6SZ/2041-210X.html
+      \endverb
+      \verb{urlraw}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13119
+      \endverb
+      \verb{url}
+      \verb https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13119
+      \endverb
+      \keyw{community assembly,ecological community,environmental gradients,fourth-corner approach,generalized linear mixed models,hierarchical models,species niche centroid,Whittaker Siskiyou Mountains data}
     \endentry
     \entry{monaghan_improving_2013}{article}{}
       \name{author}{2}{}{%
@@ -1976,6 +2370,69 @@
       \endverb
       \verb{url}
       \verb https://CRAN.R-project.org/package=vegan
+      \endverb
+    \endentry
+    \entry{peres-netoLinkingTraitVariation2017}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4a9e07d1b30143d0e1fc5a912631385c}{%
+           family={Peres-Neto},
+           familyi={P\bibinithyphendelim N\bibinitperiod},
+           given={Pedro\bibnamedelima R.},
+           giveni={P\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=410c458dcf6233767a04242aefc8eac8}{%
+           family={Dray},
+           familyi={D\bibinitperiod},
+           given={Stéphane},
+           giveni={S\bibinitperiod}}}%
+        {{hash=d1cc91171e0de51ffc13a35f1837ad79}{%
+           family={Braak},
+           familyi={B\bibinitperiod},
+           given={Cajo\bibnamedelimb J.\bibnamedelimi F.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim F\bibinitperiod},
+           prefix={ter},
+           prefixi={t\bibinitperiod}}}%
+      }
+      \strng{namehash}{711d8bd8c338b7a9335e0a3544251379}
+      \strng{fullhash}{b0b5cf9289239a072d293f9815a5162a}
+      \strng{bibnamehash}{b0b5cf9289239a072d293f9815a5162a}
+      \strng{authorbibnamehash}{b0b5cf9289239a072d293f9815a5162a}
+      \strng{authornamehash}{711d8bd8c338b7a9335e0a3544251379}
+      \strng{authorfullhash}{b0b5cf9289239a072d293f9815a5162a}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Establishing trait–environment relationships has become routine in community ecology. Here, we demonstrate that the community weighted means correlation (CWM) and its parallel approach in linking trait variation to the environment, the species niche centroid correlation (SNC), have important shortcomings, arguing against their continuing application. Using mathematical derivations and simulations, we show that the two major issues are inconsistent parameter estimation and unacceptable significance rates when only the environment or only traits are structuring species distributions, but they themselves are not linked. We show how both CWM and SNC are related to the fourth-corner correlation and propose to replace all by the Chessel fourth-corner correlation, which is the fourth-corner correlation divided by its maximum attainable value. We propose an appropriate hypothesis testing procedure that is not only unbiased but also has much greater statistical power in detecting trait–environmental relationships. We derive an additive framework in which trait variation is partitioned among and within communities, which can be then modeled against the environment. We finish by presenting a contrast between methods and an application of our proposed framework across 85 lake-fish metacommunities.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/ecog.02302}
+      \field{issn}{1600-0587}
+      \field{journaltitle}{Ecography}
+      \field{langid}{english}
+      \field{number}{7}
+      \field{shorttitle}{Linking Trait Variation to the Environment}
+      \field{title}{Linking Trait Variation to the Environment: Critical Issues with Community-Weighted Mean Correlation Resolved by the Fourth-Corner Approach}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{volume}{40}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{806\bibrangedash 816}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/ecog.02302
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/D658NHJ7/Peres-Neto et al. - 2017 - Linking trait variation to the environment critic.pdf;/home/kunzst/Zotero/storage/SHRAVPN4/ecog.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.02302
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/ecog.02302
       \endverb
     \endentry
     \entry{Philips_and_Smith_NZ_DB_2018}{article}{}

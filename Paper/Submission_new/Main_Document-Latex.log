@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  28 JUN 2021 22:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  13 JUL 2021 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1186,11 +1186,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6] [7] [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 169.
+(Font)              <12> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 169.
+(Font)              <8> on input line 171.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 169.
+(Font)              <6> on input line 171.
  [10] [11] (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Flowchart/Flowchart_methods.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytrees.code.tex
 File: tikzlibrarytrees.code.tex 2008/02/24 v3.0.1a (rcs-revision 1.2)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
@@ -1239,11 +1239,11 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <12> not available
 ) [12] [13]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 186.
+(caption)                particular \caption on input line 188.
 See the caption package documentation for explanation.
 
-[14] [15] [16] [17]
-<Figures/Deviances_trait_agg_combined.png, id=239, 682.7106pt x 483.4863pt>
+[14] [15] [16] [17] [18]
+<Figures/Deviances_trait_agg_combined.png, id=260, 682.7106pt x 483.4863pt>
 File: Figures/Deviances_trait_agg_combined.png Graphic file (type png)
 <use Figures/Deviances_trait_agg_combined.png>
 Package pdftex.def Info: Figures/Deviances_trait_agg_combined.png  used on input line 253.
@@ -1253,8 +1253,8 @@ Overfull \hbox (39.47235pt too wide) in paragraph at lines 253--254
  [][] 
  []
 
-[18] [19 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Deviances_trait_agg_combined.png (PNG copy)>] [20]
-<Figures/Species_scores_rda.png, id=272, 625.8582pt x 341.3553pt>
+[19] [20 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Deviances_trait_agg_combined.png (PNG copy)>] [21]
+<Figures/Species_scores_rda.png, id=293, 625.8582pt x 341.3553pt>
 File: Figures/Species_scores_rda.png Graphic file (type png)
 <use Figures/Species_scores_rda.png>
 Package pdftex.def Info: Figures/Species_scores_rda.png  used on input line 272.
@@ -1264,7 +1264,7 @@ Overfull \hbox (39.47382pt too wide) in paragraph at lines 272--273
  [][] 
  []
 
-<Figures/boxplot_scores_combined.png, id=275, 782.4432pt x 625.8582pt>
+<Figures/boxplot_scores_combined.png, id=296, 782.4432pt x 625.8582pt>
 File: Figures/boxplot_scores_combined.png Graphic file (type png)
 <use Figures/boxplot_scores_combined.png>
 Package pdftex.def Info: Figures/boxplot_scores_combined.png  used on input line 279.
@@ -1274,206 +1274,256 @@ Overfull \hbox (53.6844pt too wide) in paragraph at lines 279--280
  [][] 
  []
 
-[21 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Species_scores_rda.png>]
+[22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Species_scores_rda.png>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 282.
 See the caption package documentation for explanation.
 
-[22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/boxplot_scores_combined.png (PNG copy)>] [23] [24] [25] [26] [27] [28] [29]
-Overfull \hbox (0.832pt too wide) in paragraph at lines 338--339
+[23 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/boxplot_scores_combined.png (PNG copy)>] [24] [25] [26] [27] [28] [29] [30]
+Overfull \hbox (0.832pt too wide) in paragraph at lines 332--333
 \OT1/lmr/m/n/12 New Zealand are de-posited in the Github repos-i-tory: []$https : / / github . com / KunzstLD /
  []
 
-[30] [31] [32] [33] [34] [35] [36] [37] [38]
-Overfull \hbox (103.18144pt too wide) in alignment at lines 361--364
+[31] [32] [33] [34] [35] [36] [37] [38] [39]
+Overfull \hbox (103.18144pt too wide) in alignment at lines 355--358
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--368
+Underfull \hbox (badness 10000) in paragraph at lines 362--362
 []|\OT1/lmr/m/n/12 Feeding
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 371.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 365.
 (/usr/share/texmf/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 371.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 365.
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 365--366
 []\OT1/lmr/m/n/12 Carvers, en-
  []
 
 
-Underfull \hbox (badness 4193) in paragraph at lines 371--372
+Underfull \hbox (badness 4193) in paragraph at lines 365--366
 \OT1/lmr/m/n/12 gulfers & swal-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 []\OT1/lmr/m/n/12 Piercers (plants
  []
 
 
-Underfull \hbox (badness 4254) in paragraph at lines 372--373
+Underfull \hbox (badness 4254) in paragraph at lines 366--367
 \OT1/lmr/m/n/12 & an-i-mals) are
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 366--367
 \OT1/lmr/m/n/12 an ad-di-tional
  []
 
 
-Underfull \hbox (badness 6268) in paragraph at lines 377--377
+Underfull \hbox (badness 6268) in paragraph at lines 371--371
 []|\OT1/lmr/m/n/12 Piercer &
  []
 
 
-Overfull \hbox (3.63763pt too wide) in paragraph at lines 381--381
+Overfull \hbox (3.63763pt too wide) in paragraph at lines 375--375
 []|\OT1/lmr/m/n/12 Locomotion
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 []\OT1/lmr/m/n/12 Passive move-
  []
 
 
-Underfull \hbox (badness 3098) in paragraph at lines 383--384
+Underfull \hbox (badness 3098) in paragraph at lines 377--378
 \OT1/lmr/m/n/12 ing or drift-ing
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 \OT1/lmr/m/n/12 (trait swim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 []\OT1/lmr/m/n/12 Active
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 \OT1/lmr/m/n/12 move-ment
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 \OT1/lmr/m/n/12 (trait swim-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 387--388
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 []\OT1/lmr/m/n/12 Surface swim-
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 387--388
+Underfull \hbox (badness 3965) in paragraph at lines 381--382
 \OT1/lmr/m/n/12 mers (over and
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--392
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
 []|\OT1/lmr/m/n/12 Traits
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 392--392
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
 \OT1/lmr/m/n/12 swim-mer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 []|\OT1/lmr/m/n/12 Swimmers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 393--395
+Underfull \hbox (badness 10000) in paragraph at lines 387--389
 \OT1/lmr/m/n/12 (wa-ter
  []
 
 
-Overfull \hbox (103.18144pt too wide) in alignment at lines 364--396
+Overfull \hbox (103.18144pt too wide) in alignment at lines 358--390
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 396
+Underfull \vbox (badness 10000) detected at line 390
  []
 
-[39
+[40
 
-] [40]
-Overfull \hbox (3.27715pt too wide) in alignment at lines 400--402
+] [41]
+Overfull \hbox (3.27715pt too wide) in alignment at lines 394--396
  [] [] [] 
  []
 
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 408.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 402.
 (/usr/share/texmf/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <12> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 408.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 402.
 
-Overfull \hbox (7.89568pt too wide) in paragraph at lines 416--417
+Overfull \hbox (7.89568pt too wide) in paragraph at lines 410--411
 []|[]| 
  []
 
 
-Overfull \hbox (1.92027pt too wide) in paragraph at lines 420--421
+Overfull \hbox (1.92027pt too wide) in paragraph at lines 414--415
 []|[]| 
  []
 
 
-Overfull \hbox (3.27715pt too wide) in alignment at lines 402--423
+Overfull \hbox (3.27715pt too wide) in alignment at lines 396--417
  [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 423
+Underfull \vbox (badness 10000) detected at line 417
  []
 
-[41
+[42
 
 ]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 425.
+(Font)              <5> on input line 419.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 424--430
-[]$[]$ 
- []
-
-[42]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 448--453
-[]$[]$ 
- []
-
-
-Overfull \hbox (18.38681pt too wide) in paragraph at lines 461--471
- [][] 
- []
-
-
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 472--477
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 418--424
 []$[]$ 
  []
 
 [43]
-Overfull \hbox (32.04999pt too wide) in alignment at lines 480--482
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 442--447
+[]$[]$ 
+ []
+
+
+Overfull \hbox (18.38681pt too wide) in paragraph at lines 455--465
+ [][] 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 466--471
+[]$[]$ 
+ []
+
+[44]
+Overfull \hbox (32.04999pt too wide) in alignment at lines 474--476
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 485--486
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
 []|\OT1/lmr/m/n/12 New
  []
 
 
-Overfull \hbox (3.35902pt too wide) in paragraph at lines 487--487
+Overfull \hbox (3.35902pt too wide) in paragraph at lines 481--481
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 481--481
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.44865pt too wide) in paragraph at lines 481--481
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 481--482
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 483--483
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.44865pt too wide) in paragraph at lines 483--483
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 483--484
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.35902pt too wide) in paragraph at lines 485--485
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 485--485
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.73311pt too wide) in paragraph at lines 485--485
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.80266pt too wide) in paragraph at lines 485--486
 []|[]| 
  []
 
@@ -1493,12 +1543,22 @@ Overfull \hbox (3.80266pt too wide) in paragraph at lines 487--488
  []
 
 
+Overfull \hbox (4.42503pt too wide) in paragraph at lines 489--489
+[]|[]| 
+ []
+
+
 Overfull \hbox (3.80266pt too wide) in paragraph at lines 489--489
 []|[]| 
  []
 
 
-Overfull \hbox (3.44865pt too wide) in paragraph at lines 489--489
+Overfull \hbox (3.73311pt too wide) in paragraph at lines 489--489
+[]|[]| 
+ []
+
+
+Overfull \hbox (3.73311pt too wide) in paragraph at lines 489--489
 []|[]| 
  []
 
@@ -1508,17 +1568,7 @@ Overfull \hbox (3.80266pt too wide) in paragraph at lines 489--490
  []
 
 
-Overfull \hbox (3.35902pt too wide) in paragraph at lines 491--491
-[]|[]| 
- []
-
-
 Overfull \hbox (3.80266pt too wide) in paragraph at lines 491--491
-[]|[]| 
- []
-
-
-Overfull \hbox (3.73311pt too wide) in paragraph at lines 491--491
 []|[]| 
  []
 
@@ -1528,116 +1578,66 @@ Overfull \hbox (3.80266pt too wide) in paragraph at lines 491--492
  []
 
 
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 493--493
-[]|[]| 
- []
-
-
-Overfull \hbox (3.44865pt too wide) in paragraph at lines 493--493
-[]|[]| 
- []
-
-
 Overfull \hbox (3.80266pt too wide) in paragraph at lines 493--494
 []|[]| 
  []
 
 
-Overfull \hbox (4.42503pt too wide) in paragraph at lines 495--495
-[]|[]| 
- []
-
-
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 495--495
-[]|[]| 
- []
-
-
-Overfull \hbox (3.73311pt too wide) in paragraph at lines 495--495
-[]|[]| 
- []
-
-
-Overfull \hbox (3.73311pt too wide) in paragraph at lines 495--495
-[]|[]| 
- []
-
-
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 495--496
-[]|[]| 
- []
-
-
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 497--497
-[]|[]| 
- []
-
-
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 497--498
-[]|[]| 
- []
-
-
-Overfull \hbox (3.80266pt too wide) in paragraph at lines 499--500
-[]|[]| 
- []
-
-
-Overfull \hbox (32.04999pt too wide) in alignment at lines 482--501
+Overfull \hbox (32.04999pt too wide) in alignment at lines 476--495
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \vbox (badness 10000) detected at line 501
+Underfull \vbox (badness 10000) detected at line 495
  []
 
-[44
+[45
 
 ]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 502--508
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 496--502
 []$[]$ 
  []
 
-[45]
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 534--539
+[46]
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 528--533
 []$[]$ 
- []
-
-[46
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 545--547
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 550--552
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 555--557
-
  []
 
 [47
 
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 560--570
+Underfull \hbox (badness 10000) in paragraph at lines 539--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 573--575
+Underfull \hbox (badness 10000) in paragraph at lines 544--546
 
  []
 
-[48] [49]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 581.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 581.
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--551
+
+ []
+
+[48
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 554--564
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 567--569
+
+ []
+
+[49] [50]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Main_Document-Latex.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 581.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 575.
 
 
  *File List*
@@ -1775,27 +1775,27 @@ Figures/boxplot_scores_combined.png
   omllmr.fd    2009/10/30 v1.6 Font defs for Latin Modern
  ***********
 
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 581.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
 Package rerunfilecheck Info: File `Main_Document-Latex.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Main_Document-Latex.run.xml'.
 \openout1 = `Main_Document-Latex.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 581.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
  ) 
 Here is how much of TeX's memory you used:
- 27474 strings out of 492982
- 536760 string characters out of 6134895
- 992197 words of memory out of 5000000
- 30428 multiletter control sequences out of 15000+600000
+ 27547 strings out of 492982
+ 539372 string characters out of 6134895
+ 1019743 words of memory out of 5000000
+ 30493 multiletter control sequences out of 15000+600000
  70891 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,22n,70p,3672b,2265s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmss8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Main_Document-Latex.pdf (49 pages, 1582169 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Main_Document-Latex.pdf (50 pages, 1585788 bytes).
 PDF statistics:
- 603 PDF objects out of 1000 (max. 8388607)
- 523 compressed objects within 6 object streams
- 141 named destinations out of 1000 (max. 500000)
+ 636 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 149 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
