@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  13 JUL 2021 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.10.12)  14 JUL 2021 19:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2017,66 +2017,218 @@ Overfull \hbox (96.37538pt too wide) in paragraph at lines 427--429
  []
 
 [22 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/boxplot_scores_combined_REMAIN_SI.png (PNG copy)>]
-<Figures/Correlation_fd_metrics_FRic.png, id=142, 711.1368pt x 483.4863pt>
-File: Figures/Correlation_fd_metrics_FRic.png Graphic file (type png)
-<use Figures/Correlation_fd_metrics_FRic.png>
-Package pdftex.def Info: Figures/Correlation_fd_metrics_FRic.png  used on input line 445.
-(pdftex.def)             Requested size: 483.69684pt x 341.44069pt.
+Overfull \hbox (0.6198pt too wide) in paragraph at lines 439--440
+\OT1/lmr/m/n/12 vivipar-ity), other datasets two to four, Ta-ble []S4[]). For all sig-nif-i-cant trait-conductivity
+ []
 
-Overfull \hbox (53.69221pt too wide) in paragraph at lines 445--446
- [][] 
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 441--444
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.35728pt too wide) in paragraph at lines 446--446
+[]|\OT1/lmr/m/n/12 Std.Obs| 
+ []
+
+
+Overfull \hbox (11.01022pt too wide) in paragraph at lines 446--447
+[]|\OT1/lmr/m/n/12 Pvalue.adj| 
+ []
+
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 444--467
+ [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 467
  []
 
 [23]
-<Figures/Correlation_fd_metrics_FDiv.png, id=149, 711.1368pt x 483.4863pt>
+Overfull \hbox (75.60898pt too wide) in alignment at lines 467--487
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 488--488
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 489--489
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 490--490
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 491--491
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 492--492
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 493--493
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 494--494
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 495--495
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 487--505
+ [] [] [] [] [] [] 
+ []
+
+[24] [25]
+Overfull \hbox (75.60898pt too wide) in alignment at lines 508--511
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (1.35728pt too wide) in paragraph at lines 513--513
+[]|\OT1/lmr/m/n/12 Std.Obs| 
+ []
+
+
+Overfull \hbox (11.01022pt too wide) in paragraph at lines 513--514
+[]|\OT1/lmr/m/n/12 Pvalue.adj| 
+ []
+
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 511--534
+ [] [] [] [] [] [] 
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 534
+ []
+
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 534--554
+ [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 555--555
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 556--556
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 557--557
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 558--558
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 559--559
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 560--560
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 561--561
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (2.71046pt too wide) in paragraph at lines 562--562
+[]|\OT1/lmr/m/n/12 not[]aggregated| 
+ []
+
+
+Overfull \hbox (75.60898pt too wide) in alignment at lines 554--572
+ [] [] [] [] [] [] 
+ []
+
+[26] [27] [28]
+<Figures/Correlation_fd_metrics_FRic.png, id=174, 711.1368pt x 483.4863pt>
+File: Figures/Correlation_fd_metrics_FRic.png Graphic file (type png)
+<use Figures/Correlation_fd_metrics_FRic.png>
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FRic.png  used on input line 581.
+(pdftex.def)             Requested size: 483.69684pt x 341.44069pt.
+
+Overfull \hbox (53.69221pt too wide) in paragraph at lines 581--582
+ [][] 
+ []
+
+<Figures/Correlation_fd_metrics_FDiv.png, id=175, 711.1368pt x 483.4863pt>
 File: Figures/Correlation_fd_metrics_FDiv.png Graphic file (type png)
 <use Figures/Correlation_fd_metrics_FDiv.png>
-Package pdftex.def Info: Figures/Correlation_fd_metrics_FDiv.png  used on input line 452.
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FDiv.png  used on input line 588.
 (pdftex.def)             Requested size: 483.69684pt x 341.44069pt.
 
-Overfull \hbox (53.69221pt too wide) in paragraph at lines 452--453
+Overfull \hbox (53.69221pt too wide) in paragraph at lines 588--589
  [][] 
  []
 
-<Figures/Correlation_fd_metrics_FEve.png, id=150, 711.1368pt x 483.4863pt>
+<Figures/Correlation_fd_metrics_FEve.png, id=176, 711.1368pt x 483.4863pt>
 File: Figures/Correlation_fd_metrics_FEve.png Graphic file (type png)
 <use Figures/Correlation_fd_metrics_FEve.png>
-Package pdftex.def Info: Figures/Correlation_fd_metrics_FEve.png  used on input line 459.
+Package pdftex.def Info: Figures/Correlation_fd_metrics_FEve.png  used on input line 595.
 (pdftex.def)             Requested size: 483.69684pt x 341.44069pt.
 
-Overfull \hbox (53.69221pt too wide) in paragraph at lines 459--460
+Overfull \hbox (53.69221pt too wide) in paragraph at lines 595--596
  [][] 
  []
 
-[24 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FRic.png (PNG copy)>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 465.
- [25 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FDiv.png (PNG copy)>] [26 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FEve.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 465.
+[29 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FRic.png (PNG copy)>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 601.
+ [30 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FDiv.png (PNG copy)>] [31 </home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Figures/Correlation_fd_metrics_FEve.png (PNG copy)>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 601.
  (/home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 465.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 465.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 601.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 601.
 Package rerunfilecheck Info: File `Latex_Supplementary_File.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'Latex_Supplementary_File.run.xml'.
 \openout1 = `Latex_Supplementary_File.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 465.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 601.
  ) 
 Here is how much of TeX's memory you used:
- 24888 strings out of 492982
- 464140 string characters out of 6134895
- 975789 words of memory out of 5000000
- 27997 multiletter control sequences out of 15000+600000
+ 24899 strings out of 492982
+ 464249 string characters out of 6134895
+ 976350 words of memory out of 5000000
+ 28001 multiletter control sequences out of 15000+600000
  46651 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,18n,54p,2355b,869s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{cite.0@szocs_effects_2014} has been referenced but does not exist, replaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmri8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.pdf (26 pages, 3077975 bytes).
+Output written on /home/kunzst/Dokumente/Projects/Trait_DB/Invertebrate_traits/Paper/Submission_new/Latex_Supplementary_File.pdf (31 pages, 3090392 bytes).
 PDF statistics:
- 221 PDF objects out of 1000 (max. 8388607)
- 169 compressed objects within 2 object streams
- 49 named destinations out of 1000 (max. 500000)
+ 247 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
+ 56 named destinations out of 1000 (max. 500000)
  63 words of extra memory for PDF output out of 10000 (max. 10000000)
 
