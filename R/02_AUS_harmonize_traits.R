@@ -19,25 +19,42 @@ Trait_AUS <- readRDS(
 # volt_uni
 # volt_bi_multi
 # _________________________________________________________________________ 
-Trait_AUS[, volt_semi := apply(.SD, 1, max),
+Trait_AUS[, volt_semi := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Voltinism_less_than_1_VicEPA",
                       "Volt1_botwe",
                       "volt1_Maxwell",
                       "Less_than_one_generation_per_year_Schaefer",
                       "Less_than_one_generation_per_year_bugs_gbr")]
-Trait_AUS[, volt_uni := apply(.SD, 1, max),
+Trait_AUS[, volt_uni := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Voltinism_1_VicEPA",
                       "Volt2_botwe",
                       "One_generation_per_year_bugs_gbr", 
                       "One_generation_per_year_Schaefer")]
-Trait_AUS[, volt_bi_multi := apply(.SD, 1, max),
+# Trait_AUS[, volt_bi_multi := apply(.SD, 1, max),
+#           .SDcols = c("Voltinism_2_VicEPA",
+#                       "Volt3_botwe",
+#                       "volt2_Maxwell",
+#                       "volt3_Maxwell",
+#                       "volt4_Maxwell",
+#                       "More_than_two_generations_per_year_bugs_gbr", 
+#                       "More_than_two_generations_per_year_Schaefer")]
+Trait_AUS[, volt_bi_multi_maxwell := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("volt2_Maxwell",
+                      "volt3_Maxwell",
+                      "volt4_Maxwell")]
+Trait_AUS[, volt_bi_multi_schaefer := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Two_generations_per_year_Schaefer",
+                      "More_than_two_generations_per_year_Schaefer")]
+Trait_AUS[, volt_bi_multi_gbr := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Two_generations_per_year_bugs_gbr",
+                      "More_than_two_generations_per_year_bugs_gbr")]
+Trait_AUS[, volt_bi_multi := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Voltinism_2_VicEPA",
                       "Volt3_botwe",
-                      "volt2_Maxwell",
-                      "volt3_Maxwell",
-                      "volt4_Maxwell",
-                      "More_than_two_generations_per_year_bugs_gbr", 
-                      "More_than_two_generations_per_year_Schaefer")]
+                      "volt_bi_multi_maxwell",
+                      "volt_bi_multi_schaefer",
+                      "volt_bi_multi_gbr")]
+
 Trait_AUS[, c(
   "Voltinism_less_than_1_VicEPA",
   "Volt1_botwe",
@@ -55,7 +72,10 @@ Trait_AUS[, c(
   "volt4_Maxwell",
   "Voltinism_more_than_2_VicEPA",
   "More_than_two_generations_per_year_bugs_gbr", 
-  "More_than_two_generations_per_year_Schaefer"
+  "More_than_two_generations_per_year_Schaefer",
+  "volt_bi_multi_schaefer",
+  "volt_bi_multi_gbr",
+  "volt_bi_multi_maxwell"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -100,7 +120,7 @@ setnames(
 # as Piercers (piere prey tissues and suck fluids) 
 # Herbivore: Insects that scrape algae, shred or pierce living aquatic plants
 # _________________________________________________________________________ 
-Trait_AUS[, feed_shredder := apply(.SD, 1, max),
+Trait_AUS[, feed_shredder := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feeding_shredder_Marchant",
                       "Feeding_shredders_VicEPA",
                       "feeding_shredder_maxwell",
@@ -110,28 +130,40 @@ Trait_AUS[, feed_shredder := apply(.SD, 1, max),
                       "Shredder_proportion_of_feeding_fam_Chessman2017",
                       "Shredder_proportion_of_feeding_gen_Chessman2017"
           )]
-Trait_AUS[, feed_gatherer := apply(.SD, 1, max),
+Trait_AUS[, feed_gatherer := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feeding_detritivore_Marchant",
                       "feeding_collector_maxwell",
                       "Trop_collector_gatherer_botwe",
                       "Gatherer_proportion_of_feeding_fam_Chessman2017",
                       "Gatherer_proportion_of_feeding_gen_Chessman2017")]
-Trait_AUS[, feed_filter := apply(.SD, 1, max),
+Trait_AUS[, feed_filter := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feeding_filterer_Marchant",
                       "Feeding_filterers_VicEPA",
                       "feeding_filterer_maxwell",
                       "Trop_collector_filterer_botwe",
                       "Filterer_proportion_of_feeding_fam_Chessman2017",
                       "Filterer_proportion_of_feeding_gen_Chessman2017")]
-Trait_AUS[, feed_herbivore := apply(.SD, 1, max),
+
+# Trait_AUS[, feed_herbivore := apply(.SD, 1, max),
+#           .SDcols = c("feeding_grazer_Marchant",
+#                       "Feeding_scrapers_VicEPA",
+#                       "Feeding_deposit_grazer_VicEPA",
+#                       "feeding_scraper_maxwell",
+#                       "Trop_scraper_botwe",
+#                       "Scraper_proportion_of_feeding_fam_Chessman2017",
+#                       "Scraper_proportion_of_feeding_gen_Chessman2017")]
+Trait_AUS[, feed_herbivore_VicEPA := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Feeding_scrapers_VicEPA",
+                      "Feeding_deposit_grazer_VicEPA")]
+Trait_AUS[, feed_herbivore := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feeding_grazer_Marchant",
-                      "Feeding_scrapers_VicEPA",
-                      "Feeding_deposit_grazer_VicEPA",
                       "feeding_scraper_maxwell",
                       "Trop_scraper_botwe",
                       "Scraper_proportion_of_feeding_fam_Chessman2017",
-                      "Scraper_proportion_of_feeding_gen_Chessman2017")]
-Trait_AUS[, feed_predator := apply(.SD, 1, max),
+                      "Scraper_proportion_of_feeding_gen_Chessman2017", 
+                      "feed_herbivore_VicEPA")]
+
+Trait_AUS[, feed_predator := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feeding_predator_Marchant",
                       "Feeding_predators_VicEPA",
                       "feeding_predator_maxwell",
@@ -139,14 +171,11 @@ Trait_AUS[, feed_predator := apply(.SD, 1, max),
                       "feed_predator",
                       "Trop_predator_botwe",
                       "Predator_proportion_of_feeding_fam_Chessman2017",
-                      "Predator_proportion_of_feeding_gen_Chessman2017",
-                      "Feeding_piercers_VicEPA")]
-Trait_AUS[, feed_parasite := apply(.SD, 1, max),
+                      "Predator_proportion_of_feeding_gen_Chessman2017")]
+Trait_AUS[, feed_parasite := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("feed_parasite",
                       "feed_parasite_Schaefer",
                       "feeding_parasite_maxwell")]
-
-Trait_AUS$h
 
 Trait_AUS[, c(
   "feeding_shredder_Marchant",
@@ -185,7 +214,8 @@ Trait_AUS[, c(
   "Scraper_proportion_of_feeding_fam_Chessman2017",
   "Predator_proportion_of_feeding_fam_Chessman2017",
   "Gatherer_proportion_of_feeding_fam_Chessman2017",
-  "Filterer_proportion_of_feeding_fam_Chessman2017"
+  "Filterer_proportion_of_feeding_fam_Chessman2017",
+  "feed_herbivore_VicEPA"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -196,21 +226,37 @@ Trait_AUS[, c(
 # locm_sessil: sessil (attached)
 # Attach_perm_VicEPA just contained zeros
 # _________________________________________________________________________ 
-Trait_AUS[, locom_swim := apply(.SD, 1, max), 
+# Trait_AUS[, locom_swim := apply(.SD, 1, max), 
+#           .SDcols = c("Habi5_botwe",
+#                       "Habi6_botwe",
+#                       "Attach_swim_VicEPA")]
+Trait_AUS[, locom_swim_botwe := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Habi5_botwe",
-                      "Habi6_botwe",
+                      "Habi6_botwe")]
+Trait_AUS[, locom_swim := apply(.SD, 1, max, na.rm = TRUE), 
+          .SDcols = c("locom_swim_botwe",
                       "Attach_swim_VicEPA")]
-Trait_AUS[, locom_crawl := apply(.SD, 1, max), 
+
+# Trait_AUS[, locom_crawl := apply(.SD, 1, max), 
+#           .SDcols = c("Habi3_botwe",
+#                       "Habi2_botwe",
+#                       "Habi4_botwe",
+#                       "Attach_crawl_VicEPA")]
+Trait_AUS[, locom_crawl_botwe := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Habi3_botwe",
                       "Habi2_botwe",
-                      "Habi4_botwe",
+                      "Habi4_botwe")]
+Trait_AUS[, locom_crawl := apply(.SD, 1, max, na.rm = TRUE), 
+          .SDcols = c("locom_crawl_botwe",
                       "Attach_crawl_VicEPA")]
-Trait_AUS[, locom_burrow := apply(.SD, 1, max), 
+
+Trait_AUS[, locom_burrow := apply(.SD, 1, max, na.rm = TRUE), 
           .SDcols = c("Habi1_botwe", 
                       "Attach_burrow_VicEPA")]
 setnames(Trait_AUS,
          old = c("Attach_temp_VicEPA"),
          new = c("locom_sessil"))
+
 Trait_AUS[, c(
   "Habi5_botwe",
   "Habi6_botwe",
@@ -220,7 +266,9 @@ Trait_AUS[, c(
   "Habi1_botwe",
   "Attach_burrow_VicEPA",
   "Habi4_botwe",
-  "Attach_swim_VicEPA"
+  "Attach_swim_VicEPA",
+  "locom_swim_botwe",
+  "locom_crawl_botwe"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -234,13 +282,13 @@ Trait_AUS[, c(
 # -> Different tolerances to low oxygen compared to insects with tegument resp and gills
 # Maxwell trait on Plastron not used, since ambiguous (Plastron and gills)
 # _________________________________________________________________________ 
-Trait_AUS[, resp_teg := apply(.SD, 1, max),
+Trait_AUS[, resp_teg := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Respiration_tegument_VicEPA",
                       "Resp1_botwe",
                       "resp3_Maxwell",
                       "resp_teg",
                       "resp_teg_Schaefer")]
-Trait_AUS[, resp_gil := apply(.SD, 1, max),
+Trait_AUS[, resp_gil := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Respiration_gills_VicEPA",
                       "Resp2_botwe",
                       "resp4_Maxwell",
@@ -248,65 +296,116 @@ Trait_AUS[, resp_gil := apply(.SD, 1, max),
                       "resp_gil_Schaefer",
                       "Gills_aquatic_stages_fam_Chessman2017",
                       "Gills_aquatic_stages_gen_Chessman2017")]
-Trait_AUS[, resp_pls_spi := apply(.SD, 1, max),
-          .SDcols = c("Respiration_spiracle_VicEPA",
-                      "resp7_Maxwell",
+
+# Trait_AUS[, resp_pls_spi := apply(.SD, 1, max),
+#           .SDcols = c(
+#             "Respiration_spiracle_VicEPA",
+#             "resp7_Maxwell",
+#             "resp1_Maxwell",
+#             "resp2_Maxwell",
+#             "resp_atm",
+#             "resp_atm_Schaefer",
+#             "Air_respiration_aquatic_stages_fam_Chessman2017",
+#             "Air_respiration_aquatic_stages_gen_Chessman2017",
+#             "Functional_spiracles_aquatic_stages_gen_Chessman2017",
+#             "Functional_spiracles_aquatic_stages_fam_Chessman2017",
+#             "Resp3_botwe",
+#             "resp_pls",
+#             "resp_pls_Schaefer"
+#           )]
+Trait_AUS[, resp_pls_spi_maxwell := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("resp7_Maxwell",
                       "resp1_Maxwell",
-                      "resp2_Maxwell",
-                      "resp_atm",
-                      "resp_atm_Schaefer",
-                      "Air_respiration_aquatic_stages_fam_Chessman2017",
-                      "Air_respiration_aquatic_stages_gen_Chessman2017",
-                      "Functional_spiracles_aquatic_stages_gen_Chessman2017",
-                      "Functional_spiracles_aquatic_stages_fam_Chessman2017",
-                      "Resp3_botwe",
-                      "resp_pls",
-                      "resp_pls_Schaefer"
+                      "resp2_Maxwell")]
+Trait_AUS[, resp_pls_spi_ot := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("resp_atm",
+                      "resp_pls")]
+Trait_AUS[, resp_pls_spi_schaefer := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("resp_atm_Schaefer",
+                      "resp_pls_Schaefer")]
+Trait_AUS[, resp_pls_spi := apply(.SD, 1, max, na.rm = TRUE),
+          .SDcols = c(
+            "Respiration_spiracle_VicEPA",
+            "resp_pls_spi_maxwell",
+            "resp_pls_spi_ot",
+            "Air_respiration_aquatic_stages_fam_Chessman2017",
+            "Air_respiration_aquatic_stages_gen_Chessman2017",
+            "Functional_spiracles_aquatic_stages_gen_Chessman2017",
+            "Functional_spiracles_aquatic_stages_fam_Chessman2017",
+            "Resp3_botwe",
+            "resp_pls_spi_schaefer"
           )]
-Trait_AUS[, c("Respiration_tegument_VicEPA",
-              "Resp1_botwe",
-              "resp3_Maxwell",
-              "resp_teg_Schaefer",
-              "Respiration_gills_VicEPA",
-              "Resp2_botwe",
-              "resp4_Maxwell",
-              "resp_gil_Schaefer",
-              "Respiration_spiracle_VicEPA",
-              "resp1_Maxwell",
-              "resp2_Maxwell",
-              "resp_atm",
-              "resp_atm_Schaefer",
-              "Resp3_botwe",
-              "resp7_Maxwell",
-              "resp_pls_Schaefer",
-              "resp5_Maxwell",
-              "resp6_Maxwell",
-              "Air_respiration_aquatic_stages_fam_Chessman2017",
-              "Air_respiration_aquatic_stages_gen_Chessman2017",
-              "Gills_aquatic_stages_fam_Chessman2017",
-              "Gills_aquatic_stages_gen_Chessman2017",
-              "Functional_spiracles_aquatic_stages_gen_Chessman2017",
-              "Functional_spiracles_aquatic_stages_fam_Chessman2017",
-              "resp_pls") := NULL]
+
+Trait_AUS[, c(
+  "Respiration_tegument_VicEPA",
+  "Resp1_botwe",
+  "resp3_Maxwell",
+  "resp_teg_Schaefer",
+  "Respiration_gills_VicEPA",
+  "Resp2_botwe",
+  "resp4_Maxwell",
+  "resp_gil_Schaefer",
+  "Respiration_spiracle_VicEPA",
+  "resp1_Maxwell",
+  "resp2_Maxwell",
+  "resp_atm",
+  "resp_atm_Schaefer",
+  "Resp3_botwe",
+  "resp7_Maxwell",
+  "resp_pls_Schaefer",
+  "resp5_Maxwell",
+  "resp6_Maxwell",
+  "Air_respiration_aquatic_stages_fam_Chessman2017",
+  "Air_respiration_aquatic_stages_gen_Chessman2017",
+  "Gills_aquatic_stages_fam_Chessman2017",
+  "Gills_aquatic_stages_gen_Chessman2017",
+  "Functional_spiracles_aquatic_stages_gen_Chessman2017",
+  "Functional_spiracles_aquatic_stages_fam_Chessman2017",
+  "resp_pls",
+  "resp_pls_spi_maxwell",
+  "resp_pls_spi_ot",
+  "resp_pls_spi_schaefer"
+) := NULL]
 # _________________________________________________________________________ 
 #### Size #### 
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________ 
-Trait_AUS[, size_small := apply(.SD, 1, max), 
+# Trait_AUS[, size_small := apply(.SD, 1, max), 
+#           .SDcols = c("Max_size_less_than_5_VicEPA",
+#                       "Max_size_5_to_10_VicEPA",
+#                       "Size1_botwe",
+#                       "Max_size_less_than_5__text_ref",
+#                       "Max_size_5_to_10__text_ref",
+#                       "Max_size_less_than_5__text_bugs_gbr",    
+#                       "Max_size_5_to_10__text_bugs_gbr",
+#                       "size_small", 
+#                       "size_small_Schaefer",
+#                       "size_small_fam_Chessman",
+#                       "size_small_gen_Chessman")]
+Trait_AUS[, size_small_VicEPA := apply(.SD, 1, sum, na.rm = TRUE), 
           .SDcols = c("Max_size_less_than_5_VicEPA",
-                      "Max_size_5_to_10_VicEPA",
-                      "Size1_botwe",
-                      "Max_size_less_than_5__text_ref",
-                      "Max_size_5_to_10__text_ref",
-                      "Max_size_less_than_5__text_bugs_gbr",    
-                      "Max_size_5_to_10__text_bugs_gbr",
-                      "size_small", 
-                      "size_small_Schaefer",
-                      "size_small_fam_Chessman",
-                      "size_small_gen_Chessman")]
-Trait_AUS[, size_medium := apply(.SD, 1, max), 
+                      "Max_size_5_to_10_VicEPA")]
+Trait_AUS[, size_small_text_ref := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Max_size_less_than_5__text_ref",
+                      "Max_size_5_to_10__text_ref")]
+Trait_AUS[, size_small_bugs_gbr := apply(.SD, 1, sum, na.rm = TRUE), 
+          .SDcols = c("Max_size_less_than_5__text_bugs_gbr",    
+                      "Max_size_5_to_10__text_bugs_gbr")]
+Trait_AUS[, size_small := apply(.SD, 1, max, na.rm = TRUE),
+          .SDcols = c(
+            "size_small_VicEPA",
+            "Size1_botwe",
+            "size_small_text_ref",
+            "size_small_bugs_gbr",
+            "size_small",
+            "size_small_Schaefer",
+            "size_small_fam_Chessman",
+            "size_small_gen_Chessman"
+          )]
+
+Trait_AUS[, size_medium := apply(.SD, 1, max, na.rm = TRUE), 
           .SDcols = c("Max_size_10_to_20_VicEPA",
                       "Size2_botwe",
                       "Max_size_10_to_20__text_ref",
@@ -315,18 +414,40 @@ Trait_AUS[, size_medium := apply(.SD, 1, max),
                       "size_medium_Schaefer",
                       "size_medium_fam_Chessman",
                       "size_medium_gen_Chessman")]
-Trait_AUS[, size_large := apply(.SD, 1, max), 
-          .SDcols = c("Max_size_20_to_40_VicEPA", 
-                      "Max_size_more_than_40_VicEPA",
-                      "Size3_botwe",
-                      "Max_size_20_to_40__text_ref", 
-                      "Max_size_greater_than_40__text_ref",
-                      "Max_size_20_to_40__text_bugs_gbr",       
-                      "Max_size_greater_than_40__text_bugs_gbr",
-                      "size_large", 
-                      "size_large_Schaefer",
-                      "size_large_gen_Chessman",
-                      "size_large_fam_Chessman")]
+
+# Trait_AUS[, size_large := apply(.SD, 1, max), 
+#           .SDcols = c("Max_size_20_to_40_VicEPA", 
+#                       "Max_size_more_than_40_VicEPA",
+#                       "Size3_botwe",
+#                       "Max_size_20_to_40__text_ref", 
+#                       "Max_size_greater_than_40__text_ref",
+#                       "Max_size_20_to_40__text_bugs_gbr",       
+#                       "Max_size_greater_than_40__text_bugs_gbr",
+#                       "size_large", 
+#                       "size_large_Schaefer",
+#                       "size_large_gen_Chessman",
+#                       "size_large_fam_Chessman")]
+Trait_AUS[, size_large_VicEPA := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Max_size_20_to_40_VicEPA",
+                      "Max_size_more_than_40_VicEPA")]
+Trait_AUS[, size_large_text_ref := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Max_size_20_to_40__text_ref",
+                      "Max_size_greater_than_40__text_ref")]
+Trait_AUS[, size_large_bugs_gbr := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Max_size_20_to_40__text_bugs_gbr",
+                      "Max_size_greater_than_40__text_bugs_gbr")]
+Trait_AUS[, size_large := apply(.SD, 1, max, na.rm = TRUE),
+          .SDcols = c(
+            "size_large_VicEPA",
+            "Size3_botwe",
+            "size_large_text_ref",
+            "size_large_bugs_gbr",
+            "size_large",
+            "size_large_Schaefer",
+            "size_large_gen_Chessman",
+            "size_large_fam_Chessman"
+          )]
+
 Trait_AUS[, c(
   "Max_size_less_than_5_VicEPA",
   "Size1_botwe",
@@ -354,7 +475,13 @@ Trait_AUS[, c(
   "Max_size_20_to_40__text_ref", 
   "Max_size_greater_than_40__text_ref",
   "Max_size_20_to_40__text_bugs_gbr",       
-  "Max_size_greater_than_40__text_bugs_gbr"
+  "Max_size_greater_than_40__text_bugs_gbr",
+  "size_large_VicEPA",
+  "size_large_text_ref",
+  "size_large_bugs_gbr",
+  "size_small_VicEPA",
+  "size_small_text_ref",
+  "size_small_bugs_gbr"
 ) := NULL]
 
 # _________________________________________________________________________ 
@@ -363,15 +490,15 @@ Trait_AUS[, c(
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
 # _________________________________________________________________________ 
-Trait_AUS[,  ovip_ter := apply(.SD, 1, max),
+Trait_AUS[,  ovip_ter := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Rep2_botwe",
                       "repro2_Maxwell")]
-Trait_AUS[, ovip_aqu := apply(.SD, 1, max),
+Trait_AUS[, ovip_aqu := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Rep1_botwe",
                       "repro1_Maxwell", 
                       "ovip_aqu", 
                       "ovip_aqu_Schaefer")]
-Trait_AUS[, ovip_ovo := apply(.SD, 1, max),
+Trait_AUS[, ovip_ovo := apply(.SD, 1, max, na.rm = TRUE),
           .SDcols = c("Rep3_botwe",
                       "repro3_Maxwell",
                       "ovip_ovo", 
@@ -397,7 +524,7 @@ Trait_AUS[, c(
 # temp eurytherm
 # Ther1_botwe not used (cool/warm eurythermal) -> ambiguou
 # _________________________________________________________________________ 
-Trait_AUS[, temp_eurytherm := apply(.SD, 1, max),
+Trait_AUS[, temp_eurytherm := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Ther2_botwe", "Ther3_botwe")]
 Trait_AUS[, c("Ther1_botwe",
               "Ther2_botwe",

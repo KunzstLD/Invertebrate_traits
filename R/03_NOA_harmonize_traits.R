@@ -1,6 +1,6 @@
 # _________________________________________________________________________ 
 #### Harmonize NOA Traits ####
-# Includes also normalization
+# 
 # _________________________________________________________________________
 
 # read in
@@ -90,9 +90,10 @@ setnames(
     "feed_shredder"
   )
 )
-Trait_Noa[, feed_herbivore := apply(.SD, 1. , max),
+Trait_Noa[, feed_herbivore := apply(.SD, 1. , sum, na.rm = TRUE),
           .SDcols = c("Feed_mode_prim_Scraper/grazer",
                       "Feed_mode_prim_Piercer herbivore")]
+
 Trait_Noa[, c("Feed_mode_prim_Scraper/grazer",
               "Feed_mode_prim_Piercer herbivore") := NULL]
 
@@ -227,17 +228,9 @@ Trait_Noa[Trait_EU[is.na(species) & is.na(genus) &
           ),
           on = c(Taxa = "family")]
 
-# A few of the taxa can also be found in the 
-# load NOA_new
-# TODO: check as well
-# load Trait_Noa_new
-# taxa_other_feed_mode[is.na(Species) & !is.na(Genus) , Genus] %in% Trait_Noa_new[, unique(genus)]
-
-
-# del feed mode others
-# still 187 taxa
-# Trait_Noa[`Feed_mode_prim_Other (specify in comments)` > 0, .SD, .SDcols = names(Trait_Noa) %like% "(?i)Feed|Species|Genus|Family"] %>% View()
+# Del remaining 
 Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
+
 
 # _________________________________________________________________________
 #### Locomotion ####
@@ -250,12 +243,14 @@ Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 setnames(Trait_Noa, 
          old = c("Habit_prim_Attached/fixed", "Habit_prim_Burrower"), 
          new = c("locom_sessil", "locom_burrow"))
-Trait_Noa[, locom_swim := apply(.SD, 1, max),
+Trait_Noa[, locom_swim := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Habit_prim_Swimmer",
                       "Habit_prim_Planktonic",
                       "Habit_prim_Skater")]
-Trait_Noa[, locom_crawl := apply(.SD, 1, max),
-          .SDcols = c("Habit_prim_Sprawler", "Habit_prim_Climber", "Habit_prim_Clinger")]
+Trait_Noa[, locom_crawl := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c("Habit_prim_Sprawler",
+                      "Habit_prim_Climber",
+                      "Habit_prim_Clinger")]
 Trait_Noa[, c(
   "Habit_prim_Swimmer",
   "Habit_prim_Planktonic",
@@ -405,12 +400,14 @@ setnames(Trait_Noa,
                  "Resp_late_Tracheal gills"),
          new = c("resp_teg",
                  "resp_gil"))
-Trait_Noa[, resp_pls_spi := apply(.SD, 1, max),
-          .SDcols = c("Resp_late_Spiracular gills",
-                      "Resp_late_Plastron (permanent air store)",
-                      "Resp_late_Atmospheric breathers",
-                      "Resp_late_Plant breathers", 
-                      "Resp_late_Temporary air store")]
+Trait_Noa[, resp_pls_spi := apply(.SD, 1, sum, na.rm = TRUE),
+          .SDcols = c(
+            "Resp_late_Spiracular gills",
+            "Resp_late_Plastron (permanent air store)",
+            "Resp_late_Atmospheric breathers",
+            "Resp_late_Plant breathers",
+            "Resp_late_Temporary air store"
+          )]
 
 # rm hemiglobin taxa
 Trait_Noa <- Trait_Noa[!Resp_late_Hemoglobin  > 0, ]
@@ -479,10 +476,10 @@ setnames(
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
 # _________________________________________________________________________
-Trait_Noa[, ovip_ter := apply(.SD, 1, max),
+Trait_Noa[, ovip_ter := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Ovipos_behav_prim_Bank soil",
                       "Ovipos_behav_prim_Overhanging substrate (dry)")]
-Trait_Noa[, ovip_aqu := apply(.SD, 1., max) ,
+Trait_Noa[, ovip_aqu := apply(.SD, 1, sum, na.rm = TRUE) ,
           .SDcols = c(
             "Ovipos_behav_prim_Algal mats",
             "Ovipos_behav_prim_Bottom sediments",
@@ -560,7 +557,7 @@ setnames(Trait_Noa,
          new = c("temp_very_cold", 
                  "temp_cold_mod", 
                  "temp_eurytherm"))
-Trait_Noa[, temp_warm := apply(.SD, 1, max),
+Trait_Noa[, temp_warm := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Thermal_pref_Warm eurythermal (15-30 C)",
                       "Thermal_pref_Hot euthermal (>30 C)")]
 Trait_Noa[, c("Thermal_pref_Warm eurythermal (15-30 C)",
@@ -579,14 +576,6 @@ setnames(Trait_Noa,
 # bf_spherical: spherical
 # _________________________________________________________________________
 
-# transform all integers to numeric to avoid losses of data during merging 
-cols_integer <- Filter(is.integer, Trait_Noa) %>% names()
-Trait_Noa[, (cols_integer) := lapply(.SD, as.double), .SDcols = cols_integer]
-
-## rm body_shape_case columns
-cols <- grep("case", names(Trait_Noa), value = TRUE)
-Trait_Noa[, (cols) := NULL]
- 
 ## Using Philippe Polateras classification
 body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
 
@@ -710,7 +699,7 @@ Trait_Noa[, c("Body_shape_Bluff (blocky)",
 # dividing for a given trait each value for a trait state by the sum of all 
 # trait states
 # _________________________________________________________________________
-Trait_Noa <- normalize_by_rowSum(
+normalize_by_rowSum(
   x = Trait_Noa,
   non_trait_cols = c("unique_id",
                      "order",
@@ -728,6 +717,7 @@ completeness_trait_data(x = Trait_Noa,
                                            "genus",
                                            "species",
                                            "Taxa"))
+
 # save
 saveRDS(object = Trait_Noa, 
         file = file.path(data_cleaned, 

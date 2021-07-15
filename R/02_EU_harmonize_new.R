@@ -1,5 +1,7 @@
 # _________________________________________________________________________
 #### Harmonize EU Traits ####
+# For traits from different databases, the maximum value is taken
+# For traits that are combined from one db, the sum is taken
 # _________________________________________________________________________
 
 # read in RDS
@@ -43,16 +45,27 @@ Trait_EU[, volt_uni := apply(.SD, 1, max, na.rm = TRUE),
     "voltinism_uni_tachet"
   )
 ]
-Trait_EU[, volt_bi_multi := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "voltinism_bi",
-    "voltinism_tri",
-    "voltinism_multi",
-    "voltinism_multi_tachet",
-    "voltinism_flex"
-  )
-]
 
+# Trait_EU[, volt_bi_multi := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "voltinism_bi",
+#     "voltinism_tri",
+#     "voltinism_multi",
+#     "voltinism_multi_tachet",
+#     "voltinism_flex"
+#   )
+# ]
+Trait_EU[, volt_bi_multi := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c(
+           "voltinism_bi",
+           "voltinism_tri",
+           "voltinism_multi",
+           "voltinism_flex"
+         )
+]
+Trait_EU[, volt_bi_multi := apply(.SD, 1, max, na.rm = TRUE),
+         .SDcols = c("volt_bi_multi",
+                     "voltinism_multi_tachet")] 
 Trait_EU[, c(
   "voltinism_semi",
   "voltinism_semi_tachet",
@@ -64,6 +77,7 @@ Trait_EU[, c(
   "voltinism_multi_tachet",
   "voltinism_flex"
 ) := NULL]
+
 # _________________________________________________________________________
 # TODO
 #### aquatic stages ####
@@ -329,22 +343,41 @@ Trait_EU[
   feed_other := 0
 ]
 
+# Trait_EU[, feed_shredder := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "feed_shredder",
+#     "feed_shredder_tachet",
+#     "feed_miner",
+#     "feed_xylo"
+#   )
+# ]
+Trait_EU[, feed_shredder := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("feed_shredder",
+                     "feed_miner",
+                     "feed_xylo")]
 Trait_EU[, feed_shredder := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "feed_shredder",
-    "feed_shredder_tachet",
-    "feed_miner",
-    "feed_xylo"
-  )
-]
+         .SDcols = c("feed_shredder",
+                     "feed_shredder_tachet")]
+
+
+# Trait_EU[, feed_filter := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "feed_active_filter",
+#     "feed_passive_filter",
+#     "feed_filter_tachet",
+#     "feed_absorber_tachet"
+#   )
+# ]
+Trait_EU[, feed_filter := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("feed_active_filter",
+                     "feed_passive_filter")]
+Trait_EU[, feed_filter_tachet := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("feed_filter_tachet",
+                     "feed_absorber_tachet")]
 Trait_EU[, feed_filter := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "feed_active_filter",
-    "feed_passive_filter",
-    "feed_filter_tachet",
-    "feed_absorber_tachet"
-  )
-]
+         .SDcols = c("feed_filter",
+                     "feed_filter_tachet")]
+
 Trait_EU[, feed_herbivore := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "feed_scraper_tachet",
@@ -413,40 +446,71 @@ Trait_EU[, "feed_other" := NULL]
 # locm_sessil: sessil (attached)
 # _________________________________________________________________________
 
-# like feeding mode other
+# locomotion  other
 Trait_EU[
   locom_other > 0 & !is.na(locom_crawler_tachet),
   locom_other := 0
 ]
 
+# Trait_EU[, locom_swim := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "locom_swim_skate",
+#     "locom_swim_dive",
+#     "locom_surface_swimmer_tachet",
+#     "locom_full_water_swimmer_tachet"
+#   )
+# ]
+Trait_EU[, locom_swim := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("locom_swim_skate",
+                     "locom_swim_dive")]
+Trait_EU[, locom_swim_tachet := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("locom_surface_swimmer_tachet",
+                     "locom_full_water_swimmer_tachet")]
 Trait_EU[, locom_swim := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "locom_swim_skate",
-    "locom_swim_dive",
-    "locom_surface_swimmer_tachet",
-    "locom_full_water_swimmer_tachet"
-  )
-]
+         .SDcols = c("locom_swim",
+                     "locom_swim_tachet")]
+
+# Trait_EU[, locom_burrow := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "locom_burrow",
+#     "locom_burrower_tachet",
+#     "locom_interstitial_tachet"
+#   )
+# ]
+Trait_EU[, locom_burrower_tachet := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("locom_burrower_tachet",
+                     "locom_interstitial_tachet")]
 Trait_EU[, locom_burrow := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "locom_burrow",
-    "locom_burrower_tachet",
-    "locom_interstitial_tachet"
-  )
-]
+         .SDcols = c("locom_burrow",
+                     "locom_burrower_tachet")]
+
 Trait_EU[, locom_crawl := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
     "locom_sprawl",
     "locom_crawler_tachet"
   )
 ]
-Trait_EU[, locom_sessil := apply(.SD, 1, max, na.rm = TRUE),
+
+# Trait_EU[, locom_sessil_tachet := apply(.SD, 1, max, na.rm = TRUE),
+#          .SDcols = c(
+#            "locom_sessil",
+#            "locom_temp_attached_tachet",
+#            "locom_perm_attached_tachet"
+#          )
+# ]
+Trait_EU[, locom_sessil_tachet := apply(.SD, 1, sum, na.rm = TRUE),
   .SDcols = c(
-    "locom_sessil",
     "locom_temp_attached_tachet",
     "locom_perm_attached_tachet"
   )
 ]
+Trait_EU[, locom_sessil := apply(.SD, 1, max, na.rm = TRUE),
+         .SDcols = c(
+           "locom_sessil",
+           "locom_sessil_tachet"
+         )
+]
+
 
 # locom other, del if 1 otherwise set to 0
 # Definition: other locomotion type like flying or jumping (mainly outside the water)
@@ -455,17 +519,18 @@ Trait_EU[locom_other > 0, locom_other := 0]
 Trait_EU[locom_flier_tachet > 0, locom_flier_tachet := 0]
 
 # del
-Trait_EU[
-  ,
+Trait_EU[,
   c(
     "locom_swim_skate",
     "locom_swim_dive",
+    "locom_swim_tachet",
     "locom_surface_swimmer_tachet",
     "locom_full_water_swimmer_tachet",
     "locom_burrower_tachet",
     "locom_interstitial_tachet",
     "locom_sprawl",
     "locom_crawler_tachet",
+    "locom_sessil_tachet",
     "locom_temp_attached_tachet",
     "locom_perm_attached_tachet",
     "locom_other",
@@ -500,14 +565,24 @@ Trait_EU[, resp_gil := apply(.SD, 1, max, na.rm = TRUE),
     "resp_gill_tachet"
   )
 ]
+
+# Trait_EU[, resp_pls_spi := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "resp_spiracle",
+#     "resp_plastron",
+#     "resp_plastron_tachet",
+#     "resp_spiracle_tachet"
+#   )
+# ]
+Trait_EU[, resp_pls_spi := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("resp_spiracle",
+                     "resp_plastron")]
+Trait_EU[, resp_pls_spi_tachet := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c("resp_plastron_tachet",
+                     "resp_spiracle_tachet")]
 Trait_EU[, resp_pls_spi := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "resp_spiracle",
-    "resp_plastron",
-    "resp_plastron_tachet",
-    "resp_spiracle_tachet"
-  )
-]
+         .SDcols = c("resp_pls_spi",
+                     "resp_pls_spi_tachet")]
 
 Trait_EU[, c(
   "resp_tapping",
@@ -519,6 +594,7 @@ Trait_EU[, c(
   "resp_spiracle_tachet",
   "resp_plastron",
   "resp_plastron_tachet",
+  "resp_pls_spi_tachet",
   "resp_gill_tachet",
   "resp_tegument",
   "resp_tegument_tachet"
@@ -555,23 +631,43 @@ Trait_EU[, c(
 # rep_parasitic no entries
 # rep_asexual is deleted
 # _________________________________________________________________________
+# Trait_EU[, ovip_aqu := apply(.SD, 1, max, na.rm = TRUE),
+#   .SDcols = c(
+#     "rep_egg_cem_iso",
+#     "rep_egg_free_iso",
+#     "rep_clutch_free",
+#     "rep_clutch_fixed",
+#     "rep_clutch_veg",
+#     "rep_egg_cem_iso_tachet",
+#     "rep_egg_free_iso_tachet",
+#     "rep_clutch_free_tachet",
+#     "rep_clutch_fixed_tachet",
+#     "rep_clutch_veg_tachet"
+#   )
+# ]
+Trait_EU[, ovip_aqu := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c(
+           "rep_egg_cem_iso",
+           "rep_egg_free_iso",
+           "rep_clutch_free",
+           "rep_clutch_fixed",
+           "rep_clutch_veg"
+         )]
+Trait_EU[, ovip_aqu_tachet := apply(.SD, 1, sum, na.rm = TRUE),
+         .SDcols = c(
+           "rep_egg_cem_iso_tachet",
+           "rep_egg_free_iso_tachet",
+           "rep_clutch_free_tachet",
+           "rep_clutch_fixed_tachet",
+           "rep_clutch_veg_tachet"
+         )]
 Trait_EU[, ovip_aqu := apply(.SD, 1, max, na.rm = TRUE),
-  .SDcols = c(
-    "rep_egg_cem_iso",
-    "rep_egg_free_iso",
-    "rep_clutch_free",
-    "rep_clutch_fixed",
-    "rep_clutch_veg",
-    "rep_egg_cem_iso_tachet",
-    "rep_egg_free_iso_tachet",
-    "rep_clutch_free_tachet",
-    "rep_clutch_fixed_tachet",
-    "rep_clutch_veg_tachet"
-  )
-]
+         .SDcols = c("ovip_aqu",
+                     "ovip_aqu_tachet")]
+
+
 Trait_EU[, ovip_ovo := apply(.SD, 1, max, na.rm = TRUE),
   .SDcols = c(
-    "rep_parasitic",
     "rep_ovovivipar",
     "rep_ovovivipar_tachet"
   )
@@ -603,7 +699,8 @@ Trait_EU[, c(
   "rep_clutch_veg_tachet",
   "rep_ovovivipar_tachet",
   "rep_clutch_ter_tachet",
-  "rep_asexual_tachet"
+  "rep_asexual_tachet",
+  "ovip_aqu_tachet"
 ) := NULL]
 
 # _________________________________________________________________________
@@ -623,7 +720,8 @@ Trait_EU[, temp_cold := apply(.SD, 1, max, na.rm = TRUE),
          .SDcols = c("temp_coldsteno",
                      "temp_psychrophil_tachet")]
 Trait_EU[, temp_warm := apply(.SD, 1, max, na.rm = TRUE),
-         .SDcols = c("temp_warmsteno", "temp_thermophil_tachet")
+         .SDcols = c("temp_warmsteno", 
+                     "temp_thermophil_tachet")
 ]
 Trait_EU[, c("temp_euryt", 
              "temp_euryt_tachet",
@@ -688,14 +786,14 @@ Trait_EU[bf_EU,
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________
-Trait_EU[, size_small := apply(.SD, 1, max, na.rm = TRUE),
+Trait_EU[, size_small := apply(.SD, 1, sum, na.rm = TRUE),
   .SDcols = c(
     "size_&le; 0.25 cm_tachet",
     "size_> 0.25-0.5 cm_tachet",
     "size_> 0.5-1 cm_tachet"
   )
 ]
-Trait_EU[, size_large := apply(.SD, 1, max, na.rm = TRUE),
+Trait_EU[, size_large := apply(.SD, 1, sum, na.rm = TRUE),
   .SDcols = c(
     "size_> 2-4 cm_tachet",
     "size_> 4-8 cm_tachet",
@@ -756,6 +854,7 @@ Trait_EU[, `:=`(
   dev_hemimetabol = ifelse(order %in% hemimetabola, 1, 0),
   dev_holometabol = ifelse(order %in% holometabola, 1, 0)
 )]
+
 # _________________________________________________________________________
 
 # normalize again 

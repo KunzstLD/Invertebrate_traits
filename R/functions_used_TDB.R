@@ -201,6 +201,7 @@ create_pattern_ind <- function(x, non_trait_cols) {
 #### Normalization of trait scores ####
 # All trait states of one trait are divided by their row sum
 # Hence, trait affinities are represented as "%" or ratios
+# this works for traits named: "groupingfeature_trait"
 normalize_by_rowSum <- function(x, 
                                 non_trait_cols, 
                                 na.rm = TRUE) {
@@ -220,7 +221,7 @@ normalize_by_rowSum <- function(x,
     # divide values for each trait state by
     # the sum of trait state values
     x[, (col_name) := lapply(.SD, function(y) {
-      round(y / rowSum, digits = 2)
+      y / rowSum
     }),
     .SDcols = names(x) %like% cols]
   }

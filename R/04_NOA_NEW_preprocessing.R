@@ -12,10 +12,8 @@ cols <-
     "Genus",
     "Family",
     "Order",
-    "Feed_mode_sec",
     "Feed_prim_abbrev",
     "Habit_prim",
-    "Habit_sec",
     "Max_body_size_abbrev",
     "Resp_abbrev",
     "Voltinism_abbrev"
@@ -139,9 +137,8 @@ Trait_Noa_new <- data.table::dcast(
 #### Handle duplicates ####
 # _________________________________________________________________________
 
-
-# condense duplicate entries
-# species-level:
+# Condense duplicate entries
+# - species-level:
 # Just zero & ones -> take maximum per duplicate for each trait state
 trait_col <- grep("unique_id|Species|Genus|Family|Order",
                   names(Trait_Noa_new),
@@ -162,18 +159,19 @@ Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 
 Trait_Noa_new[Species == "Ephemerella subvaria", ]
 
-# genus-level:
+# - genus-level:
 Trait_Noa_new[is.na(Species) & !is.na(Genus) &
                 (duplicated(Genus) |
                    duplicated(Genus, fromLast = TRUE)),
               (trait_col) := lapply(.SD, max),
               .SDcols = trait_col,
               by = .(Genus)]
+
 # rm duplicate species entries
 dupl_unique_id <- Trait_Noa_new[is.na(Species) & !is.na(Genus) & duplicated(Genus), unique_id]
 Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 
-# family-level:
+# - family-level:
 Trait_Noa_new[is.na(Species) & is.na(Genus) & !is.na(Family) &
                 (duplicated(Family) |
                    duplicated(Family, fromLast = TRUE)),
@@ -189,6 +187,19 @@ Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
 setnames(Trait_Noa_new, 
          old = c("Species", "Genus", "Family", "Order"), 
          new = c("species", "genus", "family", "order"))
+
+# _________________________________________________________________________
+#### Normalization ####
+# Normalizing of the trait values to a range of [0 - 1] by
+# dividing for a given trait each value for each trait state by the sum of all 
+# trait states 
+# _________________________________________________________________________
+normalize_by_rowSum(Trait_Noa_new,
+                    non_trait_cols = c("unique_id",
+                                       "species",
+                                       "genus",
+                                       "family",
+                                       "order"))
 
 # save
 saveRDS(object = Trait_Noa_new, 

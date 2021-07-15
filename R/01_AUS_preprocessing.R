@@ -5,18 +5,21 @@
 
 # load raw Trait database
 Trait_AUS <-
-  fread(file.path(data_in,
-                  "Australia",
-                  "Australian_macroinv_trait_database_final.csv"))
+  fread(file.path(
+    data_in,
+    "Australia",
+    "Australian_macroinv_trait_database_final.csv"
+  ))
 
 # delete entries with "Adult"
-Trait_AUS <- Trait_AUS[!grepl("(?i)Adult", Species), ]
+Trait_AUS <- Trait_AUS[!grepl("(?i)Adult", Species),]
 
 # remove reference columns
 Trait_AUS[, grep("(?i)ref.+", names(Trait_AUS), value = TRUE) := NULL]
 
 # subset with comments
-Comments_AUS <- Trait_AUS[, .SD, .SDcols = names(Trait_AUS) %like% "Comment|unique_ID"]
+Comments_AUS <-
+  Trait_AUS[, .SD, .SDcols = names(Trait_AUS) %like% "Comment|unique_ID"]
 Trait_AUS[, grep("(?i)comment.+", names(Trait_AUS), value = TRUE) := NULL]
 
 # feeding mode: adjust col names Marchant
@@ -26,7 +29,7 @@ setnames(
   new = paste0("feeding_", grep("Marchant", names(Trait_AUS), value = TRUE))
 )
 
-# Change names for Maxwell 
+# Change names for Maxwell
 # Botwe for feeding mode
 setnames(
   Trait_AUS,
@@ -127,10 +130,10 @@ Trait_AUS <- Trait_AUS[, c(
 , with = FALSE]
 
 # ________________________________________________________________________
-#### Trait preprocessing categorical traits #### 
+#### Trait preprocessing categorical traits ####
 # Trait_AUS[, lapply(.SD, max, na.rm =TRUE),
 #           .SDcols = -c("unique_id", "Species", "Genus", "Family", "Order")]
-# Each trait category is transformed into a column with an indication 
+# Each trait category is transformed into a column with an indication
 # of present or not present (one or zero/ 100 % or 0 %)
 # ________________________________________________________________________
 
@@ -140,7 +143,7 @@ Trait_AUS <- Trait_AUS[, c(
 # resp_gil: gills
 # resp_spi: spiracle
 # resp_pls: plastron
-# resp_atm: atmospheric breathers 
+# resp_atm: atmospheric breathers
 # ________________________________________________________________________
 
 # Respiration bugs gbr
@@ -155,7 +158,7 @@ Trait_AUS[, Respiration_bugs_gbr := NULL]
 # Respiration Schaefer
 # unique(Trait_AUS$Respiration_Schaefer)
 Trait_AUS[, `:=`(
-  resp_teg_Schaefer = ifelse(grepl("Cutaneous" ,Respiration_Schaefer) , 1, 0),
+  resp_teg_Schaefer = ifelse(grepl("Cutaneous" , Respiration_Schaefer) , 1, 0),
   resp_gil_Schaefer = ifelse(grepl("Gills", Respiration_Schaefer), 1, 0),
   resp_pls_Schaefer = ifelse(grepl("Plastron", Respiration_Schaefer), 1, 0),
   resp_atm_Schaefer = ifelse(grepl("Air\\-breathing", Respiration_Schaefer), 1, 0)
@@ -200,9 +203,16 @@ Trait_AUS[, Reproduction_type_bugs_gbr := NULL]
 # no ovip_ter, since only description ambiguous (some taxa terrestrial eggs)
 # unique(Trait_AUS$Reproduction_type_Schaefer)
 Trait_AUS[, `:=`(
-  ovip_aqu_Schaefer = ifelse(grepl("(?i)aquatic|plants|substrate|fre", 
-                                 Reproduction_type_Schaefer), 1, 0),
-  ovip_ovo_Schaefer = ifelse(grepl("(?i)ovo", Reproduction_type_Schaefer), 1, 0))]
+  ovip_aqu_Schaefer = ifelse(
+    grepl(
+      "(?i)aquatic|plants|substrate|fre",
+      Reproduction_type_Schaefer
+    ),
+    1,
+    0
+  ),
+  ovip_ovo_Schaefer = ifelse(grepl("(?i)ovo", Reproduction_type_Schaefer), 1, 0)
+)]
 Trait_AUS[, Reproduction_type_Schaefer := NULL]
 
 # rm Changes_time_until_repro_bugs_gbr column
@@ -250,7 +260,7 @@ Trait_AUS[, Feeding_group_Schaefer := NULL]
 
 # _________________________________________________________________________
 #### Classify continuous traits ####
-# Max body size number & Max body text carry the same information 
+# Max body size number & Max body text carry the same information
 # _________________________________________________________________________
 
 # _________________________________________________________________________
@@ -260,7 +270,7 @@ Trait_AUS[, Feeding_group_Schaefer := NULL]
 # size_large: size > 16 mm (EU: size > 20 mm)
 # _________________________________________________________________________
 
-# Max_body_size_mm_gbr 
+# Max_body_size_mm_gbr
 Trait_AUS[, `:=`(
   size_small = ifelse(Max_body_size_mm__number_bugs_gbr < 9, 1, 0),
   size_medium = ifelse(
@@ -323,11 +333,11 @@ Trait_AUS[, c(
 # just minimum ph -> highest value is 6.61
 # _________________________________________________________________________
 Trait_AUS[, pH_minimum_fam_Chessman2017 := as.numeric(pH_minimum_fam_Chessman2017)]
-Trait_AUS[, ph_acidic := ifelse(pH_minimum_fam_Chessman2017<7, 1, 0)]
+Trait_AUS[, ph_acidic := ifelse(pH_minimum_fam_Chessman2017 < 7, 1, 0)]
 Trait_AUS[, pH_minimum_fam_Chessman2017 := NULL]
 
 # _________________________________________________________________________
-#### Temperature #### 
+#### Temperature ####
 # temp very cold (EU < 6 °C, NoA < 5 °C)
 # temp cold (EU < 10 °C) + temp moderate (EU < 18 °C) (NoA 0-15)
 # temp warm (EU >= 18 °C, NoA >15)
@@ -349,15 +359,17 @@ Trait_AUS[, Thermophily_fam_Chessman2017 := NULL]
 #### Data Preparation & Taxonomical corrections ####
 # _________________________________________________________________________
 
-# rm columns with maximum value zero 
-rm_col <- Trait_AUS[, lapply(.SD, max, na.rm = TRUE)] %>% 
-  lapply(., function(y) y[y == 0]) %>%
-  unlist() %>% 
+# rm columns with maximum value zero
+rm_col <- Trait_AUS[, lapply(.SD, max, na.rm = TRUE)] %>%
+  lapply(., function(y)
+    y[y == 0]) %>%
+  unlist() %>%
   names()
 Trait_AUS[, (rm_col) := NULL]
 
-# transform all integer col to numeric  
-col_names <- names(Trait_AUS[, unlist(lapply(Trait_AUS, is.integer)), with = FALSE])
+# transform all integer col to numeric
+col_names <-
+  names(Trait_AUS[, unlist(lapply(Trait_AUS, is.integer)), with = FALSE])
 Trait_AUS[, (col_names) := lapply(.SD, as.numeric), .SDcols = col_names]
 
 # no duplicates
@@ -365,7 +377,7 @@ Trait_AUS[, (col_names) := lapply(.SD, as.numeric), .SDcols = col_names]
 
 # set all NAs to zeros
 col_names <- names(Trait_AUS)[6:length(names(Trait_AUS))]
-for(j in col_names){
+for (j in col_names) {
   data.table::set(Trait_AUS, which(is.na(Trait_AUS[[j]])), j, 0)
 }
 
@@ -398,11 +410,9 @@ Trait_AUS[Family %in% "Enchytraeidae", Order := "Haplotaxida"]
 Trait_AUS[Family %in% "Hydracarina", Order := "Trombidiformes"]
 
 # Mesostigmata is actually an order
-Trait_AUS[grepl("Mesostigmata", Family), `:=`(
-  Genus = NA,
-  Family = NA,
-  Order = "Mesostigmata"
-)]
+Trait_AUS[grepl("Mesostigmata", Family), `:=`(Genus = NA,
+                                              Family = NA,
+                                              Order = "Mesostigmata")]
 
 # Family NULL?
 Trait_AUS[grepl("NULL", Family), Family := NA]
@@ -416,20 +426,20 @@ Trait_AUS[Family == "Hydridae", Order := "Anthoathecata"]
 Trait_AUS[Family == "Temnocephalidae", Order := "Rhabdocoela"]
 
 # one entry without genus and family information
-Trait_AUS[Species == "Cheumatopsyche deani", 
+Trait_AUS[Species == "Cheumatopsyche deani",
           `:=`(Genus = "Cheumatopsyche",
-            Family = "Hydropsychidae",
-            Order = "Trichoptera")]
+               Family = "Hydropsychidae",
+               Order = "Trichoptera")]
 
 # rm entries with taxonomical resolution higher than Family
-Trait_AUS <- Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)), ]
+Trait_AUS <-
+  Trait_AUS[!(is.na(Species) & is.na(Genus) & is.na(Family)),]
 
 # ____________________________________________________________________
-#### Range normalization ####
+#### Normalization ####
 # In order to harmonize the trait states from various
-# authors (e.g VicEPA, Schaefer, Botwe,...) they must have the same range 
-# Hence, values are divided by the maxium score of their trait to
-# obtain a range of [0 - 1]
+# authors (e.g VicEPA, Schaefer, Botwe,...) they must have the same range
+# Hence, values are normalized to a range of [0 - 1]
 # ____________________________________________________________________
 trait_author_pattern <- c(
   "feeding.*Marchant",
@@ -455,10 +465,11 @@ trait_author_pattern <- c(
   "Ther.*botwe",
   "Max.*size.*VicEPA",
   "Max.*size.*text",
-  "Size\\_botwe",
+  "Size.*botwe",
   "^resp\\_",
-  "resp\\_Schaefer",
-  "^volt\\_",
+  "resp.*Schaefer",
+  "More.*Schaefer|Two.*Schaefer|One.*Schaefer|Less.*Schaefer",
+  "More.*gbr|Two.*gbr|One.*gbr|Less.*gbr",
   "^ovip\\_",
   "^feed\\_",
   "feed.*Schaefer",
@@ -471,23 +482,13 @@ trait_author_pattern <- c(
   "Body.*form.*VicEPA"
 )
 
-# long format
-Trait_AUS <-
-  data.table::melt(Trait_AUS,
-                   id.vars = c("unique_ID",
-                               "Species",
-                               "Genus",
-                               "Family",
-                               "Order"))
-
-# range normalization
 for(i in trait_author_pattern) {
-    Trait_AUS[grepl(i, variable), value := (value / max(value))]
+  Trait_AUS[, tmp_sum := apply(.SD, 1, sum), .SDcols = patterns(i)]
+  col_name <- names(Trait_AUS)[names(Trait_AUS) %like% i]
+  Trait_AUS[, (col_name) := lapply(.SD, function(y)
+    y / tmp_sum), .SDcols = patterns(i)]
 }
-
-# back to wide format
-Trait_AUS <- data.table::dcast(Trait_AUS,
-                               unique_ID + Species + Genus + Family + Order ~ variable)
+Trait_AUS[tmp_sum := NULL]
 
 # change column names from Chessman that contain word "genus"
 setnames(
@@ -502,18 +503,20 @@ setnames(
 #________________________________________________________________________
 
 # trait cols
-cols <- grep("(?i)unique_id|species|genus|family|order",
-             names(Trait_AUS),
-             value = TRUE,
-             invert = TRUE)
+cols <- grep(
+  "(?i)unique_id|species|genus|family|order",
+  names(Trait_AUS),
+  value = TRUE,
+  invert = TRUE
+)
 
 # no duplicate entries in Species column
-# Trait_AUS[!is.na(Species), ] %>% 
+# Trait_AUS[!is.na(Species), ] %>%
 #   .[duplicated(Species),]
 
 # genus column:
-# inspecting duplicates on genus col: 
-# Trait_AUS[is.na(Species) & !is.na(Genus), ] %>% 
+# inspecting duplicates on genus col:
+# Trait_AUS[is.na(Species) & !is.na(Genus), ] %>%
 #   .[duplicated(Genus), ]
 # Trait_AUS[is.na(Species) & !is.na(Genus), ] %>%
 #    .[Genus %in% "Mirawara", ] %>%
@@ -523,15 +526,15 @@ cols <- grep("(?i)unique_id|species|genus|family|order",
 #    .[V1 != 0, ]
 
 # merging of duplicate genera using the median
-Trait_AUS[is.na(Species) & !is.na(Genus), 
-          (cols) := lapply(.SD, median), 
+Trait_AUS[is.na(Species) & !is.na(Genus),
+          (cols) := lapply(.SD, median),
           .SDcols = cols,
           by = "Genus"]
 
 # rm duplicate genus entries
-ids <- Trait_AUS[is.na(Species) & !is.na(Genus), ] %>% 
+ids <- Trait_AUS[is.na(Species) & !is.na(Genus),] %>%
   .[duplicated(Genus), unique_ID]
-Trait_AUS <- Trait_AUS[!unique_ID %in% ids, ]
+Trait_AUS <- Trait_AUS[!unique_ID %in% ids,]
 
 # family column:
 Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
@@ -540,16 +543,15 @@ Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
           by = "Family"]
 
 # rm duplicate family entries
-ids <- Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
+ids <-
+  Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),] %>%
   .[duplicated(Family), unique_ID]
-Trait_AUS <- Trait_AUS[!unique_ID %in% ids, ]
+Trait_AUS <- Trait_AUS[!unique_ID %in% ids,]
 
 # save
 saveRDS(
   object = Trait_AUS,
-  file = file.path(
-    data_cleaned,
-    "Australia",
-    "Trait_AUS_preproc.rds"
-  )
+  file = file.path(data_cleaned,
+                   "Australia",
+                   "Trait_AUS_preproc.rds")
 )

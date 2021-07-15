@@ -55,16 +55,28 @@ setnames(Trait_Noa_new,
          new = c("locom_sessil",
                  "locom_burrow"))
 # Swimmer
-Trait_Noa_new[, locom_swim := apply(.SD, 1, max),
+Trait_Noa_new[, locom_swim := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Habit_prim_Swimmer",
                       "Habit_prim_Planktonic",
                       "Habit_prim_Skater")]
+
 # Crawler 
-Trait_Noa_new[, locom_crawl := apply(.SD, 1, max),
+Trait_Noa_new[, locom_crawl := apply(.SD, 1, sum, na.rm = TRUE),
           .SDcols = c("Habit_prim_Crawler",
                       "Habit_prim_Sprawler",
                       "Habit_prim_Climber",
                       "Habit_prim_Clinger")]
+
+Trait_Noa_new[, c(
+  "Habit_prim_Swimmer",
+  "Habit_prim_Planktonic",
+  "Habit_prim_Skater",
+  "Habit_prim_Crawler",
+  "Habit_prim_Sprawler",
+  "Habit_prim_Climber",
+  "Habit_prim_Clinger"
+) := NULL]
+
 # _________________________________________________________________________
 #### Size ####
 # specifically: Maximum body size
@@ -117,21 +129,6 @@ setnames(
   new = c("volt_uni", 
           "volt_semi",
           "volt_bi_multi")
-)
-
-# _________________________________________________________________________
-#### Normalize Noa New trait data ####
-# Normalizing of the trait values to a range of [0 - 1] by
-# dividing for a given trait each value for each trait state by the sum of all 
-# trait states 
-# _________________________________________________________________________
-Trait_Noa_new <- normalize_by_rowSum(
-  x = Trait_Noa_new,
-  non_trait_cols = c("unique_id",
-                     "species",
-                     "genus",
-                     "family",
-                     "order")
 )
 
 # _________________________________________________________________________
@@ -335,7 +332,7 @@ for (i in name_vec) {
 Trait_Noa_new <- final
 
 
-#### merge information from taxa that are only in old Noa DB ####
+#### Merge information from taxa that are only in old Noa DB ####
 # species level
 Trait_Noa_new <-
   rbind(Trait_Noa_new, Trait_Noa[!is.na(species), ] %>%

@@ -12,6 +12,7 @@ Trait_Noa <- readRDS(file = file.path(data_cleaned,
 # Subset to relevant traits:
 cols <- "Resp_late|Ovipos_behav_prim|stages|Habit_prim|Thermal_pref|Larval_disp|Feed_mode_prim|Voltinism|size|Body\\_shape|Order|Family|Genus|Species"
 Trait_Noa <- Trait_Noa[, .SD, .SDcols = names(Trait_Noa) %like% cols]
+Trait_Noa[, Body_shape_case := NULL]
 
 # Add ID col as unique identifier
 Trait_Noa[, unique_id := 1:nrow(Trait_Noa)]
@@ -137,6 +138,16 @@ Trait_Noa[is.na(Species) & is.na(Genus) & !is.na(Family),
 dupl_unique_id <- Trait_Noa[is.na(Species) & is.na(Genus) & !is.na(Family), ] %>% 
   .[(duplicated(Family)), unique_id]
 Trait_Noa <- Trait_Noa[!unique_id %in% dupl_unique_id, ]
+
+# ___________________________________________________________________________
+#### Normalization ####
+# ___________________________________________________________________________
+normalize_by_rowSum(x = Trait_Noa, 
+                    non_trait_cols = c("unique_id",
+                                       "Species", 
+                                       "Genus",
+                                       "Family",
+                                       "Order"))
 
 # save
 saveRDS(object = Trait_Noa, 
