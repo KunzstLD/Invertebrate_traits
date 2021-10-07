@@ -8,11 +8,17 @@
 Trait_Noa <- readRDS(file = file.path(data_cleaned, 
                                       "North_America",
                                       "Traits_US_taxa_pp.rds"))
+str(Trait_Noa)
+grep("(?i)Disp", names(Trait_Noa), value = TRUE)
+unique(Trait_Noa[, .(Adult_disp)])
+names(Trait_Noa)
+Trait_Noa$Larval_disp
 
 # Subset to relevant traits:
 cols <- "Resp_late|Ovipos_behav_prim|stages|Habit_prim|Thermal_pref|Larval_disp|Feed_mode_prim|Voltinism|size|Body\\_shape|Order|Family|Genus|Species"
 Trait_Noa <- Trait_Noa[, .SD, .SDcols = names(Trait_Noa) %like% cols]
 Trait_Noa[, Body_shape_case := NULL]
+Filter(is.character, Trait_Noa)
 
 # Add ID col as unique identifier
 Trait_Noa[, unique_id := 1:nrow(Trait_Noa)]

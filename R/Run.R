@@ -1,12 +1,12 @@
 # ________________________________________________________________________________
-#### Run script ####
+# Run script ----
 # ________________________________________________________________________________
 
 # Packages, paths and functions
 source("./R/Set_up.R")
 
 # ________________________________________________________________________________
-#### preprocessing raw data ####
+# preprocessing raw data ----
 # 03_preprocess_new_freshecol_taxa.R creates an .rds file which is
 # then used in the harmonization scripts
 # ________________________________________________________________________________
@@ -23,6 +23,6 @@ source("./R/Preprocessing_raw/02_preprocess_new_freshecol_taxa.R")
 source("./R/Preprocessing_raw/03_preprocess_new_freshecol_taxa.R")
 
 # ________________________________________________________________________________
-#### Harmonization scripts ####
+# Harmonization scripts ----
 # an intermediate .rds file is created at the end of each script
 # ________________________________________________________________________________

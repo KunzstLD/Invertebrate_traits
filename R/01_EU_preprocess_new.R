@@ -1,6 +1,6 @@
-# ------------------------------------------------------------------------------
-#### Preprocessing of Eu Trait DB ####
-# ------------------------------------------------------------------------------
+# _________________________________________________________________________
+# Preprocessing of Eu Trait DB ----
+# _________________________________________________________________________
 
 # read in
 trait_EU <- readRDS(
@@ -11,6 +11,7 @@ trait_EU <- readRDS(
   )
 )
 names(trait_EU)
+trait_EU %>% dim
 
 # Subset to relevant traits
 trait_EU <- trait_EU[, .SD,
@@ -46,7 +47,7 @@ pos <- no_info == ncol(trait_EU[, ..col])
 trait_EU <- trait_EU[!pos, ]
 
 # __________________________________________________________________________________________________
-#### Consolidate duplicate taxa ####
+# Consolidate duplicate taxa ----
 # only for family-level
 # species and genus duplicates have been introduced by rm e.g. "new Gen. sp." from some species
 # has not been done now
@@ -65,46 +66,6 @@ cols_fuzzy <- grep("(?=volt.*|resp.*|species|genus|family|order|taxon.*|ID.*)(?!
                    invert = TRUE,
                    perl = TRUE
 )
-
-# - aggr. duplicated species:
-# dupl_species <- trait_EU[!is.na(species), ] %>%
-#   .[duplicated(species) | duplicated(species, fromLast = TRUE), species] %>%
-#   .[duplicated(.)]
-# # agg via median except voltinism
-# trait_EU[species %in% dupl_species,
-#   (cols_fuzzy) := lapply(.SD, median, na.rm = TRUE),
-#   .SDcols = cols_fuzzy,
-#   by = "species"
-# ]
-# trait_EU[species %in% dupl_species,
-#          (cols_bin) := lapply(.SD, max, na.rm = TRUE),
-#          .SDcols = cols_bin,
-#          by = "species"
-# ]
-# # rm duplicates
-# trait_EU <- trait_EU[!(!is.na(species) & duplicated(species)), ]
- 
-
-# # aggr. duplicated genus
-# dupl_genus <- trait_EU[is.na(species) & !is.na(genus), ] %>%
-#   .[duplicated(genus) | duplicated(genus, fromLast = TRUE), genus] %>%
-#   .[!duplicated(.)]
-# # agg via median except voltinism
-# trait_EU[is.na(species) & genus %in% dupl_genus,
-#   (cols_fuzzy) := lapply(.SD, median, na.rm = TRUE),
-#   .SDcols = cols_fuzzy,
-#   by = "genus"
-# ]
-# trait_EU[is.na(species) & genus %in% dupl_genus,
-#          (cols_bin) := lapply(.SD, max, na.rm = TRUE),
-#          .SDcols = cols_bin,
-#          by = "genus"
-# ]
-# # rm duplicates
-# rm_dupl <- trait_EU[is.na(species) & !is.na(genus), ] %>%
-#   .[duplicated(genus), taxon_cp]
-# trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl), ]
-
 
 # combine duplicated families
 dupl_families <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
@@ -130,6 +91,7 @@ trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
 # rm_dupl <- trait_EU[is.na(species) & is.na(genus) & !is.na(family), ] %>%
 # .[duplicated(family), taxon_cp]
 # trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl),]
+
 
 # transform all NA values to 0
 # needed for harmonization later

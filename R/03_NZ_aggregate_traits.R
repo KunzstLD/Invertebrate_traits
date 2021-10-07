@@ -1,13 +1,12 @@
-
 # _________________________________________________________________________
-####  Aggregation of traits NZ ####
+#  Aggregation of traits NZ ----
 # _________________________________________________________________________
 
 # read in Trait NZ
 Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
 
 # _________________________________________________________________________
-#### Normalization #### 
+# Normalization ----
 # _________________________________________________________________________
 Trait_NZ <- normalize_by_rowSum(
   x = Trait_NZ,
@@ -17,6 +16,7 @@ Trait_NZ <- normalize_by_rowSum(
                      "species",
                      "unique_id")
 )
+
 
 # test how complete trait sets are 
 # 90 % dev -> the other 10 % are not aquatic insects
@@ -40,7 +40,6 @@ Trait_NZ <- Trait_NZ[order %in% c(
   "Megaloptera",
   "Neuroptera"
 ), ]
-
 
 # Direct aggregation using the median
 Trait_NZ_agg <- direct_agg(

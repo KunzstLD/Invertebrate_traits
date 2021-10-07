@@ -1,7 +1,6 @@
-
-# ------------------------------------------------------------------------- 
-#### Preprocessing NZ Traits ####
-# ------------------------------------------------------------------------- 
+# _________________________________________________________________________ 
+# Preprocessing NZ Traits ----
+# _________________________________________________________________________ 
 Trait_NZ <- read_excel(
   file.path(data_in,
             "NZ",
@@ -154,6 +153,11 @@ setnames(Trait_NZ,
          old = "Genus or Higher",
          new = "Genus")
 
+# Some tribes and subfamilies for Chironomidae occur in the family column 
+Trait_NZ[Family %in% c("Chironomini",
+                       "Tanytarsini"), 
+         Family := "Chironomidae"]
+
 # Order column:
 # Few entries are actually on Order but also occur in 
 # Family col (probably unranked on Family-level)
@@ -205,6 +209,7 @@ Trait_NZ[Order %in% "Crustacea" & Family %in% "Phreatogammaridae",
               Class = "Malacostraca",
               Order = "Amphipoda")]
 
+
 # rm not used cols
 Trait_NZ[, Taxon := NULL]
 
@@ -235,9 +240,9 @@ cols <- names(Filter(is.character , Trait_NZ[, -c("Phylum", "Class", "Order", "F
                                           "Genus", "Species")]))
 Trait_NZ[, (cols) := lapply(.SD, as.numeric), .SDcols = cols]
 
-# ------------------------------------------------------------------------- 
-#### Handle duplicates ####
-# ------------------------------------------------------------------------- 
+# _________________________________________________________________________ 
+# Handle duplicates ----
+# _________________________________________________________________________ 
 
 # no duplicates on species level:
 # Trait_NZ[!is.na(Species) & duplicated(Species), ]

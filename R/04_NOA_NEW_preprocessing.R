@@ -5,6 +5,8 @@
 # read in
 Trait_Noa_new <- fread(file.path(data_in, "North_America", "Trait_table_LauraT.csv"))
 
+Trait_Noa_new[!is.na(AdultFlyingStrength_abbrev), ]
+
 # select rel columns
 cols <-
   c(
@@ -49,6 +51,8 @@ for(j in names(Trait_Noa_new)) {
 
 # There are duplicates in the species column hence we assign a unique_id column
 Trait_Noa_new[, unique_id := 1:nrow(Trait_Noa_new)]
+
+Trait_Noa_new[Species == "Tribolium castaneum", ]
 
 # Taxonomical corrections
 # Crambiidae to Crambidae

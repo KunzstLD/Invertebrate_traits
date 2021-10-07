@@ -124,7 +124,6 @@ taxa_subf2_classf <- lapply(taxa_subf2_classf, function(y) {
 taxa_subf2_classf <- rbindlist(taxa_subf2_classf, fill = TRUE)
 taxa_subf2_classf[, "." := NULL]
 
-
 # merge taxonomic information back to freshecol
 freshwaterecol[tax_classf,
   `:=`(

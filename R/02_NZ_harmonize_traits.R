@@ -1,16 +1,14 @@
 # _________________________________________________________________________
-#### Harmonize AUS Traits ####
-
+# Harmonize AUS Traits ----
 # Remarks:
 # Ecological traits not present in NZ DB
-# aquatic stages? -> Leave also out?
 # _________________________________________________________________________
 
 # read in
 Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_taxa_pp.rds"))
 
 # _________________________________________________________________________
-#### Voltinism ####
+# Voltinism ----
 # volt_semi
 # volt_uni
 # volt_bi_multi
@@ -20,7 +18,7 @@ setnames(Trait_NZ,
          new = c("volt_semi", "volt_uni", "volt_bi_multi"))
 
 # _________________________________________________________________________
-#### Aquatic stages ####
+# Aquatic stages ----
 # stage_egg
 # stage_larva: larva and/or nymph
 # stage_pupa
@@ -39,7 +37,7 @@ setnames(Trait_NZ,
 # _________________________________________________________________________
 
 # _________________________________________________________________________
-#### Feeding mode ####
+# Feeding mode ----
 # feed_shredder: shredder (chewers, miners, xylophagus, decomposing plants)
 # feed_gatherer: collector gatherer (gatherers, detritivores, deposit feeders)
 # feed_filter: collector filterer (active filterers, passive filterers, absorbers)
@@ -58,14 +56,15 @@ setnames(Trait_NZ,
                  "DEPOSIT_deposit-feeders", "SHREDDER_shredders"),
          new = c("feed_filter", "feed_predator",
                  "feed_gatherer", "feed_shredder"))
+
+## Herbivores ----
 # Algal piercers and scrapers together
-Trait_NZ[, feed_herbivore := apply(.SD, 1, max),
+Trait_NZ[, feed_herbivore := apply(.SD, 1, sum),
         .SDcols = c("SCRAPER_scrapers", "ALGALP_algal piercer")]
-# del 
 Trait_NZ[, c("SCRAPER_scrapers", "ALGALP_algal piercer") := NULL]
 
 # _________________________________________________________________________
-#### Locomotion ####
+# Locomotion ----
 # locm_swim:  swimmer, scater (active & passive)
 # locm_crawl: crawlers, walkers & sprawler
 # locm_burrow: burrower
@@ -83,7 +82,7 @@ setnames(
 )
 
 # _________________________________________________________________________
-#### Respiration ####
+# Respiration ----
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
 # resp_pls_spi: spiracle& plastron 
@@ -98,11 +97,14 @@ setnames(
 setnames(Trait_NZ,
          old = c("TEGUMENT_tegument", "GILL_gills"),
          new = c("resp_teg", "resp_gil"))
-Trait_NZ[, resp_pls_spi := apply(.SD, 1, max),
+
+## Plastron & Spiracle ----
+Trait_NZ[, resp_pls_spi := apply(.SD, 1, sum),
         .SDcols = c("PLASTRON_plastron", "AERIAL_aerial")]
+Trait_NZ[, c("PLASTRON_plastron", "AERIAL_aerial") := NULL]
 
 # _________________________________________________________________________
-#### Drift/dispersal ####
+# Drift/dispersal ----
 # dissem_air_active
 # dissem_air_passive
 # dissem_aq_active
@@ -111,26 +113,31 @@ Trait_NZ[, resp_pls_spi := apply(.SD, 1, max),
 # _________________________________________________________________________
 
 # _________________________________________________________________________
-#### Size ####
+# Size ----
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
 # size_small: <= 5 mm & 5 - 10 mm
 # _________________________________________________________________________
 setnames(Trait_NZ,
-         old = c("SIZE3_>10-20 mm"), 
+         old = c("SIZE3_>10-20 mm"),
          new = c("size_medium"))
-Trait_NZ[, size_small := apply(.SD, 1, max),
+
+## Small ----
+Trait_NZ[, size_small := apply(.SD, 1, sum),
          .SDcols = c("SIZE1_<=5 mm", "SIZE2_>5-10 mm")]
-Trait_NZ[, size_large := apply(.SD, 1, max),
+
+## Large ----
+Trait_NZ[, size_large := apply(.SD, 1, sum),
          .SDcols = c("SIZE4_>20-40 mm", "SIZE5_>40 mm")]
-# del
+
+## Postprocessing ----
 Trait_NZ[, c("SIZE1_<=5 mm",
              "SIZE2_>5-10 mm",
              "SIZE4_>20-40 mm",
              "SIZE5_>40 mm") := NULL]
 # _________________________________________________________________________
-#### Reproduction/Oviposition + Egg/egg mass traits combined ####
+# Reproduction/Oviposition + Egg/egg mass traits combined ----
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
@@ -139,7 +146,9 @@ setnames(Trait_NZ,
          old = c("TERRESTRIAL_terrestrial", 
                  "EGGPROTECTED_female bears eggs in/on body"), 
          new = c("ovip_ter", "ovip_ovo"))
-Trait_NZ[, ovip_aqu := apply(.SD, 1, max),
+
+## Aquatic oviposition ----
+Trait_NZ[, ovip_aqu := apply(.SD, 1, sum),
          .SDcols = c(
            "SURFACE_water surface",
            "SUBMERGED_submerged",
@@ -147,7 +156,6 @@ Trait_NZ[, ovip_aqu := apply(.SD, 1, max),
            "EGGFREE_free",
            "EGGCEMENT_cemented"
          )]
-# del 
 Trait_NZ[, c(
   "SURFACE_water surface",
   "SUBMERGED_submerged",
@@ -157,7 +165,7 @@ Trait_NZ[, c(
 ) := NULL]
 
 # _________________________________________________________________________ 
-#### Body form ####
+# Body form ----
 # streamlined
 # cylindrical
 # spherical
@@ -174,7 +182,7 @@ setnames(x = Trait_NZ,
                  "bf_flattened"))
 
 # _________________________________________________________________________
-#### Pattern of development ####
+# Pattern of development ----
 # Holometabolous 
 # Hemimetabolous
 # No insect
@@ -228,6 +236,16 @@ setnames(Trait_NZ,
 
 # rm entries with taxonomical resolution higher than Family
 Trait_NZ <- Trait_NZ[!(is.na(species) & is.na(genus) & is.na(family)), ]
+
+# change column order
+setcolorder(
+  x = Trait_NZ,
+  neworder = grep(
+    "order|family|genus|species|unique.*|volt.*|locom.*|bf.*|feed.*|resp.*|size.*|dev.*",
+    names(Trait_NZ),
+    value = TRUE
+  )
+)
 
 # save
 saveRDS(object = Trait_NZ,

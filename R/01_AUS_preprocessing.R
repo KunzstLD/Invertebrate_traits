@@ -488,7 +488,7 @@ for(i in trait_author_pattern) {
   Trait_AUS[, (col_name) := lapply(.SD, function(y)
     y / tmp_sum), .SDcols = patterns(i)]
 }
-Trait_AUS[tmp_sum := NULL]
+Trait_AUS[, tmp_sum := NULL]
 
 # change column names from Chessman that contain word "genus"
 setnames(
@@ -527,7 +527,7 @@ cols <- grep(
 
 # merging of duplicate genera using the median
 Trait_AUS[is.na(Species) & !is.na(Genus),
-          (cols) := lapply(.SD, median),
+          (cols) := lapply(.SD, median, na.rm = TRUE),
           .SDcols = cols,
           by = "Genus"]
 
@@ -538,7 +538,7 @@ Trait_AUS <- Trait_AUS[!unique_ID %in% ids,]
 
 # family column:
 Trait_AUS[is.na(Species) & is.na(Genus) & !is.na(Family),
-          (cols) := lapply(.SD, median),
+          (cols) := lapply(.SD, median, na.rm = TRUE),
           .SDcols = cols,
           by = "Family"]
 

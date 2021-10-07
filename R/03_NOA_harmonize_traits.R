@@ -1,5 +1,5 @@
 # _________________________________________________________________________ 
-#### Harmonize NOA Traits ####
+# Harmonize NOA Traits ----
 # 
 # _________________________________________________________________________
 
@@ -13,7 +13,7 @@ int_cols <- names(Filter(is.integer, Trait_Noa))
 Trait_Noa[, (int_cols) := lapply(.SD, as.double), .SDcols = int_cols]
 
 # _________________________________________________________________________
-#### Voltinism ####
+# Voltinism ----
 # volt_semi
 # volt_uni
 # volt_bi_multi
@@ -29,7 +29,7 @@ setnames(
 )
 
 # _________________________________________________________________________
-#### aquatic stages ####
+# Aquatic stages ----
 # gives information about which stage lives in the aquatic phase 
 # stage1: egg
 # stage2: larva and/or nymph
@@ -48,7 +48,7 @@ setnames(
 )
 
 # _________________________________________________________________________
-# PH 
+# PH ----
 # ph_acidic, ph_neutral
 # neutral and alcaline combined to neutral
 # _________________________________________________________________________
@@ -90,14 +90,14 @@ setnames(
     "feed_shredder"
   )
 )
-Trait_Noa[, feed_herbivore := apply(.SD, 1. , sum, na.rm = TRUE),
+Trait_Noa[, feed_herbivore := apply(.SD, 1. , sum),
           .SDcols = c("Feed_mode_prim_Scraper/grazer",
                       "Feed_mode_prim_Piercer herbivore")]
 
 Trait_Noa[, c("Feed_mode_prim_Scraper/grazer",
               "Feed_mode_prim_Piercer herbivore") := NULL]
 
-# incorporating information from comments 
+## Incorporating information from comments ----
 # load raw NoA data
 Trait_Noa_raw <- readRDS(file = file.path(data_in, "North_America", "Inverttraitstable_raw.rds"))
 Trait_Noa_raw[, unique_id := 1:nrow(Trait_Noa_raw)]
@@ -233,7 +233,7 @@ Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 
 
 # _________________________________________________________________________
-#### Locomotion ####
+# Locomotion ----
 # locom_swim:  swimmer, scater (active & passive)
 # locom_crawl: crawlers, walkers & sprawler, climber
 # locom_burrow: burrower
@@ -243,14 +243,20 @@ Trait_Noa[, `Feed_mode_prim_Other (specify in comments)` := NULL]
 setnames(Trait_Noa, 
          old = c("Habit_prim_Attached/fixed", "Habit_prim_Burrower"), 
          new = c("locom_sessil", "locom_burrow"))
-Trait_Noa[, locom_swim := apply(.SD, 1, sum, na.rm = TRUE),
+
+## Swimmer ----
+Trait_Noa[, locom_swim := apply(.SD, 1, sum),
           .SDcols = c("Habit_prim_Swimmer",
                       "Habit_prim_Planktonic",
                       "Habit_prim_Skater")]
-Trait_Noa[, locom_crawl := apply(.SD, 1, sum, na.rm = TRUE),
+
+## Crawler ----
+Trait_Noa[, locom_crawl := apply(.SD, 1, sum),
           .SDcols = c("Habit_prim_Sprawler",
                       "Habit_prim_Climber",
                       "Habit_prim_Clinger")]
+
+## Postprocessing ----
 Trait_Noa[, c(
   "Habit_prim_Swimmer",
   "Habit_prim_Planktonic",
@@ -371,8 +377,7 @@ Trait_Noa[Trait_EU[is.na(species) & is.na(genus) &
           ),
           on = c(Taxa = "family")]
 
-
-# del Habit_prim_other & Habit_prim_Clinger
+# Del Habit_prim_other & Habit_prim_Clinger
 # Still 109 taxa undecided 
 # TODO: Think about removal of these
 # Trait_Noa[`Habit_prim_Other (specify in comments)` > 0,]
@@ -380,7 +385,7 @@ Trait_Noa[, `Habit_prim_Other (specify in comments)` := NULL]
 
 
 # _________________________________________________________________________
-#### Respiration ####
+# Respiration ----
 # late the right choice?
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
@@ -400,7 +405,9 @@ setnames(Trait_Noa,
                  "Resp_late_Tracheal gills"),
          new = c("resp_teg",
                  "resp_gil"))
-Trait_Noa[, resp_pls_spi := apply(.SD, 1, sum, na.rm = TRUE),
+
+## Plastron & spiracle ----
+Trait_Noa[, resp_pls_spi := apply(.SD, 1, sum),
           .SDcols = c(
             "Resp_late_Spiracular gills",
             "Resp_late_Plastron (permanent air store)",
@@ -408,6 +415,8 @@ Trait_Noa[, resp_pls_spi := apply(.SD, 1, sum, na.rm = TRUE),
             "Resp_late_Plant breathers",
             "Resp_late_Temporary air store"
           )]
+
+## Postprocessing ----
 
 # rm hemiglobin taxa
 Trait_Noa <- Trait_Noa[!Resp_late_Hemoglobin  > 0, ]
@@ -422,20 +431,11 @@ Trait_Noa[, c(
   "Resp_late_Hemoglobin"
 ) := NULL]
 
-# respiration comments
-# resp_comments <-
-#   Trait_Noa[(resp_teg == 0 & resp_pls_spi == 0 &
-#                resp_gil == 0) &
-#               `Resp_late_Other (specify in comments)` == 1,
-#             .(unique_id)]
-# Trait_Noa_raw[unique_id %in% resp_comments$unique_id, 
-#              .(Resp_comments)]
-
 # del Resp_later_Other
 Trait_Noa[, `Resp_late_Other (specify in comments)` := NULL]
 
 # _________________________________________________________________________
-#### Drift/dispersal ####
+# Drift/dispersal ----
 # use disp low, medium, high for comparability 
 # del dispersal_unknown
 # _________________________________________________________________________
@@ -452,7 +452,7 @@ setnames(
 )
 
 # _________________________________________________________________________
-#### Size ####
+# Size ----
 # size_small: size < 9 mm (EU: size < 10 mm)
 # size_medium: 9 mm < size > 16 mm (EU: 10 mm < size > 20 mm)
 # size_large: size > 16 mm (EU: size > 20 mm)
@@ -470,16 +470,19 @@ setnames(
 )
 
 # _________________________________________________________________________
-#### Oviposition ####
-# Modalities
+# Oviposition ----
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
 # ovip_ovo: Reproduction via ovoviparity
 # _________________________________________________________________________
-Trait_Noa[, ovip_ter := apply(.SD, 1, sum, na.rm = TRUE),
+
+## Terrestrial ----
+Trait_Noa[, ovip_ter := apply(.SD, 1, sum),
           .SDcols = c("Ovipos_behav_prim_Bank soil",
                       "Ovipos_behav_prim_Overhanging substrate (dry)")]
-Trait_Noa[, ovip_aqu := apply(.SD, 1, sum, na.rm = TRUE) ,
+
+## Aquatic ----
+Trait_Noa[, ovip_aqu := apply(.SD, 1, sum) ,
           .SDcols = c(
             "Ovipos_behav_prim_Algal mats",
             "Ovipos_behav_prim_Bottom sediments",
@@ -490,6 +493,7 @@ Trait_Noa[, ovip_aqu := apply(.SD, 1, sum, na.rm = TRUE) ,
             "Ovipos_behav_prim_Free-floating"
           )]
 
+## Postprocessing ----
 # del original categories
 Trait_Noa[, c("Ovipos_behav_prim_Algal mats",
               "Ovipos_behav_prim_Bottom sediments",
@@ -544,7 +548,7 @@ Trait_Noa[, ovip_ovo := ifelse(is.na(ovip_ovo), 0, ovip_ovo)]
 Trait_Noa[,`Ovipos_behav_prim_Other (specify in comments)` := NULL ]
 
 # _________________________________________________________________________
-#### Temperature ####
+# Temperature ----
 # temp very cold (EU < 6 °C, NoA < 5 °C)
 # temp cold (EU < 10 °C) + temp moderate (EU < 18 °C) (NoA 0-15)
 # temp warm (EU >= 18 °C, NoA >15)
@@ -557,7 +561,9 @@ setnames(Trait_Noa,
          new = c("temp_very_cold", 
                  "temp_cold_mod", 
                  "temp_eurytherm"))
-Trait_Noa[, temp_warm := apply(.SD, 1, sum, na.rm = TRUE),
+
+## Warm ----
+Trait_Noa[, temp_warm := apply(.SD, 1, sum),
           .SDcols = c("Thermal_pref_Warm eurythermal (15-30 C)",
                       "Thermal_pref_Hot euthermal (>30 C)")]
 Trait_Noa[, c("Thermal_pref_Warm eurythermal (15-30 C)",
@@ -569,14 +575,14 @@ setnames(Trait_Noa,
          new = c("species", "genus", "family", "order"))
 
 # _________________________________________________________________________
-#### Body form ####
+# Body form ----
 # bf_streamlined: streamlined/fusiform
 # bf_flattened: flattened (dorso-ventrally)
 # bf_cylindrical: cylindrical/tubular 
 # bf_spherical: spherical
 # _________________________________________________________________________
 
-## Using Philippe Polateras classification
+## Philippe U.-Polateras classification ----
 body_form_pup <- fread(file.path(data_missing, "Body_form_EU_NOA", "body_form_polatera_EU_NOA.csv"))
 
 # change "," to "." and convert bf columns to numeric
@@ -694,7 +700,7 @@ Trait_Noa[, c("Body_shape_Bluff (blocky)",
               "spherical") := NULL]
 
 # _________________________________________________________________________
-#### Normalization ####
+# Normalization ----
 # First step is normalizing of the trait values to a range of [0 - 1] by
 # dividing for a given trait each value for a trait state by the sum of all 
 # trait states

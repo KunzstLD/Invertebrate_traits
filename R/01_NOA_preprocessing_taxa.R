@@ -42,15 +42,22 @@ Trait_Noa <- Trait_Noa[!grepl("ADULT.*", Adult), ]
 saveRDS(Trait_Noa, file = file.path(data_in, "North_America", "Inverttraitstable_raw.rds"))
 
 # retrieve information on order
-family_Noa <- get_ids(names = Trait_Noa$Family, db = "gbif", rows = 1)
-Trait_Noa[, id_family := family_Noa$gbif]
+family_Noa <-
+  get_ids(sci_com = na.omit(unique(Trait_Noa$Family)),
+          db = "gbif",
+          rows = 1)
+family_gbif <- data.table(id_family = family_Noa$gbif, 
+           family = names(family_Noa$gbif))
+Trait_Noa[family_gbif,
+          id_family := i.id_family,
+          on = c(Family = "family")]
 order_Noa <- cbind(classification(
   id = Trait_Noa[!is.na(id_family) & !duplicated(id_family), ]$id_family,
   db = "gbifid"
 ))[c("family", "order")]
 setDT(order_Noa)
 Trait_Noa[order_Noa,
-  `:=`(Order = i.order),
+  Order := i.order,
   on = c(Family = "family")
 ]
 
@@ -66,6 +73,20 @@ Trait_Noa[grepl("Cyzicidae|Leptestheriidae|Limnadiidae", Family), Order := "Spin
 Trait_Noa[grepl("Lynceidae", Family), Order := "Onychura"]
 Trait_Noa[grepl("Caenestheriidae", Family), Order := "Branchiopoda"]
 
+# Taxonomical corrections
+# Parapoynx & Petrophilia
+Trait_Noa[Genus %in% c("Parapoynx",
+                       "Petrophila"), Family := "Crambidae"]
+
+# Rossiana
+Trait_Noa[Genus == "Rossiana", Family := "Rossianidae"]
+
+# Sperchonopsis
+Trait_Noa[Genus == "Sperchonopsis", Family := "Sperchonidae"]
+
+# Corbiculidae
+Trait_Noa[Family == "Corbiculidae", Order := "Venerida"]
+
 # del id_family column
 Trait_Noa[, id_family := NULL]
 
@@ -74,7 +95,16 @@ saveRDS(
   object = Trait_Noa,
   file = file.path(
     data_cleaned,
-    "North America",
+    "North_America",
     "Traits_US_taxa_pp.rds"
   )
 )
+fwrite(
+  x = Trait_Noa,
+  file = file.path(
+    data_cleaned,
+    "North_America",
+    "Traits_US_taxa_pp.csv"
+  )
+)
+
