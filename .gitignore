@@ -2,6 +2,7 @@
 .Rhistory
 .RData
 .Ruserdata
+.idea
 
 # Rproj file
 Invertebrate_traits.Rproj
@@ -38,3 +39,9 @@ ToDo/
 
 # doc files
 Paper/*.doc
+
+# Response to revisions
+Paper/Submission_new/Response*
+
+# TODO files
+TODO
