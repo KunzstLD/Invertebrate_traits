@@ -23,6 +23,7 @@ completeness_trait_data(
     )
 )
 
+
 # Choose traits &
 # restrict to certain orders
 Trait_EU <- Trait_EU[, .SD,

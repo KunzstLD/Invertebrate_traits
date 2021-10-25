@@ -27,6 +27,9 @@ Trait_EU <- cbind(
   normalize_by_rowSum(Trait_EU[, ..tachet_cols])
 )
 
+saveRDS(Trait_EU, 
+        "/home/kunzst/Schreibtisch/Trait_DB_EU_corrected.rds")
+
 # _________________________________________________________________________
 # Voltinism ----
 # volt_semi

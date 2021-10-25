@@ -47,6 +47,52 @@ pos <- no_info == ncol(trait_EU[, ..col])
 trait_EU <- trait_EU[!pos, ]
 
 # __________________________________________________________________________________________________
+# Correct orders ----
+# __________________________________________________________________________________________________
+
+# Some families have gen. sp. -> rm
+trait_EU[family %like% "gen. sp.", family := sub(" gen\\. sp\\.", "", family)] 
+trait_EU[family %like% "gen 1", family := "Ceratopogonidae"]
+
+# remove lv., but take the taxon 
+trait_EU[family %like% "lv.", family := sub(" lv.", "", family)]
+
+# remove ambigious Leuctridae
+trait_EU <- trait_EU[!family %like% "Leuctridae/", ]
+
+# Some Lepidoptera are wrongly classified (should be Diptera?)
+# unique(na.omit(trait_EU[order == "Lepidoptera", family])) %>% 
+#   .[21:25] %>% 
+#   query_google()
+trait_EU[family %in% c(
+  "Dixidae",
+  "Dolichopodidae",
+  "Chaoboridae",
+  "Culicidae",
+  "Ceratopogonidae",
+  "Cylindrotomidae",
+  "Athericidae",
+  "Blephariceridae",
+  "Anthomyiidae",
+  "Simuliidae",
+  "Ptychopteridae",
+  "Sciomyzidae",
+  "Rhagionidae",
+  "Psychodidae",
+  "Scathophagidae",
+  "Empididae",
+  "Limoniidae",
+  "Ephydridae",
+  "Muscidae",
+  "Tipulidae",
+  "Thaumaleidae",
+  "Tabanidae",
+  "Stratiomyidae",
+  "Syrphidae",
+  "Scatophagidae"
+), order := "Diptera"]
+
+# __________________________________________________________________________________________________
 # Consolidate duplicate taxa ----
 # only for family-level
 # species and genus duplicates have been introduced by rm e.g. "new Gen. sp." from some species
@@ -92,6 +138,9 @@ trait_EU[is.na(species) & is.na(genus) & family %in% dupl_families,
 # .[duplicated(family), taxon_cp]
 # trait_EU <- trait_EU[!(taxon_cp %in% rm_dupl),]
 
+# __________________________________________________________________________________________________
+# Data post-processing ----
+# __________________________________________________________________________________________________
 
 # transform all NA values to 0
 # needed for harmonization later
