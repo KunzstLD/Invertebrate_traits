@@ -40,7 +40,6 @@ Trait_EU <- Trait_EU[, .SD,
     "Megaloptera",
     "Neuroptera"
   ), ]
-# TODO: Trait_EU[family == "Pediciidae", ]
 
 # Trait aggregation to family-lvl
 # Family that "get's lost" in median aggregation: Culicidae

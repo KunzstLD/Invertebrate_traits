@@ -27,6 +27,9 @@ freshwaterecol[
   )
 ]
 freshwaterecol[, order_or_higher := copy_till_next_occur(x = order_or_higher)]
+freshwaterecol[!is.na(taxon), ] %>% dim
+# fwrite(freshwaterecol,
+#        file = "/home/kunzst/Schreibtisch/freshwaterecol_2021.csv")
 
 # - sort out all taxa with zero information
 trait_cols <- grep("taxon.*|EU|genus|family|order.*|ID_AQEM",

@@ -89,7 +89,8 @@ trait_EU[family %in% c(
   "Tabanidae",
   "Stratiomyidae",
   "Syrphidae",
-  "Scatophagidae"
+  "Scatophagidae",
+  "Pediciidae"
 ), order := "Diptera"]
 
 # __________________________________________________________________________________________________
