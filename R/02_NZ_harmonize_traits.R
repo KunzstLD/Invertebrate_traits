@@ -7,6 +7,21 @@
 # read in
 Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_taxa_pp.rds"))
 
+# Some incomplete cases
+# cases <- !complete.cases(Trait_NZ[, -c("Phylum", "Class", "Order", "Family", "Genus", "Species")])
+# Trait_NZ[cases, ]  
+# Turn NA's to Zeros
+cols <- names(Trait_NZ[, -c("Phylum",
+                            "Class",
+                            "Order",
+                            "Family",
+                            "Genus",
+                            "Species",
+                            "unique_id")])
+for(j in cols){
+  data.table::set(Trait_NZ, which(is.na(Trait_NZ[[j]])), j,0)
+}
+
 # _________________________________________________________________________
 # Voltinism ----
 # volt_semi
@@ -163,6 +178,8 @@ Trait_NZ[, c(
   "EGGFREE_free",
   "EGGCEMENT_cemented"
 ) := NULL]
+
+Trait_NZ[Genus == "Maoridiamesa", ]
 
 # _________________________________________________________________________ 
 # Body form ----

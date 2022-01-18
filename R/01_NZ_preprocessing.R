@@ -209,7 +209,6 @@ Trait_NZ[Order %in% "Crustacea" & Family %in% "Phreatogammaridae",
               Class = "Malacostraca",
               Order = "Amphipoda")]
 
-
 # rm not used cols
 Trait_NZ[, Taxon := NULL]
 
@@ -230,14 +229,97 @@ Trait_NZ[, (cols) := lapply(.SD, function(y)
   gsub("\\sbuds|\\ssexual|\\svivip", "", y)),
   .SDcols = cols]
 
-# ambiguous entries:
-# ?
-# 2?
-# 3?
-# 3 polyps ?
-# deleted through conversion to numeric
-cols <- names(Filter(is.character , Trait_NZ[, -c("Phylum", "Class", "Order", "Family",
-                                          "Genus", "Species")]))
+# Some ambiguous entries left:
+# 3 polyps ? -> ignore/rm
+cols <- grep("\\?", Trait_NZ)
+cols <- names(Trait_NZ[, ..cols])
+
+# Oviposition
+# kable(Trait_NZ[grepl("\\?", SUBMERGED_submerged) |
+#            grepl("\\?", TERRESTRIAL_terrestrial) |
+#            grepl("\\?", EGGCEMENT_cemented),
+#          .(
+#            Order,
+#            Family,
+#            Genus,
+#            Species,
+#            SUBMERGED_submerged,
+#            TERRESTRIAL_terrestrial,
+#            EGGCEMENT_cemented
+#          )])
+ 
+# Body form -> can be ignored
+# Trait_NZ[grepl("\\?", CYLINDRICAL_cylindrical),
+#          .(
+#            Order,
+#            Family,
+#            Genus,
+#            Species,
+#            CYLINDRICAL_cylindrical
+#          )]
+ 
+# Feeding mode 
+# kable(Trait_NZ[grepl("\\?", SHREDDER_shredders) |
+#                  grepl("\\?", `DEPOSIT_deposit-feeders`) |
+#                  grepl("\\?", PREDATOR_predator),
+#                .(
+#                  Order,
+#                  Family,
+#                  Genus,
+#                  Species,
+#                  SHREDDER_shredders,
+#                  `DEPOSIT_deposit-feeders`,
+#                  PREDATOR_predator
+#                )])
+ 
+# Respiration
+# kable(Trait_NZ[grepl("\\?", AERIAL_aerial),
+#                .(Order,
+#                  Family,
+#                  Genus,
+#                  Species,
+#                  AERIAL_aerial)])
+
+# 2? -> to 2 
+# 3? -> to 3 
+Trait_NZ[, (cols) := lapply(.SD, function(y)
+  sub("([0-9])(\\?)", "\\1", y)),
+  .SDcols = cols] 
+
+# for "?" assessment from Ngaire Philipps
+Trait_NZ[Genus == "Maoridiamesa", SUBMERGED_submerged := 0]
+Trait_NZ[Genus == "Mischoderus", `:=`(SUBMERGED_submerged = 2,
+                                      TERRESTRIAL_terrestrial = 2)]
+Trait_NZ[Genus == "Molophilus", SUBMERGED_submerged := 3]
+Trait_NZ[Family == "Pelecorhynchidae", `:=`(SUBMERGED_submerged = 2,
+                                            TERRESTRIAL_terrestrial = 2)]
+
+# All remaining "?" (traits that are not interesting for us) NA
+Trait_NZ[, (cols) := lapply(.SD, function(y)
+  sub("(\\?)", NA_real_, y)), .SDcols = cols]
+
+# There a few other columns that are type character
+# CRAWLER_crawlers (epibenthic) -> are actually skates! Put to swimmer category
+# First two traits not relevant for us
+# Filter(is.character, Trait_NZ) %>% Hmisc::describe(.)
+Trait_NZ[`CRAWLER_crawlers (epibenthic)` == "water surface", `:=`(
+  `CRAWLER_crawlers (epibenthic)` = 0,
+  `SWIMMER_swimmers (water column)` = 3
+)]
+
+# kable(Trait_NZ[`CRAWLER_crawlers (epibenthic)` == "water surface", .(
+#   Order,
+#   Family,
+#   Genus,
+#   Species,
+#   `CRAWLER_crawlers (epibenthic)`,
+#   `SWIMMER_swimmers (water column)`,
+#   `BURROWER_burrowers (infauna)`,
+#   ATTACHED_attached
+# )])
+
+# transform to numeric
+cols <- names(Filter(is.character, Trait_NZ))[-c(1:6)]
 Trait_NZ[, (cols) := lapply(.SD, as.numeric), .SDcols = cols]
 
 # _________________________________________________________________________ 
@@ -255,7 +337,7 @@ Trait_NZ[is.na(Species) & !is.na(Genus), ] %>%
 # Chironomidae)
 # Often values are the same across a trait
 # range  [0-3]
-# if not the same mean is taken
+# if not the same median is taken
 # Trait_NZ[grepl("Chironomidae", Family) & is.na(Genus) & is.na(Species), ]
 
 # trait cols
@@ -263,7 +345,6 @@ cols <- grep("(?i)unique_id|species|genus|family|order|class|phylum",
              names(Trait_NZ),
              value = TRUE,
              invert = TRUE)
-
 Trait_NZ[is.na(Species) & is.na(Genus) & !is.na(Family),
          (cols) := lapply(.SD, median), .SDcols = cols]
 

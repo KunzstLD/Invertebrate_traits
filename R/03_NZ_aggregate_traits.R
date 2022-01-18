@@ -17,16 +17,6 @@ Trait_NZ <- normalize_by_rowSum(
                      "unique_id")
 )
 
-
-# test how complete trait sets are 
-# 90 % dev -> the other 10 % are not aquatic insects
-completeness_trait_data(x = Trait_NZ,
-                        non_trait_cols = c("order",
-                                           "family",
-                                           "genus",
-                                           "species",
-                                           "unique_id"))
-
 # Subset to interesting orders:
 #   "Amphipoda" & "Venerida" missing
 Trait_NZ <- Trait_NZ[order %in% c(
@@ -40,6 +30,15 @@ Trait_NZ <- Trait_NZ[order %in% c(
   "Megaloptera",
   "Neuroptera"
 ), ]
+
+# test how complete trait sets are 
+# 90 % dev -> the other 10 % are not aquatic insects
+completeness_trait_data(x = Trait_NZ,
+                        non_trait_cols = c("order",
+                                           "family",
+                                           "genus",
+                                           "species",
+                                           "unique_id"))
 
 # Direct aggregation using the median
 Trait_NZ_agg <- direct_agg(

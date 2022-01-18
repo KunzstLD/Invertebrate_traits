@@ -1,7 +1,7 @@
 # Set up script:
 # Loads required packages for Trait data cleaning & Harmonization
 # Loads paths with location for data
-# Loads scripts with used functions
+# Loads scripts with used functionsonerous
 
 # libraries
 # data transformation and data handling
@@ -20,6 +20,9 @@ library(Hmisc)
 
 # unit testing
 library(testthat)
+
+# create markdown code
+library(knitr)
 
 # Data location
 data_in <- "./Data"

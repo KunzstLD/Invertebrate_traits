@@ -90,7 +90,7 @@ setnames(
     "feed_shredder"
   )
 )
-Trait_Noa[, feed_herbivore := apply(.SD, 1. , sum),
+Trait_Noa[, feed_herbivore := apply(.SD, 1 , sum),
           .SDcols = c("Feed_mode_prim_Scraper/grazer",
                       "Feed_mode_prim_Piercer herbivore")]
 

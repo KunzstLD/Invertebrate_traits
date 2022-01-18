@@ -51,6 +51,7 @@ Trait_AUS <- Trait_AUS[, .SD,
     "Megaloptera",
     "Neuroptera"
   ),]
+# check_trait_values(Trait_DB = Trait_AUS)
 
 # create taxa column
 Trait_AUS[, taxa := coalesce(species, genus, family, order)]

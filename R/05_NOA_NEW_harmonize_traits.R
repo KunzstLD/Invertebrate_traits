@@ -303,7 +303,7 @@ Trait_Noa_new[stepFamily_Trait_Noa_new,
     bf_spherical = i.bf_spherical,
     ovip_ter = i.ovip_ter,
     ovip_aqu = i.ovip_aqu,
-    ovpi_ovo = i.ovip_ovo
+    ovip_ovo = i.ovip_ovo
   ),
   on = "unique_id"
 ]

@@ -230,7 +230,19 @@ normalize_by_rowSum <- function(x,
   return(x)
 }
 
-#### check for completeness of trait dataset ####
+# For binary coded traits!
+# Check for a given grouping feature if taxa have multiple
+# traits assigned
+# taxonomic columns must be written in small letters
+taxa_not_normalized <- function(x, pattern) {
+  ind <- which(rowSums(x[, .SD,
+                         .SDcols = patterns(pattern)]) > 1)
+  x[ind, .SD, .SDcols = patterns(paste0(pattern, "|species|genus|family|order"))]
+}
+
+
+
+#### Check for completeness of trait dataset ####
 completeness_trait_data <- function(x, non_trait_cols) {
   trait_names_pattern <- create_pattern_ind(
     x = x,
@@ -259,6 +271,26 @@ completeness_trait_data <- function(x, non_trait_cols) {
   return(output)
 }
 
+#### Check of trait values ####
+# Are there any unexpected trait values?
+# Gives rowSums per grouping feature
+# Should be ideally applied to normalised data
+# Values are 0 or maximum rowSum value
+check_trait_values <- function(Trait_DB) {
+  pat <- create_pattern_ind(Trait_DB[, -c("species",
+                                          "genus",
+                                          "family",
+                                          "order")])
+  names(pat) <- pat
+  
+  otp <- list()
+  for (i in names(pat)) {
+    test <- Trait_DB[, apply(.SD, 1, function(y)
+      length(y[!is.na(y)])), .SDcols = patterns(pat[[i]])]
+    otp[[i]] <- unique(test)
+  }
+  otp
+}
 
 # _________________________________________________________________________
 #### Trait Aggregation ####

@@ -1,6 +1,6 @@
-# =========================================================================
+# _________________________________________________________________________
 #### Aggregation of traits EU ####
-# =========================================================================
+# _________________________________________________________________________
 
 # read in harmonized, preprocessed & already normalized EU Trait DB
 # data are already normalized!
@@ -23,7 +23,6 @@ completeness_trait_data(
     )
 )
 
-
 # Choose traits &
 # restrict to certain orders
 Trait_EU <- Trait_EU[, .SD,
@@ -40,6 +39,7 @@ Trait_EU <- Trait_EU[, .SD,
     "Megaloptera",
     "Neuroptera"
   ), ]
+
 
 # Trait aggregation to family-lvl
 # Family that "get's lost" in median aggregation: Culicidae

@@ -5,8 +5,6 @@
 # read in
 Trait_Noa_new <- fread(file.path(data_in, "North_America", "Trait_table_LauraT.csv"))
 
-Trait_Noa_new[!is.na(AdultFlyingStrength_abbrev), ]
-
 # select rel columns
 cols <-
   c(
@@ -51,8 +49,7 @@ for(j in names(Trait_Noa_new)) {
 
 # There are duplicates in the species column hence we assign a unique_id column
 Trait_Noa_new[, unique_id := 1:nrow(Trait_Noa_new)]
-
-Trait_Noa_new[Species == "Tribolium castaneum", ]
+# Trait_Noa_new[Species == "Tribolium castaneum", ]
 
 # Taxonomical corrections
 # Crambiidae to Crambidae
@@ -159,9 +156,7 @@ Trait_Noa_new[!is.na(Species) &
 # rm duplicate species entries
 dupl_unique_id <- Trait_Noa_new[duplicated(Species) & !is.na(Species), unique_id]
 Trait_Noa_new <- Trait_Noa_new[!unique_id %in% dupl_unique_id, ]
-
-
-Trait_Noa_new[Species == "Ephemerella subvaria", ]
+# Trait_Noa_new[Species == "Ephemerella subvaria", ]
 
 # - genus-level:
 Trait_Noa_new[is.na(Species) & !is.na(Genus) &
@@ -211,3 +206,47 @@ saveRDS(object = Trait_Noa_new,
                          "North_America", 
                          "Traits_US_pp_LauraT.rds")
 )
+
+
+
+
+NA_genus <- Trait_Noa_new[is.na(species) & !is.na(genus), .SD,
+                      .SDcols = patterns("genus|family|order|Feed.+|Max.+")] 
+ind_genus <- NA_genus[, apply(.SD, 1, function(y)
+  as.logical(sum(y, na.rm = TRUE))), .SDcols = patterns("Feed.+")]
+NA_genus[ind_genus, ]
+
+NA_family <- Trait_Noa_new[is.na(species) &
+                is.na(genus) & !is.na(family), .SD,
+              .SDcols = patterns("family|order|Feed.+|Max.+")]
+ind_family <- NA_family[, apply(.SD, 1, function(y)
+  as.logical(sum(y, na.rm = TRUE))), .SDcols = patterns("Feed.+")]
+NA_family[ind_family, ]
+
+setnames(
+  NA_family,
+  old = c(
+    "Feed_prim_CF",
+    "Feed_prim_CG",
+    "Feed_prim_PA",
+    "Feed_prim_PR",
+    "Feed_prim_SH",
+    "Feed_prim_HB"
+  ),
+  new = c(
+    "feed_filter",
+    "feed_gatherer",
+    "feed_parasite",
+    "feed_predator",
+    "feed_shredder",
+    "feed_herbivore"
+  )
+)
+
+fwrite(rbind(NA_genus, NA_family, fill = TRUE), 
+       file = "/home/kunzst/Schreibtisch/NA_feeding_mode_genus_family.csv")
+
+
+
+
+

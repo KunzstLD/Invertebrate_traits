@@ -937,6 +937,8 @@ Trait_EU[bf_EU,
   on = c(taxa_adjusted = "genus")
 ]
 
+Trait_EU[bf_cylindrical == 1, .(order)] %>% unique()
+
 # _________________________________________________________________________
 # Size
 # size_small: size < 9 mm (EU: size < 10 mm)

@@ -8,11 +8,8 @@
 Trait_Noa <- readRDS(file = file.path(data_cleaned, 
                                       "North_America",
                                       "Traits_US_taxa_pp.rds"))
-str(Trait_Noa)
-grep("(?i)Disp", names(Trait_Noa), value = TRUE)
-unique(Trait_Noa[, .(Adult_disp)])
-names(Trait_Noa)
-Trait_Noa$Larval_disp
+Trait_Noa[, `No.Aquatic_stages`] %>% Hmisc::describe()
+
 
 # Subset to relevant traits:
 cols <- "Resp_late|Ovipos_behav_prim|stages|Habit_prim|Thermal_pref|Larval_disp|Feed_mode_prim|Voltinism|size|Body\\_shape|Order|Family|Genus|Species"
