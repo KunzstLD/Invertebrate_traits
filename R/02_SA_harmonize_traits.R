@@ -90,19 +90,22 @@ Trait_SA[is.na(species) & is.na(genus) & family == "Hydrophilidae",
 
 ## Others ----
 # 187 taxa which are interesting for potential reclassification 
-# taxa_bf_others <-
-#   Trait_SA[`Body shape_Others - specify` == 1 & order %in% c(
-#     "Ephemeroptera",
-#     "Hemiptera",
-#     "Odonata",
-#     "Trichoptera",
-#     "Coleoptera",
-#     "Plecoptera",
-#     "Diptera",
-#     "Megaloptera",
-#     "Neuroptera"
-#   ), unique_ID]
-
+taxa_bf_others <-
+  Trait_SA[`Body shape_Others - specify` == 1 & order %in% c(
+    "Ephemeroptera",
+    "Hemiptera",
+    "Odonata",
+    "Trichoptera",
+    "Coleoptera",
+    "Plecoptera",
+    "Diptera",
+    "Megaloptera",
+    "Neuroptera"
+  ), family]
+saveRDS(unique(taxa_bf_others),
+        file.path(data_cleaned,
+                  "SA",
+                  "taxa_bf_others.rds"))
 
 # Delete old body shape columns
 # leave body shape others for now
@@ -157,7 +160,7 @@ Trait_SA[, c(
 
 
 # _________________________________________________________________________
-## Respiration
+# Respiration ----
 # resp_teg: cutaneous/tegument
 # resp_gil: gills
 # resp_pls_spi: plastron & spiracle
@@ -174,7 +177,7 @@ Trait_SA[, c(
 setnames(
   Trait_SA,
   c("Respiration_Tegument/Cutaneous", "Respiration_Gills"),
-  c("res_teg", "resp_gil")
+  c("resp_teg", "resp_gil")
 )
 
 ## Plastron & Spiracle ----
@@ -229,7 +232,7 @@ Trait_SA[, feed_predator := apply(.SD, 1, sum),
 Trait_SA[, feed_gatherer := apply(.SD, 1, sum),
          .SDcols = patterns("(?i)Deposit feeder")]
 
-# How to handle Varied and Omnivore?
+## Varied and Omnivore ----
 # Both Chironomidae genera and Leptoceridae classified as predator and shredder
 Trait_SA[`FUNCTIONAL FEEDING GROUP (FFG)_Omnivore (Feed on anything and everything available, mainly reserved for scavengers)` == 1,
          `:=`(feed_shredder = 1, feed_predator = 1)]
@@ -371,7 +374,7 @@ Trait_SA <- Trait_SA[order %in% c(
 Trait_SA[grepl("Chironomidae", family), subfamily := sub("(Chironomidae)(.+)", "\\2", family)]
 Trait_SA[grepl("Chironomidae", family), family := sub("(Chironomidae)(.+)", "\\1", family)]
 
-## Normalize
+## Normalize ----
 normalize_by_rowSum(
   Trait_SA,
   non_trait_cols = c(
@@ -385,6 +388,41 @@ normalize_by_rowSum(
     "Body shape_Others - specify"
   )
 )
+
+## Postprocessing ----
+# column order
+new_order <-
+  c(
+    "taxon",
+    "order",
+    "family",
+    "genus",
+    "species",
+    "unique_ID",
+    grep("bf",
+         names(Trait_SA),
+         value = TRUE),
+    "Body shape_Others - specify",
+    grep("size",
+         names(Trait_SA),
+         value = TRUE),
+    grep("locom",
+         names(Trait_SA),
+         value = TRUE),
+    grep("resp",
+         names(Trait_SA),
+         value = TRUE),
+    grep("feed",
+         names(Trait_SA),
+         value = TRUE),
+    grep("volt",
+         names(Trait_SA),
+         value = TRUE),
+    grep("ovip",
+         names(Trait_SA),
+         value = TRUE)
+  )
+setcolorder(Trait_SA, new_order)
 
 # save
 saveRDS(Trait_SA,
