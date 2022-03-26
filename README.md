@@ -21,8 +21,10 @@ For a detailed description please refer to the publication.
 
 Contains the preprocessed and harmonised trait datasets for each continent and region as *rds file*.
 
-* "Trait_continent/region_preproc.rds": preprocessed and cleaned trait dataset (e.g. handling of duplicates, addition of taxonomic nomenclature, etc.)
-* "Trait_continent/region_harmonised.rds": harmonised trait datasets
+* "Trait_continent/region/name_preproc.rds": preprocessed and cleaned trait dataset (e.g. handling of duplicates, addition of taxonomic nomenclature, etc.)
+* "Trait_continent/region/name_harmonised.rds": harmonised trait datasets. Some of these datasets are named "Trait_continent/region/name_pp_harmonised.rds"
+
+  For North America, two trait datbases were used (Vieiera et al. 2006 and the Twardochleb et al. 2021).  *Trait_US_pp...rds* denotes the former *Trait_US_..._LauraT....rds* denotes the latter.
 
 ### - /Paper
 
