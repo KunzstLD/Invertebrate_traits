@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Latex_Supplementary_File.blg'
-[28] biber:313> INFO - === Fr Jul 30, 2021, 15:58:30
-[61] Biber.pm:371> INFO - Reading 'Latex_Supplementary_File.bcf'
-[160] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
-[181] Biber.pm:3981> INFO - Processing section 0
-[196] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[219] bibtex.pm:1468> INFO - LaTeX decoding ...
-[389] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[420] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[420] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[420] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[420] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[428] bbl.pm:617> INFO - Writing 'Latex_Supplementary_File.bbl' with encoding 'UTF-8'
-[429] bbl.pm:720> INFO - Output to Latex_Supplementary_File.bbl
+[31] biber:313> INFO - === Mo Okt 25, 2021, 12:00:29
+[57] Biber.pm:371> INFO - Reading 'Latex_Supplementary_File.bcf'
+[123] Biber.pm:857> INFO - Found 1 citekeys in bib section 0
+[137] Biber.pm:3981> INFO - Processing section 0
+[145] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[159] bibtex.pm:1468> INFO - LaTeX decoding ...
+[298] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[326] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[326] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[326] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[326] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[334] bbl.pm:617> INFO - Writing 'Latex_Supplementary_File.bbl' with encoding 'UTF-8'
+[335] bbl.pm:720> INFO - Output to Latex_Supplementary_File.bbl

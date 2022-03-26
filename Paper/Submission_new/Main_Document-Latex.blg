@@ -1,15 +1,15 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'Main_Document-Latex.blg'
-[23] biber:313> INFO - === Fr Jul 30, 2021, 16:20:57
-[41] Biber.pm:371> INFO - Reading 'Main_Document-Latex.bcf'
-[105] Biber.pm:857> INFO - Found 62 citekeys in bib section 0
-[119] Biber.pm:3981> INFO - Processing section 0
-[128] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
-[144] bibtex.pm:1468> INFO - LaTeX decoding ...
-[282] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
-[926] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[926] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[926] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
-[926] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[1009] bbl.pm:617> INFO - Writing 'Main_Document-Latex.bbl' with encoding 'UTF-8'
-[1063] bbl.pm:720> INFO - Output to Main_Document-Latex.bbl
+[29] biber:313> INFO - === Mo Okt 25, 2021, 11:47:14
+[51] Biber.pm:371> INFO - Reading 'Main_Document-Latex.bcf'
+[103] Biber.pm:857> INFO - Found 64 citekeys in bib section 0
+[117] Biber.pm:3981> INFO - Processing section 0
+[126] Biber.pm:4154> INFO - Looking for bibtex format file 'Ref_invertebrate_DB.bib' for section 0
+[143] bibtex.pm:1468> INFO - LaTeX decoding ...
+[267] bibtex.pm:1294> INFO - Found BibTeX data source 'Ref_invertebrate_DB.bib'
+[1011] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1011] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1011] Biber.pm:3809> INFO - Sorting list 'apa/global//global/global' of type 'entry' with template 'apa' and locale 'en-US'
+[1012] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[1089] bbl.pm:617> INFO - Writing 'Main_Document-Latex.bbl' with encoding 'UTF-8'
+[1154] bbl.pm:720> INFO - Output to Main_Document-Latex.bbl

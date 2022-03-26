@@ -1955,6 +1955,41 @@
       \verb https://www.nature.com/articles/s41559-018-0667-3
       \endverb
     \endentry
+    \entry{cite_FD}{manual}{}
+      \name{author}{3}{}{%
+        {{hash=75f5a33eeb4946ff342f26d1a159338e}{%
+           family={Laliberté},
+           familyi={L\bibinitperiod},
+           given={Etienne},
+           giveni={E\bibinitperiod}}}%
+        {{hash=5993ce00a3c0c0a36096f597c61087c4}{%
+           family={Legendre},
+           familyi={L\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+        {{hash=fe8693ba623b1a6061f0ed7dcab4e401}{%
+           family={Shipley},
+           familyi={S\bibinitperiod},
+           given={Bill},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{5e548178617fb0f29f665532e2867771}
+      \strng{fullhash}{b3606ede0648cec338297a788555f244}
+      \strng{bibnamehash}{b3606ede0648cec338297a788555f244}
+      \strng{authorbibnamehash}{b3606ede0648cec338297a788555f244}
+      \strng{authornamehash}{5e548178617fb0f29f665532e2867771}
+      \strng{authorfullhash}{b3606ede0648cec338297a788555f244}
+      \field{sortinit}{L}
+      \field{sortinithash}{2c7981aaabc885868aba60f0c09ee20f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{R package version 1.0-12}
+      \field{title}{FD: measuring functional diversity from multiple traits, and other tools for functional ecology}
+      \field{year}{2014}
+    \endentry
     \entry{maasriGlobalUnifiedTrait2019}{article}{}
       \name{author}{1}{}{%
         {{hash=4f8087312ffad7066c54456570dd6222}{%
@@ -4125,6 +4160,86 @@
       \verb https://esajournals.onlinelibrary.wiley.com/doi/abs/10.1890/07-1206.1
       \endverb
       \keyw{competitive filtering,environmental filtering,functional divergence,functional evenness,functional niche,functional richness,functional traits,null model}
+    \endentry
+    \entry{violleLetConceptTrait2007}{article}{}
+      \name{author}{7}{}{%
+        {{hash=8f524674b7870bae7bfbc772ee46b984}{%
+           family={Violle},
+           familyi={V\bibinitperiod},
+           given={Cyrille},
+           giveni={C\bibinitperiod}}}%
+        {{hash=335c97b0d11aedf8e1f612f7c73d573f}{%
+           family={Navas},
+           familyi={N\bibinitperiod},
+           given={Marie-Laure},
+           giveni={M\bibinithyphendelim L\bibinitperiod}}}%
+        {{hash=86ed80e824386c21ba5732efb54df414}{%
+           family={Vile},
+           familyi={V\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0ddd9b9db09f18412fb8f6a6c699639c}{%
+           family={Kazakou},
+           familyi={K\bibinitperiod},
+           given={Elena},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d0cf736c0235143c3cd6e7aa5d1b6c2e}{%
+           family={Fortunel},
+           familyi={F\bibinitperiod},
+           given={Claire},
+           giveni={C\bibinitperiod}}}%
+        {{hash=0faac4ea1ae3fa975b2a54800ff9e59a}{%
+           family={Hummel},
+           familyi={H\bibinitperiod},
+           given={Irène},
+           giveni={I\bibinitperiod}}}%
+        {{hash=adce00945e25fd9866396dce1da9fb57}{%
+           family={Garnier},
+           familyi={G\bibinitperiod},
+           given={Eric},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb015bf77099b74cca30361e4af9f65f}
+      \strng{fullhash}{9b7a00ba1dff409dc5eb391391fd683c}
+      \strng{bibnamehash}{9b7a00ba1dff409dc5eb391391fd683c}
+      \strng{authorbibnamehash}{9b7a00ba1dff409dc5eb391391fd683c}
+      \strng{authornamehash}{bb015bf77099b74cca30361e4af9f65f}
+      \strng{authorfullhash}{9b7a00ba1dff409dc5eb391391fd683c}
+      \field{sortinit}{V}
+      \field{sortinithash}{75dd7385c90b2252c3ae853a80ca853b}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In its simplest definition, a trait is a surrogate of organismal performance, and this meaning of the term has been used by evolutionists for a long time. Over the last three decades, developments in community and ecosystem ecology have forced the concept of trait beyond these original boundaries, and trait-based approaches are now widely used in studies ranging from the level of organisms to that of ecosystems. Despite some attempts to fix the terminology, especially in plant ecology, there is currently a high degree of confusion in the use, not only of the term “trait” itself, but also in the underlying concepts it refers to. We therefore give an unambiguous definition of plant trait, with a particular emphasis on functional trait. A hierarchical perspective is proposed, extending the “performance paradigm” to plant ecology. “Functional traits” are defined as morpho-physio-phenological traits which impact fitness indirectly via their effects on growth, reproduction and survival, the three components of individual performance. We finally present an integrative framework explaining how changes in trait values due to environmental variations are translated into organismal performance, and how these changes may influence processes at higher organizational levels. We argue that this can be achieved by developing “integration functions” which can be grouped into functional response (community level) and effect (ecosystem level) algorithms.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.0030-1299.2007.15559.x}
+      \field{issn}{1600-0706}
+      \field{journaltitle}{Oikos}
+      \field{langid}{english}
+      \field{number}{5}
+      \field{title}{Let the Concept of Trait Be Functional!}
+      \field{urlday}{28}
+      \field{urlmonth}{9}
+      \field{urlyear}{2021}
+      \field{volume}{116}
+      \field{year}{2007}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{882\bibrangedash 892}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1111/j.0030-1299.2007.15559.x
+      \endverb
+      \verb{file}
+      \verb /home/kunzst/Zotero/storage/IJMVS9HZ/Violle et al. - 2007 - Let the concept of trait be functional!.pdf;/home/kunzst/Zotero/storage/4ES566Z2/j.0030-1299.2007.15559.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0030-1299.2007.15559.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.0030-1299.2007.15559.x
+      \endverb
     \endentry
     \entry{vos_taxonomic_2017}{article}{}
       \name{author}{2}{}{%

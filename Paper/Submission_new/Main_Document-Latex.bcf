@@ -2139,24 +2139,24 @@
     <bcf:citekey order="41">polatera_personal_information_2020</bcf:citekey>
     <bcf:citekey order="42">keffordIntegratedDatabaseStream2020a</bcf:citekey>
     <bcf:citekey order="43">Philips_and_Smith_NZ_DB_2018</bcf:citekey>
-    <bcf:citekey order="44">chessman_dissolved-oxygen_2018</bcf:citekey>
-    <bcf:citekey order="45">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="46">bathe_biological_2011</bcf:citekey>
-    <bcf:citekey order="47">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="44">violleLetConceptTrait2007</bcf:citekey>
+    <bcf:citekey order="45">chessman_dissolved-oxygen_2018</bcf:citekey>
+    <bcf:citekey order="46">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="47">bathe_biological_2011</bcf:citekey>
     <bcf:citekey order="48">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="49">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="50">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="51">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="52">peres-netoLinkingTraitVariation2017</bcf:citekey>
-    <bcf:citekey order="52">millerFunctionalTraitsCommunity2019</bcf:citekey>
-    <bcf:citekey order="53">villegerNewMultidimensionalFunctional2008a</bcf:citekey>
-    <bcf:citekey order="54">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="52">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="53">peres-netoLinkingTraitVariation2017</bcf:citekey>
+    <bcf:citekey order="53">millerFunctionalTraitsCommunity2019</bcf:citekey>
+    <bcf:citekey order="54">villegerNewMultidimensionalFunctional2008a</bcf:citekey>
     <bcf:citekey order="55">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="56">cite_R</bcf:citekey>
-    <bcf:citekey order="57">cite_vegan</bcf:citekey>
-    <bcf:citekey order="58">keffordIntegratedDatabaseStream2020a</bcf:citekey>
-    <bcf:citekey order="59">szocs_effects_2014</bcf:citekey>
-    <bcf:citekey order="60">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="56">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="57">cite_R</bcf:citekey>
+    <bcf:citekey order="58">cite_vegan</bcf:citekey>
+    <bcf:citekey order="59">cite_FD</bcf:citekey>
+    <bcf:citekey order="60">keffordIntegratedDatabaseStream2020a</bcf:citekey>
     <bcf:citekey order="61">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="62">szocs_effects_2014</bcf:citekey>
     <bcf:citekey order="63">baird_toward_2011</bcf:citekey>
@@ -2180,6 +2180,8 @@
     <bcf:citekey order="78">usseglio-polatera_biomonitoring_2000</bcf:citekey>
     <bcf:citekey order="79">polatera_personal_information_piercer_2020</bcf:citekey>
     <bcf:citekey order="80">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="81">szocs_effects_2014</bcf:citekey>
+    <bcf:citekey order="82">szocs_effects_2014</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="apa">

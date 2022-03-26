@@ -62,7 +62,7 @@ uniquelist=false
 
 % \listfiles
 
-\title{Supporting Information - Tackling discrepancies in freshwater invertebrate trait databases: Harmonising across continents and aggregating taxonomic resolution}
+\title{Supporting Information - Tackling inconsistencies among freshwater invertebrate trait databases: Harmonising across continents and aggregating taxonomic resolution}
 \author[1]{Stefan Kunz}
 \author[2]{Ben J. Kefford}
 \author[3]{Astrid Schmidt-Kloiber}
@@ -380,52 +380,9 @@ We expected that, in addition to averaging measures, different weighting approac
 \subsection*{Effects of harmonisation and trait aggregation on inferences regarding trait-environment relationships}
 \label{sec:effects_harmonisation_trait_env_rel}
 
-\begin{table}[H]
-    \centering
-    \caption{Mean, median and standard deviation of the affinities of traits that were responsive to the salinity gradient in the original study but not in the re-analysis using the harmonised European trait dataset.} 
-    \label{tab:SI_resp_traits_summary_stats}
-    \begin{tabular}{l|l|c|c|c|c}
-    \toprule[.1em]
-    Type & Trait & Mean & Median & SD & Responsive? \\ 
-    \toprule[.1em]
-    Stepw\_median & Shredder & 0.20 & 0.14 & 0.25 & No \\ 
-      Stepw\_mean & Shredder & 0.18 & 0.12 & 0.22 & No\\ 
-      Direct\_median & Shredder & 0.21 & 0.14 & 0.25 & No\\ 
-      Direct\_mean & Shredder & 0.19 & 0.14 & 0.22 & No\\ 
-      Weighted & Shredder & 0.19 & 0.14 & 0.22 & No \\ 
-      Harmonised; not\_aggregated & Shredder & 0.18 & 0.12 & 0.24 & No \\ 
-      Original & Shredder & 0.25 & 0.14 & 0.32 & Yes\\ 
-      \midrule
-      Stepw\_median & Gills & 0.30 & 0.27 & 0.32 & Yes\\ 
-      Stepw\_mean & Gills & 0.29 & 0.22 & 0.32 & Yes\\ 
-      Direct\_median & Gills & 0.30 & 0.30 & 0.32 & Yes\\ 
-      Direct\_mean & Gills & 0.30 & 0.30 & 0.32 & Yes\\ 
-      Weighted & Gills & 0.30 & 0.30 & 0.32 & Yes\\ 
-      Harmonised; not\_aggregated & Gills & 0.30 & 0.25 & 0.32 & No \\ 
-      Original & Gills & 0.28 & 0.00 & 0.33 & Yes \\ 
-      \midrule
-      Stepw\_median & Short life cycle & 0.64 & 0.75 & 0.39 & No \\ 
-      Stepw\_mean & Short life cycle & 0.64 & 0.79 & 0.39 & No \\ 
-      Direct\_median & Short life cycle & 0.67 & 0.75 & 0.37 & Yes \\ 
-      Direct\_mean & Short life cycle & 0.67 & 0.79 & 0.38 & Yes \\ 
-      Weighted & Short life cycle & 0.67 & 0.79 & 0.38 & Yes\\ 
-      Harmonised; not\_aggregated & Short life cycle & 0.64 & 0.75 & 0.40 & Yes \\ 
-      Original & Short life cycle & 0.64 & 0.75 & 0.40 & Yes \\ 
-      \midrule
-      Stepw\_median & Long life cylce & 0.36 & 0.25 & 0.39 & No \\ 
-      Stepw\_mean & Long life cylce & 0.36 & 0.21 & 0.39 & No \\
-      Direct\_median & Long life cylce & 0.33 & 0.25 & 0.37 & Yes\\ 
-      Direct\_mean & Long life cylce & 0.33 & 0.21 & 0.38 & Yes \\ 
-      Weighted & Long life cylce & 0.33 & 0.21 & 0.38 & Yes \\ 
-      Harmonised; not\_aggregated & Long life cylce & 0.36 & 0.25 & 0.40 & Yes \\ 
-      Original & Long life cylce & 0.36 & 0.25 & 0.40 & Yes\\ 
-    \bottomrule
-    \end{tabular}
-\end{table}
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=18.5cm, height=16cm]{boxplot_scores_combined_REMAIN_SI.png}
+    \includegraphics[width=18.5cm, height=15cm]{boxplot_scores_combined_REMAIN_SI.png}
     \caption{RDA of traits constrained by electric conductivity for the data aggregated with \textit{direct\_agg \textsubscript{mean}}, \textit{stepwise\_agg \textsubscript{mean}}, and \textit{weighted\_agg}. Shown are boxplots of the site scores along the conductivity axis. The rug on the right side of each plot indicates species scores of the traits on the conductivity axis. For more details see Figure 6. %\ref{fig:boxplot_scores_on_constrained_axis}. 
     Abbreviations: lcd, life cycle duration; nr.cy, potential number of cycles per year.}
     \label{fig:boxplots_scores_on_constrained_axis_REMAIN}
@@ -437,73 +394,79 @@ We selected the ecologically relevant traits identified by \citet{szocs_effects_
 
 Environmental and abundance data have been sampled multiple times per year in 12 of 15 sites. \citet{szocs_effects_2014} used the full data and ignored repeated sampling. To avoid temporal pseudoreplication, we selected, for all sites with multiple samplings only the sampling event with the highest macroinvertebrate abundance of each year and the corresponding conductivity data. Fourth corner analysis was carried out in R with the \textit{fourthcorner()} function from the ade4 package.
 
-As expected, the fourth corner analysis detected fewer trait-conductivity relationships than the RDA approach. With the original dataset, significant relationships to conductivity were found for the traits shredder and ovoviviparity. In three out of the six aggregated and harmonised datasets (\textit{direct\_agg\textsubscript{mean}}, \textit{weighted\_agg}, \textit{direct\_agg\textsubscript{median}}) four significant relationships (for the traits univoltinism, bi/multivoltine, ovoviviparity, and aquatic oviposition) were detected. In the remaining three datasets (\textit{stepwise\_agg\textsubscript{median}}, \textit{stepwise\_agg\textsubscript{mean}}, and harmonised (not aggregated)), two significant relationships for the traits univoltinism and bi/multivoltinism were detected (Table \ref{stab:fc_selected_reduced}). The results were only slightly different when multiple samplings were ignored (original dataset: two significant trait-conductivity relationship (bi-multivoltine, ovoviviparity), other datasets two to four, Table \ref{stab:fc_selected_full}). For all significant trait-conductivity relationships, the classification into characteristic traits for downstream and upstream sites was consistent with the results of the RDA analysis.
+As expected, the fourth corner analysis detected fewer trait-conductivity relationships than the RDA approach. With the original dataset, a significant relationship to conductivity were found for the trait ovoviviparity (0.042) and almost for the trait shredder a p-value close to the significance level (0.077). In four out of the six aggregated and harmonised datasets (\textit{direct\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{mean}}, \textit{stepwise\_agg\textsubscript{median}}, harmonised (not aggregated)) four significant relationships (for the traits univoltinism, bi/multivoltine, ovoviviparity, and aquatic oviposition) were detected. In the remaining two datasets (\textit{direct\_agg\textsubscript{median}}, \textit{weighted\_agg}), two significant relationships for the traits univoltinism and bi/multivoltinism were detected (Table \ref{stab:fc_selected_reduced}). The results were only slightly different when multiple samplings were ignored (original dataset: four significant trait-conductivity relationship (shredders, univoltine, bi-multivoltine, ovoviviparity), other datasets two to four, Table \ref{stab:fc_selected_full}). For all significant trait-conductivity relationships, the classification into characteristic traits for downstream and upstream sites was consistent with the results of the RDA analysis.
 
 \newpage
 
 \begin{longtable}[H]{m{2.6cm}|m{7.3cm}|m{1cm}|m{1.4cm}|m{1.5cm}|m{1.5cm}}
-    \caption{Results of the fourth corner analysis, after accounting for multiple samplings per year, with the original dataset, harmonised, and aggregated trait datasets.}
+    \caption{Results of the fourth corner analysis, after accounting for multiple samplings per year, with the original dataset, harmonised (not aggregated), and aggregated trait datasets.}
     \label{stab:fc_selected_reduced}
     \endfirsthead
     \toprule[.1em]
     Dataset & Test & Obs & Std.Obs & Pvalue & Pvalue.adj \\ 
     \toprule[.1em]
-       stepw\_median & cond / feed\_shredder & 0.45 & 1.86  & 0.04 & 0.16 \\ 
-       stepw\_median & cond / resp\_gil & 0.47 & 1.87  & 0.05 & 0.16 \\ 
-       stepw\_median & cond / volt\_uni & -0.57 & -2.29  & 0.00 & 0.03 \\ 
-       stepw\_median & cond / volt\_bi\_multi & 0.58 & 2.35  & 0.00 & 0.02 \\ 
-       stepw\_median & cond / ovip\_aqu & -0.53 & -2.14  & 0.01 & 0.06 \\ 
-       stepw\_median & cond / ovip\_ovo & 0.54 & 2.15  & 0.01 & 0.06 \\ 
-       stepw\_median & cond / Life cycle duration $<=$ 1 year & -0.32 & -1.27  & 0.24 & 0.49 \\ 
-       stepw\_median & cond / Life cycle duration $>$ 1 year & 0.32 & 1.27  & 0.24 & 0.49 \\ 
-       stepw\_mean & cond / feed\_shredder & 0.46 & 1.96  & 0.03 & 0.11 \\ 
-       stepw\_mean & cond / resp\_gil & 0.47 & 1.75  & 0.06 & 0.18 \\ 
-       stepw\_mean & cond / volt\_uni & -0.58 & -2.45  & 0.01 & 0.04 \\ 
-       stepw\_mean & cond / volt\_bi\_multi & 0.59 & 2.50  & 0.00 & 0.03 \\ 
-       stepw\_mean & cond / ovip\_aqu & -0.52 & -2.23  & 0.01 & 0.06 \\ 
-       stepw\_mean & cond / ovip\_ovo & 0.52 & 2.23  & 0.01 & 0.06 \\ 
-       stepw\_mean & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.30  & 0.23 & 0.47 \\ 
-       stepw\_mean & cond / Life cycle duration $>$ 1 year & 0.33 & 1.30  & 0.23 & 0.47 \\ 
-       direct\_median & cond / feed\_shredder & 0.45 & 1.89  & 0.04 & 0.15 \\ 
-       direct\_median & cond / resp\_gil & 0.47 & 1.88  & 0.04 & 0.15 \\ 
-       direct\_median & cond / volt\_uni & -0.58 & -2.24  & 0.00 & 0.02 \\ 
-       direct\_median & cond / volt\_bi\_multi & 0.58 & 2.33  & 0.00 & 0.02 \\ 
-       direct\_median & cond / ovip\_aqu & -0.53 & -2.14  & 0.01 & 0.05 \\ 
-       direct\_median & cond / ovip\_ovo & 0.54 & 2.15  & 0.01 & 0.05 \\ 
-       direct\_median & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.35  & 0.21 & 0.43 \\ 
-       direct\_median & cond / Life cycle duration $>$ 1 year & 0.34 & 1.35  & 0.21 & 0.43 \\ 
-       direct\_mean & cond / feed\_shredder & 0.46 & 1.83  & 0.05 & 0.19 \\ 
-       direct\_mean & cond / resp\_gil & 0.47 & 1.82  & 0.05 & 0.19 \\ 
-       direct\_mean & cond / volt\_uni & -0.58 & -2.49  & 0.00 & 0.02 \\ 
-       direct\_mean & cond / volt\_bi\_multi & 0.59 & 2.54  & 0.00 & 0.02 \\ 
-       direct\_mean & cond / ovip\_aqu & -0.52 & -2.26  & 0.01 & 0.05 \\ 
-       direct\_mean & cond / ovip\_ovo & 0.52 & 2.43  & 0.01 & 0.05 \\ 
-       direct\_mean & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.37  & 0.18 & 0.37 \\ 
-       direct\_mean & cond / Life cycle duration $>$ 1 year & 0.34 & 1.37  & 0.18 & 0.37 \\ 
-       weighted & cond / feed\_shredder & 0.46 & 1.97  & 0.03 & 0.11 \\ 
-       weighted & cond / resp\_gil & 0.47 & 1.92  & 0.04 & 0.11 \\ 
-       weighted & cond / volt\_uni & -0.58 & -2.51  & 0.00 & 0.02 \\ 
-       weighted & cond / volt\_bi\_multi & 0.59 & 2.56  & 0.00 & 0.02 \\ 
-       weighted & cond / ovip\_aqu & -0.52 & -2.13  & 0.01 & 0.04 \\ 
-       weighted & cond / ovip\_ovo & 0.52 & 2.35  & 0.01 & 0.04 \\ 
-       weighted & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.38  & 0.20 & 0.41 \\ 
-       weighted & cond / Life cycle duration $>$ 1 year & 0.34 & 1.38  & 0.20 & 0.41 \\ 
-       not\_aggregated & cond / feed\_shredder & 0.51 & 2.08  & 0.01 & 0.08 \\ 
-       not\_aggregated & cond / resp\_gil & 0.46 & 1.72  & 0.08 & 0.40 \\ 
-       not\_aggregated & cond / volt\_uni & -0.64 & -2.76  & 0.00 & 0.02 \\ 
-       not\_aggregated & cond / volt\_bi\_multi & 0.65 & 2.81  & 0.00 & 0.02 \\ 
-       not\_aggregated & cond / ovip\_aqu & -0.26 & -1.22  & 0.27 & 0.80 \\ 
-       not\_aggregated & cond / ovip\_ovo & 0.27 & 1.39  & 0.20 & 0.80 \\ 
-       not\_aggregated & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.26   & 0.24 & 0.80 \\ 
-       not\_aggregated & cond / Life cycle duration $>$ 1 year & 0.33 & 1.26  & 0.24 & 0.80 \\ 
-       original & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.31  & 0.22 & 0.65 \\ 
-       original & cond / Life cycle duration $>$ 1 year & 0.33 & 1.31  & 0.22 & 0.65 \\ 
-       original & cond / Potential number of cycles per year $1$ & -0.48 & -1.91  & 0.04 & 0.18 \\ 
-       original & cond / Potential number of cycles per year $> 1$  & 0.49 & 1.95  & 0.03 & 0.16 \\ 
-       original & cond / Reproduction ovoviviparity & 0.58 & 2.43  & 0.01 & 0.04 \\ 
-       original & cond / Reproduction clutches, cemented or fixed & -0.33 & -1.27  & 0.24 & 0.65 \\ 
-       original & cond / Respiration gill & 0.47 & 1.87  & 0.04 & 0.18 \\ 
-       original & cond / Feeding habits shredder & 0.54 & 2.51  & 0.01 & 0.04 \\ 
+      stepw\_median & cond / feed\_shredder & 0.39 & 1.75 & 0.08 & 0.246 \\ 
+      stepw\_median & cond / resp\_gil & 0.47 & 1.81 & 0.06 & 0.224 \\ 
+      stepw\_median & cond / volt\_uni & -0.56 & -2.15 & 0.01 & 0.05 * \\ 
+      stepw\_median & cond / volt\_bi\_multi & 0.56 & 2.19 & 0.01 & 0.048 * \\ 
+      stepw\_median & cond / ovip\_aqu & -0.53 & -2.16 & 0.01 & 0.045 * \\ 
+      stepw\_median & cond / ovip\_ovo & 0.54 & 2.17 & 0.01 & 0.045 * \\ 
+      stepw\_median & cond / Life cycle duration $<=$ 1 year & -0.32 & -1.23 & 0.26 & 0.518 \\ 
+      stepw\_median & cond / Life cycle duration $>$ 1 year & 0.32 & 1.23 & 0.26 & 0.518 \\
+      \midrule 
+      stepw\_mean & cond / feed\_shredder & 0.39 & 1.80 & 0.06 & 0.2 \\ 
+      stepw\_mean & cond / resp\_gil & 0.47 & 1.84 & 0.05 & 0.2 \\ 
+      stepw\_mean & cond / volt\_uni & -0.56 & -2.26 & 0.01 & 0.042 * \\ 
+      stepw\_mean & cond / volt\_bi\_multi & 0.57 & 2.26 & 0.01 & 0.042 * \\ 
+      stepw\_mean & cond / ovip\_aqu & -0.53 & -2.21 & 0.01 & 0.05 * \\ 
+      stepw\_mean & cond / ovip\_ovo & 0.54 & 2.22 & 0.01 & 0.05 * \\ 
+      stepw\_mean & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.31 & 0.21 & 0.426 \\ 
+      stepw\_mean & cond / Life cycle duration $>$ 1 year & 0.33 & 1.31 & 0.21 & 0.426 \\ 
+      \midrule
+      direct\_median & cond / feed\_shredder & 0.38 & 1.73 & 0.09 & 0.27 \\ 
+      direct\_median & cond / resp\_gil & 0.47 & 1.82 & 0.05 & 0.216 \\ 
+      direct\_median & cond / volt\_uni & -0.56 & -2.25 & 0.01 & 0.035 * \\ 
+      direct\_median & cond / volt\_bi\_multi & 0.57 & 2.28 & 0.00 & 0.032 * \\ 
+      direct\_median & cond / ovip\_aqu & -0.53 & -2.27 & 0.02 & 0.055 . \\ 
+      direct\_median & cond / ovip\_ovo & 0.54 & 2.28 & 0.01 & 0.055 . \\ 
+      direct\_median & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.38 & 0.20 & 0.39 \\ 
+      direct\_median & cond / Life cycle duration $>$ 1 year & 0.34 & 1.38 & 0.20 & 0.39 \\ 
+      \midrule
+      direct\_mean & cond / feed\_shredder & 0.38 & 1.78 & 0.07 & 0.225 \\ 
+      direct\_mean & cond / resp\_gil & 0.47 & 1.92 & 0.04 & 0.152 \\ 
+      direct\_mean & cond / volt\_uni & -0.56 & -2.22 & 0.01 & 0.04 * \\ 
+      direct\_mean & cond / volt\_bi\_multi & 0.57 & 2.26 & 0.01 & 0.04 * \\ 
+      direct\_mean & cond / ovip\_aqu & -0.53 & -2.33 & 0.01 & 0.045 * \\ 
+      direct\_mean & cond / ovip\_ovo & 0.54 & 2.20 & 0.01 & 0.042 * \\ 
+      direct\_mean & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.42 & 0.17 & 0.342 \\ 
+      direct\_mean & cond / Life cycle duration $>$ 1 year & 0.34 & 1.42 & 0.17 & 0.342 \\
+      \midrule 
+      weighted & cond / feed\_shredder & 0.38 & 1.69 & 0.09 & 0.261 \\ 
+      weighted & cond / resp\_gil & 0.47 & 1.90 & 0.04 & 0.156 \\ 
+      weighted & cond / volt\_uni & -0.56 & -2.23 & 0.01 & 0.03 * \\ 
+      weighted & cond / volt\_bi\_multi & 0.57 & 2.46 & 0.00 & 0.024 * \\ 
+      weighted & cond / ovip\_aqu & -0.53 & -2.19 & 0.01 & 0.055 . \\ 
+      weighted & cond / ovip\_ovo & 0.54 & 2.20 & 0.01 & 0.055 . \\ 
+      weighted & cond / Life cycle duration $<=$ 1 year & -0.34 & -1.34 & 0.21 & 0.414 \\ 
+      weighted & cond / Life cycle duration $>$ 1 year & 0.34 & 1.34 & 0.21 & 0.414 \\
+      \midrule 
+      not\_aggregated & cond / feed\_shredder & 0.41 & 1.83 & 0.05 & 0.188 \\ 
+      not\_aggregated & cond / resp\_gil & 0.47 & 1.88 & 0.05 & 0.188 \\ 
+      not\_aggregated & cond / volt\_uni & -0.57 & -2.16 & 0.01 & 0.035 * \\ 
+      not\_aggregated & cond / volt\_bi\_multi & 0.58 & 2.21 & 0.00 & 0.024 * \\ 
+      not\_aggregated & cond / ovip\_aqu & -0.55 & -2.24 & 0.01 & 0.045 * \\ 
+      not\_aggregated & cond / ovip\_ovo & 0.55 & 2.25 & 0.01 & 0.045 * \\ 
+      not\_aggregated & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.25 & 0.22 & 0.446 \\ 
+      not\_aggregated & cond / Life cycle duration $>$ 1 year & 0.33 & 1.25 & 0.22 & 0.446 \\
+      \midrule 
+      original & cond / Feeding habits shredder & 0.54 & 2.19 & 0.01 & 0.077 . \\
+      original & cond / Respiration gill & 0.47 & 1.83 & 0.05 & 0.255 \\ 
+      original & cond / Potential number of cycles per year 1 & -0.48 & -1.83 & 0.05 & 0.255 \\ 
+      original & cond / Potential number of cycles per year $>$ 1 & 0.49 & 1.91 & 0.04 & 0.222 \\
+      original & cond / Reproduction ovoviviparity & 0.58 & 2.39 & 0.01 & 0.042 * \\ 
+      original & cond / Reproduction clutches, cemented or fixed & -0.33 & -1.27 & 0.23 & 0.612 \\
+      original & cond / Life cycle duration $<=$ 1 year & -0.33 & -1.31 & 0.20 & 0.612 \\ 
+      original & cond / Life cycle duration $>$ 1 year & 0.33 & 1.31 & 0.20 & 0.612 \\          
       \bottomrule
 \end{longtable}
 
@@ -515,63 +478,69 @@ As expected, the fourth corner analysis detected fewer trait-conductivity relati
     \toprule[.1em]
     Dataset & Test & Obs & Std.Obs & Pvalue & Pvalue.adj \\ 
     \toprule[.1em]
-    stepw\_median & cond / feed\_shredder & 0.38 & 1.86 & 0.05 & 0.19 \\ 
-      stepw\_median & cond / resp\_gil & 0.38 & 1.80 & 0.06 & 0.19 \\ 
-      stepw\_median & cond / volt\_uni & -0.54 & -2.43 & 0.00 & 0.03 \\ 
-      stepw\_median & cond / volt\_bi\_multi & 0.54 & 2.50 & 0.00 & 0.02 \\ 
-      stepw\_median & cond / ovip\_aqu & -0.46 & -2.34 & 0.01 & 0.04 \\ 
-      stepw\_median & cond / ovip\_ovo & 0.46 & 2.57 & 0.01 & 0.04 \\ 
-      stepw\_median & cond / Life cycle duration $<=$ 1 year & -0.28 & -1.29 & 0.22 & 0.45 \\ 
-      stepw\_median & cond / Life cycle duration $>$ 1 year & 0.28 & 1.29 & 0.22 & 0.45 \\ 
-      stepw\_mean & cond / feed\_shredder & 0.39 & 1.93 & 0.03 & 0.12 \\ 
-      stepw\_mean & cond / resp\_gil & 0.39 & 1.81 & 0.06 & 0.17 \\ 
-      stepw\_mean & cond / volt\_uni & -0.54 & -3.65 & 0.00 & 0.01 \\ 
-      stepw\_mean & cond / volt\_bi\_multi & 0.55 & 3.71 & 0.00 & 0.01 \\ 
-      stepw\_mean & cond / ovip\_aqu & -0.44 & -2.26 & 0.01 & 0.05 \\ 
-      stepw\_mean & cond / ovip\_ovo & 0.45 & 2.50 & 0.00 & 0.02 \\ 
-      stepw\_mean & cond / Life cycle duration $<=$ 1 year & -0.28 & -1.34 & 0.20 & 0.39 \\ 
-      stepw\_mean & cond / Life cycle duration $>$ 1 year & 0.28 & 1.34 & 0.20 & 0.39 \\ 
-      direct\_median & cond / feed\_shredder & 0.37 & 1.89 & 0.03 & 0.13 \\ 
-      direct\_median & cond / resp\_gil & 0.38 & 1.82 & 0.05 & 0.16 \\ 
-      direct\_median & cond / volt\_uni & -0.54 & -3.79 & 0.00 & 0.01 \\ 
-      direct\_median & cond / volt\_bi\_multi & 0.55 & 3.85 & 0.00 & 0.01 \\ 
-      direct\_median & cond / ovip\_aqu & -0.46 & -2.37 & 0.01 & 0.05 \\ 
-      direct\_median & cond / ovip\_ovo & 0.46 & 2.56 & 0.01 & 0.05 \\ 
-      direct\_median & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.41 & 0.18 & 0.35 \\ 
-      direct\_median & cond / Life cycle duration $>$ 1 year & 0.30 & 1.41 & 0.18 & 0.35 \\ 
-      direct\_mean & cond / feed\_shredder & 0.39 & 1.94 & 0.03 & 0.11 \\ 
-      direct\_mean & cond / resp\_gil & 0.38 & 1.79 & 0.06 & 0.17 \\ 
-      direct\_mean & cond / volt\_uni & -0.55 & -3.54 & 0.00 & 0.01 \\ 
-      direct\_mean & cond / volt\_bi\_multi & 0.55 & 3.60 & 0.00 & 0.01 \\ 
-      direct\_mean & cond / ovip\_aqu & -0.44 & -2.25 & 0.01 & 0.03 \\ 
-      direct\_mean & cond / ovip\_ovo & 0.45 & 2.52 & 0.00 & 0.02 \\ 
-      direct\_mean & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.49 & 0.15 & 0.30 \\ 
-      direct\_mean & cond / Life cycle duration $>$ 1 year & 0.30 & 1.49 & 0.15 & 0.30 \\ 
-      weighted & cond / feed\_shredder & 0.39 & 1.84 & 0.05 & 0.19 \\ 
-      weighted & cond / resp\_gil & 0.38 & 1.81 & 0.06 & 0.19 \\ 
-      weighted & cond / volt\_uni & -0.55 & -3.43 & 0.00 & 0.01 \\ 
-      weighted & cond / volt\_bi\_multi & 0.55 & 3.49 & 0.00 & 0.01 \\ 
-      weighted & cond / ovip\_aqu & -0.44 & -2.24 & 0.01 & 0.05 \\ 
-      weighted & cond / ovip\_ovo & 0.45 & 2.44 & 0.01 & 0.05 \\ 
-      weighted & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.42 & 0.17 & 0.34 \\ 
-      weighted & cond / Life cycle duration $>$ 1 year & 0.30 & 1.42 & 0.17 & 0.34 \\ 
-      not\_aggregated & cond / feed\_shredder & 0.43 & 2.07 & 0.01 & 0.09 \\ 
-      not\_aggregated & cond / resp\_gil & 0.38 & 1.77 & 0.06 & 0.30 \\ 
-      not\_aggregated & cond / volt\_uni & -0.57 & -3.90 & 0.00 & 0.01 \\ 
-      not\_aggregated & cond / volt\_bi\_multi & 0.58 & 3.96 & 0.00 & 0.01 \\ 
-      not\_aggregated & cond / ovip\_aqu & -0.25 & -1.28 & 0.22 & 0.62 \\ 
-      not\_aggregated & cond / ovip\_ovo & 0.25 & 1.50 & 0.15 & 0.62 \\ 
-      not\_aggregated & cond / Life cycle duration $<=$ 1 year & -0.29 & -1.37 & 0.18 & 0.62 \\ 
-      not\_aggregated & cond / Life cycle duration $>$ 1 year & 0.29 & 1.37 & 0.18 & 0.62 \\ 
-      original & cond / Life cycle duration $<=$ 1 year & -0.29 & -1.42 & 0.17 & 0.50 \\ 
-      original & cond / Life cycle duration $>$ 1 year & 0.29 & 1.42 & 0.17 & 0.50 \\ 
-      original & cond / Potential number of cycles per year $1$ & -0.47 & -2.11 & 0.02 & 0.10 \\ 
-      original & cond / Potential number of cycles per year $> 1$ 1 & 0.47 & 2.19 & 0.01 & 0.05 \\ 
-      original & cond / Reproduction ovoviviparity & 0.51 & 3.06 & 0.00 & 0.01 \\ 
-      original & cond / Reproduction clutches, cemented or fixed & -0.34 & -1.49 & 0.17 & 0.50 \\ 
-      original & cond / Respiration gill & 0.38 & 1.80 & 0.06 & 0.25 \\ 
-      original & cond / Feeding habits shredder & 0.45 & 2.19 & 0.01 & 0.06 \\ 
-     \bottomrule
+      stepw\_median & cond / feed\_shredder & 0.33 & 1.68 & 0.08 & 0.24 \\ 
+      stepw\_median & cond / resp\_gil & 0.39 & 1.79 & 0.06 & 0.24 \\ 
+      stepw\_median & cond / volt\_uni & -0.52 & -2.41 & 0.00 & 0.028 * \\ 
+      stepw\_median & cond / volt\_bi\_multi & 0.53 & 2.50 & 0.00 & 0.024 * \\ 
+      stepw\_median & cond / ovip\_aqu & -0.46 & -2.44 & 0.01 & 0.065 . \\ 
+      stepw\_median & cond / ovip\_ovo & 0.46 & 2.75 & 0.01 & 0.06 . \\ 
+      stepw\_median & cond / Life cycle duration $<=$ 1 year & -0.28 & -1.26 & 0.22 & 0.446 \\ 
+      stepw\_median & cond / Life cycle duration $>$ 1 year & 0.28 & 1.26 & 0.22 & 0.446 \\ 
+      \midrule
+      stepw\_mean & cond / feed\_shredder & 0.33 & 1.81 & 0.05 & 0.216 \\ 
+      stepw\_mean & cond / resp\_gil & 0.39 & 1.74 & 0.07 & 0.216 \\ 
+      stepw\_mean & cond / volt\_uni & -0.53 & -2.46 & 0.00 & 0.021 * \\ 
+      stepw\_mean & cond / volt\_bi\_multi & 0.53 & 2.56 & 0.00 & 0.016 * \\ 
+      stepw\_mean & cond / ovip\_aqu & -0.46 & -2.35 & 0.01 & 0.045 * \\ 
+      stepw\_mean & cond / ovip\_ovo & 0.46 & 2.58 & 0.01 & 0.042 * \\ 
+      stepw\_mean & cond / Life cycle duration $<=$ 1 year & -0.28 & -1.34 & 0.21 & 0.412 \\ 
+      stepw\_mean & cond / Life cycle duration $>$ 1 year & 0.28 & 1.34 & 0.21 & 0.412 \\
+      \midrule 
+      direct\_median & cond / feed\_shredder & 0.32 & 1.81 & 0.06 & 0.236 \\ 
+      direct\_median & cond / resp\_gil & 0.39 & 1.81 & 0.06 & 0.236 \\ 
+      direct\_median & cond / volt\_uni & -0.53 & -3.59 & 0.00 & 0.008 ** \\ 
+      direct\_median & cond / volt\_bi\_multi & 0.54 & 3.65 & 0.00 & 0.008 ** \\ 
+      direct\_median & cond / ovip\_aqu & -0.46 & -2.34 & 0.01 & 0.06 . \\ 
+      direct\_median & cond / ovip\_ovo & 0.46 & 2.58 & 0.00 & 0.024 * \\ 
+      direct\_median & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.42 & 0.18 & 0.37 \\ 
+      direct\_median & cond / Life cycle duration $>$ 1 year & 0.30 & 1.42 & 0.18 & 0.37 \\
+      \midrule 
+      direct\_mean & cond / feed\_shredder & 0.32 & 1.67 & 0.09 & 0.27 \\ 
+      direct\_mean & cond / resp\_gil & 0.39 & 1.82 & 0.06 & 0.228 \\ 
+      direct\_mean & cond / volt\_uni & -0.53 & -3.54 & 0.00 & 0.008 ** \\ 
+      direct\_mean & cond / volt\_bi\_multi & 0.54 & 2.62 & 0.00 & 0.014 * \\ 
+      direct\_mean & cond / ovip\_aqu & -0.46 & -2.39 & 0.01 & 0.03 * \\ 
+      direct\_mean & cond / ovip\_ovo & 0.46 & 2.67 & 0.00 & 0.014 * \\ 
+      direct\_mean & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.43 & 0.17 & 0.332 \\ 
+      direct\_mean & cond / Life cycle duration $>$ 1 year & 0.30 & 1.43 & 0.17 & 0.332 \\
+      \midrule 
+      weighted & cond / feed\_shredder & 0.32 & 1.69 & 0.09 & 0.268 \\ 
+      weighted & cond / resp\_gil & 0.39 & 1.77 & 0.07 & 0.268 \\ 
+      weighted & cond / volt\_uni & -0.53 & -3.57 & 0.00 & 0.008 ** \\ 
+      weighted & cond / volt\_bi\_multi & 0.54 & 3.63 & 0.00 & 0.008 ** \\ 
+      weighted & cond / ovip\_aqu & -0.46 & -2.37 & 0.00 & 0.012 * \\ 
+      weighted & cond / ovip\_ovo & 0.46 & 2.61 & 0.00 & 0.015 * \\ 
+      weighted & cond / Life cycle duration $<=$ 1 year & -0.30 & -1.40 & 0.20 & 0.398 \\ 
+      weighted & cond / Life cycle duration $>$ 1 year & 0.30 & 1.40 & 0.20 & 0.398 \\
+      \midrule 
+      not\_aggregated & cond / feed\_shredder & 0.35 & 1.82 & 0.06 & 0.236 \\ 
+      not\_aggregated & cond / resp\_gil & 0.38 & 1.76 & 0.07 & 0.236 \\ 
+      not\_aggregated & cond / volt\_uni & -0.53 & -3.80 & 0.00 & 0.008 ** \\ 
+      not\_aggregated & cond / volt\_bi\_multi & 0.54 & 3.87 & 0.00 & 0.008 ** \\ 
+      not\_aggregated & cond / ovip\_aqu & -0.47 & -2.37 & 0.01 & 0.03 * \\ 
+      not\_aggregated & cond / ovip\_ovo & 0.48 & 2.72 & 0.00 & 0.024 * \\ 
+      not\_aggregated & cond / Life cycle duration $<=$ 1 year & -0.29 & -1.40 & 0.19 & 0.372 \\ 
+      not\_aggregated & cond / Life cycle duration $>$ 1 year & 0.29 & 1.40 & 0.19 & 0.372 \\
+      \midrule 
+      original & cond / Feeding habits shredder & 0.45 & 2.17 & 0.01 & 0.042 * \\
+      original & cond / Respiration gill & 0.38 & 1.80 & 0.06 & 0.252 \\  
+      original & cond / Potential number of cycles per year 1 & -0.47 & -2.23 & 0.01 & 0.042 * \\ 
+      original & cond / Potential number of cycles per year $>$ 1 & 0.47 & 2.26 & 0.01 & 0.042 * \\ 
+      original & cond / Reproduction ovoviviparity & 0.51 & 2.89 & 0.00 & 0.016 * \\ 
+      original & cond / Reproduction clutches, cemented or fixed & -0.34 & -1.58 & 0.13 & 0.402 \\  
+      original & cond / Life cycle duration $<=$ 1 year & -0.29 & -1.41 & 0.18 & 0.402 \\ 
+      original & cond / Life cycle duration $>$ 1 year & 0.29 & 1.41 & 0.18 & 0.402 \\
+      \bottomrule
 \end{longtable}
 
 
