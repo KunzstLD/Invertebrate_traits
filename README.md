@@ -10,10 +10,7 @@ doi:
 
 *Stefan Kunz, Ben J. Kefford, Astrid Schmidt-Kloiber, Christoph D. Matthaei, Philippe Usseglio-Polatera, Wolfram Graf, N. LeRoy Poff, Leon Metzeling, Laura Twardochleb, Charles P. Hawkins, Ralf B. Schäfer*
 
-
-
 For a detailed description please refer to the publication.
-
 
 ## Content overview
 
@@ -28,7 +25,7 @@ Contains the preprocessed and harmonised trait datasets for each continent and r
 
 ### - /Paper
 
-Contains TeX files for the paper
+Contains TeX files for the paper.
 
 ### - /R
 
