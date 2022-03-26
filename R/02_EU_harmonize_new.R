@@ -759,7 +759,7 @@ Trait_EU[, c(
 # Oviposition ----
 # ovip_aqu: Reproduction via aquatic eggs
 # ovip_ter: Reproduction via terrestric eggs
-# ovip_ovo: Reproduction via ovoviparity
+# ovip_ovo: Reproduction via ovoviviparity
 # rep_parasitic no entries
 # rep_asexual is deleted
 # Harmonising using the sum in comb with na.rm = TRUE
@@ -861,8 +861,10 @@ Trait_EU[, c(
 
 # _________________________________________________________________________
 # Temperature ----
-# temp_coldsteno: cold stenotherm (cos); preference for a small cold temperature range (below 10°C)
-# temp_warmsteno: warm stenotherm	(was);	preference for a small warm temperature range (above 18°C)
+# temp_coldsteno: cold stenotherm (cos); preference for a small cold temperature range
+# (below 10°C)
+# temp_warmsteno: warm stenotherm	(was);	preference for a small warm temperature range 
+# (above 18°C)
 # temp_euryt: eurytherm	(eut)	no specific preference, wide temperature range
 # temp eurytherm (no specific preference)
 # psychrophilic (< 15 °C)
@@ -887,6 +889,7 @@ Trait_EU[, c(
 #              "temp_warmsteno", 
 #              "temp_thermophil_tachet"
 #              ) := NULL]
+
 # _________________________________________________________________________
 # Body form ----
 # bf_streamlined: streamlined/fusiform
@@ -1022,9 +1025,9 @@ Trait_EU[, `:=`(
 )]
 
 # _________________________________________________________________________
-
 # Postprocessing ----
-# normalize again (actually only needed for bf data)
+
+## Normalize again (actually only needed for bf data) ----
 normalize_by_rowSum(
   x = Trait_EU,
   non_trait_cols = c(

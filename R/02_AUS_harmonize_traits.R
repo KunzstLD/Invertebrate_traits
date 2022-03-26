@@ -673,6 +673,18 @@ for (j in trait_cols) {
   data.table::set(Trait_AUS, which(is.infinite(Trait_AUS[[j]])), j, 0)
 }
 
+## Normalization ----
+# All trait states of one trait are divided by the row sum
+# Hence, trait affinities are represented as "%" or ratios 
+Trait_AUS <- normalize_by_rowSum(
+  x = Trait_AUS,
+  non_trait_cols = c("unique_id",
+                     "species",
+                     "genus",
+                     "family",
+                     "order")
+)
+
 # save
 saveRDS(
   object = Trait_AUS,

@@ -1,6 +1,9 @@
 # _________________________________________________________________________
 # Aggregation of traits NOA data from Laura T ----
-# TODO: Check and simplify Aggregation functions
+# NoA trait data already normalised
+# for(i in c("locom", "feed", "resp", "volt", "bf", "size", "dev", "ovip")) {
+# print(all(!rowSums(Trait_Noa_new[, .SD, .SDcols = patterns(i)], na.rm = TRUE) > 1))
+# }
 # _________________________________________________________________________
 
 # read in pp_harmonized

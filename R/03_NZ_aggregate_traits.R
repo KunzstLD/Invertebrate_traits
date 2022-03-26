@@ -5,20 +5,8 @@
 # read in Trait NZ
 Trait_NZ <- readRDS(file.path(data_cleaned, "NZ", "Trait_NZ_pp_harmonized.rds"))
 
-# _________________________________________________________________________
-# Normalization ----
-# _________________________________________________________________________
-Trait_NZ <- normalize_by_rowSum(
-  x = Trait_NZ,
-  non_trait_cols = c("order",
-                     "family",
-                     "genus",
-                     "species",
-                     "unique_id")
-)
-
 # Subset to interesting orders:
-#   "Amphipoda" & "Venerida" missing
+# "Amphipoda" & "Venerida" missing
 Trait_NZ <- Trait_NZ[order %in% c(
   "Ephemeroptera",
   "Hemiptera",

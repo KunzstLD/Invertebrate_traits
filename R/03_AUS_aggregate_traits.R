@@ -12,20 +12,6 @@ Trait_AUS <- readRDS(
   )
 )
 
-# _________________________________________________________________________ 
-# Normalization ----
-# All trait states of one trait are divided by the row sum
-# Hence, trait affinities are represented as "%" or ratios 
-# _________________________________________________________________________ 
-Trait_AUS <- normalize_by_rowSum(
-  x = Trait_AUS,
-  non_trait_cols = c("unique_id",
-                     "species",
-                     "genus",
-                     "family",
-                     "order")
-)
-
 # test how complete trait sets are 
 completeness_trait_data(
   x = Trait_AUS,

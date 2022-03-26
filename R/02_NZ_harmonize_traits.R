@@ -240,6 +240,7 @@ Trait_NZ[, `:=`(
   dev_holometabol = ifelse(Order %in% holometabola, 1, 0)
 )]
 
+# Postprocessing ----
 # subset to relevant traits
 # missing currently: aquatic stages, dispersal/dissemination, T, pH
 Trait_NZ <-
@@ -262,6 +263,16 @@ setcolorder(
     names(Trait_NZ),
     value = TRUE
   )
+)
+
+## Normalization ----
+Trait_NZ <- normalize_by_rowSum(
+  x = Trait_NZ,
+  non_trait_cols = c("order",
+                     "family",
+                     "genus",
+                     "species",
+                     "unique_id")
 )
 
 # save
