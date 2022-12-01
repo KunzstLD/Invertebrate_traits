@@ -1061,6 +1061,50 @@ newcolorder <- c(
 )
 setcolorder(Trait_EU, newcolorder)
 
+
+## Some taxa have no information on family-level ----
+# Trait_EU[is.na(family), genus]
+# Most of them can be found by searching the trait DB for related taxa (e.g. other species
+# from the same genus) 
+genus_family_na <- Trait_EU[is.na(family), genus]
+genus_family_na <- sub(" sp\\.", "", genus_family_na)
+genus_family_na <- sub(" [1-9] \\(new sp\\. .+\\)", "", genus_family_na)
+genus_family_na <- unique(genus_family_na)
+
+# Aeshna
+# Trait_EU[genus %like% "Aeshna", ]
+# Hydrophilus
+# Trait_EU[genus %like% "Hydrophilus", ]
+for(i in genus_family_na) {
+  family_assign <- Trait_EU[genus %like% i, family]
+  family_assign <- family_assign[!is.na(family_assign)]
+  family_assign <- unique(family_assign)
+  
+  if (length(family_assign) > 0) {
+    Trait_EU[genus %like% i, family := family_assign]
+  }
+}
+
+# Manual assignment for some taxa
+# Microvelia
+Trait_EU[genus %like% "Microvelia", family := "Veliidae"]
+
+# Phytobius
+Trait_EU[genus %like% "Phytobius", family := "Curculionidae"]
+
+# Agabus
+Trait_EU[genus %like% "Agabus", family := "Dytiscidae"]
+
+# Normandia
+Trait_EU[genus %like% "Normandia", family := "Elmidae"]
+
+# Aulonogyrus
+Trait_EU[genus %like% "Aulonogyrus", family := "Gyrinidae"]
+
+# Paracymus
+Trait_EU[genus %like% "Paracymus", family := "Hydrophilidae"]
+
+
 # save for further analysis
 saveRDS(
   object = Trait_EU,
