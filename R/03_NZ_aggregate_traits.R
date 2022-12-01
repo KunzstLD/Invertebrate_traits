@@ -27,6 +27,9 @@ completeness_trait_data(x = Trait_NZ,
                                            "genus",
                                            "species",
                                            "unique_id"))
+Trait_NZ <- Trait_NZ[, .SD,
+                     .SDcols = names(Trait_NZ) %like%
+                       "locom|feed|resp|volt|size|bf|ovip|dev|species|genus|family|order"]
 
 # Direct aggregation using the median
 Trait_NZ_agg <- direct_agg(
@@ -56,4 +59,4 @@ Trait_NZ_agg <-
 # save
 saveRDS(object = Trait_NZ_agg, file = file.path(data_out, "Trait_NZ_agg.rds"))
 saveRDS(object = Trait_NZ_agg, 
-        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NZ_agg.rds")
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NZ_agg_ovip.rds")
