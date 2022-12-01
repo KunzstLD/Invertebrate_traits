@@ -201,7 +201,6 @@ Trait_Noa <-
 
 # merge on species level:
 # only species are merged that exist in Trait_Noa_new
-
 Trait_Noa_new[Trait_Noa[!is.na(species), ],
   `:=`(
     ovip_ter = i.ovip_ter,
@@ -256,7 +255,7 @@ Trait_Noa_new[stepGenus_Trait_Noa_new,
     bf_spherical = i.bf_spherical,
     ovip_ter = i.ovip_ter,
     ovip_aqu = i.ovip_aqu,
-    ovpi_ovo = i.ovip_ovo
+    ovip_ovo = i.ovip_ovo
   ),
   on = "unique_id"
 ]
