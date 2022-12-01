@@ -27,7 +27,7 @@ completeness_trait_data(
 # currently, oviposition not used
 Trait_Noa_new <- Trait_Noa_new[, .SD,
                                .SDcols = names(Trait_Noa_new) %like%
-                                 "locom|feed|resp|volt|bf|size|dev|ovip|unique_id|species|genus|family|order"]
+                                 "locom|feed|resp|volt|size|bf|ovip|dev|unique_id|species|genus|family|order"]
 
 # subset to aq. insect orders
 Trait_Noa_new <- Trait_Noa_new[order %in% c(
@@ -52,7 +52,7 @@ Trait_Noa_new_agg <- direct_agg(
                      "family",
                      "order",
                      "unique_id"),
-  method = median
+  method = mean
 )
 
 # Use mean for feeding mode of 
@@ -95,7 +95,8 @@ Trait_Noa_new_agg[leptoceridae_agg,
                   on = "family"]
 
 # Remove taxa with incomplete trait profiles and normalize again
-Trait_Noa_new_agg <- normalize_by_rowSum(x = Trait_Noa_new_agg,
+Trait_Noa_new_agg <- normalize_by_rowSum(x = Trait_Noa_new_agg[, .SD, 
+                                                               .SDcols = patterns("locom|feed|resp|volt|bf|size|ovip|dev|unique_id|species|genus|family|order")],
                                          non_trait_cols = c("order",
                                                             "family")) %>%
   na.omit(.,
@@ -121,4 +122,4 @@ setcolorder(
 saveRDS(object = Trait_Noa_new_agg,
         file = file.path(data_out, "Trait_NOA_agg.rds"))
 saveRDS(object = Trait_Noa_new_agg,
-        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NOA_agg.rds")
+        file = "/home/kunzst/Dokumente/Projects/Trait_DB/Convergence-trait-profiles/Data/Trait_NOA_agg_ovip.rds")
