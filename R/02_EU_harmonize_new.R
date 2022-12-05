@@ -1104,6 +1104,7 @@ Trait_EU[genus %like% "Aulonogyrus", family := "Gyrinidae"]
 # Paracymus
 Trait_EU[genus %like% "Paracymus", family := "Hydrophilidae"]
 
+Trait_EU <- Trait_EU[!duplicated(taxa), ]  
 
 # save for further analysis
 saveRDS(
